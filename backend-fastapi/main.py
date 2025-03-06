@@ -4,7 +4,8 @@ from pydantic import BaseModel
 import chromadb
 import google.generativeai as genai
 import os
-import pandas as pd
+import yaml
+import uuid
 from dotenv import load_dotenv
 from fastapi.responses import JSONResponse
 
@@ -42,40 +43,65 @@ def get_embedding(text: str):
     )
     return result['embedding']
 
-def load_ideas_to_chroma(csv_path: str):
-    df = pd.read_csv(csv_path)
+def load_ideas_to_chroma(yaml_path: str):
+    # Load YAML file
+    with open(yaml_path, 'r', encoding='utf-8') as file:
+        data = yaml.safe_load(file)
+    
     collection = chroma_client.get_or_create_collection(name="gsoc_ideas", metadata={"hnsw:space": "cosine"})
     
-    documents = []
-    embeddings = []
-    metadatas = []
-    
-    for index, row in df.iterrows():
-        ideas = row['ideas_content'].split("~~~~~~~~~~")
-        for idea in ideas:
-            idea = idea.strip()
-            if idea:  # Ensure the idea is not empty
-                embedding = get_embedding(idea)
-                documents.append(idea)
-                embeddings.append(embedding)
-                metadatas.append({
-                    'organization_id': row['organization_id'],
-                    'organization_name': row['organization_name'],
-                    'no_of_ideas': row['no_of_ideas'],
-                    'characters': row['characters'],
-                    'words': row['words'],
-                    'token_count': row['token_count'],
-                    'gsocorganization_dev_url': row['gsocorganization_dev_url'],
-                    'idea_list_url': row['idea_list_url']
-                })
-    
-    collection.upsert(
-        documents=documents,
-        embeddings=embeddings,
-        metadatas=metadatas
-    )
+    # Check if collection is empty
+    if collection.count() == 0:
+        print("ChromaDB collection is empty. Loading data...")
+        documents = []
+        embeddings = []
+        metadatas = []
+        ids_list = []  # Create a list to store unique IDs
+        
+        for org in data['organizations']:
+            ideas = org['ideas_content'].split("~~~~~~~~~~")
+            for idea in ideas:
+                idea = idea.strip()
+                if idea:  # Ensure the idea is not empty
+                    embedding = get_embedding(idea)
+                    documents.append(idea)
+                    embeddings.append(embedding)
+                    metadatas.append({
+                        'organization_id': org['organization_id'],
+                        'organization_name': org['organization_name'],
+                        'no_of_ideas': org['no_of_ideas'],
+                        'totalCharacters_of_ideas_content_parent': org['totalCharacters_of_ideas_content_parent'],
+                        'totalwords_of_ideas_content_parent': org['totalwords_of_ideas_content_parent'],
+                        'totalTokenCount_of_ideas_content_parent': org['totalTokenCount_of_ideas_content_parent'],
+                        'gsocorganization_dev_url': org['gsocorganization_dev_url'],
+                        'idea_list_url': org['idea_list_url']
 
+                            
+                    })
+                    # Generate a unique ID for each document
+                    ids_list.append(str(uuid.uuid4()))
+        
+        collection.upsert(
+            ids=ids_list,
+            documents=documents,
+            embeddings=embeddings,
+            metadatas=metadatas
+        )
+        print(f"Loaded {len(documents)} ideas into ChromaDB")
+    else:
+        print(f"ChromaDB collection already contains {collection.count()} documents")
 
+@app.on_event("startup")
+async def startup_db_client():
+    try:
+        # Check if ChromaDB is ready and initialize if needed
+        yaml_path = "gsoc_ideasdata.yaml"
+        if os.path.exists(yaml_path):
+            load_ideas_to_chroma(yaml_path)
+        else:
+            print(f"Warning: YAML file {yaml_path} not found")
+    except Exception as e:
+        print(f"Error initializing ChromaDB: {str(e)}")
 
 @app.post("/query")
 async def query_ideas(request: QueryRequest):
@@ -85,7 +111,7 @@ async def query_ideas(request: QueryRequest):
         
         results = collection.query(
             query_embeddings=[query_embedding],
-            n_results=5,
+            n_results=10,
             include=['documents', 'metadatas', 'distances']
         )
         
@@ -119,13 +145,85 @@ async def root():
 @app.get("/ideas")
 async def get_ideas():
     try:
-        csv_path = "gsoc_ideasdata.csv"
-        df = pd.read_csv(csv_path)
-        print(df.head())
-        ideas_list = df.to_dict(orient='records')
+        yaml_path = "gsoc_ideasdata.yaml"
+        with open(yaml_path, 'r', encoding='utf-8') as file:
+            data = yaml.safe_load(file)
+        
+        # Convert to list of dictionaries for JSON response
+        ideas_list = data['organizations']
         return JSONResponse(content=ideas_list)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+@app.get("/chromadb-stats")
+async def get_chromadb_stats():
+    try:
+        collection = chroma_client.get_collection("gsoc_ideas")
+        
+        # Get total count
+        total_count = collection.count()
+        
+        # Get all items (limited to first 1000 to avoid overwhelming responses)
+        results = collection.get(limit=1000)
+        
+        # Get unique organizations
+        org_names = set()
+        if results and 'metadatas' in results and results['metadatas']:
+            for metadata in results['metadatas']:
+                if metadata and 'organization_name' in metadata:
+                    org_names.add(metadata['organization_name'])
+        
+        return {
+            "total_records": total_count,
+            "unique_organizations": len(org_names),
+            "organization_names": list(org_names),
+            "sample_records": min(len(results.get('ids', [])), 1000)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/chromadb-data")
+async def get_chromadb_data(limit: int = 100, offset: int = 0):
+    try:
+        collection = chroma_client.get_collection("gsoc_ideas")
+        
+        # Get all IDs to handle pagination
+        all_ids = collection.get(include=[])['ids']
+        
+        # Apply pagination
+        paginated_ids = all_ids[offset:offset+limit] if offset < len(all_ids) else []
+        
+        if not paginated_ids:
+            return {
+                "total": len(all_ids),
+                "limit": limit,
+                "offset": offset,
+                "data": []
+            }
+        
+        # Get data for paginated IDs
+        results = collection.get(ids=paginated_ids, include=['documents', 'metadatas', 'embeddings'])
+        
+        formatted_results = []
+        for i in range(len(results['ids'])):
+            result = {
+                'id': results['ids'][i],
+                'document': results['documents'][i],
+                'metadata': results['metadatas'][i],
+                'embedding_size': len(results['embeddings'][i]) if 'embeddings' in results else None
+            }
+            formatted_results.append(result)
+        
+        return {
+            "total": len(all_ids),
+            "limit": limit,
+            "offset": offset,
+            "data": formatted_results
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 if __name__ == "__main__":
     import uvicorn

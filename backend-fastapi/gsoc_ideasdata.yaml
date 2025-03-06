@@ -1,0 +1,2601 @@
+organizations:
+  - organization_id: 1
+    organization_name: 52°North Spatial Information Research GmbH
+    no_of_ideas: 3
+    ideas_content: >-
+                1. KomMonitor
+                Angular migration of the KomMonitor Web Client
+                Explanation
+                KomMonitor is a web based tool that combines methods of GIS (Geographic information System) and statistical data and helps in providing a simpler and easier way to monitor geo-spatial data. Many municipalities have established KomMonitor to address a wide range of challenges in fields such as urban planning, environmental management, and disaster response. The current version of the KomMonitor Web Client has been developed using AngularJS, which has served as a reliable foundation for its functionalities. However, AngularJS has been deprecated for some years now. Therefore, relying on the current code base has several potential drawbacks associated with using AngularJS, such as compatibility issues, limited community support, reduced performance, and version support. To overcome these challenges and take KomMonitor to the next level, it is necessary to adopt the KomMonitor Web Client to the more modern and widely-supported framework Angular. As part of GSoC 2023, essential work has been done by developing a general approach for the Angular migration. The Web Client has been restructured so that it can be deployed as a hybrid web application, which runs both legacy AngularJS components and migrated or new Angular components. This year, the project aims to continue the migration tasks. Hence, the goal of this project is to reimplement several selected components of the KomMonitor Web Client by using the Angular framework.
+
+                Expected Results
+                As a result of the project, it is expected that several selected components of the KomMonitor Web Client will have been reimplemented with the Angular framework. The resulting UI of the reimplemented components should be as close as possible to the previous design to preserve the current look&feel. As an additional requirement, the reimplementation should take into account best practices and common design patterns in Angular. This results in also restructuring some of the existing components rather than simply transferring a component from AngularJS to Angular. Finally, the hybrid Web Client, including legacy AngularJS components and new Angular components side-by-side, should run properly without any bugs.
+
+                Code Challenge
+                Migrate the kommonitorToastHelperService of the KomMonitor Web Client to Angular and make use of it in a new Angular component as part of the Web Client. Follow the steps below:
+
+                Create a fork of https://github.com/KomMonitor/web-client and checkout the GSoC2025 Branch
+                Create a new Angular service as part of the KomMonitor Web Client that provides the same functionality as the existing AngularJS version of the kommonitorToastHelperService
+                Create a new Angular component that makes use of the previously implemented kommonitorToastHelperService. Take into account these requirements:
+                The component should be opened and closed by clicking on a button on the left sidebar.
+                The component should include a text area and a button.
+                The required functionality should be to display a message as toast on the screen by filling the text area and clicking on the button. For this purpose the kommonitorToastHelperService should be used.
+                Push the code to your fork at GitHub
+                Link to the fork within your official GSoC application. Your GSoC application should also include a description of which components you plan to migrate during GSoC as well as an estimation of time required for implementing it.
+
+
+                Community and Code License
+                Apache Software License, Version 2
+
+                Mentors
+                Sebastian Drost (s.drost @52north.org), Christoph Wagner (c.wagner @52north.org)
+
+                Project Duration
+                The duration of the project is estimated at 175 hours. An extension is possible.
+
+                Chat
+                TBD
+
+                ~~~~~~~~~~
+
+                2. LLM and GeoData
+                Explanation
+                During 52°North’s Student Innovation Challenge in 2024, a first open-source implementation connecting spatial data and Large Language Models (LLM) was developed.
+
+                The ambition was to address the pain points of searchability in Research and Spatial Data Infrastructures (RDI/SDI). Search functionality in such systems is typically limited to a metadata-based approach. However, geospatial data – whether vector or raster based – provides a wealth of interesting data that can currently only be identified by looking at the individual dataset. The challenge of the 2024 Student Innovation Prize was to develop a concept and a possible implementation that allows searching within datasets of/and RDI/SDI, e.g. on the attribute level. There are many interesting aspects related to this challenge: technical solutions, taxonomies and semantics, language/i18n, searching in raster data, and many more such as LLMs.
+
+                The available Proof of Concept (PoC) features a prompt that makes it easier to search and access to spatial data. More user stories are documented in the Innovation Prize project backlog on GitHub: https://github.com/52North/innovation-prize.
+
+                Expected Results
+                The PoC should be hardened and developed beyond its current state. For example, less verbose prompts are needed as more sophisticated LLMs emerge. Also, improved software frameworks may provide a better development experience. Various extensions are possible and a selection should be outlined in the proposal. Additional user stories from the backlog in the github project (see above) could be addressed. Another interesting extension could also entail a federated architecture. Furthermore, the use of different LLMs is also a possible option for further development.
+
+                Code Challenge
+                Set up the entire working environment based on the existing open source code
+
+                https://github.com/52North/innovation-prize/tree/2024
+
+                and add two more data sets. Share the code and the deployed system.
+
+                Community and Code License
+                TBChecked: Apache Software License, Version 2
+
+                Mentors
+                Henning Bredel (h.bredel @52north.org), Simeon Wetzel
+
+                Project duration
+                The duration of the project is estimated at 175 hours. An extension is possible.
+
+                ~~~~~~~~~~
+
+                3. Weather Routing Tool
+                Explanation
+                The open-source 52°North Weather Routing Tool (WRT) was initially developed during the MariData project. It provides means to find an optimal ship route that minimizes fuel consumption under varying weather conditions. In the optimization process, several constraints can be integrated, e.g. water depth and traffic separation zones. Currently, there are two algorithms available: an isofuel algorithm and a genetic algorithm. Details of the MariData project and example applications of the Weather Routing Tool can be found in the following publication: https://proceedings.open.tudelft.nl/imdc24/article/view/875.
+
+                Expected Results
+                The Weather Routing Tool should be extended by new features and its robustness should be improved. There are three major directions of possible developments:
+
+                Ship speed optimization
+                Currently, only the geometry of the route is optimized while the ship speed is assumed to be constant. To cover a broader range of real-world use cases, the Weather Routing Tool should provide the option to optimize ship speed. This could be along a fixed route or simultaneous with the route geometry.
+                Genetic algorithm
+                The implementation of the genetic algorithm is still very basic. Possible improvements include the generation of the initial population and the strategies for crossover and mutation. Moreover, a multi-objective optimization could be implemented.
+                General consumption model
+                An important aspect of the Weather Routing Tool is the underlying (fuel) consumption model. The best results can generally be obtained by using a consumption model which is developed specifically for a ship, e.g. based on hydrodynamic modeling or machine learning models. However, developing such specific models is cumbersome and restricts the applicability of the tool. Thus, having a general consumption model which only requires a few characteristics of a ship (e.g. type of vessel, length, breadth, displacement) would be a great improvement. The model should have reasonable accuracy. As this feature includes research aspects and can only be successfully developed with the necessary background knowledge, interested candidates have to provide a clear plan of their approach.
+                The features can be implemented in different ways. How they are implemented is up to the candidate and might include deterministic, machine learning or AI methods.
+
+                Code Challenge
+                New ship class:
+
+                Implement a new ship class
+                It should inherit from the Boat base class
+                The get_ship_parameters method has to be implemented; it should return a “synthetic” fuel rate which depends on at least one environmental parameter (e.g. wave height)
+                Make sure the fuel rates (kg per second) are within a reasonable value range. Besides the weather conditions, typical fuel rates also depend on the ship size, type (e.g. container ship, tanker, fishing vessel) and speed.
+                The choice of the considered environmental parameters and the type of the function is free
+                You can take the ConstantFuelBoat class as an example
+                Prepare weather conditions
+                Options:
+                Create your own synthetic weather conditions
+                Download actual historical or forecast data from public portals (Copernicus, NOAA, …). You can use the Python package maridatadownloader directly or indirectly by setting “DATA_MODE” to “automatic“.
+                Run the Weather Routing Tool with your new ship class and a route of your free choice
+                Hint: because the Python package mariPower is not publicly available, you need to comment or delete the corresponding lines in ship.py.
+                Configuration:
+                Set “ALGORITHM_TYPE” to “isofuel”
+                Provide the expected results for review
+                Mandatory:
+                Final route as GeoJSON file
+                Python code of new ship class
+                Optional:
+                Log file (info.log)
+                Snapshots of routing steps (WRT_FIGURE_PATH)
+                Used weather data
+                Community and Code License
+                MIT License
+
+                Mentors
+                Martin Pontius (m.pontius @52north.org), Katharina Demmich (k.demmich @52north.org)
+
+                Project Duration
+                The duration of the project is estimated at 175 hours. An extension is possible.
+
+                TBD
+
+                Cloud Native OGC SensorThings API 2
+                enviroCar
+    totalCharacters_of_ideas_content_parent: 10019
+    totalwords_of_ideas_content_parent: 1397
+    totalTokenCount_of_ideas_content_parent: 2059
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/52north-spatial-information-research-gmbh/
+    idea_list_url: https://52north.org/outreach-dissemination/google-summer-of-code/project-ideas/
+
+
+  - organization_id: 2
+    organization_name: AFLplusplus
+    no_of_ideas: 4
+    ideas_content: >-
+      Proposal 1: Tool for Automated generic/bounds simplification
+        Create a (general, not LibAFL-specific) rust tool to simplify/minimze bounds
+
+        Description
+        As commented by many users and maintainers of LibAFL, our codebase is absolutely full of complicated generics. We use these to allow for structured and statically-checked compatibility between various components provided in our codebase, and is a critical part of how LibAFL is structured.
+
+        Unfortunately, these can be very difficult to maintain. Our goal is to develop a tool capable of assisting developers in this maintenance process.
+
+        Please check out issue #2868 for more details.
+
+        Expected Outcomes
+        A tool that works on any rust code, tries to minimize the used bounds, and fixes the code
+
+        Skills Expected
+        Rust
+        A good understanding of Generics and the Rust Type system
+        Possible Mentors
+        @addisoncrump
+        @tokatoka
+        Expected size of the project
+        The project is expected to take either 175 or 350 hours.
+
+        Difficulty Rating
+        The overall difficulty of this project is expected to be medium.
+        ~~~~~~~~~~
+        Proposal 2: Adapt qemuafl Frontend to LibAFL QEMU
+        The project consists of adapting the frontend of qemuafl, the AFL++'s QEMU fork, with LibAFL QEMU.
+
+        Description
+        The end goal of this project would be to run fuzzers built for qemuafl while using LibAFL QEMU as the backend, in a retrocompatible way.
+        A draft PR is already available and can be used as a starting point by the student.
+        Ideally, the student would measure the performance (in terms of exec/s and coverage) of the new qemuafl adaptation with some fuzzers to evaluate how the final implementation compares with the reference.
+
+        Expected Outcomes
+        In short, we expect the student to make the new frontend work for most fuzzers developed for qemuafl while maintaining (at least) similar performance.
+
+        See #1983 for an initial implementation that still lacks features.
+
+        The main tasks the student would have to perform are the following:
+
+        Speak the AFL++ forkserver protocol (check the draft PR).
+        Add TCG caching to the LibAFL QEMU forkserver
+        Use LibAFL QEMU snapshots where possible
+        Add as many env variable features as possible
+        Skills Expected
+        We expect the student to:
+
+        have a strong background in the Rust and C languages.
+        be familiar with fuzzing.
+        ideally, have some experience using AFL++ and / or LibAFL.
+        ideally, have prior experience with the QEMU project.
+        Possible Mentors
+        The possible mentors for this project are:
+
+        @domenukk
+        @rmalmain
+        Expected size of the project
+        The project is expected to take either 175 or 350 hours.
+
+        Difficulty Rating
+        The overall difficulty of this project is expected to be medium.
+
+        Original post
+        This proposition is mostly an adaptation of issue #2964.
+        ~~~~~~~~~~
+        Proposal 3: Network Emulation for LibAFL_QEMU
+        Implement syscall emulation for filesystem and network in libafl_qemu.
+
+        Description
+        The student must implement something similar to preeny and FitM to hook the network API and an emulator filesystem that can be snapshot-restored always hooking the syscall in libafl_qemu user mode
+
+        Expected Outcomes
+        A working network emulation layer for LibAFL_QEMU
+
+        Required Skills
+        Good understanding of Rust, C, system programming
+        Ideally: prior knowledge in emulators and fuzzing
+        Difficulty Rating
+        The overall difficulty of this project is expected to be medium.
+
+        Possible mentors
+        @domenukk
+        @rmalmain
+        Expected size of the project
+        The project is expected to take either 175 or 350 hours, depending on details
+        ~~~~~~~~~~
+        Proposal 4: Remote Worker Stage
+        Mutations and execution of a Stage is always on the machine LibAFL runs at. For very slow targets it may be beneficial to offload the actual executions to stateless worker.
+
+        Description
+        We could add a RemoteWorkerLauncherStage that builds n work packages, each including a next scheduled corpus entry, all metadata for this Testcase, the current feedback state, as well as additional random corpus entries for splicing.
+        The work package should then be posted to Redis or some other queue db (very much like celery, whatever a rust alternative is).
+        After the execution, the results should be collected in an extra stage
+
+        Expected Outcome:
+        The implementation and a set of working examples, including:
+        LibAFL Workers / RemoteWorkerLauncherStage + RemoteWorkerCollectorStage
+
+        Required Skills
+        Rust
+        Prior knowledge in distributed computing and/or fuzzing are a plus
+        Difficulty Rating
+        easy to medium
+
+        Possible mentors
+        @domenukk
+        @tokatoka
+        @addisoncrump
+        Length
+        175 hours
+    totalCharacters_of_ideas_content_parent: 4418
+    totalwords_of_ideas_content_parent: 600
+    totalTokenCount_of_ideas_content_parent: 1003
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/aflplusplus/
+    idea_list_url: https://github.com/AFLplusplus/LibAFL/issues/2992
+
+  - organization_id: 3
+    organization_name: AOSSIE
+    no_of_ideas: 13
+    ideas_content: >-
+      Agora Blockchain
+        Project Type: Medium
+        Description:
+        Agora Blockchain is a decentralized voting platform designed to enhance electoral integrity and accessibility. It enables transparent, tamper-proof voting through smart contracts, leveraging Chainlink CCIP for cross-chain functionality. Agora ensures fair participation and trust in election results by eliminating centralized control and providing a verifiable, immutable ledger of votes.
+
+        Key features include:
+
+        Multi-algorithm voting: Supports different voting mechanisms like ranked choice, quadratic voting, and stake-based voting.
+        Cross-chain voting: Uses Chainlink CCIP to enable voting across multiple blockchains.
+        Gas-efficient smart contracts: Optimized Solidity contracts reduce transaction costs.
+        Decentralized governance: Community-driven elections and decision-making.
+        User-friendly interface: Built with Next.js, Wagmi, and MetaMask for seamless interaction.
+        Expected Outcomes:
+        Smart Contract Enhancements:
+
+        Implement private elections for confidential voting.
+        Further optimize election factory contracts for gas efficiency.
+        Cross-Chain Expansion:
+
+        Extend Chainlink CCIP integration to support multiple blockchains.
+        Frontend & dApp Integration:
+
+        Build an intuitive UI using Next.js and Wagmi.
+        Ensure smooth wallet connectivity and real-time vote updates.
+        Analytics & Insights:
+
+        Develop a real-time dashboard for election statistics.
+        Track voter participation and engagement metrics.
+        Required Skills:
+        Solidity
+        Hardhat
+        Chainlink CCIP
+        Next.js
+        MetaMask
+        Wagmi
+        TailwindCSS
+        Zustand
+        Mentors:
+        Ronnie
+
+        ~~~~~~~~~~
+
+        BabyNest
+        Project Type: Large
+        Description:
+        Pregnancy is a life-changing journey filled with crucial medical appointments, tests, and healthcare decisions. However, expecting parents often struggle to keep track of these milestones, which can lead to missed appointments and added stress. Studies show that adherence to prenatal checkups directly impacts pregnancy outcomes, yet there is no universally accessible tool to assist parents in navigating healthcare requirements based on their country and trimester.
+
+        BabyNest is designed to solve this problem through a minimalist React Native app integrated with an AI-powered assistant. This intelligent assistant acts as a personal pregnancy planner and guide, ensuring that expecting parents stay informed, organized, and stress-free.
+
+        Users can benefit from features such as:
+
+        Automated tracking of trimester-specific medical appointments
+        Country-specific healthcare requirement notifications
+        Offline access to pregnancy care guidelines
+        AI-powered personalized recommendations and reminders
+        Expected Outcomes:
+
+        Mobile application built with React Native for cross-platform support
+        AI agent integration for intelligent pregnancy milestone scheduling, reminders and tracking
+        Offline-first architecture with local storage of healthcare guidelines
+        Required Skills:
+
+        Frontend Development (React Native)
+        Backend Development (Node.js, FastAPI)
+        AI and NLP (Python, LangChain)
+        Database Management (SQLite, Pinecone)
+        Mentors: Bhavik Mangla
+
+        ~~~~~~~~~~
+        DebateAI
+        Project Type: Large
+        Description:
+        DebateAI is an interactive, AI-enhanced debate game platform designed to improve users communication skills through structured competitive debates. Users can engage in real-time debates against both human opponents and AI-driven challengers on a wide range of real-world topics. The platform mimics formal debate competition structures, making it an effective practice and competitive tool.
+
+        Expected Outcomes:
+        User vs. User Debates:
+
+        Real-time interaction using WebSockets and WebRTC for audio, video, and text communication.
+        Structured debate formats with timed rounds, including opening statements, rebuttals, cross-examinations, and closing arguments.
+        User vs. AI Debates:
+
+        AI-driven opponents using LLMs to generate realistic counterarguments and adapt to user inputs.
+        User Management and Profiles:
+
+        Secure authentication and access control.
+        Personal dashboards to track debate history and manage settings.
+        Elo rating system for matchmaking and ranking users.
+        Custom Debate Spaces:
+
+        Users can create private rooms to debate on topics of their choice.
+        Platform Enhancement & Codebase Refactoring:
+
+        Refactor the existing codebase for better maintainability, scalability, and performance.
+        Improve real-time communication efficiency and backend services.
+        Required Skills:
+        ReactJS
+        TypeScript
+        GoLang
+        Python
+        Databases
+        LLMs
+        Mentors:
+        Bruno Keshav
+
+
+        ~~~~~~~~~~
+        Devr.AI
+        Project Type: Large
+        Description:
+        Devr.AI is an AI-powered Developer Relations (DevRel) assistant designed to seamlessly integrate with open-source communities across platforms like Discord, Slack, GitHub, and Discourse. It acts as a virtual DevRel advocate, helping maintainers engage with contributors, onboard new developers, and provide real-time project updates.
+
+        By leveraging LLMs, knowledge retrieval, and workflow automation, the assistant enhances community engagement, simplifies contributor onboarding, and ensures open-source projects remain active and well-supported.
+
+        Expected Outcomes:
+        AI-Driven Contributor Engagement
+
+        Automates interactions, welcomes new contributors, and guides them through onboarding.
+        Automated Issue Triage & PR Assistance
+
+        Helps maintainers prioritize issues and assists contributors in resolving them efficiently.
+        Knowledge Base & FAQ Automation
+
+        Provides instant answers to common queries, reducing repetitive maintainer workload.
+        AI-Powered Community Analytics
+
+        Tracks engagement metrics, identifies active contributors, and generates insights.
+        Required Skills:
+        GenAI
+        Supabase
+        FastAPI
+        Integrations:
+        Discord
+        Slack
+        GitHub
+        Mentors:
+        Chandan
+
+
+        ~~~~~~~~~~
+        DocPilot
+        Project Type: Large
+        Description:
+        Build a new age EMR application using conversational AI at its best. Existing EMR solutioning is Age-old! Doctors resist the overwhelming software which is high on costs and difficult to operate. Last innovation was made in 1990's. DocPilot listens to the whole consultation conversation between a doctor and patient, and generates a prescription for the doctor to just sign, print and save digitally.
+
+        The app should be able to separate out things like symptoms, diagnosis, medications and tests from the conversation it listens to. These are just the basic requirements. Research more on OPD appointments and include them in our solutioning.
+
+        Expected Outcomes:
+        Conversational AI-powered EMR that listens and auto-generates prescriptions.
+        Eliminates outdated, complex, and costly software for doctors.
+        Affordable and easy to use, reducing resistance from medical professionals.
+        Extracts symptoms, diagnosis, medications, and tests from conversations.
+        Allows doctors to review, sign, print, and save prescriptions digitally.
+        Integrates OPD appointment management for a seamless experience.
+        A modern solution replacing decades-old EMR systems.
+        Required Skills:
+        Flutter
+        AI
+        Appwrite
+        Mentors:
+        Jaideep
+
+        ~~~~~~~~~~
+
+        EduAid
+        Project Type: Medium
+        Description:
+        EduAid is an AI-driven tool designed to enhance online learning by generating quizzes from educational content, helping students improve retention and engagement. Currently available as a browser extension, we aim to expand it into a full-fledged platform with a website, optimized model pipelines, and better system performance.
+
+        Our current model supports difficulty-controlled quizzes for short-answer and multiple-choice questions (MCQs). We plan to extend this functionality to other formats, including fill-in-the-blanks, boolean, and match-the-following, by improving our models for diverse question generation. Additionally, we seek to integrate EduAid with other educational platforms to make it a seamless part of the learning ecosystem.
+
+        Expected Outcomes:
+        Fully deploy the EduAid browser extension and website.
+        Optimize model pipelines for better accuracy and response time.
+        Improve system performance for a smoother user experience.
+        Expand difficulty-controlled question generation to new formats.
+        Enhance UI/UX for better usability.
+        Integrate with other educational platforms for wider adoption.
+        Required Skills:
+        Frontend Development
+        Backend Development
+        PyTorch & NLP
+        System Design & Architecture
+        Mentors:
+        Aditya Dubey
+
+
+        ~~~~~~~~~~
+        Ell-ena
+        Project Type: Large
+        Description:
+        Ell-ena is an AI-powered product manager that automates task management by creating to-do items, tickets, and transcribing meetings while maintaining full work context. It is input-agnostic and features a chat interface where users can interact naturally.
+
+        Users can ask Ell-ena to perform tasks such as:
+
+        Create a ticket to work on the dark mode feature.
+        Add a to-do list item for my math assignment.
+        The AI understands the context and adds relevant details automatically. Advanced algorithms like Graph RAG can be leveraged for efficient context retrieval and decision-making.
+
+        Expected Outcomes:
+        AI-powered system that generates tasks, tickets, and meeting transcriptions.
+        Seamless chat-based interface for intuitive user interactions.
+        Context-aware automation to enrich task details automatically.
+        Implementation of Graph RAG or similar techniques for intelligent processing.
+        Scalable backend to support real-time task creation and management.
+        Required Skills:
+        ReactJS / NextJS
+        NodeJS / Any backend tech stack
+        AI / NLP
+        Graph RAG
+        Mentors:
+        Jaideep
+
+
+        ~~~~~~~~~~
+
+        Inpact
+        Project Type: Large
+        Description:
+        Inpact is an AI-powered creator collaboration and sponsorship matchmaking platform designed to connect content creators, brands, and agencies through data-driven insights. This open-source platform enables influencers to discover relevant sponsorship deals, collaborate with like-minded creators, and optimize brand partnerships.
+
+        By leveraging GenAI, audience analytics, and engagement metrics, Inpact ensures highly relevant sponsorship opportunities for creators while maximizing ROI for brands investing in influencer marketing.
+
+        Expected Outcomes:
+        AI-Driven Sponsorship Matchmaking
+
+        Automatically connects creators with brands based on audience demographics, engagement rates, and content style.
+        AI-Powered Creator Collaboration Hub
+
+        Facilitates partnerships between creators with complementary audiences and content niches.
+        AI-Based Pricing & Deal Optimization
+
+        Provides fair sponsorship pricing recommendations based on engagement, market trends, and historical data.
+        AI-Powered Negotiation & Contract Assistant
+
+        Assists in structuring deals, generating contracts, and optimizing terms using AI insights.
+        Performance Analytics & ROI Tracking
+
+        Enables brands and creators to track sponsorship performance, audience engagement, and campaign success.
+        Required Skills:
+        ReactJS
+        GenAI
+        Supabase
+        FastAPI
+        Mentors:
+        Chandan
+
+        ~~~~~~~~~~
+        Monumento
+        Project Type: Large
+        Description:
+        Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform dedicated to cultural and historical experiences. Whether you're a traveler or a history enthusiast, Monumento offers an immersive way to engage with the world’s most treasured locations.
+
+        Expected Outcomes:
+        Improved UI responsiveness
+
+        Improve the app's responsiveness across different devices and screen sizes.
+        Ensure a seamless user experience on various platforms.
+        Better social system
+
+        Improve the social aspect of the app by improving the feed and user profiles and the ability to interact with other users.
+        Introduce new features like events, communities to keep users engaged
+        Make Popular Monumnets Dynamic
+
+        Introduce a dynamic system where popular monuments can be updated with new information and images by the users.
+        Allow users to add new monuments to the app and make them available for users to check in to.
+        Itineray
+
+        Introduce a itinerary feature to help users plan their trips and discover new places.
+        Allow users to save their favorite monuments and create personalized itineraries.
+        Required Skills:
+        Flutter
+        Appwrite/Pocketbase/Supabase
+        Generative AI
+        ARCore/ARKit
+        UI/UX Design
+        Mentor:
+        Mohammed Mohsin
+
+        ~~~~~~~~~~
+
+        Neurotrack
+        Project Type: Medium
+        Description:
+        Neurotrack is an AI-powered platform designed for schools and therapy centers to detect, assess, and manage neurodevelopmental conditions like Autism, ADHD, and learning difficulties. By automating assessments, personalized education plans, and therapy tracking, it empowers educators, therapists, and parents to provide more effective, data-driven support.
+
+        Expected Outcomes:
+        AI-Powered Student Grouping
+
+        Identifies patterns and groups students with similar needs for tailored interventions.
+        Automated Individualized Education Plans (IEPs)
+
+        Creates personalized learning strategies with AI-driven recommendations.
+        Digital Assessments
+
+        Conducts efficient, research-backed evaluations to track progress.
+        Real-Time Reports & Insights
+
+        Provides actionable data for educators, therapists, and parents.
+        Comprehensive Therapy Tracking
+
+        Logs sessions, progress, and improvements over time.
+        Parent Support Assistant
+
+        AI-driven chat support for guidance and resource recommendations.
+        Seamless Scheduling
+
+        Simplifies session planning for educators and therapists.
+        Required Skills:
+        GenAI
+        Supabase/Appwrite
+        Flutter
+        Mentors:
+        Mohsin
+        ~~~~~~~~~~
+        Perspective
+        Project Type: Large
+        Description:
+        In today's digital landscape, personalized content algorithms and social media feeds often create echo chambers of various news and different perspectives and narratives. Users are repeatedly exposed to viewpoints confirming their beliefs. This reinforcement of confirmation bias leads to increased polarization and limits critical thinking.
+
+        The Perspective app tackles the issue of echo chambers and confirmation bias by actively presenting users with well-researched, alternative viewpoints alongside their regularly consumed content. It analyzes the current narrative of a news article, social media post, or online discussion, then curates counterarguments from credible sources. This exposure encourages critical evaluation and helps users see beyond the single perspective they might be constantly fed, ultimately fostering a more balanced and nuanced understanding of complex facts. You don't need to rely on truncated news, get complete facts.
+
+        Users can benefit from features such as:
+
+        Counter-perspective: Instantly see counterarguments and narration of why other perspective.
+        Reasoned Thinking: The tool will provide a counter-narrative of the same fact with strongly connected facts.
+        Updated Facts: With the help of context-aware LLMs, we will provide the latest facts and counter-facts.
+        Seamless Integration: Works with news, blogs, and social media applications.
+        Real-Time Analysis: You don't need to wait for any author, make Perspective your companion for immediate insights as you browse.
+        Expected Outcomes:
+
+        Less Bias in narratives: Break out of echo chambers.
+        Wider Perspectives: Broaden your understanding of the news you are watching.
+        Better Discourse: More balanced discussions.
+        Sharper Analysis: Improved critical thinking and decreased your mind's polarisation.
+        Required Skills:
+
+        Frontend Development (ReactJS)
+        Backend Development (Python, FastAPI)
+        AI and NLP (Python, LangChain, Langgraph, Prompt Engineering)
+        Database Management (Any VectorDB)
+        Mentors: Manav Sarkar
+
+        ~~~~~~~~~~
+
+        Pictopy
+        Project Type: Medium
+        Description:
+        Pictopy is currently built using Tauri, relying on Rust, but it comes with platform-specific dependencies that make it difficult to containerize and ship. Electron has been considered as an alternative, but issues with rendering local machine photos and bypassing security have caused challenges in the past. This has led to difficulty in onboarding new contributors as many give up during the setup process, resulting in fewer active contributors.
+
+        The backend has been stable but stagnant and could use refactoring and design enhancements to improve its growth and functionality. While the backend is working without issues, there is potential for improvement and future scaling.
+
+        Expected Outcomes:
+        Rework the frontend to explore other options that can simplify setup and containerization.
+        Address issues related to Electron, including photo rendering and security bypassing.
+        Increase contributions from new developers by simplifying the setup process.
+        Refactor and enhance the backend for better growth and scalability.
+        Provide design improvements to the backend for smoother development and future expansions.
+        Required Skills:
+        Rust
+        Electron
+        Backend Development
+        Frontend Development
+        Mentors:
+        Pranav Aggarwal
+        ~~~~~~~~~~
+        Resonate
+        Project Type: Medium
+        Description:
+        Resonate is an open-source social voice platform designed to enable real-time audio interactions, storytelling, and voice-based social networking. The project is built with a strong focus on open collaboration, accessibility, and innovation in voice communication. Whether it's live discussions, pair chats, or immersive story experiences, Resonate is designed to put voice at the center of social engagement.
+
+        Expected Outcomes:
+        Expanded Audio Story Marketplace
+
+        Develop a fully-fledged marketplace for audio stories, allowing users to create, browse, and follow creators.
+        Implement profile pages with a follower system, showcasing user content and social interactions.
+        User & Creator Search Functionality
+
+        Enhance the explore page by adding user search functionality.
+        Enable users to follow creators, view their profiles, and stay updated on their latest audio stories.
+        Friend System for Personal Communication
+
+        Implement a friend request and acceptance system.
+        Enable direct personal chats and voice calls between friends.
+        Improved Pair Chat Experience
+
+        Introduce a lobby system where users can see the number of people waiting before joining a pair chat.
+        Improve UI/UX to enhance user engagement and interaction.
+        Required Skills:
+        Flutter
+        Appwrite
+        LiveKit
+        WebRTC
+        UI/UX Design
+        Mentor:
+        Aarush Acharya
+    totalCharacters_of_ideas_content_parent: 17886
+    totalwords_of_ideas_content_parent: 2039
+    totalTokenCount_of_ideas_content_parent: 3492
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/aossie/
+    idea_list_url: https://aossie.org/ideas
+
+  
+  - organization_id: 4
+    organization_name: API Dash
+    no_of_ideas: 10
+    ideas_content: >-
+
+          1. DashBot
+          Related Issue - #621
+
+          Develop DashBot - the AI assistant for API Dash which supercharges developer productivity by helping developers automate tedious tasks, follow best practices, interact & obtain contextual suggestions, all via natural-language input. DashBot must be designed in a modular and extensible manner and provide the following list of features (suggestive, not exhaustive):
+
+          Explain responses & identify any discrepancy
+          Debug requests based on Status codes & Error messages
+          Generate API documentation
+          Understand API and generate tests
+          Generate plots & visualizations for API responses along with ability to customize
+          Generate API integration frontend code for frontend frameworks like React, Flutter, etc.
+          For each of the tasks you are also required to prepare benchmark evaluations so that it is easier for end users to choose the right backend LLM.
+
+          Skills: AI, Agent, LLM Evaluation, Testing, Python, Dart, Flutter
+          Difficulty: Medium-High
+          Length: 175 hours
+
+          ~~~~~~~~~~
+
+          2. AI Agent for API Testing & Tool Generation
+          Related Issue - #620
+
+          Develop an AI Agent which leverages the power of Large Language Models (LLMs) to automate and enhance the process of testing APIs. Also, simplify the process of converting APIs into structured tool definitions to enable seamless integration with popular AI agent frameworks like crewAI, smolagents, pydantic-ai, langgraph, etc.
+
+          Traditional API testing involves manually crafting requests, validating responses, and writing test cases. However, AI Agents can significantly streamline this process by generating test cases, validating API responses against expected outputs, and even suggesting improvements based on API documentation. Developers can describe test scenarios in natural language, and the agent can automatically generates API requests, parameter variations, and edge cases. It can also interpret API responses, checking for correctness, consistency, and performance benchmarks. This reduces manual effort while increasing coverage and efficiency, making API testing smarter and more efficient.
+
+          You are also required to prepare benchmark dataset & evaluations so that the right backend LLM can be selected for the end user.
+
+          Skills: AI, Agent, LLM Evaluation, Testing, Python, Dart, Flutter
+          Difficulty: Medium-High
+          Length: 175 hours
+
+          ~~~~~~~~~~
+
+          3. API Explorer
+          Related Issue - #619
+
+          This project is designed to enhance the API Dash user experience by integrating a curated library of popular and publicly available APIs. This feature allows users to discover, browse, search, and directly import API endpoints into their workspace for seamless testing and exploration. Developers can access pre-configured API request templates, complete with authentication details, sample payloads, and expected responses. This eliminates the need to manually set up API requests, reducing onboarding time and improving efficiency. APIs spanning various domains—such as AI, finance, weather, and social media—are organized into categories, making it easy for users to find relevant services. You are required to develop the entire process backend in the form of an automation pipeline which parses OpenAPI/HTML files, auto-tag it to relevant category, enrich the data, create templates. You can also add features such as user ratings, reviews, and community contributions (via GitHub) to ensure accurate and up-to-date resources.
+
+          Skills: UX Design, OpenAPI, Automation, Dart, Flutter
+          Difficulty: Low-Medium
+          Length: 175 hours
+
+          ~~~~~~~~~~
+
+          4. AI API Eval Framework
+          Related Issue - #618
+
+          Develop an end-to-end AI API eval framework and integrate it in API Dash. This framework should (list is suggestive, not exhaustive):
+
+          Provide an intuitive interface for configuring API requests, where users can input test datasets, configure request parameters, and send queries to various AI API services
+          Support evaluation AI APIs (text, multimedia, etc) across various industry task benchmarks
+          Allow users to add custom dataset/benchmark & criteria for evaluation. This custom scoring mechanisms allow tailored evaluations based on specific project needs
+          Visualize the results of API eval via tables, charts, and graphs, making it easy to identify trends, outliers, and performance variations
+          Allow execution of batch evaluations
+          Work with both offline & online models and datasets
+          Skills: AI, Evaluations, Dart, Python, Flutter
+          Difficulty: Medium-High
+          Length: 175 hours
+
+          ~~~~~~~~~~
+
+          5. API Testing Support for - WebSocket, SSE, MQTT & gRPC
+          Related Issue - #15 #115 #116 #14
+
+          Testing WebSocket, MQTT (Message Queuing Telemetry Transport), and SSE (Server-Sent Events) protocols is crucial for ensuring the reliability, scalability, and security of real-time communication systems. Whereas, gRPC (Remote Procedure Call) facilitates efficient communication between distributed systems using Protocol Buffers (protobuf) as its interface definition language (IDL) and offers features such as bi-directional streaming, authentication, and built-in support for load balancing and health checking. Each of these API protocols/styles serves different purposes and is utilized in various applications ranging from finance to web applications to IoT (Internet of Things) devices. The objective of this project is to design the architecture of the core library, understand the specs & implement the support for testing, visualization & integration code generation of these APIs in API Dash.
+
+          Skills: Understanding Specs/Protocols, UX Design, Dart, Flutter
+          Difficulty: Medium-High
+          Length: 350 hours
+
+          ~~~~~~~~~~
+
+          6. AI UI Designer for APIs
+          Related Issue - #617
+
+          Develop an AI Agent which transforms API responses into dynamic, user-friendly UI components, enabling developers to visualize and interact with data effortlessly. By analyzing API response structures—such as JSON or XML—the agent automatically generates UI elements like tables, charts, forms, and cards, eliminating the need for manual UI development. One can connect an API endpoint, receive real-time responses, and instantly generate UI components that adapt to the data format. It must also support customization options, allowing developers to configure layouts, styles, and interactive elements such as filters, pagination, and sorting. Finally, users must be able to easily export the generated UI and integrate it in their Flutter or Web apps.
+
+          Skills: AI, UX, Parsing, XML, JSON, Python, Dart, Flutter
+          Difficulty: Easy-Medium
+          Length: 90 hours
+
+          ~~~~~~~~~~
+
+          7. API Testing Suite, Workflow Builder, Collection Runner & Monitor
+          Related Issues - #96 #100 #120
+
+          The objective of this project to design and implement an API testing & workflow builder suite which allows various types of API testing:
+
+          Validation Testing: Verify that the API meets functional and business requirements. Automate the testing & validation of responses received from an API against predefined expectations (assertions), Schema validations, etc.
+          Integration Testing: Checks proper interaction between different APIs
+          Security Testing: Identifies vulnerabilities and safeguards data
+          Performance Testing: Measures speed, responsiveness, and stability under varying loads
+          Scalability Testing: Evaluates the system's ability to grow with demand
+          Users should be able to easily create collections of APIs for testing. It will also be useful to provide a API workflow builder (a drag and drop environment) to create API workflows and chain requests. The UI must allow users to execute this collection of API requests and test it in a systematic and automated manner (Collection Runner) and finally monitor the results.
+
+          Skills: UI/UX Design, Automation, Testing, Dart, Flutter
+          Difficulty: Medium-High
+          Length: 350 hours
+
+          ~~~~~~~~~~
+
+          8. Adding Support for API Authentication Methods
+          Issue - #609
+
+          Add support for various API authentication methods:
+
+          Basic authentication: Sending a verified username and password with API request Add API Auth: Basic authentication #610
+          API key: Sending a key-value pair to the API either in the request headers or query parameters Add API Auth: API key #611
+          Bearer token: Authenticate using an access key, such as a JSON Web Token (JWT) Add API Auth: Bearer token #612
+          JWT Bearer: Generate JWT bearer tokens to authorize requests Add API Auth: JWT Bearer #613
+          Digest Auth: Client must send two requests. First request sent to the server receives a nonce value, which is then used to produce a one-time-use hash key to authenticate the request Add API Auth: Digest Auth #614
+          OAuth 1.0 Add API Auth: OAuth 1.0 #615
+          OAuth 2.0 Implement OAuth 2.0 authentication #481
+          Skills: Authentication, Dart, Flutter
+          Difficulty: Low-Medium
+          Length: 90 hours
+
+          ~~~~~~~~~~
+
+          9. mem0 for Dart
+          mem0 is the goto memory layer for developing personalized AI Agents in Python. It offers comprehensive memory management, self-improving memory capabilities, cross-platform consistency, and centralized memory control. It leverages advanced LLMs and algorithms to detect, store, and retrieve memories from conversations and interactions. It identifies key information such as facts, user preferences, and other contextual information, smartly updates memories over time by resolving contradictions, and supports the development of an AI Agent that evolves with the user interactions. When needed, mem0 employs a smart search system to find memories, ranking them based on relevance, importance, and recency to ensure only the most useful information is presented.
+
+          Currently, we lack this memory layer in Flutter AI applications and your task is to port mem0 to Dart.
+
+          Skills: AI, Database, Data Structures, Python, Dart, Flutter
+          Difficulty: Medium-High
+          Length: 175 hours
+
+          ~~~~~~~~~~    
+
+          10. API Dash Feature Improvements
+          We always believe in improving our core features to help the end user. A suggestive list of features that can be improved are:
+
+          Adding pre-request script/post request script Pre-request and post-request for api collections #557
+          Importing from/Exporting to OpenAPI/Swagger specification Importing Requests from OpenAPI Specification file #121
+          Adding support for more content types in request Support for application/x-www-form-urlencoded Content-Type as body type formdata currently only supports multipart/form-data #337 Support File as Request Body #352
+          JSON body syntax highlighting, beautification, validation - Enhance Request Body Editor: JSON formatting, syntax highlighting, validation and other features #22 Add option to automatically/manually beautify JSON request body #581 Add syntax highlighting for JSON request body #582 Add validation for JSON request body #583 Add environment variable support in request body #590 Env. Variable Support for Text request body #591 Env. Variable Support for JSON request body #592 Env. Variable Support for Form request body #593
+          Support for comments in JSON body Support comments in JSON request body #599
+          Reading environment variables from OS environment Reading environment variables directly from OS environment #600
+          Adding color support for environments (like RED for prod, GREEN for dev) Adding color support for environments #601
+          Tab & whitespace settings
+          Notification when new app updates are available [feat] in-app update check #373
+          Better GraphQL editor
+          Beautify and expand/collapse feature for GraphQL query
+          Allow inspecting GraphQL schema
+          Support for GraphQL variables, fragments, mutation, subscription, etc.
+          More widget & integration tests
+          More code coverage
+          Skills: UX Design, Dart, Flutter
+          Difficulty: Easy-Medium
+          Length: 175 hours
+    totalCharacters_of_ideas_content_parent: 12602
+    totalwords_of_ideas_content_parent: 2654
+    totalTokenCount_of_ideas_content_parent: 2473
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/api-dash/
+    idea_list_url: https://github.com/foss42/apidash/discussions/565
+
+
+  
+  - organization_id: 5
+    organization_name: AboutCode
+    no_of_ideas: 10
+    ideas_content: >-
+        PURLdb - DeadCode: track End-Of-Life code
+        Code Repositories: https://github.com/aboutcode-org/purldb
+
+        Description:
+
+        Eventually old code goes unmaintained and dies. The goal of this project are:
+
+        To add data structures, models, and APIs in purldb to track end-of-life code and in general package and projects activities
+        To improve purl coverage at endoflife.date, see https://github.com/endoflife-date/endoflife.date/issues/763
+        To import and sync data from projects such as https://github.com/endoflife-date/endoflife.date
+        To design a module that can detect when
+        a project is turning end-of-life (using the above)
+        a project is unmaintained (use metrics from scorecard/other tools)
+        Note that on the endoflife.date side, we need to help improve PURL coverage of the database there, as this would be key to integrate with purldb. There
+
+        Priority: High
+
+        Size: Large
+
+        Difficulty Level: Advanced
+
+        Tags:
+
+        Python
+        Django
+        PostgreSQL
+        EOL
+        End of life
+        Mentors:
+
+        @pombredanne
+        @JonoYang
+        @AyanSinhaMahapatra
+        Related Issues:
+
+        https://github.com/aboutcode-org/purldb/issues/42
+        https://github.com/aboutcode-org/vulnerablecode/issues/722
+        https://github.com/endoflife-date/endoflife.date/issues/763
+
+        ~~~~~~~~~~
+        PURLdb - PopularCode - Find and track actually used and most popular open source code
+        Code Repositories: https://github.com/aboutcode-org/purldb
+
+        Description:
+
+        There are between 100 and 200 million open source projects and repos out there. Not all of them are equal. Some are much more useful than others, and some could be safely ignored. For instance, the linux kernel is more important, used and popular than a 1st year computer student school assignment project. The goal of this project is to determine when a project is popular and what are the most popular projects. If we do not know what code is used, we can spend a lot of resources to index less used code.
+
+        There are some simple approaches to this, using available statistics for downloads or Github stars, but that is not satisfying alone.
+
+        An idea would be to consider multiple factors to rank popularity and usage.
+
+        For instance: create a (current and updated) graph of dependencies and compute something like a pagerank but for packages
+        Then create with a metric on the freshness of the code like when last release and how much downloaded or based on git activity (excluding bots). This would grow for used code and decay for declining packages
+        Then combine this with the dependencies "connectedness"
+        Or, just a use the graph connections and no download stats, just a giant graph on top of purldb
+
+        Or something like this:
+
+        Finding strongly connected components
+        Relate packages ignoring versions
+        Find most connected
+        Discount distant connections, boost closest
+        Apply decay based on version freshness or git activity
+        The approach would be to start small with a single ecosystem as PoC and then extend this to all packages types.
+
+        Ideally, this should be exposed in PurlDB API and integrated in data collection operations.
+
+        Priority: High
+
+        Size: Large
+
+        Difficulty Level: Advanced
+
+        Tags:
+
+        Python
+        Django
+        PostgreSQL
+        Popularity
+        Mentors:
+
+        @pombredanne
+        @JonoYang
+        @AyanSinhaMahapatra
+
+        ~~~~~~~~~~
+        VulnerableCode project ideas
+        There are two main categories of projects for VulnerableCode:
+
+        A. COLLECTION: this category is to mine and collect or infer more new and improved data. This includes collecting new data sources, inferring and improving existing data or collecting new primary data (such as finding a fix commit of a vulnerability)
+
+        B. USAGE: this category is about using and consuming the vulnerability database and includes the API proper, the GUI, the integrations, and data sharing, feedback and curation.
+
+        VulnerableCode: Process unstructured data sources for vulnerabilities (Category A)
+        Code Repositories:
+
+        https://github.com/aboutcode-org/vulnerablecode
+        Description:
+
+        The project would be to provide a way to effectively mine unstructured data sources for possible unreported vulnerabilities.
+
+        For a start this should be focused on a few prominent repos. This project could also find Fix Commits.
+
+        Some sources are:
+
+        mailing lists
+        changelogs
+        reflogs of commit
+        bug and issue trackers
+        This requires systems to "understand" vulnerability descriptions: as often security advisories do not provide structured information on which package and package versions are vulnerable. The end goal is creating a system which would infer vulnerable package name and version(s) by parsing the vulnerability description using specialized techniques and heuristics.
+
+        There is no need to train a model from scratch, we can use AI models pre-trained on code repositories (maybe https://github.com/bigcode-project/starcoder?) and then fine-tune on some prepared datasets of CVEs in code.
+
+        We can either use NLP/machine Learning and automate it all, potentially training data masking algorithms to find these specific data (this also involved creating a dataset) but that's going to be super difficult.
+
+        We could also start to craft a curation queue and parse as much as we can to make it easy to curate by humans and progressively also improve some mini NLP models and classification to help further automate the work.
+
+        References: https://github.com/aboutcode-org/vulnerablecode/issues/251
+
+        Priority: Medium
+
+        Size: Large
+
+        Difficulty Level: Advanced
+
+        Tags:
+
+        Python
+        Django
+        PostgreSQL
+        Security
+        Vulnerability
+        NLP
+        AI/ML
+        Mentors:
+
+        @pombredanne
+        @tg1999
+        @keshav-space
+        @Hritik14
+        @AyanSinhaMahapatra
+        Related Issues:
+
+        https://github.com/aboutcode-org/vulnerablecode/issues/251
+
+        ~~~~~~~~~~
+        VulnerableCode: Add more data sources and mine the graph to find correlations between vulnerabilities (Category A)
+        Code Repositories:
+
+        https://github.com/aboutcode-org/vulnerablecode
+        Description:
+
+        See https://github.com/aboutcode-org/vulnerablecode#how for background info. We want to search for more vulnerability data sources and consume them.
+
+        There is a large number of pending tickets for data sources. See https://github.com/aboutcode-org/vulnerablecode/issues?q=is%3Aissue+is%3Aopen+label%3A"Data+collection"
+
+        Also see tutorials for adding new importers and improvers:
+
+        https://vulnerablecode.readthedocs.io/en/latest/tutorial_add_new_importer.html
+        https://vulnerablecode.readthedocs.io/en/latest/tutorial_add_new_improver.html
+        More reference documentation in improvers and importers:
+
+        https://vulnerablecode.readthedocs.io/en/latest/reference_importer_overview.html
+        https://vulnerablecode.readthedocs.io/en/latest/reference_improver_overview.html
+        Note that this is similar to this GSoC 2022 project (a continuation):
+
+        https://summerofcode.withgoogle.com/organizations/aboutcode/projects/details/7d7Sxtqo
+        References: https://github.com/aboutcode-org/vulnerablecode/issues?q=is%3Aissue+is%3Aopen+label%3A"Data+collection"
+
+        Priority: High
+
+        Size: Medium/Large
+
+        Difficulty Level: Intermediate
+
+        Tags:
+
+        Django
+        PostgreSQL
+        Security
+        Vulnerability
+        API
+        Scraping
+        Mentors:
+
+        @pombredanne
+        @tg1999
+        @keshav-space
+        @Hritik14
+        @jmhoran
+        Related Issues:
+
+        https://github.com/aboutcode-org/vulnerablecode/issues?q=is%3Aissue+is%3Aopen+label%3A"Data+collection"
+
+        ~~~~~~~~~~
+        VulnerableCode: On demand live evaluation of packages (Category A)
+        Code Repositories: https://github.com/aboutcode-org/vulnerablecode
+
+        Description:
+
+        Currently VulnerableCode runs importers in bulk where all the data from advisories are imported (and reimported) at once and stored to be displayed and queried.
+
+        The objective of this project is to have another endpoint and API where we can dynamically import available advisories for a single PURL at a time.
+
+        At a high level this would mean:
+
+        Support querying a specific package by PURL. This is not for an approximate search but only an exact PURL lookup.
+
+        Visit advisories/package ecosystem-specific vulnerability data sources and query for this specific package. For instance, for PyPi, the vulnerabilities may be available when querying the main API. An example is https://pypi.org/pypi/lxml/4.1.0/json that lists vulnerabilities. In some other cases, we may need to fetch larger datasets, like when doing this in batch.
+
+        This is irrespective of whether data related to this package being present in the db (i.e. both for new packages and refreshing old packages).
+
+        A good test case would be to start with a completely empty database. Then we call the new API endpoint for one PURL, and the vulnerability data is fetched, imported/stored on the fly and the API results are returned live to the caller. After that API call, the database should now have vulnerability data for that one PURL.
+
+        This would likely imply to modify or update importers to support querying by purl to get advisory data for a specific package. The actual low level fetching should likely be done in FetchCode.
+
+        This is not straightforward as many advisories data source do not store data keyed by package, as they are not package-first, but they are stored by security issue. See specific issues/discussions on these importers for more info. See also how things are done in vulntotal.
+
+        Priority: Medium
+
+        Size: Medium/Large
+
+        Difficulty Level: Intermediate
+
+        Tags:
+
+        Python
+        Django
+        PostgreSQL
+        Security
+        web
+        Vulnerability
+        API
+        Mentors:
+
+        @pombredanne
+        @tg1999
+        @keshav-space
+        Related Issues:
+
+        https://github.com/aboutcode-org/vulnerablecode/issues/1046
+        https://github.com/aboutcode-org/vulnerablecode/issues/1008
+
+        ~~~~~~~~~~
+        ScanCode.io project ideas
+        ScanCode.io: Create file-system tree view for project scans
+        Code Repositories:
+
+        https://github.com/aboutcode-org/scancode.io
+        Description:
+
+        When large packages/containers are scanned in scancode.io it is useful to have a tree-view to explore thorugh the file-tree for that package/container to look into scan data for a particular subset of the file-tree/directory or to research more into detections and detection issues.
+
+        This would be something similar to what we have at scancode-workbench for example: https://scancode-workbench.readthedocs.io/en/develop/ui-reference/directory-tree.html
+
+        I.e. we need the following features:
+
+        To be able to toggle showing the directory contents from the directory icon
+        Show nested directory contents in a tree like structure
+        Have this view ideally in a pane left to the table-view of resources
+        Show only info from the selected directory in the table-view of resources
+        Note that we do have a ProjectCodebaseView in the projects page currently in scancode.io but this is fairly limited as it only lets you browse through the codebase one directory at a time (only shows the files/directories in one directory), and lets you navigate to directories in the current directory or the parent directory from there.
+
+        Priority: High
+
+        Size: Large
+
+        Difficulty Level: Intermediate
+
+        Tags:
+
+        Python
+        Django
+        UI/UX
+        File-system
+        Navigation
+        Mentors:
+
+        @tdruez
+        @pombredanne
+        @AyanSinhaMahapatra
+        Related Issues:
+
+        https://github.com/aboutcode-org/scancode.io/issues/697
+
+        ~~~~~~~~~~
+        ScanCode.io: Add ability to store/query downloaded packages
+        Code Repositories:
+
+        https://github.com/aboutcode-org/scancode.io
+        Description:
+
+        Packages which are downloaded and scanned in SCIO can be optionally stored and accessed to have a copy of the packages which are being used for a specific product for reference and future use, and could be used to meet source redistribution obligations.
+
+        The specific tasks would be:
+
+        Store all packages/archives which are downloaded and scanned in SCIO
+        Create an API and index by URL/checksum to get these packages on-demand
+        Create models to store metadata/history and logs for these downloaded/stored packages
+        Additionally support and design external storage/fetch options
+        There should be configuration variable to turn this on to enable these features, and connect external databases/storage.
+
+        Priority: Low
+
+        Size: Medium
+
+        Difficulty Level: Intermediate
+
+        Tags:
+
+        Python
+        Django
+        CI
+        Security
+        Vulnerability
+        SBOM
+        Mentors:
+
+        @tdruez
+        @keshav-space
+        @jyang
+        @pombredanne
+        Related Issues:
+
+        https://github.com/aboutcode-org/scancode.io/issues/1063
+
+
+        ~~~~~~~~~~
+
+        ScanCode.io: Update SCIO/SCTK for use in CI/CD:
+        Code Repositories:
+
+        https://github.com/aboutcode-org/scancode.io
+        https://github.com/aboutcode-org/scancode-action
+        Description:
+
+        Enhance SCIO/SCTK to be integrated into CI/CD pipelines such as Github Actions, Azure Piplines, Gitlab, Jenkins. We can start with any one CI/CD provider like GitHub Actions and later support others.
+
+        These should be enabled and configured as required by scancode configuration files to enable specific functions to be carried out in the pipeline.
+
+        There are several types of CI/CD pipelines to choose from potentially:
+
+        Generate SBOM/VDRs/VEX with scan results:
+
+        Scan the repo to get all purls: packages, dependencies/requirements
+        Scan repository for package, license and copyrights
+        Query public.vulnerablecode.io for Vulnerabilities by PackageURL
+        Generate SPDX/CycloneDX SBOMs from them with scan and vulnerability data
+        License/other Compliance CI/CD pipelines
+
+        Scan repo for licenses and check for detection accuracy
+        Scan repo for licenses and check for license clarity score
+        Scan repo for licenses and check compliance with specified license policy
+        Check for OpenSSF scorecard data and specified policy on community health metrics
+        The jobs should pass/fail based on the scan results of these specific cases, so we can have:
+        a special mode to fail with error codes
+        description of issues and failure reasons, and docs on how to fix these
+        ways to configure and set up for these cases with configuration files
+        Dependency checkers/linters:
+
+        download and scan all package dependencies, get scan results/SBOM/SBOMs
+        check for vulnerable packages and do non-vulnerable dependency resolutuion
+        check for test failures after dependency upgrades and add PR only if passes
+        Jobs which checks and fixes for misc other errors:
+
+        Replaces standard license notices with SPDX license declarations
+        checks and adds ABOUT files for vendored code
+        We have an initial CI runner at https://github.com/nexB/scancode-action but we need to improve this with more functions, specially checking against predefined policies and failing/successful CI based on that.
+
+        References:
+
+        https://github.com/aboutcode-org/scancode.io/issues/599
+        https://github.com/aboutcode-org/scancode.io/issues/1582
+        Priority: High
+
+        Size: Large
+
+        Difficulty Level: Intermediate
+
+        Tags:
+
+        Python
+        Django
+        CI
+        Security
+        License
+        SBOM
+        Compliance
+        Mentors:
+
+        @pombredanne
+        @tdruez
+        @keshav-space
+        @tg1999
+        @AyanSinhaMahapatra
+        Related Issues:
+
+        https://github.com/aboutcode-org/scancode.io/issues/599
+
+        ~~~~~~~~~~
+        ScanCode Toolkit project ideas
+        Have variable license sections in license rules:
+        Code Repositories:
+
+        https://github.com/aboutcode-org/scancode-toolkit
+        Description:
+
+        There are lots of variability in license notices and declarations in practice, and one example of modeling this is the SPDX matching guidelines. Note that this was also one of the major ways scancode used to detect licenses earlier.
+
+        Support grammar for variability in license rules (brackets, no of words)
+        Do a massive analysis on license rules and check for similarity and variable sections This can be used to add variable sections (for copyright/names/companies) and reduce rules.
+        Support variability in license detection post-processing for extra-words case
+        Add scripts to add variable sections to rules from detection issues (like bsd detections)
+        Priority: Medium
+
+        Size: Medium
+
+        Difficulty Level: Intermediate
+
+        Tags:
+
+        Python
+        Licenses
+        LicenseDetection
+        SPDX
+        Matching
+        Mentors:
+
+        @AyanSinhaMahapatra
+        @pombredanne
+        @jyang
+        @DennisClark
+        Related Issues:
+
+        https://github.com/aboutcode-org/scancode-toolkit/issues/3601
+
+        ~~~~~~~~~~
+
+        Mark required phrases for rules automatically using NLP/AI:
+        Code Repositories:
+
+        https://github.com/aboutcode-org/scancode-toolkit
+        Description:
+
+        Required phrases are present in rules to make sure the rule is not matched to text in a case where the required phrase is not present in the text, which would be a false-positive detection.
+
+        We are marking required phrases automatically based on what is present in other rules and license attributes, but this still leaves a lot of rules without them. See https://github.com/aboutcode-org/scancode-toolkit/pull/3924 where we are also adding a script to add required phrases as individual rules if applicable and also adding required phrases added to other rules.
+
+        research and choose a model pre-trained on code (StarCoder?)
+        use the dataset of current SCTK rules to train a model
+        Mark required phrases in licenses automatically with the model
+        Test required phrase additions, improve and iterate
+        Bonus: Create a minimal UI to review rule updates massively
+        Priority: Medium
+
+        Size: Medium
+
+        Difficulty Level: Advanced
+
+        Tags:
+
+        Python
+        ML/AI
+        Licenses
+        Mentors:
+
+        @AyanSinhaMahapatra
+        @tg1999
+        @pombredanne
+        Related Issues:
+
+        https://github.com/aboutcode-org/scancode-toolkit/issues/2878
+
+          
+    totalCharacters_of_ideas_content_parent: 19350
+    totalwords_of_ideas_content_parent: 4455
+    totalTokenCount_of_ideas_content_parent: 4378
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/aboutcode/
+    idea_list_url: https://github.com/aboutcode-org/aboutcode/wiki/GSOC-2025-Project-Ideas
+
+
+
+
+  - organization_id: 6
+    organization_name: Accord Project
+    no_of_ideas: 7
+    ideas_content: >-
+        1. Linter for Concerto
+        Write a linter in TypeScript for Concerto Source files. It should make use of existing functionality to validate the Concerto DSL syntax and JSON AST of Concerto model against a set of rules. Rules should be defined in Typescript and which rules are run should be configurable. You may be able to make use of a tool like Spectral as the framework for defining our own rules over the Concerto AST (JSON).
+
+        Expected Outcomes:
+        A tool that allow users to:
+
+        Specify the naming of declarations. E.g. all names of scalars should be in camel case.
+        Specify the naming of properties, enum cases e.t.c
+        Specify which language features can be used. E.g. disallow maps, disallow forward references in regex validators.
+        Enforce the use of certain features. E.g. all string properties should have a length validator.
+        Enforce the use of @Term decorators on all declarations and properties e.t.c
+        All concepts in a namespace should extend a given concept
+        All concepts in a namespace must have unique names across multiple namespaces
+        Skills required/preferred:
+        Algorithms, Functional programming, Back end development, NodeJS, TypeScript
+
+        Possible Mentors:
+        Jamie Shorten, Sanket Shevkar
+
+        Expected size of project:
+        175 hours (medium)
+
+        Expected difficulty:
+        Medium
+
+        ~~~~~~~~~~
+
+        2. Decorator Command Set JSON<->YAML Convertor
+        Design and implement a convertor that would convert Decorator Command Sets JSON Objects to a much more human readable YAML format and vice-versa. Currently DCS JSON objects are very verbose to read, write and edit. With the new custom YAML format we aim to make DCS objects much more easier to read, write and edit.
+
+        Expected Outcomes:
+        A utility/method in DecoratorManager to convert DCS JSON to YAML and from YAML to JSON.
+        1:1 conversion is not expected. YAML should have a custom format that is less verbose and more readable.
+        Skills required/preferred:
+        NodeJS, Typescript, Javascript, Basic understanding of Data Formats like JSON and YAML
+
+        Possible Mentors:
+        Sanket Shevkar
+
+        Expected size of project:
+        175 hours (medium)
+
+        Expected difficulty:
+        Medium
+
+        ~~~~~~~~~~
+
+        3. Accord Project Agreement Protocol
+        The Accord Project Agreement Protocol (APAP) defines the protocol used between a document generation engine or contract management platform and an agreement server that provides agreement features like template management, document generation, format conversion etc.
+
+        Expected Outcomes:
+        Updated Open API specification
+        Updated reference implementation for the specification
+        Address (some of) open issues
+        Skills required/preferred:
+        NodeJS, Typescript, Javascript, REST API design
+
+        Possible Mentors:
+        Dan Selman, Niall Roche
+
+        Expected size of project:
+        350 hours (large)
+
+        Expected difficulty:
+        Medium
+
+        ~~~~~~~~~~
+
+        4. Specification Conformance Tests
+        Our specification conformance testing is in need of an overhaul! We'd like to migrate to a robust, proven testing framework like Vitest which would support ESM, and be performant and have a new dedicated concerto package used for Concerto conformance testing. An AI tool may be useful in helping with the migration, so feel free to mention how AI could help you with this project! The goal is to have a set of tests that can be run against any Concerto implementation to assess whether it is conformant with the specification.
+
+        Expected Outcomes:
+        Migration to Vitest (or other appropriate framework)
+        Consolidation of testing methodology and tooling
+        New concerto package for tests, focused on conformance
+        Build a set of tests for the Concerto validation rules
+        Skills required/preferred:
+        Node / Javascript
+        Unit testing (Mocha / Jest for example)
+        Behaviour driven testing (optional, Cucumber, for example)
+        Possible Mentors:
+        Dan Selman, Ertugrul Karademir
+
+        Expected size of project:
+        175 hours (medium)
+
+        Expected difficulty:
+        Medium
+
+        ~~~~~~~~~~
+
+        5. Incorporating AI into Template Playground
+        Our Template Playground web application is used to help onboard users to our technologies. We'd love to make this even easier by adding AI features to make it easier to create, edit, and preview contract templates. This project will build upon the work that was carried out last year in the context of VS Code.
+
+        Expected Outcomes:
+        Allow users to upload a file and we'd use AI to convert it to an Accord Project template
+        Possibly incorporate auto-complete suggestions when editing using the code editors built into the web app
+        Skills required/preferred:
+        ReactJS, AI tooling
+
+        Possible Mentors:
+        Diana Lease
+
+        Expected size of project:
+        350 hours (large)
+
+        Expected difficulty:
+        Medium
+
+        ~~~~~~~~~~
+
+        6. Testing for Code Generation Targets
+        We have tools that allow users to generate code from their Concerto models, supporting several languages. We would like to introduce a way of testing this code generation that compiles code for each language we are generating.
+
+        Expected Outcomes:
+        Set of Docker images for each code generation target
+        Run code gen tests within the correct image using GitHub actions, for example, generate Java code and then compile and run it using javac to ensure the generated code is correct
+        Skills required/preferred:
+        Systems engineering, CI/CD
+        Docker, Docker compose
+        GitHub actions
+        Possible Mentors:
+        Dan Selman, Ertugrul Karademir
+
+        Expected size of project:
+        175 hours (medium)
+
+        Expected difficulty:
+        Medium
+
+        ~~~~~~~~~~
+
+        7. Migration of Template Playground to use Tailwind CSS
+        As mentioned previously, our Template Playground web application is used to help onboard users to our technologies. By using a popular, well-maintained CSS framework like Tailwind, we could improve performance and code maintainability.
+
+        Expected Outcomes:
+        Template Playground updated to use Tailwind CSS
+        Existing UI tests updated
+        Possibly other UI changes to make user experience better, more performant, and/or optimized for multiple screen sizes
+        Skills required/preferred:
+        ReactJS, Tailwind CSS
+
+        Possible Mentors:
+        Diana Lease
+
+        Expected size of project:
+        175 hours (medium) - 350 hours (large)
+
+        Expected difficulty:
+        Medium
+
+
+          
+    totalCharacters_of_ideas_content_parent: 6850
+    totalwords_of_ideas_content_parent: 1663
+    totalTokenCount_of_ideas_content_parent: 1391
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/accord-project/
+    idea_list_url: https://github.com/accordproject/techdocs/wiki/Google-Summer-of-Code-2025-Ideas-List
+
+
+
+  - organization_id: 7
+    organization_name: Alaska 
+    no_of_ideas: 15
+    ideas_content: >-
+        [1] Automated coastline extraction for erosion modeling in Alaska.
+
+        Mentors: Frank Witmer (fwitmer -at- alaska.edu) and Rawan Elframawy (rawann.elframawy -at- gmail.com)
+
+        Overview: The rapidly warming Arctic is leading to increased rates of coastal erosion, placing hundreds of Alaska communities at the frontline of climate change. Understanding current rates of coastline change and accurately forecasting future changes is critical for communities to mitigate and adapt to these changes. Current modeling approaches typically use a simple linear model based solely on historical coastline positions to measure rates of change and extrapolate them into the future. In doing so, these models fail to capture the dynamic effects associated with decreasing sea ice, increasing annual wave energy, and increasing temperatures. To improve the quality of these coastal models, we need to increase the quantity of digitized coastlines, but manual photointerpretation is slow and laborious.
+
+        Current Status: An initial model and pipeline have been developed to automatically extract coastlines from PlanetLabs imagery. An auto-download script is available to retrieve PlanetLabs imagery (3-5m spatial resolution) by specifying any timeframe, cloud coverage percentage, and geometry. Additionally, NDWI with a majority sliding window has been introduced, allowing a specific threshold for each window to improve water detection accuracy. The DeepWaterMap algorithm was originally trained with the Global Surface Water (GSW) dataset at 30 m resolution from Landsat imagery, but the model did not not work well applied to PlanetLabs imagery. We are working to re-train the model using PlanetLabs imagery automatically labeled using the NDWI thresholding method. This project extends and expands on the progress made in 2024.
+
+        Potential areas of improvement:
+
+        Data Expansion (Deering 2017–2019 and Beyond): Currently using data from 2017 to 2019 for Deering; we plan to include more recent data to extend the time series.
+        Improved Cliff Area Segmentation: Enhance segmentation performance specifically in steep or cliff-like coastal areas.
+        Handling Challenging Conditions: Improve segmentation in regions with water shadows, buildings, satellite artifacts, and other data quality issues.
+        SWIR and Elevation Data Integration: Investigate combining short-wave infrared (SWIR) data and elevation data (e.g., DEMs) to further refine segmentation accuracy.
+        Expected Outcomes: A finished model with high accuracy that automatically extracts a vectorized coastline representation from PlanetLabs satellite imagery. Then, the model can be applied to large amounts of imagery to model coastline changes over time.
+
+        Required Skills: Python
+
+        Code Challenge: Experience with multi-band satellite imagery, geospatial data processing, and machine learning.
+
+        Source Code: https://github.com/fwitmer/CoastlineExtraction
+
+        Discussion Forum: https://github.com/fwitmer/CoastlineExtraction/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium
+
+        ~~~~~~~~~~
+
+        [2] Support for Logarithmic Number Systems in a Deep-Learning Framework.
+
+        Mentors: Mark Arnold (markgarnold -at- yahoo.com), Ed Chester (ed.chester -at- gmail.com), and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: The Logarithmic Number System (LNS) is an alternative to built-in Floating Point (FP), which makes multiplication and division easy at the expense of more difficult addition. Using overloaded operators, xlns provides an open-source Python library for LNS arithmetic. Interest in fabricating LNS hardware has grown since it may reduce power consumption for applications that tolerate approximate results, such as deep learning (see [1]-[5]). The problem is deep learning often relies on open-source Python frameworks (like Tensorflow or Pytorch) that are hardcoded to use FP hardware. A key feature of these frameworks is the ability to automatically compute gradients (based on the chain rule) by recording extra information about the computation stored in FP format. Such gradients are used during backpropagation training to update network weights.
+
+        Current Status: xlns, Tensorflow and Pytorch are all interoperable with the widely-used open-source Numpy library, but xlns is not interoperable with the Tensorflow and Pytorch frameworks because both frameworks are hard coded to use built-in int or FP data internally instead of LNS.
+
+        Expected Outcomes: The goal of this project is to provide support for a deep learning framework that uses xlns instead of FP internally (including network specification, automatic gradient, forward inference, and back-propagation training) while keeping high-level compatibility with the framework. This might be as part of xlns, or as a forked version of the chosen framework, or both. The contributor may choose either Pytorch or Tensorflow. The contributor should justify these decisions as part of the proposed design.
+
+        Required Skills: Calculus, Python, Numpy, and either Pytorch or Tensorflow
+
+        Code Challenge: The following three challenges illustrate the breath of issues involved. Each involves only a few lines of Python. Each involves working with both xlns and the framework. Doing all three in both Tensorflow and Pytorch might give evidence for which framework is more likely to lead to the expected outcome.
+
+        Currently, when the data starts in xlns format, Pytorch/Tensorflow converts to FP. As part of the code challenge, we expect the contributor to provide short Python code snippets that demonstrate that if the data starts in xlns format, the computation cannot be carried out in the xlns format.
+
+        xlns/examples/arn_generic.py is a hard-coded illustration of training a fully connected MLP with 28*28 input nodes, 100 hidden nodes and 10 output nodes using MNIST digit set. The hidden layer uses RELU and the output layer uses softmax. The FP weights for this are initialized as:
+
+        W1 = np.array((list(np.random.normal(0, 0.1, (785, 100)))))                    
+        W2 = np.array((list(np.random.normal(0, 0.1, (101, 10)))))
+        Because there is an extra weight for a constant 1.0 input in each layer, the number of rows is one larger than the inputs to the layer. The example can be run with various data types, for example with xlnsnp (LNS internally implemented with int64 Numpy ufuncs):
+
+        python3 arn_generic.py --type xlnsnp --num_epoch 7
+        or more conventionally
+
+        python3 arn_generic.py --type float --num_epoch 7
+        The code challenge is to implement a similar size fully connected network (in FP) using the provided features of Pytorch or Tensorflow and compare its convergence with arn_generic.py (Note: arn_generic.py uses manual differentiation, ie, the derivative of RELU is a constant, which depends on the sign of the argument, and elementary backpropagation implements the chain rule).
+
+        Consider LNS addition (1+2=3 and 3-1=2). The following illustrates the overloaded operator and xlnsnp internal representation (sign is LSB of the int64 value; the log portion is the rest):
+        >>> import xlns as xl
+        >>> x=xl.xlnsnp([2.0, 3.0])
+        >>> x
+        xlnsnp([xlns(1.9999999986889088) xlns(2.9999999688096786)])
+        >>> x.nd
+        array([16777216, 26591258])
+        By default, the log portion here is given with 23 bits of precision (see help for xl.xlnssetF for details on how to lower the precision as would be useful in machine learning), which is why the log(2.0) is given as 16777216.
+
+        >>> 2*np.int64(np.log2([2.0, 3.0])*2**23)
+        array([16777216, 26591258])
+        The expression with log2 double checks the answer for x in 23-bit format (with the additional *2 to make room for the sign bit). Had the +2.0 been -2.0, the representation would have been 16777217.
+
+        >>> y=xl.xlnsnp([1.,-1.])
+        >>> y
+        xlnsnp([xlns(1.0) xlns(-1.0)])
+        >>> y.nd
+        array([0, 1])
+        The above illustrates that the log(1.0)=0, and that the sign bit is one for negative values.
+
+        >>> x+y
+        xlnsnp([xlns(2.9999999688096786) xlns(1.9999999986889088)])
+        >>> (x+y).nd
+        array([26591258, 16777216])
+        Although the Pytorch/Tensorflow frameworks don’t support LNS, LNS can be constructed from int64 and float operations (which is how xlnsnp works). In xlns/src/xlns.py, there is a function sbdb_ufunc_ideal(x,y). If you call this with the following code:
+
+        >>> import numpy as np
+        >>> def myadd(x,y):  
+                  return np.maximum(x,y)+xl.sbdb_ufunc_ideal(-np.abs(x//2-y//2), (x^y)&1) ))
+        it performs the same operation internally on int64 values as the overloaded operator:
+
+        >>> myadd(x.nd,y.nd)
+        array([26591258, 16777216])
+        Such operations are supported by the frameworks (rather than here from np). This code challenge is to do a similar toy example within the tensor types provided by the framework, which gives a small taste of the difficulty involved in this project. (The code above for myadd is a slight oversimplification of xl.xlnsnp.__add__; see this for details on the treatment of 0.0.)
+
+        References:
+
+        [1] G. Alsuhli, et al., “Number Systems for Deep Neural Network Architectures: A Survey,” https://arxiv.org/abs/2307.05035, 2023.
+
+        [2] M. Arnold, E. Chester, et al., “Training neural nets using only an approximate tableless LNS ALU”. 31st International Conference on Application-specific Systems, Architectures and Processors. IEEE. 2020, pp. 69–72. https://doi.org/10.1109/ASAP49362.2020.00020
+
+        [3] O. Kosheleva, et al., “Logarithmic Number System Is Optimal for AI Computations: Theoretical Explanation of Empirical Success”, https://www.cs.utep.edu/vladik/2024/tr24-55.pdf
+
+        [4] D. Miyashita, et al., “Convolutional Neural Networks using Logarithmic Data Representation,” https://arxiv.org/abs/1603.01025, Mar 2016.
+
+        [5] J. Zhao et al., “LNS-Madam: Low-Precision Training in Logarithmic Number System Using Multiplicative Weight Update,” IEEE Trans. Computers, vol. 71, no. 12, pp.3179–3190, Dec. 2022, https://doi.org/10.1109/TC.2022.3202747
+
+        Source Code: https://github.com/xlnsresearch/xlns
+
+        Discussion Forum: https://github.com/xlnsresearch/xlns/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Hard
+
+        ~~~~~~~~~~
+
+        [3] Developing Distributed Algorithm for Metagenomic Error Correction and Assembly.
+
+        Mentors: Arghya Kusum Das (akdas -at- alaska.edu) and Yali Wang (ywang35 -at- alaska.edu)
+
+        Overview: A metagenomics study of Alaska would explore the diverse microbial communities in its unique environments, including the Arctic, marine, and terrestrial ecosystems. Such research could uncover insights into microbial adaptation to extreme conditions and contribute to understanding environmental and climate-related changes in the region. Metagenomic study has an immense impact on multiple science and engineering projects in Alaska such as, arctic healthcare, arctic water pollution, bio leaching on rare earth elements, arctic environmental sustainability and resilience, understanding boreal forest dynamics, wildfire mitigation, and so on. The list is never ending. Shotgun metagenomics, which involves sequencing DNA from a mixed sample of genomes within a community, offers a high-throughput approach to examine the genomic diversity of microbial populations. A key step in metagenomic analysis is assembling the shotgun reads into longer contiguous sequences, or contigs. However, genome assemblies from short reads are often highly fragmented, potentially generating millions of contigs per sample, especially in diverse communities. This challenge arises due to issues like sequence repeats within and between genomes, low coverage of certain species, and strain variability.
+
+        Current Status: Because of the variability in abundance in multiple species in the mixed sample of genomes, it is hard to design a theoretically solid algorithm to rectify the error in the sample and assemble it accurately. The low abundance species in the mixed sample are often wrongly classified as error if we use a traditional/existing algorithms that can rectify the error in a single species’ whole genome sequence. For the similar reason, the existing metagenomic assemblers are perform sub-optimally. Further, the existing software are limited in terms of their data handling capability. Most of them are capable to operate in a single node only. So, their data nailing is severely limited by the RAM available in one node. Also the time consumed for large datasets are often unreasonable.
+
+        Expected Outcomes: In this project, we will address the first two steps in metagenomic analysis i.e., error correction and assembly which are paramount for any downstream project. Metagenomic data is often large in size spanning to hundreds of gigabytes to terabyte scale. Our motivation is to develop distributed, HPC compatible solution for metagenomic error correction and assembly
+
+        (1) We are looking for working solutions (a solid algorithm and its implementation) for metagenomic error correction and assembly. The solutions should be theoretically justifiable and/or biologically meaningful. (2) The algorithm and the software implementation for both error correction and assembly should be distributed in nature. (3) We are open for AI/ML-enabled solutions but that is not a requirement. (4) GPU-enabled solutions are also encouraged but, it’s also not a requirement.
+
+        Required Skills: Python and experience with Deep Neural Networks
+
+        Code Challenge: Prior experience creating deep learning models is expected.
+
+        Source Code: https://github.com/akdasUAF/Metagenome
+
+        Discussion Forum: https://github.com/akdasUAF/Metagenome/discussions/
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium/Hard
+
+        ~~~~~~~~~~
+
+        [4] Telehealth over L4S.
+
+        Mentors: Kolawole Daramola (koladaramola -at- icloud.com) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: Low Latency, Low Loss, and Scalable Throughput (L4S) Internet Service 1, 2, 3 has shown promising performance, by rethinking congestion control. Can we have a telehealth deployment with pairs of L4S nodes? Perhaps starting with something simple, such as two DICOM endpoints to send radiographic images in between? Linux kernel with L4S patches can be a good point to start for the endpoints. How L4S, with telehealth and other applications, as well as classic non-L4S traffic, share the network will be an interesting test.
+
+        Current Status: A prototype has been built as part of the GSoC 2024. As rural Alaska is largely unconnected by the road network, people often need to fly into larger towns such as Fairbanks and Anchorage for their healthcare needs. This state of affairs has steered the telehealth initiatives in Alaska much more than elsewhere in the US. Our research partners from healthcare organizations such as Alaska Native Tribal Health Consortium (ANTHC) utilize telehealth in their daily operations. Improved telehealth access and performance can significantly benefit the patients and providers in terms of patient satisfaction and comfort.
+
+        Expected Outcomes: This project will review the latest advances from the research, deployment, and testing perspectives with using L4S in telehealth. The contributor will look into how this can be deployed in practice for various telehealth applications – sending DICOM images for diagnostics (high volume of data but tolerance for high latency), telemonitoring via wearable devices (low volume of data but demand for low latency), televisits (a video call through apps such as Zoom – high volume of data and demand for high latency). As a result of this project, we will understand whether we need any optimizations for L4S to use for telehealth applications and potential alternative approaches.
+
+        Required Skills: Python
+
+        Code Challenge: Experience with network protocols and installing Linux servers is a plus. Coding experience demonstrating such experiences is considered positive.
+
+        Source Code: https://github.com/KathiraveluLab/L4SBOA
+
+        Discussion Forum: https://github.com/KathiraveluLab/L4SBOA/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Hard
+
+        ~~~~~~~~~~
+
+        [5] Creating shareable "albums" from locally stored DICOM images
+
+        Mentors: Ananth Reddy (bananthreddy30 -at- gmail.com) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: DICOM data sets downloaded from PACS environments typically remain in the local environments, such as a research server or a cluster where the DICOM retriever (C-MOVE) is run. To use this data, researchers must identify certain subsets of data. This can be achieved by querying the retrieved data. DICOM images consist of textual metadata. By querying the metadata, subsets of images can be identified. However, currently, creating "albums" from locally stored DICOM images is not seamless.
+
+        Current Status: This feature does not exist in our open-source frameworks. We share images through other orthogonal approaches (via rclone, for example). This project will implement a stand-alone utility to effectively create albums from locally stored DICOM images.
+
+        Expected Outcomes: Several approaches to implementing such album features exist. One approach is to use Kheops to provide an interface to create and view the albums. MEDIator can be extended to create subsets and share the images via a unique URL as well. The proposed feature will make the images accessible to more researchers for their experiments by replacing the current manual data sharing efforts. Moreover, Kheops natively integrates with OHIF Viewer. As such, images retrieved locally can be viewed through OHIF Viewer by creating albums with Kheops. Contributors are encouraged to use Kheops or alternatives rather than reinventing the wheel (unless there is a convincing reason).
+
+        Required Skills: Python and Java.
+
+        Code Challenge: Experience working with DICOM images from previous projects or through a sample dummy project will be a plus.
+
+        Source Code: https://github.com/KathiraveluLab/Diomede (New Project).
+
+        Discussion Forum: https://github.com/KathiraveluLab/Diomede/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Easy
+
+        ~~~~~~~~~~
+
+        [6] Beehive: Integrated Community Health Metrics Framework for Behavioral Health to Supplement Healthcare Practice in Alaska.
+
+        Mentors: David Moxley (dpmoxley -at- alaska.edu) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: This project, a collaboration between the University of Alaska Anchorage Departments of Computer Science and Human Services, seeks to create a digital approach to translating the digitalization of art and photographic images into a digital database that stores in retrievable formats those images for use in advancing the delivery of human services and health care to people who experience considerable vulnerability and marginalization within the community. One of the project goals is to create a digital repository of these images, many of which reflect Outsider Art since the people who produce them are not formally trained as artists and experience considerable discrimination. The repository can be used to support research on Outsider art and Outsider Artists, education of health and human services practitioners about the impact of negative stereotypes on the health and well-being of people who are highly vulnerable, and arts programs devoted to advancing the health of vulnerable people.
+
+        This project aims to develop Beehive, a prototype implementation as an open-source data federation framework that can be used in research environments in Alaska and elsewhere.
+
+        Current Status: A prototype has been built as part of Alaska Season of Code. We are researching the approach for its use with our community partners in Anchorage, aiming to support marginalized folks such as the unhoused.
+
+        Expected Outcomes: In this project, the contributor will develop the Beehive platform for (1) translating digital images into the database, (2) developing the database to support user interactions with content, and (3) facilitating retrieval of images. The contributor will obtain an orientation to the project, instruction in how the arts and photography can represent health and well-being, and insight into using digital representations as an advocacy tool for improving the well-being of highly vulnerable people.
+
+        Required Skills: Database (MySQL or Mongo) and Python or Java. A build management tool such as Apache Maven is recommended if using Java.
+
+        Code Challenge: Prior experience with database management through established coding examples.
+
+        Source Code: https://github.com/kathiraveluLab/beehive.
+
+        Discussion Forum: https://github.com/KathiraveluLab/Beehive/discussions/
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium
+
+        ~~~~~~~~~~
+
+        [7] DICOM Image Retrieval and Processing in Matlab.
+
+        Mentors: Ananth Reddy (bananthreddy30 -at- gmail.com) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: DICOM (Digital Imaging and Communications in Medicine) is a radiographic imaging standard for how various modalities of scanners, PACS (Picture archiving and communication system) and other imaging systems communicate. As a storage protocol, it defines how images are stored in a standard way. It also functions as a messaging protocol, an extension to TCP.
+
+        Many DICOM processing tools exist. They support receiving images from the scanners and PACS to a research cluster in real-time as an imaging stream or on-demand selectively. They also provide means to anonymize the DICOM images to preserve patient privacy, export the DICOM images into a format such as PNG or JPEG, and extract the textual metadata from DICOM files to store it in a CSV file format or a database. Machine learning pipelines cannot be executed in clinical systems such as scanners and PACS. Therefore, the DICOM images and their metadata in the research clusters can be used to run machine learning pipelines.
+
+        Matlab has some out-of-the-box support for certain DICOM functions, and it could make our job easy in certain projects. This facilitates processing the files from the file system 2. Region-of-Interest is natively supported for DICOM-RT files in Matlab 3. It also supports deep learning on DICOM and NifTi files 4. Matlab currently does not support receiving images from DICOM systems such as PACS and Scanners over the network. Matlab used to have functions that utilize the Dicom toolkit to pull images from another server. It was available through Matlab's file exchange at one point called "dicom server connection." This is not publicly available anymore. However, we have the implementation available locally. The code was not recently tested, and therefore, its usability with the latest Matlab versions needs to be confirmed.
+
+        Current Status: This project is currently in the research stage.
+
+        Expected Outcomes: This project aims to create an easy-to-use open-source Matlab DICOM processing framework. We start with processing DICOM images since the current status of the DICOM networking in Matlab is unknown. But we will explore it, if possible and time permitting. Since this is a research project, we should study the existing projects first to avoid re-inventing the wheel. From Google Scholar, we see many processing and pipelines (ROI, deep learning, ...) on DICOM/DICOM-RT have been implemented using Matlab. Regardless of the scientific novelty, we can get an open-source solution to help with further ML stuff using Matlab on the DICOM files. However, we should also observe how this could be a scientific contribution and its merits beyond what is already available. We can use readily available public DICOM data sources to test our implementations, such as the Cancer Imaging Archive (TCIA), as that avoids having to deal with sensitive patient data with PHI. We will narrow down on a specific research use case to highlight the framework's usage in research.
+
+        Required Skills: Matlab
+
+        Code Challenge: Experience working with DICOM images from previous projects and prior experience with Matlab, as demonstrated through code examples, will be a plus.
+
+        Source Code: https://github.com/KathiraveluLab/Diomede (New Project).
+
+        Discussion Forum: https://github.com/KathiraveluLab/Diomede/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Hard
+
+
+        ~~~~~~~~~~
+
+        [8] Making ZeroMQ a first-class feature of concore.
+
+        Mentors: Shivang vijay (shivangvijay -at- gmail.com), Rahul Jagwani (rahuljagwani1012 -at- gmail.com), and Mayuresh Kothare (mvk2 -at- lehigh.edu)
+
+        Overview: concore is a lightweight framework for closed-loop peripheral neuromodulation control systems. concore consists of a file-sharing based concore protocol to communicate between the programs in a study. concore also allows a shared-memory based communication between programs. This project will implement a ZeroMQ-based communication between programs, as an alternative to the file-sharing based and shared-memory based communications. ZeroMQ is a message-oriented middleware implemented in multiple languages, which natively supports communications across computing nodes. Such an implementation will improve the usability of concore in distributed environments.
+
+        The study with 0MQ
+
+        Current Status: We experimented with an osparc-control based communication as an alternative to this default file-sharing based concore protocol. osparc-control is an extension of ZeroMQ. Our experimental osparc-control based implementation replaces the file-sharing mechanism restricted to one local machine with message queues that can be transmitted between locally networked machines. The contributor will use this osparc-control based communication as an inspiration for the proposed ZeroMQ-based implementation, which will function as a first-class approach to implement the edges of concore without using osparc-control. In our current experimental osparc-control based implementation, these ZeroMQ edges are not visible in the concore editor, the browser-based visual editor for concore. Consequently, studies with osparc-control are represented as forests instead of directed hypergraphs due to the "invisible" ZeroMQ communication. This also means to run a concore study with ZeroMQ communication, we have to run each hypergraph in the forest separately.
+
+        Expected Outcomes: We need to promote a unified experience in concore, whether the edges are implemented via the default file-sharing approach, shared-memory approach, or through this ZeroMQ message-based approach. In the concore file-sharing approach, we label the edges with alphabetical characters. In the concore shared-memory approach, we label the edges starting with positive decimal integers (specifying the memory channels used for the sharing). Therefore, to denote the concore ZeroMQ-based edges, the contributor should assume that all the ZeroMQ-edges must start with "0" in their labels, followed by a hexadecimal port, followed by an underscore (_). For example, edge 0x1234_Y assigns the logical Y to port 1234 and edge 0xabcd_U assigns the logical U to port abcd. Once such a graph with ZeroMQ-edges is made (a single directed hypergraph, rather than a forest with disjoint two or more directed hypergraphs), we should be able to seamlessly build and run the study regardless of the underlying communication mechanism. Thus, we aim to demonstrate the possibility of a seamless local vs. distributed execution in a cluster through ZeroMQ.
+
+        As the expected outcome of this project, we propose a ZeroMQ-based communication for concore with Python. In addition, the contributor may also implement the ZeroMQ-based communication with other programming languages supported by concore such as Matlab and C++. The contributor may also get inspiration from how the shared-memory based communication is implemented in concore.
+
+        Required Skills: Python
+
+        Code Challenge: Prior experience in Python must be demonstrated. Prior experience with message-oriented middleware frameworks such as ZeroMQ can be a plus, although not mandatory.
+
+        Source Code: https://github.com/ControlCore-Project/concore
+
+        Discussion Forum: https://github.com/ControlCore-Project/concore/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium
+
+
+        ~~~~~~~~~~
+
+        [9] Dynamic DICOM Endpoints.
+
+        Mentors: Ananth Reddy (bananthreddy30 -at- gmail.com) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: DICOM (Digital Imaging and Communications in Medicine) is a radiographic imaging standard for how various modalities of scanners, PACS (Picture archiving and communication system), and other imaging systems communicate. As a storage protocol, it defines how images are stored in a standard way. It also functions as a messaging protocol, an extension to TCP. DICOM implementations often have a queue to hold the images sent from the source. Since this is a networking communication, a queue may degrade the performance or introduce data loss. DICOM communications are defined by static source, query, and destination endpoints. Each endpoint is defined by hostname/IP address, port, and AE (Application Entity) Title. A DICOM endpoint such as a PACS or a scanner usually has these endpoints statically configured to ensure security and patient privacy.
+
+        This project attempts to send data from a source to dynamic destinations based on the queue and the performance. This can be a use case for teleradiology with multiple remote healthcare/radiologist sites present or a potential framework to enable federated learning on radiographic images. Orthanc can be set up as a DICOM endpoint that mimics a PACS 1. With multiple Orthanc servers configured, such a federated deployment can be prototyped. Ultimately, this project aims to study the possibilities and opportunities of supporting dynamic DICOM endpoints in practice.
+
+        Current Status: This project is currently in the research stage.
+
+        Expected Outcomes: A prototype implementation that supports dynamic DICOM endpoints.
+
+        Required Skills: Python
+
+        Code Challenge: Experience working with DICOM images from previous projects or through a sample dummy project will be a plus.
+
+        Source Code: https://github.com/KathiraveluLab/Diomede (New Project).
+
+        Discussion Forum: https://github.com/KathiraveluLab/Diomede/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Hard
+
+        ~~~~~~~~~~
+
+        [10] Bio-Block: A Blockchain-based Data Repository and Payment Portal.
+
+        Mentors: Chalinda Weerasinghe (chalindaweerasinghe -at- gmail.com), Erik Zvaigzne (erik.zvaigzne-at-gmail.com), and Forrester Kane Manis (Forrester-at-headword.co)
+
+        Overview: Most biological, genomic, genetic, medical, and behavioral data are currently collected, stored, and sold by vendors who initially offer products and services to clients in order to accumulate this data. The data, once given to companies, remains the property of the company, with very little compensation and autonomy offered to customers who provided the data in the first place. Can we create a secure, decentralized, and scalable data repository of such information for humans and animals, a true bio-block available to all and open-sourced, whereby the data owners get directly compensated? This project offers a response in the affirmative and leverages blockchains for data distribution, archiving, recording, and payments using a dual-chain structure on the Ethereum blockchain.
+
+        Current Status: This project is currently in the research stage.
+
+        Expected Outcomes: This overall project will be one of the first offerings of an open-source platform for all biological/medical/genomic/behavioral data that leverages the advantages of blockchains. While proprietary dual-chain blockchain architectures are used by companies in this space, our endeavor, through its sub-projects, aims to proof up the architecture that can be scaled and extended to all forms of client-submitted data and multiple retrieval and payment options. A proof of concept of the architecture will be tested using multivariate, heterogenous synthetic data.
+
+        Required Skills: Python is proposed as the programming language. However, students can also propose their preferred alternative programming language and frameworks. Prior experience developing on Ethereum is a plus.
+
+        Code Challenge: Prior experience in Python (or the proposed alternative language) and, preferably, Ethereum blockchain through established coding examples. Students are expected to establish their experience with Blockchain technologies and architecting and programming them through previous projects - ideally through their respective GitHub repository (or similar code repositories).
+
+        Source Code: https://github.com/bio-block/healthy (New Project).
+
+        Discussion Forum: https://github.com/bio-block/healthy/discussions
+
+        Effort: 350 hours
+
+        Difficulty Level: Hard
+
+        ~~~~~~~~~~
+
+        [11] Adopting Nunaliit for Alaska Native Healthcare Practices.
+
+        Mentors: Jessica Ross (jmross2 -at- alaska.edu) and Maria Williams (mdwilliams6 -at- alaska.edu)
+
+        Overview: Nughejagh is an Alaska Native holistic healthcare application. It uses Nunaliit as its map-based interface to store its data. The data is curated from various sources in the form of images, stories, and videos - which are stored using the Nunaliit map-based interface, supported by its CouchDB database. However, currently, Nunaliit lacks several desired features for Nughejagh. This project aims to fill the gap by implementing those features and developing scripts to automate the installation, configuration, and data loading process.
+
+        Current Status: This project is currently in the research stage.
+
+        Expected Outcomes: The expected goal is to have Nunaliit fine-tuned and configured to run Nughejagh with all its requirements. The project outcome might be a new stand-alone repository that uses Nunaliit, a forked version of Nunaliit, or more likely both. The contributor should justify their design decisions as part of the proposed design.
+
+        Required Skills: Prior experience in Javascript, Java, and Python.
+
+        Code Challenge: Deploy and configure Nunaliit locally and share a screenshot of a locally-running Nunaliit instance. Nunaliit runs well on Ubuntu 24.04.
+
+        Source Code: https://github.com/Nughejagh/nughejagh (New Project).
+
+        Discussion Forum: https://github.com/Nughejagh/nughejagh/discussions
+
+        Effort: 350 hours
+
+        Difficulty Level: Medium
+
+        ~~~~~~~~~~
+
+        [12] AWANTA: A Virtual Router based on RIPE Atlas Internet Measurements.
+
+        Mentors: Ananth Reddy (bananthreddy30 -at- gmail.com) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: RIPE Atlas is an Internet Measurement network composed of small network devices, known as RIPE Atlas Probes and Anchors, connected to the participating volunteers' routers. Using RIPE Atlas, we can measure the Internet latency and routing path through ping and traceroute measurements. This project aims to develop a software router that dynamically uses RIPE Atlas measurements to change the scheduling path. Before the implementation of the project, we should study the existing works on using RIPE Atlas probe for such network optimization tasks at the Internet scale to quickly understand the state-of-the-art and ensure scientific novelty in our approach.
+
+        Current Status: A prototype has been built as part of the GSoC 2024. We observe the use of such a framework in the Circumpolar North. Such an approach can provide significant benefits, especially in Alaska and the Canadian North, where Internet connectivity can be spotty.
+
+        Expected Outcomes: This project extends the RIPE Atlas client to use the measurements in network scheduling decisions. First, the measurements should be streamlined to perform periodically across several probes set as sources and destinations. The measurements across several probes in a single city can provide a more generalized measurement for a city rather than restricting to individual changes of any given probe when multiple such probes are available to a given city. Second, we will build a virtual router to use these measurements to dynamically influence the network scheduling decisions across several nodes. As the network performance changes with time, we can observe how the network path changes with time. We have more than 60 million RIPE Atlas credits that we accumulated by hosting a RIPE Atlas probe for the past five years. So, we have sufficient resources for these Internet measurement experiments.
+
+        Required Skills: Python.
+
+        Code Challenge: Prior experience in Python through established coding examples.
+
+        Source Code: https://github.com/KathiraveluLab/AWANTA
+
+        Discussion Forum: https://github.com/KathiraveluLab/AWANTA/discussions/
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium
+
+
+        ~~~~~~~~~~
+
+        [13] Alaska Wildfire Prediction Using Satellite Imagery.
+
+        Mentors: Yali Wang (ywang35 -at- alaska.edu) and Arghya Kusum Das (akdas -at- alaska.edu)
+
+        Overview: Given Alaska’s unique wildfire patterns, where large-scale fires occur annually in boreal forests, tundra, and remote wilderness, predicting fire-prone areas can help mitigate disasters and optimize resource allocation. The presence of vegetation (fuel) is necessary for a fire, but the determining factors are weather conditions (humidity, wind speed, temperature) and an ignition source (lightning, human activity, etc.). This project aims to develop a hybrid deep learning model to predict wildfire risk in Alaska by integrating optical, thermal, and synthetic aperture radar (SAR) satellite imagery with ground-based weather data. Traditional wildfire prediction relies on weather data, historical fire records, and human observations, which can be delayed or inaccurate in remote areas like Alaska. In contrast, satellite imagery provides real-time, high-resolution insights into vegetation health, thermal anomalies, burn severity mapping, soil moisture, fuel dryness, and even cloud-penetrating fire detection.
+
+        Satellite choices:
+
+        Satellite	Resolution	Revisit Frequency	Why Use It?
+        Landsat 8 & 9 (NASA/USGS)	30m (multispectral), 100m (thermal)	16 days	Tracks pre/post-fire vegetation and burn severity with great detail.
+        Sentinel-2 (ESA)	10m (RGB, NIR), 20m (SWIR)	5 days	High-resolution images for fire risk classification and early warnings.
+        MODIS (Terra/Aqua, NASA)	250m (fire detection), 1km (thermal)	Daily	Provides historical fire perimeters and active fire locations.
+        VIIRS (Suomi NPP & NOAA-20)	375m (fire detection), 750m (thermal)	Daily	Real-time fire monitoring, capturing active hotspots.
+        Sentinel-1 (ESA)	5m - 20m	6-12 days	SAR imaging for vegetation moisture & burned area mapping.
+        ALOS-2 (JAXA)	10m - 100m	14 days	L-band SAR for detecting dry fuel and terrain changes.
+        Additional ground data sources:
+
+        1). ERA5 Climate Reanalysis (ECMWF): Provides historical & real-time temperature, wind, and humidity data.
+
+        2). NOAA NWS Weather Data: Near real-time humidity, wind, and temperature.
+
+        3). Alaska Fire Service (AFS) Wildfire Data: Historical ignition source data (lightning, human activity).
+
+        Current Status: This project is currently in the research stage.
+
+        Expected Outcomes: This project aims to develop a deep-learning model that predicts wildfire risk in Alaska using a combination of satellite and ground-based weather data. The expected outcome of this project would involve both the dataset preprocessing pipeline and the performance of the developed model. Especially, the dataset preprocessing would include how to process the pre-fire and post-fire images efficiently and integrate the ground-based data with satellite imagery. Expected outcomes include:
+
+        Minimum viable product (MVP):
+
+        Fire risk classification: Given pre-fire satellite images, the model predicts the probability of a fire occurring within a defined time frame like 1 month, 3 months, or 6 months. The classifications should be "High Fire Risk," "Moderate Risk," or "No Risk."
+
+        1). Data pipeline development:
+
+        Preprocessing satellite images: Band selection, geospatial cropping, cloud removal (For this step, we are mostly interested in analyzing Sentinel-2 data);
+
+        Synthetic Aperture Radar (SAR) analysis: Extracting fuel moisture & terrain features (For this step, we are mostly interested in extracting information like vegetation density and soil moisture from Sentinel-1 SAR data);
+
+        Time-series weather data integration: Incorporating temperature, wind, and humidity. We have access to past decades of weather data for almost the past 30 years for multiple different places in Alaska.
+
+        2). Model training and prediction:
+
+        A hybrid model such as CNN-LSTM that analyzes satellite data and time-series weather trends (CNN-LSTM is just an example. We are open to multiple different types of analysis methodology);
+
+        A web-based GIS dashboard to visualize fire-prone regions in Alaska;
+
+        A report on model performance and fire risk metrics.
+
+        Required Skills: Python. Experience with deep learning and machine learning.
+
+        Code Challenge: Experience with multi-band satellite imagery, geospatial data processing (like ArcGIS Pro), and remote sensing.
+
+        Source Code: https://github.com/YaliWang2019/AK-Satellite-Imagery-Wildfire-Prediction (New Project)
+
+        Discussion Forum: https://github.com/YaliWang2019/AK-Satellite-Imagery-Wildfire-Prediction/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium/Hard
+
+        You are welcome to propose new open-source project ideas, especially those that serve the state of Alaska and its people. Please use the below template to create new project ideas. However, if you are proposing a new project idea as a contributor, make sure they are relevant to Alaska specifically and the circumpolar north in general. Also, contact potential mentors from the above-listed mentors and confirm their interest in your project idea before drafting an entire proposal based on your own idea.
+
+        ~~~~~~~~~~
+        
+        [14] Support for Logarithmic Number Systems in Large Language Models.
+
+        Mentors: Mark Arnold (markgarnold -at- yahoo.com) and Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu)
+
+        Overview: The Logarithmic Number System (LNS) is an alternative to built-in Floating Point (FP), which makes multiplication and division easy at the expense of more difficult addition. Using overloaded operators, xlnscpp provides an open-source C++ library for both 16- and 32-bit LNS arithmetic. Interest in fabricating LNS hardware has grown since it may reduce power consumption for applications that tolerate approximate results, such as deep learning (see [1]-[5]). Although LNS has been studied extensively for feed-forward networks, only recently [6] has LNS been considered for Large Language Models (LLMs).
+
+        LLMs consist of two main computations: a) feed-forward neural networks for which LNS has been shown to be useful, and b) an operation known as attention. The training of an LLM produces weights for both of these computations, which are often quantized to reduce data storage requirements. These quantized weights are reconstructed (usually in either 16- or 32-bit FP) and operated on by vectors of tokens (usually in similar FP format).
+
+        Existing LLM engines, such as the open-source llama.cpp, perform vector/matrix/tensor operations (mostly matrix multiply) between the FP tokens and the weights (in a variety of formats, not including LNS).
+
+        llama.cpp uses a library called ggml to do the actual math. The design of ggml supports a variety of FP hardware, such as CPUs and GPUs.
+
+        Current Status: xlnscpp is not supported by llama.cpp or ggml. Weights can be stored in a variety of built-in int or FP formats instead of LNS. Matrix operations are carried out in FP.
+
+        Expected Outcomes: The goal of this project is to provide support for xlnscpp instead of FP in ggml (and indirectly) llama.com. At a minimum, this involves modifying ggml to support a "virtual" LNS "machine" using xlnscpp to perform the actual LNS computation, but which appears to the calling llama.cpp like another hardware platform, like a GPU. The storage format of the quantized weights would still be the same, but they would be converted to LNS for computations like attention on LNS-format tokens. It is not expected that the speed would be as fast as if hardware FP were used, although a design that minimizes the slowdown is desirable (for instance, converting to LNS once, and reusing LNS many times, much as data is transferred to GPU memory and reused many times there). The purpose is a proof of concept that LNS yields valid output from an LLM. The design needs to implement enough ggml features to support an actual LLM, like Deepseek.
+
+        Required Skills: C++ and some familarity with LLMs
+
+        Code Challenge:
+
+        Run the xlns16test.cpp and xlns32test.cpp examples.
+
+        Go through the ggml example for 32-bit FP matrix multiplication on CPU ( https://huggingface.co/blog/introduction-to-ggml) which illustrates concepts like: ggml_backend (the code that does the computation on a GPU or CPU), ggml_context (a "container" that holds data), ggml_cgraph: (what computation the backend performs), ggml_backend_buffer: (hold the data of multiple tensors), and ggml_backend_buffer_type: (a "memory allocator" connected to each ggml_backend). This is quite involved because of the ggml_backend concept. Such experience will help you design a new ggml_backend for LNS (which your design proposal will describe as running on CPU using xlnscpp).
+
+        Write a standalone C++ program that has a function to do 32-bit FP matrix multiply with a main program that prints the FP result. Test it with the same matrix data as the previous ggml example. (Hint: use nested for loops to compute the sum of products that form the matrix product).
+
+        Modify this program to include xlns32.cpp (define xlns_ideal first) and perform the internal computation in LNS format. The main program and the signature of the function it calls remain the same (32-bit FP), which requires that the function convert to/from LNS before and after the matrix multiply. (Hint: if you do it properly, the overloaded xlnscpp assignment operator takes care of this automatically.) The sum of products should be computed entirely in LNS (not FP). Notice the numeric results are close to what FP produces.
+
+        Modify the program to include xlns16.cpp instead. Notice the numeric results are slightly less accurate (the 16-bit LNS product is stored in the 32-bit FP result). This illustrates the tradeoff of using reduced precision LNS, which is what we want to experiment with in this project.
+
+        These code challenges provide possible insight as to how the LNS-CPU backend your design proposal will describe can "look like" an FP backend to llama.cpp. When data would be transferred to the backend, it is converted to LNS. When data is transfered back to llama.cpp, it is converted back to 32-bit FP. This is one idea for this project. You may incorporate improvements to this concept in your design proposal that considers the features of ggml.
+
+        References:
+
+        [1] G. Alsuhli, et al., “Number Systems for Deep Neural Network Architectures: A Survey,” https://arxiv.org/abs/2307.05035, 2023.
+
+        [2] M. Arnold, E. Chester, et al., “Training neural nets using only an approximate tableless LNS ALU”. 31st International Conference on Application-specific Systems, Architectures and Processors. IEEE. 2020, pp. 69–72. https://doi.org/10.1109/ASAP49362.2020.00020
+
+        [3] O. Kosheleva, et al., “Logarithmic Number System Is Optimal for AI Computations: Theoretical Explanation of Empirical Success”, https://www.cs.utep.edu/vladik/2024/tr24-55.pdf
+
+        [4] D. Miyashita, et al., “Convolutional Neural Networks using Logarithmic Data Representation,” https://arxiv.org/abs/1603.01025, Mar 2016.
+
+        [5] J. Zhao et al., “LNS-Madam: Low-Precision Training in Logarithmic Number System Using Multiplicative Weight Update,” IEEE Trans. Computers, vol. 71, no. 12, pp.3179–3190, Dec. 2022, https://doi.org/10.1109/TC.2022.3202747
+
+        [6] P. Haghi, C. Wu, Z. Azad, Y. Li, A. Gui, Y. Hao, A. Li, and T. T. Geng, “Bridging the Gap Between LLMs and LNS with Dynamic Data Format and Architecture Codesign ,” in 2024 57th IEEE/ACM International Symposium on Microarchitecture (MICRO). Los Alamitos, CA, USA: IEEE Computer Society, Nov. 2024, pp. 1617–1631. https://doi.ieeecomputersociety.org/10.1109/MICRO61859.2024.00118
+
+        Source Code: https://github.com/xlnsresearch/xlnscpp
+
+        Discussion Forum: https://github.com/xlnsresearch/xlnscpp/discussions
+
+        Effort: 350 Hours
+
+        Difficulty Level: Hard
+
+        ~~~~~~~~~~
+
+        [15] Time and Ordering in Beehive.
+
+        Mentors: Pradeeban Kathiravelu (pkathiravelu -at- alaska.edu) and David Moxley (dpmoxley -at- alaska.edu)
+
+        Overview: Beehive was initiated as a collaboration between the University of Alaska Anchorage Departments of Computer Science and Human Services, but grew largely into a software platform through open-source contributions. Beehive seeks to create a digital approach to translating the digitalization of art and photographic images into a digital database that stores in retrievable formats those images for use in advancing the delivery of human services and health care to people who experience considerable vulnerability and marginalization within the community. One of the project goals is to extend the current Beehive software as a repository of photomemories (a 2D projection of 3D spaces) X time. This project aims to extend Beehive with these additional capacities and develop data mining algorithms to support this use case of photos as frozen snapshots in an individual's life.
+
+        Current Status: The current Beehive prototype does not consider the complexities of time and ordering in the use of behavioral patterns and narratives in the journey to recovery.
+
+        Expected Outcomes: In this project, the contributor will (1) extend the Beehive platform to support time and ordering as attributes across images, (2) develop algorithms to understand the impact of past events through the series of images and their narratives, and (3) implement data mining algorithms that could fetch and understannd evolving narratives around photomemories. We see spaces as 3D or 2D if we are referring to geolocations. Photos are 2D projections of a 3D space. There is one dimension that we omit in most of these projections. That is time. Time as a 4th dimension is not entirely new in research and applications. A search on spatiotemporal data and space-time continuum will give you plenty of examples, from climate change to science novels. Time, or more specifically, ordering, is an essential variable in behavior. Don't you wonder how you see places differently just because you have seen the same or something similar before? Where it gets more interesting or challenging (depending on how you see it) is how the time affects the exact location and even those "near" it. When we say "near," it is in terms of data, not necessarily in terms of geographical proximity. Sometimes, it is just a minor change, and the location is the same! In data mining, we call this "near duplicates." A change in the name of a place (can be a city or a restaurant!). Other times, these are two entirely different places. Perhaps, Kivalina has moved over time due to the Arctic Erosion (sadly). But that is still geographical proximity. For instance, your visit to Portugal will influence your visits to other Portuguese-speaking nations (such as Angola and Brazil) because they share a language and culture, although they are oceans apart. On a smaller scale, your experience in a library will impact how you perceive another library in a different location. How do we consider time (or in a more accurate sense, "relative time" or "ordering") in our analysis/perception? This is intertwined as the 4th dimension (or 3rd dimension, if you are already projecting the 3D world into a 2D map/photo). This project aims to understand these complexities in a prototype version over simulated/synthetic data.
+
+        Required Skills: Database (MySQL or Mongo) and Python or Java. Experience and interest in data mining is a plus.
+
+        Code Challenge: Prior experience with database management through established coding examples.
+
+        Source Code: https://github.com/kathiraveluLab/beehive.
+
+        Discussion Forum: https://github.com/KathiraveluLab/Beehive/discussions/
+
+        Effort: 350 Hours
+
+        Difficulty Level: Medium
+
+        [N] PROJECT TITLE.
+
+        Mentors: FIRSTNAME1 LASTNAME1 (email-address) and FIRSTNAME2 LASTNAME2 (email-address)
+
+        Overview:
+
+        Current Status:
+
+        Expected Outcomes:
+
+        Required Skills:
+
+        Code Challenge:
+
+        Source Code:
+
+        Discussion Forum:
+
+        Effort: 90/175/350 Hours
+
+        Difficulty Level: Easy/Medium/Hard
+
+
+          
+    totalCharacters_of_ideas_content_parent: 54320
+    totalwords_of_ideas_content_parent: 9380
+    totalTokenCount_of_ideas_content_parent: 12130
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/alaska/
+    idea_list_url: https://github.com/uaanchorage/GSoC
+
+
+
+
+  - organization_id: 8
+    organization_name: AnkiDroid
+    no_of_ideas: 5
+    ideas_content: >-
+    
+          Multiple Profiles (175 hours)
+          Problem
+          Currently, AnkiDroid only allows a single profile as opposed to Anki (Desktop) and AnkiMobile (iphone) which allow multiple profiles. In particular, a family using a shared device will be able to have one profile per user, instead of sharing data. If you have multiple ankiweb accounts, you can sync all of them on your android. You can see discussion about this topic on https://github.com/ankidroid/Anki-Android/issues/2545.
+
+
+          Expected Outcomes
+          A user should be able to add a profile, sync this profile with an ankiweb account, switch between those accounts, and update the preference on a profile-by-profile level.
+          Each profile should have its own collection, as in Anki. 
+
+          There are at least three big questions that you need to consider. The UI, the backend, and the data structure. 
+          The UI
+          Firstly, you should design the UI. Your proposal should show us what would be the path the user will take to add a second profile, and switch to another profile. 
+          The data structure
+          AnkiDroid follows anki data structure. We have a folder, called Ankidroid, which contains all the files used to store user data. We should figure out a way to change the data structure in order to allow us to store data of multiple profiles.
+          When the device does not use scoped storage, the AnkiDroid folder is in the top level general purpose folder of the AndroidDevice. We expect and hope most users understand this folder is used by ankidroid and leave it alone. We can’t just add other top level folders as this may clutter the user storage system and increase the risk a user delete folder, hence losing their data.
+          The backend
+          We need to figure out everything that will need to be changed. At the very least:
+          We need a way to determine which profile is currently being used, and remember this information when ankidroid is restarted
+          Each access to the data structure needs to take the profile into account, in order to access the right collection and media folder. This information should be available to the backend; so we should determine whether any change to the backend is required (probably not)
+          We need to determine which preferences are profile based and which are used by the whole app. We need to update all preferences access to ensure we use the profile ones. We probably will need a lint rule that ensure that most preferences are profile-dependent unless there is a good reason not to. When creating an account, we need to determine whether to use default preferences or copy existing ones.
+
+
+          Stretch goals
+          If you have remaining time after the main project is done, there are two extensions that could be worth considering.
+
+          Advertise this feature
+
+          On the first update where multiple accounts are available, show a message to the user inviting them to add other accounts. This message should be similar to the message to new users.
+          Saving space by avoiding to duplicate the media
+
+          If multiple accounts have the same media (let’s say, the device is used by multiple users, who all should learn Ultimate Geography or Anking deck), ensure that the media are not duplicated in order to save storage on the device. This may require collaboration with the backend, because this optimization is not done on desktop. 
+          It is probably worth doing it because storage is very precious on mobile.
+          Language:
+          Kotlin & XML
+          Potentially some rust if we need to touch the backend for the stretch goal
+          Difficulty: Medium
+          Mentor(s):
+          Arthur Milchior
+          Shridhar Goel
+
+
+
+          ~~~~~~~~~~
+
+
+
+          Review Reminder (175 hours)
+          Problem
+          The user can request AnkiDroid to send them a daily notification in Android to remind them to review their cards if there are cards to review today.
+          At least in theory. In practice those notifications have been broken for a long time. We tried years ago to solve the issue. Our solution was to remove most features, but what remains is still far from ideal.  It’s now clear that we should just scratch the current notification system and recreate one from scratch (and automatically migrate users from the previous feature to the new one). 
+          Expected Outcomes
+          In your proposal, you should tell us what the notification system will look like.
+          We need to know what user interface you plan to implement. Every journey the user can take.
+
+          The most basic idea is to have a notification shown if any card is due. This is what we currently have. Also let the user decide at which hour the notification should be shown. Maybe the notification should have a snooze button, to remind the user later (when?)
+          We could also consider adding notification for specific decks.
+          If so, there should probably be a way to see all notifications currently planned, in order to easily remove them, or edit them together.
+          We should also find a way to test those notifications, manually and with automated tests. Ensuring they only trigger once a day in order not to overwhelm the user.
+          You may consider reaching users over reddit and the forum in order to gather feedback 
+
+          Language:
+          EITHER:
+          Kotlin & XML
+          Difficulty: Hard
+          Mentor(s):
+          Arthur Milchior
+          criticalAY
+
+
+          ~~~~~~~~~~
+
+          Note Editor: Note Type Preview (175 hours)
+          Problem
+          AnkiDroid is a flashcard app with a complex HTML/field-based templating engine. We currently have difficulties explaining a number of concepts to new users, both while onboarding, and for intermediate users:
+          The unexpected fact that the user adds ‘notes’ to the app, not ‘cards’
+          One note can generate multiple cards
+          Various ‘Note Types’ have unique properties
+          A user can create or download additional note types
+          Currently, the user is provided with a text-based selection screen:
+
+          Expected Outcomes
+          In order to resolve the above issues, we want to modify this screen to provide a preview of each note type available in the system, showing
+          The number of cards which will be produced when the note type is used
+          A visual preview of how each of the cards will look
+          Each card has a separate HTML template, so the designs may vary
+          Taking into account some special features: 
+          A note type may request that the user types in the answer
+          Cloze deletions: 1 input produces 1…n cards
+          Image occlusion: 1 input
+          The ability to open our Card Template Editor
+          The screen should allow a user to open up our Note Type Management screen and our manual. We should aim for the screen to prefer graphical elements over text
+          Language:
+          EITHER:
+          Kotlin & XML
+          If the screen is Android-specific
+          Svelte (Typescript + HTML)
+          If the screen is to be integrated into all Anki clients
+          Difficulty: Medium
+          Mentor(s):
+          David Allison
+          criticalAY
+
+          ~~~~~~~~~~
+
+
+
+          Tablet & Chromebook UI (175/350 hours)
+          Problem
+          AnkiDroid was initially designed for Android mobile phones. Over the years, Android has come to tablets and Chromebooks, but our UI has continued to be designed around the mobile phone.
+
+          We currently have ~10% of our users on Tablets or Chromebooks, and we want to improve their user experience using the app, both with the aim to improve the user experience for our existing users, and increasing the number of users who can effectively use our app on larger devices
+
+          Sanjay Sargam greatly improved the user experience on table and chromebook through GSoC 24’, and I invite you to read his report. Still, much remains to do, and what was done can certainly be polished.
+          Expected Outcomes
+          This primarily depends on your proposal. 
+          Any screen in the app is open for your suggestions. 
+
+          Suggestions
+          Show NoteEditor and Previewer Side by Side
+          Currently, the NoteEditor and Previewer are separate screens in AnkiDroid. On mobile devices, this makes sense due to limited scree n space. However,on tablets and Chromebooks, users have larger displays, and constantly switching between editing and previewing can feel cumbersome.
+
+          Resizable Layout in DeckPicker and CardTemplateEditor
+          The goal is to introduce a draggable slider that lets users dynamically adjust the size of two sections.
+
+          Language: Kotlin, XML
+          Difficulty: Medium
+          Mentor(s):
+          David Allison
+          Arthur Milchior
+          Sanjay Sargam
+
+
+          ~~~~~~~~~~
+
+          Additional Widgets (175/350 hours)
+          Problem
+          Widgets were introduced to AnkiDroid in 2010. These provide significant benefit to our power users and we started using them through GSoC 24. I invite you to read last year’s contributor’s report to see what was done.
+
+          
+          Expected Outcomes
+          Android 12 Widget-based functionality is evaluated and integrated with the widgets when appropriate
+
+
+          The GSoC proposal is expected to propose additional widgets that would be useful to our users
+          Language: Kotlin, XML, UI & UX
+          Difficulty: Medium
+          Mentor(s):
+          David Allison
+          criticalAY
+
+
+
+
+
+          
+    totalCharacters_of_ideas_content_parent: 9691
+    totalwords_of_ideas_content_parent: 2448
+    totalTokenCount_of_ideas_content_parent: 1986
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ankidroid/
+    idea_list_url: https://docs.google.com/document/d/1Va6IWEYcWTkK4KDtyoFxtOKzpdcYe54GdrVpuMcFvlI/edit?pli=1&tab=t.0
+
+
+
+  - organization_id: 9
+    organization_name: Apache DataFusion
+    no_of_ideas: 11
+    ideas_content: >-
+        
+        Implement Continuous Monitoring of DataFusion Performance
+        Description and Outcomes: DataFusion lacks continuous monitoring of how performance evolves over time – we do this somewhat manually today. Even though performance has been one of our top priorities for a while now, we didn’t build a continuous monitoring system yet. This linked issue contains a summary of all the previous efforts that made us inch closer to having such a system, but a functioning system needs to built on top of that progress. A student successfully completing this project would gain experience in building an end-to-end monitoring system that integrates with GitHub, scheduling/running benchmarks on some sort of a cloud infrastructure, and building a versatile web UI to expose the results. The outcome of this project will benefit Apache DataFusion on an ongoing basis in its quest for ever-more performance.
+
+        Category: Tooling
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): alamb and mertak-synnada
+
+        Skills: DevOps, Cloud Computing, Web Development, Integrations
+
+        Expected Project Size: 175 to 350 hours*
+
+        ~~~~~~~~~~
+
+        Supporting Correlated Subqueries
+        Description and Outcomes: Correlated subqueries are an important SQL feature that enables some users to express their business logic more intuitively without thinking about “joins”. Even though DataFusion has decent join support, it doesn’t fully support correlated subqueries. The linked epic contains bite-size pieces of the steps necessary to achieve full support. For students interested in internals of data systems and databases, this project is a good opportunity to apply and/or improve their computer science knowledge. The experience of adding such a feature to a widely-used foundational query engine can also serve as a good opportunity to kickstart a career in the area of databases and data systems.
+
+        Category: Core
+
+        Difficulty: Advanced
+
+        Possible Mentor(s) and/or Helper(s): jayzhan-synnada and xudong963
+
+        Skills: Databases, Algorithms, Data Structures, Testing Techniques
+
+        Expected Project Size: 350 hours
+
+        ~~~~~~~~~~
+
+        Improving DataFusion DX (e.g. 1 and 2)
+        Description and Outcomes: While performance, extensibility and customizability is DataFusion’s strong aspects, we have much work to do in terms of user-friendliness and ease of debug-ability. This project aims to make strides in these areas by improving terminal visualizations of query plans and increasing the “deployment” of the newly-added diagnostics framework. This project is a potential high-impact project with high output visibility, and reduce the barrier to entry to new users.
+
+        Category: DX
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): eliaperantoni and mkarbo
+
+        Skills: Software Engineering, Terminal Visualizations
+
+        Expected Project Size: 175 to 350 hours*
+
+        ~~~~~~~~~~
+
+        Robust WASM Support
+        Description and Outcomes: DataFusion can be compiled today to WASM with some care. However, it is somewhat tricky and brittle. Having robust WASM support improves the embeddability aspect of DataFusion, and can enable many practical use cases. A good conclusion of this project would be the addition of a live demo sub-page to the DataFusion homepage.
+
+        Category: Build
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): alamb and waynexia
+
+        Skills: WASM, Advanced Rust, Web Development, Software Engineering
+
+        Expected Project Size: 175 to 350 hours*
+
+        ~~~~~~~~~~
+
+        High Performance Aggregations
+        Description and Outcomes: An aggregation is one of the most fundamental operations within a query engine. Practical performance in many use cases, and results in many well-known benchmarks (e.g. ClickBench), depend heavily on aggregation performance. DataFusion community has been working on improving aggregation performance for a while now, but there is still work to do. A student working on this project will get the chance to hone their skills on high-performance, low(ish) level coding, intricacies of measuring performance, data structures and others.
+
+        Category: Core
+
+        Difficulty: Advanced
+
+        Possible Mentor(s) and/or Helper(s): jayzhan-synnada and Rachelint
+
+        Skills: Algorithms, Data Structures, Advanced Rust, Databases, Benchmarking Techniques
+
+        Expected Project Size: 350 hours
+
+        ~~~~~~~~~~
+
+        Improving Python Bindings
+        Description and Outcomes: DataFusion offers Python bindings that enable users to build data systems using Python. However, the Python bindings are still relatively low-level, and do not expose all APIs libraries like Pandas and Polars with a end-user focus offer. This project aims to improve DataFusion’s Python bindings to make progress towards moving it closer to such libraries in terms of built-in APIs and functionality.
+
+        Category: Python Bindings
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): timsaucer
+
+        Skills: APIs, FFIs, DataFrame Libraries
+
+        Expected Project Size: 175 to 350 hours*
+
+        ~~~~~~~~~~
+
+        Optimizing DataFusion Binary Size
+        Description and Outcomes: DataFusion is a foundational library with a large feature set. Even though we try to avoid adding too many dependencies and implement many low-level functionalities inside the codebase, the fast moving nature of the project results in an accumulation of dependencies over time. This inflates DataFusion’s binary size over time, which reduces portability and embeddability. This project involves a study of the codebase, using compiler tooling, to understand where code bloat comes from, simplifying/reducing the number of dependencies by efficient in-house implementations, and avoiding code duplications.
+
+        Category: Core/Build
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): comphead and alamb
+
+        Skills: Software Engineering, Refactoring, Dependency Management, Compilers
+
+        Expected Project Size: 175 to 350 hours*
+
+        ~~~~~~~~~~
+
+        Ergonomic SQL Features
+        Description and Outcomes: DuckDB has many innovative features that significantly improve the SQL UX. Even though some of those features are already implemented in DataFusion, there are many others we can implement (and get inspiration from). This page contains a good summary of such features. Each such feature will serve as a bite-size, achievable milestone for a cool GSoC project that will have user-facing impact improving the UX on a broad basis. The project will start with a survey of what is already implemented, what is missing, and kick off with a prioritization proposal/implementation plan.
+
+        Category: SQL FE
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): berkaysynnada
+
+        Skills: SQL, Planning, Parsing, Software Engineering
+
+        Expected Project Size: 350 hours
+
+
+        ~~~~~~~~~~
+
+        Advanced Interval Analysis
+        Description and Outcomes: DataFusion implements interval arithmetic and utilizes it for range estimations, which enables use cases in data pruning, optimizations and statistics. However, the current implementation only works efficiently for forward evaluation; i.e. calculating the output range of an expression given input ranges (ranges of columns). When propagating constraints using the same graph, the current approach requires multiple bottom-up and top-down traversals to narrow column bounds fully. This project aims to fix this deficiency by utilizing a better algorithmic approach. Note that this is a very advanced project for students with a deep interest in computational methods, expression graphs, and constraint solvers.
+
+        Category: Core
+
+        Difficulty: Advanced
+
+        Possible Mentor(s) and/or Helper(s): ozankabak and berkaysynnada
+
+        Skills: Algorithms, Data Structures, Applied Mathematics, Software Engineering
+
+        Expected Project Size: 350 hours
+
+        ~~~~~~~~~~
+
+        Spark-Compatible Functions Crate
+        Description and Outcomes: In general, DataFusion aims to be compatible with PostgreSQL in terms of functions and behaviors. However, there are many users (and downstream projects, such as DataFusion Comet) that desire compatibility with Apache Spark. This project aims to collect Spark-compatible functions into a separate crate to help such users and/or projects. The project will be an exercise in creating the right APIs, explaining how to use them, and then telling the world about them (e.g. via creating a compatibility-tracking page cataloging such functions, writing blog posts etc.).
+
+        Category: Extensions
+
+        Difficulty: Medium
+
+        Possible Mentor(s) and/or Helper(s): alamb and andygrove
+
+        Skills: SQL, Spark, Software Engineering
+
+        Expected Project Size: 175 to 350 hours*
+
+        ~~~~~~~~~~
+
+        SQL Fuzzing Framework in Rust
+        Description and Outcomes: Fuzz testing is a very important technique we utilize often in DataFusion. Having SQL-level fuzz testing enables us to battle-test DataFusion in an end-to-end fashion. Initial version of our fuzzing framework is Java-based, but the time has come to migrate to Rust-native solution. This will simplify the overall implementation (by avoiding things like JDBC), enable us to implement more advanced algorithms for query generation, and attract more contributors over time. This project is a good blend of software engineering, algorithms and testing techniques (i.e. fuzzing techniques).
+
+        Category: Extensions
+
+        Difficulty: Advanced
+
+        Possible Mentor(s) and/or Helper(s): 2010YOUY01
+
+        Skills: SQL, Testing Techniques, Advanced Rust, Software Engineering
+
+        Expected Project Size: 175 to 350 hours*
+
+        *There is enough material to make this a 350-hour project, but it is granular enough to make it a 175-hour project as well. The student can choose the size of the project based on their availability and interest.
+
+          
+    totalCharacters_of_ideas_content_parent: 10170
+    totalwords_of_ideas_content_parent: 1940
+    totalTokenCount_of_ideas_content_parent: 2086
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/apache-datafusion/
+    idea_list_url: https://datafusion.apache.org/contributor-guide/gsoc_project_ideas
+
+
+
+  - organization_id: 10
+    organization_name: ArduPilot
+    no_of_ideas: 6 
+    ideas_content: >-
+          Non-GPS Position Estimation Using 3D Camera and Pre-Generated Map¶
+          Skills required: Python, C++
+
+          Mentor: Randy Mackay
+
+          Expected Size: 175h
+
+          Level of Difficulty: Hard
+
+          Expected Outcome: Copter with low-cost 3D camera estimates its local position by comparing the camera point cloud to a pre-generated 3D map
+
+          The goal of this project is to allow a Copter to estimate its local position using a low-cost 3D camera (e.g. Intel D465) by comparing the camera’s point cloud to a pre-generated 3D map. The steps involved include:
+
+          Create a tool to capture a 3D map of the flight area. The resulting map should be loaded onto the vehicle’s companion computer (e.g. RPI5)
+
+          Mount a low-cost 3D camera (e.g. Intel D465) onto an ArduPilot copter (e.g. EDU650 or similar) equipped with a companion computer
+
+          Write localisation software (e.g. python code) to compare the output of the 3D camera to the pre-generated 3D map and send the estimated position to the vehicle’s EKF (see Non-GPS Position Estimation)
+
+          Implement a simulator of the system (e.g. gazebo)
+
+          Document the setup and operation for future developers and users
+
+          Funding will be provided for hardware including a copter (e.g. Hexsoon EDU650), companion computer and 3D camera (e.g. Intel D465) if necessary
+
+          ~~~~~~~~~~
+
+          AI Chat WebTool for use with MP and/or QGC
+          Skills required: JavaScript, OpenAI, Google Gemini
+
+          Mentor: Randy Mackay
+
+          Expected Size: 175h
+
+          Level of Difficulty: Medium
+
+          Expected Outcome: Web tool capable following a pilot’s verbal commands and converting them to MAVLink in order to control an ArduPilot multicopter
+
+          This project involves re-implementing the MAVProxy’s AI chat module (see blog here) to run as a WebTool
+
+          Once complete the WebTool should be capable of:
+
+          Connecting to the vehicle via Mission Planner or QGC
+
+          Responding to verbal or written questions and commands from the pilot
+
+          Arming the vehicle
+
+          Issuing takeoff commands and flying the vehicle a specified distance in any direction
+
+          Changing the vehicle’s flight mode
+
+          Most of the development can be completed using the SITL simulator and any OpenAI or Google Gemini usage costs will be covered
+
+          ~~~~~~~~~~
+           
+          AI Chat Integration with all WebTools¶
+          Skills required: JavaScript, OpenAI, Google Gemini
+
+          Mentor: Randy Mackay
+
+          Expected Size: 175h
+
+          Level of Difficulty: Medium
+
+          Expected Outcome: All WebTools include AI chat to help users understand and use the tool
+
+          This project involves adding an OpenAI or Google Gemini chat window into some or all of the ArduPilot Webtools
+
+          Once complete some or all of the WebTools should:
+
+          Include a new chat widget allowing users to ask an AI assistant questions about the tool using text or voice
+
+          Allow the AI assistant to operate the tool based on user input (e.g. push buttons, change zoom of graphs, etc)
+
+          The top priority WebTool is the “UAV Log viewer” although simpler tools like the “Hardware Report” could be a good starting point
+
+          Most of the development can be completed using the SITL simulator and any OpenAI or Google Gemini usage costs will be covered
+          ~~~~~~~~~~
+
+
+          Gazebo Plug-in Model of a Motor¶
+          Skills required: Gazebo, C++
+
+          Mentor: Nate Mailhot
+
+          Expected Size: 175h
+
+          Level of Difficulty: Medium
+
+          Expected Outcome: ArduPilot Gazebo plugin simulates a Motor
+
+          As part of the ArduPilot_Gazebo plugin, we ask a student to model the electromechanical properties of a motor (no thrust/aero, just the motor angular acceleration/power itself)
+          ~~~~~~~~~~
+
+          SITL AI Reinforcement Learning Concept Script¶
+          Skills required: Gaazebo, Lua, AI
+
+          Mentor: Nate Mailhot
+
+          Expected Size: 175h
+
+          Level of Difficulty: Medium
+
+          Expected Outcome: Lua script that uses re-inforcement learning to automate changing some parameters
+
+          An AP-SITL reinforcement learning script concept, focuses on using Lua applets or some python to automate parameter changes according to some basic implementation of online reinforcement learning (actor-critic/SARSA/Q-learning)
+          ~~~~~~~~~~
+
+          SITL Test Script for Controls Testing¶
+          Skills required: Gaazebo, Python
+
+          Mentor: Nate Mailhot
+
+          Expected Size: 175h
+
+          Level of Difficulty: Medium
+
+          Expected Outcome: Python code that allows easily setting up an AP vehicle in SITL for controls testing
+
+          A safe “for education/rookies” SITL test script that strips away the majority of complexity in set-up and gives a Copter (and Plane if time permits) that requires some basic tuning and gives hints/pointers in a UI (this could lower the threshold for earlier year mech/electrical engineers to get their hands dirty on some software and try out basic controls testing)
+
+          
+    totalCharacters_of_ideas_content_parent: 5201
+    totalwords_of_ideas_content_parent: 1290
+    totalTokenCount_of_ideas_content_parent: 1143
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ardupilot/
+    idea_list_url: https://ardupilot.org/dev/docs/gsoc-ideas-list.html
+
+
+  - organization_id: 11
+    organization_name: AsyncAPI
+    no_of_ideas: 9
+    ideas_content: >-
+          1) Enhancing Performance and Reliability of AsyncAPI CLI
+          Improve the AsyncAPI CLI by optimizing performance, enhancing test reliability, and introducing long-requested features such as publishing and syncing AsyncAPI files with remote repositories.
+
+          🎯 Outcome: Achieve a faster CLI execution, stable tests, file sync/publish support, and enhanced validation.
+          🛠️ Skills Required: JavaScript/TypeScript, Node.js, Testing Frameworks, API, and testing automation.
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @AayushSaini101 | @Souvikns
+          ⏳ Length: 175 Hours
+
+
+          ~~~~~~~~~~
+          2) AI-Powered Assistant for AsyncAPI
+          Build an AI-powered assistant fine-tuned on AsyncAPI to provide accurate answers, generate code snippets, debug specifications, and recommend best practices.
+
+          🎯 Outcome: A fine-tuned LLM-powered chatbot integrated with AsyncAPI’s ecosystem for enhanced developer support.
+          🛠️ Skills Required: Javascript/Typescript, Machine Learning (LLMs), NLP, OpenAI/Llama, Chatbot Integration.
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @AceTheCreator
+          ⏳ Length: 175 Hours
+
+          ~~~~~~~~~~
+          3) AsyncAPI Generator Maintainership
+          This initiative aims to guide you from contributing to maintaining the project. You'll gain insight into the responsibilities of a maintainer, which involve tasks beyond mere coding.
+
+          🎯 Outcome: Responsible for the project's future and continuous improvement.
+          🛠️ Skills: JavaScript/TypeScript, testing libraries, Docker, virtualization, and test automation.
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @derberg
+          ⏳ Length: 350 Hours
+
+          ~~~~~~~~~~
+          4) AsyncAPI Conference Website UI Kit Development
+          Develop a comprehensive UI Kit to enhance design consistency, modularity, and maintainability of the AsyncAPI Conference website.
+
+          🎯 Outcome: A structured UI Kit with reusable components, Storybook integration, and improved design consistency.
+          🛠️ Skills Required: React, TypeScript, Storybook, UI/UX Design, Component Development.
+          🧩 Difficulty: Medium
+          👩🏿‍🏫 Mentor(s): @AceTheCreator
+          ⏳ Length: 175 Hours
+
+          ~~~~~~~~~~
+          5) VS Code Extension Maintainership
+          This initiative will guide you from contributing to becoming a maintainer of the VS Code AsyncAPI Preview extension. You'll learn the responsibilities of a maintainer, including code contributions, issue triaging, release management, and community engagement.
+
+          🎯 Outcome: Taking ownership of the VS Code extension to ensure its long-term stability and improvement.
+          🛠️ Skills Required: TypeScript/JavaScript, VS Code Extensions, Spectral Linting, Testing, and Open Source Contribution.
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @ivangsa
+          ⏳ Length: 350 Hours
+
+          ~~~~~~~~~~
+          6) Java + Quarkus Template for AsyncAPI Generator
+          Develop a new AsyncAPI Generator template for Java with Quarkus, leveraging its growing adoption in cloud-native development.
+
+          🎯 Outcome: A fully functional Java + Quarkus template for generating AsyncAPI-based applications.
+          🛠️ Skills Required: Java, Quarkus, Templating Engines (Nunjucks/Handlebars), AsyncAPI Generator.
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @AayushSaini101, @Souvikns
+          ⏳ Length: 350 Hours
+          ~~~~~~~~~~
+          7) Refactor the Scripts inside the website and add Integration tests
+          Add the script execution to a new folder inside the website, and add integration tests for those scripts.
+
+          🎯 Outcome: A full Unit + Integration tests setup will be added for the scripts to fully test the functionalities
+          🛠️ Skills Required: Typescript, Node js, Jest, Github actions
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @akshatnema
+          ⏳ Length: 350 Hours
+          ~~~~~~~~~~
+          8) Add E2E tests for the Website critical flows
+          Add E2E tests for the website where some of the critical flows (that are centered around user experience are tested thoroughly).
+
+          🎯 Outcome: This project will ensure that we are not breaking any critical flows where user experience is our topmost priority
+          🛠️ Skills Required: Typescript, Node js, E2E Testing, Github actions
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @sambhavgupta0705
+          ⏳ Length: 175 hours
+          ~~~~~~~~~~
+          9) Redesign of website and addition of Dark theme
+          Create new designs for the website pages based on the theme chosen by @Mayaleeeee and replicate those designs inside the website, along with the Dark mode theme.
+
+          🎯 Outcome: This project will ensure that we are not breaking any critical flows where user experience is our topmost priority
+          🛠️ Skills Required: Typescript, Node js, Figma, TailwindCSS
+          🧩 Difficulty: Medium/Hard
+          👩🏿‍🏫 Mentor(s): @Mayaleeeee, @devilkiller-ag
+          ⏳ Length: 350 hours
+
+          
+    totalCharacters_of_ideas_content_parent: 5231
+    totalwords_of_ideas_content_parent: 1242
+    totalTokenCount_of_ideas_content_parent: 1147
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/asyncapi/
+    idea_list_url: https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md
