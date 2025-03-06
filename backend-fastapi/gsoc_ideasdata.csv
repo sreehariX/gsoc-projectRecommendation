@@ -1,0 +1,634 @@
+organization_id,organization_name,no_of_ideas,ideas_content,characters,words,token_count,gsocorganization_dev_url,idea_list_url
+1,52°North Spatial Information Research GmbH,3,"""1. KomMonitor
+Angular migration of the KomMonitor Web Client
+Explanation
+KomMonitor is a web based tool that combines methods of GIS (Geographic information System) and statistical data and helps in providing a simpler and easier way to monitor geo-spatial data. Many municipalities have established KomMonitor to address a wide range of challenges in fields such as urban planning, environmental management, and disaster response. The current version of the KomMonitor Web Client has been developed using AngularJS, which has served as a reliable foundation for its functionalities. However, AngularJS has been deprecated for some years now. Therefore, relying on the current code base has several potential drawbacks associated with using AngularJS, such as compatibility issues, limited community support, reduced performance, and version support. To overcome these challenges and take KomMonitor to the next level, it is necessary to adopt the KomMonitor Web Client to the more modern and widely-supported framework Angular. As part of GSoC 2023, essential work has been done by developing a general approach for the Angular migration. The Web Client has been restructured so that it can be deployed as a hybrid web application, which runs both legacy AngularJS components and migrated or new Angular components. This year, the project aims to continue the migration tasks. Hence, the goal of this project is to reimplement several selected components of the KomMonitor Web Client by using the Angular framework.
+
+Expected Results
+As a result of the project, it is expected that several selected components of the KomMonitor Web Client will have been reimplemented with the Angular framework. The resulting UI of the reimplemented components should be as close as possible to the previous design to preserve the current look&feel. As an additional requirement, the reimplementation should take into account best practices and common design patterns in Angular. This results in also restructuring some of the existing components rather than simply transferring a component from AngularJS to Angular. Finally, the hybrid Web Client, including legacy AngularJS components and new Angular components side-by-side, should run properly without any bugs.
+
+Code Challenge
+Migrate the kommonitorToastHelperService of the KomMonitor Web Client to Angular and make use of it in a new Angular component as part of the Web Client. Follow the steps below:
+
+Create a fork of https://github.com/KomMonitor/web-client and checkout the GSoC2025 Branch
+Create a new Angular service as part of the KomMonitor Web Client that provides the same functionality as the existing AngularJS version of the kommonitorToastHelperService
+Create a new Angular component that makes use of the previously implemented kommonitorToastHelperService. Take into account these requirements:
+The component should be opened and closed by clicking on a button on the left sidebar.
+The component should include a text area and a button.
+The required functionality should be to display a message as toast on the screen by filling the text area and clicking on the button. For this purpose the kommonitorToastHelperService should be used.
+Push the code to your fork at GitHub
+Link to the fork within your official GSoC application. Your GSoC application should also include a description of which components you plan to migrate during GSoC as well as an estimation of time required for implementing it.
+
+
+Community and Code License
+Apache Software License, Version 2
+
+Mentors
+Sebastian Drost (s.drost @52north.org), Christoph Wagner (c.wagner @52north.org)
+
+Project Duration
+The duration of the project is estimated at 175 hours. An extension is possible.
+
+Chat
+TBD
+
+~~~~~~~~~~
+
+2. LLM and GeoData
+Explanation
+During 52°North’s Student Innovation Challenge in 2024, a first open-source implementation connecting spatial data and Large Language Models (LLM) was developed.
+
+The ambition was to address the pain points of searchability in Research and Spatial Data Infrastructures (RDI/SDI). Search functionality in such systems is typically limited to a metadata-based approach. However, geospatial data – whether vector or raster based – provides a wealth of interesting data that can currently only be identified by looking at the individual dataset. The challenge of the 2024 Student Innovation Prize was to develop a concept and a possible implementation that allows searching within datasets of/and RDI/SDI, e.g. on the attribute level. There are many interesting aspects related to this challenge: technical solutions, taxonomies and semantics, language/i18n, searching in raster data, and many more such as LLMs.
+
+The available Proof of Concept (PoC) features a prompt that makes it easier to search and access to spatial data. More user stories are documented in the Innovation Prize project backlog on GitHub: https://github.com/52North/innovation-prize.
+
+Expected Results
+The PoC should be hardened and developed beyond its current state. For example, less verbose prompts are needed as more sophisticated LLMs emerge. Also, improved software frameworks may provide a better development experience. Various extensions are possible and a selection should be outlined in the proposal. Additional user stories from the backlog in the github project (see above) could be addressed. Another interesting extension could also entail a federated architecture. Furthermore, the use of different LLMs is also a possible option for further development.
+
+Code Challenge
+Set up the entire working environment based on the existing open source code
+
+https://github.com/52North/innovation-prize/tree/2024
+
+and add two more data sets. Share the code and the deployed system.
+
+Community and Code License
+TBChecked: Apache Software License, Version 2
+
+Mentors
+Henning Bredel (h.bredel @52north.org), Simeon Wetzel
+
+Project duration
+The duration of the project is estimated at 175 hours. An extension is possible.
+
+ ~~~~~~~~~~
+
+3. Weather Routing Tool
+Explanation
+The open-source 52°North Weather Routing Tool (WRT) was initially developed during the MariData project. It provides means to find an optimal ship route that minimizes fuel consumption under varying weather conditions. In the optimization process, several constraints can be integrated, e.g. water depth and traffic separation zones. Currently, there are two algorithms available: an isofuel algorithm and a genetic algorithm. Details of the MariData project and example applications of the Weather Routing Tool can be found in the following publication: https://proceedings.open.tudelft.nl/imdc24/article/view/875.
+
+Expected Results
+The Weather Routing Tool should be extended by new features and its robustness should be improved. There are three major directions of possible developments:
+
+Ship speed optimization
+Currently, only the geometry of the route is optimized while the ship speed is assumed to be constant. To cover a broader range of real-world use cases, the Weather Routing Tool should provide the option to optimize ship speed. This could be along a fixed route or simultaneous with the route geometry.
+Genetic algorithm
+The implementation of the genetic algorithm is still very basic. Possible improvements include the generation of the initial population and the strategies for crossover and mutation. Moreover, a multi-objective optimization could be implemented.
+General consumption model
+An important aspect of the Weather Routing Tool is the underlying (fuel) consumption model. The best results can generally be obtained by using a consumption model which is developed specifically for a ship, e.g. based on hydrodynamic modeling or machine learning models. However, developing such specific models is cumbersome and restricts the applicability of the tool. Thus, having a general consumption model which only requires a few characteristics of a ship (e.g. type of vessel, length, breadth, displacement) would be a great improvement. The model should have reasonable accuracy. As this feature includes research aspects and can only be successfully developed with the necessary background knowledge, interested candidates have to provide a clear plan of their approach.
+The features can be implemented in different ways. How they are implemented is up to the candidate and might include deterministic, machine learning or AI methods.
+
+Code Challenge
+New ship class:
+
+Implement a new ship class
+It should inherit from the Boat base class
+The get_ship_parameters method has to be implemented; it should return a “synthetic” fuel rate which depends on at least one environmental parameter (e.g. wave height)
+Make sure the fuel rates (kg per second) are within a reasonable value range. Besides the weather conditions, typical fuel rates also depend on the ship size, type (e.g. container ship, tanker, fishing vessel) and speed.
+The choice of the considered environmental parameters and the type of the function is free
+You can take the ConstantFuelBoat class as an example
+Prepare weather conditions
+Options:
+Create your own synthetic weather conditions
+Download actual historical or forecast data from public portals (Copernicus, NOAA, …). You can use the Python package maridatadownloader directly or indirectly by setting “DATA_MODE” to “automatic“.
+Run the Weather Routing Tool with your new ship class and a route of your free choice
+Hint: because the Python package mariPower is not publicly available, you need to comment or delete the corresponding lines in ship.py.
+Configuration:
+Set “ALGORITHM_TYPE” to “isofuel”
+Provide the expected results for review
+Mandatory:
+Final route as GeoJSON file
+Python code of new ship class
+Optional:
+Log file (info.log)
+Snapshots of routing steps (WRT_FIGURE_PATH)
+Used weather data
+Community and Code License
+MIT License
+
+Mentors
+Martin Pontius (m.pontius @52north.org), Katharina Demmich (k.demmich @52north.org)
+
+Project Duration
+The duration of the project is estimated at 175 hours. An extension is possible.
+
+TBD
+
+Cloud Native OGC SensorThings API 2
+enviroCar""",10019,1397,2059,https://www.gsocorganizations.dev/organization/52north-spatial-information-research-gmbh/,https://52north.org/outreach-dissemination/google-summer-of-code/project-ideas/
+
+
+
+2,AFLplusplus,4,"""Proposal 1: Tool for Automated generic/bounds simplification
+Create a (general, not LibAFL-specific) rust tool to simplify/minimze bounds
+
+Description
+As commented by many users and maintainers of LibAFL, our codebase is absolutely full of complicated generics. We use these to allow for structured and statically-checked compatibility between various components provided in our codebase, and is a critical part of how LibAFL is structured.
+
+Unfortunately, these can be very difficult to maintain. Our goal is to develop a tool capable of assisting developers in this maintenance process.
+
+Please check out issue #2868 for more details.
+
+Expected Outcomes
+A tool that works on any rust code, tries to minimize the used bounds, and fixes the code
+
+Skills Expected
+Rust
+A good understanding of Generics and the Rust Type system
+Possible Mentors
+@addisoncrump
+@tokatoka
+Expected size of the project
+The project is expected to take either 175 or 350 hours.
+
+Difficulty Rating
+The overall difficulty of this project is expected to be medium.
+~~~~~~~~~~
+Proposal 2: Adapt qemuafl Frontend to LibAFL QEMU
+The project consists of adapting the frontend of qemuafl, the AFL++'s QEMU fork, with LibAFL QEMU.
+
+Description
+The end goal of this project would be to run fuzzers built for qemuafl while using LibAFL QEMU as the backend, in a retrocompatible way.
+A draft PR is already available and can be used as a starting point by the student.
+Ideally, the student would measure the performance (in terms of exec/s and coverage) of the new qemuafl adaptation with some fuzzers to evaluate how the final implementation compares with the reference.
+
+Expected Outcomes
+In short, we expect the student to make the new frontend work for most fuzzers developed for qemuafl while maintaining (at least) similar performance.
+
+See #1983 for an initial implementation that still lacks features.
+
+The main tasks the student would have to perform are the following:
+
+Speak the AFL++ forkserver protocol (check the draft PR).
+Add TCG caching to the LibAFL QEMU forkserver
+Use LibAFL QEMU snapshots where possible
+Add as many env variable features as possible
+Skills Expected
+We expect the student to:
+
+have a strong background in the Rust and C languages.
+be familiar with fuzzing.
+ideally, have some experience using AFL++ and / or LibAFL.
+ideally, have prior experience with the QEMU project.
+Possible Mentors
+The possible mentors for this project are:
+
+@domenukk
+@rmalmain
+Expected size of the project
+The project is expected to take either 175 or 350 hours.
+
+Difficulty Rating
+The overall difficulty of this project is expected to be medium.
+
+Original post
+This proposition is mostly an adaptation of issue #2964.
+~~~~~~~~~~
+Proposal 3: Network Emulation for LibAFL_QEMU
+Implement syscall emulation for filesystem and network in libafl_qemu.
+
+Description
+The student must implement something similar to preeny and FitM to hook the network API and an emulator filesystem that can be snapshot-restored always hooking the syscall in libafl_qemu user mode
+
+Expected Outcomes
+A working network emulation layer for LibAFL_QEMU
+
+Required Skills
+Good understanding of Rust, C, system programming
+Ideally: prior knowledge in emulators and fuzzing
+Difficulty Rating
+The overall difficulty of this project is expected to be medium.
+
+Possible mentors
+@domenukk
+@rmalmain
+Expected size of the project
+The project is expected to take either 175 or 350 hours, depending on details
+~~~~~~~~~~
+Proposal 4: Remote Worker Stage
+Mutations and execution of a Stage is always on the machine LibAFL runs at. For very slow targets it may be beneficial to offload the actual executions to stateless worker.
+
+Description
+We could add a RemoteWorkerLauncherStage that builds n work packages, each including a next scheduled corpus entry, all metadata for this Testcase, the current feedback state, as well as additional random corpus entries for splicing.
+The work package should then be posted to Redis or some other queue db (very much like celery, whatever a rust alternative is).
+After the execution, the results should be collected in an extra stage
+
+Expected Outcome:
+The implementation and a set of working examples, including:
+LibAFL Workers / RemoteWorkerLauncherStage + RemoteWorkerCollectorStage
+
+Required Skills
+Rust
+Prior knowledge in distributed computing and/or fuzzing are a plus
+Difficulty Rating
+easy to medium
+
+Possible mentors
+@domenukk
+@tokatoka
+@addisoncrump
+Length
+175 hours""",4418,600,1003,https://www.gsocorganizations.dev/organization/aflplusplus/,https://github.com/AFLplusplus/LibAFL/issues/2992
+
+
+
+
+3,AOSSIE,13,"""Agora Blockchain
+Project Type: Medium
+Description:
+Agora Blockchain is a decentralized voting platform designed to enhance electoral integrity and accessibility. It enables transparent, tamper-proof voting through smart contracts, leveraging Chainlink CCIP for cross-chain functionality. Agora ensures fair participation and trust in election results by eliminating centralized control and providing a verifiable, immutable ledger of votes.
+
+Key features include:
+
+Multi-algorithm voting: Supports different voting mechanisms like ranked choice, quadratic voting, and stake-based voting.
+Cross-chain voting: Uses Chainlink CCIP to enable voting across multiple blockchains.
+Gas-efficient smart contracts: Optimized Solidity contracts reduce transaction costs.
+Decentralized governance: Community-driven elections and decision-making.
+User-friendly interface: Built with Next.js, Wagmi, and MetaMask for seamless interaction.
+Expected Outcomes:
+Smart Contract Enhancements:
+
+Implement private elections for confidential voting.
+Further optimize election factory contracts for gas efficiency.
+Cross-Chain Expansion:
+
+Extend Chainlink CCIP integration to support multiple blockchains.
+Frontend & dApp Integration:
+
+Build an intuitive UI using Next.js and Wagmi.
+Ensure smooth wallet connectivity and real-time vote updates.
+Analytics & Insights:
+
+Develop a real-time dashboard for election statistics.
+Track voter participation and engagement metrics.
+Required Skills:
+Solidity
+Hardhat
+Chainlink CCIP
+Next.js
+MetaMask
+Wagmi
+TailwindCSS
+Zustand
+Mentors:
+Ronnie
+
+~~~~~~~~~~
+
+BabyNest
+Project Type: Large
+Description:
+Pregnancy is a life-changing journey filled with crucial medical appointments, tests, and healthcare decisions. However, expecting parents often struggle to keep track of these milestones, which can lead to missed appointments and added stress. Studies show that adherence to prenatal checkups directly impacts pregnancy outcomes, yet there is no universally accessible tool to assist parents in navigating healthcare requirements based on their country and trimester.
+
+BabyNest is designed to solve this problem through a minimalist React Native app integrated with an AI-powered assistant. This intelligent assistant acts as a personal pregnancy planner and guide, ensuring that expecting parents stay informed, organized, and stress-free.
+
+Users can benefit from features such as:
+
+Automated tracking of trimester-specific medical appointments
+Country-specific healthcare requirement notifications
+Offline access to pregnancy care guidelines
+AI-powered personalized recommendations and reminders
+Expected Outcomes:
+
+Mobile application built with React Native for cross-platform support
+AI agent integration for intelligent pregnancy milestone scheduling, reminders and tracking
+Offline-first architecture with local storage of healthcare guidelines
+Required Skills:
+
+Frontend Development (React Native)
+Backend Development (Node.js, FastAPI)
+AI and NLP (Python, LangChain)
+Database Management (SQLite, Pinecone)
+Mentors: Bhavik Mangla
+
+~~~~~~~~~~
+DebateAI
+Project Type: Large
+Description:
+DebateAI is an interactive, AI-enhanced debate game platform designed to improve users communication skills through structured competitive debates. Users can engage in real-time debates against both human opponents and AI-driven challengers on a wide range of real-world topics. The platform mimics formal debate competition structures, making it an effective practice and competitive tool.
+
+Expected Outcomes:
+User vs. User Debates:
+
+Real-time interaction using WebSockets and WebRTC for audio, video, and text communication.
+Structured debate formats with timed rounds, including opening statements, rebuttals, cross-examinations, and closing arguments.
+User vs. AI Debates:
+
+AI-driven opponents using LLMs to generate realistic counterarguments and adapt to user inputs.
+User Management and Profiles:
+
+Secure authentication and access control.
+Personal dashboards to track debate history and manage settings.
+Elo rating system for matchmaking and ranking users.
+Custom Debate Spaces:
+
+Users can create private rooms to debate on topics of their choice.
+Platform Enhancement & Codebase Refactoring:
+
+Refactor the existing codebase for better maintainability, scalability, and performance.
+Improve real-time communication efficiency and backend services.
+Required Skills:
+ReactJS
+TypeScript
+GoLang
+Python
+Databases
+LLMs
+Mentors:
+Bruno Keshav
+
+
+~~~~~~~~~~
+Devr.AI
+Project Type: Large
+Description:
+Devr.AI is an AI-powered Developer Relations (DevRel) assistant designed to seamlessly integrate with open-source communities across platforms like Discord, Slack, GitHub, and Discourse. It acts as a virtual DevRel advocate, helping maintainers engage with contributors, onboard new developers, and provide real-time project updates.
+
+By leveraging LLMs, knowledge retrieval, and workflow automation, the assistant enhances community engagement, simplifies contributor onboarding, and ensures open-source projects remain active and well-supported.
+
+Expected Outcomes:
+AI-Driven Contributor Engagement
+
+Automates interactions, welcomes new contributors, and guides them through onboarding.
+Automated Issue Triage & PR Assistance
+
+Helps maintainers prioritize issues and assists contributors in resolving them efficiently.
+Knowledge Base & FAQ Automation
+
+Provides instant answers to common queries, reducing repetitive maintainer workload.
+AI-Powered Community Analytics
+
+Tracks engagement metrics, identifies active contributors, and generates insights.
+Required Skills:
+GenAI
+Supabase
+FastAPI
+Integrations:
+Discord
+Slack
+GitHub
+Mentors:
+Chandan
+
+
+~~~~~~~~~~
+DocPilot
+Project Type: Large
+Description:
+Build a new age EMR application using conversational AI at its best. Existing EMR solutioning is Age-old! Doctors resist the overwhelming software which is high on costs and difficult to operate. Last innovation was made in 1990's. DocPilot listens to the whole consultation conversation between a doctor and patient, and generates a prescription for the doctor to just sign, print and save digitally.
+
+The app should be able to separate out things like symptoms, diagnosis, medications and tests from the conversation it listens to. These are just the basic requirements. Research more on OPD appointments and include them in our solutioning.
+
+Expected Outcomes:
+Conversational AI-powered EMR that listens and auto-generates prescriptions.
+Eliminates outdated, complex, and costly software for doctors.
+Affordable and easy to use, reducing resistance from medical professionals.
+Extracts symptoms, diagnosis, medications, and tests from conversations.
+Allows doctors to review, sign, print, and save prescriptions digitally.
+Integrates OPD appointment management for a seamless experience.
+A modern solution replacing decades-old EMR systems.
+Required Skills:
+Flutter
+AI
+Appwrite
+Mentors:
+Jaideep
+
+~~~~~~~~~~
+
+EduAid
+Project Type: Medium
+Description:
+EduAid is an AI-driven tool designed to enhance online learning by generating quizzes from educational content, helping students improve retention and engagement. Currently available as a browser extension, we aim to expand it into a full-fledged platform with a website, optimized model pipelines, and better system performance.
+
+Our current model supports difficulty-controlled quizzes for short-answer and multiple-choice questions (MCQs). We plan to extend this functionality to other formats, including fill-in-the-blanks, boolean, and match-the-following, by improving our models for diverse question generation. Additionally, we seek to integrate EduAid with other educational platforms to make it a seamless part of the learning ecosystem.
+
+Expected Outcomes:
+Fully deploy the EduAid browser extension and website.
+Optimize model pipelines for better accuracy and response time.
+Improve system performance for a smoother user experience.
+Expand difficulty-controlled question generation to new formats.
+Enhance UI/UX for better usability.
+Integrate with other educational platforms for wider adoption.
+Required Skills:
+Frontend Development
+Backend Development
+PyTorch & NLP
+System Design & Architecture
+Mentors:
+Aditya Dubey
+
+
+~~~~~~~~~~
+Ell-ena
+Project Type: Large
+Description:
+Ell-ena is an AI-powered product manager that automates task management by creating to-do items, tickets, and transcribing meetings while maintaining full work context. It is input-agnostic and features a chat interface where users can interact naturally.
+
+Users can ask Ell-ena to perform tasks such as:
+
+"Create a ticket to work on the dark mode feature."
+"Add a to-do list item for my math assignment."
+The AI understands the context and adds relevant details automatically. Advanced algorithms like Graph RAG can be leveraged for efficient context retrieval and decision-making.
+
+Expected Outcomes:
+AI-powered system that generates tasks, tickets, and meeting transcriptions.
+Seamless chat-based interface for intuitive user interactions.
+Context-aware automation to enrich task details automatically.
+Implementation of Graph RAG or similar techniques for intelligent processing.
+Scalable backend to support real-time task creation and management.
+Required Skills:
+ReactJS / NextJS
+NodeJS / Any backend tech stack
+AI / NLP
+Graph RAG
+Mentors:
+Jaideep
+
+
+~~~~~~~~~~
+
+Inpact
+Project Type: Large
+Description:
+Inpact is an AI-powered creator collaboration and sponsorship matchmaking platform designed to connect content creators, brands, and agencies through data-driven insights. This open-source platform enables influencers to discover relevant sponsorship deals, collaborate with like-minded creators, and optimize brand partnerships.
+
+By leveraging GenAI, audience analytics, and engagement metrics, Inpact ensures highly relevant sponsorship opportunities for creators while maximizing ROI for brands investing in influencer marketing.
+
+Expected Outcomes:
+AI-Driven Sponsorship Matchmaking
+
+Automatically connects creators with brands based on audience demographics, engagement rates, and content style.
+AI-Powered Creator Collaboration Hub
+
+Facilitates partnerships between creators with complementary audiences and content niches.
+AI-Based Pricing & Deal Optimization
+
+Provides fair sponsorship pricing recommendations based on engagement, market trends, and historical data.
+AI-Powered Negotiation & Contract Assistant
+
+Assists in structuring deals, generating contracts, and optimizing terms using AI insights.
+Performance Analytics & ROI Tracking
+
+Enables brands and creators to track sponsorship performance, audience engagement, and campaign success.
+Required Skills:
+ReactJS
+GenAI
+Supabase
+FastAPI
+Mentors:
+Chandan
+
+~~~~~~~~~~
+Monumento
+Project Type: Large
+Description:
+Monumento is an AR-integrated social app that transforms how you connect with the world’s most iconic landmarks. Through Monumento, you can check in to popular monuments, explore famous sites, and discover new people, all within a social platform dedicated to cultural and historical experiences. Whether you're a traveler or a history enthusiast, Monumento offers an immersive way to engage with the world’s most treasured locations.
+
+Expected Outcomes:
+Improved UI responsiveness
+
+Improve the app's responsiveness across different devices and screen sizes.
+Ensure a seamless user experience on various platforms.
+Better social system
+
+Improve the social aspect of the app by improving the feed and user profiles and the ability to interact with other users.
+Introduce new features like events, communities to keep users engaged
+Make Popular Monumnets Dynamic
+
+Introduce a dynamic system where popular monuments can be updated with new information and images by the users.
+Allow users to add new monuments to the app and make them available for users to check in to.
+Itineray
+
+Introduce a itinerary feature to help users plan their trips and discover new places.
+Allow users to save their favorite monuments and create personalized itineraries.
+Required Skills:
+Flutter
+Appwrite/Pocketbase/Supabase
+Generative AI
+ARCore/ARKit
+UI/UX Design
+Mentor:
+Mohammed Mohsin
+
+~~~~~~~~~~
+
+Neurotrack
+Project Type: Medium
+Description:
+Neurotrack is an AI-powered platform designed for schools and therapy centers to detect, assess, and manage neurodevelopmental conditions like Autism, ADHD, and learning difficulties. By automating assessments, personalized education plans, and therapy tracking, it empowers educators, therapists, and parents to provide more effective, data-driven support.
+
+Expected Outcomes:
+AI-Powered Student Grouping
+
+Identifies patterns and groups students with similar needs for tailored interventions.
+Automated Individualized Education Plans (IEPs)
+
+Creates personalized learning strategies with AI-driven recommendations.
+Digital Assessments
+
+Conducts efficient, research-backed evaluations to track progress.
+Real-Time Reports & Insights
+
+Provides actionable data for educators, therapists, and parents.
+Comprehensive Therapy Tracking
+
+Logs sessions, progress, and improvements over time.
+Parent Support Assistant
+
+AI-driven chat support for guidance and resource recommendations.
+Seamless Scheduling
+
+Simplifies session planning for educators and therapists.
+Required Skills:
+GenAI
+Supabase/Appwrite
+Flutter
+Mentors:
+Mohsin
+~~~~~~~~~~
+Perspective
+Project Type: Large
+Description:
+In today's digital landscape, personalized content algorithms and social media feeds often create echo chambers of various news and different perspectives and narratives. Users are repeatedly exposed to viewpoints confirming their beliefs. This reinforcement of confirmation bias leads to increased polarization and limits critical thinking.
+
+The Perspective app tackles the issue of echo chambers and confirmation bias by actively presenting users with well-researched, alternative viewpoints alongside their regularly consumed content. It analyzes the current narrative of a news article, social media post, or online discussion, then curates counterarguments from credible sources. This exposure encourages critical evaluation and helps users see beyond the single perspective they might be constantly fed, ultimately fostering a more balanced and nuanced understanding of complex facts. You don't need to rely on truncated news, get complete facts.
+
+Users can benefit from features such as:
+
+Counter-perspective: Instantly see counterarguments and narration of why other perspective.
+Reasoned Thinking: The tool will provide a counter-narrative of the same fact with strongly connected facts.
+Updated Facts: With the help of context-aware LLMs, we will provide the latest facts and counter-facts.
+Seamless Integration: Works with news, blogs, and social media applications.
+Real-Time Analysis: You don't need to wait for any author, make Perspective your companion for immediate insights as you browse.
+Expected Outcomes:
+
+Less Bias in narratives: Break out of echo chambers.
+Wider Perspectives: Broaden your understanding of the news you are watching.
+Better Discourse: More balanced discussions.
+Sharper Analysis: Improved critical thinking and decreased your mind's polarisation.
+Required Skills:
+
+Frontend Development (ReactJS)
+Backend Development (Python, FastAPI)
+AI and NLP (Python, LangChain, Langgraph, Prompt Engineering)
+Database Management (Any VectorDB)
+Mentors: Manav Sarkar
+
+~~~~~~~~~~
+
+Pictopy
+Project Type: Medium
+Description:
+Pictopy is currently built using Tauri, relying on Rust, but it comes with platform-specific dependencies that make it difficult to containerize and ship. Electron has been considered as an alternative, but issues with rendering local machine photos and bypassing security have caused challenges in the past. This has led to difficulty in onboarding new contributors as many give up during the setup process, resulting in fewer active contributors.
+
+The backend has been stable but stagnant and could use refactoring and design enhancements to improve its growth and functionality. While the backend is working without issues, there is potential for improvement and future scaling.
+
+Expected Outcomes:
+Rework the frontend to explore other options that can simplify setup and containerization.
+Address issues related to Electron, including photo rendering and security bypassing.
+Increase contributions from new developers by simplifying the setup process.
+Refactor and enhance the backend for better growth and scalability.
+Provide design improvements to the backend for smoother development and future expansions.
+Required Skills:
+Rust
+Electron
+Backend Development
+Frontend Development
+Mentors:
+Pranav Aggarwal
+~~~~~~~~~~
+Resonate
+Project Type: Medium
+Description:
+Resonate is an open-source social voice platform designed to enable real-time audio interactions, storytelling, and voice-based social networking. The project is built with a strong focus on open collaboration, accessibility, and innovation in voice communication. Whether it's live discussions, pair chats, or immersive story experiences, Resonate is designed to put voice at the center of social engagement.
+
+Expected Outcomes:
+Expanded Audio Story Marketplace
+
+Develop a fully-fledged marketplace for audio stories, allowing users to create, browse, and follow creators.
+Implement profile pages with a follower system, showcasing user content and social interactions.
+User & Creator Search Functionality
+
+Enhance the explore page by adding user search functionality.
+Enable users to follow creators, view their profiles, and stay updated on their latest audio stories.
+Friend System for Personal Communication
+
+Implement a friend request and acceptance system.
+Enable direct personal chats and voice calls between friends.
+Improved Pair Chat Experience
+
+Introduce a lobby system where users can see the number of people waiting before joining a pair chat.
+Improve UI/UX to enhance user engagement and interaction.
+Required Skills:
+Flutter
+Appwrite
+LiveKit
+WebRTC
+UI/UX Design
+Mentor:
+Aarush Acharya
+
+
+
+""",17886,2039,3492,https://www.gsocorganizations.dev/organization/aossie/,https://aossie.org/ideas

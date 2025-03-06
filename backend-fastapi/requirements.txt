@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+chromadb
+google-generativeai
+pandas
+python-dev
