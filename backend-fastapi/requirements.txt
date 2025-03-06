@@ -6,14 +6,3 @@ pandas
 python-dotenv
 
 
-- organization_id: 
-    organization_name: 
-    no_of_ideas:
-    ideas_content: >-
-
-          
-    totalCharacters_of_ideas_content_parent: 
-    totalwords_of_ideas_content_parent: 
-    totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url: 
