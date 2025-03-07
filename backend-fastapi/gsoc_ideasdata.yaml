@@ -5417,3 +5417,2466 @@ organizations:
     totalTokenCount_of_ideas_content_parent: 20259
     gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/cern-hsf/
     idea_list_url: https://hepsoftwarefoundation.org/gsoc/2025/summary.html
+
+
+  - organization_id: 17
+    organization_name: CGAL Project
+    no_of_ideas: 11
+    ideas_content: >-
+          Enhancing the 2D Regularized Boolean Operation Demo
+          Mentor: Efi Fogel
+
+          Project description: The new demonstration program of the "2D Regularized Boolean Operations" package demonstrates various operations on polygons, such as, union, intersection, and Minkowski sum. It also demonstrates the application of several operations in a pipeline fashion. The demo has not been published yet; it requires a few enhancements, such as the support of Boolean operations on general polygons bounded by non-linear curves.
+
+          Required Skills: Qt6, geometry, code development tools (e.g., git), and C++14 proficiency
+
+          Contact: efifogel@gmail.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          Tetrahedral Isotropic Remeshing Parallelization
+          Mentor: Jane Tournois
+
+          Project description:
+
+          The goal of this project is to parallelize the code of the Tetrahedral Remeshing algorithm available in CGAL. This multi-material tetrahedral remeshing algorithm [2] is based on local and atomic operations such as edge collapse, edge split and edge flip, that could be performed in parallel to improve the performances of the code. The 3D Triangulations [3] and Tetrahedral Mesh Generation package [4] provide a framework to implement mesh operations concurrently. The same framework will be used to parallelize the remeshing algorithm, with the Intel TBB library [5].
+
+          Resources:
+
+          [1] CGAL Tetrahedral Remeshing package
+          [2] The original publication Multi-Material Adaptive Volume Remesher
+          [3] CGAL 3D Triangulations
+          [4] CGAL Tetrahedral Mesh Generation package
+          [5] Intel Threading Building Blocks
+          Required Skills: C++17, Mesh Processing, Computational Geometry, Parallelism with TBB
+
+          Contact: jane.tournois@geometryfactory.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          New Mesh Subdivision Methods
+          Mentor: Mael Rouxel-Labbé
+
+          Project description:
+
+          Subdivision methods are efficient techniques to produce smooth surfaces from polygonal meshes. Within CGAL [1], a handful of classic subdivision techniques already exist (CatmullClark subdivision, Loop subdivision DooSabin subdivision, Sqrt3 subdivision). The goal of this project is two-fold: (a) implement newer subdivision techniques -- such as Interpolatory SQRT(3) Subdivision [2], which builds upon an algorithm that is already found in CGAL -- and compare them to our existing algorithms (b) Investigate the use of these newer techniques as a preprocessing step in some of CGAL's newer remeshing techniques (such as adaptive remeshing).
+
+          Resources:
+
+          [1] CGAL Subdivision package
+          [2] Interpolatory SQRT(3) Subdivision
+          [3] Gaussian-Product Subdivision Surfaces
+          [4] CGAL's upcoming adaptive remeshing algorithms
+          Required Skills: C++17, Mesh Processing
+
+          Contact: mael.rouxel.labbe@geometryfactory.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          Enhanced Dual Contouring
+          Mentor: Mael Rouxel-Labbé, Pierre Alliez
+
+          Project description:
+
+          A previous GSoC launched the process of adding classic contouring methods to CGAL: Marching Cubes and Dual Contouring. This package is about to be finalized and will be integrated soon into CGAL (https://github.com/CGAL/cgal/pull/6849). Many enhancements exist for the Dual Contouring method to improve its robustness: placement of the dual point, improved conditioning of the SVD matrices, or on-the-fly refinement of the underlying grid [1]. Another aspect is speed, as a grid structure is well adapted to GPU computation.
+
+          The project will first focus on manifold contouring methods and robustness in standard C++. If there is time and the candidate has the required skills, we can also explore runtime aspects and the conversion to a GPU implementation. If there is time and the candidate does not have the required skills, we shall explore the implementation of other contouring methods such as Dual Marching Cubes [2].
+
+          Resources:
+
+          [1] Manifold Dual Contouring
+          [2] Dual Marching Cubes
+          Feature-Sensitive Subdivision and Isosurface Reconstruction
+          Required Skills: C++17, Dual Contouring, linear algebra / quadric error metrics, possibly GPU algorithms
+
+          Contact: mael.rouxel.labbe@geometryfactory.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          Topological Filtering of Features in Triangle Meshes
+          Mentor: Sebastien Loriot
+
+          Project description:
+
+          Remeshing algorithms in CGAL requires the proper extraction of sharp features so that they can be represented in the output mesh (like here for example). Classical method to detect sharp features are based on collecting edges with sharp dihedral surface angles. However, depending on the quality of the input mesh, some noisy edges might be detected, or some edges might be detected. To workaround these issues, it might be interesting to rely on tools from Topological Data Analysis, like for example persistence. Indeed, extra data or missing data are all related to a notion of scale at which the problem is looked at. The goal of this project is to implement such a strategy for provide curated feature edge graph to the meshing algorithm of CGAL. If time allows, extension to detection of significant handles might also be looked at.
+
+          Resources:
+
+          A Practical Solver for Scalar Data Topological Simplification
+          To cut or to fill: a global optimization approach to topological simplification
+          Topological Simplification of Nested Shapes
+          Gudhi library
+          Required Skills: C++17, Mesh Processing, Topological Data Analysis
+
+          Contact: sebastien.loriot@geometryfactory.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          Improving ARAP in CGAL
+          Mentor: Andreas Fabri
+
+          Project description:
+
+          As-Rigid-As-Possible (ARAP) surface modeling is one of the most well known approach for deformation of surfaces. It has been implemented in CGAL, within the Surface Mesh Deformation package (https://doc.cgal.org/latest/Surface_mesh_deformation/index.html#Chapter_SurfaceMeshDeformation). Since the original paper (Sorkine & Alexa, 2007 - As-Rigid-As-Possible Surface Modeling), which is implemented in CGAL, a number of improvements have been proposed. The goal of this project is to investigate these improvements, and enhance the CGAL implementation. Another direction of interest is the extension of the ARAP formulation to the setting of volume deformation of tetrahedral meshes.
+
+          Resources:
+
+          As-Rigid-As-Possible Surface Modeling
+          ARAP Revisited Discretizing the Elastic Energy using Intrinsic Voronoi Cells
+          Higher Order Continuity for Smooth As-Rigid-As-Possible Shape Modeling
+          Required Skills: C++17, linear algebra
+
+          Contact: andreas.fabri@geometryfactory.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          Extending 2D Arrangement Drawings
+          Mentor: Efi Fogel
+
+          Project description: The "2D Arrangement" package partially supports limited drawing of a 2D arrangements. The goal of this project is extend the capabilities of 2D arrangement drawing. In particular:
+
+          The drawing is limited. An instance of the the Arrangement_2<Traits,Dcel> template can be used to represent 2D arrangements on the plane. The 2D Arrangement package supports ten traits classes that can substitute the Traits parameter. A traits class determines the family of curves that induce the arrangement, e.g., Bezier curves. Currently, arrangement induced by curves of several families cannot be drawn.
+          The drawing is inefficient and should be optimized.
+          The drawing of arrangements induced by geodesic arcs on the sphere in 3D is deficient. Currently only the curves are drawn (and the faces are not). The Earth demo exhibit some drawing of such arrangements, but it applies a trick that restricts the drawing to faces that do not cross the equator of the sphere. Addressing this item requires knowledge and experience in 3D graphics.
+          Required Skills: Qt6 and 3D graphics, geometry, code development tools (e.g., git), and C++17 proficiency
+
+          Contact: efifogel@gmail.com
+
+          Duration: 350h
+
+          ~~~~~~~~~~
+
+          Hexahedral mesh generation
+          Mentor: Guillaume Damiand
+
+          Project description:
+
+          The goal of this project is to implement the method of the paper [1] "A template-based approach for parallel hexahedral two-refinement", Steven J. Owen, Ryan M. Shih, Corey D. Ernst; in CGAL. This method allows to generate a locally refined hexahedral mesh, starting from a coarse grid, and using different templates for refinement. It will be implemented using a 3D linear cell complex [2] as underlying data-structure. To implement the different templates, we can use the volumic Query-replace operation [3]. The project was started last year and a preliminary version of the method already exists. The goal of this project is to finish this development, and to propose an integration in CGAL. To do so, the work to do is: (1) finish the sequential version, adding displacement of new vertices in order to obtain smooth meshes; (2) validate results on many different input meshes; (3) write the doc and the examples; (4) finish the parallel version.
+
+          Resources:
+
+          [1] The paper to be implemented: "A template-based approach for parallel hexahedral two-refinement"
+          [2] CGAL Linear cell complex package
+          [3] Query-replace operations for topologically controlled 3D mesh editing and the Gitlab repository
+          Required Skills: C++17, Geometry Processing, Mesh Processing, Computational Geometry
+
+          Contact: guillaume.damiand@cnrs.fr
+
+          Duration: 175h
+
+          ~~~~~~~~~~
+
+          Cut by plane a volumetric mesh
+          Mentor: Guillaume Damiand and Sebastien Loriot
+
+          Project description:
+
+          The goal of this project is to implement a method allowing to cut a 3D volumetric mesh (represented by a 3D linear cell complex) by a plane. There are some code available for the two first steps of the method (insert vertices on the cut edges, and insert edges between the new vertices to split faces); it remains the last step which consists in inserting new faces along path of edges. The method must be robust, i.e. deal with any configuration of volumetric mesh. To do so, the work to do is: (1) implement the 3 steps in CGAL; (2) validate results on many different input meshes; (3) write the doc and the examples.
+
+          Required Skills: C++17, Geometry Processing, Mesh Processing, Computational Geometry
+
+          Contact: guillaume.damiand@cnrs.fr sloriot.ml@gmail.com
+
+          Duration: 175h
+
+          ~~~~~~~~~~
+
+          Improvement of Named Parameters
+          Mentor: Sebastien Loriot and Laurent Rineau
+
+          Project description:
+
+          The goal of this project is to continue the work started in the pull-request https://github.com/CGAL/cgal/pull/7966. This change proposal implements a mechanism that allows the user to check at compile time that the options passed are used by the function (currently a flow of our mechanism). The proof of concept is there, but now we need to apply it globally in CGAL to all the functions using named parameters. As the function are documented, one way to tackle this project is to write a (python?) script that will collect for all the function the expected named parameters and add the macro calls in the function. There are also other improvements that can be implemented during this project if time allows (automatic extraction of a subset of options, more friendly developer interface, ...)
+
+          Required Skills: C++17, Scritping Language such as Python, with knowledge in parsing
+
+          Contact: sloriot.ml@gmail.com
+
+          Duration: 175h
+
+          ~~~~~~~~~~
+
+          Adding Support for New File Formats for Meshes
+          Mentor: Sebastien Loriot and Mael Rouxel-Labbé
+
+          Project description:
+
+          The CGAL library provides several functions to read and write meshes (surface and volume) in the Stream Support package. The list of currently supported file format is available here. The goal of this project is to add support to more file formats. We could for example add support for glTF, gmsh format, 3mf v2, ... The duration of the project will depend on the file format proposed for addition.
+
+          Required Skills: C++17
+
+          Contact: sloriot.ml@gmail.com
+
+          Duration: 90h, 175h, or 350h
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: https://github.com/CGAL/cgal/wiki/Project-Ideas
+    idea_list_url: https://github.com/CGAL/cgal/wiki/Project-Ideas
+
+
+  - organization_id: 18
+    organization_name: CHAOSS
+    no_of_ideas: 
+    ideas_content: >-
+      Idea: Enhance Conversational Topic Modelling Capabilities in CHAOSS Software
+      Hours: 350
+
+      Micro-tasks and place for questions
+
+      This project will add GenSIM logic, and other capabilities to the Clustering Worker inside of Augur Software, and be extended into a generalized Open Source Software Conversational Topic Modeling Instrument.
+
+      CHOASS/augur has several workers that store machine learning information derived from computational linguistic analysis of data in the message table. The message table includes messages from issue, pull request, pull request review, and email messages. They are related to their origin with bridge tables like pull_request_message_ref. The ML/CL workers are all run against all the messages, regardless of origin.
+
+      Clustering Worker (clusters created and topics modeled)
+      message analysis worker (sentiment and novelty analysis)
+      discourse analysis worker (speech act classification (question, answer, approval, etc.)
+      Clustering Worker Notes:
+
+      Clustering Worker: 2 Models.
+
+      Models:
+      Topic modeling, but it needs a better way of estimating number of topics.
+      Tables - repo_topic - topic_words
+      Computational linguistic clustering
+      Tables - repo_cluster_messages
+      Key Needs
+      Add GenSim algorithms to topic modeling section #1199
+      The topics, and associated topic words need to be persisted after each run. At the moment, the topic words get overwritten for each topic modeling run.
+      Description/optimization of the parameters used to create the computational linguistic clusters.
+      Periodic deletion of models (heuristic: If 3 months pass, OR there’s a 10% increase in the messages, issues, or PRs in a repo, rebuild the models)
+      Establish some kind of model archiving with appropriate metadata (lower priority)
+      Discourse Analysis Worker Notes:
+
+      discourse_insights table (select max(data_collection_date) for each msg_id)
+
+      sequence is reassembled from the timestamp in the message table (look at msg_timestamp)
+      issues_msg_ref, pull_request_message_ref, pull_request_review_msg_ref
+      Message Analysis Worker
+
+      message_analysis
+      message_analysis_summary
+      augur-tech
+
+      The aims of the project are as follows:
+
+      Advance topic modeling of open source software conversations captured in GitHub.
+      Integrate this information into clearer, more parsimonious CHAOSS metrics.
+      Automate the management machine learning insights, and topic models over time.
+      (Stretch Goal) Improve the operation of the overall machine learning insights pipeline in CHAOSS/augur, and generalize these capabilities.
+      
+      ~~~~~~~~~~
+      IDEA: Implement Conversion Rate Metric in CHAOSS Software
+      Hours: 350
+
+      Micro-tasks and place for questions
+
+      Conversion Rate
+      Question: What are the rates at which new contributors become more sustained contributors?
+
+      Description
+      The conversion rate metric is primarily aimed at identifying how new community members become more sustained contributors over time. However, the conversion rate metric can also help understand the changing roles of contributors, how a community is growing or declining, and paths to maintainership within an open source community.
+
+      Objectives (why)
+      Observe if new members are becoming more involved with an open source project
+      Observe if new members are taking on leadership roles within an open source project
+      Observe if outreach efforts are generating new contributors to an open source project
+      Observe if outreach efforts are impacting roles of existing community members
+      Observe if community conflict results in changing roles within an open source community
+      Identify casual, regular, and core contributors
+      Implementation
+      This project could be implemented using either the CHAOSS/Augur, or CHAOSS/Grimoirelab (including stack components noted in references) technology stacks.
+
+      The aims of the project are as follows:
+
+      Implement the Conversion Rate Metric in CHAOSS Software
+      After discussion, consider which CHAOSS Software Stack you wish to work with
+      In collaboration with mentors, define the technology framework, and initial path to a "hello world" version of the metric
+      Iterative development of the metric
+      Assist in the deployment of this metric for a pre-determined collection of repositories in a publicly viewable website linked to the CHAOSS project.
+      Advance the work of the chaoss metrics models working group.
+      Difficulty: Medium
+      Requirements: Knowledge of Python is desired. Some knowledge of Javascript or twitter/bootstrap is also desired. Key requirement is a keenness to dig into this challenge!
+      Recommended: Python experience.
+      Mentors: Sean Goggins
+      Filters (optional)
+      Commits
+      Issue creation
+      Issue comments
+      Change request creation
+      Change request comments
+      Merged change requests
+      Code Reviews
+      Code Review Comments
+      Reactions (emoji)
+      Chat platform messages
+      Maillist messages
+      Meetup attendance
+      Visualizations
+
+
+      Source: https://chaoss.github.io/grimoirelab-sigils/assets/images/screenshots/sigils/overall-community-structure.png
+
+
+
+      Source: https://opensource.com/sites/default/files/uploads/2021-09-15-developer-level-02.png
+
+      Tools Providing the Metric
+      Augur
+      openEuler Infra
+      Data Collection Strategies
+      The following is an example from the openEuler community:
+
+      A group of people who attended an offline event A held by the community, can be identified as Group A. Demographic information of Group A could be fetched from an on-line survey when people register for the event. To identify the conversation rate of these participants:
+      Some people from Group A started watching and forking the repos, indicating they have shown some interest in this community. We marked them as subgroup D0 (Developer Level 0) as a subset of Group A.
+      Conversion rate from the total number of people in Group A to the number of people in subgroup D0 is: D0/Group A
+      Some people from subgroup D0 make more contributions beyond just watching or forking, including creating issues, making comments on an issue, or performed a code review. We marked them as subgroup D1 (Developer Level 1) as a subset of D0.
+      Conversion rate from the total number of people in Subgroup D0 to the number of people in subgroup D1 is: D1/D0.
+      Some people from subgroup D1 continue to make more contributions, like code contributions, to the project. This could include creating merge requests and merging new project code. We marked them as subgroup D2 (Developer Level 2) as a subset of D1.
+      Conversion rate from the total number of people in subgroup D1 to the number of people in subgroup D2 is: D2/D1.
+
+
+      Definition:
+
+      Developer Level 0 (D0) example: Contributors who have given the project a star, or are watching or have forked the repository
+      Developer Level 1 (D1): Contributors who have created issues, made comments on an issue, or performed a code review
+      Developer Level 2 (D2): Contributors who have created a merge request and successfully merged code
+      Conversion Rate (Group A -> D0): CR (Group A -> D2) = D0/Group A
+      Conversion Rate (D0 -> D1): CR (D0 -> D1) = D1/D0
+      Conversion Rate (D1 -> D2): CR (D1 -> D2) = D2/D1
+      References
+      https://opensource.com/article/21/11/data-open-source-contributors
+      https://github.com/chaoss/augur
+      https://gitee.com/openeuler/website-v2/blob/master/web-ui/docs/en/blog/zhongjun/2021-09-15-developer-level.md
+      https://chaoss.github.io/grimoirelab-sigils/common/onion_analysis/
+      https://mikemcquaid.com/2018/08/14/the-open-source-contributor-funnel-why-people-dont-contribute-to-your-open-source-project/
+      Contributors
+      Sean Goggins
+      Andrew Brain
+      John McGinness
+
+      ~~~~~~~~~~
+      IDEA: Open Source Software Health Metrics Visualization Exploration
+      Hours: 350
+
+      Micro-tasks and place for questions
+
+      The CHAOSS Community currently delivers pre-packaged visualizations of open source software health data through Augur APIs (https://github.com/chaoss/augur/blob/main/augur/routes/pull_request_reports.py and https://github.com/chaoss/augur/blob/main/augur/routes/contributor_reports.py), and the https://github.com/chaoss/augur-community-reports repository. This project seeks to expand, refine, and standardize the visualization of different classes of community health metrics data. Specifically, some analyses are temporal, others are anomaly driven, and in some cases contrasts across repositories and communities are required. In each case, the visualization of data is an essential component for metrics, and what we are now referring to as metrics models (https://github.com/chaoss/wg-metrics-models).
+
+      Additional resources include: http://new.augurlabs.io/ && https://github.com/augurlabs/augur_view which demonsrate the updated twitter/bootstrap Augur frontend.
+
+      The aims of the project are as follows:
+
+      Experiment with standard metrics visualizations using direct Augur database connections, or through the Augur API.
+      Refine metrics, and metrics model visualizations using Jupyter Notebooks are similar technology.
+      Transform visualizations, as they are completed, into Augur API endpoints, following the pull request, and contributor reports examples.
+      Difficulty: Medium
+      Requirements: Strong interest in data visualization.
+      Recommended: Experience with Python is desirable, and experience designing, or developing visualizations is desirable.
+      Mentors: Isaac Milarsky, Andrew Brain
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/chaoss/
+    idea_list_url: https://github.com/chaoss/augur/blob/main/gsoc-ideas.md
+
+
+  - organization_id: 19
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 20
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 21
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 22
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 23
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 24
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 25
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 26
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 27
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 28
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  
+
+  - organization_id: 29
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 30
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 31
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 32
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 33
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 34
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 35
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 36
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 37
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 38
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 39
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 40
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 41
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 42
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 43
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 44
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 45
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 46
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 47
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 48
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 49
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 50
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 51
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 52
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 53
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 54
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 55
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 56
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 57
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 58
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 59
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 60
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 61
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 62
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 63
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 64
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 65
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 66
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 67
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 68
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 69
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 70
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 71
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 72
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 73
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 74
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 75
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 76
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 77
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 78
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 79
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 80
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 81
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 82
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 83
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 84
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 85
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 86
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 87
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 88
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 89
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 90
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 91
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 92
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 93
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 94
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 95
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 96
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 97
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 98
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 99
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 100
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 101
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 102
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 103
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 104
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 105
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 106
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 107
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 108
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 109
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 110
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 111
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 112
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 113
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 114
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 115
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 116
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 117
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 118
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 119
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 120
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 121
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 122
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 123
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 124
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 125
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 126
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 127
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 128
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  
+
+  - organization_id: 129
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 130
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 131
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 132
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 133
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 134
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 135
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 136
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 137
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 138
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 139
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 140
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 141
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 142
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 143
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 144
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 145
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 146
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 147
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 148
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 149
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 150
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 151
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 152
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 153
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 154
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 155
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 156
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 157
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 158
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 159
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 160
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 161
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 162
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 163
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 164
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 165
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 166
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 167
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 168
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 169
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 170
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 171
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 172
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 173
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 174
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 175
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 176
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 177
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 178
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 179
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  - organization_id: 180
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+  
+
+  - organization_id: 181
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 182
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 183
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 184
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+  - organization_id: 185
+    organization_name: 
+    no_of_ideas:
+    ideas_content: >-
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: 
+    idea_list_url:
+
+
+  
