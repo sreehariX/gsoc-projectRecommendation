@@ -2599,3 +2599,2821 @@ organizations:
     totalTokenCount_of_ideas_content_parent: 1147
     gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/asyncapi/
     idea_list_url: https://github.com/asyncapi/community/blob/master/mentorship/summerofcode/2025/asyncapi-gsoc-ideas-page.md
+
+
+
+  - organization_id: 12 
+    organization_name: BRL-CAD 
+    no_of_ideas: 25
+    ideas_content: >-
+          Improving the k-File to BRL-CAD Converter
+          Outline
+          In the past years, we put some effort in the development of a LS-DYNA keyword file to BRL-CAD converter. Although we made great progress there, we still can't convert every k-file to g, i.e. the native BRL-CAD format. The goal of this project is to increase the number of covertable k-files.
+
+          Details
+          The sources of the current k-file to BRL-CAD converter can be found in the brlcad repository at src/conv/g. You have to compile BRL-CAD from its sources to work on this project and see the effects of your changes.
+
+          Examples of k-files, which cannot be converted with k-g, can be found here: THUMS You can however use your own examples.
+
+          Expected Outcome
+          We expect an improved k-g LS-DYNA keyword file to BRL-CAD converting program as the outcome from this project.
+
+          Project Properties
+          Skills
+          C/C++
+          LS-DYNA or a similar FE solver software, which can read k-files (needed as reference for how the geometry should look like)
+          Difficulty
+          medium
+
+          Size
+          This project could have any size, short (90h), medium (175h) or long (350h), depending on the amount of functionality you want to add.
+
+          Additional Information
+          Potential mentor(s):
+          Ali Haydar
+          Daniel Rossberg
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+          ~~~~~~~~~~
+
+          Development and Build Support for Native Windows
+          Outline
+          OpenSCAD is multi-platform desktop application, with official support for Windows, macOS and Linux, and unoffical support for various other Unix-like OSes like FreeBSD.
+
+          While OpenSCAD does support Windows, Windows development and build setup is a bit suboptimal:
+
+          Windows binaries are built on Linux using the MXE cross compilation environment (https://mxe.cc). Build setup
+          Windows native builds, including tests are done on msys2 (https://www.msys2.org) Build setup
+          Goal of this project is to improve Windows support for native Windows development.
+
+          Details
+          Adjust OpenSCAD source code as needed to build OpenSCAD using MSVC
+          Adjust the CMake build system as needed to support MSVC
+          Find a way of managing building (and packaging if needed) 3rd party dependencies. OpenSCAD depends on a number of 3rd party packages (e.g. Qt, QScintilla2, CGAL, Manifold, GMP, MPFR, boost, OpenCSG, GLEW, Eigen, glib2, fontconfig, freetype2, harfbuzz, libzip, Bison, Flex, double-conversion). Not all of these have great Windows build support.
+          Integrate library building/packaging into our Continuous Integration framework (e.g. GitHub Actions or CircleCI).
+          Build OpenSCAD on MSVC + run tests natively for every PR, as we do for other build environments. This to make sure contributions don't fall out of maintenance.
+          Establish support for debugging OpenSCAD in the MSVC debugger, and documentation on how to set that up, if necessary
+          Write/update documentation on how to establish a native WIndows development environment
+          Consider switching the official OpenSCAD Windows build to use MSVC.
+          Prior work: openscad/openscad#4976
+
+          Expected Outcome
+          A native MSVC build environment for OpenSCAD is reasonable easy to set up, and such an environment is continuously integrated.
+
+          Project Properties
+          Skills
+          Good understanding of the Windows OS and native components (DLLs, executables) on a low enough level to be able to debug odd behaviors.
+          Experience using MSVC and native Windows development for C++ projects
+          Good understanding of how 3rd party libraries are built and distributed.
+          Experience with or interest in acquiring skills using CMake and writing custom CMake configs and macros
+          Experience with GitHub CI or CircleCI is a bonus
+          Difficulty
+          medium
+
+          Size
+          long (350h)
+
+          Additional Information
+          Potential mentor(s): Marius Kintel (IRC: kintel), Torsten Paul (IRC: teepee)
+          Note: None of the mentors have relevant Windows skills, but have excellent understanding on how all the relevant technologies work and how they are integrated with OpenSCAD. It's important that the candidate is able to acquire any necessary Windows-specific skills independently.
+          Organization website: https://www.openscad.org/
+
+          ~~~~~~~~~~
+
+          Integrated language help feature in OpenSCAD #100
+          Outline
+          Add more interactive help features for built-in functions and modules. Right now there's already a nice summary of parameters linked as cheat sheet. Scope of this projects would be to use this information in extended form and make it available in a more direct way in the editor.
+
+          Details
+          Convert the cheat sheet information into machine readable format
+          Find a way to generate the existing HTML format based on the core data
+          Add context help to editor giving help for built-in functions and modules, e.g. by adding formatted help output to the console window, including the links to further documentation like the language manual on Wikibooks
+          Expected Outcome
+          Cheat sheet is integrated into the application and additional context help for built-in functions and modules is available.
+
+          Project Properties
+          Skills
+          Programming language is C++
+          GUI programming with the Qt framework
+          Difficulty
+          Easy
+
+          Size
+          Medium (175h)
+
+          Additional Information
+          Potential mentor(s): Marius Kintel (IRC: kintel), Torsten Paul (IRC: teepee)
+          Organization website: https://www.openscad.org/
+
+
+          ~~~~~~~~~~
+
+          Create a compelling interface and functionality for the IfcOpenShell WASM / pyodide module #99
+
+          Outline
+          http://wasm.ifcopenshell.org/
+
+          Details
+          Expected Outcome
+          Future Possibilities
+          Project Properties
+          Skills
+          Difficulty
+          Size
+          Additional Information
+          Potential mentor(s): NAME
+          Organization website: https://
+          Communication channels: https://******.zulipchat.com
+
+
+          ~~~~~~~~~~
+
+          Authoring interface for IFC4.3 alignment geometry in Bonsai #98
+          Outline
+          Industry Foundation Classes (IFC) offer the ability for rich information exchanges between modeling, analysis, planning, and other software tools in the Architecture, Engineering, and Construction (AEC) industry. Specifically, the latest release of IFC (version 4.3, also referred to as IFC4X3) adds linear referencing via alignment modeling, which is core to describing the construction and maintenance of infrastructure assets such as roads, bridges, and railways.
+
+          Details
+          Alignment import (read) capabilities have been added to IfcOpenShell and the Bonsai add-in for Blender. They have reached a state of maturity such that the next logic step is to enable alignment authoring (write) capabilities.
+
+          Expected Outcome
+          Alignment authoring will take place in Blender via the Bonsai add-in. A user-focused workflow has been developed and documented, along with preliminary user interface mockups. This project would add alignment authoring capabilities via new panels and other items within Blender. The ifcopenshell.api namespace will also need to be enhanced incrementally to support the new user interface tools.
+
+          Project Properties
+          Skills
+          Understanding and general working knowledge of python.
+
+          Difficulty
+          Medium
+
+          Size
+          Medium (175 h)
+          The participant focuses on authoring horizontal alignments via the PI method. This could be via interactive icons or primarily through a table-based interface. The user would need to be able to add, edit, and remove PI (point of intersection) points. Additionally the user would need to be able to adjust the radius that corresponds to each PI point. Though not strictly required for this project, the authoring tool would also enable definition and editing of entry and exit transition curve type (clothoid, sine spiral, polynomial spiral, etc.) and length.
+
+          Long (350 h)
+          PI-based alignment would be added for vertical and cant as well. A basic corridor modeling UI tools would be implemented to allow for sweeping geometry (open or closed profile) along an alignment curve to generate 3D linear geometry via IfcSectionedSolidHorizontal and related IFC entities.
+
+          Additional information
+          Mentors: Rick Brice @RickBrice & Scott Lecher @civilx64
+
+          Organization website: https://ifcopenshell.org
+
+          Communication channels: https://github.com/IfcOpenShell/IfcOpenShell/discussions
+
+          Technical resources:
+
+          https://docs.bonsaibim.org/guides/development/index.html
+
+          Blender 4.3: Precise Modeling for Architecture, Engineering, and 3D Printing
+
+          Python Scripting in Blender
+
+
+          ~~~~~~~~~~
+
+          Manifoldness repair 
+          Outline
+          Repair triangle soup that are not manifold.
+
+          Details
+          Basically, a valid solid mesh should be both manifold and has no self-intersection. However, models from the internet may contain defects. This project is about coming up with an algorithm that converts and repair a triangle soup into a manifold mesh.
+
+          This will contain a lot of heuristics, basically what we need is:
+
+          Stitching faces together, and maybe join faces that are close enough.
+          Fill holes.
+          Duplicate vertices and edges such that the result is a manifold in terms of connectivity.
+          Expected Outcome
+          Implementation of said algorithm.
+
+          Future Possibilities
+          Project Properties
+          Skills
+          C++
+          Graph data structure.
+          Algorithms.
+          Difficulty
+          Hard.
+
+          Size
+          Long (350h)
+
+          Additional Information
+          Potential mentor(s): @elalish @pca006132
+          Organization website: https://manifoldcad.org/
+          Communication channels: https://github.com/elalish/manifold/discussions
+
+          ~~~~~~~~~~
+
+          Overlap removal
+          Outline
+          Remove overlaps in meshes that contain self-intersection, assuming the mesh is a manifold.
+
+          Details
+          Basically, a valid solid mesh should be both manifold and has no self-intersection. However, models from the internet may contain defects. This project is about coming up with an algorithm that removes self-intersections.
+
+          See elalish/manifold#289 for details about ideas for the algorithm.
+
+          Expected Outcome
+          Implementation of said algorithm.
+
+          Future Possibilities
+          Project Properties
+          Skills
+          C++
+          Graph data structure.
+          Algorithms.
+          Difficulty
+          Hard.
+
+          Size
+          Long (350h)
+
+          Additional Information
+          Potential mentor(s): @elalish
+          Organization website: https://manifoldcad.org/
+          Communication channels: https://github.com/elalish/manifold/discussions
+
+          ~~~~~~~~~~
+
+          Creation of an IFC geometry library in IfcOpenShell that uses Manifold
+
+          Outline
+          For the past 10 years, IfcOpenShell has had a tight coupling with OpenCASCADE as its only geometry library and OCCT providing the datatypes in the IfcOpenShell C++ APIs.
+
+          In IfcOpenShell v0.8 an additional abstraction is introduced over the geometric concepts in IFC (taxonomy.h) and the evaluation of such concepts using pre-existing geometry libraries (AbstractKernel).
+
+          Also in v0.8, CGAL is introduced as an additional runtime selectable choice besides OpenCASCADE, because of (a) it's extensive set of modules for analysis (e.g convex decomposition, skeleton, ...) and (b) it's arbitrarily robust (and precise) implementation of boolean operations using Nef polyhedra on a number type represents a binary tree of operands taking part in the construction of that number.
+
+          Both OpenCASCADE and CGAL are high quality efforts, but quite complex and resulting in fairly large compiled object sizes. This project proposal aims at introducing Manifold as a 3rd geometry library implementation. Manifold is modern, efficient and robust.
+
+          https://github.com/elalish/manifold
+
+          cc @elalish just fyi.
+
+          Expected Outcome
+          Another AbstractKernel implementation that uses Manifold to evaluate a small set of geometrical concepts (boolean, extrusion, brep for example) in IFC. Expecting reasonable outcomes on a small building model (such as the Duplex A model) without necessarily resolving all complexities and corner cases encountered in that model.
+
+          Future Possibilities
+          Comparison between implementations and development of a hybrid composition of these libraries that based on prior inspection picks the most suitable implementation for a specific IfcProduct or representation item. For example, OpenCASCADE will likely still excel at curved surfaces (e.g nurbs), but suffers a monumental performance overhead when ingesting detailed triangular meshes (that are also prevalent in IFC) due the overheads of it BRep data model.
+
+          Additional Information
+          Potential mentor(s): Thomas Krijnen (aothms)
+
+
+
+          ~~~~~~~~~~
+
+          Turn BlenderBIM into a client for remote BIM-collaboration on existing OpenCDE-API-server with a graph backend
+
+          Outline
+          The project aim is to turn BlenderBIM into a client for remote BIM-collaboration and a client for remote BIM-model-sharing through a Common Data Environment (a CDE working as BIM/IFC-server) using the already developed OpenCDE API server and the OpenCDE API specifications provided by buildingSMART: BCF API and Documents API.
+
+          OpenCDE API:s are open standards. This project will hence enable usage of BlenderBIM as a client on other BIM-servers that implements the OpenCDE API:s.
+
+          Details
+          An OpenCDE API server that implements all buildingSMART OpenCDE API:s (BCF API, Documents API and Foundation API) has been developed in python and the FastAPI framework. Solibri Office was used as a client for testing this server software during development.
+
+          The code of the OpenCDE server is located in the IfcOpenShell repository here: https://github.com/IfcOpenShell/IfcOpenShell/tree/v0.7.0/src/opencdeserver
+
+          The OpenCDE API:s is a set of open API-specifications provided by buildingSMART. https://github.com/buildingSMART/OpenCDE-API
+
+          BIM Collaboration Format (BCF) API is used for collaboration on shared BIM models through a remote BCF-server. BCF API has the same purpose as BCF XML (which is a file format) but the difference is that the data is communicated as JSON through a BCF-server, instead of sending XML-files. https://github.com/buildingSMART/BCF-API
+          Documents API is used communication between a client and a CDE (acc. ISO 19650-1). The purpose is a common data environement for sharing models, documents et.c. https://github.com/buildingSMART/documents-API
+          Foundation API is used for authentication et.c. and must be implemented by any client or server that implements anyone of the other two OpenCDE API:s. https://github.com/buildingSMART/foundation-API
+          To summarize: The model (the IFC data) will normally be shared to the server using Documents API, and downloaded form the server using Documents API. BCF API can be used for remote collaboration on the models located on the server et.c.
+
+          The purpose of the open API specification is to enable independent development of clients and servers that can communication with eachother. A server has already been developed and shared as open source on IfcOpenShell. However, at the moment there is no open source client with a graphical user interface for the OpenCDE API:s. A python library for BCF API communication is available: https://pypi.org/project/bcf-client/.
+
+          The aim of this project is to turn BlenderBIM into a OpenCDE-client (a client that already have BIM-capabilities) that can communicate remotely with (and make use of) the existing open source OpenCDE-server on: https://github.com/IfcOpenShell/IfcOpenShell/tree/v0.7.0/src/opencdeserver
+
+          An add-on for GIT-collaboration have already been developed:
+
+          https://blenderbim.org/docs/users/git_support.html
+          https://www.youtube.com/watch?v=cJZhSCSSWdA
+          Collaboration using Documents API and BCF API is just another way of collaboration. This way of collaboration might be more suitable for AEC-professionals who does not have experience of GIT. Som features of GIT are not possible. But other features that are possible when using the OpenCDE API:s are not possible using GIT.
+
+          Expected Outcome
+          The BlenderBIM can connect as a client to the OpenCDE API server using the Foundation API
+          User management functionality is added to OpenCDE API server: Register, invite, delete users
+          BlenderBIM is a BCF API client - can collaborate on BIM-models remotely using the already developed OpenCDE-server
+          BlenderBIM is a Documents API client - can share/download BIM-models remotely with the already developed OpenCDE-server
+          User interface in BlenderBIM for setting up OpenCDE-server on localhost and user management (inviting collegues, adding/deleting users et.c.)
+          User interface in BlenderBIM for remote BIM collaboration using BCF API
+          User interface in BlenderBIM for remote model download and sharing using Documents API
+          Simplify the process of turning your computer into an OpenCDE-server and inviting colleages to collaborate on your BIM model
+          Simplify the process of deploying the OpenCDE-server as a BIM-server to the cloud for remote collaboration with BlenderBIM as a client
+          Extra: Implement som of the routes/endpoints of the OpenCDE API specifications that Solibri Office does not support. I.e. implement the full official buildingSMART open specifications using the open source server (OpenCDE API server) and open source client (BlenderBIM).
+
+          Future Possibilities
+          IFC-server capabilities: Round-tripping of IFC data between IFC STEP (or python or C++ objects in IfcOpenShell) and the OpenCDE API server graph DB. More info on storing IFC data as label property graph (LPG) here: https://www.sciencedirect.com/science/article/pii/S0926580523000389
+          Potential synergies with the other GSoC project "Web-based UI integration with Blender" Web-based UI integration with Blender #87 because the Web-based UI could be hosted by the same OpenCDE API server as in this project.
+          Visualization of IFC data as graph in that Web-based UI. For example using pyviz or similar tools.
+          Project Properties
+          Skills
+          Python, including how to setup a minimal basic server on localhost using FastAPI. https://fastapi.tiangolo.com/
+          Blender Python API to develop user interfaces in BlenderBIM.
+          Cypher query language and any graph DB that implements Cypher (such as Neo4j or MemGraph). https://neo4j.com/docs/cypher-manual/current/introduction/
+          API development.
+          Difficulty
+          Hard
+
+          Size
+          Long (350h)
+
+          Additional Information
+          Potential mentor(s): [Martin Wiss]
+          Organization website: https://blenderbim.org/ http://ifcopenshell.org/
+          Communication channels: OSArch
+
+          ~~~~~~~~~~
+
+          Geometry Verification and Validation GUI in Qt (AI Project)
+
+          Outline
+          Help develop a new GUI application that checks geometry for common issues and/or helps fix them.
+
+          Details
+          A new GUI is in prototype development (built on Arbalest) that checks geometry files for common verification and validation (V&V) issues such as topology errors, solidity errors, and more. It's very much an experimental work in progress and we'd like your help to make it complete. The overarching goal of this effort is to extend our prototype in a significant way, either improving usability, checking for more issues, improving the Qt GUI infrastructure integration, integrating workflow(s) for review and repair, or leveraging AI to identify and/or fix issues.
+
+          Expected Outcome
+          You will propose a complete project description that identifies the specific objectives you'll aim to achieve. It's expected that you'll leverage the previous work (talk with us to get access to those materials). The proposal should identify 3-10 primary objectives that are researched and specific, starting with our previous effort.
+
+          We essentially want a tool that "compiles" geometry reporting warnings and errors for issues encountered, akin to compiling source code in Visual Studio or Eclipse. There are questions of application architecture to resolve (e.g., whether to extend 'arbalest', integrate 'qged', integrate 'gist', etc). We want the tool to be graphical and interactive. We want it to have the ability to generate reports for auditing. Some of those capabilities exist in isolation, but none exist as a tool tailor-made for 3D geometry V&V.
+
+          Future Possibilities
+          This is a long term priority project with future possibilities in:
+
+          GUI infrastructure
+          AI integration
+          geometry healing and repair workflows
+          geometry auditing
+          geometry standards development
+          Skills
+          Qt, C/C++
+
+          Difficulty
+          Easy or Medium depending on the objectives
+
+          Size
+          long (350h) preferred, but medium (175h) also possible
+
+          Additional Information
+          Potential mentor(s): Sean Morrison
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+          https://brlcad.org/design/v&v/
+
+
+          ~~~~~~~~~~
+
+          Blender UI / integration with voxelisation toolkit software
+
+          Outline
+          There is software known as the Voxelisation Toolkit (pip install voxec). It converts the 3D model into voxels (e.g. 3D cubes that represent geometry), analyses and transforms those voxels, and outputs statistics (e.g. distance between voxels, etc).
+
+          Image
+
+          Image
+
+          Voxels are super cool and can be used to calculate head heights, resolve complex non-manifold geometry, egress distances, or concrete formwork areas and strutting distances, and air volume for mechanical calculations. All of this stuff is useful for engineers and construction professionals.
+
+          This project is to add a UI in Blender to start making this general purpose analysis tool available to non-programmers.
+
+          Details
+          You will be expected to design an interface for the voxelisation toolkit, prepack some simple recipes, and write scripts that take the output (currently visualised as images or plots) and instead visualise the results in 3D by generating 3D coloured meshes that represent the output.
+
+          Expected Outcome
+          Bundle the voxelisation toolkit software with Blender.
+          A UI to execute the voxelisation toolkit.
+          Simple presets to run the toolkit.
+          Visualise the output of the voxelisation analysis as a 3D coloured mesh.
+          Future Possibilities
+          Bundle scripts for common usecases, like formwork calculation, air volume calculation, or external / internal metadata addition.
+
+          Project Properties
+          Skills
+          Python
+          Difficulty
+          Medium
+
+          Size
+          Medium to Long
+
+          Additional Information
+          Potential mentor(s): Dion Moult, Thomas Krijnen
+          Organization website: https://blenderbim.org http://ifcopenshell.org
+          Communication channels: https://osarch.org/chat
+
+
+          ~~~~~~~~~~
+
+          Features for CG artists to visualise beautiful IFC models in Blender 
+          Outline
+          The architecture, engineering, and construction industry creates 3D models of buildings. These models are generally quite poor and do not contain any textures, lighting, or high quality objects that are suitable for 3D rendering. They often hire artists to help create beautiful renders of their designs.
+
+          This project will build utility functions and workflows to easily get beautiful pictures of 3D models.
+
+          Details
+          3D artists typically do the following steps to make a 3D model look beautiful. They:
+
+          Set camera angles with specific camera settings, with "clay" (e.g. all white colours) materials.
+          Add lights and sun / sky settings.
+          Add simple colours and textures.
+          Remodel low quality geometry
+          Add new objects (e.g. entourage) to decorate the scene, like trees, grass, people, extra furniture, walruses, shrimp, etc.
+          Set common compositing and post processing rules
+          You will use the Blender Python API to set simple presets for most of these steps to allow less skilled artists to quickly setup renders. You will also setup a workflow to guide artists on how to organise their files relative to the IFC model and keep the IFC model separate so that when the IFC model is changed, the artists doesn't need to start from scratch or play spot the difference.
+
+          You do not need to be an expert in 3D modeling or CG visualisation or rendering. You will be taught what type of settings and options are appropriate for presets and the details of the workflow. However, you will be expected to automate that detail (every aspect of the Blender settings can be set using Python trivially).
+
+          You will also be expected to create a Blender interface to interact with the settings, e.g. a button to add camera, a button to set a preset sky, etc.
+
+          Expected Outcome
+          Note: scope is flexible and you may achieve less or more or different to the below:
+
+          A graphical interface in Blender that relate to the 6 steps above
+          Buttons to add cameras, set common camera aspect ratios and settings. Buttons to add common types of lights, set sun angles and sky settings with bundled HDRI textures.
+          Buttons to add simple material presets.
+          Buttons to mark an object to be replaced by another
+          A few preset assets using Blender's built in asset tools to drag and drop in entourage.
+          Future Possibilities
+          Project Properties
+          Skills
+          Python (definitely required!)
+          Artistic sense (do you like 3D graphics? rendering?) If you have ever rendered a 3D scene before, this is the project for you!
+          Difficulty
+          Easy to Medium
+
+          Size
+          Medium to Long
+
+          Additional Information
+          Potential mentor(s): Dion Moult
+          Organization website: https://blenderbim.org http://ifcopenshell.org
+          Communication channels: https://osarch.org/chat
+
+          ~~~~~~~~~~
+
+          Implement 3D mesh offset
+          Outline
+          Implement efficient 3D mesh offset, instead of using minkowski sum with high resolution spheres. (elalish/manifold#192)
+
+          Details
+          3D mesh offset is a useful feature that many users asked for, but is difficult to implement efficiently. Many users use minkowski sum with sphere to perform positive offset, but this can be very slow due to the need for exact convex decomposition.
+
+          Our approach will only work for positive offset, negative offset can be implemented by performing additional mesh boolean operations, so this is not an issue. The approach has four phases:
+
+          Figure out all pairs of faces that do not share any vertex and may overlap after offsetting. (let's call them conflict pairs)
+          Cut the mesh in a way such that for each part, no two faces are in the same conflict pair. (decomposition step, requires monte carlo tree search)
+          Perform the positive offset on each part, using a modified algorithm from Offset Triangular Mesh Using the Multiple Normal Vectors of a Vertex. Note that we need to figure out how to blend the surfaces for smooth results.
+          Union the parts.
+          Expected Outcome
+          A fast 3D mesh decomposition algorithm!
+
+          Project Properties
+          Skills
+          C++
+          Graph data structure.
+          Algorithms.
+          Difficulty
+          Hard.
+          Size
+          Long.
+          Additional Information
+          Potential mentor(s): @elalish @pca006132 @zalo
+          Organization website: https://manifoldcad.org/
+          Communication channels: https://github.com/elalish/manifold/discussions
+
+
+          ~~~~~~~~~~
+
+          Add fuzzing tests
+
+          Outline
+          Add more fuzzing tests for both 2D and 3D operations.
+
+          Details
+          Fuzzing is an effective technique to expose bugs in software. Fuzzing tests randomly generate structured inputs (according to specification), and test if the program crashes/failed assertions.
+
+          This project aims to test 2D and 3D CSG operations on geometrically valid polygons/meshes. To do this, we will define a very simple AST for our CSG operations, and use the recursive domain feature of fuzztest for the tests.
+
+          We will also randomly apply slight perturbation to make the valid geometry only epsilon-valid, to test for robustness of the algorithm.
+
+          Expected Outcome
+          Fuzz tests that test for union, intersection, difference, 2D extrude/revolve, etc.
+
+          Project Properties
+          Skills
+          C++
+          Basic understanding of graph data structure.
+          Difficulty
+          Medium
+          Size
+          Medium
+          Additional Information
+          Potential mentor(s): @pca006132
+          Organization website: https://manifoldcad.org/
+          Communication channels: https://github.com/elalish/manifold/discussions
+
+
+          ~~~~~~~~~~
+
+          Physically-Based Rendering (PBR) advanced shaders
+          Outline
+          Get BRL-CAD physically-based rendering working with advanced shaders.
+
+          Details
+          BRL-CAD recently integrated with Appleseed which provides physically-based rendering. It's presently a command-line renderer called 'art'. For art rendering to work, a shader and colors are specified on geometry. BRL-CAD has preliminary support for material objects including OSL shaders and MaterialX shaders in art, however their support has only been tested with basic shaders such as the Disney Principled Shader. It's hard-wired to single-file shaders.
+
+          Expected Outcome
+          The goal of this task will be to make art read and work with any OSL or MaterialX shader networks, including ones using texturing, emission, subsurface scattering, etc. applied to BRL-CAD geometry.
+
+          Project Properties
+          Skills
+          Decent C/C++ skills
+          Some basic familiarity with PBR.
+          Basic familiarity with shaders.
+          Difficulty
+          medium
+
+          Size
+          long
+
+          Additional Information
+          Potential mentor(s): Sean Morrison
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+
+          ~~~~~~~~~~
+
+          Improve FreeCAD Hidden Line Removal
+          Outline
+          FreeCAD's Technical Drawing module (TechDraw) relies heavily on the OpenCascade Hidden Line Removal algorithms. These algorithms can be very slow, do not provide progress reporting and do not provide any linkage between the input shape and the output.
+
+          Details
+          The TechDraw module provides projections, section views and detail views of 3D model components and assemblies developed in FreeCAD modules such as Part, PartDesign and Draft.
+
+          Expected Outcome
+          a) develop new code for projecting shapes and creating the geometry for technical drawings.
+          -or-
+          b) modify the existing OpenCascade code as an enhancement.
+
+          Project Properties
+          Both OpenCascade and TechDraw are written in C++.
+
+          Skills
+          The student should have a good knowledge of C++ and be familar with graphics topics such as the painters algorithm, face detection and hidden line removal.
+          Knowledge of technical drawing standards and previous exposure to Qt will be helpful. Familiarity with OpenCascade is a definite plus.
+
+          Difficulty
+          Hard
+
+          Size
+          long
+
+          Additional Information
+          Potential mentor(s): wandererfan
+          Organization website: https://freecadweb.org
+          Communication channels: https://forum.freecadweb.org
+
+
+          ~~~~~~~~~~
+
+          Continuation of a prior BRL-CAD GSoC effort
+          Outline
+          BRL-CAD has been participating in GSoC for over 10 years with nearly 100 students! Any past accepted projects can be submitted as a continuation project.
+
+          Details
+          You can find all past participants documented on BRL-CAD's wiki by selecting a given year (e.g., 2018). Even the most successful and completely integrated projects have room for improvement! If any of those past efforts for any prior year sound very interesting to you, you can propose a continuation effort for it.
+
+          Of course, you will need to research the prior effort to determine the status of the work, whether code was integrated or is sitting pending integration in a patch, whether it's functional or was in an intermediate state, etc. You'll also want to come chat with us on Zulip to make sure there is mentoring support for it, but there usually is if you're passionate and independently productive.
+
+          For your proposal, note that it's a continuation effort. Explain what you are doing and how it relates to the prior effort. It's strongly recommended that your development plan focus on production-quality integration aspects such as making sure there are no usability or user experience (UX) issues, no build integration issues, that testing is covered adequately, and with focus on UX.
+
+          Expected Outcome
+          The expected outcome of a continuation effort is new capability and features that are "complete", integrated, bug-free, and issue-free, in the hands of users. This means your project covers all vertical integration aspects of development integration including build system and usability / UX concerns. Not prototyped. Not simply rewritten or re-attempted.
+
+          If the prior effort was integrated, your outcome will be specific polish, adaptiveness, and robustness improvements.
+
+          If the prior effort was not integrated, your outcome will be issue-free integration that addresses prior issues preventing integration (which will require research and understanding on your part).
+
+          Project Properties
+          Skills
+          This varies greatly by continuation. There are continuation projects for C/C++, Python, Javascript/Node.js, Tcl/Tk, OpenCL, OpenGL, Qt, GPGPU, and more.
+
+          Difficulty
+          Varies.
+
+          Size
+          You are welcome to scope your project medium (175h) or long (350h) depending on the objectives and development scope.
+
+          Additional Information
+          Potential mentor(s): Morrison (contact devs@brlcad.org)
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+          ~~~~~~~~~~
+
+          Implement AP242 STEP geometry importer for BRL-CAD
+          Outline
+          Implement a geometry importer for the ISO 10303 STEP AP242 standard.
+
+          Details
+          BRL-CAD has geometry import support for STEP AP203 (v1), but AP242 has emerged as its industry replacement. This project entails implementing as comprehensive import support as possible in BRL-CAD.
+
+          In order to track implementation progress and manage development risk, you will need to track implementation coverage by setting up a dashboard similar to what is used by the CAx-IF -- it can be a simple text file or web page.
+
+          Existing conversion support can be examined for AP203 and other formats in BRL-CAD's repository under src/conv/step
+
+          Expected Outcome
+          New AP242 importer that converts STEP entities into BRL-CAD's .g geometry file format.
+
+          Future Possibilities
+          AP242 export support...
+
+          Project Properties
+          Skills
+          C/C++
+          STEPcode
+
+          Difficulty
+          Hard.
+
+          Size
+          This project can be scoped medium (175h) or long (350h) depending on your familiarity and expertise, or you can propose a subset of entities in a shorter timeframe (note though that advanced boundary representation entities should be prioritized).
+
+          Additional Information
+          Potential mentor(s): Morrison (contact devs@brlcad.org)
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+          ~~~~~~~~~~
+
+          BRL-CAD Python bindings
+          Outline
+          Implement bindings for the BRL-CAD functionality to Python programming language
+
+          Details
+          There are long time on-going efforts to wrap BRL-CAD functionality with python code, e.g.
+
+          https://github.com/kanzure/python-brlcad
+          https://github.com/nmz787/python-brlcad-tcl
+          These projects are however still in early development stages.
+
+          Expected Outcome
+          A Python module which can read and write BRL-CAD databases, and provide access to their contents to read, create, and modify the objects.
+
+          Project Properties
+          Skills
+          C/C++
+          Python
+          Difficulty
+          This project may be of easy or medium difficulty, depending on your familiarity and expertise.
+
+          Size
+          This project can be scoped medium (175h) or long (350h), depending on the amount of functionality you want to include.
+
+          Additional Information
+          Potential mentor(s):
+          Daniel Rossberg
+          Sean Morrison
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+
+          ~~~~~~~~~~
+
+          Webapp to create and check BIM project exchange requirements for IfcOpenShell
+          Outline
+          When projects exchange data, we often need to set contractual requirements about what data we expect to see in their CAD or Building information data. The is an international standard for describing project requirements in XML called the Information Delivery Specifications (IDS).
+
+          There is a half-built webapp which allows viewing and minor editing of IDS files here: https://blenderbim.org/ifctester/
+
+          Your job would be to finish this web app, building features for more editing, drag and drop from a library of specifications, adding and removing requirements, etc.
+
+          Expected Outcome
+          A working example of the web application.
+
+          Project Properties
+          Skills
+          HTML, CSS, and vanilla Javascript (i.e. no frameworks).
+          Difficulty
+          Easy
+
+          Additional Information
+          Potential mentor(s): Dion Moult
+          Organization website: https://ifcopenshell.org
+          Communication channels: https://community.osarch.org , ##architect on Freenode , and https://github.com/IfcOpenShell/IfcOpenShell/issues
+
+
+          ~~~~~~~~~~
+
+          Scripts for generating simple animations (e.g. appear / disappear, bounce, appear left to right, fade in from above, etc)
+
+          Outline
+          Often, construction firms need to visualise animations of construction sequencing. A project timeline will be created, and related to individual model elements. For example, when a concrete slab is poured, it is linked to a 3D object called a slab. We need the ability to automatically generate animations from Blender where objects appear / disappear in various different ways when they start / end their task in the project timeline. The systems for describing project timelines is already in place, so now we need a little animation generator!
+
+          Details
+          Expected Outcome
+          A series of small scripts that take objects and can automatically animate the visibility, locations, or staggered appearances of building elements, as well as sub elements, and basic scripts that correlate real world time to animation frames, and frames per second, and generate an animated timeline bar in various styles.
+
+          Future Possibilities
+          This animation system can be then used from BIM models either in Blender, FreeCAD, or via other software altogether, so it has quite a large impact on the ecosystem.
+
+          Skills
+          Basic knowledge of the principles of animation (keyframing)
+          Basic Blender animation (you can do some tutorials and get up to speed pretty quick)
+          Python
+          Artistic sense! We should offer beautiful and elegant animations!
+          Difficulty
+          Easy
+
+          Additional Information
+          Potential mentor(s): Dion Moult
+          Organization website: https://ifcopenshell.org
+          Communication channels: https://community.osarch.org , ##architect on Freenode , and https://github.com/IfcOpenShell/IfcOpenShell/issues
+
+
+          ~~~~~~~~~~
+
+          NURBS Editing Support in BRL-CAD
+
+          Outline
+          Implement the prerequisites for NURBS editing in BRL-CAD's GUIs
+
+          Details
+          BRL-CAD has support for raytracing of NURBS surfaces implemented, but they are handed over as BLOBs to the openNURBS library. Beyond basic operations such as rotation and translation, the BRL-CAD core has no ability to edit them. This project would implement support for editing NURBS curves and surfaces in the BRL-CAD core, thus creating the prerequisites to handle them with higher level (i.e. GUI) tools.
+
+          See this task's description in former GSoCs for some more information: https://brlcad.org/wiki/NURBS_Editing_Support
+
+          The key-feature would be to have ged command(s) that lets you build NURBS objects from scratch. This could be done by having a declarative ASCII description of these entities and/or wrapping the openNURBS library by a scripting language.
+
+          Describe in your proposal which approach you want to use and why. You may let inspire you by solutions in other programs:
+
+          NURBS-Python: https://github.com/orbingol/NURBS-Python
+          Blender: https://blender.stackexchange.com/questions/7020/create-nurbs-surface-with-python
+          Web3D: https://www.web3d.org/x3d/content/examples/Basic/NURBS/
+          3DSMax/Maya: https://help.autodesk.com/view/3DSMAX/2016/ENU/?guid=__files_GUID_75CD4DE9_8024_4E25_B147_0A0EC8B10031_htm
+          Ayam: http://ayam.sourceforge.net/docsdraft/ayam-6.html
+          Expected Outcome
+          Implementing the necessary logic for NURBS handling in librt, libbrep, and libged
+
+          Future Possibilities
+          Implementing a visual NURBS editor in a BRL-CAD GUI (mged, Archer, Arbalest)
+
+          Project Properties
+          Skills
+          C/C++
+          Difficulty
+          medium
+
+          Size
+          long (350h)
+
+          Additional Information
+          Potential mentor(s): Daniel Rossberg, Sean Morrison
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+
+          ~~~~~~~~~~
+
+          New BRL-CAD GUI
+
+          Outline
+          Develop further the new GUI for BRL-CAD!
+
+          Details
+          BRL-CAD has two main graphical applications called 'mged' and 'archer' which look like they were developed in the 80's and 90's respectively (because they were). We need a modern GUI, ideally using Qt.
+
+          This new GUI will need to leverage our existing libraries in a big way. This includes the C++ coreInterface ( see https://brlcad.org/wiki/Object-oriented_interfaces) or its successor MOOSE (see https://github.com/BRL-CAD/MOOSE) and LIBGED (see src/libged). The latter is basically all commands available to both mged and archer.
+
+          During past GSoCs an amazing start was made with arbalest. Based on this, the development of a GUI called 'qged' (see src/qged) was started, which you should include in your considerations too. This program implements the traditional BRL-CAD workflow under a modern Qt-based user interface.
+
+          You may propose a complete different approach, but we recommend to use arbalest as starting point for your work. Which additions would you like to program in this years GSoC? You can use the results of the former prototype CAD GUI Google Code-in tasks (http://brlcad.org/gci/data/uncategorized/, search for CAD_GUI there) for inspiration.
+
+          Keep your proposal lean and simple. The main emphasis should be on adding features and/or improvements to our next generation GUI.
+
+          Expected Outcome
+          An improved BRL-CAD GUI.
+
+          Project Properties
+          Skills
+          C/C++
+          Qt
+          Difficulty
+          medium
+
+          Size
+          This project can be scoped medium (175h) or long (350h), depending on the amount of functionality you want to include.
+
+          Additional Information
+          Potential mentor(s):
+          Daniel Rossberg
+          Himanshu Sekhar Nayak
+          Sean Morrison
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+          ~~~~~~~~~~
+
+          Online Geometry Viewer (OGV)
+
+          Outline
+          Write a proposal that leverages rewrite of the existing application in the latest tech stack for frontend and backend.
+
+          Details
+          We have been working on OGV for over many years. It started with PHP and then was revamped to meteor.js. We want to focus on the backend of OGV, making sure it works properly, converts the models properly, and basically finish a 1.0 version of OGV so we can launch it for the masses! For that, we are planning to change the legacy backend to be rewritten along with the frontend.
+
+          You can use any tech stack (react, vue) for frontend and node, C/C++ for the backend. We faced some problems like removing certain deprecated dependencies and adding new features with Meteor. We are planning to port the application and add all specified features.
+
+          Possible New Features
+          Integrating BRL-CAD GCV(Geometry Conversion Vocabulary) to add support for more file formats like .stl, .obj, and .3dm.
+          Automated Conversion for Web Display. Convert uploaded files automatically into polygonal formats for web visualization. Ensure smooth rendering and compatibility with web-based 3D viewers.
+          Implementing a Model Repository based project architecture for storing and downloading 3d models.
+          Conduct a full STIG compliance audit (Security Technical Implementation Guide), which involves ~200+ security checks.
+          Run security scans using OWASP and Dependency-Check, addressing any reported vulnerabilities.
+          However, you don't have to limit yourself to those ideas.
+
+          Checklist to write proposal for OGV
+          Download and clone OGV from https://github.com/BRL-CAD/OGV-meteor
+          Setup and Run OGV on your local machine.
+          Fork OGV repo
+          Understand the flow of existing application
+          Talk to mentors
+          Choose list of issues that you would like to solve this summer
+          Make a detailed weekly implementation plan
+          Share your proposal with your mentors
+          Submit it to the GSoC website
+          Expected Outcome
+          You're expected to propose an outcome useful to end-users. That is a broad range of possibilities that will depend on your interests and experience level. For example, you might propose focusing on the backend conversion to triangles for display (C/C++/Node.js). Or you might propose changing the backend to NURBS surfaces (C/C++) and using verbnurb or three.js (Javascript) to display them instead of triangles. Or you might propose keeping the backend the way it is and focus on front-end robustness (Vue, React), website features, or deployment infrastructure. You hopefully get the idea.
+
+          Project Properties
+          Skills
+          JavaScript (Vue, React)
+          Node.js (required)
+          C/C++ (optional)
+          Verbnurb (optional)
+          Three.js (optional)
+          Difficulty
+          Hard
+
+          Size
+          This project can be scoped medium (175h) or long (350h), depending on the amount of functionality you want to include.
+
+          Additional Information
+          Potential mentor(s):
+          Amanjot Singh
+          Daniel Rossberg
+          Divyanshu Garg
+          Sean Morrison
+          Organization website: https://brlcad.org
+          Communication channels: https://brlcad.zulipchat.com
+
+          ~~~~~~~~~~
+
+          Add OpenSCAD support for exporting models in STEP format
+          Outline
+          The STEP format is widely used in the industry to transfer CAD data between different systems. Currently OpenSCAD does not support STEP import or export. Adding STEP export would open up a number of new usecases or simplify the workflow as no external conversion tools are needed to convert to STEP. This includes the design of 3D models for other CAD tools, e.g. for KiCAD where STEP models are used to render 3D representations of PCBs. Other use cases are for manufacturing where sometimes only STEP files are accepted as input, e.g. for CNC milling services.
+
+          Details
+          The main focus of this project is to get the ground work done for exporting more detailed models, as opposed to just exporting the fully rendered single mesh which is the normal case right now.
+
+          Topics that need to be solved
+
+          Research options of usable libraries
+          Investigate what type of STEP files are accepted as input by various tools
+          Select library and integrate into OpenSCAD
+          Implement base functionality to export single meshes
+          Add test cases to verify the new export functionality
+          Update build system to include the new library into installers
+          Prototype how more advanced models can be exported
+          Expected Outcome
+          OpenSCAD supports exporting single meshes as STEP
+          (optional) Understanding/Plan of how to support additional features supported by STEP
+          Project Properties
+          Skills
+          Programming language is C++
+          Understand and use APIs from external libraries
+          Integrate new libraries into the build system for the 3 supported platforms
+          Add test cases with files using the new features to allow regression testing
+          Difficulty
+          Hard
+
+          Size
+          Long (350h)
+
+          Additional Information
+          Potential mentor(s): Marius Kintel (IRC: kintel), Torsten Paul (IRC: teepee)
+          Organization website: https://www.openscad.org/
+          Known libraries:
+
+          StepCode - http://stepcode.org/ (https://github.com/stepcode/stepcode)
+          OpenCASCADE - https://www.opencascade.com/
+
+
+          
+    totalCharacters_of_ideas_content_parent: 51942
+    totalwords_of_ideas_content_parent: 12320
+    totalTokenCount_of_ideas_content_parent: 10905
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/brl-cad/
+    idea_list_url: https://github.com/opencax/GSoC/issues?q=is%3Aissue+is%3Aopen+label%3A%22GSoC+2025%22
+
+
+
+  - organization_id: 13
+    organization_name: BeagleBoard.org
+    no_of_ideas: 5
+    ideas_content: >-
+        Deep Learning 
+        Medium complexity 175 hours
+
+        A Conversational AI Assistant for BeagleBoard using RAG and Fine-tuning
+        BeagleBoard currently lacks an AI-powered assistant to help users troubleshoot errors. This project aims to address that need while also streamlining the onboarding process for new contributors, enabling them to get started more quickly.
+
+        Goal: Develop a domain-specific chatbot for BeagleBoard using a combination of RAG and fine-tuning of an open-source LLM (like Llama 3, Mixtral, or Gemma). This chatbot will assist users with troubleshooting, provide information about BeagleBoard products, and streamline the onboarding process for new contributors.
+        Hardware Skills: Ability to test applications on BeagleBone AI-64/BeagleY-AI and optimize for performance using quantization techniques.
+        Software Skills: Python, RAG, Scraping techniques, Fine tuning LLMs, Gradio, Hugging Face Inference Endpoints, NLTK/spaCy, Git
+        Possible Mentors: Aryan Nanda
+
+        ~~~~~~~~~~
+
+
+
+        Linux kernel improvements
+         Medium complexity 350 hours
+
+        Update beagle-tester for mainline testing
+        Utilize the beagle-tester application and Buildroot along with device-tree and udev symlink concepts within the OpenBeagle continuous integration server context to create a regression test suite for the Linux kernel and device-tree overlays on various Beagle computers.
+
+        Goal: Execution on Beagle test farm with over 30 mikroBUS boards testing all mikroBUS enabled cape interfaces (PWM, ADC, UART, I2C, SPI, GPIO and interrupt) performing weekly mainline Linux regression verification
+        Hardware Skills: basic wiring, embedded serial interfaces
+        Software Skills: device-tree, Linux, C, OpenBeagle CI, Buildroot
+        Possible Mentors: Deepak Khatri, Anuj Deshpande, Dhruva Gole
+
+        ~~~~~~~~~~
+
+        Linux kernel improvements
+         Medium complexity 175 hours
+
+        Upstream wpanusb and bcfserial
+        These are the drivers that are used to enable Linux to use a BeagleConnect Freedom as a SubGHz IEEE802.15.4 radio (gateway). They need to be part of upstream Linux to simplify on-going support. There are several gaps that are known before they are acceptable upstream.
+
+        Goal: Add functional gaps, submit upstream patches for these drivers and respond to feedback
+        Hardware Skills: wireless communications
+        Software Skills: C, Linux
+        Possible Mentors: Ayush Singh, Jason Kridner
+
+        ~~~~~~~~~~
+
+        Automation and industrial I/O Medium complexity 175 hours
+
+        librobotcontrol support for newer boards
+        Preliminary librobotcontrol support for BeagleBone AI, BeagleBone AI-64 and BeagleV-Fire has been drafted, but it needs to be cleaned up. We can also work on support for Raspberry Pi if UCSD releases their Hat for it.
+
+        Goal: Update librobotcontrol for Robotics Cape on BeagleBone AI, BeagleBone AI-64 and BeagleV-Fire
+        Hardware Skills: basic wiring, motors
+        Software Skills: C, Linux
+        Possible Mentors: Deepak Khatri, Jason Kridner
+
+        ~~~~~~~~~~
+
+        RTOS/microkernel imporvements
+        Medium complexity 350 hours
+
+        Upstream Zephyr Support on BBAI-64 R5
+        Incorporating Zephyr RTOS support onto the Cortex-R5 cores of the TDA4VM SoC along with Linux operation on the A72 core. The objective is to harness the combined capabilities of both systems to support BeagleBone AI-64.
+
+        Goal: submit upstream patches to support BeagleBone AI-64 and respond to feedback
+        Hardware Skills: Familiarity with ARM Cortex R5
+        Software Skills: C, RTOS
+        Possible Mentors: Dhruva Gole, Nishanth Menon
+        Upstream Repository: The primary repository for Zephyr Project
+
+          
+    totalCharacters_of_ideas_content_parent: 3803
+    totalwords_of_ideas_content_parent: 786
+    totalTokenCount_of_ideas_content_parent: 816
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/beagleboard.org/
+    idea_list_url:  https://gsoc.beagleboard.io/ideas/
+
+
+  - organization_id: 14
+    organization_name: Blender
+    no_of_ideas: 15
+    ideas_content: >-
+        Flamenco¶
+        Flamenco is Blender's render farm management system. For all the ideas below, a requirement is that you've set up Flamenco for yourself and used it to render things. Of course also some experience with Blender itself is needed.
+
+        Statistics¶
+        Description: Design & build a system for Flamenco to collect and display statistics.
+        The goal is to show per-job, per-task, and per-worker statistics.
+        This should make it possible for users to predict how long a render job will be, as they can look up things like render times of similar render jobs.
+        The underlying design should be generic enough to store all kinds of statistics and events, not specific to Blender render times only.
+        This project would include the technical design of this feature, the frontend / UI / UX design, and the implementation of both front- and back-end.
+        Optional: record more statistics, such as per-frame render time, memory usage, etc.
+        Optional: show progress of jobs in the jobs list.
+        Expected outcomes: A way for users to get a better understanding of how a new render job will behave, as they can look up information about past & currently running jobs.
+        Skills required: Familiarity with Go and unit testing. Familiarity with web languages (HTML/CSS/JavaScript, VueJS).
+        Possible mentors: Sybren Stüvel.
+        Expected project size: 350 hours
+        Difficulty: hard
+
+        ~~~~~~~~~~
+        RNA Overrides¶
+        Description: Render jobs should be able to specify "RNA overrides" (#101569). In other words, the job definition should be able to include some Python code that sets certain properties in Blender to certain values.
+        Design a way to include this in a job definition, and how it affects tasks & commands.
+        This could include the ability to add new RNA overrides to existing jobs.
+        This should include the ability to update those override values via the web interface.
+        Design how such additions / changes affect already-created tasks/commands in the database. Or a way to make this work without changing things in the database?
+        This can be used both when a user wants to change something (like re-rendering with increased sample count), or for Flamenco itself to adjust things in the blend file without having to save those values in the blend file itself (#104264)
+        Expected outcomes: Give users a simpler way to configure Flamenco for their needs.
+        Skills required: Familiarity with Blender (for making the RNA overrides themselves work). Familiarity with Go and unit testing for adjusting Flamenco. Familiarity with web languages (HTML/CSS/JavaScript, VueJS) for the web frontend.
+        Possible mentors: Sybren Stüvel.
+        Expected project size: 350 hours
+        Difficulty: hard
+
+        ~~~~~~~~~~
+        Configuration Web Interface¶
+        Description: Flamenco's configuration file can be created via its Setup Assistant, but that's only for the initial configuration. For managing more complex things, like the two-way variables for cross-platform support, users still have to manually edit the YAML file. This project is about introducing a configuration editor in the web frontend, and potentially new backend API functions to support that.
+        New tab in the frontend for managing the configuration.
+        A way to retrieve and visualise the configuration.
+        New front-end widgets to represent these, including more complex cases like one-way and two-way variables.
+        A way to save the edited configuration.
+        Optional: A validator for the configuration options, so that changes can be checked before they take hold.
+        Optional: A way for Flamenco Manager to load and apply the configuration without restarting the process.
+        Optional: A custom job type for validating configuration paths, so that, for example, a macOS path can be actually checked on a Worker running macOS.
+        Expected outcomes: Give users a simpler way to configure Flamenco for their needs.
+        Skills required: Familiarity with web languages (HTML/CSS/JavaScript, VueJS, OpenAPI). Potentially also familiarity with Go in case of backend work.
+        Possible mentors: Sybren Stüvel.
+        Expected project size: 350 hours
+        Difficulty: hard
+
+        ~~~~~~~~~~
+        Polish & Shine¶
+        Description: Fix various issues & implement missing pieces to solve common bumps in the road.
+        Reconsider some design aspects of the web frontend, so that it works better on narrower / smaller screens.
+        Allow finishing setup assistant without Blender on Manager (#100195).
+        Introduce per-Worker logs on the Manager, for introspection and debugging.
+        Fix issues with two-way variables (#104336, #104293)
+        Add a web interface for the mass deletion of jobs. There is already an API call for this, which deletes all jobs older than a certain timestamp.
+        Other issues from the tracker.
+        Expected outcomes: Improve the overall experience people have when working with Flamenco.
+        Skills required: Familiarity with web languages (HTML/CSS/JavaScript, VueJS) for front-end work. Familiarity with Go and OpenAPI for backend work.
+        Possible mentors: Sybren Stüvel.
+        Expected project size: 175 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        Geometry Nodes¶
+        Regression Testing¶
+        Description: As people build more assets on top of Geometry Nodes, it becomes more and more important to ensure good backwards compatibility. This project focuses on improving our regression tests to cover more issues as early as possible. This involves:
+        Adding new tests in our existing test framework.
+        Extending the test framework to cover node tools, baking and maybe other areas we still have to find.
+        Preparing more complex production files for use in regression tests.
+        Expected outcomes: Improved stability of Geometry Nodes.
+        Skills required: Good in C/C++ and Python.
+        Possible mentors: Jacques Lucke, Hans Goudey
+        Expected project size: 90 or 175 hours depending on how many of the mentioned areas are covered
+        Difficulty: Easy (using existing framework) and Medium (extending framework)
+
+        ~~~~~~~~~~
+        Modeling¶
+        Improve Edit-Mesh Mirror¶
+        Description: Blender's mesh mirroring in mesh edit-mode works for basic transformations, but does not work for most other operations such as sliding, smoothing, marking seams, etc. In practice, this makes the edit-mode mirror only useful in very specific circumstances and not for general modeling.
+
+        While supporting every operation isn't practical, enabling it for a subset of operators such as those that only adjust existing geometry (rather than adding or removing geometry) would be immediately useful for artists.
+
+        Expected outcomes: Improved edit-mesh mirror support for existing tools.
+        Skills required: Proficient in C/C++.
+        Possible mentors: Campbell Barton
+        Expected project size: 175 or 350 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        Sculpt & Paint¶
+        Mesh Sculpting Performance Improvements¶
+        Description: Last year's sculpting rewrite project gave a large improvement in performance, but the team didn't have the time to pursue everything. This task lists possible future improvements. This GSoC project would explore one or more of those ideas with in depth performance testing and experimentation.
+        Expected outcomes: More interactive sculping with large meshes
+        Skills required: Proficient in C++, familiarity with data-oriented-design.
+        Possible mentors: Hans Goudey
+        Expected project size: 175 or 350 hours
+        Difficulty: medium or hard
+        
+        ~~~~~~~~~~
+        VFX & Video¶
+        Hardware accelerated video encoding/decoding¶
+        Description: Currently Blender encodes and decodes video though ffmpeg C libraries, on the CPU. ffmpeg also has support for hardware video processing (various kinds depending on platform), this project would enable usage of that.
+        Build ffmpeg with hardware video processing support included.
+        Note: Blender can't include "non-free" ffmpeg libraries (which means cuda_nvcc, cuda_sdk, libnpp can't be used).
+        On Blender's video decoding and encoding side, implement code that would use any relevant ffmpeg C libraries parts for hardware video processing, when supported.
+        Decide which additional UI settings need to be exposed to the user, to control hardware video processing.
+        Implement code needed to transfer video frames between hardware memory and CPU memory as needed (the rest of VSE processing pipeline is purely on CPU currently).
+        Expected outcomes: Video encoding or decoding is more efficient by using dedicated hardware.
+        Skills required: Proficient in C/C++, familiarity with ffmpeg.
+        Possible mentors: Aras Pranckevicius
+        Expected project size: 350 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        High Dynamic Range (HDR) support for video¶
+        Description: This project has several partially dependent parts that are all about HDR support within VSE:
+        Make Sequencer preview window be able to display HDR content on a capable display (like 3D viewport or Image window can).
+        Make blender movie reading code be able to decode HDR videos into proper scene-linear or sequencer color space as needed. HDR video data might be PQ or HLG encoded, and this might need special decoding into destination color space.
+        Make blender movie writing code be able to encode HDR videos. Blender already can encode 10/12 bit videos, but only for regular LDR. Additional PQ or HLG data encoding and necessary video metadata is not currently done.
+        Expected outcomes: HDR video handling is improved within Blender.
+        Skills required: Proficient in C/C++, familiarity with ffmpeg, knowledge of color spaces and color science.
+        Possible mentors: Aras Pranckevicius
+        Expected project size: 350 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        VSE: OpenTimelineIO support¶
+        Description: built-in support for OpenTimelineIO import/export within Blender VSE. Blender Studio has experimented with it in 2021, by using and extending a 3rd party addon vse_io. It might be useful to have built-in support for this.
+        Expected outcomes: Blender VSE can import and export .otio files.
+        Skills required: Proficient in C/C++, familiarity with video editing workflows.
+        Possible mentors: Aras Pranckevicius
+        Expected project size: 350 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        VSE: Pitch correction for sound playback¶
+        Description: Currently when audio is retimed, the pitch changes, would be nice to have an option to preserve pitch. Different approaches could be researched and implemented (e.g. pitch correction for mostly human speech might be different from pitch correction of music). Might need integration of some 3rd party library if it is suitable for the task, or implementing the correction algorithms manually.
+        Expected outcomes: Retimed sound playback has options to preserve original pitch.
+        Skills required: Proficient in C/C++, sound processing algorithms.
+        Possible mentors: Aras Pranckevicius
+        Expected project size: 350 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        VSE: Animation retiming¶
+        Description: Modify animation of strips, when changing their playback speed. Retiming allows changing playback speed of strips, but when strips are animated, the animation keys are fixed in position. These could be moved, such that animation is seemingly mapped to frames of the content.
+        Expected outcomes: Animation proportionally is scaled with strip when retiming.
+        Skills required: Proficient in C++.
+        Possible mentors: Richard Antalik
+        Expected project size: 175 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        VSE: Keyframing in preview¶
+        Description: Open workflow quick animation in VSE preview region. In 3D viewport it is possible to transform object and press I key to add key for its position. This also could be done in sequencer preview. This feature should follow same rules and preferences.
+        Expected outcomes: Possibility of quick and easy animation in VSE preview
+        Skills required: Proficient in C++.
+        Possible mentors: Richard Antalik
+        Expected project size: 90 hours
+        Difficulty: medium
+
+        ~~~~~~~~~~
+        Compositor: Implement new nodes¶
+        Description: The compositor has been rewritten to be more efficient and future proof. Moving forward, it would be nice to implement new nodes to make the compositor as powerful as it can be. Interested students are encouraged to propose their own ideas. Some example nodes include:
+        Define low / high points
+        Expected outcomes: Implemented one or more nodes for both CPU and GPU backends.
+        Skills required: Good in C/C++, image processing algorithms, familiarity with shaders.
+        Possible mentors: Habib Gahbiche / Omar Emara
+        Expected project size: 90 or 175 hours depending on the node
+        Difficulty: Easy or Medium depending on the node
+
+        ~~~~~~~~~~
+        Compositor: UI improvements¶
+        Description: The compositor has been rewritten to be more efficient and future proof. It would be nice to improve the UI of some nodes as well as the workflow overall. Interested students are encouraged to suggest ideas. Some examples include:
+        Implement 2D gizmos for exisiting nodes.
+        Re-design the UI of exisiting nodes
+        Expected outcomes: Improved UI within node editors.
+        Skills required: Proficient in C/C++, familiarity with design patterns.
+        Possible mentors: Habib Gahbiche / Omar Emara
+        Expected project size: 90 or 175 hours depending on the scope of the project
+        Difficulty: Easy or Medium depending on the scope
+
+          
+    totalCharacters_of_ideas_content_parent: 14181
+    totalwords_of_ideas_content_parent: 3076
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/blender-foundation/
+    idea_list_url: https://developer.blender.org/docs/programs/gsoc/ideas/
+
+  - organization_id: 15
+    organization_name: CCExtractor Development
+    no_of_ideas: 13
+    ideas_content: >-
+      
+        CCExtractor Release 1.00	This is our ambitious project for the summer - work directly with the core team to prepare 1.00 - our first major version bump ever, by getting our PR's from last year vetted, tested and integrated	Some of these: Rust, C, Flutter, Docker, GitHub actions	The rest from the previous list.	Hard	350 hours
+        ~~~~~~~~~~
+        Ultimate Alarm Clock III	The ultimate alarm clock, with features no other one has. And free!	Flutter	Good application design	Medium	350 hours
+        ~~~~~~~~~~
+        Beacon Watch Companion	Beacon was started in 2021 and it got a great push also during 2022 and 2024. It aims to ease the group travelling (or hiking). This project is intended to be a companion for the beacon project for smart watches.	Flutter	Scalability	Medium	175 hours
+        ~~~~~~~~~~
+        Ultimate Alarm Clock Watch Companion	Ultimate Alarm Clock launched in 2023 and gained significant momentum in 2024. It aims to offer unique features that set it apart from other alarm clock apps—all for free!. This project is intended to be a companion for the ultimate alarm clock project for smart watches.	Flutter	Scalability	Medium	175 hours
+        ~~~~~~~~~~
+        Smart Health Reminder	A fun and interactive health tracking app with smart reminders, challenges, and gamification. Stay healthy effortlessly!	Flutter	Gamification & UX design	Medium	350 hours
+        ~~~~~~~~~~
+        support more torrent clients	We'd like to add support for other clients to our ruTorrent mobile interface (which of course will get a new name): Flood and Deluge.	Flutter	API, Teamwork	Medium	Discuss
+        ~~~~~~~~~~
+        URL shortener, with a twist	A URL shortener converts a long URL into a shorter one. There are many use cases. Some times it's just the shortening itself we want, for example to share it on twitter. Other times it's about obfuscation. We want to create our own, but with some unique features.	Any language you want	Internet infrastructure	Medium	175 hours
+        ~~~~~~~~~~
+        COSMIC Session For Regolith	COSMIC is a wayland based desktop environment written from scratch in rust, with modularity in mind. We're interested in swapping the GNOME components of Regolith DE with COSMIC.	Rust	Wayland, Iced, DBus, etc	Medium	350 hours
+        ~~~~~~~~~~
+        Add complex layouts to sway	Sway is a drop-in replacement for i3, a popular windows manager for Linux that finally gets rid of the ancient X11 protocol. It's fantastic, but it's still missing support for complex scenarios. We'd like you to work on that support.	C	Sway	Hard	350 hours
+        ~~~~~~~~~~
+        Expose ectool functionality as a library	ectool is a CLI that lets you interact with an embedded controller for laptops. Expose its functionality as a library so it's possible to use it without spawning the CLI.	C, Python	Interlanguage connectivity	Medium	350 hours
+        ~~~~~~~~~~
+        CCSync	This project aims to develop a comprehensive platform that can be used sync tasks with taskserver.A hosted solution for syncing your TaskWarrior client.Setting up your own TaskServer takes some effort.And platforms like inthe.am,freecinc have shut down their services.So we want to create a platform similar to inthe.am , freecinc and wingtask.	Any language you want	Internet infrastructure	Medium	175 hours
+        ~~~~~~~~~~
+        Mouseless for Linux v2 - i3 edition	Mouseless is a nice tool to practice keyboard shortcuts for a few popular apps. Unfortunately it's only available for Mac. Last year we created an open source one that runs on Linux. Using that work or not (this is your choice) we want to create one that helps use i3vm (the fantastic windows manager) using keys only.	Your choice	??	Unknown	175 hours
+        ~~~~~~~~~~
+        Desktop Actions in Ilia	Desktop Actions defined in .desktop files are used by app launcher to provide access to additional functionalities, typically via context menus. Ilia is an app launcher that currently doesn't support for Desktop Actions due to its keyboard based approach.	Vala, GTK	GTK	Medium	175 hours
+
+
+
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ccextractor-development/
+    idea_list_url: https://ccextractor.org/docs/ideas_page_for_summer_of_code_2025/
+
+  - organization_id: 16
+    organization_name: CERN-HSF
+    no_of_ideas: 37
+    ideas_content: >-
+          Precision Recovery in Lossy-Compressed Floating Point Data for High Energy Physics
+          Description
+          ATLAS is one of the particle physics experiments at the Large Hadron Collider (LHC) at CERN. With the planned upgrade of the LHC (the so-called High Luminosity phase), allowing for even more detailed exploration of fundamental particles and forces of nature, it is expected that the recorded data rate will be up to ten times greater than today. One of the methods of addressing this storage challenge is data compression. The traditional approach involves lossless compression algorithms such as zstd and zlib. To further reduce storage footprint, methods involving lossy compression are being investigated. One of the solutions in High Energy Physics is the reduction of floating point precision, as stored precision may be higher than detector resolution. However, when reading data back, physicists may be interested in restoring the precision of the floating point numbers. This is obviously impossible in the strict sense, as the process of removing bits is irreversible. Nevertheless, given that the data volume is high, some variables are correlated, and follow specific distributions, one may consider a machine learning approach to recover the lossy-compressed floating-point data.
+
+          Task ideas
+          Perform lossy compression of data sample from the ATLAS experiment
+          Investigate ML techniques for data recovery, prediction and upscaling
+          Integrate the chosen technique into HEP workflow
+          Expected results
+          Implementation of ML-based procedure to restore precision of lossy-compressed floating-point numbers in ATLAS data
+          Evaluation of the method’s performance (decompression accuracy) and its applicability in HEP workflow
+          Requirements
+          C++, Python, Machine Learning
+          Links
+          IEEE_754
+          Implementation of FloatCompressor in Athena
+          Mentors
+          Maciej Szymański - ANL
+          Peter Van Gemmeren - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: July-September
+          Corresponding Project
+          ATLAS
+          Participating Organizations
+          ANL
+          CERN
+
+          ~~~~~~~~~~
+
+          The rise of the machine (learning) in data compression for high energy physics and beyond
+    
+
+          Short description of the project
+          The Large Hadron Collider (LHC) hosts multiple large-scale experiments, LHC experiments such as ATLAS, ALICE, LHCb, and CMS. These together produce roughly 1 Petabyte of data per second, but bandwidth and storage limitations force them to only pick the most interesting data, and discard the rest. The final data stored on disk is roughly 1 Petabyte per day [1]. Despite such steep methods of data reduction, the upgraded High Luminosity LHC in 2029 will produce 10 times more particle collisions. This is a great improvement for the potential to discover new physics, but poses a challenge both for data processing and data storage, as the resources needed in both departments are expected to be 3 and 5 times larger than the projected resources available [2][3].
+
+          Data compression would be the go-to solution to this issue, but general data formats used for big data and the ROOT data format used at the LHC are already highly compressed, meaning that the data does not compress much under normal loss-less compression methods like zip [4]. However, since the observables in these experiments benefit from more events and higher statistics, lossy compression is a good alternative. By using lossy compression some data accuracy is lost, but the compression will allow for the storage of more data which will increase the statistical precision of the final analysis.
+
+          BALER is a compression tool undergoing development at the particle physics division of the University of Manchester. BALER uses autoencoder and other neural networks as a type of lossy machine learning-based compression to compress multi-dimensional data and evaluate the accuracy of the dataset after compression.
+
+          Since data storage is a problem in many fields of science and industry, BALER aims to be an open source tool that can support the compression of data formats from vastly different fields of science. For example, catalog data in astronomy and time series data in computational fluid dynamics.
+
+          This project aims to work on the machine learning models in BALER to optimize performance for LHC data and evaluate its performance in real LHC analyses.
+
+          Task ideas
+          This internship can focus on a range of work packages, and the project can be tailored to the intern. Possible projects include:
+
+          New auto-encoder models could be developed, better identifying correlations between data objects in a given particle physics dataset entry (event, typically containing thousands of objects and around 1MB each). New models could also improve performance on live / unseen data. These could include transformer, GNN, probabilistic and other tiypes of networks.
+          Existing models could be applied on an FPGA, potentially significantly reducing latency and power consumption, opening the possibility of live compression before transmission of data on a network.
+          BALER could also be integrated into standard research data storage formats and programs used by hundreds of thousands of physics researchers (ROOT).
+          Finally the compression could be applied to particle physics datasets and the effect on the physics discovery sensitivity of an analysis could be assessed and compared to the possible increased sensitivity from additional data bandwidth.
+          Ideas from the intern are also welcomed.
+
+          Expected results
+          An improved compression performance with documentation and figures of merit that may include:
+
+          Plots made in matplotlib that demonstrate the performance of the new models compared to the old
+          Documentation of the design choices made for the improved models
+          Documented evaluation of a physics analysis on data before and after compression
+          Requirements
+          The candidate should have experience with the python language and a Linux environment, familiarity with AI fundamentals, and familiarity with PyTorch.
+
+          Desirable skills include familiarity with AI fundamentals including transformers and/or graph neural networks, particle physics theory and experiments, PyTorch, FPGA programming and/or simulation.
+
+          Links
+          BALER GitHub
+          BALER Paper
+
+          Previous work:
+          Thesis by Eric Wulff, Lund University
+          Thesis by Erik Wallin, Lund University
+          GSOC 2020 project: Medium post by Honey Gupta
+          GSOC 2021 project: Zenodo entry by George Dialektakis
+          ROOT
+          Jupyter
+          PyTorch
+          Mentors
+          James Smith - UManchester
+          Caterina Doglioni - CERN
+          Leonid Didukh
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-August
+          Corresponding Project
+          baler
+          Participating Organizations
+          baler
+          UManchester
+          CERN
+
+          ~~~~~~~~~~
+
+          Probabilistic circuit for lossless HEP data compression
+          
+
+          Short description of the project
+          Neural data compression is an efficient solution for reducing the cost and computational resources of data storage in many LHC experiments. However, it suffers from the ability to precisely reconstruct compressed data, as most of the neural compression algorithms perform the decompression with the information loosage. On another hand, the lossless neural data compression schemas (VAE, IDF) have a lower compression ratio and are not fast enough for file IO. This project’s task is to overcome the disadvantages of the neural compression algorithm by using the probabilistic circuit for HEP data compression.
+
+          Task ideas
+          Implement the probabilistic circuit using the PyTorch
+          Train and compress the HEP data (Higgs data, TopQuark Dataset)
+          Measure the cost and quantify the optimal compression ratio of the probabilistic circuit
+          Perform the benchmark, and compare the results with AE, Transformer
+          Expected results
+          An improved compression performance with documentation and figures of merit that may include:
+
+          Implemented model of the probabilistic circuit
+          Documentation of the benchmark and experiment of compression of the HEP data
+          Requirements
+          Required: Good knowledge of UNIX, Python, matplotlib, Pytorch, Julia, Pandas, ROOT.
+
+          Links
+          Previous work:
+
+          GSOC 2021 project: Zenodo entry by George Dialektakis
+          Baler – Machine Learning Based Compression of Scientific Data
+          ROOT
+          Jupyter
+          Lossless compression with probabilistic circuits
+          iFlow: Numerically Invertible Flows for Efficient Lossless Compression via a Uniform Coder
+          Integer Discrete Flows and Lossless Compression
+          Mentors
+          Leonid Didukh
+          Caterina Doglioni - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October (with 3 weeks mentor vacation where student will work independently with minimal guidance)
+          Corresponding Project
+          baler
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+          Agent-Based Simulation of CAR-T Cell Therapy Using BioDynaMo
+          Description
+          Chimeric Antigen Receptor T-cell (CAR-T) therapy has revolutionized cancer treatment by harnessing the immune system to target and destroy tumor cells. While CAR-T has demonstrated success in blood cancers, its effectiveness in solid tumors remains limited due to challenges such as poor tumor infiltration, immune suppression, and T-cell exhaustion. To improve therapy outcomes, computational modeling is essential for optimizing treatment parameters, predicting failures, and testing novel interventions. However, existing models of CAR-T behavior are often overly simplistic or computationally expensive, making them impractical for large-scale simulations.
+
+          This project aims to develop a scalable agent-based simulation of CAR-T therapy using BioDynaMo, an open-source high-performance biological simulation platform. By modeling T-cell migration, tumor engagement, and microenvironmental factors, we will investigate key treatment variables such as dosage, administration timing, and combination therapies. The simulation will allow researchers to explore how tumor microenvironment suppression (e.g., regulatory T-cells, hypoxia, immunosuppressive cytokines) affects CAR-T efficacy and what strategies such as checkpoint inhibitors or cytokine support can improve outcomes.
+
+          The final deliverable will be a fully documented, reproducible BioDynaMo simulation, along with analysis tools for visualizing treatment dynamics. The model will provide insights into the optimal CAR-T cell dosing, tumor penetration efficiency, and factors influencing therapy resistance. This project will serve as a foundation for in silico testing of immunotherapies, reducing the need for costly and time-consuming laboratory experiments while accelerating the development of more effective cancer treatments.
+
+          Expected plan of work:
+          Phase 1: Initial Setup & Simple T-cell Dynamics
+          Phase 2: Advanced CAR-T Cell Behavior & Tumor Interaction
+          Phase 3: Integration of Immunosuppressive Factors & Data Visualization
+          Expected deliverables
+          A fully documented BioDynaMo simulation of CAR-T therapy.
+          Analysis scripts for visualizing tumor reduction and CAR-T efficacy.
+          Performance benchmarks comparing different treatment strategies.
+          A research-style report summarizing findings.
+          Requirements
+          C++ (for BioDynaMo simulations)
+          Agent-based modeling (understanding immune dynamics)
+          Basic immunology & cancer biology (optional but helpful)
+          Data visualization (Python, Matplotlib, Seaborn)
+          Links
+          Mapping CAR T-Cell Design Space Using Agent-Based Models
+          BioDynaMo: A Modular Platform for High-Performance Agent-Based Simulation
+          Computational Modeling of Chimeric Antigen Receptor (CAR) T-Cell Therapy of a Binary Model of Antigen Receptors in Breast Cancer
+          Investigating Two Modes of Cancer-Associated Antigen Presentation in CAR T-Cell Therapy Using Agent-Based Modeling
+          BioDynaMo: Cutting-Edge Software Helps Battle Cancer
+          Mentors
+          Vassil Vassilev
+          Lukas Breitwieser - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          BioDynamo
+          Participating Organizations
+          CERN
+          CompRes
+
+          ~~~~~~~~~~
+
+          Development of an auto-tuning tool for the CLUEstering library
+          Description
+          CLUE is a fast and fully parallelizable density-based clustering algorithm, optimized for high- occupancy scenarios, where the number of clusters is much larger than the average number of hits in a cluster (Rovere et al. 2020). The algorithm uses a grid spatial index for fast querying of neighbors and its timing scales linearly with the number of points within the range considered. It is currently used in the CMS and CLIC event reconstruction software for clustering calorimetric hits in two dimensions based on their energy. The CLUE algorithm has been generalized to an arbitrary number of dimensions and to a wider range of applications in CLUEstering, a general purpose clustering library, with the backend implemented in C++ and providing a Python interface for easier use. The backend can be executed on multiple backends (serial, TBB, GPUs, ecc) thanks to the Alpaka performance portability library. One feature currently lacking from CLUEstering and that would be extremely useful for every user, is an autotuning of the parameters, that given the expected number of clusters computes the combination of input parameters that results in the best clustering.
+          For this task, one of the options to be explored is “The Optimizer”, a Python library developed by the Patatrack group of the CMS experiment which provides a collection of optimization algorithm, in particular MOPSO (Multi-Objective Particle Swarm Optimization).
+
+          Expected results
+          Consider the best techniques and tools for the task
+          Develop an auto-tuning tool for the parameters of CLUEstering
+          Test it on a wide range of commonly used datasets
+          Benchmark and profile to identify the bottlenecks of the tool and optimize it
+          Evaluation Task
+          Interested students please contact simone.balducci@cern.ch
+
+          Technologies
+          C++, Python
+          Desirable skills
+          Experience with development in C++17/20
+          Experience with GPU computing
+          Experience with machine learning and optimization techniques
+          Experience with development of Python libraries
+          Links
+          CLUE
+          CLUEstering
+          Alpaka
+          Mentors
+          Simone Balducci - CERN UNIBO
+          Felice Pantaleo - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Patatrack
+          Participating Organizations
+          CERN
+
+
+          ~~~~~~~~~~
+
+          Evaluate Distribution of ML model files on CVMFS
+          Description
+          Particle physicists studying nature at highest energy scales at the Large Hadron Collider rely on simulations and data processing for their experiments. These workloads run on the “computing grid”, a massive globally distributed computing infrastructure. Deploying software efficiently and reliable to this grid is an important and challenging task. CVMFS is an optimised shared file system developed specifically for this purpose: it is implemented as a POSIX read-only file system in user space (a FUSE module). Files and directories are hosted on standard web servers and mounted in the universal namespace /cvmfs. In many cases, it replaces package managers and shared software areas on cluster file systems as means to distribute the software used to process experiment data.
+
+          Task idea
+          CVMFS is optimized for the distribution of software (header files, scripts and libraries), taking advantage of the repeated access pattern for its caching, and the possibility to deduplicate files present in several versions. CVMFS is capable to provide a general read-only POSIX file system view on data in external storage. A very common use case is to make conditions databases available to workloads running in distributed computing infrastructure, but various datasets have been published in CVMFS. How efficient CVMFS can be always depends on the details in these use cases - often the benefit for the users is simply in leveraging the existing server and proxy infrastructure.
+
+          In this project proposal, we’d like to evaluate CVMFS as a means to distribute machine learning model files used in inference, for example .onnx files. The main focus will be on creating a test deployment and benchmarking the access, as well as possible coding utilities and scripts to aid in the deployment of models on CVMFS. We’d also like to contrast CVMFS to existing inference servers like KServe, and see if it could integrate as a backend storage.
+
+          Expected results and milestones
+          Familiarization with the CVMFS server infrastructure
+          Familiarization with the ML model usage at CERN, Survey of different common inference model file formats.
+          Test deployment of models relevant to ML4EP
+          Benchmark and evaluation of inference using models served from CVMFS
+          Addition of the benchmark to the CVMFS continuous benchmarking infrastructure
+          Writing a best practices document for the CVMFS documentation
+          Requirements
+          UNIX/Linux
+          Interest in scientific computing devops
+          Familiarity with common ML libraries, in particular ONNX
+          Links
+          CVMFS
+          KServe
+          Mentors
+          Valentin Volkl - CERN
+          Lorenzo Moneta - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 175 hours
+          Mentor availability: June-October
+          Corresponding Project
+          CernVM-FS
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          Implement and improve an efficient, layered tape with prefetching capabilities
+          Description
+          In mathematics and computer algebra, automatic differentiation (AD) is a set of techniques to numerically evaluate the derivative of a function specified by a computer program. Automatic differentiation is an alternative technique to Symbolic differentiation and Numerical differentiation (the method of finite differences). Clad is based on Clang which provides the necessary facilities for code transformation. The AD library can differentiate non-trivial functions, to find a partial derivative for trivial cases and has good unit test coverage.
+
+          The most heavily used entity in AD is a stack-like data structure called a tape. For example, the first-in last-out access pattern, which naturally occurs in the storage of intermediate values for reverse mode AD, lends itself towards asynchronous storage. Asynchronous prefetching of values during the reverse pass allows checkpoints deeper in the stack to be stored furthest away in the memory hierarchy. Checkpointing provides a mechanism to parallelize segments of a function that can be executed on independent cores. Inserting checkpoints in these segments using separate tapes enables keeping the memory local and not sharing memory between cores. We will research techniques for local parallelization of the gradient reverse pass, and extend it to achieve better scalability and/or lower constant overheads on CPUs and potentially accelerators. We will evaluate techniques for efficient memory use, such as multi-level checkpointing support. Combining already developed techniques will allow executing gradient segments across different cores or in heterogeneous computing systems. These techniques must be robust and user-friendly, and minimize required application code and build system changes.
+
+          This project aims to improve the efficiency of the clad tape and generalize it into a tool-agnostic facility that could be used outside of clad as well.
+
+          Expected Results
+          Optimize the current tape by avoiding re-allocating on resize in favor of using connected slabs of array
+          Enhance existing benchmarks demonstrating the efficiency of the new tape
+          Add the tape thread safety
+          Implement multilayer tape being stored in memory and on disk
+          [Stretch goal] Support cpu-gpu transfer of the tape
+          [Stretch goal] Add infrastructure to enable checkpointing offload to the new tape
+          [Stretch goal] Performance benchmarks
+          Requirements
+          Automatic differentiation
+          C++ programming
+          Clang frontend
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+
+          ~~~~~~~~~~
+
+          Enhancing LLM Training with Clad for efficient differentiation
+          Description
+          This project aims to leverage Clad, an automatic differentiation (AD) plugin for Clang, to optimize large language model (LLM) training primarily in C++. Automatic differentiation is a crucial component of deep learning training, enabling efficient computation of gradients for optimization algorithms such as stochastic gradient descent (SGD). While most modern LLM frameworks rely on Python-based ecosystems, their heavy reliance on interpreted code and dynamic computation graphs can introduce performance bottlenecks. By integrating Clad into C++-based deep learning pipelines, we can enable high-performance differentiation at the compiler level, reducing computational overhead and improving memory efficiency. This will allow developers to build more optimized training workflows without sacrificing flexibility or precision.
+
+          Beyond performance improvements, integrating Clad with LLM training in C++ opens new possibilities for deploying AI models in resource-constrained environments, such as embedded systems and HPC clusters, where minimizing memory footprint and maximizing computational efficiency are critical. Additionally, this work will bridge the gap between modern deep learning research and traditional scientific computing by providing a more robust and scalable AD solution for physics-informed machine learning models. By optimizing the differentiation process at the compiler level, this project has the potential to enhance both research and production-level AI applications, aligning with compiler-research.org’s broader goal of advancing computational techniques for scientific discovery.
+
+          Expected Results
+          Develop a simplified LLM setup in C++
+          Apply Clad to compute gradients for selected layers and loss functions
+          Enhance clad to support it if necessary, and prepare performance benchmarks
+          Enhance the LLM complexity to cover larger projects such as llama
+          Repeat bugfixing and benchmarks
+          Develop tests to ensure correctness, numerical stability, and efficiency
+          Document the approach, implementation details, and performance gains
+          Present progress and findings at relevant meetings and conferences
+          Requirements
+          Automatic differentiation
+          Parallel programming
+          Reasonable expertise in C++ programming
+          Background in LLM is preferred but not required
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+
+          ~~~~~~~~~~
+
+          Enable Clad on ONNX-based models
+          Description
+          Clad is an automatic differentiation (AD) clang plugin for C++. Given a C++ source code of a mathematical function, it can automatically generate C++ code for computing derivatives of the function. Clad is useful in powering statistical analysis and uncertainty assessment applications. ONNX (Open Neural Network Exchange) provides a standardized format for machine learning models, widely used for interoperability between frameworks like PyTorch and TensorFlow
+
+          This project aims to integrate Clad, an automatic differentiation (AD) plugin for Clang, with ONNX-based machine learning models. Clad can generate derivative computations for C++ functions, making it useful for sensitivity analysis, optimization, and uncertainty quantification. By extending Clad’s capabilities to ONNX models, this project will enable efficient differentiation of neural network operations within an ONNX execution environment.
+
+          Expected Results
+          Enumerate ONNX modules with increasing complexity and analyze their differentiation requirements.
+          Develop a structured plan for differentiating the identified ONNX operations.
+          Implement forward mode differentiation for selected ONNX operations.
+          Extend support to reverse mode differentiation for more complex cases.
+          Create comprehensive tests to validate correctness and efficiency.
+          Write clear documentation to ensure ease of use and future maintenance.
+          Present results at relevant meetings and conferences.
+          Requirements
+          Automatic differentiation
+          Parallel programming
+          Reasonable expertise in C++ programming
+          Basic knowledge of Clang is preferred but not mandatory
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Enable automatic differentiation of OpenMP programs with Clad
+          Description
+          Clad is an automatic differentiation (AD) clang plugin for C++. Given a C++ source code of a mathematical function, it can automatically generate C++ code for computing derivatives of the function. Clad is useful in powering statistical analysis and uncertainty assessment applications. OpenMP (Open Multi-Processing) is an application programming interface (API) that supports multi-platform shared-memory multiprocessing programming in C, C++, and other computing platforms.
+
+          This project aims to develop infrastructure in Clad to support the differentiation of programs that contain OpenMP primitives.
+
+          Expected Results
+          Extend the pragma handling support
+          List the most commonly used OpenMP concurrency primitives and prepare a plan for how they should be handled in both forward and reverse accumulation in Clad
+          Add support for concurrency primitives in Clad’s forward and reverse mode automatic differentiation.
+          Add proper tests and documentation.
+          Present the work at the relevant meetings and conferences.
+          Requirements
+          Automatic differentiation
+          C++ programming
+          Parallel Programming
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Integrate Clad to PyTorch and compare the gradient execution times
+          Description
+          PyTorch is a popular machine learning framework that includes its own automatic differentiation engine, while Clad is a Clang plugin for automatic differentiation that performs source-to-source transformation to generate functions capable of computing derivatives at compile time.
+
+          This project aims to integrate Clad-generated functions into PyTorch using its C++ API and expose them to a Python workflow. The goal is to compare the execution times of gradients computed by Clad with those computed by PyTorch’s native autograd system. Special attention will be given to CUDA-enabled gradient computations, as PyTorch also offers GPU acceleration capabilities.
+
+          Expected Results
+          Incorporate Clad’s API components (such as clad::array and clad::tape) into PyTorch using its C++ API
+          Pass Clad-generated derivative functions to PyTorch and expose them to Python
+          Perform benchmarks comparing the execution times and performance of Clad-derived gradients versus PyTorch’s autograd
+          Automate the integration process
+          Document thoroughly the integration process and the benchmark results and identify potential bottlenecks in Clad’s execution
+          Present the work at the relevant meetings and conferences.
+          Requirements
+          Automatic differentiation
+          C++ programming
+          Clang frontend
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Enable automatic differentiation of C++ STL concurrency primitives in Clad
+          Description
+          Clad is an automatic differentiation (AD) clang plugin for C++. Given a C++ source code of a mathematical function, it can automatically generate C++ code for computing derivatives of the function. This project focuses on enabling automatic differentiation of codes that utilise C++ concurrency features such as std::thread, std::mutex, atomic operations and more. This will allow users to fully utilize their CPU resources.
+
+          Expected Results
+          Explore C++ concurrency primitives and prepare a report detailing the associated challenges involved and the features that can be feasibly supported within the given timeframe.
+          Add concurrency primitives support in Clad’s forward-mode automatic differentiation.
+          Add concurrency primitives support in Clad’s reverse-mode automatic differentiation.
+          Add proper tests and documentation.
+          Present the work at the relevant meetings and conferences.
+          An example demonstrating the use of differentiation of codes utilizing parallelization primitives:
+
+          #include <cmath>
+          #include <iostream>
+          #include <mutex>
+          #include <numeric>
+          #include <thread>
+          #include <vector>
+          #include "clad/Differentiator/Differentiator.h"
+
+          using VectorD = std::vector<double>;
+          using MatrixD = std::vector<VectorD>;
+
+          std::mutex m;
+
+          VectorD operator*(const VectorD &l, const VectorD &r) {
+            VectorD v(l.size());
+            for (std::size_t i = 0; i < l.size(); ++i)
+              v[i] = l[i] * r[i];
+            return v;
+          }
+
+          double dot(const VectorD &v1, const VectorD &v2) {
+            VectorD v = v1 * v2;
+            return std::accumulate(v.begin(), v.end(), 0.0);
+          }
+
+          double activation_fn(double z) { return 1 / (1 + std::exp(-z)); }
+
+          double compute_loss(double y, double y_estimate) {
+            return -(y * std::log(y_estimate) + (1 - y) * std::log(1 - y_estimate));
+          }
+
+          void compute_and_add_loss(VectorD x, double y, const VectorD &weights, double b,
+                                    double &loss) {
+            double z = dot(x, weights) + b;
+            double y_estimate = activation_fn(z);
+            std::lock_guard<std::mutex> guard(m);
+            loss += compute_loss(y, y_estimate);
+          }
+
+          /// Compute total loss associated with a single neural neural-network.
+          /// y_estimate = activation_fn(dot(X[i], weights) + b)
+          /// Loss of a training data point = - (y_actual * std::log(y_estimate) + (1 - y_actual) * std::log(1 - y_estimate))
+          /// total loss: summation of loss for all the data points
+          double compute_total_loss(const MatrixD &X, const VectorD &Y,
+                                    const VectorD &weights, double b) {
+            double loss = 0;
+            const std::size_t num_of_threads = std::thread::hardware_concurrency();
+            std::vector<std::thread> threads(num_of_threads);
+            int thread_id = 0;
+            for (std::size_t i = 0; i < X.size(); ++i) {
+              if (threads[thread_id].joinable())
+                threads[thread_id].join();
+              threads[thread_id] =
+                  std::thread(compute_and_add_loss, std::cref(X[i]), Y[i],
+                              std::cref(weights), b, std::ref(loss));
+              thread_id = (thread_id + 1) % num_of_threads;
+            }
+            for (std::size_t i = 0; i < num_of_threads; ++i) {
+              if (threads[i].joinable())
+                threads[i].join();
+            }
+
+            return loss;
+          }
+
+          int main() {
+            auto loss_grad = clad::gradient(compute_total_loss);
+            // Fill the values as required!
+            MatrixD X;
+            VectorD Y;
+            VectorD weights;
+            double b;
+
+            // derivatives
+            // Zero the derivative variables and make them of the same dimension as the
+            // corresponding primal values.
+            MatrixD d_X;
+            VectorD d_Y;
+            VectorD d_weights;
+            double d_b = 0;
+
+            loss_grad.execute(X, Y, weights, b, &d_X, &d_Y, &d_weights, &d_b);
+
+            std::cout << "dLossFn/dW[2]: " << d_weights[2] << "\n"; // Partial derivative of the loss function w.r.t weight[2]
+            std::cout << "dLossFn/db: " << d_b << "\n"; // Partial derivative of the loss function w.r.t b
+          }
+          Requirements
+          Automatic differentiation
+          Parallel programming
+          Reasonable expertise in C++ programming
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Support usage of Thrust API in Clad
+          Description
+          The rise of ML has shed light into the power of GPUs and researchers are looking for ways to incorporate them in their projects as a lightweight parallelization method. Consequently, General Purpose GPU programming is becoming a very popular way to speed up execution time.
+
+          Clad is a clang plugin for automatic differentiation that performs source-to-source transformation and produces a function capable of computing the derivatives of a given function at compile time. This project aims to enhance Clad by adding support for Thrust, a parallel algorithms library designed for GPUs and other accelerators. By supporting Thrust, Clad will be able to differentiate algorithms that rely on Thrust’s parallel computing primitives, unlocking new possibilities for GPU-based machine learning, scientific computing, and numerical optimization.
+
+          Expected Results
+          Research and decide on the most valuable Thrust functions to support in Clad
+          Create pushforward and pullback functions for these Thrust functions
+          Write tests that cover the additions
+          Include demos of using Clad on open source code examples that call Thrust functions
+          Write documentation on which Thrust functions are supported in Clad
+          Present the work at the relevant meetings and conferences.
+          Requirements
+          Automatic differentiation
+          C++ programming
+          Clang frontend
+          Links
+          Repo
+          Mentors
+          Vassil Vassilev
+          David Lange
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Clad
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+          
+          Extending the User Interface
+          Description
+          Constellation is a framework used for lab setups or small-scale experiments in HEP. One of its most important goals is that the framework should be easy to use for both scientists implementing new devices as well as experiment operators.
+
+          Constellation features a Qt-based User Interfaces to control and monitor all devices in the experimental setup. The focus of this GSoC project is to add new user interfaces to Constellation and extend the current ones.
+
+          Project Milestones
+          Creating a new GUI to display monitoring data from devices using Qt Charts
+          Modularization of UI elements into reusable Qt widgets
+          Adding the monitoring widget to the existing GUI for device control
+          Requirements
+          Modern C++
+          Knowledge of Qt is helpful but not required
+          Practical experience with Unix and git
+          Links
+          Repository
+          Documentation
+          Mentors
+          Stephan Lachnit - DESY
+          Simon Spannagel - DESY
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-August
+          Corresponding Project
+          Constellation
+          Participating Organizations
+          DESY
+
+          ~~~~~~~~~~
+
+          Implement CppInterOp API exposing memory, ownership and thread safety information
+          Description
+          Incremental compilation pipelines process code chunk-by-chunk by building an ever-growing translation unit. Code is then lowered into the LLVM IR and subsequently run by the LLVM JIT. Such a pipeline allows creation of efficient interpreters. The interpreter enables interactive exploration and makes the C++ language more user friendly. The incremental compilation mode is used by the interactive C++ interpreter, Cling, initially developed to enable interactive high-energy physics analysis in a C++ environment.
+
+          Clang and LLVM provide access to C++ from other programming languages, but currently only exposes the declared public interfaces of such C++ code even when it has parsed implementation details directly. Both the high-level and the low-level program representation has enough information to capture and expose more of such details to improve language interoperability. Examples include details of memory management, ownership transfer, thread safety, externalized side-effects, etc. For example, if memory is allocated and returned, the caller needs to take ownership; if a function is pure, it can be elided; if a call provides access to a data member, it can be reduced to an address lookup. The goal of this project is to develop API for CppInterOp which are capable of extracting and exposing such information AST or from JIT-ed code and use it in cppyy (Python-C++ language bindings) as an exemplar. If time permits, extend the work to persistify this information across translation units and use it on code compiled with Clang.
+
+          Project Milestones
+          Collect and categorize possible exposed interop information kinds
+          Write one or more facilities to extract necessary implementation details
+          Design a language-independent interface to expose this information
+          Integrate the work in clang-repl and Cling
+          Implement and demonstrate its use in cppyy as an exemplar
+          Present the work at the relevant meetings and conferences.
+          Requirements
+          C++ programming
+          Python programming
+          Knowledge of Clang and LLVM
+          Links
+          Repo
+          Mentors
+          Aaron Jomy - CompRes
+          Vassil Vassilev - CompRes
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          CppInterOp
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Incorporate a Large Language Model to assist users
+          Description
+          The amount of data that is processed by individual scientists has grown hugely in the past decade. It is not unusual for a user to have data processed on tens of thousands of processors with these located at tens of different locations across the globe. The Ganga user interface was created to allow for the management of such large calculations. It helps the user to prepare the calculations, submitting the tasks to a resource broker, keeping track of which parts of the task that has been completed, and putting it all together in the end.
+
+          As a scripting and command line interface, there will naturally be users that have problems with getting the syntax correct. To solve this, they will often spend time searching through mailing lists, FAQs and discussion fora or indeed just wait for another more advanced coder to debug their problem. The idea of this project is to integrate a Large Language Model (LLM) into the command prompt in Ganga. This should allow the user to describe in words what they would like to do and get an example that they can incorporate. It should also intercept exceptions thrown by the Ganga interface, help the user to understand them and propose solutions.
+
+          We have an interface based on ollama that will build a RAG that contains extra information about Ganga that has not been available for the training of the underlying LLM.
+
+          Task ideas
+          Integrate the interaction with the LLM and RAG into Ganga.
+          Integrate past input and output in the CLI to provide context for the CLI.
+          Setup a server such that the LLM can run on a remote server requiring minimal installation by the user.
+          Test which samples are most useful for adding to the RAG (mailing list discussions, manuals, instant messages)
+          Develop continuous integration tests that ensures that LLM integration will keep working.
+          Expected results
+          For the scientific users of Ganga, this will speed up their development cycle as they will get a faster response to the usage queries that they have.
+
+          As a student, you will gain experience with the challenges of large scale computing where some tasks of a large processing chain might take several days to process, have intermittent failures and have thousands of task processing in parallel. You will get experience with how LLMs can be integrated directly into projects to assist users in the use of the CLI and in understanding error messages.
+
+          Evaluation Task
+          Interested students please contact Ulrik (see contact below) to ask questions and for an evaluation task.
+
+          Requirements
+          Python programming (advanced), Linux command line experience (intermediate), use of git for code development and continuous integration testing (intermediate)
+
+          Links
+          Ganga
+          Mentors
+          Alex Richards - Imperial College
+          Mark Smith - Imperial College
+          Ulrik Egede - Monash University
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: May-November
+          Corresponding Project
+          Ganga
+          Participating Organizations
+          ImperialCollege
+          MonashUniversity
+
+          ~~~~~~~~~~
+
+          Implement a deprecation system to keep code up to date
+          Description
+          The amount of data that is processed by individual scientists has grown hugely in the past decade. It is not unusual for a user to have data processed on tens of thousands of processors with these located at tens of different locations across the globe. The Ganga user interface was created to allow for the management of such large calculations. It helps the user to prepare the calculations, submitting the tasks to a resource broker, keeping track of which parts of the task that has been completed, and putting it all together in the end.
+
+          As code that has developed over many years, there are part of the API that has become redundant. This means that for a period of time there will be both the old and now deprecated API as well as the new way of doing things. At the moment Ganga is missing a formal way of deprecating code. This means that warnings about using something deprecated are non-uniform and there is also very old code that has never been cleaned up.
+
+          The idea in this project is to formalise the way that code can be declared deprecated and then use the continuous integration to ensure that the code eventually is deleted.
+
+          Task ideas
+          Have a well defined way of marking plugins, functions etc as deprecated with a warning about when they will be removed. Building on top of the python package deprecated might be an idea.
+          Run tests in the testing framework that will alert developers to that certain parts of the code can now be removed.
+          Apply in the testing framework a similar system that will identify when deprecated python features are used when moving to a new python version.
+          Apply the deprecation system to parts of the code that is already deprecated.
+          Expected results
+          Obtain a cleaner code base where very old and since long deprecated code is no longer present. Provide the end user with consistent warnings about their use of deprecated code as well as when it will be removed.
+
+          As a student, you will gain experience with the challenges of large scale computing where some tasks of a large processing chain might take several days to process, have intermittent failures and have thousands of task processing in parallel. You will get experience with working within a large code base that has gone through many developments.
+
+          Evaluation Task
+          Interested students please contact Ulrik (see contact below) to ask questions and for an evaluation task.
+
+          Requirements
+          Python programming (advanced), Linux command line experience (intermediate), use of git for code development and continuous integration testing (intermediate)
+
+          Links
+          Ganga
+          Mentors
+          Alex Richards - Imperial College
+          Mark Smith - Imperial College
+          Ulrik Egede - Monash University
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: May-November
+          Corresponding Project
+          Ganga
+          Participating Organizations
+          ImperialCollege
+          MonashUniversity
+
+          ~~~~~~~~~~
+
+          Geant4-FastSim - Data Representation Optimisation for Generative Model-based Fast Calorimeter Shower Simulation
+          Description
+          High energy physics experiments such as those operated at the Large Hadron Collider (LHC) fundamentally rely on detailed and realistic simulations of particle interactions with the detector. The state-of-the-art Geant4 toolkit provides a means of conducting these simulations with Monte Carlo procedures. However, the simulation of particle showers in the calorimeter systems of collider detectors with such tools is a computationally intensive task. For this reason, alternative fast simulation approaches based on generative models have received significant attention, with these models now being deployed in production by current experiments at the LHC. In order to develop the next generation of fast simulation tools, approaches are being explored that would be able to handle larger data dimensionalities stemming from the higher granularity present in future detectors, while also being efficient enough to provide a sizable simulation speed-up for low energy showers.
+
+          A shower representation which has the potential to meet these criteria is a point cloud, which can be constructed from the position, energy and time of hits in the calorimeter. Since Geant4 provides access to the (very numerous) individual physical interactions simulated in the calorimeter, it also provides a means to create a representation independent of the physical readout geometry of the detector. This project will explore different approaches to clustering these individual simulated hits into a point cloud, seeking to minimise the number of points while preserving key calorimetric observables.
+
+          First Steps
+          Gain a basic understanding of calorimeter shower simulation (G4FastSim)
+          Try simulating some electromagnetic particle showers with the Key4hep framework (see test)
+          Propose different approaches to clustering, with justification
+          Project Milestones
+          Survey different approaches to clustering
+          Implement and experiment with the different methods
+          Investigate the impact of varying the detector granularity on the performance of separate clustering algorithms
+          If time allows, hadronic showers could also be investigated
+          Expected Results
+          A comparison of different approaches to clustering, with a performance evaluation in terms of the effect on calorimetric observables.
+          An evaluation of the impact of varying the granularity of the detector readout on the performance of the clustering algorithm
+          Requirements
+          C++, Python
+          Familiarity with PyTorch could be an advantage
+          Evaluation Tasks and Timeline
+          Find the test here. Please submit it by 9:00 CET 17th March 2025 along with a short proposal (2 pages max) describing how you would approach the problem. See submission instructions in the test doc. Please don’t forget to start the subject line with “GSoC’25 FastSim”.
+          We will make the selections based on the test, short proposal and resume by 17:00 CET 24th March.
+          Selected candidates will then write the full proposal and submit it according to the official GSoC timeline.
+          Links
+          G4FastSim
+          CaloChallenge 2022: A Community Challenge for Fast Calorimeter Simulation
+          Mentors
+          Peter McKeown - CERN
+          Piyush Raikwar - CERN
+          Anna Zaborowska - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Geant4
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          Using ROOT in the field of genome sequencing
+          Description
+          The ROOT is a framework for data processing, born at CERN, at the heart of the research on high-energy physics. Every day, thousands of physicists use ROOT applications to analyze their data or to perform simulations. The ROOT software framework is foundational for the HEP ecosystem, providing capabilities such as IO, a C++ interpreter, GUI, and math libraries. It uses object-oriented concepts and build-time modules to layer between components. We believe additional layering formalisms will benefit ROOT and its users.
+
+          ROOT has broader scientific uses than the field of high energy physics. Several studies have shown promising applications of the ROOT I/O system in the field of genome sequencing. This project is about extending the developed capability in GeneROOT and understanding better the requirements of the field.
+
+          Expected results
+          Reproduce the results based on previous comparisons against ROOT master
+          Investigate and compare the latest compression strategies used by Samtools for conversions to BAM, with RAM(ROOT Alignment Maps).
+          Explore ROOT’s RNTuple format to efficiently store RAM maps, in place of the previously used TTree.
+          Investigate different ROOT file splitting techniques
+          Produce a comparison report
+          Requirements
+          C++ and Python programming
+          Familiarity with Git
+          Knowledge of ROOT and/or the BAM file formats is a plus.
+          Links
+          Latest Presentation on GeneROOT
+          ROOT
+          GeneROOT
+          Mentors
+          Martin Vasilev - Uni Plovdiv
+          Jonas Rembser - CERN
+          Fons Rademakers - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-November
+          Corresponding Project
+          ROOT
+          Participating Organizations
+          CERN
+          CompRes
+
+          ~~~~~~~~~~
+
+          Highly Granular Quantization for CICADA
+          Description
+          The CICADA (Calorimeter Image Convolutional Anomaly Detection Algorithm) project aims to provide an unbiased detection of new physics signatures in proton-proton collisions at the Large Hadron Collider’s Compact Muon Solenoid experiment (CMS). It detects anomalies in low-level trigger calorimeter information with a convolutional autoencoder, whose behaviour is transferred to a smaller model through knowledge distillation. Careful quantization of the deployed model allows it to meet the requirement of sub-500ns inference times on FPGAs. While CICADA currently employs Quantization Aware Training with different quantization schemes for each layer of the distilled model, a new gradient-based quantization optimization approach published in 2024 offers the possibility of optimizing quantization at the individual weight level. This project would explore implementing this highly granular quantization method to CICADA’s distilled model and evaluating its effects on both model performance and resource consumption on FPGAs. The work would involve implementing the new quantization approach, comparing it with the current implementation, and investigating the impact on both detection performance and hardware resource utilization while maintaining the strict timing requirements.
+
+          Task ideas
+          Transition CICADA’s quantization tool from QKeras to HGQ
+          Optimize student model’s quantization with higher granularity
+          Compare resulting model’s performance with legacy model
+          Emulate deployment on FPGA w/ Vivado to evaluate resource consumption
+          Expected results
+          Extend existing training / quantization scripts to use HGQ in addition to QKeras
+          A trained student model with highly granular quantization
+          Estimates of that model’s performance and resource consumption on an FPGA
+          Requirements
+          Python, Tensorflow, Quantization
+
+          Links
+          CICADA (homepage)
+          CICADA (code)
+          HGQ (Paper)
+          HGQ (code)
+          Mentors
+          Lino Gerlach - CERN
+          Isobel Ojalvo - Princeton
+          Jennifer Ngadiuba - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: Flexible
+          Corresponding Project
+          CICADA
+          Participating Organizations
+          princeton
+
+          ~~~~~~~~~~
+
+          Intelligent Log Analysis for the HSF Conditions Database
+          Description
+          The nopayloaddb project works as an implementation of the Conditions Database reference for the HSF. It provides a RESTful API for managing payloads, global tags, payload types, and associated data.
+
+          Our current system, composed of Nginx, Django, and database (link to helm chart), lacks a centralized logging solution making it difficult to effectively monitor and troubleshoot issues. This task will address this deficiency by implementing a centralized logging system aggregating logs from multiple components, and develop a machine learning model to perform intelligent log analysis. The model will identify unusual log entries indicative of software bugs, database bottlenecks, or other performance issues, allowing us to address problems before they escalate. Additionally, by analyzing system metrics, the model will provide insights for an optimal adjustment of parameters during periods of increased request rates.
+
+          Steps
+          Set up a centralized logging system
+          Collect and structure logs from Nginx, Django, and the database
+          Develop an ML model for log grouping and anomaly detection
+          Implement Kubernetes-based database with replication
+          Train an ML model to optimize Kubernetes parameters dynamically
+          Expected Results
+          A centralized logging system for improved monitoring and troubleshooting
+          ML-powered anomaly detection
+          ML-driven dynamic configuration for optimal performance
+          Requirements
+          Python and basic understanding of ML frameworks
+          Kubernetes, basic understanding, k8s, Helm, Operators, OpenShift
+          Django and Nginx, basic understanding of web frameworks and logging
+          Database knowledge, PostgreSQL, database replication
+          Links
+          Django REST API: https://github.com/BNLNPPS/nopayloaddb
+          Automized deployment with helm-chart: https://github.com/BNLNPPS/nopayloaddb-charts
+          Mentors
+          Ruslan Mashinistov - BNL
+          John S. De Stefano Jr. - BNL
+          Michel Hernandez Villanueva - BNL
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          HSFCondDB
+          Participating Organizations
+          BNL
+
+          ~~~~~~~~~~
+
+          Interactive Differential Debugging - Intelligent Auto-Stepping and Tab-Completion
+          Description
+          Differential debugging is a time-consuming task that is not well supported by existing tools. Existing state-of-the-art tools do not consider a baseline(working) version while debugging regressions in complex systems, often leading to manual efforts by developers to achieve an automatable task.
+
+          The differential debugging technique analyzes a regressed system and identifies the cause of unexpected behaviors by comparing it to a previous version of the same system. The idd tool inspects two versions of the executable – a baseline and a regressed version. The interactive debugging session runs both executables side-by-side, allowing the users to inspect and compare various internal states.
+
+          This project aims to implement intelligent stepping (debugging) and tab completions of commands. IDD should be able to execute until a stack frame or variable diverges between the two versions of the system, then drop to the debugger. This may be achieved by introducing new IDD-specific commands. IDD should be able to tab complete the underlying GDB/LLDB commands. The contributor is also expected to set up the necessary CI infrastructure to automate the testing process of IDD.
+
+          Expected Results
+          Enable stream capture
+          Enable IDD-specific commands to execute until diverging stack or variable value.
+          Enable tab completion of commands.
+          Set up CI infrastructure to automate testing IDD.
+          Present the work at the relevant meetings and conferences.
+          Requirements
+          Python & C/C++ programming
+          Familiarity debugging with GDB/LLDB
+          Links
+          IDD Repository
+          Mentors
+          Vipul Cariappa - CompRes
+          Martin Vasilev - University of Plovdiv
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          CppInterOp
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Julia Interfaces to HepMC3
+          Description
+          In high-energy physics experiments at CERN it is necessary to simulate physics events in order to compare predicted observations with those that the LHC experiments actually observe. A key piece of the software chain used to do that is the HepMC3 event record library, which encodes the output from physics event generators in a standard way, so that they can be used by downstream detector simulation and analysis codes.
+
+          There is now increasing interest in using Julia as a language for HEP software, as it combines the ease of programming in interactive languages, e.g., Python, with the speed of compiled language, such as C++. As part of building up the ecosystem of supporting packages for Julia in high-energy physics, developing interfaces to read, manipulated and write HepMC3 event records in Julia is the aim of this project.
+
+          Task ideas
+          This project would develop a wrapper library for HepMC3 allowing the HepMC3 data objects and methods, in C++, to be called from Julia.
+
+          It would utilise the general underlying wrapper interfaces in CxxWrap and the automated wrapper code generator WrapIt! to allow for as easy and maintainable an interface as possible.
+
+          A key outcome would be a set of unit tests and examples, based on the HepMC3 ones, demonstrating how to use the library and proving that the code is correct.
+
+          Expected results and milestones
+          Reading of HepMC3 event files
+          Particularly the ASCII format will be targeted first
+          Access to event data structures
+          Access to particle properties
+          Navigation of the event and the vertices between parent and child particles
+          Access to run information
+          Update of HepMC3 data structures
+          Creation of new HepMC3 events
+          Re-serialisation of these events to file
+          Initially ASCII
+          Documentation and examples on how to use the Julia interfaces
+          HepMC3.jl package registered in the Julia general registry
+          Extension of serialisation to ROOT format (stretch goal)
+          Requirements
+          Programming experience in C++
+          Prior experience in Julia (very advantageous)
+          A background understanding of high-energy physics (advantageous)
+          Evaluation Exercise
+          TBD
+
+          Links
+          Julia Programming Language
+          JuliaHEP HSF Group
+          HepMC3 Repository
+          CxxWrap
+          WrapIt!
+          Mentors
+          Graeme Stewart - CERN
+          Mateusz Fila - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 175 hours
+          Mentor availability: June-July- August
+          Corresponding Project
+          JuliaHEP
+          Participating Organizations
+          CERN
+
+
+          ~~~~~~~~~~
+
+          MCnet/MCviz - graph and 3D-viewer tools for simulated particle collisions
+          Description
+          Simulations are key to particle-physics research: many modern theoretical models have such complex consequences that we test theory not by comparing measurements of particle collisions to predicted functional forms, but by generating simulated collision-events from the theory and analyzing them identically to the real ones from the particle collider.
+
+          This means that event generators are incredibly important to particle physics, as the most-used link between experiment and theory, and as a crucial data format for exchange of ideas. They are also an excellent way to introduce new researchers and the public to particle-physics concepts. However, the toolset for MC event manipulation and visualisation is less powerful and coherent than it should be, and this project seeks to improve that situation!
+
+          Task ideas
+          This project will pick up old ideas and code for MC-event visualisation – both of the interaction graph that illustrates the internal theory computation, and the external appearance of the resulting collision decay-products – and produce a new set of tools useful both to physicists and for public outreach.
+
+          Expected results and milestones
+          Extend the mcgraph tool to be usable with both the HepMC and LHE MC-event formats.
+          Refactor mcgraph into a library capable of rendering to a web browser in a server app.
+          Interface the Phoenix event-viewer library to display 3D events (with and without a dummy detector model) to a web browsers.
+          Display interactive particle information and jet clustering in graph and 3D view interfaces.
+          Requirements
+          Command-line tools
+          Python
+          Web technologies
+          Gitlab CI
+          git
+          Links
+          Phoenix event view library
+          Old MCview web-based MC event viewer
+          MC event-graph viewer
+          Old MCviz event-graph viewer
+          HepMC3 event format
+          LHE event format
+          Mentors
+          Andy Buckley - CERN
+          Chris Gutschow - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          MCnet
+          Participating Organizations
+          UofGlasgow
+
+
+          ~~~~~~~~~~
+
+          MCnet/OpenData - tools and exercises for open-data exploration with MC simulations
+          Description
+          CERN’s experiments are committed to publishing their data in a form that is accessible to all, both for research purposes and for education. For example, the ATLAS experiment provides Jupyter notebook exercises based on live-analysing reduced forms of the real collider data.
+
+          But particle-physics researchers also use simulations of data as a crucial tool for testing theories and for understanding the background processes that new physics effects have to be isolated from. For this we use Monte Carlo (MC) event-generator codes, which are statistical implementations of the fundamental physics theory that sample real-looking events from the predicted particle types and kinematics. These are not yet represented in open-data exercises.
+
+          Task ideas
+          In this project we will develop new tools and exercises for extending open-data analysis resources to include MC event simulations. It will both reduce the entry barriers to outreach with open data and enable more engaging exercises with hypothetical new-physics models.
+
+          Expected results and milestones
+          Develop a library of wrapper functions to make open-data analysis more approachable for non-experts.
+          Create functions and datasets for loading and analysing MC event samples through Jupyter.
+          Develop a new Jupyter+Binder worksheet for outreach-oriented open-data MC analysis.
+          Requirements
+          Python
+          Jupyter
+          Binder
+          Gitlab CI
+          git
+          Links
+          ATLAS open data
+          Example open-data analysis notebook
+          Jupyter
+          Binder
+          Mentors
+          Andy Buckley - CERN
+          Chris Gutschow - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 175 hours
+          Mentor availability: June-October
+          Corresponding Project
+          MCnet
+          Participating Organizations
+          UofGlasgow
+
+
+          ~~~~~~~~~~
+
+          Integrating Support for Google XLS in HLS4ML
+          Description
+          Google XLS (Accelerated Hardware Synthesis) is an advanced open-source framework for high-level hardware design, offering flexible and efficient synthesis for FPGA and ASIC applications. By integrating XLS into HLS4ML, a framework for translating machine learning models into FPGA-friendly code, we can leverage XLS’s optimizing compiler and domain-specific language to improve resource efficiency, performance, and portability. This integration will enable seamless generation of highly optimized hardware implementations for ML models while maintaining the ease of use that HLS4ML provides.
+
+          HLS4ML currently supports traditional HLS tools like Vivado HLS and Intel HLS, but adding XLS can bring further benefits such as better compilation times, improved hardware efficiency, and wider vendor compatibility. This project will focus on developing an interface between HLS4ML and XLS, allowing ML models to be translated into XLS IR and synthesized efficiently.
+
+          Task Ideas
+          Develop a backend in HLS4ML that translates neural network layers into XLS Intermediate Representation (IR).
+          Implement the key ML operations (e.g., matrix multiplications, activations, and pooling) via XLS’s DSLX language and map them to HLS4ML operations.
+          Benchmark and compare performance, resource utilization, and synthesis results against existing HLS4ML backends.
+          Extend HLS4ML’s configuration options to allow selection of XLS as a backend, ensuring ease of integration.
+          Expected Results
+          A prototype of a backend in HLS4ML supporting XLS-based synthesis.
+          Conversion scripts to map ML operations to XLS IR.
+          Performance evaluation of XLS and existing HLS backends.
+          Documentation and tutorials for using XLS with HLS4ML.
+          Requirements
+          Proficiency in Python and C++.
+          Knowledge of hardware and compiler design.
+          Basic familiarity with neural networks.
+          Familiarity with version control systems like Git/GitHub.
+          Links
+          hls4ml documentation
+          hls4ml Repository
+          Google XLS documentation
+          Google XLS repository
+          Mentors
+          Vladimir Loncar - CERN
+          Dimitrios Danopoulos - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium/high
+          Duration: 350 hours
+          Mentor availability: Flexible
+          Corresponding Project
+          ML4EP
+          Participating Organizations
+          CERN
+
+
+          ~~~~~~~~~~
+
+          Optimizing Model Splitting in hls4ml for Efficient Multi-Graph Inference
+          Description
+          hls4ml is an open-source tool that enables the deployment of machine learning (ML) models on FPGAs using High-Level Synthesis (HLS). It automatically converts pre-trained models from popular deep learning frameworks (e.g., Keras, PyTorch, and ONNX) into optimized firmware for FPGA-based inference.
+
+          Traditionally, the entire ML model is synthesized as a monolithic graph, which can lead to long synthesis times and complicated debugging, especially for large model topologies. Splitting the model graph at specified layers into independent subgraphs allows for parallel synthesis and step-wise optimization. However, finding the ‘optimal’ splitting points and optimizing FIFO buffers in between the subgraphs remains a challenge, especially when dealing with dynamic streaming architectures.
+
+          This project aims to investigate optimal splitting strategies for complex ML models in hls4ml, focusing on efficient FIFO depth optimization across multi-graph designs. The goal is to develop methodologies that can be integrated into hls4ml to enable automated and optimal graph splitting for improved performance.
+
+          Task ideas
+          The contributor will start by familiarizing themselves with hls4ml and building ML models using multi-graph designs. They will implement profiling techniques (e.g., VCD logging) to measure FIFO occupancy and backpressure in order to develop a FIFO optimization strategy for multi-graph designs. They will also investigate multi-objective optimization algorithms to determine optimal splitting points based on subgraph resource usage or dataflow patterns. Finally, they will integrate these methodologies with hls4ml and run benchmarks to validate improvements in latency, resource utilization, etc.
+
+          Expected results and milestones
+          Familiarization with hls4ml: Understand the hls4ml workflow, including synthesis, and simulation.
+          Research and Evaluation: Explore FIFO profiling and optimization strategies along with algorithms to partition the model graph given specific optimization objectives.
+          Validation: Benchmark against monolithic implementations and compare differences in latency and resource utilization.
+          Requirements
+          Proficiency with computer architecture, FPGA design and simulation tools (e.g., Vivado)
+          Experience with Python
+          Understanding of ML concepts is beneficial.
+          Familiarity with version control systems like Git/GitHub.
+          Links
+          hls4ml documentation
+          hls4ml Repository
+          Vivado Design Implementation
+          Mentors
+          Vladimir Loncar - CERN
+          Dimitrios Danopoulos - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: Flexible
+          Corresponding Project
+          ML4EP
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          RNTuple in JSROOT
+          Description
+          RNTuple is the next-generation data format for high-energy physics (HEP) data collected from the LHC. It is part of ROOT, a cornerstone software package for the storage, visualization and analysis of scientific data, widely used in the scientific community and particularly in HEP. ROOT is a C++ and Python framework, but it recently became available in the browsers as well through a Javascript implementation of some of its parts: JSROOT. Since RNTuple is still in the experimental phase, it currently lacks a JSROOT interface and its contents cannot be visualized in the browser, a common and desirable property of many ROOT objects. The goal of this project is filling this gap by making JSROOT able to read and display data stored inside an RNTuple.
+
+          Task ideas
+          In this project, the student will learn the internals of the RNTuple binary format and use this knowledge to implement a Javascript interface to expose RNTuple to JSROOT.
+
+          Expected results and milestones
+          Familiarize with the JSROOT framework, understanding how to integrate new components into it;
+          read and implement (a subset of) the RNTuple binary format specifications, in Javascript; this will concretely mean implementing the deserialization code from a binary blob to a RNTuple object that may be used by JSROOT;
+          enable the visualization of an RNTuple’s fields in the browser, leveraging the existing framework in JSROOT.
+          Requirements
+          Knowledge of Javascript / ES6
+          Basic knowledge of “low-level” programming (primitive types binary layouts, bit-level manipulations, reinterpreting bytes as different types, …)
+          Experience with git / github
+          (Bonus): familiarity with any binary format
+          Links
+          ROOT Project homepage
+          ROOT Project repository
+          JSROOT homepage
+          JSROOT repository
+          Introduction to RNTuple
+          RNTuple architecture overview
+          RNTuple Binary Specification
+          Mentors
+          Serguei Linev - CERN
+          Giacomo Parolini - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          ROOT
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          Rucio WebUI Revamp
+          Description
+          Rucio is an open-source software framework that provides functionality to scientific collaborations to organize, manage, monitor, and access their distributed data and dataflows across heterogeneous infrastructures. Originally developed to meet the requirements of the high-energy physics experiment ATLAS, Rucio has been continuously enhanced to support diverse scientific communities. Since 2016, Rucio has orchestrated multiple exabytes of data access and data transfers globally.
+
+          The Rucio WebUI is a Next.js application utilized by various users within collaborating communities to access, monitor, and manage their distributed data. Key features of the Rucio WebUI include:
+
+          SDK for Streaming: Facilitates seamless data streaming from the Rucio server to page components, ensuring a responsive user interface.
+          Typed in TypeScript with Generics: Strict typing ensures code integrity and enhances development efficiency.
+          Accessibility and Responsiveness: Designed with accessibility and responsiveness in mind, ensuring usability across various devices.
+          Testing and Stability: Extensive testing ensures robustness and reliability in all components.
+          Feature Toggles: Dynamic feature toggles provide flexibility in enabling or disabling specific functionalities as needed.
+          Component Library: Utilizes Storybook and TailwindCSS to enhance development speed and consistency.
+          Tasks
+          Upgrade to Next.js 15, React 19, TailwindCSS 4.x:
+          Migrate the existing codebase to Next.js 15 to leverage the latest features and performance improvements.
+          Utilize Server Side Rendering and React Query in Client Side Components to enhance data-fetching capabilities.
+          Migrate tailwind.config.js to new CSS based configuration for TailwindCSS 4.x.
+          Enhance User Experience for Site Administrators and Operators:
+          Currently the WebUI focuses on List/Get views with the exception of allowing users to Create Rules. Add features to Create/Edit resources for site administrators and operational experts.
+          Investigate legacy views in the previous Flask application and migrate them to the new WebUI.
+          Redesign these views to be more user-friendly, incorporating feedback from site administrators and operators.
+          Migrate Authentication to NextAuth (Auth.js):
+          Transition existing x509 and user/password authentication mechanisms to NextAuth.
+          Ensure compatibility with various authentication flows, including OAuth and OpenID Connect.
+          Develop an RBAC system to ensure users have access only to functionalities relevant to their roles, enhancing security and usability.
+          Transition to a Monorepo Structure:
+          Migrate the Rucio WebUI to a monorepo structure to improve code organization and facilitate the sharing of common components across different projects.
+          Requirements
+          Mandatory:
+
+          Proficiency in React.js and Next.js
+          Experience with TailwindCSS
+          Strong knowledge of JavaScript (ECMAScript 6) and TypeScript
+          Familiarity with Python 3 and Flask
+          Proficiency with Linux, Git, and Docker
+          Good to Have:
+
+          Understanding of NX Monorepos
+          Experience with AGGrid Data Tables
+          Experience with GitHub Actions
+          Knowledge of HTTP REST APIs
+          Familiarity with OpenID Connect and x509 protocols
+          Expected Results
+          By the end of GSoC 2025, we expect to have a revamped Rucio WebUI that:
+
+          Is upgraded to Next.js 15 with integrated React Query.
+          Utilizes both client and server-side components as per React 19’s stable features.
+          Supports TailwindCSS 4.0 for a modern design system.
+          Offers enhanced user experiences tailored for site administrators and operators.
+          Employs NextAuth for streamlined authentication processes.
+          Implements a robust RBAC system.
+          Adopts a monorepo structure for improved code organization and component sharing.
+          Links
+          Rucio GitHub Repository
+          Rucio UI Presentation
+          Rucio Documentation
+          Rucio System Overview Journal Article (Springer)
+          Rucio Operational Experience Article (IEEE Computer Society)
+          Mentors
+          Mayank Sharma - University of Michigan, Ann Arbor
+          Martin Barisits - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-November
+          Corresponding Project
+          Rucio
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          Background Enrichment augmented Anomaly Detection (BEAD) for new physics searches at LHC
+          
+
+          Short description of the project
+          A long-standing mystery of fundamental physics is the existence of dark matter (DM), a type of matter that has little interaction with ordinary matter but is supported by various astrophysical and cosmological observations and is six times more abundant than ordinary matter in the universe. Several Large Hadron Collider (LHC) experiments are conducting searches aimed at detecting dark matter. Unsupervised and semi-supervised learning outlier detection techniques are advantageous to these searches, for casting a wide net on a variety of possibilities for how dark matter manifests, as they impose minimal constraints from specific physics model details, but rather learn to separate characteristics of rare signals starting from the knowledge of the background they’ve been trained on. Developing innovative search techniques for probing dark matter signatures is crucial for broadening the DM search program at the LHC, and BEAD is a Python package that uses deep learning based methods for anomaly detection in HEP data for such new physics searches. BEAD has been designed with modularity in mind, to enable usage of various unsupervised latent variable models for any task.
+
+          BEAD has five main running modes:
+
+          Data handling: Deals with handling file types, conversions between them and pre-processing the data to feed as inputs to the DL models.
+
+          Training: Trains a model to learn implicit representations of the background data that may come from multiple sources(/generators) to get a single, encriched latent representation of it.
+
+          Inference: Using a model trained on an enriched background, the user can feed in samples where to detect anomalies in.
+
+          Plotting: After running Inference, or Training, one can generate plots. These include performance plots as well as different visualizations of the learned data.
+
+          Diagnostics: Enabling this mode allows running profilers that measure a host of metrics connected to the usage of the compute node to help optimization of the code (using CPU-GPU metrics).
+
+          The package is under active development. The student in this project will work on the machine learning models available in BEAD, and implementing new models to perform anomaly detection, initially on simulated data.
+
+          Task ideas
+          Possible projects include:
+
+          New auto-encoder models could be developed, better identifying correlations between data objects in a given particle physics dataset entry (containing event level and/or physics object level information). New models could also improve performance on live / unseen data. These could include transformer, GNN, probabilistic and other tiypes of networks.
+          Existing models could be tested on different datasets, potentially identifying distinct latent spaces populated by the different LHC physics processes, that can enable improved anomaly detection.
+          Ideas from the student working on this project are also welcome.
+
+          Expected results
+          An improved performance of selected models, with documentation and figures of merit that may include:
+
+          Plots made in matplotlib that demonstrate the performance of the new models compared to the old
+          Documentation of the design choices made for the improved models
+          Documented evaluation of a physics analysis on data before and after compression
+          Requirements
+          Python
+          Linux environment
+          ML / unsupervised algorithms key concepts
+          PyTorch
+
+          Desired skills: transformers and/or graph neural networks, particle physics theory and experiments, particle physics simulations
+          Links
+          Paper on unsupervised ML algorithms using HEP datasets
+          Review of LHC searches using unsupervised learning
+          BEAD GitHub repository (WIP)
+          ROOT
+          Jupyter
+          PyTorch
+          Mentors
+          Pratik Jawahar - CERN
+          Sukanya Sinha - CERN
+          Caterina Doglioni - Backup Mentor - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-August
+          Corresponding Project
+          BEAD
+          Participating Organizations
+          SMARTHEP
+          UManchester
+
+          ~~~~~~~~~~
+
+          Estimating the energy cost of ML scientific software
+          Description
+          At a time where “energy crisis” is something that we hear daily, we can’t help but wonder whether our research software can be made more sustainable, and more efficient as a byproduct. In particular, this question arises for ML scientific software used in high-throughput scientific computing, where large datasets composed of many similar chunks are analysed with similar operations on each chunk of data. Moreover, CPU/GPU-efficient software algorithms are crucial for the real-time data selection (trigger) systems in LHC experiments, as the initial data analysis necessary to select interesting collision events is executed on a computing farm located at CERN that has finite CPU resources.
+
+          The questions we want to start answering in this work are:
+
+          what is the trade off between performance of a ML algorithm and its energetic efficiency?
+          can small efficiency improvements in ML algorithms running on Large Hadron Collider data have a sizable energetic impact?
+          how do these energy efficiency improvements vary when using different computing architectures (1) and/or job submission systems (2)?
+          Task ideas
+          The students in this project will use metrics from the Green Software Foundation and from other selected resources to estimate the energy efficiency of machine learning software from LHC experiments (namely, top tagging using ATLAS Open data) and from machine learning algorithms for data compression (there is another GSoC project developing this code, called Baler). This work will build on previous GSoC / Master’s thesis work, and will expand these results for GPU architectures. If time allows, the student will then have the chance to make small changes to the code to make it more efficient, and evaluate possible savings.
+
+          Expected results and milestones
+          Understand and summarise the metrics for software energy consumption, focusing on computing resources at CERN;
+          Become familiar with running and debugging the selected software frameworks and algorithms;
+          Set up tests and visualisation for applying metrics to the selected software
+          Run tests and visualise results (preferably using a Jupyter notebook)
+          Vary platforms and job submission systems
+          Identify possible improvements, apply them, and run tests again
+          Requirements
+          Python
+          git
+          Jupyter notebooks
+          PyTorch or equivalent ML toolkit
+          Desirable: code profiling experience
+          Links
+          (1) Green Software Foundation course
+          (2) Code by the previous GSoC student
+          Mentors
+          Caterina Doglioni - CERN
+          Tobias Fitschen - Backup Mentor - CERN
+          James Smith - Backup Mentor - University of Manchester
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October (with 2-3 weeks mentor vacation where student will work independently with minimal guidance)
+          Corresponding Project
+          SMARTHEP
+          Participating Organizations
+          UManchester
+          CERN
+
+          ~~~~~~~~~~
+
+          Sustainable Quantum Computing algorithms for particle physics reconstruction
+          Description
+          Reconstructing the trajectories of charged particles as they traverse several detector layers is a key ingredient for event reconstruction at any LHC experiment. The limited bandwidth available, together with the high rate of tracks per second, makes this problem exceptionally challenging from the computational perspective. With this in mind, Quantum Computing is being explored as a new technology for future detectors, where larger datasets will further complicate this task. Furthermore, when choosing such alternative sustainability will play a crucial role and needs to be studied in detail. This project will consist in the implementation of both Quantum and Classical Machine Learning algorithms for track reconstruction, and using open-source, realistic event simulations to benchmark them from both a physics performance and an energy consumption perspective.
+
+          First steps
+          Basic understanding of track reconstruction at LHC using ACTS and/or Allen framework.
+          Familiarizing her/himself with trackML simulation datasets https://www.kaggle.com/competitions/trackml-particle-identification/data?select=train_sample.zip.
+          Learning how to use the quantum simulator for QML algorithms https://pennylane.ai/.
+          Milestones
+          Choosing a ML algorithm (or part of) in quantum computing and its classical counterpart for track reconstruction.
+          Mapping of track reconstruction problem to Ising-like Hamiltonian.
+          Prototype implementation of classical and quantum track reconstruction using trackML simulation inputs.
+          Expected results
+          Benchmarking physics output and energy consumption of the classical and quantum algorithm.
+          Requirements
+          CUDA, python, C++
+          Evaluation Tasks and Timeline
+          To be completed
+          Corresponding Project
+          QuantumForTracking
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          TMVA SOFIE - GPU Support for Machine Learning Inference
+          Description
+          SOFIE (System for Optimized Fast Inference code Emit) is a Machine Learning Inference Engine within TMVA (Toolkit for Multivariate Data Analysis) in ROOT. SOFIE offers a parser capable of converting ML models trained in Keras, PyTorch, or ONNX format into its own Intermediate Representation, and generates C++ functions that can be easily invoked for fast inference of trained neural networks. Using the IR, SOFIE can produce C++ header files that can be seamlessly included and used in a ‘plug-and-go’ style.
+
+          SOFIE currently supports various Machine Learning operators defined by the ONNX standards, as well as a Graph Neural Network (GNN) implementation. It supports the parsing and inference of Graph Neural Networks trained using DeepMind Graph Nets.
+
+          As SOFIE continues to evolve, there’s a need to enable inference on GPUs. This project aims to explore different GPU stacks (such as CUDA, ROCm, ALPAKA) and implement GPU-based inference functionalities in SOFIE. There is already a SYCL implementation for SOFIE, developed in 2023, which can serve as a reference for future development.
+
+          Task ideas
+          In this project, the contributor will gain experience with GPU programming and its role in Machine Learning inference. They will start by understanding SOFIE and running inference on CPUs. After researching GPU stacks and methods of their integration with SOFIE, the contributor will implement GPU support for inference, ensuring the code is efficient and well-integrated with GPU technologies.
+
+          Expected results and milestones
+          Familiarization with TMVA SOFIE: Understanding the SOFIE architecture, working with its internals, and running inference on CPUs.
+          Research and Evaluation: Analyzing various GPU stacks (CUDA, ROCm, ALPAKA, etc.) and determining their alignment with SOFIE.
+          Implementation of GPU Inference: Developing functionalities for GPU-based inference in SOFIE.
+          [Optional] Benchmarking: Evaluating the performance of the new GPU functionality by benchmarking memory usage, execution time, and comparing results with other frameworks (such as TensorFlow or PyTorch).
+          Requirements
+          Proficiency in C++ and Python.
+          Knowledge of GPU programming (e.g., CUDA).
+          Familiarity with version control systems like Git/GitHub.
+          Links
+          ROOT Project homepage
+          ROOT Project repository
+          SOFIE Repository
+          Implementation of SOFIE-SYCL
+          Accelerating Machine Learning Inference on GPUs with SYCL
+          Mentors
+          Lorenzo Moneta - CERN
+          Sanjiban Sengupta - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: Flexible
+          Corresponding Project
+          ML4EP
+          Participating Organizations
+          CERN
+
+
+          ~~~~~~~~~~
+
+          TMVA SOFIE - HLS4ML Integration for Machine Learning Inference
+          Description
+          SOFIE (System for Optimized Fast Inference code Emit) is a Machine Learning Inference Engine within TMVA (Toolkit for Multivariate Data Analysis) in ROOT. SOFIE offers a parser capable of converting ML models trained in Keras, PyTorch, or ONNX format into its own Intermediate Representation, and generates C++ functions that can be easily invoked for fast inference of trained neural networks. Using the IR, SOFIE can produce C++ header files that can be seamlessly included and used in a ‘plug-and-go’ style.
+
+          Currently, SOFIE supports various machine learning operators defined by ONNX standards, as well as a Graph Neural Network implementation. It supports parsing and inference of Graph Neural Networks trained using DeepMind Graph Nets.
+
+          As SOFIE evolves, there is a growing need for inference capabilities on models trained across a variety of frameworks. This project will focus on integrating hls4ml in SOFIE, thereby enabling generation of C++ inference functions on models parsed by hls4ml.
+
+          Task ideas
+          In this project, the contributor will gain experience with C++ and Python programming, hls4ml, and their role in machine learning inference. The contributor will start by familiarizing themselves with SOFIE and running inference on CPUs. After researching the possibilities for integration with hls4ml, they will implement functionalities that ensure efficient inference of ML models parsed by hls4ml, which were previously trained in external frameworks like TensorFlow and PyTorch.
+
+          Expected results and milestones
+          Familiarization with TMVA SOFIE: Understanding the SOFIE architecture, working with its internals, and running inference on CPUs.
+          Research and Evaluation: Exploring hls4ml, its support for Keras and PyTorch, and possible integration with SOFIE.
+          Integration with hls4ml: Developing functionalities for running inference on models parsed by hls4ml.
+          Requirements
+          Proficiency in C++ and Python.
+          Knowledge of hls4ml
+          Familiarity with version control systems like Git/GitHub.
+          Links
+          ROOT Project homepage
+          ROOT Project repository
+          SOFIE Repository
+          hls4ml documentation
+          hls4ml Repository
+          Mentors
+          Lorenzo Moneta - CERN
+          Sanjiban Sengupta - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: Flexible
+          Corresponding Project
+          ML4EP
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          TMVA SOFIE - Enhancing Keras Parser and JAX/FLAX Integration
+          Description
+          SOFIE (System for Optimized Fast Inference code Emit) is a Machine Learning Inference Engine within TMVA (Toolkit for Multivariate Data Analysis) in ROOT. SOFIE offers a parser capable of converting ML models trained in Keras, PyTorch, or ONNX format into its own Intermediate Representation, and generates C++ functions that can be easily invoked for fast inference of trained neural networks. Using the IR, SOFIE can produce C++ header files that can be seamlessly included and used in a ‘plug-and-go’ style.
+
+          SOFIE currently supports various Machine Learning operators defined by the ONNX standards, as well as a Graph Neural Network (GNN) implementation. It supports the parsing and inference of Graph Neural Networks trained using DeepMind Graph Nets.
+
+          As SOFIE continues to evolve, this project aims to:
+
+          Enhance the Keras parser to support models trained in the latest TensorFlow v2.18.0, which introduces NumPy 2.0 compatibility.
+          Integrate JAX/FLAX support, enabling SOFIE to generate C++ inference functions for models developed using JAX/FLAX.
+          Task ideas
+          In this project, the contributor will gain experience with C++ and Python programming, TensorFlow/Keras and its storage formats for trained machine learning models, and JAX/FLAX for accelerated machine learning. They will begin by familiarizing themselves with SOFIE and its Keras parser. After researching the changes required to support the latest TensorFlow version, they will implement functionalities to ensure the successful generation of inference code for the latest Keras models. In the next phase, they will explore the JAX/FLAX library and investigate its potential integration with SOFIE.
+
+          Expected results and milestones
+          Familiarization with TMVA SOFIE: Understand the SOFIE architecture, run inference using the existing Keras parser, and analyze the current parser’s capabilities.
+          Researching latest TensorFlow/Keras: Investigate the latest TensorFlow/Keras developments and assess their alignment with SOFIE.
+          Improving the Keras Parser: Implement parser enhancements to support the latest TensorFlow version and validate inference results.
+          JAX/FLAX Integration: Design and develop a parsing mechanism for JAX/FLAX models, ensuring compatibility with SOFIE’s IR and further generation of inference code.
+          Requirements
+          Proficiency in C++ and Python.
+          Knowledge of TensorFlow/Keras and JAX/FLAX.
+          Familiarity with version control systems like Git/GitHub.
+          Links
+          ROOT Project homepage
+          ROOT Project repository
+          SOFIE Repository
+          Keras: The high-level API for TensorFlow
+          JAX Documentation
+          FLAX Documentation
+          Mentors
+          Lorenzo Moneta - CERN
+          Sanjiban Sengupta - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: Flexible
+          Corresponding Project
+          ML4EP
+          Participating Organizations
+          CERN
+
+          ~~~~~~~~~~
+
+          Implementing Debugging Support
+          Description
+          xeus-cpp is an interactive execution environment for C++ in Jupyter notebooks, built on the Clang-Repl C++ interpreter, provided by CppInterOp. While xeus-cpp enables a seamless workflow for running C++ code interactively, the lack of an integrated debugging experience remains a gap, especially when dealing with code that is dynamically compiled and executed through LLVM’s JIT(Just-In-Time) infrastructure.
+
+          Jupyter’s debugging system follows the Debug Adapter Protocol (DAP), enabling seamless integration of debuggers into interactive kernels. Existing Jupyter kernels, such as the IPython & the xeus-python kernel, have successfully implemented debugging workflows that support breakpoints, variable inspection, and execution control, even in dynamically executed environments. These implementations address challenges such as symbol resolution and source mapping for dynamically generated code, ensuring that debugging within Jupyter remains intuitive and user-friendly.
+
+          However, debugging C++ inside an interactive environment presents unique challenges, particularly due to Clang-Repl’s use of LLVM’s ORC JIT to compile and execute code dynamically. To integrate debugging into xeus-cpp, the project will explore existing solutions for DAP implementations like lldb_dap and debuggers like lldb that can interface with Jupyter while effectively supporting the execution model of Clang-Repl.
+
+          Project Milestones
+          Seamless debugging integration, establishing reliable interactions between xeus-cpp, a Debug Adapter Protocol (DAP) implementation, and a debugger.
+          Implement a testing framework through xeus-zmq to thoroughly test the debugger. This can be inspired by an existing implementation in xeus-python.
+          Present the work at the relevant meetings and conferences.
+          Requirements
+          C/C++
+          Basic understanding of the Debug Adapter Protocol
+          Basic understanding of the stack used by xeus-cpp: xeus, cppinterop, clang-repl
+          Research on different DAP implementations like lldb_dap and debuggers like lldb/gdb that can be utilized for the project.
+          Links
+          Repo
+          Debug Adaptor Protocol
+          Debugging support through Jupyter:
+          https://jupyterlab.readthedocs.io/en/stable/user/debugger.html
+          https://jupyter-client.readthedocs.io/en/latest/messaging.html#debug-request
+          Mentors
+          Anutosh Bhat - QuantStack
+          Johan Mabille - QuantStack
+          Vipul Cariappa - CompRes
+          Aaron Jomy - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Xeus-Cpp
+          Participating Organizations
+          CompRes
+
+          ~~~~~~~~~~
+
+          Enable GPU support and Python Interoperability via a Plugin System
+          Description
+          Xeus-Cpp integrates Clang-Repl with the xeus protocol via CppInterOp, providing a powerful platform for C++ development within Jupyter Notebooks.
+
+          This project aims to introduce a plugin system for magic commands (cell, line, etc.), enabling a more modular and maintainable approach to extend Xeus-Cpp. Traditionally, magic commands introduce additional code and dependencies directly into the Xeus-Cpp kernel, increasing its complexity and maintenance burden. By offloading this functionality to a dedicated plugin library, we can keep the core kernel minimal while ensuring extensibility. This approach allows new magic commands to be developed, packaged, and deployed independently—eliminating the need to rebuild and release Xeus-Cpp for each new addition. Initial groundwork has already been laid with the Xplugin library, and this project will build upon that foundation. The goal is to clearly define magic command compatibility across different platforms while ensuring seamless integration. A key objective is to reimplement existing features, such as the LLM cell magic and the in-development Python magic, as plugins. This will not only improve modularity within Xeus-Cpp but also enable these features to be used in other Jupyter kernels.
+
+          As an extended goal, we aim to develop a new plugin for GPU execution, leveraging CUDA or OpenMP to support high-performance computing workflows within Jupyter.
+
+          Project Milestones
+          Move the currently implemented magics and reframe using xplugin
+          Complete the on-going work on the Python interoperability magic
+          Implement a test suite for the plugins
+          Extended: To be able to execute on GPU using CUDA or OpenMP
+          Optional: Extend the magics for the wasm use case (xeus-cpp-lite)
+          Present the work at the relevant meetings and conferences
+          Requirements
+          Python
+          C/C++
+          GPU programming; CUDA/OpenMP
+          Links
+          Repo
+          Related Issues:
+          https://github.com/compiler-research/xeus-cpp/issues/4
+          https://github.com/compiler-research/xeus-cpp/issues/140
+          Mentors
+          Anutosh Bhat - QuantStack
+          Johan Mabille - QuantStack
+          Vipul Cariappa - CompRes
+          Aaron Jomy - CERN
+          Additional Information
+          Difficulty level (low / medium / high): medium
+          Duration: 350 hours
+          Mentor availability: June-October
+          Corresponding Project
+          Xeus-Cpp
+          Participating Organizations
+          CompRes
+
+          
+    totalCharacters_of_ideas_content_parent: 
+    totalwords_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/cern-hsf/
+    idea_list_url: https://hepsoftwarefoundation.org/gsoc/2025/summary.html
