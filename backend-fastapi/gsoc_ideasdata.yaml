@@ -3789,7 +3789,7 @@ organizations:
           
     totalCharacters_of_ideas_content_parent: 14181
     totalwords_of_ideas_content_parent: 3076
-    totalTokenCount_of_ideas_content_parent: 
+    totalTokenCount_of_ideas_content_parent: 2963
     gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/blender-foundation/
     idea_list_url: https://developer.blender.org/docs/programs/gsoc/ideas/
 
@@ -3828,9 +3828,9 @@ organizations:
 
 
           
-    totalCharacters_of_ideas_content_parent: 
-    totalwords_of_ideas_content_parent: 
-    totalTokenCount_of_ideas_content_parent: 
+    totalCharacters_of_ideas_content_parent: 4077
+    totalwords_of_ideas_content_parent: 734
+    totalTokenCount_of_ideas_content_parent: 964
     gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ccextractor-development/
     idea_list_url: https://ccextractor.org/docs/ideas_page_for_summer_of_code_2025/
 
@@ -5412,8 +5412,8 @@ organizations:
           CompRes
 
           
-    totalCharacters_of_ideas_content_parent: 
-    totalwords_of_ideas_content_parent: 
-    totalTokenCount_of_ideas_content_parent: 
+    totalCharacters_of_ideas_content_parent: 107186
+    totalwords_of_ideas_content_parent: 25550
+    totalTokenCount_of_ideas_content_parent: 20259
     gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/cern-hsf/
     idea_list_url: https://hepsoftwarefoundation.org/gsoc/2025/summary.html
