@@ -649,8 +649,8 @@ organizations:
     totalCharacters_of_ideas_content_parent: 17886
     totalwords_of_ideas_content_parent: 2039
     totalTokenCount_of_ideas_content_parent: 3492
-    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/aossie/
-    idea_list_url: https://aossie.org/ideas
+    gsocorganization_dev_url: 
+    idea_list_url:
 
   
   - organization_id: 4
@@ -5798,33 +5798,625 @@ organizations:
 
 
   - organization_id: 19
-    organization_name: 
-    no_of_ideas:
+    organization_name: CNCF
+    no_of_ideas: 22
     ideas_content: >-
+        etcd
+        etcd cache
+        Description: Develop a generic, high-performance caching library for etcd, inspired by the Kubernetes watch cache, to facilitate building scalable and efficient etcd-based applications.
+        Expected Outcome:
+        A well-tested and performant library providing core caching primitives similar to Kubernetes' watch cache, significantly reducing etcd load and latency for generic etcd use cases.
+        The library will offer feature parity with Kubernetes watch cache, including support for:
+        Caching watch events and demultiplexing requests.
+        Caching non-consistent list requests using a B-tree structure, updated via watch events.
+        Handling requests during cache initialization and re-initialization.
+        Custom encoders/decoders for data serialization.
+        Custom indexing for optimized lookups.
+        Consistent reads.
+        Exact stale reads via B-tree snapshots.
+        Comprehensive documentation, examples, benchmarks, and metrics to enable easy adoption and monitoring. This includes e2e and robustness tests.
+        Recommended Skills: Go, Distributes Systems
+        Expected project size: small
+        Mentor(s):
+        Marek Siarkowicz (@serathius, siarkowicz@google.com) - primary
+        Madhav Jivrajani (@MadhavJivrajani, madhav.jiv@gmail.com)
+        Upstream Issue (URL): etcd-io/etcd#19371
+
+        ~~~~~~~~~~
+        Harbor
+        Enhance Harbor Satellite for Artifact Replication from Remote Registry to Edge
+        Description: The Harbor Satellite project aims to enable decentralized artifact replication in edge computing environments. This project currently focuses on Use Case #1, where Harbor Satellite will pull images from a central Harbor registry and store them in a local OCI-compliant registry for use by edge devices. The solution is designed for environments with limited or intermittent internet connectivity, ensuring continuous access to required artifacts by local edge devices even when connectivity is unavailable.
+        Expected Outcome:
+        Enhance Harbor Satellite to enable reliable artifact replication from a central Harbor registry to a local OCI-compliant registry at the edge.
+        Implement secure synchronization between central and local registries, especially in air-gapped environments.
+        Optimize configuration management for edge container runtimes to pull images from the local registry.
+        Provide clear documentation and setup guides for deploying Harbor Satellite in edge environments.
+        Recommended Skills: Go, OCI-Registries, Distribution-spec
+        Expected project size: medium (~175 hour projects)
+        Mentor(s):
+        Vadim Bauer (@vad1mo, vb@container-registry.com) - primary
+        Orlin Vasilev (@OrlinVasilev, orlin@orlix.org)
+        Prasanth Baskar (@bupd, bupdprasanth@gmail.com)
+        Upstream Issue (URL): goharbor/harbor#21605
+
+        ~~~~~~~~~~
+        Jaeger
+        Service performance analysis on top of Elasticsearch / OpenSearch data
+        Description: Jaeger is an open-source, distributed tracing platform designed to monitor and troubleshoot transactions in distributed systems. In its basic deployment it allows collecting tracing data, storing it in a database, and querying & analyzing individual traces in the UI. This workflow is great for deep-diving into individual requests, but it does not answer some higher level questions like "which endpoints in my service are the slowest?" To address those questions Jaeger has a special feature called SPM (Service Performance Management), which allows the user to see the trends of services' and endpoints' performance and to drill down into the outliers. However, this feature requires a more complicated deployment where a special real-time processor is running and extracting metrics from the traces and storing those metrics in a Prometheus-compatible remote storage. Some of the storage backends supported by Jaeger, such as Elasticsearch & OpenSearch, can provide the same aggregate answers directly from the trace data, which can significantly simplify the deployment. This project aims to enable this integration.
+        Expected Outcome:
+        Support SPM functionality directly in Elasticsearch / OpenSearch backends by implementing the metrics query API
+        Enhance existing e2e integration tests to continuously test this new capability
+        Recommended Skills: Go, basic familiarity with Elasticsearch
+        Expected project size: large (~350 hour projects)
+        Mentors:
+        Yuri Shkuro (@yurishkuro, github@ysh.us) - primary
+        Jonah Kowall (@jkowall, jkowall@kowall.net)
+        Upstream Issue (URL): jaegertracing/jaeger#6641
+
+        ~~~~~~~~~~
+        KCL
+        KCL OCI third-party dependency management enhancement
+        Description: KCL is an open-source constraint-based record & functional language mainly used in configuration and policy scenarios. KPM is a package management tool for the KCL language that supports the management of KCL packages in the OCI registry and Git Repo. This topic only applies to third-party dependencies from the OCI registry. Use the layering mechanism in OCI to help KPM implement dependency management of KCL third-party dependencies.
+
+        Expected Outcome:
+
+        Refactor the current KPM dependency management module with the OCI's layered mechanism.
+        Recommended Skills: Go, OCI
+
+        Expected project size: medium (~175 hour projects)
+
+        Mentor(s):
+
+        Zhe Zong (@zong-zhe, zongzhe1024@163.com)
+        Heipa (@He1pa, he1pa404@gmail.com)
+        Upstream Issue (URL): kcl-lang/kpm#598
+
+        ~~~~~~~~~~
+        Knative Functions
+        Dynamic AI Agent Callbacks
+        Description: Knative Functions is well-suited for AI agent integration. The serverless nature and isolated runtime environment of Functions make them ideal for creating lightweight, purpose-built services that can be dynamically invoked and even created by agents.
+        Expected Outcome: This project would be a combination of research and practicum. First, an analysis of current AI agent interaction patterns, including emergent protocols and available frameworks. Second, the development of a Proof-of-concept integration between Functions and AI agents. This would involve at a minimum invocation, with a stretch goal of implementation and deployment by the agent based on a human prompt.
+        Recommended Skills:
+        Strong language and communication skills, with the ability to both research deeply and communicate clearly.
+        Experience with AI/ML agents and desire to learn about programmatic LLM integrations.
+        Familiarity with the Go programming language (ideal) or Python (secondarily), and web services.
+        Familiarity with kubernetes, serveless, and microservices a plus.
+        Expected project size: Large
+        Mentor(s):
+        Luke Kingland @lkingland (kingland AT redhat DOT com) - primary
+        Aleksander Slominski @aslom (aslomins AT redhat DOT com)
+        Upstream Issue (URL): knative/func#2690
+        
+        ~~~~~~~~~~
+        Konveyor
+        Extend usage of Konveyor AI to detect and update deprecated Kubernetes API usage in golang applications
+        Description: Konveyor is an application modernization platform that helps organizations migrate legacy applications to Kubernetes at scale. As part of this effort, you will contribute to Konveyor AI (Kai), an intelligent code assistant that automates source code updates using data from static code analysis and changelog histories. Your work will focus on applying Generative AI techniques to detect and update deprecated Kubernetes APIs in Golang applications. You’ll build a tool that uses a LLM to generate Konveyor static code analysis rules from published documentation such as the Kubernetes deprecated API guide. Additionally, you’ll create workflows to identify deprecated API usage in legacy applications and automate code suggestions for updates — all powered by Konveyor AI.
+
+        Expected Outcome:
+
+        Develop a prototype tool to convert Kubernetes API deprecation documentation into static code analysis rules.
+        Collaborate with the Konveyor AI team to extend support for Golang applications, identify issues, and contribute improvements.
+        Demonstrate Konveyor AI’s ability to detect and suggest fixes for deprecated API usage in Golang projects.
+        Recommended Skills: Golang, Python, Kubernetes, Generative AI
+
+        Expected project size: # Large (~350 hours)
+
+        Mentor(s):
+
+        John Matthews (@jwmatthews, jwmatthews@gmail.com) - primary
+        Savitha Raghunathan (@savitharaghunathan, saveetha13@gmail.com)
+        Upstream Issue (URL): konveyor/kai#644
+
+        ~~~~~~~~~~
+        KubeArmor
+        Improve KubeArmor Observability Spectrum
+        Description: KubeArmor is a security enforcement system that provides runtime protection for Kubernetes workloads. To enhance observability, this task involves exposing key Prometheus metrics related to KubeArmor’s policy enforcement. These metrics will provide insights into security policy activity and alerting within a Kubernetes cluster.
+
+        For starters, the following metrics can be started with:
+
+        Number of Policies Applied
+        Number of Alerts Triggered
+        List of Active Policies
+        Policy Status (Active/Inactive)
+        Expected Outcome: Prometheus metrics are successfully integrated into KubeArmor, allowing users to monitor policy enforcement and security events effectively. The metrics should be accessible via a Prometheus endpoint and conform to best practices for Prometheus metric exposition.
+
+        Recommended Skills: Go, Prometheus, Kubernetes.
+
+        Expected project size: 175 hrs
+
+        Mentor(s):
+
+        Rishabh Soni (@rootxrishabh, risrock02@gmail.com)
+        Prateek Nandle (@Prateeknandle, prateeknandle@gmail.com)
+        Barun Acharya (@daemon1024, barun1024@gmail.com)
+        Nishant Singh (@tesla59, talktonishantsingh.ns@gmail.com)
+        Upstream Issue (URL): kubearmor/KubeArmor#1902
+
+        ~~~~~~~~~~
+        KubeBuilder
+        Automating Operator Maintenance: Driving Better Results with Less Overhead
+        Description:
+        Code-generation tools like Kubebuilder and Operator-SDK have transformed cloud-native application development by providing scalable, community-driven frameworks. These tools simplify complexity, accelerate results, and enable developers to create tailored solutions while avoiding common pitfalls, laying a strong foundation for innovation.
+        However, as these tools evolve with ecosystem changes and new features, projects risk becoming outdated. Manual updates are time-consuming, error-prone, and make it challenging to maintain security, adopt advancements, and stay aligned with modern standards.
+        This project introduces an automated solution for Kubebuilder, with potential applications for similar tools or those built on its foundation. By streamlining maintenance, projects remain aligned with modern standards, improve security, and adopt the latest advancements. It fosters growth and innovation across the ecosystem, letting developers focus on what matters most: building great solutions.
+        Note that the initial idea is to solve this with 3-way Git merges. However, users will face conflicts, and in the first phase, we want to study whether AI could help resolve these conflicts in a future phase to achieve this goal.
+
+        Expected Outcome
+
+        Conduct research on 3-Way Merge & Advanced Merge Options in Git.
+        Conduct research on how AI could help resolve conflicts. If open-source solutions are available and align with the proposal, include them for consideration in a second phase.
+        Develop a Proof of Concept (POC) implementing a GitHub Action that automatically creates a Pull Request (PR) in a mock repository, demonstrating the feasibility of the proposed solution.
+        Successfully complete the proposal for PEP.
+        Introduce a new Kubebuilder Plugin that scaffolds the GitHub Action based on the POC. This plugin will be released as an alpha feature, allowing users to opt-in for automated updates. The initial solution does not need to have AI, but AI integration could be a future enhancement if feasible.
+        Recommended Skills
+
+        Golang
+        GitHub Actions
+        Software Automation
+        CI/CD
+        Git
+        IA
+        Expected project size: Large (~350 hour projects)
+
+        Mentor(s)
+
+        Camila Macedo (@camilamacedo86, camilamacedo86@gmail.com) - Primary
+        Varsha Prasad (@varshaprasad96, varshaprasad1507@gmail.com)
+        TianYi(Tony) (@Kavinjsir)
+        Upstream Issue: WIP - Proposal: Automating Operator Maintenance: Driving Better Results with Less Overhead
+        ~~~~~~~~~~
+        KubeStellar
+        AI/ML Model Monitoring and Drift Detection in Disconnected Clusters using KubeStellar
+        Description: AI/ML models deployed in disconnected environments, such as edge clusters and air-gapped systems, often suffer from model drift—a degradation in model performance due to changes in input data distributions. Without continuous monitoring, models may become inaccurate, leading to unreliable predictions.
+
+        This project aims to integrate model monitoring and drift detection into KubeStellar, enabling Kubernetes-based AI workloads to detect data drift locally and sync monitoring metrics when connectivity is restored. The solution will use lightweight monitoring agents deployed alongside ML models to track data distribution changes and alert mechanisms to trigger model retraining when necessary.
+
+        The system will also include policies for efficient metric storage and synchronization between disconnected and central clusters while minimizing bandwidth usage.
+
+        Expected Outcome:
+
+        A KubeStellar-compatible AI/ML monitoring component that tracks model drift in disconnected clusters.
+        Efficient local storage and synchronization of monitoring metrics when connectivity is restored.
+        Policies for adaptive model retraining triggers based on drift detection signals.
+        Integration with existing ML tools (e.g., Prometheus, TensorFlow Extended, OpenTelemetry).
+        Open-source documentation and example workflows demonstrating how KubeStellar manages AI model monitoring across disconnected clusters.
+        Recommended Skills:
+
+        Kubernetes and container orchestration
+        AI/ML model deployment & monitoring
+        Python, Go (for Kubernetes integrations)
+        Experience with logging/monitoring tools (Prometheus, OpenTelemetry)
+        Familiarity with KubeStellar (preferred but not required)
+        Expected Project Size: Large (~350 hours) This project requires implementing multiple components: local monitoring, drift detection, synchronization, and integration with KubeStellar. It also involves research into efficient data synchronization strategies for low-bandwidth environments.
+
+        Mentor(s):
+
+        Andy Anderson (@clubanderson, andy@clubanderson.com) - Primary Mentor
+        [Second Mentor's Name] (@second-mentor-github, second-mentor-email)
+        Upstream Issue (URL): kubestellar/kubestellar#2791
+
+        ~~~~~~~~~~
+
+        Kubewarden
+        Allow policies to be written using JavaScript
+        Description: Kubewarden is a Policy Engine powered by WebAssembly policies that enforces security and compliance in Kubernetes clusters. Its policies can be written in CEL, Rego (OPA & Gatekeeper flavours), Rust, Go, YAML, and others.
+
+        Kubewarden does not have a JavaScript SDK yet. Recent work done inside of the Bytecode Alliance made possible to compile Javascript code into WebAssembly . This means It's now possible to create such a SDK. This task consists on writing a JavaScript SDK that provides an idiomatic way to write Kubewarden policies.
+
+        Expected Outcome: A new JavaScript SDK is created. The SDK API is documented, and the policy tutorial as well.
+
+        Recommended Skills: JavaScript, Kubernetes.
+
+        Expected project size: Large
+
+        Mentor(s):
+
+        Victor Cuadrado (@viccuad, vcuadradojuan@suse.com) - primary
+        Flavio Castelli (@flavio, fcastelli@suse.com)
+        José Guilherme Vanz (@jvanz, jguilhermevanz@suse.com)
+        Fabrizio Sestito (@fabriziosestito, fabrizio.sestito@suse.com)
+        Upstream Issue (URL): kubewarden/community#37
+
+        ~~~~~~~~~~
+
+        Elevate our .NET SDK into a first class citizen
+        Description: Kubewarden is a Policy Engine powered by WebAssembly policies that enforces security and compliance in Kubernetes clusters. Its policies can be written in CEL, Rego (OPA & Gatekeeper flavours), Rust, Go, YAML, and others.
+
+        Kubewarden has a .NET SDK that allows policy authors to write policies in C#. Starting with .NET 8, a big chunk of the work from https://github.com/dotnet/dotnet-wasi-sdk made its way upstream. This means it's a good time to revisit Kubewarden's .NET SDK for policies. This task consists on bringing our .NET SDK up to standard with the rest of our SDKs such as the Go or Rust ones.
+
+        Expected Outcome: Our .NET SDK has been ported to .NET 9, and supports the same capabilities as our other SDKs. The SDK API is documented, and the policy tutorial as well.
+
+        Recommended Skills: C#, .NET, Kubernetes.
+
+        Expected project size: medium
+
+        Mentor(s):
+
+        Victor Cuadrado (@viccuad, vcuadradojuan@suse.com) - primary
+        Flavio Castelli (@flavio, fcastelli@suse.com)
+        José Guilherme Vanz (@jvanz, jguilhermevanz@suse.com)
+        Fabrizio Sestito (@fabriziosestito, fabrizio.sestito@suse.com)
+        Upstream Issue (URL): kubewarden/policy-sdk-dotnet#47
+
+        ~~~~~~~~~~
+        Lima
+        VM plugin subsystem
+        Description: Lima (https://lima-vm.io) is a project that provides Linux virtual machines with a focus on running containers. Lima supports several VM backends via built-in drivers: qemu, vz (Apple Virtualization.framework), and wsl2 (see lima/pkg/driverutil/instance.go). The idea for GSoC is to make a plugin subsystem that decouples the built-in VM drivers into separate binaries that communicate with the main Lima binary via some RPC (probably gRPC). This idea will improve the maintainability of the code base, and also help supporting additional VM backends (e.g., vfkit and cloud-based drivers).
+        Expected Outcome:
+        Design the plugin subsystem and its RPC (probably gRPC)
+        Migrate the existing built-in VM drivers to the new plugin subsystem
+        Implement additional VM plugins if the time allows
+        Recommended Skills: Go, gRPC, QEMU, macOS
+        Expected project size: medium (~175 hour projects)
+        Mentor(s):
+        Akihiro Suda (@AkihiroSuda, suda.kyoto@gmail.com) - primary
+        Anders Björklund (@afbjorklund, anders.f.bjorklund@gmail.com)
+        Upstream Issue (URL): lima-vm/lima#2007
+        
+        ~~~~~~~~~~
+        LitmusChaos
+        Terraform Support for LitmusChaos
+        Description: LitmusChaos is an open-source Chaos Engineering platform that helps teams uncover weaknesses and potential outages in their applications by running controlled chaos experiments. However, before injecting chaos, several prerequisite steps must be completed, including user and project creation, connecting target infrastructure, and setting up experiments. To streamline this process, developers and SREs often seek automation, especially when integrating chaos testing into CI/CD pipelines. This Google Summer of Code (GSoC) project proposes developing a Terraform provider for LitmusChaos, enabling users to automate these essential setup steps and seamlessly manage chaos experiments through Terraform.
+
+        Expected Outcome:
+
+        LitmusChaos will have a terraform provider supporting user, project, infrastructure, and experiment resource operations along with proper documentation and usage scripts.
+        A stretch goal for the mentee would be to become an official maintainer of the Litmus Terraform provider project.
+        Recommended Skills: Golang, Terraform
+
+        Expected project size: large (~175 hour projects)
+
+        Mentor(s):
+
+        Saranya Jena (@Saranya-jena, saranya.jena@harness.io)
+        Sarthak Jain (@SarthakJain26, sarthak.jain@harness.io)
+        Upstream Issue (URL): litmuschaos/litmus#5042
+
+        ~~~~~~~~~~
+        Meshery
+        Multi-player Collaboration: Resilient Websockets and GraphQL Subscriptions
+        Description: Meshery's current implementation of websockets and GraphQL subscriptions is in need of refactoring for increased reliability and resiliency. This client and server-side refactoring includes use of webworkers and separation of concerns for the client-side, and the use of a message broker for the server-side. The project has implications on Meshery's implementation of multi-player collaboration functionality.
+
+        Expected Outcome: Resilient websockets and GraphQL subscriptions for Meshery, enabling multi-player collaboration functionality.
+
+        Recommended Skills: Golang, Kubernetes, Azure, well-written and well-spoken English
+
+        Expected project size: large (~175 hour project)
+
+        Mentor(s):
+
+        Lee Calcote (@leecalcote, leecalcote@gmail.com)
+        Aabid Sofi (@aabidsofi19, mailtoaabid01@gmail.com)
+        Upstream Issue: meshery/meshery#13554
+
+        ~~~~~~~~~~
+
+        Support for Azure in Meshery
+        Description: Enhance Meshery's existing orchestration capabilities to include support for Azure. The Azure Service OperatorAzure Service Operator (ASO) provides a wide variety of Azure Resources via Kubernetes custom resources. as first-class Meshery Models. This involves enabling Meshery to manage and orchestrate Azure services and their resources, similar to how it handles other Kubernetes resources. The project will also include generating support for Azure services and their resources in Meshery's Model generator.
+
+        Expected Outcome: Meshery will be able to orchestrate and manage all Azure services supported by ASO. This includes the ability to discover, configure, deploy, and operate the lifecycle of Azure services through Meshery. The Meshery Model generator will be updated to automatically generate models for Azure services, simplifying their integration and management within Meshery. This will be an officially supported feature of Meshery.
+
+        Recommended Skills: Golang, Kubernetes, Azure, well-written and well-spoken English
+
+        Expected project size: large (~175 hour project)
+
+        Mentor(s):
+
+        Lee Calcote (@leecalcote, leecalcote@gmail.com)
+        Mia Grenell (@miacycle, mia.grenell2337@gmail.com)
+        Upstream Issue: meshery/meshery#11244
+
+        ~~~~~~~~~~
+
+        Distributed client-side inference (policy evaluation) with WebAssembly (WASM) and OPA in Meshery
+        Description: Meshery's highly dynamic infrastructure configuration capabilities require real-time evaluation of complex policies. Policies of various types and with a high number of parameters need to be evaluted client-side. With policies expressed in Rego, the goal of this project is to incorporate use of the https://github.com/open-policy-agent/golang-opa-wasm project into Meshery UI, so that a powerful, real-time user experience is possible.
+
+        Expected Outcome: The goal of this project is to enhance Meshery's infrastructure configuration capabilities by incorporating real-time policy evaluation using the golang-opa-wasm project. This project will integrate the capabilities of golang-opa-wasm into the Meshery UI, enabling users to experience the existing, powerful, server-side policy evaluation client-side.
+
+        Recommended Skills: WebAssembly, Golang, Open Policy Agent, well-written and well-spoken English
+
+        Expected project size: large (~175 hour project)
+
+        Mentor(s): Lee Calcote (@leecalcote, leecalcote@gmail.com), James Horton (@hortison, james.horton2337@gmail.com)
+
+        Upstream Issue: meshery/meshery#13555
+
+        ~~~~~~~~~~
+        Open Cluster Management
+        Privacy-preserving and efficient AI model training across multi-cluster
+        Description: Open Cluster Management (OCM) streamlines multi-cluster workload management through APIs that align with SIG-Multicluster standards. Beyond traditional workload orchestration, OCM enables scalable AI training and inference across distributed environments.
+
+        As machine learning (ML) expands across clusters, data privacy becomes a critical concern. ML models rely on vast datasets, making it essential to safeguard sensitive information across clusters without compromising model performance.
+
+        This project integrates Federated Learning (FL) into OCM, enabling privacy-preserving, collaborative model training without transferring raw data between clusters. Instead, training occurs locally where the data resides, ensuring compliance, enhancing efficiency, and reducing bandwidth and storage costs.
+
+        By leveraging OCM's Placement, ManifestWork, and other APIs. we standardize FL workflows and seamlessly integrate frameworks like Flower and OpenFL through a unified interface. This approach harnesses OCM's capabilities to deliver scalable, cost-efficient, and privacy-preserving AI solutions in multi-cluster environments.
+
+        Expected Outcome:
+
+        Comprehensive Documentation:
+        Define the scenarios addressed by the prototype, highlighting its purpose and value.
+        Provide an intuitive and architectural comparison between Federated Learning (FL) and OCM, mapping FL terminology to OCM APIs to showcase OCM’s native support for FL.
+        Illustrate the complete Federated Learning workflow within Open Cluster Management.
+        Extended Prototype (or CRD) Support:
+        Enable model aggregation persistence in AWS S3 (currently supports only native PVC).
+        Extend compatibility to support additional Federated Learning frameworks like OpenFL (currently supports Flower). This requires understanding how OpenFL works, containerizing it, and integrating it into the prototype.
+        Recommended Skills: Golang, Kubernetes, Federated Learning, Open Cluster Management, Scheduling
+
+        Expected project size: medium (~175 hour projects)
+
+        Mentor(s):
+
+        Meng Yan (@yanmxa, myan@redhat.com) - primary
+        Qing Hao (@haoqing0110, qhao@redhat.com)
+        Upstream Issue (URL): open-cluster-management-io/ocm#825
+
+        ~~~~~~~~~~    
+        ORAS
+        Enhance Java ORAS SDK
+        Description: The ORAS project aims to enhance its Java SDK to support a broader range of features from the OCI Distribution spec. This involves implementing missing functionality, improving existing features, and expanding the SDK’s overall capabilities.
+        Expected Outcome:
+        Implement missing features from the OCI Distribution and Image Specifications, such as chunked uploads and the Referrers API
+        Improve existing features, robustness and tests to ensure full compatibility with the OCI Distribution and Image Specifications.
+        Enhance documentation and provide more comprehensive examples.
+        Add support for additional authentication methods, including using credentials from docker config.json
+        Recommended Skills: java, oci
+        Expected project size: medium (~175 hour projects)
+        Mentor(s):
+        Valentin Delaye (@jonesbusy, jonesbusy@gmail.com) - primary
+        Feynman Zhou (@FeynmanZhou, zpf0610@gmail.com)
+        Upstream Issues: https://github.com/oras-project/oras-java/issues
+        The Update Framework (TUF)
+        Snapshot Merkle trees
+        Description: The TUF snapshot role is responsible for consistency proofs in a TUF repository. In certain high-volume repositories, the related snapshot metadata file can become prohibitively large, and thus impose a significant overhead for TUF clients. TAP 16 proposes a method for reducing the size of snapshot metadata a client must download without significantly weakening the security properties of TUF. In this project you will add TAP 16 support to python-tuf.
+        Expected Outcome: Snapshot Merkle trees are implemented in python-tuf Metadata API and ngclient
+        Recommended Skills: Python, data structures (merkle trees)
+        Expected project size: medium (~175 hour projects)
+        Mentor(s):
+        Lukas Pühringer (@lukpueh) - primary
+        Justin Cappos (@JustinCappos)
+        Upstream Issue (URL): theupdateframework/taps#134
+
+        ~~~~~~~~~~
+        Vitess
+        Enhancements for FAQ Chatbot for Vitess
+        Description: Vitess is a distributed database system built on MySQL. Developers often need to search through documentation, Slack discussions, and GitHub issues to find answers. We are starting a project to implement an AI-powered FAQ chatbot using Retrieval-Augmented Generation, integrating vector search with an LLM (such as OpenAI, DeepSeek, GPT-4, Mistral, Llama 3). The chatbot will be available via a CLI and Slack bot for developer support.
+
+        In the next phase, which will be implemented in this Summer Of Code (SOC) project, we will be adding more features like:
+
+        Content filtering for chatbot safety and response validation
+        Fine-tuning the model for improved accuracy
+        Pipelines for refreshing data from new/updated docs
+        Caching previous replies to reduce LLM costs
+        Rate-limiting
+        Better benchmarking for iterative improvements
+        User feedback integration to improve relevancy
+        Expected Outcome: Improved chatbot that provides accurate Vitess-related answers via CLI and Slack, using indexed documentation and discussions for retrieval.
+
+        Recommended Skills: golang, python, LLM APIs, vector databases
+
+        Expected project size: large (~350 hour projects)
+
+        Mentor(s):
+
+        Rohit Nayak (@rohit-nayak-ps, rohit@planetscale.com)
+        Manan Gupta (@GuptaManan100, manan@planetscale.com)
+        Upstream Issue: vitessio/vitess#17690
+
+        ~~~~~~~~~~
+
+        WasmEdge
+        Virtual filesystem security for WasmEdge plug-ins with exporting WASI APIs
+        Description: The WASI proposal defines the variety of rules to guarantee the virtual filesystem security and isolation when executing WASM binaries. However, besides using WASI directly in WASM, developers can also implement the host functions to access the filesystem in their guest programming language. This will break the sandbox of WebAssembly. In this program, our goal is to export the WASI APIs in WasmEdge, and use the APIs in WasmEdge plug-ins to ensure the filesystem security and WebAssembly isolation.
+        Expected Outcome:
+        Export needed WASI APIs in WasmEdge internal to provide the functions of checking and accessing host filesystem.
+        Apply the APIs in some WasmEdge plug-ins which accessing the filesystem, such as WASI-NN.
+        Implement test suites to verify the above behaviors.
+        Recommended Skills:
+        C++
+        WebAssembly
+        Expected project size: Large (~350 hour projects)
+        Mentor(s):
+        YiYing He (@q82419 , yiying@secondstate.io) - Primary
+        Shen-Ta Hsieh (@ibmibmibm , beststeve@secondstate.io)
+        Upstream Issue (URL): WasmEdge/WasmEdge#4012
+
+        ~~~~~~~~~~
+        Port WasmEdge and the WASI-NN ggml backend to the s390x platform
+        Description: WasmEdge provides cross-platform support for amd64 and arm64 for executing AI/LLM applications. We would like to support as many new hardware platforms as possible, so developers and users will no longer need to worry about the actual hardware. All they need to do is develop their AI agent or LLM applications once and deploy their services anywhere. For more information, please check the upstream issue.
+        Expected Outcome:
+        Make the WasmEdge toolchain support the s390x platform, including the interpreter and the AOT mode.
+        Ensure the WASI-NN ggml plugin can execute without any issues on the s390x platform.
+        Implement test suites to verify the above behaviors.
+        Write a document discussing the compilation, installation, execution, and verification of the work.
+        Recommended Skills:
+        C++
+        s390x
+        LLVM
+        Expected project size: Large (~350 hour projects)
+        Mentor(s):
+        Hung-Ying Tai (@hydai, hydai@secondstate.io) - Primary
+        dm4 (@dm4, dm4@secondstate.io)
+        Upstream Issue (URL): WasmEdge/WasmEdge#4010
+
+        ~~~~~~~~~~
+
+        Use Runwasi with WasmEdge runtime to test multiple WASM apps as cloud services
+        Description: With WasmEdge serving as one of Runwasi’s standard runtimes, and as our C++-implemented library continues to evolve, we also need a verification process integrated into Runwasi to streamline and validate the stability of both container and cloud environments.
+        Expected Outcome:
+        A concise GitHub workflow demonstrates Runwasi end-to-end testing on Kubernetes.
+        Need to design an interactive application scenario that supports multiple nodes
+        Try to incorporate the use of the WasmEdge plugin into this scenario
+        Document
+        Recommended Skills:
+        Rust
+        C++
+        GDB
+        git / github workflow
+        shell script
+        Expected project size: Large (~350 hour projects)
+        Mentor(s):
+        Vincent (@CaptainVincent, vincent@secondstate.io) - Primary
+        yi (@0yi0 yi@secondstate.io)
+        Upstream Issue (URL): WasmEdge/WasmEdge#4011
 
           
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/cncf/
+    idea_list_url: https://github.com/cncf/mentoring/blob/main/programs/summerofcode/2025.md
 
 
   - organization_id: 20
-    organization_name: 
-    no_of_ideas:
+    organization_name: CRIU 
+    no_of_ideas: 5
     ideas_content: >-
+        Project ideas
+        Add support for memory compression
+        Summary: Support compression for page images
+
+        We would like to support memory page files compression in CRIU using one of the fastest algorithms (it's matter of discussion which one to choose!).
+
+        This task does not require any Linux kernel modifications and scope is limited to CRIU itself. At the same time it's complex enough as we need to touch memory dump/restore codepath in CRIU and also handle many corner cases like page-server and stuff.
+
+        Details:
+
+        Skill level: intermediate
+        Language: C
+        Expected size: 350 hours
+        Suggested by: Andrei Vagin <avagin@gmail.com>
+        Mentors: Radostin Stoyanov <rstoyanov@fedoraproject.org>, Alexander Mikhalitsyn <alexander@mihalicyn.com>, Andrei Vagin <avagin@gmail.com>
+
+        ~~~~~~~~~~
+        Use eBPF to lock and unlock the network
+        Summary: Use eBPF instead of external iptables-restore tool for network lock and unlock.
+
+        During checkpointing and restoring CRIU locks the network to make sure no network packets are accepted by the network stack during the time the process is checkpointed. Currently CRIU calls out to iptables-restore to create and delete the corresponding iptables rules. Another approach which avoids calling out to the external binary iptables-restore would be to directly inject eBPF rules. There have been reports from users that iptables-restore fails in some way and eBPF could avoid this external dependency.
+
+        Links:
+
+        https://www.criu.org/TCP_connection#Checkpoint_and_restore_TCP_connection
+        https://github.com/systemd/systemd/blob/master/src/core/bpf-firewall.c
+        https://blog.zeyady.com/2021-08-16/gsoc-criu
+        Details:
+
+        Skill level: intermediate
+        Language: C
+        Expected size: 350 hours
+        Mentors: Radostin Stoyanov <rstoyanov@fedoraproject.org>, Prajwal S N <prajwalnadig21@gmail.com>
+        Suggested by: Adrian Reber <areber@redhat.com>
+
+        ~~~~~~~~~~
+        Files on detached mounts
+        Summary: Initial support of open files on "detached" mounts
+
+        When criu dumps a process with an open fd on a file, it gets the mount identifier (mnt_id) via /proc/<pid>/fdinfo/<fd>, so that criu knows from which exact mount the file was initially opened. This way criu can restore this fd by opening the same exact file from topologically the same mount in restored mount tree.
+
+        Restoring fd from the right mount can be important in different cases, for instance if the process would later want to resolve paths relative to the fd, and obviously resolving from the same file on different mount can lead to different resolved paths, or if the process wants to check path to the file via /proc/<pid>/fd/<fd>.
+
+        But we have a problem finding on which mount we need to reopen the file at restore if we only know mnt_id but can't find this mnt_id in /proc/<pid>/mountinfo.
+
+        Mountinfo file shows the mount tree topology of current mntns: parent - child relations, sharing group information, mountpoint and fs root information. And if we don't see mnt_id in it we don't know anything about this mount.
+
+        This can happen in two cases
+
+        1) external mount or file - if file was opened from e.g. host it's mount would not be visible in container mountinfo
+        2) mount was lazily unmounted
+        In case of 1) we have criu options to help criu handle external dependencies.
+
+        In case of 2) or no options provided criu can't resolve mnt_id in mountinfo and criu fails.
+
+        Solution: We can handle 2) with: resolving major/minor via fstat, using name_to_handle_at and open_by_handle_at to open same file on any other available mount from same superblock (same major/minor) in container. Now we have fd2 of the same file as fd, but on existing mount we can dump it as usual instead, and mark it as "detached" in image, now criu on restore knows where to find this file, but instead of just opening fd2 from actually restored mount, we create a temporary bindmount which is lazy unmounted just after open making the file appear as a file on detached mount.
+
+        Known problems with this approach:
+
+        Stat on btrfs gives wrong major/minor
+        file handles does not work everywhere
+        file handles can return fd2 on deleted file or on other hardlink, this needs special handling.
+        Additionally (optional part): We can export real major/minor in fdinfo (kernel). We can think of new kernel interface to get mount's major/minor and root (shift from fsroot) for detached mounts, if we have it we don't need file handle hack to find file on other mount (see fsinfo or getvalues kernel patches in LKML, can we add this info there?).
+
+        Details:
+
+        Skill level: intermediate
+        Language: C
+        Expected size: 350 hours
+        Mentor: Pavel Tikhomirov <ptikhomirov@virtuozzo.com>
+        Suggested by: Pavel Tikhomirov <ptikhomirov@virtuozzo.com>
+        Checkpointing of POSIX message queues
+        Summary: Add support for checkpoint/restore of POSIX message queues
+
+        POSIX message queues are a widely used inter-process communication mechanism. Message queues are implemented as files on a virtual filesystem (mqueue), where a file descriptor (message queue descriptor) is used to perform operations such as sending or receiving messages. To support checkpoint/restore of POSIX message queues, we need a kernel interface (similar to MSG_PEEK) that would enable the retrieval of messages from a queue without removing them. This project aims to implement such an interface that allows retrieving all messages and their priorities from a POSIX message queue.
+
+        Links:
+
+        https://github.com/checkpoint-restore/criu/issues/2285
+        https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/ipc/mqueue.c
+        https://www.man7.org/tlpi/download/TLPI-52-POSIX_Message_Queues.pdf
+        Details:
+
+        Skill level: intermediate
+        Language: C
+        Expected size: 350 hours
+        Mentors: Radostin Stoyanov <rstoyanov@fedoraproject.org>, Pavel Tikhomirov <ptikhomirov@virtuozzo.com>, Prajwal S N <prajwalnadig21@gmail.com>
+        Suggested by: Pavel Tikhomirov <ptikhomirov@virtuozzo.com>
+
+        ~~~~~~~~~~
+
+
+        Add support for arm64 Guarded Control Stack (GCS)
+        Summary: Support arm64 Guarded Control Stack (GCS)
+
+        The arm64 Guarded Control Stack (GCS) feature provides support for hardware protected stacks of return addresses, intended to provide hardening against return oriented programming (ROP) attacks and to make it easier to gather call stacks for applications such as profiling (taken from [1]). We would like to support arm64 Guarded Control Stack (GCS) in CRIU, which means that CRIU should be able to Checkpoint/Restore applications using GCS.
+
+        This task should not require any Linux kernel modifications but will require a lot of effort to understand Linux kernel and glibc support patches. We have a good example of support for x86 shadow stack [4].
+
+        Links:
+
+        [1] kernel support https://lore.kernel.org/all/20241001-arm64-gcs-v13-0-222b78d87eee@kernel.org
+        [2] libc support https://inbox.sourceware.org/libc-alpha/20250117174119.3254972-1-yury.khrustalev@arm.com
+        [3] libc tests https://inbox.sourceware.org/libc-alpha/20250210114538.1723249-1-yury.khrustalev@arm.com
+        [4] x86 support https://github.com/checkpoint-restore/criu/pull/2306
+        Details:
+
+        Skill level: expert (a lot of moving parts: Linux kernel / libc / CRIU)
+        Language: C
+        Expected size: 350 hours
+        Suggested by: Mike Rapoport <rppt@kernel.org>
+        Mentors: Mike Rapoport <rppt@kernel.org>, Andrei Vagin <avagin@gmail.com>, Alexander Mikhalitsyn <alexander@mihalicyn.com>
+
+        ~~~~~~~~~~
+        Coordinated checkpointing of distributed applications
+        Summary: Enable coordinated container checkpointing with Kubernetes.
+
+        Checkpointing support has been recently introduced in Kubernetes, where the smallest deployable unit is a Pod (a group of containers). Kubernetes is often used to deploy applications that are distributed across multiple nodes. However, checkpointing such distributed applications requires a coordination mechanism to synchronize the checkpoint and restore operations. To address this challenge, we have developed a new tool called criu-coordinator that relies on the action-script functionality of CRIU to enable synchronization in distributed environments. This project aims to extend this tool to enable seamless integration with the checkpointing functionality of Kubernetes.
+
+        Links:
+
+        https://github.com/checkpoint-restore/criu-coordinator
+        https://lpc.events/event/18/contributions/1803/
+        https://sched.co/1YeT4
+        https://kubernetes.io/blog/2022/12/05/forensic-container-checkpointing-alpha/
+        Details:
+
+        Skill level: intermediate
+        Language: Rust / Go / C
+        Expected size: 350 hours
+        Mentors: Radostin Stoyanov <rstoyanov@fedoraproject.org>, Prajwal S N <prajwalnadig21@gmail.com>
+        Suggested by: Radostin Stoyanov <rstoyanov@fedoraproject.org>
+
+        
 
           
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/criu/
+    idea_list_url: https://criu.org/Google_Summer_of_Code_Ideas
   
 
   - organization_id: 21
-    organization_name: 
+    organization_name: Center for Translational Data Science
     no_of_ideas:
     ideas_content: >-
 
@@ -5832,11 +6424,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/center-for-translational-data-science/
+    idea_list_url: https://docs.google.com/document/d/1kiEDB6tw2xD8Qj3uxpSELjazW35llHM1a9Nt_LQKwHw/edit?usp=sharing
 
   - organization_id: 22
-    organization_name: 
+    organization_name: Ceph Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -5844,11 +6436,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ceph-foundation/
+    idea_list_url: https://ceph.io/en/developers/google-summer-of-code/
 
   - organization_id: 23
-    organization_name: 
+    organization_name: Checker Framework
     no_of_ideas:
     ideas_content: >-
 
@@ -5856,11 +6448,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/checker-framework/
+    idea_list_url: https://rawgit.com/typetools/checker-framework/master/docs/developer/new-contributor-projects.html
 
   - organization_id: 24
-    organization_name: 
+    organization_name: Chromium
     no_of_ideas:
     ideas_content: >-
 
@@ -5868,11 +6460,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/chromium/
+    idea_list_url: https://docs.google.com/presentation/d/1ozDiULkf2Gi4HH1XA_Ad9O7rQpP9SP0yPEs_dpcBZKM/edit?usp=sharing
 
   - organization_id: 25
-    organization_name: 
+    organization_name: CircuitVerse.org
     no_of_ideas:
     ideas_content: >-
 
@@ -5880,12 +6472,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/circuitverse.org/
+    idea_list_url: https://github.com/CircuitVerse/CircuitVerse/wiki/GSoC'25-Project-List
 
 
   - organization_id: 26
-    organization_name: 
+    organization_name: CloudCV
     no_of_ideas:
     ideas_content: >-
 
@@ -5893,12 +6485,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/cloudcv/
+    idea_list_url: https://gsoc.cloudcv.org/
 
 
   - organization_id: 27
-    organization_name: 
+    organization_name: D Language Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -5906,11 +6498,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/d-language-foundation/
+    idea_list_url: https://dlang.github.io/GSoC/
 
   - organization_id: 28
-    organization_name: 
+    organization_name: DBpedia
     no_of_ideas:
     ideas_content: >-
 
@@ -5918,13 +6510,13 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/dbpedia/
+    idea_list_url: https://forum.dbpedia.org/tag/gsoc2025-ideas
 
   
 
   - organization_id: 29
-    organization_name: 
+    organization_name: Dart
     no_of_ideas:
     ideas_content: >-
 
@@ -5932,12 +6524,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/dart/
+    idea_list_url: https://github.com/dart-lang/sdk/blob/main/docs/gsoc/Dart-GSoC-2025-Project-Ideas.md
 
 
   - organization_id: 30
-    organization_name: 
+    organization_name: Data for the Common Good
     no_of_ideas:
     ideas_content: >-
 
@@ -5945,12 +6537,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/data-for-the-common-good/
+    idea_list_url: https://docs.pedscommons.org/GSoC/ideas
   
 
   - organization_id: 31
-    organization_name: 
+    organization_name: Debian
     no_of_ideas:
     ideas_content: >-
 
@@ -5958,11 +6550,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/debian/
+    idea_list_url: https://wiki.debian.org/SummerOfCode2025/Projects
 
   - organization_id: 32
-    organization_name: 
+    organization_name: DeepChem
     no_of_ideas:
     ideas_content: >-
 
@@ -5970,11 +6562,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/deepchem/
+    idea_list_url: https://forum.deepchem.io/t/deepchem-gsoc-2025-project-ideas/1568
 
   - organization_id: 33
-    organization_name: 
+    organization_name: Department of Biomedical Informatics, Emory University
     no_of_ideas:
     ideas_content: >-
 
@@ -5982,11 +6574,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/department-of-biomedical-informatics-emory-university/
+    idea_list_url: https://github.com/NISYSLAB/Emory-BMI-GSoC/?tab=readme-ov-file#list-of-ideas
 
   - organization_id: 34
-    organization_name: 
+    organization_name: Django Software Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -5994,11 +6586,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/django-software-foundation/
+    idea_list_url: https://code.djangoproject.com/wiki/SummerOfCode2025
 
   - organization_id: 35
-    organization_name: 
+    organization_name: Drupal Association
     no_of_ideas:
     ideas_content: >-
 
@@ -6006,12 +6598,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/drupal-association/
+    idea_list_url: https://www.drupal.org/project/gsoc
 
 
   - organization_id: 36
-    organization_name: 
+    organization_name: Eclipse Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -6019,12 +6611,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/eclipse-foundation/
+    idea_list_url: https://gitlab.eclipse.org/eclipsefdn/emo-team/gsoc-at-the-ef/-/issues/?sort=due_date&state=opened&label_name%5B%5D=Project%20Idea&label_name%5B%5D=GSoC%202025&first_page_size=50
 
 
   - organization_id: 37
-    organization_name: 
+    organization_name: Electron
     no_of_ideas:
     ideas_content: >-
 
@@ -6032,11 +6624,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/electron/
+    idea_list_url: https://electronhq.notion.site/Electron-Google-Summer-of-Code-2025-Ideas-List-1851459d1bd1811894dad8b48a68596d
 
   - organization_id: 38
-    organization_name: 
+    organization_name: FFmpeg
     no_of_ideas:
     ideas_content: >-
 
@@ -6044,11 +6636,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ffmpeg/
+    idea_list_url: https://trac.ffmpeg.org/wiki/SponsoringPrograms/GSoC/2025
 
   - organization_id: 39
-    organization_name: 
+    organization_name: FLARE
     no_of_ideas:
     ideas_content: >-
 
@@ -6056,12 +6648,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/flare/
+    idea_list_url: https://github.com/mandiant/flare-gsoc/blob/2025/doc/project-ideas.md
 
 
   - organization_id: 40
-    organization_name: 
+    organization_name: FOSSASIA
     no_of_ideas:
     ideas_content: >-
 
@@ -6069,12 +6661,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/fossasia/
+    idea_list_url: https://docs.google.com/document/d/1Tz1KxYefreKzBr98C4vbCv9UwnchZoyTwO8rBrz_lmg/edit?tab=t.0#heading=h.9sjk3ie7l2o2
   
 
   - organization_id: 41
-    organization_name: 
+    organization_name: FOSSology
     no_of_ideas:
     ideas_content: >-
 
@@ -6082,11 +6674,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/fossology/
+    idea_list_url: https://fossology.github.io/gsoc/docs/2025/GSoC-projects
 
   - organization_id: 42
-    organization_name: 
+    organization_name: Fedora Project
     no_of_ideas:
     ideas_content: >-
 
@@ -6094,11 +6686,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/fedora-project/
+    idea_list_url: https://docs.fedoraproject.org/en-US/mentored-projects/gsoc/2025/ideas/
 
   - organization_id: 43
-    organization_name: 
+    organization_name: Fortran-lang
     no_of_ideas:
     ideas_content: >-
 
@@ -6106,11 +6698,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/fortran-lang/
+    idea_list_url: https://github.com/fortran-lang/webpage/wiki/GSoC-2025-Project-ideas
 
   - organization_id: 44
-    organization_name: 
+    organization_name: Free and Open Source Silicon Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -6118,11 +6710,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/free-and-open-source-silicon-foundation/
+    idea_list_url: https://fossi-foundation.org/gsoc/gsoc25-ideas
 
   - organization_id: 45
-    organization_name: 
+    organization_name: FreeCAD
     no_of_ideas:
     ideas_content: >-
 
@@ -6130,12 +6722,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/freecad/
+    idea_list_url: https://wiki.freecad.org/Google_Summer_of_Code_2025
 
 
   - organization_id: 46
-    organization_name: 
+    organization_name: GNOME Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -6143,12 +6735,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gnome-foundation/
+    idea_list_url: https://gsoc.gnome.org/2025/
 
 
   - organization_id: 47
-    organization_name: 
+    organization_name: GNSS-SDR
     no_of_ideas:
     ideas_content: >-
 
@@ -6156,11 +6748,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gnss-sdr/
+    idea_list_url: https://gnss-sdr.org/google-summer-code-2025-ideas-list/
 
   - organization_id: 48
-    organization_name: 
+    organization_name: GNU Compiler Collection (GCC)
     no_of_ideas:
     ideas_content: >-
 
@@ -6168,11 +6760,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gnu-compiler-collection-(gcc)/
+    idea_list_url: https://gcc.gnu.org/wiki/SummerOfCode
 
   - organization_id: 49
-    organization_name: 
+    organization_name: GNU Image Manipulation Program
     no_of_ideas:
     ideas_content: >-
 
@@ -6180,12 +6772,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gnu-image-manipulation-program/
+    idea_list_url: https://developer.gimp.org/core/internship/ideas/
 
 
   - organization_id: 50
-    organization_name: 
+    organization_name: GNU Octave
     no_of_ideas:
     ideas_content: >-
 
@@ -6193,12 +6785,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gnu-octave/
+    idea_list_url: https://wiki.octave.org/Summer_of_Code_-_Getting_Started#Suggested_projects
   
 
   - organization_id: 51
-    organization_name: 
+    organization_name: GNU Radio
     no_of_ideas:
     ideas_content: >-
 
@@ -6206,11 +6798,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gnu-radio/
+    idea_list_url: https://wiki.gnuradio.org/index.php?title=GSoCIdeas
 
   - organization_id: 52
-    organization_name: 
+    organization_name: GRAME
     no_of_ideas:
     ideas_content: >-
 
@@ -6218,11 +6810,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/grame/
+    idea_list_url: https://github.com/grame-cncm/faustideas
 
   - organization_id: 53
-    organization_name: 
+    organization_name: GeomScale
     no_of_ideas:
     ideas_content: >-
 
@@ -6230,11 +6822,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/geomscale/
+    idea_list_url: https://github.com/GeomScale/gsoc25/wiki/table-of-proposed-coding-projects
 
   - organization_id: 54
-    organization_name: 
+    organization_name: Git
     no_of_ideas:
     ideas_content: >-
 
@@ -6242,11 +6834,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/git/
+    idea_list_url: https://git.github.io/SoC-2025-Ideas/
 
   - organization_id: 55
-    organization_name: 
+    organization_name: GitLab
     no_of_ideas:
     ideas_content: >-
 
@@ -6254,12 +6846,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gitlab/
+    idea_list_url: https://gitlab.com/gitlab-org/developer-relations/contributor-success/google-summer-of-code-2025/-/issues
 
 
   - organization_id: 56
-    organization_name: 
+    organization_name: Google DeepMind
     no_of_ideas:
     ideas_content: >-
 
@@ -6267,12 +6859,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/google-deepmind/
+    idea_list_url: https://goo.gle/deepmind-gsoc-projects-2025
 
 
   - organization_id: 57
-    organization_name: 
+    organization_name: Graphite
     no_of_ideas:
     ideas_content: >-
 
@@ -6280,11 +6872,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/graphite/
+    idea_list_url: https://graphite.rs/volunteer/guide/student-projects/
 
   - organization_id: 58
-    organization_name: 
+    organization_name: Haskell.org
     no_of_ideas:
     ideas_content: >-
 
@@ -6292,11 +6884,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/haskell.org/
+    idea_list_url: https://summer.haskell.org/ideas.html
 
   - organization_id: 59
-    organization_name: 
+    organization_name: HumanAI
     no_of_ideas:
     ideas_content: >-
 
@@ -6304,12 +6896,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/humanai/
+    idea_list_url: https://humanai.foundation/
 
 
   - organization_id: 60
-    organization_name: 
+    organization_name: INCF
     no_of_ideas:
     ideas_content: >-
 
@@ -6317,12 +6909,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/incf/
+    idea_list_url: https://docs.google.com/document/d/1T7U4nYFbVbZuIUw_2bB89YASj-ra26hRNtG2a20Gjlw/edit?tab=t.0
   
 
   - organization_id: 61
-    organization_name: 
+    organization_name: IOOS
     no_of_ideas:
     ideas_content: >-
 
@@ -6330,11 +6922,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/ioos/
+    idea_list_url: https://github.com/ioos/gsoc/blob/main/2025/ideas-list.md
 
   - organization_id: 62
-    organization_name: 
+    organization_name: Inkscape
     no_of_ideas:
     ideas_content: >-
 
@@ -6342,11 +6934,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/inkscape/
+    idea_list_url: https://gitlab.com/inkscape/inkscape/-/blob/master/doc/gsoc/summerofcode.md
 
   - organization_id: 63
-    organization_name: 
+    organization_name: International Catrobat Association
     no_of_ideas:
     ideas_content: >-
 
@@ -6354,11 +6946,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/international-catrobat-association/
+    idea_list_url: https://developer.catrobat.org/pages/development/google-summer-of-code/2025/
 
   - organization_id: 64
-    organization_name: 
+    organization_name: Internet Archive
     no_of_ideas:
     ideas_content: >-
 
@@ -6366,11 +6958,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/internet-archive/
+    idea_list_url: https://docs.google.com/document/d/1oHNwPNYmHV5q3puBfv6IQFs-4gTe9XLN2iz2Lgse-1k/edit?tab=t.0
 
   - organization_id: 65
-    organization_name: 
+    organization_name: Internet Health Report
     no_of_ideas:
     ideas_content: >-
 
@@ -6378,12 +6970,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/internet-health-report/
+    idea_list_url: https://github.com/InternetHealthReport/gsoc/blob/main/ideas.md
 
 
   - organization_id: 66
-    organization_name: 
+    organization_name: Invesalius
     no_of_ideas:
     ideas_content: >-
 
@@ -6391,12 +6983,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/invesalius/
+    idea_list_url: https://github.com/invesalius/gsoc/blob/main/gsoc_2025_ideas.md
 
 
   - organization_id: 67
-    organization_name: 
+    organization_name: JAX and Keras
     no_of_ideas:
     ideas_content: >-
 
@@ -6404,11 +6996,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/jax-and-keras/
+    idea_list_url: https://docs.google.com/document/d/16uAZEldrXUBHjrszSO22Hr81OmVSjzVXza0szZl6Fxw/edit?usp=sharing
 
   - organization_id: 68
-    organization_name: 
+    organization_name: JSON Schema
     no_of_ideas:
     ideas_content: >-
 
@@ -6416,12 +7008,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/json-schema/
+    idea_list_url: https://github.com/json-schema-org/community/blob/main/programs/mentoring/gsoc/gsoc-2025.md
 
 
   - organization_id: 69
-    organization_name: 
+    organization_name: JabRef e.V.
     no_of_ideas:
     ideas_content: >-
 
@@ -6429,12 +7021,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/jabref-e.v./
+    idea_list_url: https://github.com/JabRef/jabref/wiki/GSoC-2025-ideas-list
 
 
   - organization_id: 70
-    organization_name: 
+    organization_name: JdeRobot
     no_of_ideas:
     ideas_content: >-
 
@@ -6442,12 +7034,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/jderobot/
+    idea_list_url: https://jderobot.github.io/activities/gsoc/2025#ideas-list
   
 
   - organization_id: 71
-    organization_name: 
+    organization_name: Jenkins
     no_of_ideas:
     ideas_content: >-
 
@@ -6455,11 +7047,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/jenkins/
+    idea_list_url: https://www.jenkins.io/projects/gsoc/2025/project-ideas/
 
   - organization_id: 72
-    organization_name: 
+    organization_name: Jitsi
     no_of_ideas:
     ideas_content: >-
 
@@ -6467,11 +7059,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/jitsi/
+    idea_list_url: https://github.com/jitsi/gsoc-ideas/blob/master/2025/README.md
 
   - organization_id: 73
-    organization_name: 
+    organization_name: Joomla!
     no_of_ideas:
     ideas_content: >-
 
@@ -6479,11 +7071,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/joomla!/
+    idea_list_url: https://docs.joomla.org/GSoC_2025_Project_Ideas
 
   - organization_id: 74
-    organization_name: 
+    organization_name: KDE Community
     no_of_ideas:
     ideas_content: >-
 
@@ -6491,11 +7083,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kde-community/
+    idea_list_url: https://community.kde.org/GSoC/2025/Ideas
 
   - organization_id: 75
-    organization_name: 
+    organization_name: Keploy
     no_of_ideas:
     ideas_content: >-
 
@@ -6503,12 +7095,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/keploy/
+    idea_list_url: https://github.com/keploy/gsoc/tree/main/2025
 
 
   - organization_id: 76
-    organization_name: 
+    organization_name: Kiwix
     no_of_ideas:
     ideas_content: >-
 
@@ -6516,12 +7108,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kiwix/
+    idea_list_url: https://kiwix.org/en/google-summer-of-code/
 
 
   - organization_id: 77
-    organization_name: 
+    organization_name: Kornia
     no_of_ideas:
     ideas_content: >-
 
@@ -6529,11 +7121,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kornia/
+    idea_list_url: https://github.com/kornia/kornia-rs/wiki/Google-Summer-of-Code-Ideas-2025
 
   - organization_id: 78
-    organization_name: 
+    organization_name: Kotlin Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -6541,12 +7133,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kotlin-foundation/
+    idea_list_url: https://kotlinlang.org/docs/gsoc-2025.html
 
 
   - organization_id: 79
-    organization_name: 
+    organization_name: KubeVirt
     no_of_ideas:
     ideas_content: >-
 
@@ -6554,12 +7146,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kubevirt/
+    idea_list_url: https://github.com/kubevirt/community/wiki/Google-Summer-of-Code-2025
 
 
   - organization_id: 80
-    organization_name: 
+    organization_name: Kubeflow
     no_of_ideas:
     ideas_content: >-
 
@@ -6567,12 +7159,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kubeflow/
+    idea_list_url: https://www.kubeflow.org/events/gsoc-2025/
   
 
   - organization_id: 81
-    organization_name: 
+    organization_name: LLVM Compiler Infrastructure
     no_of_ideas:
     ideas_content: >-
 
@@ -6580,11 +7172,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/llvm-compiler-infrastructure/
+    idea_list_url: https://llvm.org/OpenProjects.html
 
   - organization_id: 82
-    organization_name: 
+    organization_name: LabLua
     no_of_ideas:
     ideas_content: >-
 
@@ -6592,11 +7184,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/lablua/
+    idea_list_url: https://github.com/labluapucrio/gsoc
 
   - organization_id: 83
-    organization_name: 
+    organization_name: Learning Equality
     no_of_ideas:
     ideas_content: >-
 
@@ -6604,11 +7196,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/learning-equality/
+    idea_list_url: https://docs.google.com/document/d/e/2PACX-1vT49WKgbsAIUoJ0jJS8LTWWm7UTByM0Pw3qt0KgyU_BShB1oGtZBkrEWuannFsRMVvGd0QBytZt8blh/pub
 
   - organization_id: 84
-    organization_name: 
+    organization_name: LibreOffice
     no_of_ideas:
     ideas_content: >-
 
@@ -6616,11 +7208,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/libreoffice/
+    idea_list_url: https://wiki.documentfoundation.org/Development/GSoC/Ideas
 
   - organization_id: 85
-    organization_name: 
+    organization_name: Liquid Galaxy project
     no_of_ideas:
     ideas_content: >-
 
@@ -6628,12 +7220,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/liquid-galaxy-project/
+    idea_list_url: https://www.liquidgalaxy.eu/2024/11/unique-post-for-gsoc-2025-at-liquid.html
 
 
   - organization_id: 86
-    organization_name: 
+    organization_name: MBDyn
     no_of_ideas:
     ideas_content: >-
 
@@ -6641,12 +7233,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/mbdyn/
+    idea_list_url: https://public.gitlab.polimi.it/DAER/mbdyn/-/wikis/GSoc-Project-Ideas
 
 
   - organization_id: 87
-    organization_name: 
+    organization_name: MDAnalysis
     no_of_ideas:
     ideas_content: >-
 
@@ -6654,11 +7246,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/mdanalysis/
+    idea_list_url: https://github.com/MDAnalysis/mdanalysis/wiki/GSoC-2025-Project-Ideas
 
   - organization_id: 88
-    organization_name: 
+    organization_name: MIT App Inventor
     no_of_ideas:
     ideas_content: >-
 
@@ -6666,11 +7258,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/mit-app-inventor/
+    idea_list_url: https://github.com/mit-cml/appinventor-sources/wiki/Google-Summer-of-Code-2025
 
   - organization_id: 89
-    organization_name: 
+    organization_name: Machine Learning for Science (ML4SCI)
     no_of_ideas:
     ideas_content: >-
 
@@ -6678,12 +7270,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/machine-learning-for-science-(ml4sci)/
+    idea_list_url: https://ml4sci.org/
 
 
   - organization_id: 90
-    organization_name: 
+    organization_name: MariaDB
     no_of_ideas:
     ideas_content: >-
 
@@ -6691,12 +7283,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/mariadb/
+    idea_list_url: https://mariadb.com/kb/en/google-summer-of-code-2025/
   
 
   - organization_id: 91
-    organization_name: 
+    organization_name: Meshery
     no_of_ideas:
     ideas_content: >-
 
@@ -6704,11 +7296,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/meshery/
+    idea_list_url: https://meshery.io/programs/gsoc/2025
 
   - organization_id: 92
-    organization_name: 
+    organization_name: MetaBrainz Foundation Inc
     no_of_ideas:
     ideas_content: >-
 
@@ -6716,11 +7308,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/metabrainz-foundation-inc/
+    idea_list_url: https://wiki.musicbrainz.org/Development/Summer_of_Code/2025
 
   - organization_id: 93
-    organization_name: 
+    organization_name: Micro Electronics Research Lab - UITU
     no_of_ideas:
     ideas_content: >-
 
@@ -6728,11 +7320,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/micro-electronics-research-lab-uitu/
+    idea_list_url: https://github.com/merledu/Google-Summer-of-Code/wiki/GSoC'25-Project-Ideas-List
 
   - organization_id: 94
-    organization_name: 
+    organization_name: Mixxx
     no_of_ideas:
     ideas_content: >-
 
@@ -6740,11 +7332,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/mixxx/
+    idea_list_url: https://github.com/mixxxdj/mixxx/wiki/GSOC-2025-Ideas
 
   - organization_id: 95
-    organization_name: 
+    organization_name: National Resource for Network Biology (NRNB)
     no_of_ideas:
     ideas_content: >-
 
@@ -6752,12 +7344,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/national-resource-for-network-biology-(nrnb)/
+    idea_list_url: https://github.com/nrnb/GoogleSummerOfCode/issues
 
 
   - organization_id: 96
-    organization_name: 
+    organization_name: Neovim
     no_of_ideas:
     ideas_content: >-
 
@@ -6765,12 +7357,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/neovim/
+    idea_list_url: https://github.com/neovim/neovim/wiki/Google-Summer-of-Code#gsoc-ideas-2025
 
 
   - organization_id: 97
-    organization_name: 
+    organization_name: Neuroinformatics Unit
     no_of_ideas:
     ideas_content: >-
 
@@ -6778,11 +7370,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/neuroinformatics-unit/
+    idea_list_url: https://neuroinformatics.dev/get-involved/gsoc
 
   - organization_id: 98
-    organization_name: 
+    organization_name: NumFOCUS
     no_of_ideas:
     ideas_content: >-
 
@@ -6790,12 +7382,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/numfocus/
+    idea_list_url: https://github.com/numfocus/gsoc/blob/master/2025/ideas-list.md
 
 
   - organization_id: 99
-    organization_name: 
+    organization_name: OSGeo (Open Source Geospatial Foundation)
     no_of_ideas:
     ideas_content: >-
 
@@ -6803,12 +7395,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/osgeo-(open-source-geospatial-foundation)/
+    idea_list_url: https://wiki.osgeo.org/wiki/Google_Summer_of_Code_2025_Ideas
 
 
   - organization_id: 100
-    organization_name: 
+    organization_name: OWASP Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -6816,12 +7408,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/owasp-foundation/
+    idea_list_url: https://owasp.org/www-community/initiatives/gsoc/gsoc2025ideas
   
 
   - organization_id: 101
-    organization_name: 
+    organization_name: Open Climate Fix
     no_of_ideas:
     ideas_content: >-
 
@@ -6829,11 +7421,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-climate-fix/
+    idea_list_url: https://docs.google.com/document/d/1nh6pdIjCTSLWwgFhgIV1gpG8CbIqGyoCFDHOfWmKdwA/edit?usp=sharing
 
   - organization_id: 102
-    organization_name: 
+    organization_name: Open Food Facts
     no_of_ideas:
     ideas_content: >-
 
@@ -6841,11 +7433,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-food-facts/
+    idea_list_url: https://wiki.openfoodfacts.org/GSOC/2025_ideas_list
 
   - organization_id: 103
-    organization_name: 
+    organization_name: Open HealthCare Network
     no_of_ideas:
     ideas_content: >-
 
@@ -6853,11 +7445,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-healthcare-network/
+    idea_list_url: https://contributors.ohc.network/projects
 
   - organization_id: 104
-    organization_name: 
+    organization_name: Open Robotics
     no_of_ideas:
     ideas_content: >-
 
@@ -6865,11 +7457,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-robotics/
+    idea_list_url: https://github.com/osrf/osrf_wiki/wiki/GSoC25
 
   - organization_id: 105
-    organization_name: 
+    organization_name: Open Science Initiative for Perfusion Imaging
     no_of_ideas:
     ideas_content: >-
 
@@ -6877,12 +7469,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-science-initiative-for-perfusion-imaging/
+    idea_list_url: https://docs.google.com/document/d/e/2PACX-1vSuYh57hsLUXbmrA5tozX4Ucne0sRXnmFt5xBA88gzDZJKZYD4-Bq04J9acer2d_i6NP6xhimmz4m5i/pub
 
 
   - organization_id: 106
-    organization_name: 
+    organization_name: Open Science Labs
     no_of_ideas:
     ideas_content: >-
 
@@ -6890,12 +7482,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-science-labs/
+    idea_list_url: https://opensciencelabs.org/opportunities/gsoc/project-ideas/
 
 
   - organization_id: 107
-    organization_name: 
+    organization_name: Open Technologies Alliance - GFOSS
     no_of_ideas:
     ideas_content: >-
 
@@ -6903,11 +7495,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-technologies-alliance-gfoss/
+    idea_list_url: https://ellak.gr/wiki/index.php?title=Google_Summer_of_Code_2025_proposed_ideas
 
   - organization_id: 108
-    organization_name: 
+    organization_name: Open Transit Software Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -6915,12 +7507,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/open-transit-software-foundation/
+    idea_list_url: https://opentransitsoftwarefoundation.org/2025/01/google-summer-of-code-2025-project-ideas/
 
 
   - organization_id: 109
-    organization_name: 
+    organization_name: OpenAFS
     no_of_ideas:
     ideas_content: >-
 
@@ -6928,12 +7520,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openafs/
+    idea_list_url: https://www.openafs.org/gsoc/project-ideas.html
 
 
   - organization_id: 110
-    organization_name: 
+    organization_name: OpenAstronomy
     no_of_ideas:
     ideas_content: >-
 
@@ -6941,12 +7533,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openastronomy/
+    idea_list_url: https://openastronomy.org/gsoc/gsoc2025/#/projects
   
 
   - organization_id: 111
-    organization_name: 
+    organization_name: OpenCV
     no_of_ideas:
     ideas_content: >-
 
@@ -6954,11 +7546,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/opencv/
+    idea_list_url: https://github.com/opencv/opencv/wiki/GSoC_2025
 
   - organization_id: 112
-    organization_name: 
+    organization_name: OpenELIS Global
     no_of_ideas:
     ideas_content: >-
 
@@ -6966,11 +7558,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openelis-global/
+    idea_list_url: https://uwdigi.atlassian.net/wiki/spaces/OG/pages/321224705/GSoC+2025
 
   - organization_id: 113
-    organization_name: 
+    organization_name: OpenMRS
     no_of_ideas:
     ideas_content: >-
 
@@ -6978,11 +7570,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openmrs/
+    idea_list_url: https://openmrs.atlassian.net/wiki/spaces/RES/pages/322404353/Summer+of+Code+2025
 
   - organization_id: 114
-    organization_name: 
+    organization_name: OpenMS
     no_of_ideas:
     ideas_content: >-
 
@@ -6990,11 +7582,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openms/
+    idea_list_url: https://www.openms.org/news/gsoc2025/
 
   - organization_id: 115
-    organization_name: 
+    organization_name: OpenStreetMap
     no_of_ideas:
     ideas_content: >-
 
@@ -7002,12 +7594,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openstreetmap/
+    idea_list_url: https://wiki.openstreetmap.org/wiki/Google_Summer_of_Code/2025/Project_ideas
 
 
   - organization_id: 116
-    organization_name: 
+    organization_name: OpenVINO Toolkit
     no_of_ideas:
     ideas_content: >-
 
@@ -7015,12 +7607,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openvino-toolkit/
+    idea_list_url: https://github.com/openvinotoolkit/openvino/wiki/Google-Summer-Of-Code#project-ideas-for-2025
 
 
   - organization_id: 117
-    organization_name: 
+    organization_name: OpenWISP
     no_of_ideas:
     ideas_content: >-
 
@@ -7028,11 +7620,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/openwisp/
+    idea_list_url: https://openwisp.io/docs/dev/developer/gsoc-ideas-2025.html
 
   - organization_id: 118
-    organization_name: 
+    organization_name: Oppia Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7040,12 +7632,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/oppia-foundation/
+    idea_list_url: https://github.com/oppia/oppia/wiki/Google-Summer-of-Code-2025#oppias-project-ideas-list
 
 
   - organization_id: 119
-    organization_name: 
+    organization_name: Organic Maps
     no_of_ideas:
     ideas_content: >-
 
@@ -7053,12 +7645,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/organic-maps/
+    idea_list_url: https://github.com/organicmaps/organicmaps/wiki/GSoC-2025-ideas
 
 
   - organization_id: 120
-    organization_name: 
+    organization_name: PAL Robotics
     no_of_ideas:
     ideas_content: >-
 
@@ -7066,12 +7658,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/pal-robotics/
+    idea_list_url: https://pal-robotics.com/2025-google-summer-code-proposals/#tips-successful-gsoc
   
 
   - organization_id: 121
-    organization_name: 
+    organization_name: PEcAn Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7079,11 +7671,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/pecan-project/
+    idea_list_url: https://pecanproject.github.io/gsoc_ideas
 
   - organization_id: 122
-    organization_name: 
+    organization_name: Pharo Consortium
     no_of_ideas:
     ideas_content: >-
 
@@ -7091,11 +7683,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/pharo-consortium/
+    idea_list_url: https://gsoc.pharo.org/ideas
 
   - organization_id: 123
-    organization_name: 
+    organization_name: Plone Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7103,11 +7695,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/plone-foundation/
+    idea_list_url: https://plone.org/community/gsoc/2025
 
   - organization_id: 124
-    organization_name: 
+    organization_name: PostgreSQL
     no_of_ideas:
     ideas_content: >-
 
@@ -7115,11 +7707,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/postgresql/
+    idea_list_url: https://wiki.postgresql.org/wiki/GSoC_2025
 
   - organization_id: 125
-    organization_name: 
+    organization_name: Processing Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7127,12 +7719,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/processing-foundation/
+    idea_list_url: https://github.com/processing/Processing-Foundation-GSoC/wiki/Project-Ideas-List-(GSoC-2025)
 
 
   - organization_id: 126
-    organization_name: 
+    organization_name: Project Mesa
     no_of_ideas:
     ideas_content: >-
 
@@ -7140,12 +7732,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/project-mesa/
+    idea_list_url: https://github.com/projectmesa/mesa/wiki/Google-Summer-of-Code-2025
 
 
   - organization_id: 127
-    organization_name: 
+    organization_name: Prometheus-Operator
     no_of_ideas:
     ideas_content: >-
 
@@ -7153,11 +7745,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/prometheus-operator/
+    idea_list_url: https://github.com/prometheus-operator/community/blob/main/mentoring/gsoc/2025/project_ideas.md
 
   - organization_id: 128
-    organization_name: 
+    organization_name: Python Software Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7165,13 +7757,13 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/python-software-foundation/
+    idea_list_url: https://python-gsoc.org/ideas.html
 
   
 
   - organization_id: 129
-    organization_name: 
+    organization_name: QC-Devs
     no_of_ideas:
     ideas_content: >-
 
@@ -7179,12 +7771,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/qc-devs/
+    idea_list_url: https://qcdevs.org/join/qcdevs_gsoc/
 
 
   - organization_id: 130
-    organization_name: 
+    organization_name: QEMU
     no_of_ideas:
     ideas_content: >-
 
@@ -7192,12 +7784,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/qemu/
+    idea_list_url: https://wiki.qemu.org/Google_Summer_of_Code_2025
   
 
   - organization_id: 131
-    organization_name: 
+    organization_name: R project for statistical computing
     no_of_ideas:
     ideas_content: >-
 
@@ -7205,11 +7797,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/r-project-for-statistical-computing/
+    idea_list_url: https://github.com/rstats-gsoc/gsoc2025/wiki/table-of-proposed-coding-projects
 
   - organization_id: 132
-    organization_name: 
+    organization_name: RTEMS Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7217,11 +7809,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/rtems-project/
+    idea_list_url: https://projects.rtems.org/gsoc/
 
   - organization_id: 133
-    organization_name: 
+    organization_name: Rizin
     no_of_ideas:
     ideas_content: >-
 
@@ -7229,11 +7821,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/rizin/
+    idea_list_url: https://rizin.re/gsoc/2025/
 
   - organization_id: 134
-    organization_name: 
+    organization_name: Rspamd
     no_of_ideas:
     ideas_content: >-
 
@@ -7241,11 +7833,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/rspamd/
+    idea_list_url: https://rspamd.com/gsoc2025_ideas.html
 
   - organization_id: 135
-    organization_name: 
+    organization_name: SQLancer
     no_of_ideas:
     ideas_content: >-
 
@@ -7253,12 +7845,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/sqlancer/
+    idea_list_url: https://github.com/sqlancer/sqlancer/wiki/GSoC-2025-Ideas
 
 
   - organization_id: 136
-    organization_name: 
+    organization_name: SW360
     no_of_ideas:
     ideas_content: >-
 
@@ -7266,12 +7858,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/sw360/
+    idea_list_url: https://eclipse.dev/sw360/gsoc/gsoc-projects-2025/
 
 
   - organization_id: 137
-    organization_name: 
+    organization_name: SageMath
     no_of_ideas:
     ideas_content: >-
 
@@ -7279,11 +7871,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/sagemath/
+    idea_list_url: https://wiki.sagemath.org/GSoC/2025
 
   - organization_id: 138
-    organization_name: 
+    organization_name: Scala Center
     no_of_ideas:
     ideas_content: >-
 
@@ -7291,11 +7883,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/scala-center/
+    idea_list_url: https://github.com/scalacenter/GoogleSummerOfCode
 
   - organization_id: 139
-    organization_name: 
+    organization_name: ScummVM
     no_of_ideas:
     ideas_content: >-
 
@@ -7303,12 +7895,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/scummvm/
+    idea_list_url: https://www.scummvm.org/gsoc-2025-ideas
 
 
   - organization_id: 140
-    organization_name: 
+    organization_name: Society for Arts and Technology (SAT)
     no_of_ideas:
     ideas_content: >-
 
@@ -7316,12 +7908,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/society-for-arts-and-technology-(sat)/
+    idea_list_url: https://sat-mtl.gitlab.io/collaborations/google-summer-of-code/categories/ideas/
   
 
   - organization_id: 141
-    organization_name: 
+    organization_name: Software and Computational Systems Lab at LMU Munich
     no_of_ideas:
     ideas_content: >-
 
@@ -7329,11 +7921,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/software-and-computational-systems-lab-at-lmu-munich/
+    idea_list_url: https://www.sosy-lab.org/gsoc/gsoc2025.php
 
   - organization_id: 142
-    organization_name: 
+    organization_name: St. Jude Children's Research Hospital
     no_of_ideas:
     ideas_content: >-
 
@@ -7341,11 +7933,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/st.-jude-children's-research-hospital/
+    idea_list_url: https://docs.google.com/document/d/1ze8OpsltCbAkksjmhd3hCeS6VDqAaolAhWAQQRJZBpc/edit?tab=t.0
 
   - organization_id: 143
-    organization_name: 
+    organization_name: Ste||ar group
     no_of_ideas:
     ideas_content: >-
 
@@ -7353,11 +7945,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/steororar-group/
+    idea_list_url: https://github.com/STEllAR-GROUP/hpx/wiki/Google-Summer-of-Code-%28GSoC%29-2025#2025-hpx-project-ideas
 
   - organization_id: 144
-    organization_name: 
+    organization_name: Stichting SU2
     no_of_ideas:
     ideas_content: >-
 
@@ -7365,11 +7957,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/stichting-su2/
+    idea_list_url: https://www.cfd-online.com/Forums/su2-news-announcements/259420-gsoc-2025-projects.html
 
   - organization_id: 145
-    organization_name: 
+    organization_name: Sugar Labs
     no_of_ideas:
     ideas_content: >-
 
@@ -7377,12 +7969,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/sugar-labs/
+    idea_list_url: https://github.com/sugarlabs/GSoC/blob/master/Ideas-2025.md
 
 
   - organization_id: 146
-    organization_name: 
+    organization_name: Swift
     no_of_ideas:
     ideas_content: >-
 
@@ -7390,12 +7982,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/swift/
+    idea_list_url: https://www.swift.org/gsoc2025/
 
 
   - organization_id: 147
-    organization_name: 
+    organization_name: SymPy
     no_of_ideas:
     ideas_content: >-
 
@@ -7403,11 +7995,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/sympy/
+    idea_list_url: https://github.com/sympy/sympy/wiki/GSoC-Ideas
 
   - organization_id: 148
-    organization_name: 
+    organization_name: Synfig
     no_of_ideas:
     ideas_content: >-
 
@@ -7415,11 +8007,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/synfig/
+    idea_list_url: https://github.com/synfig/synfig-docs-dev/blob/master/docs/gsoc/2025/ideas.rst
 
   - organization_id: 149
-    organization_name: 
+    organization_name: TARDIS RT Collaboration
     no_of_ideas:
     ideas_content: >-
 
@@ -7427,12 +8019,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/tardis-rt-collaboration/
+    idea_list_url: https://tardis-sn.github.io/summer_of_code/ideas/
 
 
   - organization_id: 150
-    organization_name: 
+    organization_name: The Apache Software Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7440,12 +8032,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-apache-software-foundation/
+    idea_list_url: https://s.apache.org/gsoc2025ideas
   
 
   - organization_id: 151
-    organization_name: 
+    organization_name: The FreeBSD Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7453,11 +8045,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-freebsd-project/
+    idea_list_url: https://wiki.freebsd.org/SummerOfCodeIdeas
 
   - organization_id: 152
-    organization_name: 
+    organization_name: The Honeynet Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7465,11 +8057,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-honeynet-project/
+    idea_list_url: https://www.honeynet.org/gsoc/gsoc-2025/google-summer-of-code-2025-project-ideas/
 
   - organization_id: 153
-    organization_name: 
+    organization_name: The JPF team
     no_of_ideas:
     ideas_content: >-
 
@@ -7477,11 +8069,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-jpf-team/
+    idea_list_url: https://github.com/javapathfinder/jpf-core/wiki/GSoC-2025-Project-Ideas
 
   - organization_id: 154
-    organization_name: 
+    organization_name: The Julia Language
     no_of_ideas:
     ideas_content: >-
 
@@ -7489,11 +8081,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-julia-language/
+    idea_list_url: https://julialang.org/jsoc/projects/
 
   - organization_id: 155
-    organization_name: 
+    organization_name: The Linux Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7501,12 +8093,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-linux-foundation/
+    idea_list_url: https://wiki.linuxfoundation.org/gsoc/google-summer-code-2025
 
 
   - organization_id: 156
-    organization_name: 
+    organization_name: The Mifos Initiative
     no_of_ideas:
     ideas_content: >-
 
@@ -7514,12 +8106,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-mifos-initiative/
+    idea_list_url: https://mifosforge.jira.com/wiki/spaces/RES/pages/4271669249/Google+Summer+of+Code+2025+Ideas
 
 
   - organization_id: 157
-    organization_name: 
+    organization_name: The NetBSD Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7527,11 +8119,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-netbsd-foundation/
+    idea_list_url: https://wiki.netbsd.org/projects/gsoc/
 
   - organization_id: 158
-    organization_name: 
+    organization_name: The P4 Language Consortium
     no_of_ideas:
     ideas_content: >-
 
@@ -7539,11 +8131,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-p4-language-consortium/
+    idea_list_url: https://github.com/p4lang/gsoc/blob/main/2025/ideas_list.md
 
   - organization_id: 159
-    organization_name: 
+    organization_name: The Palisadoes Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7551,12 +8143,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-palisadoes-foundation/
+    idea_list_url: https://developer.palisadoes.org/docs/internships/gsoc/gsoc-ideas
 
 
   - organization_id: 160
-    organization_name: 
+    organization_name: The Rust Foundation
     no_of_ideas:
     ideas_content: >-
 
@@ -7564,12 +8156,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-rust-foundation/
+    idea_list_url: https://github.com/rust-lang/google-summer-of-code
   
 
   - organization_id: 161
-    organization_name: 
+    organization_name: The Tor Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7577,11 +8169,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-tor-project/
+    idea_list_url: https://gitlab.torproject.org/tpo/team/-/wikis/GSoC
 
   - organization_id: 162
-    organization_name: 
+    organization_name: The ns-3 Network Simulator Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7589,11 +8181,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/the-ns-3-network-simulator-project/
+    idea_list_url: https://www.nsnam.org/wiki/GSOC2025Projects
 
   - organization_id: 163
-    organization_name: 
+    organization_name: Typelevel
     no_of_ideas:
     ideas_content: >-
 
@@ -7601,11 +8193,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/typelevel/
+    idea_list_url: https://typelevel.org/gsoc/ideas
 
   - organization_id: 164
-    organization_name: 
+    organization_name: UC OSPO
     no_of_ideas:
     ideas_content: >-
 
@@ -7613,11 +8205,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/uc-ospo/
+    idea_list_url: https://ucsc-ospo.github.io/osre25/#projects
 
   - organization_id: 165
-    organization_name: 
+    organization_name: Unicode, Inc.
     no_of_ideas:
     ideas_content: >-
 
@@ -7625,12 +8217,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/unicode-inc./
+    idea_list_url: https://docs.google.com/document/u/2/d/e/2PACX-1vQbj0-VFkRjYdnivuPPXuHM3IW4LuHxK6E0LVO3O8ZU_-k8CYH_eFMZ_IwFg_r-oBw3FCEOmHCb5jrn/pub
 
 
   - organization_id: 166
-    organization_name: 
+    organization_name: Unikraft
     no_of_ideas:
     ideas_content: >-
 
@@ -7638,12 +8230,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/unikraft/
+    idea_list_url: https://github.com/unikraft/gsoc/blob/staging/gsoc-2025/ideas.md
 
 
   - organization_id: 167
-    organization_name: 
+    organization_name: Uramaki LAB
     no_of_ideas:
     ideas_content: >-
 
@@ -7651,11 +8243,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/uramaki-lab/
+    idea_list_url: https://github.com/ruxailab/gsoc/blob/main/ideas2025.md
 
   - organization_id: 168
-    organization_name: 
+    organization_name: VideoLAN
     no_of_ideas:
     ideas_content: >-
 
@@ -7663,12 +8255,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/videolan/
+    idea_list_url: https://wiki.videolan.org/SoC_2025/
 
 
   - organization_id: 169
-    organization_name: 
+    organization_name: Wagtail
     no_of_ideas:
     ideas_content: >-
 
@@ -7676,12 +8268,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/wagtail/
+    idea_list_url: https://github.com/wagtail/gsoc/blob/main/project-ideas.md
 
 
   - organization_id: 170
-    organization_name: 
+    organization_name: Waycrate
     no_of_ideas:
     ideas_content: >-
 
@@ -7689,12 +8281,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/waycrate/
+    idea_list_url: https://waycrate.github.io/outreach/gsoc/2025/idea-list/
   
 
   - organization_id: 171
-    organization_name: 
+    organization_name: Wellcome Sanger Tree of Life
     no_of_ideas:
     ideas_content: >-
 
@@ -7702,11 +8294,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/wellcome-sanger-tree-of-life/
+    idea_list_url: https://docs.google.com/document/d/1dRHwnHAXlwQbRDstnd0OZTDJYA9cTsl1jG_hOempqII/edit?usp=sharing
 
   - organization_id: 172
-    organization_name: 
+    organization_name: Zendalona
     no_of_ideas:
     ideas_content: >-
 
@@ -7714,11 +8306,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/zendalona/
+    idea_list_url: https://docs.google.com/document/d/1HshVGE-oQq_xx09zG2LfqfVYWRhyrASteXzabCV9eIQ/edit?usp=sharing
 
   - organization_id: 173
-    organization_name: 
+    organization_name: Zulip
     no_of_ideas:
     ideas_content: >-
 
@@ -7726,11 +8318,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/zulip/
+    idea_list_url: https://zulip.readthedocs.io/en/latest/outreach/gsoc.html
 
   - organization_id: 174
-    organization_name: 
+    organization_name: cBioPortal for Cancer Genomics
     no_of_ideas:
     ideas_content: >-
 
@@ -7738,11 +8330,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/cbioportal-for-cancer-genomics/
+    idea_list_url: https://github.com/cBioPortal/gsoc/issues?q=is%3Aissue%20state%3Aopen%20label%3AGSoC-2025
 
   - organization_id: 175
-    organization_name: 
+    organization_name: checkstyle
     no_of_ideas:
     ideas_content: >-
 
@@ -7750,12 +8342,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/checkstyle/
+    idea_list_url: https://github.com/checkstyle/checkstyle/wiki/Checkstyle-GSoC-2025-Project-Ideas
 
 
   - organization_id: 176
-    organization_name: 
+    organization_name: dora-rs
     no_of_ideas:
     ideas_content: >-
 
@@ -7763,12 +8355,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/dora-rs/
+    idea_list_url: https://github.com/dora-rs/dora/wiki/GSoC_2025
 
 
   - organization_id: 177
-    organization_name: 
+    organization_name: freifunk
     no_of_ideas:
     ideas_content: >-
 
@@ -7776,11 +8368,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/freifunk/
+    idea_list_url: https://projects.freifunk.net/
 
   - organization_id: 178
-    organization_name: 
+    organization_name: gprMax
     no_of_ideas:
     ideas_content: >-
 
@@ -7788,12 +8380,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/gprmax/
+    idea_list_url: https://github.com/gprMax/GSoC/blob/main/project-ideas-2025.md
 
 
   - organization_id: 179
-    organization_name: 
+    organization_name: kro | Kube Resource Orchestrator
     no_of_ideas:
     ideas_content: >-
 
@@ -7801,12 +8393,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/kro-or-kube-resource-orchestrator/
+    idea_list_url: https://github.com/kro-run/kro/issues/288
 
 
   - organization_id: 180
-    organization_name: 
+    organization_name: libssh
     no_of_ideas:
     ideas_content: >-
 
@@ -7814,12 +8406,12 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/libssh/
+    idea_list_url: https://www.libssh.org/development/google-summer-of-code/
   
 
   - organization_id: 181
-    organization_name: 
+    organization_name: omegaUp
     no_of_ideas:
     ideas_content: >-
 
@@ -7827,11 +8419,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/omegaup/
+    idea_list_url: https://github.com/omegaup/omegaup/wiki/Google-Summer-of-Code-2025
 
   - organization_id: 182
-    organization_name: 
+    organization_name: openSUSE Project
     no_of_ideas:
     ideas_content: >-
 
@@ -7839,11 +8431,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/opensuse-project/
+    idea_list_url: https://github.com/openSUSE/mentoring/issues
 
   - organization_id: 183
-    organization_name: 
+    organization_name: rocket.chat
     no_of_ideas:
     ideas_content: >-
 
@@ -7851,11 +8443,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/rocket.chat/
+    idea_list_url: https://github.com/RocketChat/google-summer-of-code/blob/main/google-summer-of-code-2025.md#-project-ideas
 
   - organization_id: 184
-    organization_name: 
+    organization_name: stdlib
     no_of_ideas:
     ideas_content: >-
 
@@ -7863,11 +8455,11 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/stdlib/
+    idea_list_url: https://github.com/stdlib-js/google-summer-of-code/blob/main/ideas.md
 
   - organization_id: 185
-    organization_name: 
+    organization_name: webpack
     no_of_ideas:
     ideas_content: >-
 
@@ -7875,8 +8467,8 @@ organizations:
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/webpack/
+    idea_list_url: https://docs.google.com/document/d/1JOtAdpoqHGieg_nJpjkWDv1BoErPQ9L1GnZmX55E-W0/edit?usp=sharing
 
 
   

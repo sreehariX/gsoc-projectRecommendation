@@ -12,7 +12,7 @@ read_yaml_file('gsoc_ideasdata.yaml')
 
 
 
-
+#a way to motivate my self fills organization ids upto 185
 
 def update_organization_ids(filename):
     with open(filename, 'r', encoding='utf-8') as file:
