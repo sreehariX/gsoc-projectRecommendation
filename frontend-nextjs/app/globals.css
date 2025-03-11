@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1D1E1A;
+  --gradient-bg: #222325;
+  --button-ghost-hover: rgba(255, 255, 255, 0.1);
+  --button-secondary: rgba(255, 255, 255, 0.12);
+  --button-secondary-hover: rgba(255, 255, 255, 0.2);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+  
+  /* Sidebar colors */
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-accent: 240 5% 26%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  
+  /* Base colors for text and backgrounds */
+  --color-white: 0 0% 100%;
+  --color-silver: 0 0% 90%;
+  --color-steel: 0 0% 60%;
+  --color-dove: 0 0% 80%;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: white;
+  }
+  
+  textarea {
+    font-family: inherit;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+  }
+  
+  textarea:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.sidebar {
+  height: 100vh;
+  transition: width 0.3s ease;
+  border-top-right-radius: var(--border-radius-lg);
+  border-bottom-right-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.sidebar-collapsed {
+  width: 0;
+}
+
+/* Add button styles with rounded corners */
+.btn-rounded {
+  border-radius: var(--border-radius-full);
+}
+
+.btn-rounded-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.input-rounded {
+  border-radius: var(--border-radius-full);
+}
+
+/* Add styles for markdown content */
+.prose pre {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.prose code {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+.prose a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: white;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 0.75rem;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose li {
+  margin-bottom: 0.25rem;
+}
+
+.user-message {
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Add this to your existing CSS */
+.shadow-glow {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}

@@ -2,7 +2,7 @@ organizations:
   - organization_id: 1
     organization_name: 52°North Spatial Information Research GmbH
     no_of_ideas: 3
-    ideas_content: >-
+    ideas_content: |
                 1. KomMonitor
                 Angular migration of the KomMonitor Web Client
                 Explanation
@@ -130,7 +130,7 @@ organizations:
   - organization_id: 2
     organization_name: AFLplusplus
     no_of_ideas: 4
-    ideas_content: >-
+    ideas_content: |
       Proposal 1: Tool for Automated generic/bounds simplification
         Create a (general, not LibAFL-specific) rust tool to simplify/minimze bounds
 
@@ -250,7 +250,7 @@ organizations:
   - organization_id: 3
     organization_name: AOSSIE
     no_of_ideas: 13
-    ideas_content: >-
+    ideas_content: |
       Agora Blockchain
         Project Type: Medium
         Description:
@@ -649,14 +649,14 @@ organizations:
     totalCharacters_of_ideas_content_parent: 17886
     totalwords_of_ideas_content_parent: 2039
     totalTokenCount_of_ideas_content_parent: 3492
-    gsocorganization_dev_url: 
-    idea_list_url:
+    gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/aossie/
+    idea_list_url: https://aossie.org/ideas
 
   
   - organization_id: 4
     organization_name: API Dash
     no_of_ideas: 10
-    ideas_content: >-
+    ideas_content: |
 
           1. DashBot
           Related Issue - #621
@@ -821,7 +821,7 @@ organizations:
   - organization_id: 5
     organization_name: AboutCode
     no_of_ideas: 10
-    ideas_content: >-
+    ideas_content: |
         PURLdb - DeadCode: track End-Of-Life code
         Code Repositories: https://github.com/aboutcode-org/purldb
 
@@ -1308,7 +1308,7 @@ organizations:
   - organization_id: 6
     organization_name: Accord Project
     no_of_ideas: 7
-    ideas_content: >-
+    ideas_content: |
         1. Linter for Concerto
         Write a linter in TypeScript for Concerto Source files. It should make use of existing functionality to validate the Concerto DSL syntax and JSON AST of Concerto model against a set of rules. Rules should be defined in Typescript and which rules are run should be configurable. You may be able to make use of a tool like Spectral as the framework for defining our own rules over the Concerto AST (JSON).
 
@@ -1473,7 +1473,7 @@ organizations:
   - organization_id: 7
     organization_name: Alaska 
     no_of_ideas: 15
-    ideas_content: >-
+    ideas_content: |
         [1] Automated coastline extraction for erosion modeling in Alaska.
 
         Mentors: Frank Witmer (fwitmer -at- alaska.edu) and Rawan Elframawy (rawann.elframawy -at- gmail.com)
@@ -2023,7 +2023,7 @@ organizations:
   - organization_id: 8
     organization_name: AnkiDroid
     no_of_ideas: 5
-    ideas_content: >-
+    ideas_content: |
     
           Multiple Profiles (175 hours)
           Problem
@@ -2191,7 +2191,7 @@ organizations:
   - organization_id: 9
     organization_name: Apache DataFusion
     no_of_ideas: 11
-    ideas_content: >-
+    ideas_content: |
         
         Implement Continuous Monitoring of DataFusion Performance
         Description and Outcomes: DataFusion lacks continuous monitoring of how performance evolves over time – we do this somewhat manually today. Even though performance has been one of our top priorities for a while now, we didn’t build a continuous monitoring system yet. This linked issue contains a summary of all the previous efforts that made us inch closer to having such a system, but a functioning system needs to built on top of that progress. A student successfully completing this project would gain experience in building an end-to-end monitoring system that integrates with GitHub, scheduling/running benchmarks on some sort of a cloud infrastructure, and building a versatile web UI to expose the results. The outcome of this project will benefit Apache DataFusion on an ongoing basis in its quest for ever-more performance.
@@ -2371,7 +2371,7 @@ organizations:
   - organization_id: 10
     organization_name: ArduPilot
     no_of_ideas: 6 
-    ideas_content: >-
+    ideas_content: |
           Non-GPS Position Estimation Using 3D Camera and Pre-Generated Map¶
           Skills required: Python, C++
 
@@ -2505,7 +2505,7 @@ organizations:
   - organization_id: 11
     organization_name: AsyncAPI
     no_of_ideas: 9
-    ideas_content: >-
+    ideas_content: |
           1) Enhancing Performance and Reliability of AsyncAPI CLI
           Improve the AsyncAPI CLI by optimizing performance, enhancing test reliability, and introducing long-requested features such as publishing and syncing AsyncAPI files with remote repositories.
 
@@ -2605,7 +2605,7 @@ organizations:
   - organization_id: 12 
     organization_name: BRL-CAD 
     no_of_ideas: 25
-    ideas_content: >-
+    ideas_content: |
           Improving the k-File to BRL-CAD Converter
           Outline
           In the past years, we put some effort in the development of a LS-DYNA keyword file to BRL-CAD converter. Although we made great progress there, we still can't convert every k-file to g, i.e. the native BRL-CAD format. The goal of this project is to increase the number of covertable k-files.
@@ -3526,7 +3526,7 @@ organizations:
   - organization_id: 13
     organization_name: BeagleBoard.org
     no_of_ideas: 5
-    ideas_content: >-
+    ideas_content: |
         Deep Learning 
         Medium complexity 175 hours
 
@@ -3603,7 +3603,7 @@ organizations:
   - organization_id: 14
     organization_name: Blender
     no_of_ideas: 15
-    ideas_content: >-
+    ideas_content: |
         Flamenco¶
         Flamenco is Blender's render farm management system. For all the ideas below, a requirement is that you've set up Flamenco for yourself and used it to render things. Of course also some experience with Blender itself is needed.
 
@@ -3796,7 +3796,7 @@ organizations:
   - organization_id: 15
     organization_name: CCExtractor Development
     no_of_ideas: 13
-    ideas_content: >-
+    ideas_content: |
       
         CCExtractor Release 1.00	This is our ambitious project for the summer - work directly with the core team to prepare 1.00 - our first major version bump ever, by getting our PR's from last year vetted, tested and integrated	Some of these: Rust, C, Flutter, Docker, GitHub actions	The rest from the previous list.	Hard	350 hours
         ~~~~~~~~~~
@@ -3837,7 +3837,7 @@ organizations:
   - organization_id: 16
     organization_name: CERN-HSF
     no_of_ideas: 37
-    ideas_content: >-
+    ideas_content: |
           Precision Recovery in Lossy-Compressed Floating Point Data for High Energy Physics
           Description
           ATLAS is one of the particle physics experiments at the Large Hadron Collider (LHC) at CERN. With the planned upgrade of the LHC (the so-called High Luminosity phase), allowing for even more detailed exploration of fundamental particles and forces of nature, it is expected that the recorded data rate will be up to ten times greater than today. One of the methods of addressing this storage challenge is data compression. The traditional approach involves lossless compression algorithms such as zstd and zlib. To further reduce storage footprint, methods involving lossy compression are being investigated. One of the solutions in High Energy Physics is the reduction of floating point precision, as stored precision may be higher than detector resolution. However, when reading data back, physicists may be interested in restoring the precision of the floating point numbers. This is obviously impossible in the strict sense, as the process of removing bits is irreversible. Nevertheless, given that the data volume is high, some variables are correlated, and follow specific distributions, one may consider a machine learning approach to recover the lossy-compressed floating-point data.
@@ -5422,7 +5422,7 @@ organizations:
   - organization_id: 17
     organization_name: CGAL Project
     no_of_ideas: 11
-    ideas_content: >-
+    ideas_content: |
           Enhancing the 2D Regularized Boolean Operation Demo
           Mentor: Efi Fogel
 
@@ -5632,7 +5632,7 @@ organizations:
   - organization_id: 18
     organization_name: CHAOSS
     no_of_ideas: 
-    ideas_content: >-
+    ideas_content: |
       Idea: Enhance Conversational Topic Modelling Capabilities in CHAOSS Software
       Hours: 350
 
@@ -5800,7 +5800,7 @@ organizations:
   - organization_id: 19
     organization_name: CNCF
     no_of_ideas: 22
-    ideas_content: >-
+    ideas_content: |
         etcd
         etcd cache
         Description: Develop a generic, high-performance caching library for etcd, inspired by the Kubernetes watch cache, to facilitate building scalable and efficient etcd-based applications.
@@ -6271,7 +6271,7 @@ organizations:
   - organization_id: 20
     organization_name: CRIU 
     no_of_ideas: 5
-    ideas_content: >-
+    ideas_content: |
         Project ideas
         Add support for memory compression
         Summary: Support compression for page images
@@ -6417,8 +6417,211 @@ organizations:
 
   - organization_id: 21
     organization_name: Center for Translational Data Science
-    no_of_ideas:
-    ideas_content: >-
+    no_of_ideas: 7
+    ideas_content: |
+        Google Summer of Code - Project Ideas 2025
+        #1 Project Name: Towards Personalized Medicine with FHIR Integration and Data Driven Discovery
+        Mentor(s): Alex VanTol, Kyle Burton
+        Project Description
+        FHIR (Fast Healthcare Interoperability Resources, pronounced “fire”) is the standard for ensuring smooth data exchange and interoperability in electronic health records (EHR) and widely used in hospital settings. This project will focus on integrating a FHIR server into an open-source data platform used for managing and analyzing distributed biomedical data and supporting federated AI for data driven discovery.
+        As part of this endeavor, you will work on enabling this platform to support FHIR standards, using synthetic data to ensure the functionality of the solutions developed. You will gain valuable experience at the intersection of healthcare and technology, working on tasks that include cloud infrastructure and modern data standards.
+        Gain a deep understanding of the FHIR standard and how it supports interoperability of EHR systems.
+        Learn about cloud-based architectures for managing and sharing biomedical data.
+        Hone your ability to write, translate, and estimate business and technical requirements through user stories, tickets, and epics.
+        Develop and deploy code, as well as create integration tests for proof of concept scenarios.
+        Contribute to the enhancement of healthcare data interoperability.
+        Expand your technical skills by working with cloud infrastructure and standardized data protocols.
+        Acquire hands-on experience contributing to an impactful open-source software project.
+        Expected Outcomes
+        Automated deployment and configuration of a FHIR server within the data platform.
+        Capability for the data platform to import and export FHIR data seamlessly.
+        Skills Required/Preferred
+        Required: 
+        Python programming experience
+        Some experience with cloud infrastructure
+
+        Preferred:
+        Some familiarity with healthcare data
+        Java programming experience
+        Javascript programming experience
+        Expected Size and Difficulty
+        350 hours
+        Difficulty - Medium
+
+        ~~~~~~~~~~
+
+        #2 Project Name: Supporting an Open-Source Data Lake Architecture with Graph-like Data
+        Mentor(s): Alex VanTol, Michael Lukowski
+        Project Description
+        This project focuses on enhancing a data platform by implementing a versatile solution for data ingestion and storage using a data lakehouse architecture. The aim is to prototype a method for converting graph-structured data into Avro-based files, specifically utilizing a file format called the Portable Format for Biomedical data (PFB). This format supports exporting and importing bulk clinical and other structured data within healthcare data platforms.
+        You will engage in designing and developing tooling to convert data from original sources, representing graph-like models, into serialized Avro files for seamless ingestion into a data lake. This project offers a unique opportunity to delve into data lakehouse architectures, graph data models, and serialization techniques, enriching your expertise in these areas.
+        Understand and work with data lakehouse architectures for managing diverse datasets.
+        Learn to convert data from graph models into an Avro-based serialized format.
+        Develop skills in creating extensible methodologies and tooling for data ingestion.
+        Gain familiarity with querying and visualizing graph models contained within serialized files.
+        Explore the intersection of data management, bioinformatics, and healthcare data platforms.
+        Contribute to the development of advanced data ingestion and storage solutions.
+        Enhance your understanding of data lakehouses and serialization formats like Avro.
+        Acquire hands-on experience with graph data models and their applications.
+        Participate in an open-source project that has real-world impact in the healthcare field.
+        Expected Outcomes
+        Develop methodology and tools for converting graph-structured data into Avro-based serialized files.
+        Potentially include tools for querying and visualizing graph models within the serialized format, depending on project scope.
+        Skills Required/Preferred
+        Required:
+        Python programming experience
+        Preferred:
+        Knowledge of graph models
+        Some familiarity with serialization formats (specifically, Avro)
+        Knowledge of UX and/or client side tooling
+        Expected Size and Difficulty
+        175 hours 
+        Difficulty - Medium
+
+        ~~~~~~~~~~
+
+        #3 Project Name: Improve Scalable Data Download Functionality Using Globus and an Open-Source Python SDK & CLI
+        Mentor(s): Alex VanTol, Pauline Ribeyre
+        Project Description
+        This project aims to enhance the data download capabilities of a Python SDK & CLI used to interact with a large-scale data management platform. The goal is to create a consistent and efficient tool for researchers to download and stream large biomedical data sets. This involves integrating with existing RESTful APIs and Globus, a service for secure and reliable data transfer.
+        You will work on implementing data download functionality within the Python SDK & CLI, writing unit tests to ensure robust code, and optimizing the download process using asynchronous capabilities in Python. This tool will be extensively used by researchers and scientists to stream large data sets to virtual workspaces for analysis.
+        Gain experience in enhancing data download functionalities in a scalable manner.
+        Learn to work with RESTful APIs and how to interact with them programmatically.
+        Get hands-on experience with Globus for secure data transfer.
+        Develop skills in Python programming, particularly in creating efficient and asynchronous code.
+        Learn to write thorough unit tests to ensure high code quality.
+        Understand the challenges and requirements of streaming large biomedical data sets.
+        Contribute to improving tools that support large-scale data management and research.
+        Enhance your programming skills, particularly in Python and Golang.
+        Work on real-world projects that benefit researchers and scientists in the biomedical field.
+        Gain experience in using modern data transfer technologies and optimizing performance.
+        Expected Outcomes
+        Implemented data download functionality within the Python SDK & CLI, integrated with Globus.
+        Achieve 100% unit test coverage for the new code.
+        Optimized data download process for improved performance.
+        Skills Required/Preferred
+        Required:
+        Ability to read and understand Golang
+        Ability to code in Python
+        Preferred:
+        Familiarity with RESTful APIs
+        Familiarity with testing
+        Familiarity with command line interfaces and/or UX
+        Familiarity with concepts around concurrency
+        Expected Size and Difficulty
+        175 hours
+        Difficulty - Medium
+
+        ~~~~~~~~~~
+
+        #4 Project Name: Towards a Data Commons Operations Center with Observability and Monitoring
+        Mentor(s): Jawad Qureshi
+        Project Description
+        The goal of this project is to develop an Operations Center dashboard (CSOC) to manage multiple standalone and interconnected data commons running Gen3, a well-established open source platform for biomedical research. This dashboard will streamline the deployment, monitoring, and management of Gen3 data commons and meshes through a unified interface. The project will involve creating a distributed system with a Go-based backend and Next.js frontend, integrating with Kubernetes, Grafana, Helm, and Terraform, and ensuring secure server-agent communication.
+
+        Expected Outcomes
+        Production-ready Operations Center: A functional dashboard with a Go backend and Next.js frontend.
+        RBAC and Security Policy Administration: Implementation of role-based access control (RBAC) and security policies.
+        Observability Platform: Complete observability integrated with Prometheus/Grafana for monitoring.
+        User-Friendly Dashboard: An intuitive interface for Gen3 commons deployment and management.
+        Secure Server-Agent Communication: Infrastructure to ensure secure communication between server and agents.
+        Comprehensive Documentation: Detailed system documentation and deployment guides.
+
+        Skills Required/Preferred
+        Go programming experience
+        React/Next.js development skills / Javascript
+        Understanding of Kubernetes, Helm, and Terraform
+        Understanding of Cloud Infrastructure
+        Experience with gRPC
+        Understanding the pillars of observability (metrics, logs, tracing)
+        Expected Size and Difficulty
+        Number of hours 1000
+        Difficulty - (Medium - Difficult)
+
+        ~~~~~~~~~~
+
+        #5 Project Name: Enhance Data Solutions with Native Graph Database Integration
+        Mentor(s): Craig Barnes, Andrew Prokhorenkov, Alex VanTol
+        Project Description
+        This project aims to significantly improve the efficiency and capabilities of our data platform by transitioning from a custom PostgreSQL backend to a native graph database solution. With the increasing reliability and performance of graph databases like neo4j, this transition will enhance how we manage, analyze, and query complex biomedical data.
+        Your role will involve developing a new Python-based microservice that supports the same RESTful APIs as our current submission and query services. Additionally, the microservice will dynamically generate GraphQL (or GraphQL-like) APIs based on a configured data schema, facilitating advanced search and query capabilities.
+        Expected Outcomes
+        Evaluate and analyze the best native graph database solutions for integration.
+        Implement the selected graph database to replace the current PostgreSQL backend.
+        Develop a new microservice in Python to support the existing RESTful and GraphQL (or GraphQL-like) APIs.
+        Ensure seamless data submission, access, and querying within our data platform.
+        This project will enhance our data platform's performance and flexibility, offering more robust solutions for managing biomedical data. Your contribution will provide significant improvements in data querying and management capabilities, benefiting the broader biomedical research community.
+        Skills Required/Preferred
+        Required: 
+        Proficiency in Python
+        Basic understanding of GitHub or other version control platforms
+        Familiarity with RESTful APIs
+        Understanding of graph databases
+        Knowledge of user authorization and security principles
+
+        Preferred:
+        Familiarity with relational databases
+        Understanding of microservice architecture, Docker, and containerization
+        Expected Size and Difficulty
+        Number of hours: 350 hours
+        Difficulty - Hard
+
+        ~~~~~~~~~~
+
+        #6 Project Name: GPU Cluster Orchestration and Observability
+        Mentors: Salman Sikandar and Bilal Baqar
+        Project Description
+        This project focuses on developing a CPU-based control plane to orchestrate jobs on an existing GPU cluster used by ML/AI researchers. The current setup is rudimentary, and the goal is to implement an automated job scheduling system along with comprehensive observability. The intern will design and implement a solution using technologies like Slurm for orchestration, and Prometheus/Grafana for monitoring and alerting.
+        Expected Outcomes:
+        Implement a job scheduler with priority queues and preemption capabilities for GPU workloads
+        Develop a centralized dashboard displaying GPU/CPU utilization, job queue status, and thermal metrics
+        Create Terraform/Ansible playbooks for reproducible cluster provisioning
+        Design and implement automated alerting based on predefined thresholds and anomaly detection
+        Skills Required/Preferred
+        Required:
+        Python or Go programming
+        Linux systems administration
+        Basic networking concepts
+        Containerization (Docker)
+        Preferred:
+        Experience with Slurm
+        Familiarity with Prometheus and Grafana
+        GPU architecture knowledge (CUDA/NCCL)
+        Experience with distributed systems
+
+        Expected Size and Difficulty
+        Number of Hours: 300-350 hours (8-10 weeks)
+        Difficulty: Intermediate to Advanced
+
+        ~~~~~~~~~~
+
+
+        #7 Project Name: Staging Inference Cluster with CI/CD
+        Mentors:
+        Salman Sikandar and Bilal Baqar
+        Project Description
+        This project involves building a staging inference cluster to host production versions of ML models with auto scaling capabilities and CI/CD pipelines. The intern will set up an environment that allows for seamless promotion of trained models to production, implementing canary deployments and rollback mechanisms. The project will utilize technologies such as KEDA or Vertical Pod Autoscaler for autoscaling, and ArgoCD or Flux for GitOps-driven CI/CD.
+        Expected Outcomes:
+
+        Establish a staging inference cluster with autoscaling triggered by request latency/throughput thresholds
+        Implement a GitHub Actions pipeline for model validation, containerization, and deployment
+        Develop GitOps-driven CI/CD pipelines using ArgoCD or Flux for automated deployments
+        Create a system for canary deployments and automated rollbacks based on performance metrics
+
+        Skills Required/Preferred
+        Required:
+        Python or Go programming
+        CI/CD concepts and tools
+        Containerization (Docker)
+        Basic understanding of ML workflows
+        Preferred:
+        Knowledge of ML model serving frameworks
+        Familiarity with GitOps principles
+
+        Expected Size and Difficulty
+        Number of Hours: 300-350 hours (8-10 weeks)
+        Difficulty: Intermediate to Advanced
+
 
           
     totalCharacters_of_ideas_content_parent: 
@@ -6429,8 +6632,127 @@ organizations:
 
   - organization_id: 22
     organization_name: Ceph Foundation
-    no_of_ideas:
-    ideas_content: >-
+    no_of_ideas: 7
+    ideas_content: |
+      
+      Teuthology on Podman ¶
+      Mentor name(s): Zack Cerza, Kamoltat (Junior) Sirivadhna Aishwarya Mathuria, Vallari Agrawal
+      Mentor email(s): zack1@ibm.com, ksirivad@ibm.com, aishwarya.mathuria@ibm.com, vallari.agrawal@ibm.com
+      Difficulty: Hard
+      Project Hours: 175
+      Skills needed: python, containerisation, linux
+      Subcomponent of Ceph: Ceph Integration Test Framework
+      Description of project:
+      ceph-devstack is an in-development tool that uses rootless podman containers to deploy a scaled-down teuthology lab. It has proven useful for testing changes to teuthology and its related services, allowing us to more easily and flexibly make changes to components without worrying about causing outages.
+      It has some basic ability to run Ceph tests, but could benefit significantly from more investment in that area.
+      Improve and extend ceph-devstack's ability to perform teuthology tests against Ceph builds. This project will involve writing Python code and tests to orchestrate podman containers, and working with security systems like SELinux, CGroups, and Linux capabilities.
+      Standup/weekly call mentee could attend?: Teuthology weekly meeting
+      Steps to evaluate an applicant for the project: TBD
+      1-2 short paragraphs about what first 2 weeks of work would look like during the internship: TBD
+      Expected Outcome:
+      Extend ceph-devstack's ability to perform teuthology tests
+
+      ~~~~~~~~~~
+      smartmontools drivedb.h postprocessor ¶
+      Mentor name(s): Anthony D'Atri, Sunil Angadi
+      Mentor email(s): anthony.datri@ibm.com, sunil.angadi@ibm.com
+      Difficulty: Intermediate
+      Project Hours: 90
+      Skills needed: c++, maybe python or golang
+      Subcomponent of Ceph: Observability
+      Description of project:
+      smartmontools (smartctl) is pretty much the only game in town for harvesting metrics and counters from storage devices: SMART for SATA, a few things for SAS, and passthrough to nvme-cli for NVMe. It leverages a runtime file named drivedb.h that directs what attributes are to be found with what numeric IDs, and how to interpret them. drivedb.h is a mess, and upstream smartmontools would likely resist wholesale refactoring. For example, SSD wear might be labeled as "lifetime remaining" or "wear level" or multiple other strings. Some devices also report wear used, others wear remaining.
+      One task would be to add an interpretation primitive to the c++ code so that a drivedb.h entry can specify that the result should be subtracted from 100.
+      The larger task would be to write a postprocessor for drivedb.h that more or less is a sequence of regex invocations that converges the existing freeform attribute label names into a normalized, defined set. Many tools just pass through the text labels, so doing meaningful analysis or queries is difficult; often only a fraction of the data is actually captured as a result. The output also includes numeric attribute IDs, which are less varied, but relying on them instead of the text labels is fraught because these numeric IDs are not strictly standardized either. I have seen drives that report a metric on a different numeric ID than most others, and/or that report a different metric on a specific numeric than most others report on that ID.
+      For extra credit, interface with the central telemetry DB as described in project "Public telemetry slice/dice of SMART data".
+      Standup/weekly call mentee could attend?: TBD
+      Steps to evaluate an applicant for the project: Ability to leverage code libraries and write the glue code.
+      1-2 short paragraphs about what first 2 weeks of work would look like during the internship: TBD
+
+      ~~~~~~~~~~
+      The More The Merrier ¶
+      Mentor name(s): Yuval Lifshitz
+      Mentor email(s): ylifshit@ibm.com
+      Difficulty: Hard
+      Project Hours: 350
+      Skills needed: C++, Python
+      Subcomponent of Ceph: RGW
+      Description of project:
+      Detailed description of the project and evalution steps can be found here.
+      Persistent bucket notifications are a very useful and powerful feature
+      tech talk: https://www.youtube.com/watch?v=57Ejl6R-L20
+      usecase example: https://www.youtube.com/watch?v=57Ejl6R-L20
+      However, they can pose a performance issue, since the notifications regarding a specific bucket are written to a single RADOS queue (unlike the writes to the bucket which are distributed across multiple bucket shards. So, in case that small objects are written to the bucket, the overhead of the notifications is considerable. In this project, our goal would be to create a sharded bucket notifications queue, to allow for better performance of sending persistent bucket notifications.
+      Standup/weekly call mentee could attend?: RGW daily Standup, RGW weekly refactoring meeting
+      Steps to evaluate an applicant for the project:
+      build ceph from source and run basic bucket notification tests
+      fix low-hanging-fruit issues in bucket notifications
+      1-2 short paragraphs about what first 2 weeks of work would look like during the internship: TBD
+      Expected outcome:
+      sharded implementation of persistent topic queue
+
+      ~~~~~~~~~~
+      stretch goal: perf test proving performance improvement
+      Public telemetry slice/dice of SMART data ¶
+      Mentor name(s): Anthony D'Atri
+      Mentor email(s): anthony.datri@ibm.com
+      Difficulty: Medium
+      Project Hours: 175
+      Skills needed: Some coding language, Python or Go, jq or JSON parsing or other text library.
+      Subcomponent of Ceph: telemetry
+      Description of project:
+      Public telemetry today offers a few Grafana panels and downloadable archives of anonymized data. One field is a JSON blob of smartctl output. Parse this, apply a normalization layer, deduplicate, and present in one or more formats that facilitate analysis:
+      CSV file containing attributes for only the latest report found for a given device
+      The number of data points might be too high, but possibly a Grafana dashboard or even spreadsheet with template variables for manufacturer/model, interface type, etc. with various panes:
+      Histograms of power_on hours, normalized endurance used or remaining, etc
+      histogram or table of endurance remaining vs power on hours or TBW, i.e. allowing one to predict drive lifetime and inform purchase decisions, vs. assuming that SSDs especially QLC lack endurance or that high-endurance SKUs are required.
+      reallocated sectors over time, etc.
+      Standup/weekly call mentee could attend?: TBD
+      Steps to evaluate an applicant for the project: Coding experience beyond Karel
+      1-2 short paragraphs about what first 2 weeks of work would look like during the internship:
+      Gain familiarity with the data format, including JSON. Discuss input filtering: skip over invalid entries, handle submissions from older smartmontools, uniqify, learn about SMART -- and how dumb it is, the need for nomalization of counters.
+      Expected outcome:
+      Described above under Description. More specifically, deriving the rate of wear over time for each specific SSD for which we have more than say a month of data: capture the delta between earliest and latest wear levels reported for each given serial number, and the time delta between those samples. Divide the wear delta by the time delta for rate of wear over time.
+      
+      ~~~~~~~~~~
+      Warm and Fuzzy ¶
+      Mentor name(s): Yuval Lifshitz, Pritha Srivastava
+      Mentor email(s): ylifshit@ibm.com, Pritha.Srivastava@ibm.com
+      Difficulty: Medium
+      Project Hours: 175
+      Skills needed: C++, Python and also depending with the tool
+      Subcomponent of Ceph: RGW
+      Description of project:
+      The RGW's frontend is an S3 REST API server, and in this project we would like to use a REST API fuzzer to test the RGW for security issues (and other bugs). First step of the project would be to select the right tool (e.g. https://github.com/microsoft/restler-fuzzer), feed it with the AWS S3 OpenAPI spec, and see what happens when we let it connect to the RGW. Fixing issues the fuzzer finds would nice, but the real stretch goal would be to integrate these tests into teuthology.
+      Standup/weekly call mentee could attend: RGW daily Standup, RGW weekly refactoring meeting
+      Steps to evaluate an applicant for the project:
+      Detailed description of the project and evalution steps can be found here.
+      1-2 short paragraphs about what first 2 weeks of work would look like during the internship: TBD
+      Expected outcome:
+      find and fix security issues in the RGW found by the fuzzing tool
+      stretch goal: integrate tool into automated teuthology runs
+
+      ~~~~~~~~~~
+      Ceph Dashboard Usability Improvements ¶
+      Mentor name(s): Afreen Misbah
+      Mentor email(s): afreen@ibm.com
+      Difficulty: Easy
+      Project Hours: 175
+      Skills needed: Typescript, Angular, and basic understanding of HTML & CSS.
+      Subcomponent of Ceph: Dashboard
+      Description of project:
+      Ceph Dashboard is Ceph's management and monitoring tool. It's a web application tool with Angular/Typescript on frontend side and Python as backend.
+      We are in an effort to provide more usability workflows and solve UX issues to make management and monitoring easy for Ceph users.
+      The task includes improving the notification system and creating a workflow for managing NVMe-oF devices from dashboard.
+      Standup/weekly call mentee could attend?: Dashboard daily sync
+      Steps to evaluate an applicant for the project:
+      Build ceph dashboard locally via docker-compose and kcli both
+      Able to understand issues and ask useful questions
+      Eagerness to learn and contribute
+      1-2 short paragraphs about what first 2 weeks of work would look like during the internship:
+      Learning about ceph and storage and gradually contributing to the dashboard.
+      Expected Outcome:
+      Improve dashboard usability.
 
           
     totalCharacters_of_ideas_content_parent: 
@@ -6441,8 +6763,250 @@ organizations:
 
   - organization_id: 23
     organization_name: Checker Framework
-    no_of_ideas:
-    ideas_content: >-
+    no_of_ideas: 4
+    ideas_content: |
+      Evaluate a type system or a Checker Framework feature
+      These projects evaluate a recently-written type system or a feature used by multiple type systems. Using the type systems on real code is our most important source of new ideas and improvements. Many people have started out “just” doing a case study but have ended up making deep, fundamental contributions and even publishing scientific papers about their discoveries.
+
+      One possible outcome is to identify weaknesses in the type-checker so that we can improve it. Another possible outcome is to provide evidence that the type-checker is effective and convince more users to adopt it. You will probably also discover defects (bugs) in the codebase being type-checked.
+
+      Signature strings
+      Determine whether the ASM library, or some other library, properly handles signature strings.
+
+      Some challenging aspects of this case study are:
+
+      Some libraries define their own new signature string formats (!), which you need to define in the Signature String Checker.
+      Sometimes the library's documentation is incorrect, and in other cases the string format is not defined.
+      Preventing mixed signed/unsigned computations
+      An unsigned integer's bits are interpreted differently than a signed integer's bits. It is meaningless to add a signed and an unsigned integer — the result will be nonsense bits. The same is true of printing and of other numeric operators such as multiplication and comparison.
+
+      We have a prototype compile-time verification tool that detects and prevents these errors. The goal of this project is to perform case studies to determine how often programmers make signedness errors (our initial investigation suggests that this is common!) and to improve the verification tool.
+
+      The research questions are:
+
+      How often do programmers make signedness errors?
+      Is it feasible to automatically detect signedness errors? What techniques are useful?
+      What is the false positive rate of a signedness verification tool — that is, false alarms from the tool?
+      How much effort is required from a programmer?
+      The methodology is:
+
+      find open-source projects that use unsigned arithmetic
+      run the verification tool on them
+      for each tool warning, determine whether it is a defect in the project or a limitation of the verification tool. For example, the Signedness Checker does not currently handle boxed integers and BigInteger; these haven't yet come up in case studies but could be worthwhile enhancements. You may also need to write more annotations for libraries such as the JDK.
+      submit bug reports against the project, or improve the verification tool
+      A good way to find projects that use unsigned arithmetic is to find a library that supports unsigned arithmetic, then search on GitHub for projects that use that library.
+
+      Here are some relevant libraries.
+
+      In the JDK's Integer and Long, these include compareUnsigned, divideUnsigned, parseUnsignedInt, remainderUnsigned, and toUnsignedLong.
+      Classes like DataInputStream, ObjectInputStream, and RandomAccessFile have readUnsignedByte.
+      Arrays has compareUnsigned. The JDK is already annotated; search for @Unsigned within https://github.com/typetools/jdk.
+      In Guava, see its unsigned support, such as UnsignedBytes, UnsignedLong, UnsignedLongs, etc. Guava is already annotated; search for @Unsigned within https://github.com/typetools/guava.
+      The jOOU library consists of support for unsigned integers.
+      Another possibility is to find Java projects that could use an unsigned arithmetic library but do not. For example, bc-java defines its own unsigned libraries, and some other programs might do direct bit manipulation.
+
+      Whole-program type inference
+      A type system is useful because it prevents certain errors. The downside of a type system is the effort required to write the types. Type inference is the process of writing the types for a program.
+
+      The Checker Framework includes a whole-program inference that inserts type qualifiers in the user's program. It works well on some programs, but needs more enhancements to work well on all programs.
+
+      Sound checking by default
+      By default, the Checker Framework is unsound in several circumstances. “Unsound” means that the Checker Framework may report no warning even though the program can misbehave at run time.
+
+      The reason that the Checker Framework is unsound is that we believe that enabling these checks would cause too many false positive warnings: warnings that the Checker Framework issues because it cannot prove that the code is safe (even though a human can see that the code is safe). Having too many false positive warnings would irritate users and lead them not to use the checker at all, or would force them to simply disable those checks.
+
+      We would like to do studies of these command-line options to see whether our concern is justified. Is it prohibitive to enable sound checking? Or can we think of enhancements that would let us turn on those checks that are currently disabled by default?
+
+      There is no need to annotate new code for this project. Just use existing annotated codebases, such as those that are type-checked as part of the Checker Framework's Azure Pipeline. In other words, you can start by enabling Azure Pipelines for your fork and then changing the default behavior in a branch. The Azure Pipelines job will show you what new warnings appear.
+
+      Comparison to other tools
+      Many other tools exist for prevention of programming errors, such as Error Prone, NullAway, FindBugs, JLint, PMD, and IDEs such as Eclipse and IntelliJ. These tools are not as powerful as the Checker Framework (some are bug finders rather than verification tools, and some perform a shallower analysis), but they may be easier to use. Programmers who use these tools wonder, "Is it worth my time to switch to using the Checker Framework?"
+
+      The goal of this project is to perform a head-to-head comparison of as many different tools as possible. You will quantify:
+
+      the number of annotations that need to be written
+      the number of bugs detected
+      the number of bugs missed
+      the number of false positive warnings
+      This project will help programmers to choose among the different tools — it will show when a programmer should or should not use the Checker Framework. This project will also indicate how each tool should be improved.
+
+      One place to start would be with an old version of a program that is known to contain bugs. Or, start with the latest version of the program and re-introduce fixed bugs. (Either of these is more realistic than introducing artificial bugs into the program.) A possibility would be to use the Lookup program that has been used in previous case studies.
+
+      Android support annotations
+      Android uses its own annotations that are similar to some in the Checker Framework. Examples include the Android Studio support annotations, including @NonNull, @IntRange, @IntDef, and others.
+
+      The goal of this project is to implement support for these annotations. That is probably as simple as creating aliased annotations by calling method addAliasedTypeAnnotation() in AnnotatedTypeFactory.
+
+      Then, do a case study to show the utility (or not) of pluggable type-checking, by comparison with how Android Studio currently checks the annotations.
+      
+      ~~~~~~~~~~
+
+      Annotate a library
+      These projects annotate a library, so that it is easier to type-check clients of the library. Another benefit is that this may find bugs in the library. It can also give evidence for the usefulness of pluggable type-checking, or point out ways to improve the Checker Framework.
+      When type-checking a method call, the Checker Framework uses the method declaration's annotations. This means that in order to type-check code that uses a library, the Checker Framework needs an annotated version of the library.
+      The Checker Framework comes with a few annotated libraries. Increasing this number will make the Checker Framework even more useful, and easier to use.
+      After you have chosen a library, fork the library's source code, adjust its build system to run the Checker Framework, and add annotations to it until the type-checker issues no warnings.
+      Before you get started, be sure to read How to get started annotating legacy code. More generally, read the relevant sections of the Checker Framework manual.
+      Choosing a library to annotate
+      There are several ways to choose a library to annotate:
+      The best way to choose a library is to try to annotate a program and notice that library annotations are needed in order to type-check the program.
+      Alternately, you can choose a popular Java library.
+      When annotating a library, it is important to type-check both the library and at least one client that uses it. Type-checking the client will ensure that the library annotations are accurate.
+      Whatever library you choose, you will need to deeply understand its source code. You will find it easier to work with a library that is well-designed and well-documented.
+      You should choose a library that is not already annotated. There are two exceptions to this.
+      A library might be annotated for one type system, but you add annotations for a different type system. One advantage of this is that the library's build system is already set up to run the Checker Framework. You can tell which type systems a library is annotated for by examining its source code.
+      A library might be annotated, but the annotations have not been verified by running the type-checker on the library source code. You would verify that the annotations in the library are correct.
+      Guava library
+      Guava is already partially annotated with nullness annotations — in part by Guava's developers, and in part by the Checker Framework team. However, Guava does not yet type-check without errors. Doing so could find more errors (the Checker Framework has found nullness and indexing errors in Guava in the past) and would be a good case study to learn the limitations of the Nullness Checker.
+      
+      ~~~~~~~~~~
+      Create a new type system
+      The Checker Framework is shipped with about 20 type-checkers. Users can create a new checker of their own. However, some users don't want to go to that trouble. They would like to have more type-checkers packaged with the Checker Framework for easy use.
+      Each of these projects requires you to design a new type system, implement it, and perform case studies to demonstrate that it is both usable and effective in finding/preventing bugs.
+      Ownership type system
+      The lightweight ownership mechanism of the Resource Leak Checker is not implemented as a type system, but it should be. That would enable writing ownership annotations on generic type arguments, like List<@Owning Socket>. It would also enable changing the Resource Leak Checker so that non-@Owning formal parameters do not have their @MustCall annotation erased.
+      We have some notes on possible implementation strategies.
+      Non-Empty Checker for precise handling of Queue.peek() and poll()
+      The Nullness Checker issues a false positive warning for this code:
+      import java.util.PriorityQueue;
+      import org.checkerframework.checker.nullness.qual.NonNull;
+      
+      public class MyClass {
+          public static void usePriorityQueue(PriorityQueue<@NonNull Object> active) {
+              while (!(active.isEmpty())) {
+                  @NonNull Object queueMinPathNode = active.peek();
+              }
+          }
+      }
+      The Checker Framework does not determine that active.peek() returns a non-null value in this context.
+      The contract of peek() is that it returns a non-null value if the queue is not empty and the queue contains no null values.
+      To handle this code precisely, the Nullness Checker needs to know, for each queue, whether it is empty. This is analogous to how the Nullness Checker tracks whether a particular value is a key in a map.
+      It should be handled the same way: by adding a new subchecker, called the Nonempty Checker, to the Nullness Checker. Its types are:
+      @UnknownNonEmpty — the queue might or might not be empty
+      @NonEmpty — the queue is definitely non-empty
+      There is a start at this type-checker in branch nonempty-checker. It:
+      defines the annotations
+      creates the integration into the Nullness Checker
+      However, it is not done. (In fact, it doesn't even compile.) For information about what needs to be done, see issue #399.
+      When you are done, the Nullness Checker should issue only the // :: diagnostics from checker/tests/nullness/IsEmptyPoll.java — no more and no fewer. You can test that by running the Nullness Checker on the file, and when you are done you should delete the // @skip-test line so that the file is run as part of the Checker Framework test suite.
+      Iteration Checker to prevent NoSuchElementException
+      A Java program that uses an Iterator can throw NoSuchElementException if the program calls next() on the Iterator but the Iterator has no more elements to iterate over. Such exceptions even occur in production code (for example, in Eclipse's rdf4j).
+      We would like a compile-time guarantee that this run-time error will never happen. Our analysis will statically determine whether the hasNext() method would return true. The basic type system has two type qualifiers: @HasNext is a subtype of @UnknownHasNext.
+      A variable's type is @HasNext if the program calls hasNext() and it returns true. Implementing this is easy (see the dataflow section in the "How to create a new checker" chapter). The analysis can also permit some calls to next() even if the programmer has not called hasNext(). For example, a call to next() is permitted on a newly-constructed iterator that is made from a non-empty collection. (This special case could build upon the Non-Empty Checker mentioned above.) There are probably other special cases, which experimentation will reveal.
+      Parts of this are already implemented, but it needs to be enhanced. Once case studies have demonstrated its effectiveness, then it can be released to the world, and a scientific paper can be written.
+      Preventing injection vulnerabilities via specialized taint analysis
+      Many security vulnerabilities result from use of untrusted data without sanitizing it first. Examples include SQL injection, cross-site scripting, command injection, and many more. Other vulnerabilities result from leaking private data, such as credit card numbers.
+      We have built a generalized taint analysis that can address any of these problems. However, because it is so general, it is not very useful. A user must customize it for each particular problem.
+      The goal of this project is to make those customizations, and to evaluate their usefulness. A specific research question is: "To what extent is a general taint analysis useful in eliminating a wide variety of security vulnerabilities? How much customization, if any, is needed?"
+      The generalized taint analysis is the Checker Framework's a Tainting Checker. It requires customization to a particular domain:
+      rename the @Tainted and @Untainted qualifiers to something more specific (such as @Private or @PaymentDetails or @HtmlQuoted), and
+      annotate libraries.
+      The first part of this project is to make this customization easier to do — preferably, a user will not have to change any code in the Checker Framework (the Subtyping Checker already works this way). As part of making customization easier, a user should be able to specify multiple levels of taint — many information classification hierarchies have more than two levels. For example, the US government separates information into four categories: Unclassified, Confidential, Secret, and Top Secret.
+      The second part of this project is to provide several examples, and do case studies showing the utility of compile-time taint checking.
+      Possible examples include:
+      SQL injection
+      OS command injection
+      the @PrivacySource and @PrivacySink annotations used by the Meta Infer static analyzer.
+      information flow
+      many of the CWE/SANS most dangerous software programming errors (and the "on the cusp" ones too)
+      For some microbenchmarks, see the Juliette test suite for Java from CWE.
+      Warn about unsupported operations
+      In Java, some objects do not fully implement their interface; they throw UnsupportedOperationException for some operations. One example is unmodifiable collections. They throw the exception when a mutating operation is called, such as add, addAll, put, remove, etc.
+      The goal of this project is to design a compile-time verification tool to track which operations might not be supported. This tool will issue a warning whenever an UnsupportedOperationException might occur at run time. This helps programmers to avoid run-time exceptions (crashes) in their Java programs.
+      The research questions include:
+      Is it is possible to build a verification tool to prevent UnsupportedOperationException? What design is effective?
+      How difficult is such a tool to use, in terms of programmer effort and number of false alarms?
+      Are potential UnsupportedOperationException exceptions pervasive in Java programs? Is it possible to eliminate them?
+      The methodology is:
+      design a static (compile-time) analysis
+      implement it
+      evaluate it on open-source projects
+      report bugs in the projects, and improve the tool
+      Here is a possible design, as a pluggable type system.
+        @Unmodifiable
+             |
+        @Modifiable
+      In other words, the @Unmodifiable type qualifier is a supertype of @Modifiable. This means that a @Modifiable List can be used where an @Unmodifiable List is expected, but not vice versa.
+      @Modifable is the default, and methods such as Arrays.asList and Collections.emptyList must be annotated to return the less-capable supertype.
+      Overflow checking
+      Overflow is when 32-bit arithmetic differs from ideal arithmetic. For example, in Java the int computation 2,147,483,647 + 1 yields a negative number, -2,147,483,648. The goal of this project is to detect and prevent problems such as these.
+      One way to write this is as an extension of the Constant Value Checker, which already keeps track of integer ranges. It even already checks for overflow, but it never issues a warning when it discovers possible overflow. Your variant would do so.
+      This problem is so challenging that there has been almost no previous research on static approaches to the problem. (Two relevant papers are IntScope: Automatically Detecting Integer Overflow Vulnerability in x86 Binary Using Symbolic Execution and Integer Overflow Vulnerabilities Detection in Software Binary Code.) Researchers are concerned that users will have to write a lot of annotations indicating the possible ranges of variables, and that even so there will be a lot of false positive warnings due to approximations in the conservative analysis. For example, will every loop that contains i++ cause a warning that i might overflow? That would not be acceptable: users would just disable the check.
+      You can convince yourself of the difficulty by manually analyzing programs to see how clever the analysis has to be, or manually simulating your proposed analysis on a selection of real-world code to learn its weaknesses. You might also try it on good and bad binary search code.
+      One way to make the problem tractable is to limit its scope: instead of being concerned with all possible arithmetic overflow, focus on a specific use case. As one concrete application, the Index Checker is currently unsound in the presence of integer overflow. If an integer i is known to be @Positive, and 1 is added to it, then the Index Checker believes that its type remains @Positive. If i was already Integer.MAX_VALUE, then the result is negative — that is, the Index Checker's approximation to it is unsound.
+      This project involves removing this unsoundness by implementing a type system to track when an integer value might overflow — but this only matters for values that are used as an array index. That is, checking can be restricted to computations that involve an operand of type @IntRange). Implementing such an analysis would permit the Index Checker to extend its guarantees even to programs that might overflow.
+      This analysis is important for some indexing bugs in practice. Using the Index Checker, we found 5 bugs in Google Guava related to overflow. Google marked these as high priority and fixed them immediately. In practice, there would be a run-time exception only for an array of size approximately Integer.MAX_INT.
+      You could write an extension of the Constant Value Checker, which already keeps track of integer ranges and even determines when overflow is possible. It doesn't issue a warning, but your checker could record whether overflow was possible (this could be a two-element type system) and then issue a warning, if the value is used as an array index. Other implementation strategies may be possible.
+      Here are some ideas for how to avoid the specific problem of issuing a warning about potential overflow for every i++ in a loop (but maybe other approaches are possible):
+      The loop checks whether i == Integer.MAX_VALUE before incrementing. This wide-scale, disruptive code change is not acceptable.
+      Make the default array size (the length of an unannotated array) be @ArrayLenRange(0, Integer.MAX_VALUE-1) rather than @UnknownVal, which is equivalent to @ArrayLenRange(0, Integer.MAX_VALUE-1). Now, every array construction requires the client to establish that the length is not Integer.MAX_VALUE. I don't have a feel for whether this would be unduly burdensome to users.
+      Index checking for mutable length data structures
+      The Index Checker is currently restricted to fixed-size data structures. A fixed-size data structure is one whose length cannot be changed once it is created, such as arrays and Strings. This limitation prevents the Index Checker from verifying indexing operations on mutable-size data structures, like Lists, that have add or remove methods. Since these kind of collections are common in practice, this is a severe limitation for the Index Checker.
+      The limitation is caused by the Index Checker's use of types that are dependent on the length of data structures, like @LTLengthOf("data_structure"). If data_structure's length could change, then the correctness of this type might change.
+      A naive solution would be to invalidate these types any time a method is called on data_structure. Unfortunately, aliasing makes this still unsound. Even more, a great solution to this problem would keep the information in the type when a method like add or remove is called on data_structure. A more complete solution might involve some special annotations on List that permit the information to be persisted.
+      Another approach would be to run a pointer analysis before type-checking, then use that information for precise information about what lists might be changed by each call to add or remove. One possible pointer analysis would be that of Doop.
+      This project would involve designing and implementing a solution to this problem.
+      Nullness bug detector
+      Verifying a program to be free of errors can be a daunting task. When starting out, a user may be more interested in bug-finding than verification. The goal of this project is to create a nullness bug detector that uses the powerful analysis of the Checker Framework and its Nullness Checker, but omits some of its more confusing or expensive features. The goal is to create a fast, easy-to-use bug detector. It would enable users to start small and advance to full verification in the future, rather than having to start out doing full verification.
+      This could be structured as a new NullnessLight Checker, or as a command-line argument to the current Nullness Checker. Here are some differences from the real Nullness checker:
+      No initialization analysis; the checker assumes that every value is initialized.
+      No map key analysis; assume that, at every call to Map.get, the given key appears in the map.
+      No invalidation of dataflow facts. Assume all method calls are pure, so method calls do not invalidate dataflow facts. Assume there is no aliasing, so field updates do not invalidate dataflow facts.
+      Assume that boxing of primitives is @Pure: it returns the same value on every call.
+      If the Checker Framework cannot infer a type argument, assume that the type argument is @NonNull.
+      Each of these behaviors should be controlled by its own command-line argument, as well as being enabled in the NullnessLight Checker.
+      The implementation may be relatively straightforward, since in most cases the behavior is just to disable some functionality of existing checkers.
+      Tools such as FindBugs, NullAway, NullnessLight, and the Nullness Checker form a spectrum from easy-to-use bug detectors to sound verification. NullnessLight represents a new point in the design space. It will be interesting to compare these checkers:
+      How much easier is it to use? For example, how many fewer annotations need to be written?
+      How many more fewer true positives does it report — in other words, how many more false negatives does it suffer?
+      How many fewer false positives does it report?
+      Uber's NullAway tool is also an implementation of this idea (that is, a fast, but incomplete and unsound, nullness checker). NullAway doesn't let the user specify Java Generics: it assumes that every type parameter is @NonNull. Does Uber's tool provide users a good introduction to the ideas that a user can use to transition to a nullness type system later?
+      
+      ~~~~~~~~~~
+      Enhance the toolset
+      Indicate library methods that should be used instead
+      Sometimes, the best way to avoid a checker warning is to use an annotated library method. Consider this code:
+      @FqBinaryName String fqBinaryName = ...;
+      @ClassGetName String componentType = fqBinaryName.substring(0, fqBinaryName.indexOf('['));
+      The Signature String Checker issues a warning, because it does not reason about arbitrary string manipulations. The code is correct, but it is in bad style. It is confusing to perform string manipulations to convert between different string representations. It is clearer and less error-prone (the above code is buggy when fqBinaryName is not an array type!) to use a library method, and the checker accepts this code because the library method is appropriately annotated:
+      import org.plumelib.reflection.Signatures;
+      ...
+      @ClassGetName String componentType = Signatures.getArrayElementType(fqBinaryName);
+      However, users may not know about the library method. Therefore, the Checker Framework should issue a warning message, along with the error message, notifying users of the library method. For example, the Signature String Checker would heuristically mention the Signatures.getArrayElementType() method when it issues an error about string manipulation where some input is a FqBinaryName and the output is annotated as ClassGetName. It would behave similarly for other library methods.
+      Improving error messages
+      Compiler writers have come to realize that clarity of error messages is as important as the speed of the executable (1, 2, 3, 4). This is especially true when the language or type system has rich features.
+      The goal of this project is to improve a compiler's error messages. Here are some distinct challenges:
+      Some type errors can be more concisely or clearly expressed than the standard "found type A, expected type B" message.
+      Some types are complex. The error message could explain them, or link to the manual, or give suggested fixes.
+      Compiler messages currently show the effective type, which may be different than what the user wrote due to defaulting, inference, and syntactic sugar. For example, a user-written @IndexFor("a") annotation is syntactic sugar for @NonNegative @LTLengthOf("a"), and those types are the ones that currently appear in error messages. It might be good to show simpler types or ones that the user wrote.
+      Some checkers combine multiple cooperating type systems; the Nullness Checker and the Index Checker are examples. If there is a problem with a variable's lower bound type, then its upper bound type should not be shown in the error message. This will make the message shorter and more specific, and avoid distracting the user with irrelevant information.
+      When a checker has multiple type systems, a type error or the lack of one may depend on facts from multiple type systems, and this should be expressed to the user.
+      Replace JavaParser by javac
+      The Checker Framework uses JavaParser to parse a Java expressions. However, JavaParser is buggy and poorly maintained. The goal of this project is to replace every use of JavaParser by a use of javac-parse.
+      Java expression parser
+      A number of type annotations take, as an argument, a Java expression. The representation for these is as a JavaExpression. The goal of this project is to remove it.
+      The JavaExpression class represents an AST. There is no need for the Checker Framework to define its own AST when the javac AST already exists and is maintained.
+      The goals for the project include:
+      Replace every use of JavaExpression by a use of the javac class class com.sun.tools.javac.tree.JCTree.JCExpression.html.
+      Replace every use of a subclass of JavaExpression (listed in the "Direct Known Subclasses" section of the JavaExpression API documentation) by a use of a subclass of JCTree.JCExpression.html. For example, replace every use of MethodCall by JCTree.JCMethodInvocation.
+      Replace the JavaExpressionParseUtil class and delete ExpressionToReceiverVisitor.
+      Direct replacement of the classes is not possible, or we would have done it already. For example, JavaExpression contains some methods that javac lacks, such as isUnassignableByOtherCode. As a first step before doing the tasks listed above, you may want to convert these methods from instance methods of JavaExpression into static methods in JavaExpressions, making JavaExpression more like a standard AST that can be replaced by JavaParser classes. You also need to decide how to store the type field of JavaExpression, when JavaExpression is eliminated. An alternate design (or a partial step in the refactoring process) would be to retain the JavaExpression class, but make it a thin wrapper around javac classes that do most of the real work.
+      Another aspect of this project is fixing the issues that are labeled "JavaExpression".
+      Dataflow enhancements
+      The Checker Framework's dataflow framework (manual here) implements flow-sensitive type refinement (local type inference) and other features. It is used in the Checker Framework and also in Error Prone, NullAway, and elsewhere.
+      There are a number of open issues — both bugs and feature requests — related to the dataflow framework. The goal of this project is to address as many of those issues as possible, which will directly improve all the tools that use it.
+      Side effect analysis, also known as purity analysis
+      A side effect analysis reports what side effects a procedure may perform, such as what variable values it may modify. A side effect analysis is essential to other program analyses. A program analysis technique makes estimates about the current values of expressions. When a method call occurs, the analysis has to throw away most of its estimates, because the method call might change any variable. However, if the method is known to have no side effects, then the analysis doesn't need to throw away its estimates, and the analysis is more precise. Thus, an improvement to the foundational side effect analysis can improve many other program analyses.
+      The goal of this project is to evaluate existing side effect analysis algorithms and implementations, in order to determine what is most effective and to improve them. The research questions include:
+      What side effect analysis algorithms are most effective? What are their limitations?
+      Can the most effective algorithms be combined to become even effective? Or can their limitations be overcome?
+      How much does accurate side effect analysis improve other programming tasks?
+      The methodology is to collect existing side effect analysis tools (two examples are Soot and Geffken); run them on open-source projects; examine the result; and then improve them.
+      Javadoc support
+      Currently, type annotations are only displayed in Javadoc if they are explicitly written by the programmer. However, the Checker Framework provides flexible defaulting mechanisms, reducing the annotation overhead. This project will integrate the Checker Framework defaulting phase with Javadoc, showing the signatures after applying defaulting rules.
+      There are other type-annotation-related improvements to Javadoc that can be explored, e.g. using JavaScript to show or hide only the type annotations currently of interest.
+      
+      
 
           
     totalCharacters_of_ideas_content_parent: 
@@ -6454,7 +7018,185 @@ organizations:
   - organization_id: 24
     organization_name: Chromium
     no_of_ideas:
-    ideas_content: >-
+    ideas_content: |
+      1. Interaction to Next Paint (INP) "subparts" (Medium Size)
+
+
+
+
+      Project Description
+      The web performance specifications define how browsers are supposed to be behaving when it comes to the various web performance APIs, and the Core Web Vitals (CWV) program uses those apis to automatically measure the performance and UX of most websites in the world, and shares the data publicly via the Chrome User Experience Report (CrUX). Last year a new metric, Interaction to Next Paint (INP), was added to the CWV. This year, we would like your help to give developers additional insights into INP latency issues by also reporting INP "subparts", similar to what we did for LCP last year.  For example: a developer should know if any INP responsiveness issues are caused by: long input delay (maybe the page as blocked and busy)
+      event processing times (maybe the interaction event listeners were too complex) rendering/pixel presentation delays (maybe the page content is too complex/bloated) …or other task scheduling issues. We’ve recently instrumented the measurement code (i.e. the Event Timing API) to measure these time points, but we need your help to finish the job: moving the data from Renderer code to Browser code (using Mojo IPC), adding it to field metrics reporting (UKM), and eventually helping teammates integrate into CrUX experimental data – while also writing tests for the above. This is an open source project and some of the contributions will be useful to developers for local lab testing, as well (as for other downstream browsers). Finally, there are also several stretch technical opportunities related to the Event Timing API / INP metric.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions not answered above: here (preferred), or chromium-gsoc-project1@chromium.org
+      Beginner Bugs: https://issues.chromium.org/issues/40858679 
+      Requirements: C++, JavaScript, Performance tooling (DevTools performance panel). Time zone flexible but hosts are in Eastern time zone.
+
+      ~~~~~~~~~~
+
+
+      2. Android Virtual Printer Application (Large Size)
+
+
+      Project Description
+      An Android application which can pretend to be a printer (act as a virtual printer), which can handle interactions between Android devices, software and printer itself. Once this virtual printer Android application is installed, the Android device can detect a new printer, set up the printer via network connection, users can use it to print and change settings based on its capability, and the virtual printer can respond to print jobs. This virtual printer application should allow configuration on printer capabilities, and print job response, in this way it can be used to test different functionalities and validate handling errors.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project2@chromium.org
+      Requirements: Android application development, Kotlin, Rust, Java, C++, C
+
+      ~~~~~~~~~~
+
+      3. Chrome Extension APIs (Large Size)
+
+      Project Description
+      We have a number of new APIs and features that we would like to add to the Chrome extensions platform but don't currently have prioritized (for example, improvements to the declarative network request API used for network filtering, and new features in the `chrome.sidePanel` API). Many of these involve work in the W3C WebExtensions Community Group. We would like to offer a contributor the opportunity to own a work item from this list.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here  (preferred), chromium-gsoc-project3@chromium.org
+      Beginner Bugs: 
+      Requirements: C++ for the Chromium codebase.  JavaScript needed for writing extensions.
+
+
+      ~~~~~~~~~~
+
+
+      4. Structured DNS Errors (Small Size)
+
+      Project Description
+      Chrome should implement enough of the emerging Public DNS Errors standards to allow public DNS servers to indicate to clients when certain DNS resolutions are blocked for legal reasons.
+      https://github.com/mnot/public-resolver-errors
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project4@chromium.org
+      Beginner Bugs: https://issues.chromium.org/hotlists/6689006
+      Requirements: C++, Chromium Net Stack. Must overlap with US East Coast timezone.
+
+      ~~~~~~~~~~
+
+
+      5. FedCM API Test Coverage and Flakiness (Medium Size)
+
+      Project Description
+      The FedCM API comprises of multiple tests which require the bot to go through a federated authentication process. The project consists of documenting the existing test coverage, improving it, and fixing test flakiness.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project5@chromium.org
+      Beginner Bugs: https://issues.chromium.org/issues/41482163
+      Requirements: C++, as well as a little bit of HTML, JS, Python. US East is preferred but not required
+
+
+      ~~~~~~~~~~
+
+
+      6. Add 3rd Party Theme Support for Tab Groups (Small Size)
+
+      Project Description
+      Add an API to allow 3rd party theme developers to customize the colors used for tab groups.
+
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project6@chromium.org
+      Beginner Bugs: https://issues.chromium.org/issues/40711397, https://issues.chromium.org/issues/370416945 https://issues.chromium.org/issues/40929354
+      Requirements: C++ prior experience is requested, ability to work in PST is requested.
+
+      ~~~~~~~~~~
+
+      7. ChromeOS Platform Input Device Quality Monitoring (Medium Size)
+
+      Project Description
+      ChromeOS devices generally contain user-input devices (touchscreens, touchpads, etc.) that contain firmware and communicate over internal buses. This firmware can have bugs, sometimes needs to be updated in the field, and the communication buses can show errors.
+
+      Improved testing during development, and logging for production devices, can reduce shipped issues and reduction of in-field failures, and improved analysis leading to better OEM response to such issues.
+
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project7@chromium.org
+      Beginner Bugs: https://issuetracker.google.com/397520373, https://issuetracker.google.com/397521060, https://issuetracker.google.com/397520674
+      Requirements: ChromeOS development tech stack (C++, shell scripts), experience or patience to learn ChromeOS build system and loading custom software onto a ChromeBook, moderate overlap with US-Pacific timezone.
+
+
+      ~~~~~~~~~~
+
+
+      8. Farfetchd: tracing/replay (Medium Size)
+
+      Project Description
+      Preloading files into memory (or prefetch) is a useful mechanism for improving application “cold start” performance. On ChromiumOS, this technique is used via ureadahead to speed up boot times by up to 20%. Farfetchd is a general purpose D-Bus service that allows prefetch of application binaries and associated resources and allows the optimization of cold start times.
+      This proposal aims to add support to farfetchd for:
+      1) Tracing: via tracefs, tracing file pages that are fetched for an application during a given workload and standardized tracepoints.
+      2) Replay: Using the collected trace, preload the specific pages from disk and measure improvements in application performance.
+
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project8@chromium.org
+      Beginner Bugs: https://issuetracker.google.com/issues/397539111, https://issuetracker.google.com/issues/397539767
+      Requirements: C++, linux kernel, tracing, no TZ requirements
+
+      ~~~~~~~~~~
+
+
+      9. Develop fwupd plugin to handle touch firmware updates (Large Size)
+
+      Project Description
+      A number of components like storage devices use fwupd to handle firmware updates in ChromeOS. The platform inputs team would like to start using fwupd to manage and handle firmware updates for touch controllers. This project aims to build out a handful of fwupd plugins for touch controllers.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project9@chromium.org
+      Beginner Bugs: https://issuetracker.google.com/issues/172340186, https://issuetracker.google.com/issues/397567795
+      Requirements: C, C++
+
+      ~~~~~~~~~~
+
+
+      10. Debug WebUI For Tabstrip states (Medium Size)
+
+      Project Description
+      Tabstrip state and session states for browsers are complicated and rely on correct ordering of tabs in the tabstrip model, groups and sessions to restore tabs in the right position and selection state. As a result this has resulted in numerous bugs and it is often a pain point to figure out if it is a tabstrip model issue or a client issue. A webUI that captures the live state of the backend of the browser and tabstrip models will be really helpful in finding issues and edge cases.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project10@chromium.org
+      Beginner Bugs: WebUI TabStrip Bug, Print Preview + Tab Dragging Bug, Keyboard Shortcut Bug
+      Requirements: Familiarity with HTML, CSS and JS, Proficiency in C++ codebases and concepts, Working from PST 9:00 AM - 5:00 PM hours
+
+      ~~~~~~~~~~
+
+      11. Improve Chromium Web Audio Testing (Medium Size)
+
+      Project Description
+      The audit.js WebAudio test helper library was introduced in 2016 and is currently used by over 300 test files in Chromium’s blink/web_test directory. This library was initially created to run tests sequentially with callback/promise support and to provide utility functions for audio-specific assertions. However, the W3C Test Harness (testharness.js) offers superior support for test runners and assertions, rendering many features in audit.js redundant. Removing audit.js from Chromium would reduce resource consumption in the Chrome team’s Continuous Integration Infrastructure and allow us to leverage the well-supported and well-maintained W3C Test Harness library.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project11@chromium.org
+      Beginner Bugs: crbug.com/396477778
+      Requirements: Proficiency in JavaScript (reading, writing, debugging), Familiarity with HTML and CSS
+
+      ~~~~~~~~~~
+      12. ChromeStatus Search UI Enhancement Project (Medium Size)
+
+      Project Description
+      Enhance the search functionality on chromestatus.com and webstatus.dev with several new auto-complete details.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project12@chromium.org
+      Beginner Bugs: https://github.com/GoogleChrome/chromium-dashboard/issues?q=is%3Aissue%20state%3Aopen%20label%3Agoodfirstbug
+      Requirements: HTML, CSS, TypeScript, Python, Go, Web components, UX / Usability
+
+      ~~~~~~~~~~
+
+
+      13. Enhancing the webstatus.dev User Experience (Medium Size)
+
+
+      Project Description
+      webstatus.dev is a valuable resource for web developers, providing up-to-date information on the browser compatibility of various web technologies. This project aims to enhance the user experience of webstatus.dev by making it more accessible and user-friendly across a wider range of devices and user preferences, with a particular focus on mobile devices and dark mode support. The project will involve redesigning key pages (overview, feature detail, and stats) for optimal mobile viewing, implementing a comprehensive dark theme, and ensuring compatibility with the Lit framework, Google Charts, and Shoelace components.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project13@chromium.org
+      Beginner Bugs: https://github.com/GoogleChrome/chromium-dashboard/issues?q=is%3Aissue%20state%3Aopen%20label%3Agoodfirstbug
+      Requirements: Lit, TypeScript, HTML, CSS Google Charts, Shoelace Web Test Runner (for unit tests) Playwright (for E2E testing), Docker (for local environment provisioning)
+
+      ~~~~~~~~~~
+
+
+      14. WebGPU Texel Buffers (Medium Size)
+
+
+      Project Description
+      WebGPU is a new graphics API, shipped in Chromium in 2023, that brings modern GPU capabilities to the web. The goal of this project is to implement new functionality in Chromium to further advance the capabilities of WebGPU, allowing a broader range of applications to target the API. Specifically, the "texel buffers" feature has already been proposed at the W3C standards committee, and the next steps are to prototype the functionality so that we can get feedback from real users and push the standardization process forwards.
+      Proposal Doc for more information: Link
+      Location to ask project specific questions: here (preferred), chromium-gsoc-project14@chromium.org
+      Beginner Bugs: crbug.com/42250870 and crbug.com/42250968
+      Requirements: C++ proficiency, timezone compatible with North American mentors
+
 
           
     totalCharacters_of_ideas_content_parent: 
@@ -6465,8 +7207,92 @@ organizations:
 
   - organization_id: 25
     organization_name: CircuitVerse.org
-    no_of_ideas:
-    ideas_content: >-
+    no_of_ideas: 7
+    ideas_content: |
+      
+      Project 1: Circuit Management & Performance Enhancement
+      Duration: 175 hours
+      Difficulty: Medium
+      Technologies: Ruby on Rails, JavaScript
+      This project focuses on refining the organizational structure and performance of the CircuitVerse platform. The objective is to enhance user efficiency by introducing a systematic approach to circuit management and optimizing backend operations. Participants will implement a folder-based system for subcircuits, enabling users to categorize their work effectively. Additionally, the project includes developing a feature for circuits with group-specific visibility, ensuring accessibility within designated teams while maintaining privacy. Performance improvements will involve optimizing Ruby on Rails N+1 queries. The scope also extends to creating a comprehensive circuits explore page with search functionality, integrating a leaderboard for weekly contests, and enabling locale switching from the homepage to improve accessibility.
+      Learning Path:
+      Acquire proficiency in Ruby on Rails through The Odin Project’s Full-Stack Ruby on Rails Course, covering foundational and advanced concepts.
+      Enhance Rails expertise with Pragmatic Studio’s Rails Course for structured, practical training.
+      Develop JavaScript skills using JavaScript.info to support frontend enhancements.
+      Possible Mentors: Vaibhav Upreti, Smriti Garg
+
+      ~~~~~~~~~~
+      Project 2: Desktop Application & Vue Frontend Updates
+      Duration: 175 hours
+      Difficulty: Medium
+      Technologies: VueJS, Ruby on Rails, TypeScript, JavaScript
+      This project aims to extend CircuitVerse’s reach by improving our lightweight desktop application using Tauri, ensuring efficient performance across operating systems, and establishing an automated release pipeline for streamlined deployment. Participants will refactor web-based components into reusable, platform-agnostic units suitable for both web and desktop environments, optimizing resource usage for desktop contexts. A reliable update mechanism will be implemented to deliver future improvements seamlessly. The project also entails modernizing the frontend by converting the JavaScript codebase to TypeScript, replacing jQuery with Vue’s reactivity system, and addressing issues in the Verilog module and layout rendering. Enhancements to the TestBench will improve usability and output compatibility, supported by thorough testing with Vitest. Synchronization with the main CircuitVerse repository will ensure consistency across platforms.
+      Learning Path:
+      Gain expertise in VueJS via the Vue.js Official Guide for reactive frontend development.
+      Study TypeScript fundamentals at TypeScript Documentation to facilitate codebase migration.
+      Learn Tauri application development through its Official Docs.
+      Prepare for testing with Vitest Documentation covering unit, integration, and end-to-end tests.
+      Possible Mentors: Vedant Jain, Aryann Dwivedi, Niladri Adhikary
+
+      ~~~~~~~~~~
+      Project 3: Migrate to View Components & Improve Search Experience
+      Duration: 175 hours
+      Difficulty: Easy
+      Technologies: HTML, CSS, JavaScript, Figma, Ruby on Rails
+      This project focuses on modernizing CircuitVerse’s technical foundation and enhancing the user experience. Participants will migrate UI elements to ViewComponents for better maintainability and scalability. Responsive design principles will be applied to ensure compatibility across devices. Candidates will also utilize Figma to design and implement UI improvements while refactoring CSS to reduce redundancy and effectively use grid and flexbox with Bootstrap utility classes.
+      Additionally, the project includes an initiative to improve the search experience within CircuitVerse. This will involve analyzing existing search functionality, optimizing query performance, and enhancing the UI/UX to make search results more intuitive and accessible.
+      Learning Path:
+      Build foundational skills in HTML, CSS, and JavaScript with FreeCodeCamp’s Responsive Web Design.
+      Learn UI/UX design with Figma through Figma’s Official Tutorials.
+      Study Rails ViewComponents at ViewComponent Docs and Hotwire via Hotwire Docs.
+      Possible Mentors: Aman Asrani, Siddhant-K-code
+
+      ~~~~~~~~~~
+      Project 4: Assignment Suite Enhancement
+      Duration: 175 hours
+      Difficulty: Easy
+      Technologies: Ruby on Rails, JavaScript
+      This project seeks to advance CircuitVerse’s educational tools by enhancing classroom and assignment management capabilities. The scope includes developing a multi-level classroom structure, allowing students to form subgroups for collaborative projects, and creating a flexible assignment management system for both individual and group submissions. Participants will introduce features such as pre-built circuit submissions with integrated test cases, incorporate auto-verification from practice sessions, and refine the assignment submission process for efficiency. Integration with Canvas LMS will be improved to strengthen CircuitVerse’s utility in academic settings, supporting educators and students with robust, user-friendly tools.
+      Learning Path:
+      Develop Rails proficiency with The Odin Project’s Ruby on Rails Course.
+      Enhance JavaScript knowledge at MDN Web Docs for dynamic functionality.
+      Review Canvas LMS integration through its Developer Docs.
+      Learning tools interoperability (LTI)[https://en.wikipedia.org/wiki/Learning_Tools_Interoperability]
+      Possible Mentors: Aman Asrani, Siddharth Asthana, Yashika Jotwani
+
+      ~~~~~~~~~~
+      Project 5: Enhanced Verilog Support & Stability
+      Duration: 175 hours
+      Difficulty: Hard
+      Technologies: JavaScript, Canvas
+      This project targets the enhancement of CircuitVerse’s Verilog module and overall simulator stability. The goal is to refine the Verilog interface, making it more intuitive and enabling users to generate, view, edit, and test circuits comprehensively. Detailed documentation will accompany these improvements to assist users. Additional enhancements include adding play/pause functionality to simulations, implementing a full-screen view for the Boolean Logic Table This project requires a strong focus on technical precision to strengthen a critical component of the platform.
+      Learning Path:
+      Master JavaScript for simulation logic with Eloquent JavaScript.
+      Learn Canvas rendering techniques at MDN Canvas Tutorial.
+      Possible Mentors: Vedant Jain, Niladri Adhikary, Josh Varga
+
+      ~~~~~~~~~~
+      Project 6: Open Hardware Component Library
+      Duration: 90 hours
+      Difficulty: Hard
+      Technologies: JavaScript, Ruby on Rails
+      This project aims to expand CircuitVerse’s digital component library and introduce hardware integration capabilities. Participants will enrich the platform by adding components such as shift registers, sensors, and counters, broadening its appeal to hardware-focused users. The initiative also involves enabling serial device connectivity to facilitate interaction with physical hardware. Though shorter in duration, this project demands a high level of technical skill and innovation to advance CircuitVerse’s utility in hardware education.
+      Learning Path:
+      Strengthen Rails knowledge with Rails Guides.
+      Study hardware integration concepts via Arduino Tutorials.
+      Deepen JavaScript proficiency at You Don’t Know JS.
+      Possible Mentors: Smriti Garg
+      ~~~~~~~~~~
+      Project 7: Flutter Upgrade
+      Duration: 90 hours
+      Difficulty: Easy
+      Technologies: Dart, JavaScript
+      This project focuses on updating the CircuitVerse mobile application to ensure compatibility with the latest Flutter framework. Participants will upgrade the app to the current Flutter version, optimizing its performance, and implement circuit embedding functionality to enhance mobile usability. This concise project offers an opportunity to contribute to the platform’s mobile presence with a focus on modern development practices.
+      Learning Path:
+      Learn Flutter development at Flutter Official Docs.
+      Study Dart essentials with the Dart Language Tour.
+      Review JavaScript fundamentals at MDN JavaScript Guide.
+      
 
           
     totalCharacters_of_ideas_content_parent: 
@@ -6478,8 +7304,37 @@ organizations:
 
   - organization_id: 26
     organization_name: CloudCV
-    no_of_ideas:
-    ideas_content: >-
+    no_of_ideas: 3
+    ideas_content: |
+     
+      
+      Enhanced Test Suite and Improved User Experience
+      SQL Django AngularJS AWS
+      This project is focused on significantly improving EvalAI’s usability by enhancing exsiting comprehensive test suite alongside a series of user experience enhancements. By increasing our test coverage, automating critical workflows, and refining the platform’s interface and documentation, this initiative aims to create a more robust, user-friendly, and resilient environment for both challenge hosts and participants.
+      The enhanced test suite will ensure that all core functionalities, from challenge creation to submission processing are verified, reducing bugs and increasing system reliability. In parallel, targeted user experience improvements will simplify navigation, enhance error reporting, and streamline user interactions, leading to a more intuitive and supportive EvalAI ecosystem.
+      Project Size: Medium (175 hours)
+      Difficulty Rating: Medium
+      Participate in the issue corresponding to this project to get started
+      Enhanced Test Suite and Improved User Experience together with gautamjajoo Yes, let's do it
+
+      ~~~~~~~~~~
+      Mitigating Biases & Prompt Effects in Vision-Language Models
+      Python PyTorch/TensorFlow NLP Vision-Language Models LLMs Bias and Fairness in AI
+      This research project aims to investigate how prompt engineering influences the behaviour and outputs of Vision-Language Models (VLLMs), with a particular focus on the emergence and amplification of biases. By systematically studying the relationship between prompt formulations and model responses, the project seeks to uncover the mechanisms through which biases are introduced and propose effective mitigation strategies.
+      Project Size: Medium (175 hours)
+      Difficulty Rating: Medium to Advanced
+      Sorry but currently we don't have any mentoring project ...
+
+      ~~~~~~~~~~
+      RAG-Based Chat Bot for Enhanced Challenge Support
+      Python Natural Language Processing (NLP) Machine Learning Retrieval Augmented Generation (RAG) Django SQL
+      This project aims to enhance the user experience for both challenge hosts and participants by developing an intelligent, RAG (Retrieval Augmented Generation) based chatbot. The chatbot will efficiently address queries related to challenge hosting, guidelines, troubleshooting, and FAQs. By integrating state-of-the-art NLP techniques with robust retrieval mechanisms, the solution will ensure prompt, accurate, and context-aware responses that reduce support overhead and streamline communication.
+      Using the RAG approach, the chatbot will retrieve relevant information from challenge documentation and combine it with generative models to create coherent and helpful answers. This will empower hosts to manage challenges more effectively and assist participants in resolving queries, ultimately contributing to a smoother and more interactive challenge experience.
+      Project Size: Medium (175 hours)
+      Difficulty Rating: Medium
+      Participate in the issue corresponding to this project to get started
+      RAG-Based Chat Bot for Enhanced Challenge Support together with gautamjajoo Yes, let's do it
+      
 
           
     totalCharacters_of_ideas_content_parent: 
@@ -6491,15 +7346,177 @@ organizations:
 
   - organization_id: 27
     organization_name: D Language Foundation
-    no_of_ideas:
-    ideas_content: >-
+    no_of_ideas: 4
+    ideas_content: |
+      Translate DRuntime Hooks to Templates
+      Mentor: Teodor Duțu
+
+      Spec	Details
+      Difficulty Level	hard
+      Project Duration	350 hours
+      Number of Contributors	2
+      Prerequisites	Familiarity with compilers, build systems; low-level programming
+      Description
+      High-level language constructs are often compiled into lower-level function calls that implement the same functionality. This process is called lowering It simplifies compiler design by offloading complex code into simpler function calls. These functions are implemented in D’s runtime library (called DRuntime) and are commonly called runtime hooks.
+
+      Below is an example of such a runtime hook:
+
+      struct S { ... }
+
+      S[3] a, b;
+
+      // Original code
+      b = a;  // b is a copy of a 
+
+      // Resulting DRuntime hook
+      _d_arrayassign_l(b, a)  // copies a into b
+
+      _d_arrayassign_l handles array (re)allocation and assignment operators according to the types of a and b (S[3]) to simplify the compiler’s work.
+
+      As shown in the example above, runtime hooks require type information, such as which assignment operator to call and the arrays’ sizes. D supports templates, but runtime hooks pre-date the introduction of templates to D. Therefore, they retrieve the necessary type information at runtime by receiving an extra argument, whose type is TypeInfo. This object contains the size, constructors, destructors and overloaded operators of a given type. However, because this information is processed at run time, this approach is slower than the alternative of having the compiler send it to the runtime hook via template arguments. Due to D’s high flexibility regarding metaprogramming, translating each hook to a template function would allow its code to specialise according to the types of its arguments at compile time.
+
+      In general, these are the steps required to convert a runtime hook to a template:
+
+      Implement a new template version of the hook in DRuntime.
+      Change the lowering in the compiler to use the new hook.
+      Run a benchmark to measure the increase in performance generated by using the new hook.
+      Remove the old hook from DRuntime.
+      The hooks that are yet to be templated can be split into 2 categories:
+
+      rt/aa.d implements associative arrays as language builtins. This module is made up of multiple hooks, all of them using TypeInfo. Therefore, this module is to be reimplemented using templates. Associative arrays are defined as an opaque structure called Impl. It receives a TypeInfo argument in its constructor. This structure is accessed via the runtime hooks listed below. The plan for this direction is the following:
+      Template the hooks below and temporarily extract the TypeInfo structure required by Impl from the template arguments using typeid. Each hook will require changes to DRuntime and the compiler.
+      Template the Impl structure and modify the previously templated hooks to use the template arguments itself instead of TypeInfo.
+      The list of hooks for associative arrays is:
+
+      _aaApply
+      _aaApply2
+      _aaDelX
+      _aaEqual
+      _aaGetRvalueX
+      _aaGetX
+      _aaInX
+      _aaLen
+      _d_assocarrayliteralTX
+
+      Somewhat more independent hooks, which still have interdependencies. They are mostly implemented in rt/lifetime.d. A goal of this project is to remove this file and replace all its code with templated implementations. Each hook can be handled individually and separately. There was previous work on _d_arrayliteralTX so it might be a good starting point. Another promising starting point are _d_arrayset{capacity,lengthT,lengthiT} or _d_arrayappendcTX. The latter three already have wrapper template hooks that call the functions from rt/lifetime.d. What is needed in their case is to fully move the underlying implementation to the template hooks. The full list of hooks is below:
+
+      _d_arraysetcapacity
+      _d_arraysetlengthiT
+      _d_arraysetlengthT
+      _d_arrayshrinkfit
+      _d_arrayappendcTX
+      _d_arrayliteralTX
+      _d_interface_cast
+      _d_isbaseof
+      _d_isbaseof2
+      _adEq2
+
+      Resources
+      Initial project proposal and discussion
+      PRs converting some of the DRuntime hooks to templates
+      Weekly reports regarding the earlier work
+      DConf presentations from 2022 and 2024 on the work on DRuntime hooks
+      Instructions on how to build the reference compiler - DMD
+
+      ~~~~~~~~~~
+
+      Separate Semantic Routines From AST Nodes
+      Mentor: Razvan Nitu
+
+      Spec	Details
+      Difficulty Level	easy-medium
+      Project Duration	175 hours
+      Number of Contributors	1
+      Prerequisites	Familiarity with compiler organization, visitor pattern, object oriented programming
+      Description
+      In the DMD compiler codebase, AST nodes are defined as classes within various files. The ideal structure for these nodes is to have minimal fields and methods focused solely on field queries. However, the current state of the DMD frontend deviates from this ideal. AST nodes are laden with numerous methods that either perform or are dependent on semantic analysis. Furthermore, many AST node files contain free functions related to semantic analysis. Our objective is to decouple AST nodes from these functions.
+
+      How to start working on this project
+      Clone the compile repository - check this guideline.
+      Choose an AST node file: start by selecting a file from this list of AST node definition files.
+      Examine Imports: open your chosen file and scrutinize the top-level imports.
+      Isolate semantic imports: temporarily comment out one of the imports that includes semantic routines, particularly those ending in sem (e.g., dsymbolsem, expressionsem, etc.).
+      Build and identify dependencies: compile DMD and observe any unresolved symbols that emerge.
+      Relocate functions: shift the functions reliant on the unresolved symbols to the semantic file where the import was commented out.
+      Move and test a function: select a function for relocation and ensure it functions correctly in its new location.
+      Submit a Pull Request: Once you’re satisfied with the changes, create a PR that follows the guidelines.
+      Check this PR for an illustration of the above steps.
+
+      Sometimes, more intricate solutions are required. For instance, if an overridden method in an AST node calls a semantic function, it can’t be simply relocated. In these cases, using a visitor to collate all overrides, along with the original method, into the appropriate semantic file is the way forward. A notable instance of this approach is detailed in this pull request.
+
+      Other complex scenarios may arise, especially when dealing with AST nodes that interact with the backend. Finding solutions to those will be the fun part of the project.
+
+      This project helps advance the development of the compiler library by creating a clear separation between compilation phases.
+
+      This project is ideal for someone that has no prior experience with real-life compilers but wants to start by doing valuable work.
+
+      Resources
+      Compiler codebase
+      List of files that need to have semantic separated out of them
+      How to start
+      Building the compiler
+
+      ~~~~~~~~~~
+
+      Performance Regression Publisher
+      Mentor: Dennis Korpel
+
+      Spec	Details
+      Difficulty Level	easy-medium
+      Project Duration	175 hours
+      Number of Contributors	1
+      Prerequisites	Github actions, webdev, performance testing
+      Description
+      The D compiler currently does not have an automated performance regression test. Oftentimes pull requests that claim to improve compiler performance are being made (be it spatial or temporal). However, it’s up to the reviewer to actually believe the committer or to test things on their own. To make things simpler and more transparent, we want to implement a bot that monitors all the pull requests made to the compiler codebase and analyzes the compiler’s performance with and without the pull request.
+
+      The list of stats should include, but not be limited to:
+
+      size of some predefined binaries (like a “hello world” program)
+      compile time of popular projects
+      compiler size
+      runtime of test suite
+      Adding more performance tests, such as stress tests also falls under the scope of this project. Ideally the bot could also store a history of performance regressions within a web page.
+
+      Project milestones:
+      Analyze the best way to publish the results: it could be a GitHub action, a bot that sends data to a website. Depending on your skills and preferences, we expect you propose something and toghether we will decide what’s best.
+      Implement the initial part that simply collects how long running the testing pipeline took and publishes the result.
+      Decide on other metrics that need to be collected and implement them.
+      Add more stress tests to the compiler testing suite.
+      Resources
+      Compiler pull request queue
+
+      ~~~~~~~~~~
+      Json Library
+      Mentor: Adam Wilson
+
+      Spec	Details
+      Difficulty Level	medium
+      Project Duration	175 hours
+      Number of Contributors	1
+      Prerequisites	json, parsers, object oriented programming
+      Description
+      D currently does not have a json parser integrated in the standard library and it is the year 2025. There are 3rd party libraries that implement some pieces to a certain extent, however they are not at industry level requirements. The purpose of this project is to create a json library that offers all the facilities required for working with json objects. The goal is to eventually integrate it in the standard library, however, an initial step is to publish as a dub (D package manager) package.
+
+      Although there is no json library in the D ecosystem, there are multiple json parser implementations. We can start by picking up a notable json parser as a basis for our implementation. Next, we can built higher level functionalities on top of the existing parser.
+
+      This project is of high priority and impact, as json objects essentially rule the world.
+
+      Project Milestones
+      Initial Package Setup and Porting from jsoniopipe.
+      Object Model Design/Implementation.
+      Object Model Serialization/Deserialization
+      Streaming Serialization/Deserialization
+      Stretch Goal: Object Serialization/Deserialization (Direct serialization/deserialization from a D object instead of using the object model.)
+      Resources
+      jsoniopipe
 
           
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
     gsocorganization_dev_url: https://www.gsocorganizations.dev/organization/d-language-foundation/
-    idea_list_url: https://dlang.github.io/GSoC/
+    idea_list_url: https://dlang.github.io/GSoC/gsoc-2025/project-ideas.html
+
 
   - organization_id: 28
     organization_name: DBpedia
@@ -8472,3 +9489,13 @@ organizations:
 
 
   
+
+
+
+
+  
+
+
+  
+
+ 
