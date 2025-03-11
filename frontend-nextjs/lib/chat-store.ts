@@ -3,6 +3,8 @@ export interface Chat {
   title: string;
   messages: Message[];
   createdAt: Date;
+  results?: any[];
+  summary?: string;
 }
 
 export interface Message {

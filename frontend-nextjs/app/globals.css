@@ -116,3 +116,54 @@
 .shadow-glow {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
+
+/* Add this to your existing CSS */
+.text-ivory {
+  color: #f5f5dc; /* Ivory color */
+}
+
+/* Update the prose styles for markdown content */
+.prose {
+  color: #f5f5dc;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: #f5f5dc;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  color: #f5f5dc;
+  margin-bottom: 0.75rem;
+}
+
+.prose ul, .prose ol {
+  color: #f5f5dc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose li {
+  color: #f5f5dc;
+  margin-bottom: 0.25rem;
+}
+
+.prose a {
+  color: #a8c7fa;
+  text-decoration: underline;
+}
+
+.prose code {
+  color: #f5f5dc;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+.prose pre {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}

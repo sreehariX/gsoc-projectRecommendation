@@ -47,12 +47,11 @@ export function Sidebar({
         {chats.map((chat) => (
           <div key={chat.id} className="relative group mb-1">
             <Button
-              variant={activeChat === chat.id ? "secondary" : "ghost"}
-              className="w-full justify-start text-left pr-8 rounded-lg"
+              variant="ghost"
+              className={`w-full justify-start text-left pr-8 rounded-2xl transition-colors duration-200
+                ${activeChat === chat.id ? 'bg-transparent' : 'bg-transparent'}
+                hover:bg-[hsla(var(--sidebar-accent))]`}
               style={{
-                backgroundColor: activeChat === chat.id 
-                  ? 'hsl(var(--sidebar-accent))' 
-                  : 'transparent',
                 color: 'hsl(var(--sidebar-foreground))'
               }}
               onClick={() => onSelectChat(chat.id)}

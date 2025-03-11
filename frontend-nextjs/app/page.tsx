@@ -4,10 +4,11 @@ import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sidebar } from '@/components/sidebar';
 import { MessageList } from '@/components/message-list';
-import { SearchResults } from '@/components/search-results';
-import { PanelLeftOpen, PanelLeftClose, Send, MessageSquarePlus, Search } from 'lucide-react';
+import { SummaryResults } from '@/components/summary-results';
+import { PanelLeftOpen, PanelLeftClose, MessageSquarePlus, Search } from 'lucide-react';
 import { Chat, Message, generateSyntheticResponse, generateChatTitle } from '@/lib/chat-store';
 import { useSearchStore } from '@/lib/store';
+import { SearchBar } from '@/components/search-bar';
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -19,7 +20,45 @@ export default function Home() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   
   // Search state from Zustand store
-  const { query, results, isLoading, setQuery, search, clearResults } = useSearchStore();
+  const { 
+    query, 
+    results, 
+    summary, 
+    isLoading, 
+    isSummarizing, 
+    setQuery, 
+    search, 
+    clearResults 
+  } = useSearchStore();
+
+  // Load chats from localStorage on initial load
+  useEffect(() => {
+    const savedChats = localStorage.getItem('chats');
+    if (savedChats) {
+      try {
+        const parsedChats = JSON.parse(savedChats);
+        // Convert string dates back to Date objects
+        const chatsWithDates = parsedChats.map((chat: Chat) => ({
+          ...chat,
+          createdAt: new Date(chat.createdAt),
+          messages: chat.messages.map((msg: Message) => ({
+            ...msg,
+            timestamp: new Date(msg.timestamp)
+          }))
+        }));
+        setChats(chatsWithDates);
+      } catch (error) {
+        console.error('Error loading chats:', error);
+      }
+    }
+  }, []);
+
+  // Save chats to localStorage whenever they change
+  useEffect(() => {
+    if (chats.length > 0) {
+      localStorage.setItem('chats', JSON.stringify(chats));
+    }
+  }, [chats]);
 
   // Scroll to top of messages when active chat changes
   useEffect(() => {
@@ -37,6 +76,18 @@ export default function Home() {
     }
   }, [input]);
 
+  // Check if API key is configured
+  useEffect(() => {
+    if (!process.env.NEXT_PUBLIC_GOOGLE_GENERATIVE_AI_API_KEY) {
+      console.warn('Google Generative AI API key is not configured. Summary feature will not work.');
+    } else {
+      console.log('Google Generative AI API key is configured.');
+    }
+  }, []);
+
+  // Add a loading state for response generation
+  const [isGenerating, setIsGenerating] = useState(false);
+
   const currentChat = chats.find(chat => chat.id === activeChat);
 
   const handleSend = async () => {
@@ -49,16 +100,15 @@ export default function Home() {
       timestamp: new Date(),
     };
 
-    // Set the query in the search store
     setQuery(input.trim());
     
-    // Create or update chat first
     if (!activeChat) {
       const newChat: Chat = {
         id: Date.now().toString(),
         title: generateChatTitle(input.trim()),
         messages: [newMessage],
         createdAt: new Date(),
+        results: [],
       };
       setChats(prev => [...prev, newChat]);
       setActiveChat(newChat.id);
@@ -76,36 +126,34 @@ export default function Home() {
 
     setInput('');
     setIsFirstMessage(false);
+    setIsGenerating(true);
     
-    // Perform search
-    await search();
-    
-    // Add assistant response after search
-    const assistantMessage: Message = {
-      id: (Date.now() + 1).toString(),
-      role: 'assistant',
-      content: results.length > 0 
-        ? "Here are some project recommendations based on your query:" 
-        : generateSyntheticResponse(input.trim()),
-      timestamp: new Date(),
-    };
-    
-    setChats(prev => prev.map(chat => {
-      if (chat.id === activeChat) {
-        return {
-          ...chat,
-          messages: [...chat.messages, assistantMessage],
-        };
-      }
-      return chat;
-    }));
-    
-    // Scroll to the top of messages after sending
-    setTimeout(() => {
-      if (messagesStartRef.current) {
-        messagesStartRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+    try {
+      await search();
+      
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: summary || 'No results found. Please try a different search.',
+        timestamp: new Date(),
+      };
+      
+      setChats(prev => prev.map(chat => {
+        if (chat.id === activeChat) {
+          return {
+            ...chat,
+            messages: [...chat.messages, assistantMessage],
+            results: results,
+            summary: summary,
+          };
+        }
+        return chat;
+      }));
+    } catch (error) {
+      console.error('Error during search:', error);
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   const handleNewChat = () => {
@@ -115,6 +163,18 @@ export default function Home() {
   };
 
   const handleSelectChat = (id: string) => {
+    clearResults();
+    
+    const selectedChat = chats.find(chat => chat.id === id);
+    if (selectedChat) {
+      const lastUserMessage = selectedChat.messages
+        .filter(msg => msg.role === 'user')
+        .pop();
+      if (lastUserMessage) {
+        setQuery(lastUserMessage.content);
+      }
+    }
+    
     setActiveChat(id);
     setIsFirstMessage(false);
   };
@@ -127,6 +187,12 @@ export default function Home() {
       clearResults();
     }
   };
+
+  useEffect(() => {
+    return () => {
+      clearResults();
+    };
+  }, []);
 
   return (
     <div className="flex h-screen" style={{ backgroundColor: 'var(--background)' }}>
@@ -171,13 +237,18 @@ export default function Home() {
         </div>
 
         <div className="flex-1 overflow-y-auto" style={{ backgroundColor: 'var(--background)' }}>
-          <div ref={messagesStartRef} className="pt-4" /> {/* Reference for scrolling to top */}
-          <MessageList messages={currentChat?.messages || []} />
+          <div ref={messagesStartRef} className="pt-4" />
+          <MessageList 
+            messages={currentChat?.messages || []} 
+            isGenerating={isGenerating}
+          />
           
-          {/* Search Results */}
-          {activeChat && results.length > 0 && (
+          {/* Summary Results - Pass currentChat as prop */}
+          {activeChat && (
             <div className="max-w-3xl mx-auto px-4 pb-6">
-              <SearchResults results={results} isLoading={isLoading} />
+              <SummaryResults 
+                currentChat={currentChat}
+              />
             </div>
           )}
         </div>
