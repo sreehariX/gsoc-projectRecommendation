@@ -31,12 +31,45 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       const response = await searchProjects(query);
       set({ results: response.results, isLoading: false });
       
-      // Generate summary
+      // Generate summary with streaming
       if (response.results.length > 0) {
         set({ isSummarizing: true });
         try {
-          const summary = await summarizeResults(response.results);
-          set({ summary, isSummarizing: false });
+          const res = await fetch('/api/summarize', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ results: response.results }),
+          });
+
+          if (!res.ok) {
+            throw new Error('Failed to generate summary');
+          }
+
+          // Ensure we're handling the response as a stream
+          if (!res.body) {
+            throw new Error('Response body is null');
+          }
+
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder();
+          let summary = '';
+
+          set({ summary: '' }); // Reset summary before streaming
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            
+            const chunk = decoder.decode(value, { stream: true });
+            summary += chunk;
+            
+            // Update summary in real-time with each chunk
+            set({ summary });
+          }
+
+          set({ isSummarizing: false });
         } catch (summaryError: any) {
           console.error("Summary generation error:", summaryError);
           set({ 

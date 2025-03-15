@@ -9,6 +9,7 @@ import { PanelLeftOpen, PanelLeftClose, MessageSquarePlus, Search } from 'lucide
 import { Chat, Message, generateSyntheticResponse, generateChatTitle } from '@/lib/chat-store';
 import { useSearchStore } from '@/lib/store';
 import { SearchBar } from '@/components/search-bar';
+import { chatStorageService } from '@/lib/chat-storage-service';
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -18,6 +19,7 @@ export default function Home() {
   const [isFirstMessage, setIsFirstMessage] = useState(true);
   const messagesStartRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   
   // Search state from Zustand store
   const { 
@@ -31,33 +33,45 @@ export default function Home() {
     clearResults 
   } = useSearchStore();
 
-  // Load chats from localStorage on initial load
+  // Initialize IndexedDB and load chats when the component mounts
   useEffect(() => {
-    const savedChats = localStorage.getItem('chats');
-    if (savedChats) {
+    const initializeStorage = async () => {
       try {
-        const parsedChats = JSON.parse(savedChats);
-        // Convert string dates back to Date objects
-        const chatsWithDates = parsedChats.map((chat: Chat) => ({
-          ...chat,
-          createdAt: new Date(chat.createdAt),
-          messages: chat.messages.map((msg: Message) => ({
-            ...msg,
-            timestamp: new Date(msg.timestamp)
-          }))
-        }));
-        setChats(chatsWithDates);
+        await chatStorageService.initializeDB();
+        const savedChats = await chatStorageService.getAllChats();
+        if (savedChats && savedChats.length > 0) {
+          setChats(savedChats);
+        }
+        
+        // Clean up chats older than 30 days
+        await chatStorageService.cleanupOldChats();
       } catch (error) {
-        console.error('Error loading chats:', error);
+        console.error('Error initializing chat storage:', error);
       }
-    }
+    };
+    
+    initializeStorage();
   }, []);
 
-  // Save chats to localStorage whenever they change
+  // Save chat to storage when chats change
   useEffect(() => {
-    if (chats.length > 0) {
-      localStorage.setItem('chats', JSON.stringify(chats));
-    }
+    const saveChats = async () => {
+      if (chats.length > 0) {
+        for (const chat of chats) {
+          try {
+            // Make sure each chat is explicitly saved with its ID as the key
+            await chatStorageService.saveChat({
+              ...chat,
+              id: chat.id, // Ensure ID is preserved as the key
+            });
+          } catch (error) {
+            console.error('Error saving chat:', error);
+          }
+        }
+      }
+    };
+    
+    saveChats();
   }, [chats]);
 
   // Scroll to top of messages when active chat changes
@@ -102,6 +116,7 @@ export default function Home() {
 
     setQuery(input.trim());
     
+    // Create or update the chat
     if (!activeChat) {
       const newChat: Chat = {
         id: Date.now().toString(),
@@ -113,6 +128,7 @@ export default function Home() {
       setChats(prev => [...prev, newChat]);
       setActiveChat(newChat.id);
     } else {
+      // Update the chat with just the new user message first
       setChats(prev => prev.map(chat => {
         if (chat.id === activeChat) {
           return {
@@ -126,6 +142,15 @@ export default function Home() {
 
     setInput('');
     setIsFirstMessage(false);
+    
+    // Scroll to message start immediately after adding the message
+    // This ensures scroll happens for each new query in the same chat
+    setTimeout(() => {
+      if (messagesStartRef.current) {
+        messagesStartRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
+    
     setIsGenerating(true);
     
     try {
@@ -138,17 +163,25 @@ export default function Home() {
         timestamp: new Date(),
       };
       
-      setChats(prev => prev.map(chat => {
-        if (chat.id === activeChat) {
-          return {
-            ...chat,
-            messages: [...chat.messages, assistantMessage],
-            results: results,
-            summary: summary,
-          };
-        }
-        return chat;
-      }));
+      // Update the chat with the assistant message and store results/summary
+      setChats(prev => {
+        const updatedChats = prev.map(chat => {
+          if (chat.id === activeChat) {
+            // Get the CURRENT version of messages to avoid race conditions
+            const currentChat = prev.find(c => c.id === activeChat);
+            const currentMessages = currentChat ? [...currentChat.messages] : [];
+            
+            return {
+              ...chat,
+              messages: [...currentMessages, assistantMessage],
+              results: results || [],
+              summary: summary || '',
+            };
+          }
+          return chat;
+        });
+        return updatedChats;
+      });
     } catch (error) {
       console.error('Error during search:', error);
     } finally {
@@ -163,28 +196,36 @@ export default function Home() {
   };
 
   const handleSelectChat = (id: string) => {
-    clearResults();
-    
+    // Find the selected chat
     const selectedChat = chats.find(chat => chat.id === id);
+    
     if (selectedChat) {
+      // Set the active chat first
+      setActiveChat(id);
+      setIsFirstMessage(false);
+      
+      // Get the last user message for the query field
       const lastUserMessage = selectedChat.messages
         .filter(msg => msg.role === 'user')
         .pop();
+      
       if (lastUserMessage) {
         setQuery(lastUserMessage.content);
       }
     }
-    
-    setActiveChat(id);
-    setIsFirstMessage(false);
   };
 
-  const handleDeleteChat = (chatId: string) => {
-    setChats(prev => prev.filter(chat => chat.id !== chatId));
-    if (activeChat === chatId) {
-      setActiveChat(null);
-      setIsFirstMessage(true);
-      clearResults();
+  const handleDeleteChat = async (chatId: string) => {
+    try {
+      await chatStorageService.deleteChat(chatId);
+      setChats(prev => prev.filter(chat => chat.id !== chatId));
+      if (activeChat === chatId) {
+        setActiveChat(null);
+        setIsFirstMessage(true);
+        clearResults();
+      }
+    } catch (error) {
+      console.error('Error deleting chat:', error);
     }
   };
 
@@ -193,6 +234,24 @@ export default function Home() {
       clearResults();
     };
   }, []);
+
+  // Add this useEffect after the existing useEffect that loads chats
+  useEffect(() => {
+    const saveChatToStorage = async () => {
+      if (activeChat) {
+        const currentChatObj = chats.find(chat => chat.id === activeChat);
+        if (currentChatObj) {
+          try {
+            await chatStorageService.saveChat(currentChatObj);
+          } catch (error) {
+            console.error('Error saving active chat:', error);
+          }
+        }
+      }
+    };
+    
+    saveChatToStorage();
+  }, [activeChat, chats]);
 
   return (
     <div className="flex h-screen" style={{ backgroundColor: 'var(--background)' }}>
@@ -236,7 +295,11 @@ export default function Home() {
           )}
         </div>
 
-        <div className="flex-1 overflow-y-auto" style={{ backgroundColor: 'var(--background)' }}>
+        <div 
+          ref={messagesContainerRef}
+          className="flex-1 overflow-y-auto" 
+          style={{ backgroundColor: 'var(--background)' }}
+        >
           <div ref={messagesStartRef} className="pt-4" />
           <MessageList 
             messages={currentChat?.messages || []} 

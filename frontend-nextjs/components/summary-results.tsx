@@ -10,15 +10,13 @@ interface SummaryResultsProps {
 export function SummaryResults({ currentChat }: SummaryResultsProps) {
   const { summary: currentSummary, isSummarizing, error } = useSearchStore();
   
-  // Use either the current summary or the stored one
+  // Use either the current summary from the search store or the stored one from the chat
   const summaryToShow = currentSummary || currentChat?.summary;
 
-  if (isSummarizing) {
+  if (isSummarizing && !summaryToShow) {
     return (
       <div className="flex items-center justify-center p-8">
-        <div className="animate-pulse text-ivory">
-          Generating summary with AI...
-        </div>
+        
       </div>
     );
   }
@@ -40,6 +38,11 @@ export function SummaryResults({ currentChat }: SummaryResultsProps) {
   return (
     <div className="p-6 rounded-lg --background: #1D1E1A;">
       <div className="prose prose-invert max-w-none text-ivory">
+        {isSummarizing && (
+          <div className="mb-2 text-sm text-gray-400">
+            Generating summary... (showing partial results)
+          </div>
+        )}
         <ReactMarkdown>{summaryToShow}</ReactMarkdown>
       </div>
     </div>
