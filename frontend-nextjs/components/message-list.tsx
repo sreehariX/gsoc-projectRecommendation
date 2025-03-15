@@ -15,6 +15,7 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
 
   useEffect(() => {
     const processMarkdown = async () => {
+      // Ensure messages are processed in the correct order
       const processed = await Promise.all(
         messages.map(async (message) => {
           if (message.role === 'user') {
@@ -35,7 +36,12 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
         })
       );
       
-      setProcessedMessages(processed);
+      // Sort messages by timestamp to ensure correct order
+      const sortedMessages = [...processed].sort((a, b) => {
+        return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+      });
+      
+      setProcessedMessages(sortedMessages);
     };
     
     processMarkdown();

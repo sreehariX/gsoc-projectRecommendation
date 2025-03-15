@@ -40,7 +40,7 @@ export function SummaryResults({ currentChat }: SummaryResultsProps) {
       <div className="prose prose-invert max-w-none text-ivory">
         {isSummarizing && (
           <div className="mb-2 text-sm text-gray-400">
-            Generating summary... (showing partial results)
+          
           </div>
         )}
         <ReactMarkdown>{summaryToShow}</ReactMarkdown>
