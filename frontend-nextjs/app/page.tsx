@@ -161,8 +161,14 @@ export default function Home() {
     const chatToSave = chats.find(chat => chat.id === chatId);
     if (chatToSave) {
       try {
-        await chatStorageService.saveChat(chatToSave);
-        console.log(`Explicitly saved chat: ${chatId}`);
+        // Create a copy of the chat to avoid reference issues
+        const chatCopy = {
+          ...chatToSave,
+          messages: [...chatToSave.messages]
+        };
+        
+        await chatStorageService.saveChat(chatCopy);
+        console.log(`Explicitly saved chat: ${chatId} with ${chatCopy.messages.length} messages`);
       } catch (error) {
         console.error(`Error explicitly saving chat ${chatId}:`, error);
       }
@@ -170,219 +176,118 @@ export default function Home() {
   };
 
   const handleSend = async () => {
-    if (!input.trim() || isRequestLocked) return;
+    if (!input.trim()) return;
 
-    // Lock to prevent multiple simultaneous requests
-    setIsRequestLocked(true);
-
-    // Clear previous results but don't update the UI yet
-    // This ensures the search starts fresh but doesn't affect the displayed messages
-    clearResults();
-
-    const newMessage: Message = {
-      id: Date.now().toString(),
-      role: 'user',
-      content: input.trim(),
-      timestamp: new Date(),
-    };
-
-    setQuery(input.trim());
-    
-    // Create or update the chat
-    let currentActiveChatId: string;
-    
-    if (!activeChat) {
-      // Create a new chat with the user message
-      currentActiveChatId = Date.now().toString();
-      const newChat: Chat = {
-        id: currentActiveChatId,
-        title: generateChatTitle(input.trim()),
-        messages: [newMessage],
-        createdAt: new Date(),
-        results: [],
-      };
-      setChats(prev => [...prev, newChat]);
-      setActiveChat(currentActiveChatId);
-      console.log(`Created new chat with ID: ${currentActiveChatId}`);
-    } else {
-      currentActiveChatId = activeChat;
-      // Update the chat with just the new user message first
-      setChats(prev => prev.map(chat => {
-        if (chat.id === currentActiveChatId) {
-          return {
-            ...chat,
-            messages: [...chat.messages, newMessage],
-          };
-        }
-        return chat;
-      }));
-      console.log(`Updated existing chat with ID: ${currentActiveChatId}`);
-    }
-
-    setInput('');
-    setIsFirstMessage(false);
-    
-    // Scroll to message start immediately after adding the message
-    // This ensures scroll happens for each new query in the same chat
-    setTimeout(() => {
-      if (messagesStartRef.current) {
-        messagesStartRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 0);
-    
-    setIsGenerating(true);
-    
     try {
-      // Store the current chat state before search to preserve previous messages
-      const chatBeforeSearch = chats.find(chat => chat.id === currentActiveChatId);
-      console.log(`Current active chat ID: ${currentActiveChatId}`);
-      
-      await search();
-      
-      console.log(`After search - Summary: ${summary ? summary.substring(0, 50) + '...' : 'No summary'}`);
-      
-      const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: summary || 'No results found. Please try a different search.',
-        timestamp: new Date(),
-      };
-      
-      // Update the chat with the assistant message and store results/summary
-      setChats(prev => {
-        const updatedChats = prev.map(chat => {
-          if (chat.id === currentActiveChatId) {
-            // Get the current chat to ensure we have all messages
-            const currentChat = prev.find(c => c.id === currentActiveChatId);
-            
-            // If we have the current chat, use its messages
-            if (currentChat) {
-              const updatedChat = {
-                ...chat,
-                messages: [...currentChat.messages, assistantMessage],
-                summary: summary || '',
-                // Keep results in memory but don't save to IndexedDB
-                results: results || [],
-              };
-              console.log(`Updating chat ${currentActiveChatId} with summary: ${summary ? 'Yes' : 'No'}`);
-              return updatedChat;
-            }
-            
-            // Fallback to the chat before search if current chat is not found
-            if (chatBeforeSearch) {
-              const updatedChat = {
-                ...chat,
-                messages: [...chatBeforeSearch.messages, assistantMessage],
-                summary: summary || '',
-                // Keep results in memory but don't save to IndexedDB
-                results: results || [],
-              };
-              console.log(`Fallback: Updating chat ${currentActiveChatId} with summary: ${summary ? 'Yes' : 'No'}`);
-              return updatedChat;
-            }
-            
-            // Last resort fallback
-            const updatedChat = {
-              ...chat,
-              messages: [...chat.messages, assistantMessage],
-              summary: summary || '',
-              // Keep results in memory but don't save to IndexedDB
-              results: results || [],
+        // Create user message
+        const userMessage: Message = {
+            id: crypto.randomUUID(),
+            role: 'user',
+            content: input,
+            timestamp: new Date()
+        };
+
+        // Find current chat or create new one
+        let currentChat = activeChat ? chats.find(chat => chat.id === activeChat) : null;
+        
+        if (!currentChat) {
+            currentChat = {
+                id: crypto.randomUUID(),
+                title: input.substring(0, 50) + "...",
+                createdAt: new Date(),
+                messages: [],
+                results: []
             };
-            console.log(`Last resort: Updating chat ${currentActiveChatId} with summary: ${summary ? 'Yes' : 'No'}`);
-            return updatedChat;
-          }
-          return chat;
-        });
-        return updatedChats;
-      });
-      
-      // Explicitly save the chat after updating it
-      // Use a longer delay to ensure the state has been updated
-      setTimeout(async () => {
-        try {
-          // Get the latest version of the chat from state - this is causing the issue
-          // as it's using the stale state from the closure
-          const chatToSave = chats.find(chat => chat.id === currentActiveChatId);
-          
-          // Get the latest summary value directly from the store
-          const currentSummary = useSearchStore.getState().summary;
-          
-          if (chatToSave) {
-            console.log(`Saving chat ${currentActiveChatId} with summary: ${currentSummary ? 'Yes' : 'No'}`);
-            console.log(`Chat to save: ID=${chatToSave.id}, Title=${chatToSave.title}, Messages=${chatToSave.messages.length}`);
-            
-            // Get the latest messages directly from the DOM state
-            const updatedChat = {
-              ...chatToSave,
-              // Ensure we're using the latest summary value from the store
-              messages: chatToSave.messages.map(msg => {
-                // If this is the assistant's last message, ensure it has the latest summary
-                if (msg.role === 'assistant' && msg === chatToSave.messages[chatToSave.messages.length - 1]) {
-                  return {
-                    ...msg,
-                    content: currentSummary || 'No results found. Please try a different search.'
-                  };
-                }
-                return msg;
-              })
-            };
-            
-            await chatStorageService.saveChat(updatedChat);
-            console.log(`Successfully saved chat ${currentActiveChatId} with summary`);
-          } else {
-            console.error(`Could not find chat ${currentActiveChatId} in current state to save`);
-            
-            // Fallback: Create a new chat object with the current data
-            const fallbackChat: Chat = {
-              id: currentActiveChatId,
-              title: input.trim().substring(0, 50) + (input.trim().length > 50 ? '...' : ''),
-              messages: [
-                newMessage,
-                {
-                  id: (Date.now() + 1).toString(),
-                  role: 'assistant',
-                  content: currentSummary || 'No results found. Please try a different search.',
-                  timestamp: new Date(),
-                }
-              ],
-              createdAt: new Date(),
-              summary: currentSummary || '',
-              results: []
-            };
-            
-            console.log(`Saving fallback chat: ${fallbackChat.id}`);
-            await chatStorageService.saveChat(fallbackChat);
-            console.log(`Successfully saved fallback chat ${currentActiveChatId}`);
-            
-            // Update the state with the fallback chat
-            setChats(prev => {
-              // Check if the chat already exists in state
-              const chatExists = prev.some(chat => chat.id === currentActiveChatId);
-              
-              if (chatExists) {
-                // Update the existing chat
-                return prev.map(chat => 
-                  chat.id === currentActiveChatId ? fallbackChat : chat
-                );
-              } else {
-                // Add the new chat
-                return [...prev, fallbackChat];
-              }
-            });
-          }
-        } catch (error) {
-          console.error(`Error saving chat ${currentActiveChatId}:`, error);
+            console.log('Created new chat:', currentChat.id);
         }
-      }, 1000); // Increased timeout to ensure state is updated
+
+        // Add user message to chat
+        const updatedMessages = [...currentChat.messages, userMessage];
+        
+        // Update chat with user message
+        const updatedChat = {
+            ...currentChat,
+            messages: updatedMessages
+        };
+
+        // Update chats state with user message
+        const updatedChats = activeChat
+            ? chats.map(chat => chat.id === activeChat ? updatedChat : chat)
+            : [updatedChat, ...chats];
+
+        setChats(updatedChats);
+        setActiveChat(updatedChat.id);
+        setInput('');
+
+        // Trigger search and wait for results
+        setQuery(input);
+        await search();
+
+        // Wait a bit to ensure summary is generated
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Get the latest summary from the store
+        const currentSummary = useSearchStore.getState().summary;
+        console.log('Current summary:', currentSummary ? currentSummary.substring(0, 50) + '...' : 'No summary');
+
+        // Create assistant message with search results
+        const assistantMessage: Message = {
+            id: crypto.randomUUID(),
+            role: 'assistant',
+            content: currentSummary || 'No results found. Please try a different search.',
+            timestamp: new Date()
+        };
+
+        // Add assistant message to chat
+        const finalMessages = [...updatedMessages, assistantMessage];
+        
+        // Create final chat state
+        const finalChat = {
+            ...updatedChat,
+            messages: finalMessages,
+            results: results
+        };
+
+        // Update chats with assistant response
+        const finalChats = activeChat
+            ? chats.map(chat => chat.id === activeChat ? finalChat : chat)
+            : [finalChat, ...chats];
+
+        setChats(finalChats);
+
+        // Wait a bit to ensure state is updated
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        // Save chat with complete messages
+        console.log('Saving chat with all messages:', {
+            chatId: finalChat.id,
+            messageCount: finalChat.messages.length,
+            lastMessage: finalChat.messages[finalChat.messages.length - 1].content.substring(0, 50) + '...'
+        });
+
+        await chatStorageService.saveChat(finalChat);
+
+        // Verify saved chat
+        const savedChat = await chatStorageService.getChat(finalChat.id);
+        if (savedChat) {
+            console.log('Verification of saved chat:', {
+                chatId: savedChat.id,
+                messageCount: savedChat.messages.length,
+                messages: savedChat.messages.map(msg => ({
+                    role: msg.role,
+                    content: msg.content.substring(0, 50) + '...'
+                }))
+            });
+        }
+
+        if (isFirstMessage) {
+            setIsFirstMessage(false);
+        }
+
     } catch (error) {
-      console.error('Error during search:', error);
-    } finally {
-      setIsGenerating(false);
-      // Unlock requests
-      setIsRequestLocked(false);
+        console.error('Error in handleSend:', error);
     }
-  };
+};
 
   const handleNewChat = () => {
     // Prevent creating new chat during an active request
@@ -398,70 +303,31 @@ export default function Home() {
   };
 
   const handleSelectChat = async (id: string) => {
-    // Prevent switching chats during an active request
-    if (isRequestLocked) return;
-    
-    console.log(`Selecting chat: ${id}`);
-    
-    // Find the selected chat
-    const selectedChat = chats.find(chat => chat.id === id);
-    
-    if (selectedChat) {
-      console.log(`Found selected chat: ${id}`);
-      console.log(`Selected chat summary exists: ${selectedChat.summary ? 'Yes' : 'No'}`);
+    try {
+      console.log(`Selecting chat: ${id}`);
       
-      // Set the active chat first
-      setActiveChat(id);
-      setIsFirstMessage(false);
+      // Load the chat from storage
+      const loadedChat = await chatStorageService.getChat(id);
       
-      // Get the last user message for the query field
-      const lastUserMessage = selectedChat.messages
-        .filter(msg => msg.role === 'user')
-        .pop();
-      
-      if (lastUserMessage) {
-        setQuery(lastUserMessage.content);
-      }
-      
-      // Try to load the chat from storage to ensure we have the latest version
-      try {
-        const storedChat = await chatStorageService.getChat(id);
-        if (storedChat) {
-          console.log(`Loaded stored chat: ${id}`);
-          console.log(`Stored chat summary exists: ${storedChat.summary ? 'Yes' : 'No'}`);
-          
-          // Update the chat in the state with the stored version
-          setChats(prev => prev.map(chat => {
-            if (chat.id === id) {
-              // Preserve the existing results in memory if they exist
-              const existingResults = chat.results || [];
-              
-              return {
-                ...storedChat,
-                // Ensure dates are properly converted
-                createdAt: new Date(storedChat.createdAt),
-                messages: storedChat.messages.map(msg => ({
-                  ...msg,
-                  timestamp: new Date(msg.timestamp)
-                })),
-                // Ensure summary is preserved
-                summary: storedChat.summary || '',
-                // Keep existing results in memory
-                results: existingResults
-              };
-            }
-            return chat;
-          }));
-        }
-      } catch (error) {
-        console.error(`Error loading chat ${id} from storage:`, error);
-      }
-      
-      // Clear the search results to avoid showing results from previous chat
-      // But do it after a small delay to prevent UI flicker
-      setTimeout(() => {
+      if (loadedChat) {
+        console.log(`Loaded chat ${id} with ${loadedChat.messages.length} messages`);
+        
+        // Update the chat in the chats array
+        setChats(prev => prev.map(chat => 
+          chat.id === id ? { ...loadedChat, results: chat.results || [] } : chat
+        ));
+        
+        // Set as active chat
+        setActiveChat(id);
+        
+        // Clear input and search state
+        setInput('');
         clearResults();
-      }, 50);
+      } else {
+        console.error(`Could not load chat ${id}`);
+      }
+    } catch (error) {
+      console.error(`Error selecting chat ${id}:`, error);
     }
   };
 

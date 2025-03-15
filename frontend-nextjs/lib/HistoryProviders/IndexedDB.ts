@@ -88,28 +88,90 @@ export class IndexedDBProvider implements IHistoryProvider {
 
     async addItem(id: string, answers: Answers): Promise<void> {
         try {
-            console.log(`Adding/updating item with ID: ${id}`);
-            console.log(`Answers:`, JSON.stringify(answers));
+            console.log(`Adding/updating item with ID: ${id}, with ${answers.length} answers`);
             
             const timestamp = new Date().getTime();
             const db = await this.init();
-            const tx = db.transaction(this.storeName, "readwrite");
-            const current = await tx.objectStore(this.storeName).get(id);
+            
+            // First, get the existing item if it exists
+            const tx1 = db.transaction(this.storeName, "readonly");
+            const current = await tx1.objectStore(this.storeName).get(id);
+            await tx1.done;
+            
+            // Start a new transaction for writing
+            const tx2 = db.transaction(this.storeName, "readwrite");
             
             if (current) {
-                console.log(`Updating existing item: ${id}`);
-                await tx.objectStore(this.storeName).put({ ...current, id, timestamp, answers });
+                console.log(`Item exists. Current has ${current.answers ? current.answers.length : 0} answers`);
+                
+                // Create a map of existing queries for quick lookup
+                const existingQueries = new Map<string, number>();
+                if (current.answers && current.answers.length > 0) {
+                    current.answers.forEach((pair: [string, any], index: number) => {
+                        existingQueries.set(pair[0], index);
+                    });
+                }
+                
+                // Create a copy of the current answers array
+                let updatedAnswers = current.answers ? [...current.answers] : [];
+                
+                // Process new answers in order (not reverse) to maintain correct indexing
+                for (let i = 0; i < answers.length; i++) {
+                    const [query, response] = answers[i];
+                    const existingIndex = existingQueries.get(query);
+                    
+                    if (existingIndex !== undefined) {
+                        // Always update the response if it exists
+                        console.log(`Updating existing query at index ${existingIndex}: "${query.substring(0, 30)}..."`);
+                        updatedAnswers[existingIndex] = [query, response];
+                    } else {
+                        // Add new answer at the end
+                        console.log(`Adding new query: "${query.substring(0, 30)}..."`);
+                        updatedAnswers.push([query, response]);
+                        existingQueries.set(query, updatedAnswers.length - 1);
+                    }
+                }
+                
+                // Update the item with the modified answers array
+                await tx2.objectStore(this.storeName).put({
+                    ...current,
+                    timestamp,
+                    answers: updatedAnswers
+                });
+                
+                console.log(`Updated item. Now has ${updatedAnswers.length} answers`);
             } else {
-                console.log(`Adding new item: ${id}`);
-                // Extract title from the first user message
-                const title = answers[0][0].length > 50 ? answers[0][0].substring(0, 50) + "..." : answers[0][0];
-                await tx.objectStore(this.storeName).add({ id, title, timestamp, answers });
+                // For new items, process answers in order
+                const processedAnswers: Answers = [];
+                const seenQueries = new Set<string>();
+                
+                // Process in order to maintain correct indexing
+                for (let i = 0; i < answers.length; i++) {
+                    const [query, response] = answers[i];
+                    if (!seenQueries.has(query)) {
+                        processedAnswers.push([query, response]);
+                        seenQueries.add(query);
+                    }
+                }
+                
+                console.log(`Creating new item with ${processedAnswers.length} answers`);
+                const title = processedAnswers[0][0].length > 50 ? processedAnswers[0][0].substring(0, 50) + "..." : processedAnswers[0][0];
+                await tx2.objectStore(this.storeName).add({ id, title, timestamp, answers: processedAnswers });
             }
             
-            await tx.done;
-            console.log(`Successfully saved item: ${id}`);
+            await tx2.done;
+            
+            // Verify the save worked
+            const tx3 = db.transaction(this.storeName, "readonly");
+            const saved = await tx3.objectStore(this.storeName).get(id);
+            console.log(`Verification: Item ${id} now has ${saved.answers.length} answers`);
+            
+            // Log all answers for debugging
+            saved.answers.forEach((answer: [string, any], idx: number) => {
+                console.log(`Answer ${idx}: "${answer[0].substring(0, 30)}..." with ${answer[1] ? 'response' : 'no response'}`);
+            });
         } catch (error) {
-            console.error(`Error adding item ${id}:`, error);
+            console.error(`Error in addItem(${id}):`, error);
         }
     }
 
@@ -121,8 +183,18 @@ export class IndexedDBProvider implements IHistoryProvider {
             const item = await tx.objectStore(this.storeName).get(id);
             
             if (item) {
-                console.log(`Found item: ${id}`);
-                return item.answers;
+                console.log(`Found item: ${id} with ${item.answers.length} answers`);
+                
+                // Ensure we return a deep copy of the answers array to prevent accidental modifications
+                const answersCopy = JSON.parse(JSON.stringify(item.answers));
+                console.log(`Retrieved ${answersCopy.length} answers for item ${id}`);
+                
+                // Debug log each retrieved answer
+                answersCopy.forEach((pair: [string, any], idx: number) => {
+                    console.log(`Retrieved answer ${idx}: "${pair[0].substring(0, 30)}..." with ${pair[1] ? 'response' : 'no response'}`);
+                });
+                
+                return answersCopy;
             } else {
                 console.log(`Item not found: ${id}`);
                 return null;
