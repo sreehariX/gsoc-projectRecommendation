@@ -24,8 +24,7 @@ app.add_middleware(
 
 load_dotenv()
 CHROMA_SERVER_HOST = os.getenv("CHROMA_SERVER_HOST")
-print(f"ChromaDB Server Host: {CHROMA_SERVER_HOST}")
-print(os.environ.get("GEMINI_API_KEY"))  # This should print your API key if loaded correctly
+
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 chroma_client = chromadb.HttpClient(
