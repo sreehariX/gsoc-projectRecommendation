@@ -7956,8 +7956,6 @@ organizations:
     organization_name: Debian
     no_of_ideas: 11
     ideas_content: |
-     
- 
           Quality assurance and continuous integration for biological and medical applications inside Debian
           Description of the project: The Debian Med Blend has packaged a lot of applications used in medicine and biology for Debian. To enhance and continuously ensure the quality of the packaged software we try to implement Continuous Integration tests for all our packages. This was accomplished thanks to several past interns. These tests are of specific importance since only a very small share of the developers inside the Debian Med project are actual users of the software and thus automated testing is required to provide our users with the quality we like to approach. Interns are also not necessarily comfortable with the topic of medicine and biology - reading documentation or publications or directly contact the authors of the software frequently gives sensible ideas how to write a test for the software.
           Confirmed Mentor: Andreas Tille
