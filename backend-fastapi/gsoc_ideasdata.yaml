@@ -7958,231 +7958,231 @@ organizations:
     ideas_content: |
      
  
-      Quality assurance and continuous integration for biological and medical applications inside Debian
-      Description of the project: The Debian Med Blend has packaged a lot of applications used in medicine and biology for Debian. To enhance and continuously ensure the quality of the packaged software we try to implement Continuous Integration tests for all our packages. This was accomplished thanks to several past interns. These tests are of specific importance since only a very small share of the developers inside the Debian Med project are actual users of the software and thus automated testing is required to provide our users with the quality we like to approach. Interns are also not necessarily comfortable with the topic of medicine and biology - reading documentation or publications or directly contact the authors of the software frequently gives sensible ideas how to write a test for the software.
-      Confirmed Mentor: Andreas Tille
-      How to contact the mentor: tille@debian.org
-      Confirmed co-mentors: Emmanuel Arias <eamanu@debian.org>, Étienne Mollier <emollier@debian.org>
-      Difficulty level: medium
-      Project size: Depending from students availability this project can be medium or large. The advantage of the project is it can be split into small pieces
-      Deliverables of the project:Continuous integration tests for Debian Med applications lacking a test, Quality Assurance review and bug fixing if issues might be uncovered
-      Desirable skills: Background in bioinformatics, medical imaging could be an advantage, but interest in scientific software and reading relevant documentation and papers might be sufficient. Debian packaging skills are an extra plus but can be taught in the project run.
-      What the intern will learn: Detailed insight into the software maintained by the Debian Med team, bug triaging in scientific software, Debian packaging skills, optimising bioinformatics and other scientific tools
-      Application tasks: Pick bugs like 1035121, 1035175, 1035178, 1035182, 1035188, 1035200, 1035277, 1036500, 1036506 and try fixing it - asking the mentor for help is perfectly fine and actually recommended. This is on one hand proof that the student is able to understand Debian packaging and understands the actual topic at a sufficient level.
-      Related projects: SummerOfCode2016/Projects/BioToolsTesting, SummerOfCode2017/Projects/QA_BiologyApps, ?Continuous_Integration_for_biological_applications_inside_Debian, SummerOfCode2019/ApprovedProjects/CIforDebianMed SummerOfCode2020/ApprovedProjects/DebianMedQAGSoC and Outreachy Project Proposal: Quality Assurance and Continuous integration for applications in life sciences and medicine
-      [SummerOfCode2025/ApprovedProjects/DebianMedQA][edit]
+          Quality assurance and continuous integration for biological and medical applications inside Debian
+          Description of the project: The Debian Med Blend has packaged a lot of applications used in medicine and biology for Debian. To enhance and continuously ensure the quality of the packaged software we try to implement Continuous Integration tests for all our packages. This was accomplished thanks to several past interns. These tests are of specific importance since only a very small share of the developers inside the Debian Med project are actual users of the software and thus automated testing is required to provide our users with the quality we like to approach. Interns are also not necessarily comfortable with the topic of medicine and biology - reading documentation or publications or directly contact the authors of the software frequently gives sensible ideas how to write a test for the software.
+          Confirmed Mentor: Andreas Tille
+          How to contact the mentor: tille@debian.org
+          Confirmed co-mentors: Emmanuel Arias <eamanu@debian.org>, Étienne Mollier <emollier@debian.org>
+          Difficulty level: medium
+          Project size: Depending from students availability this project can be medium or large. The advantage of the project is it can be split into small pieces
+          Deliverables of the project:Continuous integration tests for Debian Med applications lacking a test, Quality Assurance review and bug fixing if issues might be uncovered
+          Desirable skills: Background in bioinformatics, medical imaging could be an advantage, but interest in scientific software and reading relevant documentation and papers might be sufficient. Debian packaging skills are an extra plus but can be taught in the project run.
+          What the intern will learn: Detailed insight into the software maintained by the Debian Med team, bug triaging in scientific software, Debian packaging skills, optimising bioinformatics and other scientific tools
+          Application tasks: Pick bugs like 1035121, 1035175, 1035178, 1035182, 1035188, 1035200, 1035277, 1036500, 1036506 and try fixing it - asking the mentor for help is perfectly fine and actually recommended. This is on one hand proof that the student is able to understand Debian packaging and understands the actual topic at a sufficient level.
+          Related projects: SummerOfCode2016/Projects/BioToolsTesting, SummerOfCode2017/Projects/QA_BiologyApps, ?Continuous_Integration_for_biological_applications_inside_Debian, SummerOfCode2019/ApprovedProjects/CIforDebianMed SummerOfCode2020/ApprovedProjects/DebianMedQAGSoC and Outreachy Project Proposal: Quality Assurance and Continuous integration for applications in life sciences and medicine
+          [SummerOfCode2025/ApprovedProjects/DebianMedQA][edit]
 
-      ~~~~~~~~~~
-      Device-specific Tweaks Management
-      Description of the project: A significant number of non-x86 Linux-capable devices made it to the market in the past few years, especially ARM64 laptops, mobile phones and tablets. Most of those, inheriting their design from embedded systems (and therefore lacking support for software interfaces such as ACPI/UEFI), need device-specific "tweaks" (configuration files/fragments, shell scripts...). As the number of supported devices grows rapidly, providing device-specific Debian packages containing those tweaks doesn't scale, and limits our ability to provide a generic system image/rootfs.
-      This project aims at researching and implementing a more flexible way of managing those tweaks, by creating a service capable of identifying the exact device it's running on, selecting the appropriate tweaks based on its configuration file, and installing them to the system. Reaching this goal will ultimately ease supporting new devices in Debian.
-      Confirmed Mentor: Arnaud Ferraris (UTC+2)
-      How to contact the mentor: Matrix (a-wai on mobian-dev:matrix.org or email (aferraris@debian.org)
-      Difficulty level: Mostly medium, although difficulty level is expected to increase over the project's course
-      Project size: The whole project is a large (350 hours) one, although its scope could be reduced to fit either a 90 hours or a 175 hours project.
-      Deliverables of the project:
-      Analysis and discussion of the current state of device tweaks management in Debian and Mobian
-      Proposal for a unified, run-time approach
-      Initial implementation of a "tweaks management" service
-      Packaging of this service and tweaks data/configuration for at least one device
-      Desirable skills:
-      Familiarity with ARM64 devices (RPi 3+, Pine{Book,Phone,Tab} etc)
-      Basic understanding of Linux systems (common services and middleware, user/admin/distro-specific configuration...)
-      Shell scripting and basic programming skills
-      (optional) basic Rust knowledge
-      What the intern will learn: Through this project, the intern will improve their analysis and project management skils, gain a better understanding of Linux systems from a low-level perspective along with basic embedded software skills. They will also learn about Debian development (on both technical and philosophical levels) and likely learn/improve their Rust knowledge.
-      Application tasks:
-      Locate current tweaks packages (in both Debian and Mobian) targeting mobile devices and their source code
-      Briefly analyze one or several of those tweaks and either:
-      Explain their use
-      Rework them, ideally making them more generic
-      Offer to remove them, explaining the reasoning
-      Related projects:
-      Mobian
-      DebianOnMobile team
-      mobile-tweaks
-      tweakster
-      [SummerOfCode2025/ApprovedProjects/DeviceTweaksManagement][edit]
+          ~~~~~~~~~~
+          Device-specific Tweaks Management
+          Description of the project: A significant number of non-x86 Linux-capable devices made it to the market in the past few years, especially ARM64 laptops, mobile phones and tablets. Most of those, inheriting their design from embedded systems (and therefore lacking support for software interfaces such as ACPI/UEFI), need device-specific "tweaks" (configuration files/fragments, shell scripts...). As the number of supported devices grows rapidly, providing device-specific Debian packages containing those tweaks doesn't scale, and limits our ability to provide a generic system image/rootfs.
+          This project aims at researching and implementing a more flexible way of managing those tweaks, by creating a service capable of identifying the exact device it's running on, selecting the appropriate tweaks based on its configuration file, and installing them to the system. Reaching this goal will ultimately ease supporting new devices in Debian.
+          Confirmed Mentor: Arnaud Ferraris (UTC+2)
+          How to contact the mentor: Matrix (a-wai on mobian-dev:matrix.org or email (aferraris@debian.org)
+          Difficulty level: Mostly medium, although difficulty level is expected to increase over the project's course
+          Project size: The whole project is a large (350 hours) one, although its scope could be reduced to fit either a 90 hours or a 175 hours project.
+          Deliverables of the project:
+          Analysis and discussion of the current state of device tweaks management in Debian and Mobian
+          Proposal for a unified, run-time approach
+          Initial implementation of a "tweaks management" service
+          Packaging of this service and tweaks data/configuration for at least one device
+          Desirable skills:
+          Familiarity with ARM64 devices (RPi 3+, Pine{Book,Phone,Tab} etc)
+          Basic understanding of Linux systems (common services and middleware, user/admin/distro-specific configuration...)
+          Shell scripting and basic programming skills
+          (optional) basic Rust knowledge
+          What the intern will learn: Through this project, the intern will improve their analysis and project management skils, gain a better understanding of Linux systems from a low-level perspective along with basic embedded software skills. They will also learn about Debian development (on both technical and philosophical levels) and likely learn/improve their Rust knowledge.
+          Application tasks:
+          Locate current tweaks packages (in both Debian and Mobian) targeting mobile devices and their source code
+          Briefly analyze one or several of those tweaks and either:
+          Explain their use
+          Rework them, ideally making them more generic
+          Offer to remove them, explaining the reasoning
+          Related projects:
+          Mobian
+          DebianOnMobile team
+          mobile-tweaks
+          tweakster
+          [SummerOfCode2025/ApprovedProjects/DeviceTweaksManagement][edit]
 
-      ~~~~~~~~~~
-      Enhancing Debian packages with ROCm GPU acceleration
-      Description of the project: There now exists a solid foundation of AMD ROCm components packaged within Debian, so it is time to start making use of them! This project would consist of enhancements to existing packages that have AMD GPU support available upstream but not enabled in Debian, or the packaging of new tools and libraries that would be useful for AMD GPU users. A (non-exhaustive) list of potential packages include: adios2, blaspp, cp2k, cupy, dbcsr, elpa, gloo, hpx, hypre, jax, kokkos, lammps, lapackpp, magma, mfem, mpich, onnxruntime, papi, paraview, petsc, pyfr, pytorch, slepc, spfft, sundials, superlu-dist, or trilinos. There are a lot of options of varying difficulty, so it may be possible to tune the project to the skills and time available to the contributor.
-      Confirmed Mentor: Cordell Bloor
-      How to contact the mentor: cgmb@slerp.xyz
-      Difficulty level: Medium
-      Project size: Large (350 hours) if attempting to enhance as many packages as possible, but the scope could be reduced to fit a Medium (175 hour) or Small (90 hour) project
-      Deliverables of the project:
-      New Debian packages with GPU support
-      Enhanced GPU support within existing Debian packages
-      More autopackagetests running on the Debian ROCm CI
-      Desirable skills:
-      Strong familiarity with Debian and/or Ubuntu
-      Proficiency with CLIs
-      Some experience with build systems (e.g. CMake)
-      What the intern will learn:
-      Debian packaging (.deb) and maintenance within the Debian ecosystem
-      Interacting with a broad variety of other groups within Debian, for example the Release Team and ftp-master
-      How to work with ROCm (the AMD alternative to CUDA)
-      Application tasks:
-      Read the Debian New Maintainer's Guide and the Developer's reference
-      Analyze which packages you would target
-      Try to enhance one Debian package with AMD ROCm support
-      Related projects:
-      AMD ROCm GitHub
-      [SummerOfCode2025/ApprovedProjects/EnhancingPackagesWithROCm][edit]
+          ~~~~~~~~~~
+          Enhancing Debian packages with ROCm GPU acceleration
+          Description of the project: There now exists a solid foundation of AMD ROCm components packaged within Debian, so it is time to start making use of them! This project would consist of enhancements to existing packages that have AMD GPU support available upstream but not enabled in Debian, or the packaging of new tools and libraries that would be useful for AMD GPU users. A (non-exhaustive) list of potential packages include: adios2, blaspp, cp2k, cupy, dbcsr, elpa, gloo, hpx, hypre, jax, kokkos, lammps, lapackpp, magma, mfem, mpich, onnxruntime, papi, paraview, petsc, pyfr, pytorch, slepc, spfft, sundials, superlu-dist, or trilinos. There are a lot of options of varying difficulty, so it may be possible to tune the project to the skills and time available to the contributor.
+          Confirmed Mentor: Cordell Bloor
+          How to contact the mentor: cgmb@slerp.xyz
+          Difficulty level: Medium
+          Project size: Large (350 hours) if attempting to enhance as many packages as possible, but the scope could be reduced to fit a Medium (175 hour) or Small (90 hour) project
+          Deliverables of the project:
+          New Debian packages with GPU support
+          Enhanced GPU support within existing Debian packages
+          More autopackagetests running on the Debian ROCm CI
+          Desirable skills:
+          Strong familiarity with Debian and/or Ubuntu
+          Proficiency with CLIs
+          Some experience with build systems (e.g. CMake)
+          What the intern will learn:
+          Debian packaging (.deb) and maintenance within the Debian ecosystem
+          Interacting with a broad variety of other groups within Debian, for example the Release Team and ftp-master
+          How to work with ROCm (the AMD alternative to CUDA)
+          Application tasks:
+          Read the Debian New Maintainer's Guide and the Developer's reference
+          Analyze which packages you would target
+          Try to enhance one Debian package with AMD ROCm support
+          Related projects:
+          AMD ROCm GitHub
+          [SummerOfCode2025/ApprovedProjects/EnhancingPackagesWithROCm][edit]
 
-      ~~~~~~~~~~
-      Make Debian for Raspberry Build Again
-      Description of the project: There is an available set of images for running Debian in Raspberry Pi computers (all models below the 5 series)! However, I (the maintainer) am severely lacking time to take care for them; I called for help for somebody to adopt them, but have not been successful. The image generation scripts might have bitrotted a bit, but it is mostly all done. And there is a lot of interest and use still in having the images freshly generated and decently tested! This GSoC project is about getting the [[https://raspi.debian.net/ | Raspberry Pi Debian images] site working reliably again, and ideally making it easily deployable to be run in project machines.
-      Confirmed Mentor: Gunnar Wolf
-      How to contact the mentor: gwolf@debian.org, IRC: gwolf on OFTC
-      Difficulty level: Easy
-      Project size: Medium
-      Deliverables of the project:
-      Refreshing the set of daily-built images
-      Having the set of daily-built images become automatic again — that is, go back to the promise of having it daily-built
-      Write an Ansible playbook / Chef recipe / Puppet whatsitsname to define a virtual serve and have it build daily
-      Do the (very basic!) hardware testing on several Raspberry computers. Do note, naturally, this will require having access to the relevant hardware.
-      Desirable skills:
-      Understanding the early-boot process of a single-board computer
-      Declarative configuration (for vmdb2 as well as for Ansible/Chef/Puppet)
-      Writing systemd units and timers
-      What the intern will learn: The Raspberry Pi family of computers are ARM-based computers, which have a boot process quite different from “traditional” UEFI-based PCs. You will get acquinted with how a different architecture (that is growing in importance!) boots, how Device Tree maps the hardware for the operating system to use it (and maybe even how to work with overlays). You will also learn how deployment of production-level code is done to servers so they run reliably.
-      Application tasks:
-      We try to diverge the least possible from regular Debian installs with these images, but the RPi's way of working forces us to take some decisions.
-      How much do we differ?
-      Do you think all of our modifications make sense, or we might be carrying over some cruft that could be removed?
-      We use the vmdb2 image building system. It is not much known outside Debian. How do you compare it with other image building tools?
-      Related projects: We are filling approximately the same role as our debian-installer tool, but generating for a series of computers where users often flash ready-to-use images instead of doing an explicit install. Of course, the images we provide could be compared to what Raspberry Pi OS offers, but giving the quality and free-software guarantees that Debian has.
-      [SummerOfCode2025/ApprovedProjects/MakeDebianForRaspberryBuildAgain][edit]
+          ~~~~~~~~~~
+          Make Debian for Raspberry Build Again
+          Description of the project: There is an available set of images for running Debian in Raspberry Pi computers (all models below the 5 series)! However, I (the maintainer) am severely lacking time to take care for them; I called for help for somebody to adopt them, but have not been successful. The image generation scripts might have bitrotted a bit, but it is mostly all done. And there is a lot of interest and use still in having the images freshly generated and decently tested! This GSoC project is about getting the [[https://raspi.debian.net/ | Raspberry Pi Debian images] site working reliably again, and ideally making it easily deployable to be run in project machines.
+          Confirmed Mentor: Gunnar Wolf
+          How to contact the mentor: gwolf@debian.org, IRC: gwolf on OFTC
+          Difficulty level: Easy
+          Project size: Medium
+          Deliverables of the project:
+          Refreshing the set of daily-built images
+          Having the set of daily-built images become automatic again — that is, go back to the promise of having it daily-built
+          Write an Ansible playbook / Chef recipe / Puppet whatsitsname to define a virtual serve and have it build daily
+          Do the (very basic!) hardware testing on several Raspberry computers. Do note, naturally, this will require having access to the relevant hardware.
+          Desirable skills:
+          Understanding the early-boot process of a single-board computer
+          Declarative configuration (for vmdb2 as well as for Ansible/Chef/Puppet)
+          Writing systemd units and timers
+          What the intern will learn: The Raspberry Pi family of computers are ARM-based computers, which have a boot process quite different from “traditional” UEFI-based PCs. You will get acquinted with how a different architecture (that is growing in importance!) boots, how Device Tree maps the hardware for the operating system to use it (and maybe even how to work with overlays). You will also learn how deployment of production-level code is done to servers so they run reliably.
+          Application tasks:
+          We try to diverge the least possible from regular Debian installs with these images, but the RPi's way of working forces us to take some decisions.
+          How much do we differ?
+          Do you think all of our modifications make sense, or we might be carrying over some cruft that could be removed?
+          We use the vmdb2 image building system. It is not much known outside Debian. How do you compare it with other image building tools?
+          Related projects: We are filling approximately the same role as our debian-installer tool, but generating for a series of computers where users often flash ready-to-use images instead of doing an explicit install. Of course, the images we provide could be compared to what Raspberry Pi OS offers, but giving the quality and free-software guarantees that Debian has.
+          [SummerOfCode2025/ApprovedProjects/MakeDebianForRaspberryBuildAgain][edit]
 
-      ~~~~~~~~~~
-      Package LLM Inference Libraries
-      Description of the project: Package Large Language Model (LLM) inference libraries, in particular vLLM. It is needless to explain how LLMs are important. Currently, in the Debian archive, we only have ?PyTorch, but downstream applications are still missing. One of the most promising downstream applications is LLM inference. There are already people working on llama.cpp and Ollama, but vLLM still lacks lots of dependencies to land onto Debian. For multi-GPU inference and concurrency, vLLM has its advantages over llama.cpp. The missing packages are, for instance, transformers, huggingface-hub, etc. We would like to trim the dependency tree a little bit at the beginning until we get a minimum working instance of vLLM. Such, this project involves the Debian packaging work for vLLM and its dependencies that are missing from Debian, as well as fixing issues (if there is any) in existing packages to make vLLM work.
-      Confirmed Mentor: Mo Zhou
-      How to contact the mentor: lumin@debian.org
-      Confirmed co-mentors: Christian Kastner (ckk@debian.org), Xuanteng Huang (xuanteng.huang@outlook.com). On the other hand, Debian Deep Learning Team (debian-ai@lists.debian.org) could offer help.
-      Difficulty level: Medium (There might be some hard bits. Some packages that we are going to deal with have a clearly above-average difficulty than general Debian packages.
-      Project size: 350 hour (large). I get this rough estimate by looking at the pipdeptree of the vllm package. The tree is a little deep.
-      Deliverables of the project: Eventually I hope we can make vLLM into Debian archive, based on which we can deliver something for LLM inference out-of-the-box. If the amount of work eventually turns to be beyond my expectation, I'm still happy to see how far we can go towards this goal. If the amount of work required for vLLM is less than I expected, we can also look at something else like SGLang, another open source LLM inference library.
-      Desirable skills: Long term Linux user (familiarity with Debian family is preferred), Python, ?PyTorch, and experience of running Large Language Models locally.
-      What the intern will learn: Through this project, the intern will learn about the Debian development process, and gain more experience of running LLMs locally, including the inference performance tuning.
-      Application tasks: Analyze how ?PyTorch is packaged in Debian, including how the CUDA variant of ?PyTorch is prepared. Those details are very important for the whole reverse dependency tree. And, the intern also needs to setup vLLM locally using pip or uv, and run the LLM inference locally for reference.
-      Related projects: The ?PyTorch packaging repository is here: https://salsa.debian.org/deeplearning-team/pytorch
-      [SummerOfCode2025/ApprovedProjects/PackageLLMInferenceLibraries][edit]
-      
-      ~~~~~~~~~~
-      Autopkgtests for the rsync package
-      Description of the project: A recent series of breakages caused in the rsync package as part of CVE fixes exposed the lack of testing coverage on Debian, e.g.: https://github.com/RsyncProject/rsync/issues/702. The rsync package on Debian has no autopkgtest. This project is for adding these tests to the rsync package, covering as many usecases as possible, making impossible for regressions to go unnoticed. These tests will also be submitted to stable through the proposed-updates mechanism.
-      Confirmed Mentor: SamuelHenrique
-      How to contact the mentor: samueloph@d.o, @samueloph:matrix.org, samueloph @ OFTC.
-      Confirmed co-mentors: N/A
-      Difficulty level: Easy
-      Project size: 90 hour (small project)
-      Deliverables of the project: Autopkgtests for the rsync package
-      Desirable skills: Debian packaging, autopkgtest, shell scripting, rsync.
-      What the intern will learn: How the Debian project does CI, how to write CI tests for the rsync package.
-      Application tasks: Debian packaging contributions. It is required to have a non-virtualized machine running Debian Stable or Testing (no WSL, no containers, no VMs).
-      Related projects: N/A
-      More Resources: https://salsa.debian.org/ci-team/autopkgtest/-/blob/master/doc/README.package-tests.rst
-      [SummerOfCode2025/ApprovedProjects/RsyncAutopkgtests][edit]
+          ~~~~~~~~~~
+          Package LLM Inference Libraries
+          Description of the project: Package Large Language Model (LLM) inference libraries, in particular vLLM. It is needless to explain how LLMs are important. Currently, in the Debian archive, we only have ?PyTorch, but downstream applications are still missing. One of the most promising downstream applications is LLM inference. There are already people working on llama.cpp and Ollama, but vLLM still lacks lots of dependencies to land onto Debian. For multi-GPU inference and concurrency, vLLM has its advantages over llama.cpp. The missing packages are, for instance, transformers, huggingface-hub, etc. We would like to trim the dependency tree a little bit at the beginning until we get a minimum working instance of vLLM. Such, this project involves the Debian packaging work for vLLM and its dependencies that are missing from Debian, as well as fixing issues (if there is any) in existing packages to make vLLM work.
+          Confirmed Mentor: Mo Zhou
+          How to contact the mentor: lumin@debian.org
+          Confirmed co-mentors: Christian Kastner (ckk@debian.org), Xuanteng Huang (xuanteng.huang@outlook.com). On the other hand, Debian Deep Learning Team (debian-ai@lists.debian.org) could offer help.
+          Difficulty level: Medium (There might be some hard bits. Some packages that we are going to deal with have a clearly above-average difficulty than general Debian packages.
+          Project size: 350 hour (large). I get this rough estimate by looking at the pipdeptree of the vllm package. The tree is a little deep.
+          Deliverables of the project: Eventually I hope we can make vLLM into Debian archive, based on which we can deliver something for LLM inference out-of-the-box. If the amount of work eventually turns to be beyond my expectation, I'm still happy to see how far we can go towards this goal. If the amount of work required for vLLM is less than I expected, we can also look at something else like SGLang, another open source LLM inference library.
+          Desirable skills: Long term Linux user (familiarity with Debian family is preferred), Python, ?PyTorch, and experience of running Large Language Models locally.
+          What the intern will learn: Through this project, the intern will learn about the Debian development process, and gain more experience of running LLMs locally, including the inference performance tuning.
+          Application tasks: Analyze how ?PyTorch is packaged in Debian, including how the CUDA variant of ?PyTorch is prepared. Those details are very important for the whole reverse dependency tree. And, the intern also needs to setup vLLM locally using pip or uv, and run the LLM inference locally for reference.
+          Related projects: The ?PyTorch packaging repository is here: https://salsa.debian.org/deeplearning-team/pytorch
+          [SummerOfCode2025/ApprovedProjects/PackageLLMInferenceLibraries][edit]
+          
+          ~~~~~~~~~~
+          Autopkgtests for the rsync package
+          Description of the project: A recent series of breakages caused in the rsync package as part of CVE fixes exposed the lack of testing coverage on Debian, e.g.: https://github.com/RsyncProject/rsync/issues/702. The rsync package on Debian has no autopkgtest. This project is for adding these tests to the rsync package, covering as many usecases as possible, making impossible for regressions to go unnoticed. These tests will also be submitted to stable through the proposed-updates mechanism.
+          Confirmed Mentor: SamuelHenrique
+          How to contact the mentor: samueloph@d.o, @samueloph:matrix.org, samueloph @ OFTC.
+          Confirmed co-mentors: N/A
+          Difficulty level: Easy
+          Project size: 90 hour (small project)
+          Deliverables of the project: Autopkgtests for the rsync package
+          Desirable skills: Debian packaging, autopkgtest, shell scripting, rsync.
+          What the intern will learn: How the Debian project does CI, how to write CI tests for the rsync package.
+          Application tasks: Debian packaging contributions. It is required to have a non-virtualized machine running Debian Stable or Testing (no WSL, no containers, no VMs).
+          Related projects: N/A
+          More Resources: https://salsa.debian.org/ci-team/autopkgtest/-/blob/master/doc/README.package-tests.rst
+          [SummerOfCode2025/ApprovedProjects/RsyncAutopkgtests][edit]
 
-      ~~~~~~~~~~
-      Salsa CI in Debian
-      Description of the project: Salsa CI is a custom-built continuous integration framework that is used in the Debian Gitlab instance (Salsa) and helps Debian maintainers manage roughly 9,000 projects. The Salsa CI pipeline emulates the Debian build process and runs several Debian quality tests, helping to increase the probability that packages can migrate from Debian Unstable to Testing reliably, quickly, and without issue. When new source code triggers a Salsa CI pipeline, 17 different jobs run to build and test it automatically. Salsa CI checks to see whether the to-be-uploaded packages build on multiple architectures (at the moment, amd64 and i386, and optionally on Arm), runs autopkgtest test suites to try to identify potential regressions, and checks for common errors with our custom linter, lintian, among other tests.
-      Confirmed Mentor: Otto Kekäläinen
-      How to contact the mentor: otto@debian.org
-      Confirmed co-mentors: Emmanuel Arias <eamanu@debian.org>
-      Difficulty level: Medium
-      Project size: Medium sized (175 hours). Depending on the student's availability, this project can be medium or large. The advantage of the project is it can be split into small pieces.
-      Deliverables of the project: Fix and discuss issues reported to Salsa CI. Specially Labels "Nice-to-have", "Accepting MRs".
-      Desirable skills: Awareness of GitLab CI. Working with git. Basic knowledge of Debian packaging.
-      What the intern will learn: Debian Release process, Debian package building, Debian CI process, Basic QA of Debian packages.
-      Application tasks: Pick issues from here, discuss with the team and try to fix them.
-      More resources:
-      https://debconf20.debconf.org/talks/47-where-is-salsa-ci-right-now/
-      https://about.gitlab.com/blog/2023/09/19/debian-customizes-ci-tooling-with-gitlab/
-      https://debconf19.debconf.org/talks/148-salsa-ci-debian-pipeline-for-developers/
-      [SummerOfCode2025/ApprovedProjects/SalsaCI][edit]
+          ~~~~~~~~~~
+          Salsa CI in Debian
+          Description of the project: Salsa CI is a custom-built continuous integration framework that is used in the Debian Gitlab instance (Salsa) and helps Debian maintainers manage roughly 9,000 projects. The Salsa CI pipeline emulates the Debian build process and runs several Debian quality tests, helping to increase the probability that packages can migrate from Debian Unstable to Testing reliably, quickly, and without issue. When new source code triggers a Salsa CI pipeline, 17 different jobs run to build and test it automatically. Salsa CI checks to see whether the to-be-uploaded packages build on multiple architectures (at the moment, amd64 and i386, and optionally on Arm), runs autopkgtest test suites to try to identify potential regressions, and checks for common errors with our custom linter, lintian, among other tests.
+          Confirmed Mentor: Otto Kekäläinen
+          How to contact the mentor: otto@debian.org
+          Confirmed co-mentors: Emmanuel Arias <eamanu@debian.org>
+          Difficulty level: Medium
+          Project size: Medium sized (175 hours). Depending on the student's availability, this project can be medium or large. The advantage of the project is it can be split into small pieces.
+          Deliverables of the project: Fix and discuss issues reported to Salsa CI. Specially Labels "Nice-to-have", "Accepting MRs".
+          Desirable skills: Awareness of GitLab CI. Working with git. Basic knowledge of Debian packaging.
+          What the intern will learn: Debian Release process, Debian package building, Debian CI process, Basic QA of Debian packages.
+          Application tasks: Pick issues from here, discuss with the team and try to fix them.
+          More resources:
+          https://debconf20.debconf.org/talks/47-where-is-salsa-ci-right-now/
+          https://about.gitlab.com/blog/2023/09/19/debian-customizes-ci-tooling-with-gitlab/
+          https://debconf19.debconf.org/talks/148-salsa-ci-debian-pipeline-for-developers/
+          [SummerOfCode2025/ApprovedProjects/SalsaCI][edit]
 
-      ~~~~~~~~~~
-      
-      Unapproved Projects with confirmed mentors
-      findutils: Finish Support
-      Description of the project: Complete the Rust implementation of GNU Findutils, ensuring full compatibility with all options and passing GNU tests. This project focuses on refining and finalizing the Rust-based reimplementation of key utilities from the Findutils package, which are essential for file searching and manipulation in Unix-like systems. The goal is to achieve full feature parity with the GNU versions while maintaining performance and correctness.
-      To improve your chances of being selected, please contribute a few changes to the project to demonstrate your commitment and understanding.
-      Confirmed Mentor: Sylvestre Ledru
-      How to contact the mentor: sylvestre@debian.org
-      Confirmed co-mentors: Daniel Hofstetter <daniel.hofstetter@42dh.com>
-      Difficulty level: Large
-      Project size: 350 hours
-      Deliverables of the project:
-      A fully functional Rust implementation of the Findutils suite, including:
-      /usr/bin/find - search for files in a directory hierarchy
-      /usr/bin/locate - find files by name in a prebuilt index
-      /usr/bin/updatedb - update the locate database
-      /usr/bin/xargs - build and execute command lines from input
-      Full compatibility with GNU Findutils
-      Passing all relevant GNU tests
-      Desirable skills:
-      Rust expertise
-      Knowledge of file systems and directory traversal
-      Understanding of command-line utilities and Unix system interactions
-      What the intern will learn:
-      How file search utilities work
-      Efficient directory traversal and filtering techniques
-      Optimization strategies for large-scale file searches
-      Application tasks:
-      Implement or improve one of the Findutils utilities from the uutils/findutils project: https://github.com/uutils/findutils
-      [SummerOfCode2025/PendingProjects/rust-bsdutils][edit]
+          ~~~~~~~~~~
+          
+          Unapproved Projects with confirmed mentors
+          findutils: Finish Support
+          Description of the project: Complete the Rust implementation of GNU Findutils, ensuring full compatibility with all options and passing GNU tests. This project focuses on refining and finalizing the Rust-based reimplementation of key utilities from the Findutils package, which are essential for file searching and manipulation in Unix-like systems. The goal is to achieve full feature parity with the GNU versions while maintaining performance and correctness.
+          To improve your chances of being selected, please contribute a few changes to the project to demonstrate your commitment and understanding.
+          Confirmed Mentor: Sylvestre Ledru
+          How to contact the mentor: sylvestre@debian.org
+          Confirmed co-mentors: Daniel Hofstetter <daniel.hofstetter@42dh.com>
+          Difficulty level: Large
+          Project size: 350 hours
+          Deliverables of the project:
+          A fully functional Rust implementation of the Findutils suite, including:
+          /usr/bin/find - search for files in a directory hierarchy
+          /usr/bin/locate - find files by name in a prebuilt index
+          /usr/bin/updatedb - update the locate database
+          /usr/bin/xargs - build and execute command lines from input
+          Full compatibility with GNU Findutils
+          Passing all relevant GNU tests
+          Desirable skills:
+          Rust expertise
+          Knowledge of file systems and directory traversal
+          Understanding of command-line utilities and Unix system interactions
+          What the intern will learn:
+          How file search utilities work
+          Efficient directory traversal and filtering techniques
+          Optimization strategies for large-scale file searches
+          Application tasks:
+          Implement or improve one of the Findutils utilities from the uutils/findutils project: https://github.com/uutils/findutils
+          [SummerOfCode2025/PendingProjects/rust-bsdutils][edit]
 
-      ~~~~~~~~~~
-      login: Reimplementation of Login Infrastructure Tools in Rust
-      Description of the project: Create Rust versions of login infrastructure tools, with a focus on full option compatibility and passing GNU tests. This project involves the Rust-based reimplementation of essential login infrastructure tools that provide functionality for logins and changing effective user or group IDs. The objective is to implement these tools as drop-in replacements for the original shadow-utils suite, ensuring full compatibility with all options and passing all relevant tests. To improve your chances to be selected, please contribute a few changes to the project to demonstrate your commitment and understanding of the project.
-      Confirmed Mentor: Sylvestre Ledru
-      How to contact the mentor: sylvestre@debian.org
-      Confirmed co-mentors: Daniel Hofstetter <daniel.hofstetter@42dh.com>
-      Difficulty level: Large
-      Project size: 350 hours
-      Deliverables of the project: Robust login infrastructure tools, including:
-      /bin/login - the program that invokes a user shell on a virtual terminal
-      /usr/bin/faillog - tool for displaying and maintaining failure records
-      /usr/bin/lastlog - examine the last login record
-      /usr/bin/newgrp - change to a new group
-      /usr/sbin/nologin - a dummy shell for disabled user accounts
-      /usr/bin/sg - execute command with different group ID
-      Desirable skills: Rust expertise, knowledge of Linux authentication systems, user/group management, and security considerations.
-      What the intern will learn: How login infrastructure works, system security concepts, authentication mechanisms, and privilege management.
-      Application tasks: Implement or improve one of the login tools from the shadow-utils project: https://github.com/shadow-maint/shadow
-      [SummerOfCode2025/PendingProjects/rust-login][edit]
+          ~~~~~~~~~~
+          login: Reimplementation of Login Infrastructure Tools in Rust
+          Description of the project: Create Rust versions of login infrastructure tools, with a focus on full option compatibility and passing GNU tests. This project involves the Rust-based reimplementation of essential login infrastructure tools that provide functionality for logins and changing effective user or group IDs. The objective is to implement these tools as drop-in replacements for the original shadow-utils suite, ensuring full compatibility with all options and passing all relevant tests. To improve your chances to be selected, please contribute a few changes to the project to demonstrate your commitment and understanding of the project.
+          Confirmed Mentor: Sylvestre Ledru
+          How to contact the mentor: sylvestre@debian.org
+          Confirmed co-mentors: Daniel Hofstetter <daniel.hofstetter@42dh.com>
+          Difficulty level: Large
+          Project size: 350 hours
+          Deliverables of the project: Robust login infrastructure tools, including:
+          /bin/login - the program that invokes a user shell on a virtual terminal
+          /usr/bin/faillog - tool for displaying and maintaining failure records
+          /usr/bin/lastlog - examine the last login record
+          /usr/bin/newgrp - change to a new group
+          /usr/sbin/nologin - a dummy shell for disabled user accounts
+          /usr/bin/sg - execute command with different group ID
+          Desirable skills: Rust expertise, knowledge of Linux authentication systems, user/group management, and security considerations.
+          What the intern will learn: How login infrastructure works, system security concepts, authentication mechanisms, and privilege management.
+          Application tasks: Implement or improve one of the login tools from the shadow-utils project: https://github.com/shadow-maint/shadow
+          [SummerOfCode2025/PendingProjects/rust-login][edit]
 
-      ~~~~~~~~~~
-      procps: Development of System Monitoring, Statistics and Information Tools in Rust
-      Description of the project: Create Rust versions of system monitoring and statistics tools, with a focus on full option compatibility and passing GNU tests. This project involves the Rust-based development of system monitoring and statistics tools: top, vmstat, tload, w, and watch. And process management and information tools: ps, pgrep, pidwait, pkill, skill, and snice. The objective is to achieve full compatibility with all options and to pass GNU tests, ensuring these tools provide accurate and reliable system insights. To improve your chances to be selected, please contribute a few changes to the project to demonstrate your commitment and understanding of the project. Debian can lead in this space with security and Rust!
-      Confirmed Mentor: Sylvestre Ledru
-      How to contact the mentor: sylvestre@debian.org
-      Confirmed co-mentors:Daniel Hofstetter <daniel.hofstetter@42dh.com>
-      Difficulty level: Large
-      Project size: 350 hours
-      Deliverables of the project: Robust tools for system monitoring and statistics, fully compatible with existing options and verified by GNU tests.
-      Desirable skills: Rust expertise, knowledge of system performance metrics, familiarity with GNU testing frameworks.
-      What the intern will learn: How the Coreutils work, the low level part of the OS
-      Application tasks: Fix one or more GNU test listed on: https://uutils.github.io/coreutils/book/test_coverage.html
-      [SummerOfCode2025/PendingProjects/rust-procps][edit]
+          ~~~~~~~~~~
+          procps: Development of System Monitoring, Statistics and Information Tools in Rust
+          Description of the project: Create Rust versions of system monitoring and statistics tools, with a focus on full option compatibility and passing GNU tests. This project involves the Rust-based development of system monitoring and statistics tools: top, vmstat, tload, w, and watch. And process management and information tools: ps, pgrep, pidwait, pkill, skill, and snice. The objective is to achieve full compatibility with all options and to pass GNU tests, ensuring these tools provide accurate and reliable system insights. To improve your chances to be selected, please contribute a few changes to the project to demonstrate your commitment and understanding of the project. Debian can lead in this space with security and Rust!
+          Confirmed Mentor: Sylvestre Ledru
+          How to contact the mentor: sylvestre@debian.org
+          Confirmed co-mentors:Daniel Hofstetter <daniel.hofstetter@42dh.com>
+          Difficulty level: Large
+          Project size: 350 hours
+          Deliverables of the project: Robust tools for system monitoring and statistics, fully compatible with existing options and verified by GNU tests.
+          Desirable skills: Rust expertise, knowledge of system performance metrics, familiarity with GNU testing frameworks.
+          What the intern will learn: How the Coreutils work, the low level part of the OS
+          Application tasks: Fix one or more GNU test listed on: https://uutils.github.io/coreutils/book/test_coverage.html
+          [SummerOfCode2025/PendingProjects/rust-procps][edit]
 
-      ~~~~~~~~~~
-      util-linux: Development of System Utilities in Rust
-      Description of the project: Create Rust versions of util-linux tools, with a focus on full option compatibility and passing GNU tests. This project involves the Rust-based reimplementation of various util-linux tools, including system information tools (dmesg, lscpu), filesystem tools (mountpoint, fsfreeze), partition management tools, process management tools, and utility tools. The objective is to achieve full compatibility with all options and to pass GNU tests, ensuring these tools function as drop-in replacements for the original util-linux suite. To improve your chances to be selected, please contribute a few changes to the project to demonstrate your commitment and understanding of the project.
-      Confirmed Mentor: Sylvestre Ledru
-      How to contact the mentor: sylvestre@debian.org
-      Confirmed co-mentors: Daniel Hofstetter <daniel.hofstetter@42dh.com>
-      Difficulty level: Large
-      Project size: 350 hours
-      Deliverables of the project: Robust tools for system utilities, fully compatible with existing options and verified by GNU tests.
-      Desirable skills: Rust expertise, knowledge of system utilities and Linux internals, familiarity with GNU testing frameworks.
-      What the intern will learn: How util-linux tools work, the low level part of the OS, system management, and filesystem operations
-      Application tasks: Implement or improve one of the tools listed in the util-linux repository: https://github.com/uutils/util-linux
-      [SummerOfCode2025/PendingProjects/rust-util-linux][edit]
+          ~~~~~~~~~~
+          util-linux: Development of System Utilities in Rust
+          Description of the project: Create Rust versions of util-linux tools, with a focus on full option compatibility and passing GNU tests. This project involves the Rust-based reimplementation of various util-linux tools, including system information tools (dmesg, lscpu), filesystem tools (mountpoint, fsfreeze), partition management tools, process management tools, and utility tools. The objective is to achieve full compatibility with all options and to pass GNU tests, ensuring these tools function as drop-in replacements for the original util-linux suite. To improve your chances to be selected, please contribute a few changes to the project to demonstrate your commitment and understanding of the project.
+          Confirmed Mentor: Sylvestre Ledru
+          How to contact the mentor: sylvestre@debian.org
+          Confirmed co-mentors: Daniel Hofstetter <daniel.hofstetter@42dh.com>
+          Difficulty level: Large
+          Project size: 350 hours
+          Deliverables of the project: Robust tools for system utilities, fully compatible with existing options and verified by GNU tests.
+          Desirable skills: Rust expertise, knowledge of system utilities and Linux internals, familiarity with GNU testing frameworks.
+          What the intern will learn: How util-linux tools work, the low level part of the OS, system management, and filesystem operations
+          Application tasks: Implement or improve one of the tools listed in the util-linux repository: https://github.com/uutils/util-linux
+          [SummerOfCode2025/PendingProjects/rust-util-linux][edit]
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
