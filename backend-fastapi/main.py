@@ -23,10 +23,15 @@ app.add_middleware(
 )
 
 load_dotenv()
+CHROMA_SERVER_HOST = os.getenv("CHROMA_SERVER_HOST")
+print(f"ChromaDB Server Host: {CHROMA_SERVER_HOST}")
 print(os.environ.get("GEMINI_API_KEY"))  # This should print your API key if loaded correctly
 
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-chroma_client = chromadb.PersistentClient(path="chroma_db")
+chroma_client = chromadb.HttpClient(
+    host=CHROMA_SERVER_HOST, 
+    port=8000
+)
 
 
 class QueryRequest(BaseModel):
@@ -60,33 +65,56 @@ def load_ideas_to_chroma(yaml_path: str):
         ids_list = []  # Create a list to store unique IDs
         
         for org in data['organizations']:
+            print(f"Processing organization: {org['organization_name']}")
             ideas = org['ideas_content'].split("~~~~~~~~~~")
-            for idea in ideas:
+            for i, idea in enumerate(ideas):
                 idea = idea.strip()
                 if idea:  # Ensure the idea is not empty
-                    embedding = get_embedding(idea)
-                    documents.append(idea)
-                    embeddings.append(embedding)
-                    metadatas.append({
-                        'organization_id': org['organization_id'],
-                        'organization_name': org['organization_name'],
-                        'no_of_ideas': org['no_of_ideas'],
-                        'totalCharacters_of_ideas_content_parent': org.get('totalCharacters_of_ideas_content_parent'),
-                        'totalwords_of_ideas_content_parent': org.get('totalwords_of_ideas_content_parent'),
-                        'totalTokenCount_of_ideas_content_parent': org.get('totalTokenCount_of_ideas_content_parent'),
-                        'gsocorganization_dev_url': org['gsocorganization_dev_url'],
-                        'idea_list_url': org['idea_list_url']
-                    })
-                    # Generate a unique ID for each document
-                    ids_list.append(str(uuid.uuid4()))
+                    try:
+                        # Create metadata dictionary with proper type checking
+                        metadata = {
+                            'organization_id': str(org['organization_id']),
+                            'organization_name': str(org['organization_name']),
+                            'no_of_ideas': int(org['no_of_ideas']),
+                            'gsocorganization_dev_url': str(org['gsocorganization_dev_url']),
+                            'idea_list_url': str(org['idea_list_url'])
+                        }
+                        
+                        # Add optional fields only if they exist and are not None
+                        if 'totalCharacters_of_ideas_content_parent' in org and org['totalCharacters_of_ideas_content_parent'] is not None:
+                            metadata['totalCharacters_of_ideas_content_parent'] = int(org['totalCharacters_of_ideas_content_parent'])
+                        
+                        if 'totalwords_of_ideas_content_parent' in org and org['totalwords_of_ideas_content_parent'] is not None:
+                            metadata['totalwords_of_ideas_content_parent'] = int(org['totalwords_of_ideas_content_parent'])
+                            
+                        if 'totalTokenCount_of_ideas_content_parent' in org and org['totalTokenCount_of_ideas_content_parent'] is not None:
+                            metadata['totalTokenCount_of_ideas_content_parent'] = int(org['totalTokenCount_of_ideas_content_parent'])
+                        
+                        # Print metadata for debugging
+                        print(f"  Idea {i+1}: Metadata = {metadata}")
+                        
+                        embedding = get_embedding(idea)
+                        documents.append(idea)
+                        embeddings.append(embedding)
+                        metadatas.append(metadata)
+                        ids_list.append(str(uuid.uuid4()))
+                    except Exception as e:
+                        print(f"  Error processing idea {i+1} from {org['organization_name']}: {str(e)}")
+                        print(f"  Problematic metadata: {org}")
         
-        collection.upsert(
-            ids=ids_list,
-            documents=documents,
-            embeddings=embeddings,
-            metadatas=metadatas
-        )
-        print(f"Loaded {len(documents)} ideas into ChromaDB")
+        try:
+            collection.upsert(
+                ids=ids_list,
+                documents=documents,
+                embeddings=embeddings,
+                metadatas=metadatas
+            )
+            print(f"Loaded {len(documents)} ideas into ChromaDB")
+        except Exception as e:
+            print(f"Error during upsert: {str(e)}")
+            # Print the first few metadata entries to help debug
+            for i in range(min(5, len(metadatas))):
+                print(f"Sample metadata {i}: {metadatas[i]}")
     else:
         print(f"ChromaDB collection already contains {collection.count()} documents")
 

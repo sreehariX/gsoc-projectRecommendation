@@ -5631,7 +5631,7 @@ organizations:
 
   - organization_id: 18
     organization_name: CHAOSS
-    no_of_ideas: 
+    no_of_ideas: 3
     ideas_content: |
       Idea: Enhance Conversational Topic Modelling Capabilities in CHAOSS Software
       Hours: 350
@@ -7017,7 +7017,7 @@ organizations:
 
   - organization_id: 24
     organization_name: Chromium
-    no_of_ideas:
+    no_of_ideas: 14
     ideas_content: |
       1. Interaction to Next Paint (INP) "subparts" (Medium Size)
 
@@ -10702,31 +10702,9 @@ organizations:
 
   - organization_id: 42
     organization_name: Fedora Project
-    no_of_ideas:
+    no_of_ideas: 2
     ideas_content: |
-      Fedora Mentored Projects
-      Google Summer of Code
-      2025
-      Ideas
-      en-US
-      Contents
-      Supporting Mentors
-      Idea List
-      AI-Powered Log Triage and Security Alert Aggregator for Fedora
-      Create a service to get a new project to Fedora more easily
-      Ideas for Student Projects for 2025
-      Fedora is proud to have been accepted as a GSoC mentoring organization. Student applications open on March 24 2025 1800 UTC. Please make sure you carefully read through the general information and application process pages before applying.
-      If you are a student looking forward to participating in Google Summer of Code with Fedora, please feel free to browse this idea list. There may be additional ideas added during the application period.
-      Now please go read the What Can I do Today section of the main page. This has the answers to your questions and tells you how to apply
-      Do not hesitate to contact the mentors or contributors listed on this page for any questions or clarification. You can find helpful people on the Matrix channel, or use the mailing list. can be used for getting help with programming problems.
-      Supporting Mentors
-      The following contributors are available to provide general help and support for the GSoC program If a specific project mentor is busy, you can contact one of the people below for short-term help on your project or task. add yourselves and your wiki page).
-      Sumantro Mukherjee (General development, quality, general Linux, Fedora community, GSoC alumnus, questions about program, misc. advice)
-      Fernando F. Mancera (GSoC, general linux, Fedora community, Mentoring, Networking)
-      Idea List
-      Ideas are subject to change as additional mentors are onboarded.
-      AI-Powered Log Triage and Security Alert Aggregator for Fedora
-      Create a service to get a new project to Fedora more easily
+     
       AI-Powered Log Triage and Security Alert Aggregator for Fedora
       Difficulty : Easy
       Type : 1 person full time 350hrs (12 weeks)
@@ -10742,6 +10720,8 @@ organizations:
       Documentation: Concise instructions covering installation, usage, configuration, and development/contribution guidelines.
       Demonstration/Prototype: A working setup (CLI or basic UI) showcasing how logs are collected, classified, and prioritized in real time.
       Testing & Evaluation Results: A set of tests (unit/integration) plus any benchmarking or evaluation reports on model performance and accuracy.
+
+      ~~~~~~~~~~
       Create a service to get a new project to Fedora more easily
       Difficulty : Easy
       Type : 1 person full time 350hrs (12 weeks)
@@ -10755,8 +10735,7 @@ organizations:
       Documentation: Concise instructions covering the service and its deployment, testing and development but also usage.
       Demonstration/Prototype: A working setup showcasing how this service works and integrating at least a single automatic feedback.
       Testing & Evaluation Results: A set of tests (unit/integration) of the new code.
-      Deployment: The service is deployed and running or it is available to be run and deployed in the form of a container.
-      Want to help? Learn how to contribute to Fedora Docs ›
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
