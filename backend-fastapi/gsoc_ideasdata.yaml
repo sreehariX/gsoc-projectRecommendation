@@ -8452,473 +8452,472 @@ organizations:
     organization_name: Drupal Association
     no_of_ideas: 9
     ideas_content: |
-
-    Proposal 2025: Augmentor DALL·E 3 module
-    Project Description
-    This project aims to ship the Augmentor plugin with seamless integration to the DALL·E 3 service, enabling users to generate high-quality images directly from text prompts. By combining Augmentor's flexible plugin architecture with DALL·E 3’s advanced AI capabilities, the solution will empower content creators to effortlessly transform ideas into compelling visual content. The integration will focus on delivering a user-friendly interface, efficient performance, and robust error handling to cater to both technical and non-technical users.
-
-    Project Goal
-    Functional Changes:
-    Integrate the DALL·E 3 API into the Augmentor plugin for real-time image generation from text inputs.
-    Develop an intuitive interface for configuring image generation parameters and previewing results.
-    Implement error handling and optimization strategies to ensure reliability and performance.
-    Provide comprehensive documentation and usage guides to facilitate seamless adoption.
-    Mentor Details
-    Name: Naveen Valecha & Murrayw
-    Email / Slack: @naveenvalecha, @murrayw
-
-    Project Size
-    175 hours
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Expertise in plugin development within the Augmentor ecosystem.
-    Proficiency in JavaScript, Python, or other relevant programming languages.
-    Familiarity with RESTful APIs and integrating third-party AI services.
-    Experience with DALL·E 3 or similar AI image generation APIs is a plus.
-    Understanding of UI/UX design principles to create an engaging and intuitive user interface.
-    Project Resources
-    DALL·E 3 Documentation
-    Augmentor Plugin Developer Guide
-    OpenAI API Reference
-    Web API Documentation
-    R&D Tasks
-    Research the DALL·E 3 API, including authentication methods, rate limits, and usage policies.
-    Design and develop a modular integration layer within the Augmentor plugin.
-    Create a user-friendly interface for inputting text prompts and previewing generated images.
-    Implement error handling, logging, and performance optimizations to ensure a seamless user experience.
-    Document the integration process, including setup instructions and usage tutorials.
-
-    ~~~~~~~~~~
-
-    Proposal 2025: Open Source AI Content Generation
-    
-    Project Description
-    This project focuses on advancing the integration of open-source AI models into existing Drupal modules, streamlining the creation of structured content based on user prompts. By embedding AI-powered content generation directly into Drupal, the solution aims to automate and simplify the content creation process. Site builders and content creators will benefit from a seamless workflow that transforms text inputs into well-organized, coherent content.
-
-    Project Goal
-    Functional Changes:
-    Develop an integration layer that connects Drupal content creation modules with open-source AI models.
-    Create an intuitive interface where users can input prompts or guidelines to generate structured content.
-    Implement mechanisms to format and validate the generated content according to predefined templates.
-    Optimize the integration for performance and reliability, including robust error handling and logging.
-    Document the integration process and provide comprehensive usage guides for end users.
-    Mentor Details
-    Name & Slack: Gaurav & Anushri Kumari
-    Email / Slack: @gauravvvv, @anushrikumari
-
-    Project Size
-    350 hours
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Proficiency in PHP and Symfony for backend development.
-    Experience in JavaScript for front-end interface development.
-    Familiarity with AI models and APIs, including experience working with open-source AI frameworks.
-    Understanding of Drupal module development and integration patterns is a plus.
-    Project Resources
-    Drupal Documentation
-    Symfony Documentation
-    Hugging Face – Open Source AI Models
-    JavaScript Guide
-    R&D Tasks
-    Research and evaluate suitable open-source AI models that can generate structured content from text prompts.
-    Identify the optimal integration points within existing Drupal content creation modules.
-    Develop the backend integration using PHP and Symfony, ensuring smooth communication with the AI APIs.
-    Create a user-friendly front-end interface using JavaScript that allows users to input prompts and preview generated content.
-    Implement error handling, logging, and performance optimizations to enhance the overall user experience.
-    Document the integration process and produce detailed guides for installation, configuration, and usage.
-    Issue fork gsoc-3419059
-    Command icon Show commands
-    About issue forks
-
-    ~~~~~~~~~~
-
-    Proposal 2025: Assisting Modules in Drupal 11 Compatibility
-
-
-    Project Description
-    Taking on a project idea from 2023. Many important Drupal modules are still not ready for Drupal 11. This makes it harder for developers and site owners to upgrade smoothly.
-
-    This project aims to assist in making Drupal modules Drupal 11-ready by identifying top-used but outdated modules, categorizing them, and streamlining their migration process. The project will include:
-
-    Prioritization of the top most-used yet incompatible modules.
-    Categorization based on functionality (e.g., e-commerce, security, SEO).
-    Automated compatibility checks and migration guides.
-    By ensuring these modules are compatible, this project will significantly ease the transition to Drupal 11, benefiting developers and site owners alike.
-
-    Project Goal
-    Functional Changes:
-    Analyze and prioritize high-impact modules needing Drupal 11 updates.
-    Ensure code consistency and adherence to modern Drupal standards.
-    Provide clear documentation for developers migrating modules.
-    User Experience Improvements:
-    Enhance documentation for easier adoption.
-    Provide a clear roadmap for Drupal 11 compatibility efforts.
-    Code & Performance Enhancements:
-    Ensure PSR standards compliance.
-    Mentor Details
-    Name : [To be assigned]
-
-    Email / Slack: [To be assigned]
-
-    Project Size
-    350 hours
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Proficiency in PHP and JavaScript
-    Experience in Drupal module development
-    Familiarity with upgrading Drupal modules to newer versions
-    Understanding of Drupal's API and best practices
-    Experience with Git and version control
-    Project Resources
-    Drupal Contributor Guide
-    R&D Tasks
-    Identify top-used modules that need compatibility updates.
-    Analyze and categorize modules based on their functionality.
-    Document compatibility issues and solutions for developers.
-    Test migrated modules for performance and stability.
-
-    ~~~~~~~~~~
-
-    Proposal 2025: FAISS Vector Search Integration for Drupal
-
-    Project Description
-    Drupal currently lacks support for FAISS (Facebook AI Similarity Search), a high-performance library designed for efficient vector-based similarity search. This project aims to develop a FAISS provider module that enables advanced content discovery, documentation deduplication, and AI-powered search capabilities within Drupal.
-
-    The solution will integrate with existing Drupal AI modules and Search API, providing a robust foundation for vector-based similarity search. By implementing FAISS as a local vector database, we can significantly improve content discovery while reducing dependency on external APIs.
-
-    Current Scenario / Pain Points
-    No native FAISS support in Drupal for vector similarity search
-    External API calls causing latency in embedding generation
-    Cost implications with third-party embedding services
-    Growing documentation duplication without automated detection
-    Performance bottlenecks in large-scale content similarity matching
-    Why This Matters
-    This integration will revolutionize how Drupal handles content discovery and similarity detection:
-
-    Cost Efficiency: Local vector operations eliminate expensive API calls
-    Performance: FAISS is optimized for rapid similarity search at scale
-    Independence: Reduced reliance on external services
-    Scalability: Handles millions of vectors efficiently
-    Future Impact
-    The FAISS provider will enable next-generation features in Drupal:
-
-    Intelligent Documentation Management
-    Automated duplicate detection
-    Content relationship mapping
-    Smart content suggestions
-    Enhanced Module Discovery
-    Similar module detection
-    Functionality matching
-    Better developer experience
-    AI-Powered Search
-    Semantic search capabilities
-    Context-aware results
-    Improved content relevance
-    Project Goal
-    Develop a FAISS provider module (ai_provider_faiss) for vector storage and similarity search
-    Create an embedding pipeline using HuggingFace model
-    Integrate with Search API for enhanced content discovery
-    Implement a dashboard for visualizing similarity scores and content relationships
-    Mentor Details
-    Name: [To be assigned]
-    Email / Slack: [To be assigned]
-
-    Project Size
-    350 Hours
-
-    Project Difficulty
-    INTERMEDIATE
-
-    Project Skills/Prerequisites
-    Strong PHP and Drupal module development experience
-    Understanding of vector embeddings and similarity search concepts
-    Familiarity with Search API and HuggingFace integration
-    Experience with performance optimization and scalable solutions
-    Project Resources
-    FAISS GitHub Repository
-    HuggingFace Documentation
-    Original Feature Request
-
-    ~~~~~~~~~~
-
-    Proposal 2025: Appwrite Integration Module for Drupal
-
-    Project Description
-    Appwrite is an open-source Backend-as-a-Service (BaaS) that offers a comprehensive suite of tools—ranging from authentication and storage to databases and serverless functions—through easy-to-use APIs. This project aims to develop a Drupal module that integrates Appwrite’s services, giving Drupal developers a robust alternative for handling key backend functionalities. The module will primarily focus on connecting Drupal with Appwrite’s authentication system, object storage, and document database, while also laying the groundwork for future integrations like serverless functions, messaging, and real-time event handling.
-
-    Many Drupal sites currently rely on local media storage or traditional cloud services, but with Appwrite’s flexible architecture, we can streamline media management and content handling. The solution will include a dedicated configuration interface within Drupal, making it simple for site administrators to set up and manage Appwrite settings.
-
-    Project Goal
-    Functional Changes:
-    Develop a Drupal module that connects with Appwrite’s OAuth-based authentication system (supporting providers like Google, GitHub, Apple, etc.).
-    Enable media file management by integrating with Appwrite's object storage APIs, reducing the dependency on traditional cloud storage solutions.
-    Integrate Appwrite’s document database to store and retrieve structured Drupal content efficiently.
-    Create an intuitive configuration interface within Drupal for managing all Appwrite-related settings.
-    Mentor Details
-    Name: stanzin
-    Email / Slack: @stan
-
-    Project Size
-    TBD
-
-    Project Difficulty
-    INTERMEDIATE
-
-    Project Skills/Prerequisite
-    Experience with PHP and Symfony for Drupal backend development.
-    Understanding of Drupal module development, including hooks, services, and dependency injection.
-    Knowledge of JavaScript for interacting with the Appwrite SDK and APIs.
-    Familiarity with REST APIs to facilitate seamless integration of external services with Drupal.
-    Understanding of OAuth and authentication protocols for implementing secure Appwrite authentication.
-    Project Resources
-    Appwrite Official Website
-    Drupal Module Development Guide
-    R&D Tasks
-    Research and evaluate the Appwrite API, focusing on authentication, storage, and document database functionalities.
-    Design a modular integration approach to connect Drupal with Appwrite’s services.
-    Develop and test the OAuth-based authentication workflow within Drupal using Appwrite.
-    Implement media storage integration to manage file uploads and retrievals via Appwrite’s object storage.
-    Integrate Appwrite’s document database to support Drupal’s content management and retrieval.
-    Create a user-friendly configuration interface in Drupal to manage Appwrite settings and integrations.
-    Document the integration process and provide comprehensive user guides and technical documentation.
-    
-    ~~~~~~~~~~
-
-    
-
-    Proposal 2025: AI-Powered Media Caption Generator
-
-    Project Description
-    Currently, Drupal lacks a built-in AI-powered solution for generating media captions, alt tags, and metadata. Manual captioning and tagging are time-consuming, inconsistent, and impact accessibility, SEO, and media discoverability.
-
-    The AI-Powered Media Enhancement Module will integrate with AI APIs for NLP and computer vision to automatically generate captions, alt tags, and relevant media tags based on content analysis. This module will include:
-
-    Adaptive feedback learning: Continuously improves caption accuracy based on user interactions.
-    Batch processing: Allows handling multiple media files efficiently.
-    Customizable AI model selection: Users can choose different AI services (OpenAI, Hugging Face, Google Vision, etc.).
-    By automating captioning and metadata generation, this project will improve accessibility, SEO, and user engagement, reducing manual effort and making media content more discoverable.
-
-    Project Goal
-    Functional Changes:
-    Develop a Drupal module capable of generating AI-powered captions, alt tags, and media metadata.
-    Integrate NLP models for text-based caption generation.
-    Implement computer vision models for object detection and image recognition.
-    Enable an adaptive feedback loop where user edits refine AI-generated captions over time.
-    Support batch processing to handle multiple media files at once.
-    Allow users to choose and configure AI models based on their needs (e.g., OpenAI, Hugging Face, etc.).
-    User Interface Changes:
-    AI settings page: Configure AI model selection and preferences.
-    Caption preview & edit section: Users can review and modify AI-generated captions.
-    Bulk processing interface: Manage and process multiple media files at once.
-    API Changes:
-    Integration with AI APIs for NLP, image recognition, and metadata generation.
-    Implement an adaptive feedback system where user corrections improve AI results.
-    Data Model Changes:
-    New database fields to store generated captions, alt tags, media tags, and user feedback for adaptive learning.
-    Mentor Details
-    Name : Binal Patel, [Senior / Experienced Drupal Developer - To be assigned]
-
-    Email / Slack: @Binal Patel, [To be assigned]
-
-    Project Size
-    350 hours
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Proficiency in PHP and JavaScript
-    Familiarity with Drupal module development
-    Experience with AI/ML models and API integration (OpenAI, Hugging Face, Google Vision, etc.)
-    Experience with Git, containerization (Docker), and RESTful APIs
-    Good understanding of UI/UX principles and responsive design
-    Project Resources
-    Hugging Face Transformers
-    OpenAI API Docs
-    Google Cloud Vision API
-    R&D Tasks
-    Research AI models for caption generation, image recognition, and metadata extraction.
-    Develop backend integration with AI APIs.
-    Design and implement a user-friendly UI for media caption management.
-    Ensure compliance with accessibility standards (WCAG, ARIA, etc.).
-    Write module documentation and conduct testing.
-
-
-    ~~~~~~~~~~
-
-    Proposal 2025: AI-Powered Unified Accessibility Compliance Suite for Drupal
-
-    Project Description
-    This project aims to create an AI-driven Drupal module that audits and remediates accessibility issues across text, layout, and media content. Currently, Drupal administrators struggle with time-consuming manual accessibility audits that often miss context-dependent issues. The module will leverage computer vision, OCR, and NLP models to automatically scan pages for ADA/WCAG compliance issues, generate actionable remediation reports, and provide a dynamic dashboard to monitor issues, prioritize fixes based on impact severity, and implement one-click remediations where possible.
-
-    Project Goal
-    Dynamic Dashboard:
-    Create a user-friendly dashboard to monitor website accessibility status and track remediation progress.
-    Provide visualizations and reports for compliance documentation.
-    Implement severity-based issue prioritization with configurable thresholds.
-    Functional Changes / User Interface Changes:
-    Integrate AI and accessibility APIs (e.g., Deque Axe) for automated scans of text, layout, and media.
-    Use NLP models to suggest context-aware alt-text for media as part of remediation.
-    Create an inline editor for quick fixes to identified accessibility issues.
-    DB Changes / API Changes:
-    Design database schema for storing accessibility audit results and remediation history.
-    Create RESTful APIs for integration with external accessibility testing tools.
-    Implement caching mechanisms to improve performance of repeated scans.
-    Workflow Integration:
-    Allow for the export of reports in common formats such as CSV, PDF, and WCAG-compatible documentation.
-    Create a feedback system for users to rate AI-generated remediation suggestions.
-    Integrate with Drupal's content workflow to include accessibility checks in the publishing process.
-    Mentor Details
-    Name: [To be assigned]
-    Email / Slack: [To be assigned]
-
-    Project Size
-    350 Hours (Large)
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Expertise in Drupal module development and Drupal APIs.
-    Proficiency in PHP, JavaScript, and Python for AI integration.
-    Familiarity with AI frameworks (e.g., Hugging Face Transformers, OpenAI APIs).
-    Experience with accessibility standards (WCAG 2.1/ADA) and tools like Axe.
-    Understanding of semantic HTML and ARIA attributes.
-    Technologies: PHP, JavaScript, Python, React, AI Frameworks, Axe Core, Drupal theme system.
-    Project Resources
-    Drupal Accessibility Handbook
-    Deque Axe Accessibility Tools
-    Drupal Module Development Guide
-    GPTBot – AI Chatbot Integration for Drupal
-    WCAG Guidelines and Resources
-    Accessibility Checker for Drupal
-    Axe Core GitHub Repository
-    R&D Tasks
-    Research AI models for accessibility analysis (e.g., Deque Axe, Hugging Face).
-    Implement backend integrations with accessibility-focused AI providers.
-    Design a UI for audit reporting and remediation, aligned with Drupal's accessibility standards.
-    Evaluate existing accessibility modules like Siteimprove and Monsido for potential integration.
-    Research automated testing frameworks that can validate accessibility fixes.
-    Investigate machine learning approaches to recognize patterns in accessibility issues specific to Drupal sites.
-    Similar Projects for Inspiration
-    Editoria11y - In-CMS Accessibility Checker
-    Site Audit - Framework for analyzing Drupal sites
-    Microsoft Accessibility Insights
-    Tota11y for Drupal
-
-    ~~~~~~~~~~
-
-    Proposal 2025: SARIF Integration for Error Reporting
-
-    Project Description
-    This project aims to enhance Drupal’s automated testing and error reporting ecosystem by integrating support for the Static Analysis Results Interchange Format (SARIF). SARIF is a standardized format for static analysis tool output, and by incorporating it into Drupal, developers will have a more consistent and efficient way to debug and analyze issues in both Drupal core and contributed modules. The proposed integration will enable Drupal’s CI pipeline to export error messages, linting reports, and test failures in SARIF format, making these results easily consumable by tools like GitHub Code Scanning, VS Code’s SARIF Viewer, and GitLab Security Dashboards.
-
-    By developing a SARIF-compatible module or integration layer, the project will streamline the debugging process and facilitate better collaboration among developers, ultimately improving code quality and reducing turnaround time for fixes.
-
-    Project Goal
-    Functional Changes:
-    Design and implement a conversion layer to translate Drupal’s CI output (errors, linting reports, test failures) into SARIF format.
-    Develop a Drupal module or integration that automates the export of SARIF reports from the CI pipeline.
-    Integrate the solution with popular CI/CD platforms such as GitHub Actions and GitLab CI for seamless workflow integration.
-    Ensure compatibility with external tools including GitHub Code Scanning, VS Code’s SARIF Viewer, and GitLab Security Dashboards.
-    Provide comprehensive documentation and usage guides to support adoption and future enhancements.
-    Mentor Details
-    Name & Slack: Royal Pinto
-    Email / Slack: @royalpinto007
-
-    Project Size
-    350 hours
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Strong proficiency in PHP and JavaScript with hands-on experience in Drupal module development.
-    Experience using Git for version control.
-    Knowledge of compiler concepts and static analysis techniques, including ASTs and tokenization.
-    Familiarity with CI/CD platforms, particularly GitHub Actions and GitLab CI.
-    Understanding of standardized reporting formats and integration strategies.
-    Project Resources
-    SARIF Specification on GitHub
-    Drupal Official Website
-    Drupal Module Development Guide
-    GitHub Actions Documentation
-    GitLab CI Documentation
-    R&D Tasks
-    Research the SARIF specification and analyze Drupal’s existing CI output formats.
-    Design a conversion layer that maps error messages, linting reports, and test failures to SARIF.
-    Develop and integrate the SARIF module with Drupal’s CI pipeline to automate report generation.
-    Establish integrations with GitHub Actions and GitLab CI to ensure seamless usage of SARIF reports.
-    Conduct thorough testing, optimize performance, and prepare detailed documentation and tutorials for end users.
-
-
-    ~~~~~~~~~~
-
-    Proposal 2025: Entity Display Manager Module
-
-    Project Description
-    This project is focused on developing the Entity Display Manager Module for Drupal, designed to enhance field display customization by offering extended control over HTML structures, field output rewrites, and entity view mode configurations. The module addresses common development pain points by enabling site builders to manage field rendering without resorting to custom theming or complex preprocess hooks. By streamlining the display management process, the module aims to significantly speed up development workflows and improve the overall flexibility of Drupal's presentation layer.
-
-    Project Goal
-    Functional Changes:
-    Introduce custom field display settings with options to enable or disable the Field HTML wrapper, Label HTML wrapper, and default field classes.
-    Implement a template override mechanism for advanced customization of field output.
-    Provide robust field rewrite options to allow custom text overrides, transformation of fields into clickable links, character limit trimming, HTML tag stripping, and removal of extraneous whitespace.
-    Extend entity view modes by allowing bundle-specific configurations and custom display settings per view mode.
-    Seamlessly integrate the new settings into Drupal’s UI under the Manage Display section, utilizing field formatters or preprocess hooks as needed.
-    Mentor Details
-    Name: stanzin
-
-    Email / Slack: @stan
-
-    Project Size
-    350 hours
-
-    Project Difficulty
-    Intermediate
-
-    Project Skills/Prerequisite
-    Strong proficiency in Drupal module development and a deep understanding of Drupal's entity and field systems.
-    Expertise in PHP and familiarity with Drupal’s theming system, including template overrides and preprocess hooks.
-    Experience with front-end technologies such as HTML, CSS, and JavaScript for effective UI integration.
-    Understanding of configurable display settings and the nuances of entity view mode configurations.
-    Knowledge of best practices in module design and development to ensure maintainability and performance.
-    Project Resources
-    Drupal Documentation
-    Understanding Drupal’s Entity API
-    Drupal Theming Guide
-    R&D Tasks
-    Analyze current limitations in Drupal's field display customization and identify key areas for enhancement.
-    Design the module architecture to introduce extended control over HTML wrappers, field classes, and output rewrites.
-    Develop custom configuration settings within the Manage Display interface, including checkboxes and template override options.
-    Implement comprehensive field rewrite functionalities such as custom text, link transformations, character limit trimming, HTML stripping, and whitespace normalization.
-    Extend entity view mode configurations to support bundle-specific custom display settings.
-    Conduct thorough testing across different Drupal environments and document configuration guidelines and usage instructions.
-    Key Features
-    Custom Field Display Settings:
-    Enable/disable field and label HTML wrappers.
-    Remove default field classes.
-    Provide template override options for advanced customization.
-    Field Rewrite Options:
-    Override field output with custom text.
-    Transform fields into custom links.
-    Implement character limit trimming for field values.
-    Strip HTML tags and remove unnecessary whitespace from field output.
-    Entity View Mode Configuration:
-    Extend entity view modes to support custom display settings.
-    Allow bundle-specific configurations per entity view mode.
-    Integration with UI:
-    Add settings under "Manage Display" in the entity form display.
-    Implement a field formatter or use preprocess hooks for modifications.
+        Proposal 2025: Augmentor DALL·E 3 module
+        Project Description
+        This project aims to ship the Augmentor plugin with seamless integration to the DALL·E 3 service, enabling users to generate high-quality images directly from text prompts. By combining Augmentor's flexible plugin architecture with DALL·E 3’s advanced AI capabilities, the solution will empower content creators to effortlessly transform ideas into compelling visual content. The integration will focus on delivering a user-friendly interface, efficient performance, and robust error handling to cater to both technical and non-technical users.
+
+        Project Goal
+        Functional Changes:
+        Integrate the DALL·E 3 API into the Augmentor plugin for real-time image generation from text inputs.
+        Develop an intuitive interface for configuring image generation parameters and previewing results.
+        Implement error handling and optimization strategies to ensure reliability and performance.
+        Provide comprehensive documentation and usage guides to facilitate seamless adoption.
+        Mentor Details
+        Name: Naveen Valecha & Murrayw
+        Email / Slack: @naveenvalecha, @murrayw
+
+        Project Size
+        175 hours
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Expertise in plugin development within the Augmentor ecosystem.
+        Proficiency in JavaScript, Python, or other relevant programming languages.
+        Familiarity with RESTful APIs and integrating third-party AI services.
+        Experience with DALL·E 3 or similar AI image generation APIs is a plus.
+        Understanding of UI/UX design principles to create an engaging and intuitive user interface.
+        Project Resources
+        DALL·E 3 Documentation
+        Augmentor Plugin Developer Guide
+        OpenAI API Reference
+        Web API Documentation
+        R&D Tasks
+        Research the DALL·E 3 API, including authentication methods, rate limits, and usage policies.
+        Design and develop a modular integration layer within the Augmentor plugin.
+        Create a user-friendly interface for inputting text prompts and previewing generated images.
+        Implement error handling, logging, and performance optimizations to ensure a seamless user experience.
+        Document the integration process, including setup instructions and usage tutorials.
+
+        ~~~~~~~~~~
+
+        Proposal 2025: Open Source AI Content Generation
+        
+        Project Description
+        This project focuses on advancing the integration of open-source AI models into existing Drupal modules, streamlining the creation of structured content based on user prompts. By embedding AI-powered content generation directly into Drupal, the solution aims to automate and simplify the content creation process. Site builders and content creators will benefit from a seamless workflow that transforms text inputs into well-organized, coherent content.
+
+        Project Goal
+        Functional Changes:
+        Develop an integration layer that connects Drupal content creation modules with open-source AI models.
+        Create an intuitive interface where users can input prompts or guidelines to generate structured content.
+        Implement mechanisms to format and validate the generated content according to predefined templates.
+        Optimize the integration for performance and reliability, including robust error handling and logging.
+        Document the integration process and provide comprehensive usage guides for end users.
+        Mentor Details
+        Name & Slack: Gaurav & Anushri Kumari
+        Email / Slack: @gauravvvv, @anushrikumari
+
+        Project Size
+        350 hours
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Proficiency in PHP and Symfony for backend development.
+        Experience in JavaScript for front-end interface development.
+        Familiarity with AI models and APIs, including experience working with open-source AI frameworks.
+        Understanding of Drupal module development and integration patterns is a plus.
+        Project Resources
+        Drupal Documentation
+        Symfony Documentation
+        Hugging Face – Open Source AI Models
+        JavaScript Guide
+        R&D Tasks
+        Research and evaluate suitable open-source AI models that can generate structured content from text prompts.
+        Identify the optimal integration points within existing Drupal content creation modules.
+        Develop the backend integration using PHP and Symfony, ensuring smooth communication with the AI APIs.
+        Create a user-friendly front-end interface using JavaScript that allows users to input prompts and preview generated content.
+        Implement error handling, logging, and performance optimizations to enhance the overall user experience.
+        Document the integration process and produce detailed guides for installation, configuration, and usage.
+        Issue fork gsoc-3419059
+        Command icon Show commands
+        About issue forks
+
+        ~~~~~~~~~~
+
+        Proposal 2025: Assisting Modules in Drupal 11 Compatibility
+
+
+        Project Description
+        Taking on a project idea from 2023. Many important Drupal modules are still not ready for Drupal 11. This makes it harder for developers and site owners to upgrade smoothly.
+
+        This project aims to assist in making Drupal modules Drupal 11-ready by identifying top-used but outdated modules, categorizing them, and streamlining their migration process. The project will include:
+
+        Prioritization of the top most-used yet incompatible modules.
+        Categorization based on functionality (e.g., e-commerce, security, SEO).
+        Automated compatibility checks and migration guides.
+        By ensuring these modules are compatible, this project will significantly ease the transition to Drupal 11, benefiting developers and site owners alike.
+
+        Project Goal
+        Functional Changes:
+        Analyze and prioritize high-impact modules needing Drupal 11 updates.
+        Ensure code consistency and adherence to modern Drupal standards.
+        Provide clear documentation for developers migrating modules.
+        User Experience Improvements:
+        Enhance documentation for easier adoption.
+        Provide a clear roadmap for Drupal 11 compatibility efforts.
+        Code & Performance Enhancements:
+        Ensure PSR standards compliance.
+        Mentor Details
+        Name : [To be assigned]
+
+        Email / Slack: [To be assigned]
+
+        Project Size
+        350 hours
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Proficiency in PHP and JavaScript
+        Experience in Drupal module development
+        Familiarity with upgrading Drupal modules to newer versions
+        Understanding of Drupal's API and best practices
+        Experience with Git and version control
+        Project Resources
+        Drupal Contributor Guide
+        R&D Tasks
+        Identify top-used modules that need compatibility updates.
+        Analyze and categorize modules based on their functionality.
+        Document compatibility issues and solutions for developers.
+        Test migrated modules for performance and stability.
+
+        ~~~~~~~~~~
+
+        Proposal 2025: FAISS Vector Search Integration for Drupal
+
+        Project Description
+        Drupal currently lacks support for FAISS (Facebook AI Similarity Search), a high-performance library designed for efficient vector-based similarity search. This project aims to develop a FAISS provider module that enables advanced content discovery, documentation deduplication, and AI-powered search capabilities within Drupal.
+
+        The solution will integrate with existing Drupal AI modules and Search API, providing a robust foundation for vector-based similarity search. By implementing FAISS as a local vector database, we can significantly improve content discovery while reducing dependency on external APIs.
+
+        Current Scenario / Pain Points
+        No native FAISS support in Drupal for vector similarity search
+        External API calls causing latency in embedding generation
+        Cost implications with third-party embedding services
+        Growing documentation duplication without automated detection
+        Performance bottlenecks in large-scale content similarity matching
+        Why This Matters
+        This integration will revolutionize how Drupal handles content discovery and similarity detection:
+
+        Cost Efficiency: Local vector operations eliminate expensive API calls
+        Performance: FAISS is optimized for rapid similarity search at scale
+        Independence: Reduced reliance on external services
+        Scalability: Handles millions of vectors efficiently
+        Future Impact
+        The FAISS provider will enable next-generation features in Drupal:
+
+        Intelligent Documentation Management
+        Automated duplicate detection
+        Content relationship mapping
+        Smart content suggestions
+        Enhanced Module Discovery
+        Similar module detection
+        Functionality matching
+        Better developer experience
+        AI-Powered Search
+        Semantic search capabilities
+        Context-aware results
+        Improved content relevance
+        Project Goal
+        Develop a FAISS provider module (ai_provider_faiss) for vector storage and similarity search
+        Create an embedding pipeline using HuggingFace model
+        Integrate with Search API for enhanced content discovery
+        Implement a dashboard for visualizing similarity scores and content relationships
+        Mentor Details
+        Name: [To be assigned]
+        Email / Slack: [To be assigned]
+
+        Project Size
+        350 Hours
+
+        Project Difficulty
+        INTERMEDIATE
+
+        Project Skills/Prerequisites
+        Strong PHP and Drupal module development experience
+        Understanding of vector embeddings and similarity search concepts
+        Familiarity with Search API and HuggingFace integration
+        Experience with performance optimization and scalable solutions
+        Project Resources
+        FAISS GitHub Repository
+        HuggingFace Documentation
+        Original Feature Request
+
+        ~~~~~~~~~~
+
+        Proposal 2025: Appwrite Integration Module for Drupal
+
+        Project Description
+        Appwrite is an open-source Backend-as-a-Service (BaaS) that offers a comprehensive suite of tools—ranging from authentication and storage to databases and serverless functions—through easy-to-use APIs. This project aims to develop a Drupal module that integrates Appwrite’s services, giving Drupal developers a robust alternative for handling key backend functionalities. The module will primarily focus on connecting Drupal with Appwrite’s authentication system, object storage, and document database, while also laying the groundwork for future integrations like serverless functions, messaging, and real-time event handling.
+
+        Many Drupal sites currently rely on local media storage or traditional cloud services, but with Appwrite’s flexible architecture, we can streamline media management and content handling. The solution will include a dedicated configuration interface within Drupal, making it simple for site administrators to set up and manage Appwrite settings.
+
+        Project Goal
+        Functional Changes:
+        Develop a Drupal module that connects with Appwrite’s OAuth-based authentication system (supporting providers like Google, GitHub, Apple, etc.).
+        Enable media file management by integrating with Appwrite's object storage APIs, reducing the dependency on traditional cloud storage solutions.
+        Integrate Appwrite’s document database to store and retrieve structured Drupal content efficiently.
+        Create an intuitive configuration interface within Drupal for managing all Appwrite-related settings.
+        Mentor Details
+        Name: stanzin
+        Email / Slack: @stan
+
+        Project Size
+        TBD
+
+        Project Difficulty
+        INTERMEDIATE
+
+        Project Skills/Prerequisite
+        Experience with PHP and Symfony for Drupal backend development.
+        Understanding of Drupal module development, including hooks, services, and dependency injection.
+        Knowledge of JavaScript for interacting with the Appwrite SDK and APIs.
+        Familiarity with REST APIs to facilitate seamless integration of external services with Drupal.
+        Understanding of OAuth and authentication protocols for implementing secure Appwrite authentication.
+        Project Resources
+        Appwrite Official Website
+        Drupal Module Development Guide
+        R&D Tasks
+        Research and evaluate the Appwrite API, focusing on authentication, storage, and document database functionalities.
+        Design a modular integration approach to connect Drupal with Appwrite’s services.
+        Develop and test the OAuth-based authentication workflow within Drupal using Appwrite.
+        Implement media storage integration to manage file uploads and retrievals via Appwrite’s object storage.
+        Integrate Appwrite’s document database to support Drupal’s content management and retrieval.
+        Create a user-friendly configuration interface in Drupal to manage Appwrite settings and integrations.
+        Document the integration process and provide comprehensive user guides and technical documentation.
+        
+        ~~~~~~~~~~
+
+        
+
+        Proposal 2025: AI-Powered Media Caption Generator
+
+        Project Description
+        Currently, Drupal lacks a built-in AI-powered solution for generating media captions, alt tags, and metadata. Manual captioning and tagging are time-consuming, inconsistent, and impact accessibility, SEO, and media discoverability.
+
+        The AI-Powered Media Enhancement Module will integrate with AI APIs for NLP and computer vision to automatically generate captions, alt tags, and relevant media tags based on content analysis. This module will include:
+
+        Adaptive feedback learning: Continuously improves caption accuracy based on user interactions.
+        Batch processing: Allows handling multiple media files efficiently.
+        Customizable AI model selection: Users can choose different AI services (OpenAI, Hugging Face, Google Vision, etc.).
+        By automating captioning and metadata generation, this project will improve accessibility, SEO, and user engagement, reducing manual effort and making media content more discoverable.
+
+        Project Goal
+        Functional Changes:
+        Develop a Drupal module capable of generating AI-powered captions, alt tags, and media metadata.
+        Integrate NLP models for text-based caption generation.
+        Implement computer vision models for object detection and image recognition.
+        Enable an adaptive feedback loop where user edits refine AI-generated captions over time.
+        Support batch processing to handle multiple media files at once.
+        Allow users to choose and configure AI models based on their needs (e.g., OpenAI, Hugging Face, etc.).
+        User Interface Changes:
+        AI settings page: Configure AI model selection and preferences.
+        Caption preview & edit section: Users can review and modify AI-generated captions.
+        Bulk processing interface: Manage and process multiple media files at once.
+        API Changes:
+        Integration with AI APIs for NLP, image recognition, and metadata generation.
+        Implement an adaptive feedback system where user corrections improve AI results.
+        Data Model Changes:
+        New database fields to store generated captions, alt tags, media tags, and user feedback for adaptive learning.
+        Mentor Details
+        Name : Binal Patel, [Senior / Experienced Drupal Developer - To be assigned]
+
+        Email / Slack: @Binal Patel, [To be assigned]
+
+        Project Size
+        350 hours
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Proficiency in PHP and JavaScript
+        Familiarity with Drupal module development
+        Experience with AI/ML models and API integration (OpenAI, Hugging Face, Google Vision, etc.)
+        Experience with Git, containerization (Docker), and RESTful APIs
+        Good understanding of UI/UX principles and responsive design
+        Project Resources
+        Hugging Face Transformers
+        OpenAI API Docs
+        Google Cloud Vision API
+        R&D Tasks
+        Research AI models for caption generation, image recognition, and metadata extraction.
+        Develop backend integration with AI APIs.
+        Design and implement a user-friendly UI for media caption management.
+        Ensure compliance with accessibility standards (WCAG, ARIA, etc.).
+        Write module documentation and conduct testing.
+
+
+        ~~~~~~~~~~
+
+        Proposal 2025: AI-Powered Unified Accessibility Compliance Suite for Drupal
+
+        Project Description
+        This project aims to create an AI-driven Drupal module that audits and remediates accessibility issues across text, layout, and media content. Currently, Drupal administrators struggle with time-consuming manual accessibility audits that often miss context-dependent issues. The module will leverage computer vision, OCR, and NLP models to automatically scan pages for ADA/WCAG compliance issues, generate actionable remediation reports, and provide a dynamic dashboard to monitor issues, prioritize fixes based on impact severity, and implement one-click remediations where possible.
+
+        Project Goal
+        Dynamic Dashboard:
+        Create a user-friendly dashboard to monitor website accessibility status and track remediation progress.
+        Provide visualizations and reports for compliance documentation.
+        Implement severity-based issue prioritization with configurable thresholds.
+        Functional Changes / User Interface Changes:
+        Integrate AI and accessibility APIs (e.g., Deque Axe) for automated scans of text, layout, and media.
+        Use NLP models to suggest context-aware alt-text for media as part of remediation.
+        Create an inline editor for quick fixes to identified accessibility issues.
+        DB Changes / API Changes:
+        Design database schema for storing accessibility audit results and remediation history.
+        Create RESTful APIs for integration with external accessibility testing tools.
+        Implement caching mechanisms to improve performance of repeated scans.
+        Workflow Integration:
+        Allow for the export of reports in common formats such as CSV, PDF, and WCAG-compatible documentation.
+        Create a feedback system for users to rate AI-generated remediation suggestions.
+        Integrate with Drupal's content workflow to include accessibility checks in the publishing process.
+        Mentor Details
+        Name: [To be assigned]
+        Email / Slack: [To be assigned]
+
+        Project Size
+        350 Hours (Large)
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Expertise in Drupal module development and Drupal APIs.
+        Proficiency in PHP, JavaScript, and Python for AI integration.
+        Familiarity with AI frameworks (e.g., Hugging Face Transformers, OpenAI APIs).
+        Experience with accessibility standards (WCAG 2.1/ADA) and tools like Axe.
+        Understanding of semantic HTML and ARIA attributes.
+        Technologies: PHP, JavaScript, Python, React, AI Frameworks, Axe Core, Drupal theme system.
+        Project Resources
+        Drupal Accessibility Handbook
+        Deque Axe Accessibility Tools
+        Drupal Module Development Guide
+        GPTBot – AI Chatbot Integration for Drupal
+        WCAG Guidelines and Resources
+        Accessibility Checker for Drupal
+        Axe Core GitHub Repository
+        R&D Tasks
+        Research AI models for accessibility analysis (e.g., Deque Axe, Hugging Face).
+        Implement backend integrations with accessibility-focused AI providers.
+        Design a UI for audit reporting and remediation, aligned with Drupal's accessibility standards.
+        Evaluate existing accessibility modules like Siteimprove and Monsido for potential integration.
+        Research automated testing frameworks that can validate accessibility fixes.
+        Investigate machine learning approaches to recognize patterns in accessibility issues specific to Drupal sites.
+        Similar Projects for Inspiration
+        Editoria11y - In-CMS Accessibility Checker
+        Site Audit - Framework for analyzing Drupal sites
+        Microsoft Accessibility Insights
+        Tota11y for Drupal
+
+        ~~~~~~~~~~
+
+        Proposal 2025: SARIF Integration for Error Reporting
+
+        Project Description
+        This project aims to enhance Drupal’s automated testing and error reporting ecosystem by integrating support for the Static Analysis Results Interchange Format (SARIF). SARIF is a standardized format for static analysis tool output, and by incorporating it into Drupal, developers will have a more consistent and efficient way to debug and analyze issues in both Drupal core and contributed modules. The proposed integration will enable Drupal’s CI pipeline to export error messages, linting reports, and test failures in SARIF format, making these results easily consumable by tools like GitHub Code Scanning, VS Code’s SARIF Viewer, and GitLab Security Dashboards.
+
+        By developing a SARIF-compatible module or integration layer, the project will streamline the debugging process and facilitate better collaboration among developers, ultimately improving code quality and reducing turnaround time for fixes.
+
+        Project Goal
+        Functional Changes:
+        Design and implement a conversion layer to translate Drupal’s CI output (errors, linting reports, test failures) into SARIF format.
+        Develop a Drupal module or integration that automates the export of SARIF reports from the CI pipeline.
+        Integrate the solution with popular CI/CD platforms such as GitHub Actions and GitLab CI for seamless workflow integration.
+        Ensure compatibility with external tools including GitHub Code Scanning, VS Code’s SARIF Viewer, and GitLab Security Dashboards.
+        Provide comprehensive documentation and usage guides to support adoption and future enhancements.
+        Mentor Details
+        Name & Slack: Royal Pinto
+        Email / Slack: @royalpinto007
+
+        Project Size
+        350 hours
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Strong proficiency in PHP and JavaScript with hands-on experience in Drupal module development.
+        Experience using Git for version control.
+        Knowledge of compiler concepts and static analysis techniques, including ASTs and tokenization.
+        Familiarity with CI/CD platforms, particularly GitHub Actions and GitLab CI.
+        Understanding of standardized reporting formats and integration strategies.
+        Project Resources
+        SARIF Specification on GitHub
+        Drupal Official Website
+        Drupal Module Development Guide
+        GitHub Actions Documentation
+        GitLab CI Documentation
+        R&D Tasks
+        Research the SARIF specification and analyze Drupal’s existing CI output formats.
+        Design a conversion layer that maps error messages, linting reports, and test failures to SARIF.
+        Develop and integrate the SARIF module with Drupal’s CI pipeline to automate report generation.
+        Establish integrations with GitHub Actions and GitLab CI to ensure seamless usage of SARIF reports.
+        Conduct thorough testing, optimize performance, and prepare detailed documentation and tutorials for end users.
+
+
+        ~~~~~~~~~~
+
+        Proposal 2025: Entity Display Manager Module
+
+        Project Description
+        This project is focused on developing the Entity Display Manager Module for Drupal, designed to enhance field display customization by offering extended control over HTML structures, field output rewrites, and entity view mode configurations. The module addresses common development pain points by enabling site builders to manage field rendering without resorting to custom theming or complex preprocess hooks. By streamlining the display management process, the module aims to significantly speed up development workflows and improve the overall flexibility of Drupal's presentation layer.
+
+        Project Goal
+        Functional Changes:
+        Introduce custom field display settings with options to enable or disable the Field HTML wrapper, Label HTML wrapper, and default field classes.
+        Implement a template override mechanism for advanced customization of field output.
+        Provide robust field rewrite options to allow custom text overrides, transformation of fields into clickable links, character limit trimming, HTML tag stripping, and removal of extraneous whitespace.
+        Extend entity view modes by allowing bundle-specific configurations and custom display settings per view mode.
+        Seamlessly integrate the new settings into Drupal’s UI under the Manage Display section, utilizing field formatters or preprocess hooks as needed.
+        Mentor Details
+        Name: stanzin
+
+        Email / Slack: @stan
+
+        Project Size
+        350 hours
+
+        Project Difficulty
+        Intermediate
+
+        Project Skills/Prerequisite
+        Strong proficiency in Drupal module development and a deep understanding of Drupal's entity and field systems.
+        Expertise in PHP and familiarity with Drupal’s theming system, including template overrides and preprocess hooks.
+        Experience with front-end technologies such as HTML, CSS, and JavaScript for effective UI integration.
+        Understanding of configurable display settings and the nuances of entity view mode configurations.
+        Knowledge of best practices in module design and development to ensure maintainability and performance.
+        Project Resources
+        Drupal Documentation
+        Understanding Drupal’s Entity API
+        Drupal Theming Guide
+        R&D Tasks
+        Analyze current limitations in Drupal's field display customization and identify key areas for enhancement.
+        Design the module architecture to introduce extended control over HTML wrappers, field classes, and output rewrites.
+        Develop custom configuration settings within the Manage Display interface, including checkboxes and template override options.
+        Implement comprehensive field rewrite functionalities such as custom text, link transformations, character limit trimming, HTML stripping, and whitespace normalization.
+        Extend entity view mode configurations to support bundle-specific custom display settings.
+        Conduct thorough testing across different Drupal environments and document configuration guidelines and usage instructions.
+        Key Features
+        Custom Field Display Settings:
+        Enable/disable field and label HTML wrappers.
+        Remove default field classes.
+        Provide template override options for advanced customization.
+        Field Rewrite Options:
+        Override field output with custom text.
+        Transform fields into custom links.
+        Implement character limit trimming for field values.
+        Strip HTML tags and remove unnecessary whitespace from field output.
+        Entity View Mode Configuration:
+        Extend entity view modes to support custom display settings.
+        Allow bundle-specific configurations per entity view mode.
+        Integration with UI:
+        Add settings under "Manage Display" in the entity form display.
+        Implement a field formatter or use preprocess hooks for modifications.
 
 
 
@@ -9192,158 +9191,157 @@ organizations:
     organization_name: Electron
     no_of_ideas: 7
     ideas_content: |
-    
-       Electron Documentation PR Previews
-      Size: 175 Hours (Medium)
-      Difficulty: Medium
-      Tags: JavaScript, Static Site Generators, MDX, Automation, GitHub Actions
-      Scope: Electron maintains its documentation as MDX files in the main electron/electron repository, but the website lives in a separate repo that pulls in the docs as content via webhook.
-      There’s a disconnect in our system between when docs get merged and when they appear on the website, so it’s easy for formatting issues to appear. This project would aim to create automation tooling that would create an ephemeral deployment of the website for each PR containing doc changes which previews the website with the changes, and link it as a comment on the PR.
-      A previous version of this project idea referenced Heroku Review Apps as the technology of choice for implementation. While we still have access to Heroku deployments, the website has migrated its PR deploys to use Cloudflare Pages instead. Either technology would be available for a GSoC project.
-      Success Criteria: A successful project will produce documentation PR previews and create a comment on PRs linking that preview. Ideally, previews from PRs coming from forks would still work.
-      Skills:
-      TypeScript/JavaScript (required)
-      Resources:
-      Website Repo: https://github.com/electron/website
-      Heroku Review App APIs: Platform API Reference | Heroku Dev Center
-      Cloudflare Preview Deployments
-      Mentors:
-      @dsanders11
-      @erickzhao
-      @yangannyx
+          Electron Documentation PR Previews
+          Size: 175 Hours (Medium)
+          Difficulty: Medium
+          Tags: JavaScript, Static Site Generators, MDX, Automation, GitHub Actions
+          Scope: Electron maintains its documentation as MDX files in the main electron/electron repository, but the website lives in a separate repo that pulls in the docs as content via webhook.
+          There’s a disconnect in our system between when docs get merged and when they appear on the website, so it’s easy for formatting issues to appear. This project would aim to create automation tooling that would create an ephemeral deployment of the website for each PR containing doc changes which previews the website with the changes, and link it as a comment on the PR.
+          A previous version of this project idea referenced Heroku Review Apps as the technology of choice for implementation. While we still have access to Heroku deployments, the website has migrated its PR deploys to use Cloudflare Pages instead. Either technology would be available for a GSoC project.
+          Success Criteria: A successful project will produce documentation PR previews and create a comment on PRs linking that preview. Ideally, previews from PRs coming from forks would still work.
+          Skills:
+          TypeScript/JavaScript (required)
+          Resources:
+          Website Repo: https://github.com/electron/website
+          Heroku Review App APIs: Platform API Reference | Heroku Dev Center
+          Cloudflare Preview Deployments
+          Mentors:
+          @dsanders11
+          @erickzhao
+          @yangannyx
 
-      ~~~~~~~~~~
-       Save/Restore Window State API
-      Size: 175 Hours (Medium)
-      Difficulty: Hard
-      Tags: Electron Core, Feature, Chromium, C++, API development
-      Scope: Currently Electron does not have any built-in mechanism for saving and restoring the state of BrowserWindows, but this is a very common need for apps that want to feel more native. Create an API in Electron to save, restore, and clear window state: position, size, maximized state, etc.
-      Success Criteria:
-      API spec is accepted by Electron’s API working group
-      New window state API is added to the BrowserWindow module and merged into the main branch for a future Electron release
-      Proper API documentation is added
-      Skills:
-      C++ (required)
-      Resources:
-      GitHub issue tracker discussion: https://github.com/electron/electron/issues/526
-      Popular userland module for this feature: GitHub - mawie81/electron-window-state: A library to store and restore window sizes and positions for your Electron app https://github.com/mawie81/electron-window-state
-      Electron’s BrowserWindow API docs
-      Mentors:
-      @dsanders11
-      @vertedinde
-      @georgexu99
+          ~~~~~~~~~~
+          Save/Restore Window State API
+          Size: 175 Hours (Medium)
+          Difficulty: Hard
+          Tags: Electron Core, Feature, Chromium, C++, API development
+          Scope: Currently Electron does not have any built-in mechanism for saving and restoring the state of BrowserWindows, but this is a very common need for apps that want to feel more native. Create an API in Electron to save, restore, and clear window state: position, size, maximized state, etc.
+          Success Criteria:
+          API spec is accepted by Electron’s API working group
+          New window state API is added to the BrowserWindow module and merged into the main branch for a future Electron release
+          Proper API documentation is added
+          Skills:
+          C++ (required)
+          Resources:
+          GitHub issue tracker discussion: https://github.com/electron/electron/issues/526
+          Popular userland module for this feature: GitHub - mawie81/electron-window-state: A library to store and restore window sizes and positions for your Electron app https://github.com/mawie81/electron-window-state
+          Electron’s BrowserWindow API docs
+          Mentors:
+          @dsanders11
+          @vertedinde
+          @georgexu99
 
-      ~~~~~~~~~~
-       Electron Forge CLI UX Improvements
-      Size: 175 Hours (Medium)
-      Difficulty: Medium
-      Tags: Electron Forge, TypeScript, Node.js, Bash, CLI tools
-      Scope: Electron Forge is a complete tool for building and publishing Electron applications. In 2022, Forge became the official packaging tool for Electron. However, Forge’s CLI is not as user friendly and modern as other tools in the JS ecosystem. This project would update the UX for the Forge CLI to make it easier for developers to create new Electron apps entirely from the command line.
-      Success Criteria:
-      The Electron Forge CLI is updated to include accurate flows from init, start, package and other major commands and expanded to allow configuring the options most commonly used by users.
-      A new interactive mode to allow for a more user friendly experience.
-      Tested cross-platform on Mac, Windows and Linux
-      Stretch goals would include adding new features to the CLI
-      Skills:
-      Typescript/Javascript (required)
-      Bash (recommended)
-      Node.js (recommended)
-      Resources:
-      Electron Forge Documentation: https://www.electronforge.io/
-      Forge Docs Repo: https://github.com/electron-forge/electron-forge-docs
-      Mentors:
-      @dsanders11
-      @erickzhao
-      @blackhole1
+          ~~~~~~~~~~
+          Electron Forge CLI UX Improvements
+          Size: 175 Hours (Medium)
+          Difficulty: Medium
+          Tags: Electron Forge, TypeScript, Node.js, Bash, CLI tools
+          Scope: Electron Forge is a complete tool for building and publishing Electron applications. In 2022, Forge became the official packaging tool for Electron. However, Forge’s CLI is not as user friendly and modern as other tools in the JS ecosystem. This project would update the UX for the Forge CLI to make it easier for developers to create new Electron apps entirely from the command line.
+          Success Criteria:
+          The Electron Forge CLI is updated to include accurate flows from init, start, package and other major commands and expanded to allow configuring the options most commonly used by users.
+          A new interactive mode to allow for a more user friendly experience.
+          Tested cross-platform on Mac, Windows and Linux
+          Stretch goals would include adding new features to the CLI
+          Skills:
+          Typescript/Javascript (required)
+          Bash (recommended)
+          Node.js (recommended)
+          Resources:
+          Electron Forge Documentation: https://www.electronforge.io/
+          Forge Docs Repo: https://github.com/electron-forge/electron-forge-docs
+          Mentors:
+          @dsanders11
+          @erickzhao
+          @blackhole1
 
-      ~~~~~~~~~~
-       Electron Fiddle in VS Code
-      Size: 175 Hours (Medium)
-      Difficulty: Medium
-      Tags: Electron Fiddle, TypeScript, Node.js, VS Code
-      Scope: Electron Fiddle is a standalone tool used daily by Electron maintainers to help debug and fix issues reported in Electron, and is the best way for developers to provide minimal repro cases for their bug reports. This project would involve taking the internals of Electron Fiddle and integrating them as a VS Code extension, to allow using Fiddle’s logic without leaving the IDE, and more easily use Fiddle with a local build of Electron. This would require a reimagining of the Electron Fiddle UX to work within the constraints of the UI/UX available to VS Code extensions, rather than a 1:1 port of the UI from the standalone Electron Fiddle.
-      Success Criteria:
-      A working VS Code extension which integrates @electron/fiddle-core to provide an Electron Fiddle experience, with emphasis on more easily working with local builds of Electron.
-      Ability to import/export GitHub Gists, integrating with VS Code’s existing GitHub auth.
-      Skills:
-      TypeScript/JavaScript (required)
-      Node.js (preferred)
-      Resources:
-      Electron Fiddle: https://electronjs.org/fiddle
-      fiddle-core repo, with Fiddle’s core logic: https://github.com/electron/fiddle-core
-      Visual Studio Code Extension API
-      Mentors:
-      @dsanders11
-      @blackhole1
-      @georgexu99
+          ~~~~~~~~~~
+          Electron Fiddle in VS Code
+          Size: 175 Hours (Medium)
+          Difficulty: Medium
+          Tags: Electron Fiddle, TypeScript, Node.js, VS Code
+          Scope: Electron Fiddle is a standalone tool used daily by Electron maintainers to help debug and fix issues reported in Electron, and is the best way for developers to provide minimal repro cases for their bug reports. This project would involve taking the internals of Electron Fiddle and integrating them as a VS Code extension, to allow using Fiddle’s logic without leaving the IDE, and more easily use Fiddle with a local build of Electron. This would require a reimagining of the Electron Fiddle UX to work within the constraints of the UI/UX available to VS Code extensions, rather than a 1:1 port of the UI from the standalone Electron Fiddle.
+          Success Criteria:
+          A working VS Code extension which integrates @electron/fiddle-core to provide an Electron Fiddle experience, with emphasis on more easily working with local builds of Electron.
+          Ability to import/export GitHub Gists, integrating with VS Code’s existing GitHub auth.
+          Skills:
+          TypeScript/JavaScript (required)
+          Node.js (preferred)
+          Resources:
+          Electron Fiddle: https://electronjs.org/fiddle
+          fiddle-core repo, with Fiddle’s core logic: https://github.com/electron/fiddle-core
+          Visual Studio Code Extension API
+          Mentors:
+          @dsanders11
+          @blackhole1
+          @georgexu99
 
-      ~~~~~~~~~~
-       Releases Working Group Calendar Website
-      Size: 175 Hours (Medium)
-      Difficulty: Easy/Medium
-      Tags: Electron, web, APIs
-      Scope: Electron’s Releases Working Group currently have several tracks of automation that help us track and communicate details about Electron’s major stable releases. However, the various tracks of automation are currently disjointed, and don’t always communicate with each other. Additionally, we depend on an upstream Chromium release schedule that we update manually, a process we would like to automate.
-      Success Criteria: This project asks the contributor to 1) add new automation to allow Electron to pull dates from Chromium’s upstream API and 2) make a barebones Release calendar website that the Electron team can view, based on Chromium's alpha, beta and stable release dates.
-      Going above and beyond could include:
-      Creating a page on releases.electronjs.org with the information
-      Setting up a bot that allows the Electron team to update the calendar automatically or add additional dates and details
-      Alerting #wg-releases and updating the calendar automatically if upstream dates change
-      Skills:
-      TypeScript/JavaScript (required)
-      Express (preferred)
-      HTML/CSS (preferred)
-      Resources:
-      Chromium’s releases API - https://chromiumdash.appspot.com/schedule
-      Releases website - https://releases.electronjs.org/
-      Release website repo - https://github.com/electron/release-status
-      Mentors:
-      @dsanders11
-      @vertedinde
-      @yangannyx
+          ~~~~~~~~~~
+          Releases Working Group Calendar Website
+          Size: 175 Hours (Medium)
+          Difficulty: Easy/Medium
+          Tags: Electron, web, APIs
+          Scope: Electron’s Releases Working Group currently have several tracks of automation that help us track and communicate details about Electron’s major stable releases. However, the various tracks of automation are currently disjointed, and don’t always communicate with each other. Additionally, we depend on an upstream Chromium release schedule that we update manually, a process we would like to automate.
+          Success Criteria: This project asks the contributor to 1) add new automation to allow Electron to pull dates from Chromium’s upstream API and 2) make a barebones Release calendar website that the Electron team can view, based on Chromium's alpha, beta and stable release dates.
+          Going above and beyond could include:
+          Creating a page on releases.electronjs.org with the information
+          Setting up a bot that allows the Electron team to update the calendar automatically or add additional dates and details
+          Alerting #wg-releases and updating the calendar automatically if upstream dates change
+          Skills:
+          TypeScript/JavaScript (required)
+          Express (preferred)
+          HTML/CSS (preferred)
+          Resources:
+          Chromium’s releases API - https://chromiumdash.appspot.com/schedule
+          Releases website - https://releases.electronjs.org/
+          Release website repo - https://github.com/electron/release-status
+          Mentors:
+          @dsanders11
+          @vertedinde
+          @yangannyx
 
-      ~~~~~~~~~~
-       Electron Fiddle Support for Fuses
-      Size: 175 Hours (Medium)
-      Difficulty: Easy/Medium
-      Tags: Electron Fiddle, TypeScript, Node.js
-      Scope: Electron Fiddle is a standalone tool used daily by Electron maintainers to help debug and fix issues reported in Electron, and is the best way for developers to provide minimal repro cases for their bug reports. Electron fuses are feature toggles that are set when packaging an Electron app to enable / disable certain features / restrictions. Currently Electron Fiddle has no support for setting these fuses when running a fiddle, so it cannot be used to to provide repro cases for bug reports involving specific fuse settings. This project would add support to Fiddle for setting fuses before running the fiddle, and include the fuse values in any fiddles uploaded to GitHub Gists.
-      Success Criteria:
-      An intuitive UI is added to Electron Fiddle which allows users to view and toggle values for Electron fuses to be set on the next run.
-      Fuse values are included in fiddles uploaded to a GitHub gist, and fuse values are set when loading a fiddle from a GitHub gist.
-      Skills:
-      TypeScript/JavaScript (required)
-      Node.js (preferred)
-      React (preferred)
-      HTML/CSS (preferred)
-      Resources:
-      Electron Fiddle: https://electronjs.org/fiddle
-      fiddle-core repo, with Fiddle’s core logic: https://github.com/electron/fiddle-core
-      Electron fuses repo: https://github.com/electron/fuses
-      Electron’s fuses docs
-      Mentors:
-      @dsanders11
-      @erickzhao  
-      @vertedinde
+          ~~~~~~~~~~
+          Electron Fiddle Support for Fuses
+          Size: 175 Hours (Medium)
+          Difficulty: Easy/Medium
+          Tags: Electron Fiddle, TypeScript, Node.js
+          Scope: Electron Fiddle is a standalone tool used daily by Electron maintainers to help debug and fix issues reported in Electron, and is the best way for developers to provide minimal repro cases for their bug reports. Electron fuses are feature toggles that are set when packaging an Electron app to enable / disable certain features / restrictions. Currently Electron Fiddle has no support for setting these fuses when running a fiddle, so it cannot be used to to provide repro cases for bug reports involving specific fuse settings. This project would add support to Fiddle for setting fuses before running the fiddle, and include the fuse values in any fiddles uploaded to GitHub Gists.
+          Success Criteria:
+          An intuitive UI is added to Electron Fiddle which allows users to view and toggle values for Electron fuses to be set on the next run.
+          Fuse values are included in fiddles uploaded to a GitHub gist, and fuse values are set when loading a fiddle from a GitHub gist.
+          Skills:
+          TypeScript/JavaScript (required)
+          Node.js (preferred)
+          React (preferred)
+          HTML/CSS (preferred)
+          Resources:
+          Electron Fiddle: https://electronjs.org/fiddle
+          fiddle-core repo, with Fiddle’s core logic: https://github.com/electron/fiddle-core
+          Electron fuses repo: https://github.com/electron/fuses
+          Electron’s fuses docs
+          Mentors:
+          @dsanders11
+          @erickzhao  
+          @vertedinde
 
-      ~~~~~~~~~~
-       Restore Electron Devtron Extension
-      Size: 175 Hours (Medium)
-      Difficulty: Medium
-      Tags: JavaScript, TypeScript, Chrome Extension, IPC, Developer Tool
-      Scope: Inter-process communication (IPC) is a key part of building feature-rich desktop applications in Electron. App developers getting started with Electron often struggle in understanding IPC concepts and how to work with them; multiple processes and finding where IPC is sent and received isn’t straightforward. Devtron was a Chrome extension available for Electron which brought visibility to IPC events by adding a new tab under Chrome DevTools where each IPC event was logged. It was eventually deprecated due to a lack of available maintainers, and an aging codebase. This project would modernize the existing Devtron codebase or create a new Chrome extension from scratch (many APIs in Chrome and Electron have changed in the 10 years since Devtron was created) to fill this continuing need for app developers.
-      Success Criteria:
-      A successful project will produce a Chrome extension that, when installed to Electron, displays IPC events sent between processes.
-      Skills:
-      TypeScript/JavaScript (required)
-      Chrome Extensions (preferred)
-      Resources:
-      Deprecated Devtron: 
-      Chrome Extensions: Extend DevTools
-      Electron’s IPC docs
-      Mentors:
-      @dsanders11
-      @samuelmaddock
-      @yangannyx
+          ~~~~~~~~~~
+          Restore Electron Devtron Extension
+          Size: 175 Hours (Medium)
+          Difficulty: Medium
+          Tags: JavaScript, TypeScript, Chrome Extension, IPC, Developer Tool
+          Scope: Inter-process communication (IPC) is a key part of building feature-rich desktop applications in Electron. App developers getting started with Electron often struggle in understanding IPC concepts and how to work with them; multiple processes and finding where IPC is sent and received isn’t straightforward. Devtron was a Chrome extension available for Electron which brought visibility to IPC events by adding a new tab under Chrome DevTools where each IPC event was logged. It was eventually deprecated due to a lack of available maintainers, and an aging codebase. This project would modernize the existing Devtron codebase or create a new Chrome extension from scratch (many APIs in Chrome and Electron have changed in the 10 years since Devtron was created) to fill this continuing need for app developers.
+          Success Criteria:
+          A successful project will produce a Chrome extension that, when installed to Electron, displays IPC events sent between processes.
+          Skills:
+          TypeScript/JavaScript (required)
+          Chrome Extensions (preferred)
+          Resources:
+          Deprecated Devtron: 
+          Chrome Extensions: Extend DevTools
+          Electron’s IPC docs
+          Mentors:
+          @dsanders11
+          @samuelmaddock
+          @yangannyx
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -12890,7 +12888,7 @@ organizations:
     no_of_ideas: 4
     ideas_content: |
      
-          Project Title: WAAS
+      Project Title: WAAS
       Description:
       Large-sized project (350 h)
       This Google Summer of Code (GSoC) project focuses on advancing the functionalities of GNSS-SDR receivers related to WAAS.
