@@ -21,7 +21,7 @@ export interface SearchResponse {
 
 export async function searchProjects(query: string, n_results: number = 10): Promise<SearchResponse> {
   try {
-    const response = await fetch('http://localhost:8000/query', {
+    const response = await fetch('https://gsoc2025-fastapi-backend-usn9l.ondigitalocean.app/query', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
