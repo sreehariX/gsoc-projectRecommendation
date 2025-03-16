@@ -5,6 +5,8 @@ export interface Chat {
   createdAt: Date;
   results?: any[];
   summary?: string;
+  enhancedQuery?: string;
+  queryType?: 'enhanced' | 'raw';
 }
 
 export interface Message {

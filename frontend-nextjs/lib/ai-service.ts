@@ -15,6 +15,43 @@ const createAIProvider = () => {
   });
 };
 
+export async function enhanceQuery(userQuery: string): Promise<string> {
+  if (!userQuery || userQuery.trim() === '') {
+    return userQuery;
+  }
+
+  try {
+    const googleAI = createAIProvider();
+    const model = googleAI('gemini-2.0-flash');
+
+    const prompt = `
+    You are a search query enhancer for a GSoC (Google Summer of Code) project search system.
+    Your task is to improve the user's search query to make it more effective for semantic search in a vector database of GSoC projects.
+    
+    Original query: "${userQuery}"
+    
+    Enhance this query by:
+    1. Expandin the user query to make it more accurate in vector database search
+    2. Expanding abbreviations
+    3. Including synonyms for technical terms
+    4. Improving specificity while maintaining the original intent
+    
+    Return ONLY the enhanced query text with no explanations or additional text.
+    `;
+
+    const result = await generateText({
+      model,
+      prompt,
+    });
+
+    return result.text.trim();
+  } catch (error) {
+    console.error("Error enhancing query:", error);
+    // Return the original query if enhancement fails
+    return userQuery;
+  }
+}
+
 export async function summarizeResults(results: SearchResult[]): Promise<Response> {
   if (!results || results.length === 0) {
     return new Response("No results found.");

@@ -16,7 +16,12 @@ export function SummaryResults({ currentChat }: SummaryResultsProps) {
   if (isSummarizing && !summaryToShow) {
     return (
       <div className="flex items-center justify-center p-8">
-        
+        <div className="relative">
+          <span className="text-gray-400 animate-pulse">
+            Generating response
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+          </span>
+        </div>
       </div>
     );
   }
@@ -39,8 +44,9 @@ export function SummaryResults({ currentChat }: SummaryResultsProps) {
     <div className="p-6 rounded-lg --background: #1D1E1A;">
       <div className="prose prose-invert max-w-none text-ivory">
         {isSummarizing && (
-          <div className="mb-2 text-sm text-gray-400">
-          
+          <div className="mb-2 text-sm text-gray-400 relative">
+            <span>Generating response</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
           </div>
         )}
         <ReactMarkdown>{summaryToShow}</ReactMarkdown>

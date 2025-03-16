@@ -21,7 +21,7 @@ export default function Home() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   
-  // Search state from Zustand store
+
   const { 
     query, 
     results, 
@@ -30,7 +30,12 @@ export default function Home() {
     isSummarizing, 
     setQuery, 
     search, 
-    clearResults 
+    clearResults,
+    queryType,
+    setQueryType,
+    n_results,
+    setNResults,
+    enhancedQuery
   } = useSearchStore();
 
   // Initialize IndexedDB when the component mounts
@@ -106,12 +111,7 @@ export default function Home() {
               continue;
             }
             
-            // Skip automatic saving here - we'll handle it explicitly in handleSend
-            // This prevents race conditions and duplicate saves
-            // await chatStorageService.saveChat({
-            //   ...chat,
-            //   id: chat.id, // Ensure ID is preserved as the key
-            // });
+           
           } catch (error) {
             console.error('Error saving chat:', error);
           }
@@ -201,10 +201,10 @@ export default function Home() {
             console.log('Created new chat:', currentChat.id);
         }
 
-        // Add user message to chat
+     
         const updatedMessages = [...currentChat.messages, userMessage];
         
-        // Update chat with user message
+    
         const updatedChat = {
             ...currentChat,
             messages: updatedMessages
@@ -223,14 +223,14 @@ export default function Home() {
         setQuery(input);
         await search();
 
-        // Wait a bit to ensure summary is generated
+        
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         // Get the latest summary from the store
         const currentSummary = useSearchStore.getState().summary;
         console.log('Current summary:', currentSummary ? currentSummary.substring(0, 50) + '...' : 'No summary');
 
-        // Create assistant message with search results
+       
         const assistantMessage: Message = {
             id: crypto.randomUUID(),
             role: 'assistant',
@@ -248,7 +248,7 @@ export default function Home() {
             results: results
         };
 
-        // Update chats with assistant response
+
         const finalChats = activeChat
             ? chats.map(chat => chat.id === activeChat ? finalChat : chat)
             : [finalChat, ...chats];
@@ -371,25 +371,7 @@ export default function Home() {
     
     console.log(`Active chat changed: ${activeChat}, messages: ${currentChat.messages.length}`);
     
-    // Don't automatically save on every state change
-    // This prevents race conditions and ensures we only save complete chats
-    // Saving is now handled explicitly in the handleSend function
-    /*
-    // Only save if we have messages
-    if (currentChat.messages.length > 0) {
-      console.log(`Saving chat ${activeChat} to storage`);
-      
-      // Create a version of the chat without results for storage
-      const chatForStorage = {
-        ...currentChat,
-        results: [] // Don't save results to IndexedDB
-      };
-      
-      chatStorageService.saveChat(chatForStorage)
-        .then(() => console.log(`Successfully saved chat ${activeChat}`))
-        .catch(error => console.error(`Error saving chat ${activeChat}:`, error));
-    }
-    */
+    
   }, [activeChat, chats]);
 
   return (
@@ -457,18 +439,24 @@ export default function Home() {
 
         <div className={`p-6 ${isFirstMessage ? 'flex items-center justify-center h-32' : ''}`}>
           <div className="max-w-3xl w-full mx-auto relative">
-            <div className="relative flex items-end rounded-2xl bg-[rgba(50,50,50,0.6)] border border-[rgba(255,255,255,0.1)] focus-within:border-[rgba(255,255,255,0.3)] focus-within:shadow-glow transition-all duration-200">
+            {enhancedQuery && (
+              <div className="text-xs text-gray-300 mb-2 ml-2">
+                <span className="font-semibold">Enhanced query:</span> {enhancedQuery}
+              </div>
+            )}
+            <div className="relative rounded-2xl bg-[rgba(50,50,50,0.6)] border border-[rgba(255,255,255,0.1)] focus-within:border-[rgba(255,255,255,0.3)] focus-within:shadow-glow transition-all duration-200">
               <textarea
                 ref={textareaRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Search for GSoC projects..."
-                className="w-full py-3 px-4 text-white bg-transparent rounded-2xl resize-none"
+                className="w-full py-4 px-5 text-white bg-transparent rounded-2xl resize-none"
                 style={{
-                  minHeight: '60px',
-                  maxHeight: '120px',
+                  minHeight: '70px',
+                  maxHeight: '150px',
                   outline: 'none',
                   lineHeight: '1.5',
+                  paddingBottom: '50px'
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
@@ -477,8 +465,36 @@ export default function Home() {
                   }
                 }}
               />
+              <div className="absolute bottom-3 left-5 flex items-center space-x-6">
+                <div className="flex items-center space-x-2">
+                  <label htmlFor="queryType" className="text-sm font-medium text-gray-300">Query Type:</label>
+                  <select 
+                    id="queryType"
+                    value={queryType}
+                    onChange={(e) => setQueryType(e.target.value as 'enhanced' | 'raw')}
+                    className="bg-[rgba(60,60,60,0.6)] text-white text-sm rounded-md px-3 py-1.5 border border-[rgba(255,255,255,0.1)]"
+                  >
+                    <option value="enhanced">Enhanced Query</option>
+                    <option value="raw">Raw Query</option>
+                  </select>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <label htmlFor="n_results" className="text-sm font-medium text-gray-300">Results:</label>
+                  <select 
+                    id="n_results"
+                    value={n_results}
+                    onChange={(e) => setNResults(Number(e.target.value))}
+                    className="bg-[rgba(60,60,60,0.6)] text-white text-sm rounded-md px-3 py-1.5 border border-[rgba(255,255,255,0.1)]"
+                  >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select>
+                </div>
+              </div>
               <Button
-                className="absolute right-2 bottom-2 h-10 w-10 p-0 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.25)] transition-colors"
+                className="absolute right-4 bottom-3 h-11 w-11 p-0 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.25)] transition-colors"
                 onClick={handleSend}
                 disabled={!input.trim()}
               >

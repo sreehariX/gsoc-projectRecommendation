@@ -31,6 +31,7 @@ chroma_client = chromadb.PersistentClient(path="chroma_db")
 
 class QueryRequest(BaseModel):
     query: str
+    n_results: int = 10  # Default value of 10 if not specified
 
 # Define a new Pydantic model for the input text
 class EmbeddingRequest(BaseModel):
@@ -70,13 +71,11 @@ def load_ideas_to_chroma(yaml_path: str):
                         'organization_id': org['organization_id'],
                         'organization_name': org['organization_name'],
                         'no_of_ideas': org['no_of_ideas'],
-                        'totalCharacters_of_ideas_content_parent': org['totalCharacters_of_ideas_content_parent'],
-                        'totalwords_of_ideas_content_parent': org['totalwords_of_ideas_content_parent'],
-                        'totalTokenCount_of_ideas_content_parent': org['totalTokenCount_of_ideas_content_parent'],
+                        'totalCharacters_of_ideas_content_parent': org.get('totalCharacters_of_ideas_content_parent'),
+                        'totalwords_of_ideas_content_parent': org.get('totalwords_of_ideas_content_parent'),
+                        'totalTokenCount_of_ideas_content_parent': org.get('totalTokenCount_of_ideas_content_parent'),
                         'gsocorganization_dev_url': org['gsocorganization_dev_url'],
                         'idea_list_url': org['idea_list_url']
-
-                            
                     })
                     # Generate a unique ID for each document
                     ids_list.append(str(uuid.uuid4()))
@@ -111,7 +110,7 @@ async def query_ideas(request: QueryRequest):
         
         results = collection.query(
             query_embeddings=[query_embedding],
-            n_results=10,
+            n_results=request.n_results,  # Use the requested number of results
             include=['documents', 'metadatas', 'distances']
         )
         

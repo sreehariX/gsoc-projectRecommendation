@@ -1,34 +1,57 @@
 import { create } from 'zustand';
 import { SearchResult, searchProjects } from './api-service';
-import { summarizeResults } from './ai-service';
+import { summarizeResults, enhanceQuery } from './ai-service';
 
 interface SearchState {
   query: string;
+  enhancedQuery: string;
+  queryType: 'enhanced' | 'raw';
+  n_results: number;
   results: SearchResult[];
   summary: string;
   isLoading: boolean;
   isSummarizing: boolean;
   error: string | null;
   setQuery: (query: string) => void;
+  setQueryType: (type: 'enhanced' | 'raw') => void;
+  setNResults: (n: number) => void;
   search: () => Promise<void>;
   clearResults: () => void;
 }
 
 export const useSearchStore = create<SearchState>((set, get) => ({
   query: '',
+  enhancedQuery: '',
+  queryType: 'enhanced',
+  n_results: 10,
   results: [],
   summary: '',
   isLoading: false,
   isSummarizing: false,
   error: null,
   setQuery: (query) => set({ query }),
+  setQueryType: (type) => set({ queryType: type }),
+  setNResults: (n) => set({ n_results: n }),
   search: async () => {
-    const { query } = get();
+    const { query, queryType, n_results } = get();
     if (!query.trim()) return;
     
     set({ isLoading: true, error: null, summary: '' });
+    
     try {
-      const response = await searchProjects(query);
+      // Enhance the query if queryType is 'enhanced'
+      let searchQuery = query;
+      let enhancedQueryText = '';
+      
+      if (queryType === 'enhanced') {
+        enhancedQueryText = await enhanceQuery(query);
+        searchQuery = enhancedQueryText;
+        set({ enhancedQuery: enhancedQueryText });
+      } else {
+        set({ enhancedQuery: '' });
+      }
+      
+      const response = await searchProjects(searchQuery, n_results);
       set({ results: response.results, isLoading: false });
       
       // Generate summary with streaming
@@ -86,5 +109,5 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       });
     }
   },
-  clearResults: () => set({ results: [], summary: '', query: '' }),
+  clearResults: () => set({ results: [], summary: '', query: '', enhancedQuery: '' }),
 })); 

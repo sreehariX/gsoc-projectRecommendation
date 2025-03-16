@@ -19,14 +19,14 @@ export interface SearchResponse {
   results: SearchResult[];
 }
 
-export async function searchProjects(query: string): Promise<SearchResponse> {
+export async function searchProjects(query: string, n_results: number = 10): Promise<SearchResponse> {
   try {
     const response = await fetch('http://localhost:8000/query', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, n_results }),
     });
 
     if (!response.ok) {
