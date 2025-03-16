@@ -2,9 +2,10 @@ import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { generateText, streamText } from 'ai';
 import { SearchResult } from './api-service';
 
-// Create a Google provider instance with explicit API key
+// Create a Google provider instance with server-side API key
 const createAIProvider = () => {
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_GENERATIVE_AI_API_KEY;
+  // Use the server-side environment variable without NEXT_PUBLIC_ prefix
+  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
   if (!apiKey) {
     throw new Error('Google Generative AI API key is missing');
   }

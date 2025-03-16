@@ -44,7 +44,20 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       let enhancedQueryText = '';
       
       if (queryType === 'enhanced') {
-        enhancedQueryText = await enhanceQuery(query);
+        const enhanceResponse = await fetch('/api/enhance-query', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query }),
+        });
+        
+        if (!enhanceResponse.ok) {
+          throw new Error('Failed to enhance query');
+        }
+        
+        const enhanceData = await enhanceResponse.json();
+        enhancedQueryText = enhanceData.enhancedQuery;
         searchQuery = enhancedQueryText;
         set({ enhancedQuery: enhancedQueryText });
       } else {

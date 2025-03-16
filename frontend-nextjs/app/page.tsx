@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Sidebar } from '@/components/sidebar';
 import { MessageList } from '@/components/message-list';
 import { SummaryResults } from '@/components/summary-results';
-import { PanelLeftOpen, PanelLeftClose, MessageSquarePlus, Search } from 'lucide-react';
+import { PanelLeftOpen, PanelLeftClose, MessageSquarePlus, Search, Menu, X } from 'lucide-react';
 import { Chat, Message, generateSyntheticResponse, generateChatTitle } from '@/lib/chat-store';
 import { useSearchStore } from '@/lib/store';
 
@@ -13,6 +13,7 @@ import { chatStorageService } from '@/lib/chat-storage-service';
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [input, setInput] = useState('');
   const [activeChat, setActiveChat] = useState<string | null>(null);
   const [chats, setChats] = useState<Chat[]>([]);
@@ -21,6 +22,37 @@ export default function Home() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   
+  // Check if the screen is mobile size
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Effect to handle responsive behavior
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth < 768) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    // Initial check
+    checkIfMobile();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Add event listener for custom sidebar close event
+    const handleCloseSidebar = () => {
+      setIsMobileSidebarOpen(false);
+    };
+    
+    window.addEventListener('closeMobileSidebar', handleCloseSidebar);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener('closeMobileSidebar', handleCloseSidebar);
+    };
+  }, []);
 
   const { 
     query, 
@@ -201,10 +233,8 @@ export default function Home() {
             console.log('Created new chat:', currentChat.id);
         }
 
-     
         const updatedMessages = [...currentChat.messages, userMessage];
         
-    
         const updatedChat = {
             ...currentChat,
             messages: updatedMessages
@@ -219,18 +249,21 @@ export default function Home() {
         setActiveChat(updatedChat.id);
         setInput('');
 
+        // Set loading state
+        setIsGenerating(true);
+        
         // Trigger search and wait for results
         setQuery(input);
         await search();
-
         
+        // Small delay to ensure results are processed
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         // Get the latest summary from the store
         const currentSummary = useSearchStore.getState().summary;
         console.log('Current summary:', currentSummary ? currentSummary.substring(0, 50) + '...' : 'No summary');
 
-       
+        // Create assistant message
         const assistantMessage: Message = {
             id: crypto.randomUUID(),
             role: 'assistant',
@@ -241,19 +274,22 @@ export default function Home() {
         // Add assistant message to chat
         const finalMessages = [...updatedMessages, assistantMessage];
         
-        // Create final chat state
+        // Create final chat state with current search results
+        const currentResults = useSearchStore.getState().results;
         const finalChat = {
             ...updatedChat,
             messages: finalMessages,
-            results: results
+            results: currentResults
         };
-
 
         const finalChats = activeChat
             ? chats.map(chat => chat.id === activeChat ? finalChat : chat)
             : [finalChat, ...chats];
 
         setChats(finalChats);
+        
+        // End loading state
+        setIsGenerating(false);
 
         // Wait a bit to ensure state is updated
         await new Promise(resolve => setTimeout(resolve, 500));
@@ -286,6 +322,7 @@ export default function Home() {
 
     } catch (error) {
         console.error('Error in handleSend:', error);
+        setIsGenerating(false);
     }
 };
 
@@ -304,30 +341,32 @@ export default function Home() {
 
   const handleSelectChat = async (id: string) => {
     try {
-      console.log(`Selecting chat: ${id}`);
-      
-      // Load the chat from storage
-      const loadedChat = await chatStorageService.getChat(id);
-      
-      if (loadedChat) {
-        console.log(`Loaded chat ${id} with ${loadedChat.messages.length} messages`);
+        console.log(`Selecting chat: ${id}`);
         
-        // Update the chat in the chats array
-        setChats(prev => prev.map(chat => 
-          chat.id === id ? { ...loadedChat, results: chat.results || [] } : chat
-        ));
+        // Load the chat from storage
+        const loadedChat = await chatStorageService.getChat(id);
         
-        // Set as active chat
-        setActiveChat(id);
-        
-        // Clear input and search state
-        setInput('');
-        clearResults();
-      } else {
-        console.error(`Could not load chat ${id}`);
-      }
+        if (loadedChat) {
+            console.log(`Loaded chat ${id} with ${loadedChat.messages.length} messages`);
+            
+            // Clear any ongoing search or results first
+            clearResults();
+            
+            // Update the chat in the chats array
+            setChats(prev => prev.map(chat => 
+                chat.id === id ? { ...loadedChat, results: loadedChat.results || [] } : chat
+            ));
+            
+            // Set as active chat
+            setActiveChat(id);
+            
+            // Clear input
+            setInput('');
+        } else {
+            console.error(`Could not load chat ${id}`);
+        }
     } catch (error) {
-      console.error(`Error selecting chat ${id}:`, error);
+        console.error(`Error selecting chat ${id}:`, error);
     }
   };
 
@@ -375,34 +414,59 @@ export default function Home() {
   }, [activeChat, chats]);
 
   return (
-    <div className="flex h-screen" style={{ backgroundColor: 'var(--background)' }}>
-      <Sidebar 
-        isOpen={isSidebarOpen}
-        chats={chats}
-        activeChat={activeChat}
-        onNewChat={handleNewChat}
-        onSelectChat={handleSelectChat}
-        onDeleteChat={handleDeleteChat}
-      />
+    <div className="flex h-screen relative" style={{ backgroundColor: 'var(--background)' }}>
+      {/* Mobile sidebar overlay */}
+      {isMobileSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
+          onClick={() => setIsMobileSidebarOpen(false)}
+        />
+      )}
       
-      <div className={`flex-1 flex flex-col ${!isSidebarOpen ? 'mx-auto max-w-5xl' : ''}`}>
-        <div className="h-14 flex items-center px-4">
+      {/* Sidebar - desktop version uses isSidebarOpen, mobile version uses isMobileSidebarOpen */}
+      <div className={`${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed md:relative z-30 transition-transform duration-300 ease-in-out h-full`}>
+        <Sidebar 
+          isOpen={isMobile ? true : isSidebarOpen}
+          chats={chats}
+          activeChat={activeChat}
+          onNewChat={handleNewChat}
+          onSelectChat={(id) => {
+            handleSelectChat(id);
+            if (isMobile) setIsMobileSidebarOpen(false);
+          }}
+          onDeleteChat={handleDeleteChat}
+        />
+      </div>
+      
+      <div className={`flex-1 flex flex-col w-full ${!isSidebarOpen ? 'md:max-w-5xl md:mx-auto' : ''}`}>
+        <div className="h-14 flex items-center px-4 justify-between">
           <div className="flex items-center gap-2">
+            {/* Mobile menu button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileSidebarOpen(true)}
+              className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full md:hidden"
+            >
+              <Menu />
+            </Button>
+            
+            {/* Desktop sidebar toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full"
+              className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full hidden md:flex"
             >
               {isSidebarOpen ? <PanelLeftClose /> : <PanelLeftOpen />}
             </Button>
             
-            {!isSidebarOpen && (
+            {!isSidebarOpen && !isMobile && (
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={handleNewChat}
-                className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full"
+                className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full hidden md:flex"
               >
                 <MessageSquarePlus className="h-5 w-5" />
               </Button>
@@ -410,10 +474,20 @@ export default function Home() {
           </div>
           
           {currentChat && (
-            <h2 className="ml-4 font-semibold truncate text-white">
+            <h2 className="ml-4 font-semibold truncate text-white flex-1 text-center md:text-left">
               {currentChat.title}
             </h2>
           )}
+          
+          {/* Mobile new chat button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleNewChat}
+            className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full md:hidden"
+          >
+            <MessageSquarePlus className="h-5 w-5" />
+          </Button>
         </div>
 
         <div 
@@ -427,8 +501,8 @@ export default function Home() {
             isGenerating={isGenerating}
           />
           
-          {/* Summary Results - Pass currentChat as prop */}
-          {activeChat && (
+          {/* Only show SummaryResults when actively generating a response */}
+          {activeChat && isGenerating && (
             <div className="max-w-3xl mx-auto px-4 pb-6">
               <SummaryResults 
                 currentChat={currentChat}
@@ -437,7 +511,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className={`p-6 ${isFirstMessage ? 'flex items-center justify-center h-32' : ''}`}>
+        <div className={`p-3 md:p-6 ${isFirstMessage ? 'flex items-center justify-center h-32' : ''}`}>
           <div className="max-w-3xl w-full mx-auto relative">
             {enhancedQuery && (
               <div className="text-xs text-gray-300 mb-2 ml-2">
@@ -452,11 +526,11 @@ export default function Home() {
                 placeholder="Search for GSoC projects..."
                 className="w-full py-4 px-5 text-white bg-transparent rounded-2xl resize-none"
                 style={{
-                  minHeight: '70px',
+                  minHeight: isMobile ? '80px' : '70px',
                   maxHeight: '150px',
                   outline: 'none',
                   lineHeight: '1.5',
-                  paddingBottom: '50px'
+                  paddingBottom: isMobile ? '40px' : '50px'
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {
@@ -465,7 +539,39 @@ export default function Home() {
                   }
                 }}
               />
-              <div className="absolute bottom-3 left-5 flex items-center space-x-6">
+              
+              {/* Mobile controls */}
+              <div className="md:hidden absolute bottom-3 left-3 right-14 flex flex-row items-center space-x-2">
+                <div className="flex items-center">
+                  <label htmlFor="queryType-mobile" className="text-[10px] font-medium text-gray-300 mr-1 mobile-label">Type:</label>
+                  <select 
+                    id="queryType-mobile"
+                    value={queryType}
+                    onChange={(e) => setQueryType(e.target.value as 'enhanced' | 'raw')}
+                    className="bg-[rgba(60,60,60,0.6)] text-white text-[10px] rounded-md px-1 py-1 border border-[rgba(255,255,255,0.1)] w-[80px] mobile-select"
+                  >
+                    <option value="enhanced">Enhanced</option>
+                    <option value="raw">Raw</option>
+                  </select>
+                </div>
+                <div className="flex items-center">
+                  <label htmlFor="n_results-mobile" className="text-[10px] font-medium text-gray-300 mr-1 mobile-label">Results:</label>
+                  <select 
+                    id="n_results-mobile"
+                    value={n_results}
+                    onChange={(e) => setNResults(Number(e.target.value))}
+                    className="bg-[rgba(60,60,60,0.6)] text-white text-[10px] rounded-md px-1 py-1 border border-[rgba(255,255,255,0.1)] w-[50px] mobile-select"
+                  >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                  </select>
+                </div>
+              </div>
+              
+              {/* Desktop controls */}
+              <div className="absolute bottom-3 left-5 hidden md:flex md:flex-row md:items-center md:space-x-6">
                 <div className="flex items-center space-x-2">
                   <label htmlFor="queryType" className="text-sm font-medium text-gray-300">Query Type:</label>
                   <select 
@@ -493,8 +599,9 @@ export default function Home() {
                   </select>
                 </div>
               </div>
+              
               <Button
-                className="absolute right-4 bottom-3 h-11 w-11 p-0 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.25)] transition-colors"
+                className="absolute right-3 md:right-4 bottom-3 h-10 w-10 md:h-11 md:w-11 p-0 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.15)] hover:bg-[rgba(255,255,255,0.25)] transition-colors shadow-glow"
                 onClick={handleSend}
                 disabled={!input.trim()}
               >

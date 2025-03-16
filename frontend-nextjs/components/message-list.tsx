@@ -27,7 +27,10 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
             .use(html)
             .process(message.content);
           
-          const contentHtml = processedContent.toString();
+          let contentHtml = processedContent.toString();
+          
+          // Add target="_blank" to all links
+          contentHtml = contentHtml.replace(/<a /g, '<a target="_blank" rel="noopener noreferrer" ');
           
           return {
             ...message,
@@ -47,11 +50,21 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
     processMarkdown();
   }, [messages]);
 
+  // Function to handle link clicks
+  const handleLinkClick = (e: React.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A') {
+      e.preventDefault();
+      const href = (target as HTMLAnchorElement).href;
+      window.open(href, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
-    <div className="max-w-3xl mx-auto p-4">
+    <div className="w-full px-2 sm:px-4 md:max-w-3xl md:mx-auto" onClick={handleLinkClick}>
       {messages.length === 0 ? (
         <div className="h-full flex items-center justify-center">
-          <h1 className="text-4xl font-bold" style={{ color: 'hsl(var(--color-silver))' }}>
+          <h1 className="text-2xl md:text-4xl font-bold text-center px-4" style={{ color: 'hsl(var(--color-silver))' }}>
             Search for GSoC projects
           </h1>
         </div>
@@ -60,10 +73,10 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
           {processedMessages.map((message) => (
             <div
               key={message.id}
-              className={`mb-6 ${message.role === 'user' ? 'text-right' : 'text-left'}`}
+              className={`mb-4 md:mb-6 ${message.role === 'user' ? 'text-right' : 'text-left'}`}
             >
               <div 
-                className={`inline-block px-4 py-2 max-w-[90%] ${
+                className={`inline-block px-3 py-2 md:px-4 md:py-2 max-w-[95%] md:max-w-[90%] ${
                   message.role === 'user' 
                     ? 'rounded-2xl rounded-br-sm bg-[var(--gradient-bg)]' 
                     : 'rounded-2xl rounded-bl-sm'
@@ -73,10 +86,10 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
                 }}
               >
                 {message.role === 'user' ? (
-                  message.content
+                  <div className="text-sm md:text-base">{message.content}</div>
                 ) : (
                   <div 
-                    className="prose prose-invert prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white max-w-none"
+                    className="prose prose-invert prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white max-w-none text-sm md:text-base"
                     dangerouslySetInnerHTML={{ __html: message.contentHtml || '' }}
                   />
                 )}
@@ -84,7 +97,7 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
             </div>
           ))}
           {isGenerating && (
-            <div className="flex items-center text-xs text-gray-400 animate-pulse">
+            <div className="flex items-center text-xs text-gray-400 animate-pulse px-2">
               Generating response...
             </div>
           )}

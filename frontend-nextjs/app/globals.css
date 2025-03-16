@@ -57,7 +57,7 @@
   width: 0;
 }
 
-/* Add button styles with rounded corners */
+
 .btn-rounded {
   border-radius: var(--border-radius-full);
 }
@@ -112,14 +112,14 @@
   border-bottom-right-radius: 0.5rem;
 }
 
-/* Add this to your existing CSS */
+
 .shadow-glow {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-/* Add this to your existing CSS */
+
 .text-ivory {
-  color: hsl(var(--primary) / 100%); /* Ivory color */
+  color: hsl(var(--primary) / 100%); 
 }
 
 /* Update the prose styles for markdown content */
@@ -166,4 +166,118 @@
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .prose h1 {
+    font-size: 1.5rem;
+  }
+  
+  .prose h2 {
+    font-size: 1.25rem;
+  }
+  
+  .prose h3 {
+    font-size: 1.125rem;
+  }
+  
+  .prose pre {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .prose code {
+    font-size: 0.875rem;
+  }
+  
+  .prose p, .prose li {
+    font-size: 0.875rem;
+  }
+  
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1rem;
+    padding-right: 2rem !important;
+  }
+  
+ 
+  .mobile-select {
+    height: 28px;
+    min-height: 28px;
+    font-size: 10px;
+    padding: 0 4px;
+  }
+  
+
+  .mobile-label {
+    font-size: 10px;
+  }
+  
+  textarea::placeholder {
+    font-size: 16px;
+  }
+  
+ 
+  select, button {
+    touch-action: manipulation;
+  }
+  
+
+  select, button, textarea {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+  }
+  
+
+  .shadow-glow {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  }
+}
+
+
+* {
+  max-width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  button, 
+  select, 
+  input[type="button"], 
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  input, 
+  select, 
+  textarea {
+    font-size: 16px;
+  }
+}
+
+
+html, body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent horizontal overflow */
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }

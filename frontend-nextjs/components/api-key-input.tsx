@@ -1,23 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchStore } from '@/lib/store';
+import React, { useState } from 'react';
 
 export function ApiKeyInput() {
-  const { apiKey, setApiKey } = useSearchStore();
-  const [localKey, setLocalKey] = useState('');
+  const [apiKey, setApiKey] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
 
-  // Load API key from localStorage on component mount
-  useEffect(() => {
-    const savedKey = localStorage.getItem('googleApiKey');
-    if (savedKey) {
-      setLocalKey(savedKey);
-      setApiKey(savedKey);
+  const handleSaveKey = async () => {
+    if (!apiKey.trim()) {
+      setMessage('Please enter a valid API key');
+      return;
     }
-  }, [setApiKey]);
 
-  const handleSaveKey = () => {
-    localStorage.setItem('googleApiKey', localKey);
-    setApiKey(localKey);
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      // Send the API key to a server endpoint that will validate and store it securely
+      const response = await fetch('/api/set-api-key', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ apiKey }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Failed to save API key');
+      }
+
+      setMessage('API key saved successfully');
+      // Clear the input field after successful save
+      setApiKey('');
+    } catch (error: any) {
+      setMessage(error.message || 'An error occurred while saving the API key');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -26,8 +46,8 @@ export function ApiKeyInput() {
       <div className="flex items-center">
         <input
           type={isVisible ? "text" : "password"}
-          value={localKey}
-          onChange={(e) => setLocalKey(e.target.value)}
+          value={apiKey}
+          onChange={(e) => setApiKey(e.target.value)}
           placeholder="Enter your Google Generative AI API key"
           className="flex-1 p-2 bg-gray-800 border border-gray-600 rounded-l-md text-ivory"
         />
@@ -40,13 +60,19 @@ export function ApiKeyInput() {
         </button>
         <button
           onClick={handleSaveKey}
-          className="px-3 py-2 bg-blue-600 rounded-r-md text-white"
+          disabled={isSubmitting}
+          className="px-3 py-2 bg-blue-600 rounded-r-md text-white disabled:bg-blue-800"
         >
-          Save
+          {isSubmitting ? 'Saving...' : 'Save'}
         </button>
       </div>
+      {message && (
+        <p className={`mt-2 text-sm ${message.includes('success') ? 'text-green-400' : 'text-red-400'}`}>
+          {message}
+        </p>
+      )}
       <p className="mt-2 text-sm text-gray-400">
-        Your API key is stored locally in your browser and never sent to our servers.
+        Your API key will be securely stored on the server and never exposed to the client.
       </p>
     </div>
   );
