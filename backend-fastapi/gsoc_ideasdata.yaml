@@ -14765,32 +14765,712 @@ organizations:
 
   - organization_id: 61
     organization_name: IOOS
-    no_of_ideas:
+    no_of_ideas: 20
     ideas_content: |
-      Project Ideas for 2025
-      IOOS DMAC community's project ideas list for Google Summer of Code 2025.
-      Deadline for mentoring organization application: Feb 11, 2025.
-      Project Title Project Idea Link Description Hours
-      Build web UI versions using pyodide/pyscript for IOOS tools ioos/gsoc#64 The idea for this project is to build interfaces for ioos-qc and compliance-checker. A user should be able to load datasets, select data and the checks they want to apply. 350 hours
-      Prometheus server- graphs and monitoring for ERDDAP™ ioos/gsoc#72 We recently started adding Prometheus metrics to ERDDAP™. The main goal of this project is to build an example Prometheus Server which can monitor one or more ERDDAP™ instances. 175 hours
-      Update ERDDAP™ page rendering to use a template framework ioos/gsoc#73 The project is to migrate existing ERDDAP™ pages to use a templating framework. 175 hours
-      IOOS Cloud Sandbox - model validation and verification tools ioos/gsoc#84 Add model validation and verification tools to https://github.com/ioos/Cloud-Sandbox. Model validation and verification can include comparing model results to observations, previously validated data, other model data, etc. 175 hours
-      Code separation and build management for cloudflow ioos/gsoc#85 Move Cloudflow's code to a poetry or uv build, with well-established and externalized dependency, and allow deployment to pypi. 90 hours
-      Increased logging for Cloudflow ioos/gsoc#86 Having AWS logging increased within the codebase of cloudflow would greatly increase our capacity to support multiple users on the coastal sandbox. 90 hours
-      Combined DwCA/Croissant JSON-LD examples and tools ioos/gsoc#70 The project would primarily consist of python tools to convert existing DwC metadata (in XML format) into JSON-LD format, example metadata for datasets that employ both standards, and a proof-of-concept pipeline that uses a combined DwC/Croissant-described dataset to train an AI model that predicts DwC categories from images 175 hours
-      NOAA trawl survey database ioos/gsoc#74 The primary objective of this project is to create an accessible international database of transboundary marine survey data across the Northeast Pacific Ocean. 175 hours
-      Extend CrocoLake's available datasets ioos/gsoc#75 This project consists in taking an existing dataset that is not yet included in CrocoLake and developing or adapting existing modules to convert it to CrocoLake's format. 175 hours
-      Autoval Improvement ioos/gsoc#76 This project aims to enhance the capabilities of the Autoval package, which was developed for STOFS auto validation. STOFS stands for the Surge and Tide Operational Forecast System. 175 hours
-      OCSMesh Parallelization ioos/gsoc#77 OCSMesh is a Python package that automates the generation of unstructured continuous (creek-to-ocean) meshes using the jigsaw-python library and triangles. The goal of this project is to increase OCSMesh’s efficiency by parallelizing the most time consuming steps, including DEM processing and jigsaw mesh generation. 350 hours
-      STOFS dashboard ioos/gsoc#78 This project aims to advance and improve our STOFS event dashboard (github repo). This tool allows a user to select events (e.g., tropical cyclones, winter storms, major incidents in coastal areas) and compare STOFS model results with observations for those events. 175 hours
-      Probabilistic Surge Model Performance Assessment ioos/gsoc#79 The storm surge modeling team at the Office of Coast Survey (OCS) have developed a framework called (ondemand-storm-workflow) to develop probabilistic hurricane storm surge models. The goal of this project is to improve the post-prossessing and model evaluation capabilities of the workflow. 175 hours
-      Land Cover Integration for Parametric Hurricane Model (PaHM) ioos/gsoc#80 This project aims to enhance the Generalized Asymmetric Holland Model (GAHM) within the Parametric Hurricane Modeling System (PaHM) framework by incorporating land cover effects on wind speeds during tropical cyclones. 350 hours
-      Expand the Google Test suite for the Fisheries Integrated Modeling System ioos/gsoc#81 The Fisheries Integrated Modeling System (FIMS) is a framework to create statistical models, written in C++ and R, to assess the status of marine resources. This project will add tests for uncovered code and suggest places where the tests, especially the Google tests, can be enhanced. 175 hours
-      Fix clang-tidy for the Fisheries Integrated Modeling System ioos/gsoc#82 The project follows a modified Google style guide for the The Fisheries Integrated Modeling System (FIMS) C++ standards and relies on GitHub action using clang-tidy to ensure that code pushed to the GitHub repository conforms to these standards. 90 hours
-      Complete the integration of the logging system in the Fisheries Integrated Modeling System ioos/gsoc#83 This project would take examples already in the source code for the The Fisheries Integrated Modeling System (FIMS) and use pattern matching to insert new logging entries into the code where it seems that they are needed. 90 hours
-      phytoclass for the masses ioos/gsoc#90 This project will improve usability and accuracy of phytoclass R library for conversion of HPLC pigment data to phytoplankton abundance estimations. 90 hours
-      pyOBIS for stakeholders ioos/gsoc#91 This project will make use of the pyOBIS python library to create a series of jupyter notebooks to address research questions of natural resource managers. 90 hours
-      Add MQTT support to ERDDAP™ #93 Add support for MQTT to ERDDAP™. MQTT is a message protocol which was in particular designed to be lightweight and used by remote/IoT devices. 350 hours
+      
+
+
+          URL: https://github.com/ioos/gsoc/issues/64
+          TITLE: [GSoC Project Proposal]: : Build web UI versions using pyodide/pyscript for IOOS tools · Issue #64 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: : Build web UI versions using pyodide/pyscript for IOOS tools #64
+          New issue
+          Open
+          Description
+          ocefpaf
+          opened on Nov 14, 2024on Nov 14, 2024 · edited by mwengren
+          Edits
+          Project Description
+          IOOS provides many tools as webservices, like compliance-checker web and ioos-qc. These services rely on docker deployments running in the cloud.
+          Recent advances in Python on the web, scientific distribution like pyodide, and code deployment in the browser like pyscript, made it easier to deploy Python code that runs in the browser instead.
+          Expected Outcomes
+          The idea for this project is to build interfaces for ioos-qc and compliance-checker. A user should be able to load datasets, select dat and the checks they want to apply.
+          We have a prototype for ioos-qc, https://ocefpaf.github.io/ioos_qc_webapp/ioos_qc_browser.html, and a cloud deployment for compliance-checker, https://github.com/ioos/compliance-checker-web.
+          The best candidate is someone passionate about UI/UX, with good knowledge of the modern "Python in the web tech." A big plus is some understanding of oceanographic data quality control and quality assurance.
+          Skills required
+          Intermediary Python and some experience with designing user interfaces.
+          Mentor(s)
+          @ocefpaf
+          Mentor Contact Email(s)
+          ocefpaf@gmail.com
+          Expected Project Size
+          350
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/72
+          TITLE: [GSoC Project Proposal]: Prometheus server- graphs and monitoring for ERDDAP™ · Issue #72 · ioos/gsoc
+          CONTENT:
+          ioos
+          [GSoC Project Proposal]: Prometheus server- graphs and monitoring for ERDDAP™ #72
+          New issue
+          Open
+          Description
+          ChrisJohnNOAA
+          opened on Jan 31on Jan 31, 2025 · edited by ChrisJohnNOAA
+          Edits
+          Project Description
+          We recently started adding Prometheus metrics to ERDDAP™. The main goal of this project is to build an example Prometheus Server which can monitor one or more ERDDAP™ instances. This may involve adding new metrics to the ERDDAP™ project which is where Java would be used.
+          Expected Outcomes
+          A Prometheus Server configuration that is runnable through Docker and can be used to monitor one or more ERDDAP™ instances. This will help ERDDAP™ admin's monitor their servers and provide usage insight that can help guide future ERDDAP™ development.
+          Skills Required
+          Java, Prometheus, YML, Docker
+          Additional Background/Issues
+          The main ERDDAP™ repo is here.
+          Mentor(s)
+          Chris John (@ChrisJohnNOAA) chris.john@noaa.gov
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/73
+          TITLE: [GSoC Project Proposal]: Update ERDDAP™ page rendering to use a template framework · Issue #73 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: Update ERDDAP™ page rendering to use a template framework #73
+          New issue
+          Open
+          Description
+          ChrisJohnNOAA
+          opened on Feb 1on Feb 1, 2025 · edited by ChrisJohnNOAA
+          Edits
+          Project Description
+          Currently ERDDAP™ pages are rendered using StringBuilder to concatenate the HTML. This is done for all of the pages ERDDAP™ renders. The project is to migrate existing ERDDAP™ pages to use a templating framework. The plan is for ERDDAP™ developers to select the framework and migrate an example page to the framework before the project starts.
+          Once the existing pages are migrated, new features can be built including things like:
+          Personal "hyperwall"
+          Improved graphics/graphing
+          Expected Outcomes
+          Adopting a templating framework for the HTML generation will help by allowing easier shared components across pages, standardizing headers and footers, and more. It will also make it easier to update and maintain the existing pages.
+          Skills Required
+          Java, HTML, CSS, JavaScript
+          Additional Background/Issues
+          The main ERDDAP™ repo is here.
+          Mentor(s)
+          Chris John (@ChrisJohnNOAA), chris.john@noaa.gov
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/84
+          TITLE: [GSoC Project Proposal]: IOOS Cloud Sandbox - model validation and verification tools · Issue #84 · ioos/gsoc
+          CONTENT:
+         
+          [GSoC Project Proposal]: IOOS Cloud Sandbox - model validation and verification tools #84
+          New issue
+          Open
+          Description
+          patrick-tripp
+          opened on Feb 11on Feb 11, 2025 · edited by mwengren
+          Edits
+          Project Description
+          Add model validation and verification tools to https://github.com/ioos/Cloud-Sandbox
+          Model validation and verification can include comparing model results to observations, previously validated data, other model data, etc. It is required for many use cases including the following:
+          Bringing a model into the Sandbox from a different computing environment.
+          Changes to the model code or the way it is run.
+          Changes to the data that feeds the model.
+          Model hindcast runs.
+          and others.
+          We would like to have reusable tools for this. The tools should support multiple data sources and formats.
+          Expected Outcomes
+          A collection of scripts that can accomplish the following:
+          Compare model forecast/hindcast data to validation data.
+          Create plots of the gridded analysis data (map plot).
+          Create plots of timeseries analysis for specific points.
+          Create other plots as later determined.
+          Skills Required
+          Python, Linux BASH shell scripting, Jupyter Notebooks, statistical analysis methods used in ocean and atmospheric sciences, a basic understanding of numerical ocean modeling or numerical weather prediction.
+          Additional Background/Issues
+          There is some existing plotting code that can be used as examples to build on:
+          https://github.com/ioos/Cloud-Sandbox/blob/main/cloudflow/notebooks/sandbot_current_fcst_JS.ipynb
+          https://github.com/ioos/Cloud-Sandbox/blob/main/cloudflow/notebooks/ufs_test.ipynb
+          Mentor(s)
+          patrick-tripp,
+          Mentor Contact Email(s)
+          Patrick.Tripp@tetratech.com
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/85
+          TITLE: [GSoC Project Proposal]: Code separation and build management for cloudflow · Issue #85 · ioos/gsoc
+          CONTENT:
+         
+          [GSoC Project Proposal]: Code separation and build management for cloudflow #85
+          New issue
+          Open
+          Description
+          mykelalvis
+          opened on Feb 11on Feb 11, 2025 · edited by mwengren
+          Edits
+          Project Description
+          The code for Cloudflow could be moved to a component that can be deployed to pypi.
+          The build for cloudflow's code could be moved to a poetry or uv build ,with well-established and externalized dependency
+          Expected Outcomes
+          We should be able to make CI/CD builds a reality with github actions if the codebase is separated into discrete parts.
+          Afterwards, we could get testing levels up across the entire codebase.
+          Skills Required
+          python, build management
+          Additional Background/Issues
+          Cloudflow documentation: https://ioos.github.io/Cloud-Sandbox/
+          Cloud Sandbox repository: https://github.com/ioos/Cloud-Sandbox
+          Mentor(s)
+          malvis@lynker.com
+          Expected Project Size
+          90 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/86
+          TITLE: [GSoC Project Proposal]: Increased logging for cloudflow · Issue #86 · ioos/gsoc
+          
+          [GSoC Project Proposal]: Increased logging for cloudflow #86
+          New issue
+          Open
+          Description
+          mykelalvis
+          opened on Feb 11on Feb 11, 2025 · edited by mwengren
+          Edits
+          Project Description
+          Having AWS logging increased within the codebase of cloudflow would greatly increase our capacity to support multiple users on the coastal sandbox.
+          Expected Outcomes
+          Supporting users within the current arrangement of the cloud sandbox can be challenging, as the same user id starts numerous jobs.
+          Logging, especially with separation within all the various runs of cloudflow, would make management and metrics gathering simpler. It would also allow the users greater capacity in identifying their runs.
+          Skills Required
+          python, log management, aws
+          Additional Background/Issues
+          Cloudflow documentation: https://ioos.github.io/Cloud-Sandbox/
+          Cloud Sandbox repository: https://github.com/ioos/Cloud-Sandbox
+          Mentor(s)
+          malvis@lynker.com
+          Expected Project Size
+          90 hours
+          Project Difficulty
+          Novice
+          
+          ~~~~~~~~~~
+
+
+          Combined DwCA/Croissant JSON-LD examples and tools
+
+          Project Description
+          The Croissant ML Dataset specification and tooling [1] from MLCommons is a metadata and vocabulary standard for AI/ML datasets. This standard permits a uniform language to describe datasets useful for common ML tasks, such as bounding-box image annotations. The Darwin Core (DwC) specification and tooling [2] from Biodiversity Information Standards (TDWG) is a metadata and vocabulary standard for Ecological/Biodiversity data. NOAA Fisheries has large quantities of data that span this divide: Ecological images with concomitant annotations. As such, it would be convenient to have metadata and tooling that simultaneously employs both of these standards. The project would primarily consist of python tools to convert existing DwC metadata (in XML format) into JSON-LD format, example metadata for datasets that employ both standards, and a proof-of-concept pipeline that uses a combined DwC/Croissant-described dataset to train an AI model that predicts DwC categories from images.
+
+          [1] https://docs.mlcommons.org/croissant/docs/croissant-spec.html
+          [2] https://dwc.tdwg.org/terms/
+
+          Expected Outcomes
+          Skeleton libraries to convert Darwin Core Archive (DwCA) format XML metadata into JSON-LD.
+          Example metadata file employing Croissant and DwC vocabularies to encode a NOAA Fisheries image annotation dataset
+          Proof-of-concept pipeline to ingest this example metadata file, and use it to feed the accompanying data through an off-the-shelf AI computer vision model training/test workflow.
+          Skills Required
+          python, json, xml, interest in Ecology
+
+          Additional Background/Issues
+          No response
+
+          Mentor(s)
+          scott.brown@noaa.gov
+
+          Expected Project Size
+          175 hours
+
+          Project Difficulty
+          Intermediate
+
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/74
+          TITLE: [GSoC Project Proposal]: NOAA trawl survey database · Issue #74 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: NOAA trawl survey database #74
+          New issue
+          Open
+          Description
+          kellijohnson-NOAA
+          opened on Feb 10on Feb 10, 2025 · edited by kellijohnson-NOAA
+          Edits
+          Project Description
+          The primary objective of this project is to create an accessible international database of transboundary marine survey data across the Northeast Pacific Ocean. Initial work for this project cleaned and joined haul-level data from several surveys operating along the west coast of North America, spanning two countries into a data frame (3.3 million observations of 55 species). Extending this work into a database, rather than data frame, would (1) allow for joining more data such as life-history information like the age of fish in the haul, and (2) allow for a larger number of species to be included (because of file sizes currently, we are providing data from only 55 of more than 1000 species). Most of the data are publicly available in independent-regional databases but no international database exists and the independent databases are not standardized, which significantly inhibits the use of the data for research and in assessments of the status of marine resources. This international database would help strengthen our understanding of climate-driven shifts in groundfish distribution in the North Pacific Ocean through data sharing between Fisheries and Oceans Canada (DFO) and NOAA Fisheries (NMFS) and it has the potential to improve the assessments and management of those species, serving as a proof-of-concept and foundation for a proposed North America-wide effort to join survey data.
+          Expected Outcomes
+          We expect at a minimum that the data already compiled into the joined data frame would be enhanced by being moved to a queryable database. Second, more data that require the relational structure of a database, e.g., age- and length-composition data, could be added to the database as time allows. Including such data will allow for the database to be a one-stop shop for survey data, which would drastically reduce the time needed to compile the data for use in both research and management-related tasks.
+          Skills Required
+          SQL, R
+          Additional Background/Issues
+          The R package and code to join some of the data exists on GitHub within the surveyjoin repository.
+          Potential steps for constructing the database: Convert to relational database DFO-NOAA-Pacific/surveyjoin#57
+          Mentor(s)
+          Eric Ward (@ericward-noaa), Sean Anderson (@seananderson), Kelli Johnson (@kellijohnson-NOAA), Derek Bolser (@dgbolser)
+          Mentor Contact Email(s)
+          warde@uw.edu
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          Activity
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/76
+          TITLE: [GSoC Project Proposal]: Autoval Improvement · Issue #76 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: Autoval Improvement #76
+          New issue
+          Open
+          Description
+          AtiehAlipour-NOAA
+          opened on Feb 10on Feb 10, 2025 · edited by AtiehAlipour-NOAA
+          Edits
+          Project Description
+          This project aims to enhance the capabilities of the Autoval package, which was developed for STOFS auto validation. STOFS stands for the Surge and Tide Operational Forecast System. Autoval runs up to 4x per day to retrieve both observational and STOFS model output data, generate plots and tables of different performance metrics, and produce a collection of images and an HTML page that are hosted on an S3 bucket.
+          As part of this project, we plan to incorporate several new capabilities, including:
+          Integrating USGS observation data into the analysis.
+          Adding datum conversion functionality
+          Enhancing visualizations and optimizing the HTML pages
+          This project provides an opportunity to enhance the ability to evaluate the model more effectively, which is crucial for modelers and stakeholders to monitor operational models during critical times.
+          Below is the link to the package, along with a few examples of where the package has been used.
+          Link to the package: https://github.com/noaa-ocs-modeling/autoval/tree/v3.0.00
+          Latest result for STOFS-2D-Global: https://polar.ncep.noaa.gov/estofs/autoval/estofs.glo/index.htm
+          Latest result for STOFS-3D-Atlantic: https://polar.ncep.noaa.gov/estofs/autoval/stofs.3d.atl/index.htm
+          Expected Outcomes
+          Improved and extended Autoval code for more efficient and comprehensive validation of STOFS water level output.
+          Skills Required
+          Python
+          Additional Background/Issues
+          No response
+          Mentor(s)
+          Atieh Alipour (@AtiehAlipour-NOAA ), Gregory Seroka (@gseroka)
+          Mentor Contact Email(s)
+          atieh.alipour@noaa.gov
+          gregory.seroka@noaa.gov
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/77
+          TITLE: [GSoC Project Proposal]: OCSMesh Parallelization · Issue #77 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: OCSMesh Parallelization #77
+          New issue
+          Open
+          Description
+          AtiehAlipour-NOAA
+          opened on Feb 10on Feb 10, 2025 · edited by AtiehAlipour-NOAA
+          Edits
+          Project Description
+          Numerical meshes are the backbone of ocean models and mesh generation is often a laborious manual task. OCSMesh is a Python package that automates the generation of unstructured continuous (creek-to-ocean) meshes using the jigsaw-python library and triangles. The goal of this project is to increase OCSMesh’s efficiency by parallelizing the most time consuming steps, including DEM processing and jigsaw mesh generation. We expect the following main tasks:
+          Pickling: The current version of OCSMesh is not pickle-able. So, some kind of Serialization or Memory sharing is needed.
+          Refactoring: Changes in the package architecture will be needed to accommodate parallelization.
+          Parallelization: Should be focused on HPC environments.
+          OCSMesh is an open source tool for preparation of unstructured mesh for coastal ocean model
+          NOAA report: https://repository.library.noaa.gov/view/noaa/33879
+          Repository: https://github.com/noaa-ocs-modeling/OCSmesh
+          Documentation: https://noaa-ocs-modeling.github.io/OCSMesh/
+          Getting started with OCSMesh:
+          https://github.com/SorooshMani-NOAA/OCSMeshTutorial/blob/main/UFS_Nov_2022/ocsmesh_basics.ipynb
+          https://github.com/SorooshMani-NOAA/OCSMeshTutorial/blob/main/Tutorials_2023/golfo_san_jose.ipynb
+          https://github.com/SorooshMani-NOAA/OCSMeshTutorial/blob/main/Tutorials_2023/Subsetting_Ian.ipynb (requires data not shared)
+          Expected Outcomes
+          A new version of OCSMesh that fully takes advantage of HPC resources and better fulfills the needs of the ocean modeling community. The faster mesh generation from this improvement will allow the automated creation of global meshes for ocean prediction (ocean temperature, salinity, currents, etc.) and efficient deployment of high resolution meshes during storm surge events
+          Skills Required
+          Python; Libraries: Xarray, Dask, MPI4Py, GIS libraries and data.
+          Additional Background/Issues
+          No response
+          Mentor(s)
+          Felicio Cassalho (@felicio93), Soroosh Mani (@SorooshMani-NOAA)
+          Mentor Contact Email(s)
+          felicio.cassalho@noaa.gov
+          soroosh.mani@noaa.gov
+          Expected Project Size
+          350 hours
+          Project Difficulty
+          Intermediate
+          👍
+          1
+         
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/78
+          TITLE: [GSoC Project Proposal]: STOFS dashboard · Issue #78 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: STOFS dashboard #78
+          New issue
+          Open
+          Description
+          AtiehAlipour-NOAA
+          opened on Feb 10on Feb 10, 2025 · edited by AtiehAlipour-NOAA
+          Edits
+          Project Description
+          This project aims to advance and improve our STOFS event dashboard (github repo). This tool allows a user to select events (e.g., tropical cyclones, winter storms, major incidents in coastal areas) and compare STOFS model results with observations for those events. The tool is currently in a prototype phase, and the mentee would have an opportunity to contribute to design, backend implementation (event definition, processing data), and frontend (data visualization). Example contributions include:
+          Streamline user definition of events, e.g., by creating a command line interface that defines a config file that specifies space, time, physical variables, models, etc.
+          Add further sources of observational data (e.g., searvey implementations from USGS and others; streamflow data; NDBC buoys; satellite altimetry).
+          Add new visualizations or statistical analyses of the model and observational data.
+          We would particularly welcome suggestions for external packages (from the scientific community, like METplus, or wider python ecosystem, e.g., polars, plotly) that we can use to develop our tool without re-inventing the wheel.
+          Expected Outcomes
+          New features (1-2) that expand capabilities or improve user experience of STOFS event-based skill assessment.
+          Skills Required
+          Python; Libraries: Xarray, Pandas, Holoviz packages. Cloud Storage.
+          Additional Background/Issues
+          No response
+          Mentor(s)
+          Jack Reeves Eyre (@JackReevesEyre-NOAA), Atieh Alipour (@AtiehAlipour-NOAA ),
+          Mentor Contact Email(s)
+          jack.reeveseyre@noaa.gov
+          atieh.alipour@noaa.gov
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/79
+          TITLE: [GSoC Project Proposal]: Probabilistic Surge Model Performance Assessment · Issue #79 · ioos/gsoc
+          CONTENT:
+          
+          Additional navigation options
+          [GSoC Project Proposal]: Probabilistic Surge Model Performance Assessment #79
+          New issue
+          Open
+          Description
+          AtiehAlipour-NOAA
+          opened on Feb 10on Feb 10, 2025 · edited by AtiehAlipour-NOAA
+          Edits
+          Project Description
+          The storm surge modeling team at the Office of Coast Survey (OCS) have developed a framework called (ondemand-storm-workflow) to develop probabilistic hurricane storm surge models. It sets up and runs an ensemble of hydrodynamic model simulations for a range of hurricane tracks, and uses their outputs to develop a probabilistic model for prediction of coastal flooding. The goal of this project is to improve the post-prossessing and model evaluation capabilities of the workflow. This would require skills such as object oriented coding, integration of some scripts into existing packages, and data processing. Example tasks would include:
+          Updating StormEvent and searvey packages for water elevation data retrieval and filtering
+          Modifying the ondemand-storm-workflow to retrieve water elevation data on the fly and use it for model evaluation
+          Updating the EnsemblePerturbation package to integrate existing scripts for model performance evaluation.
+          This project provides a great opportunity to put your object oriented coding skills into practice for polishing a probabilistic model performance evaluation framework.
+          Links to relevant packages and references:
+          Ondemand-storm-workflow: https://github.com/oceanmodeling/ondemand-storm-workflow
+          StormEvents: https://github.com/oceanmodeling/StormEvents
+          searvey: https://github.com/oceanmodeling/searvey
+          EnsemblePerturbation: https://github.com/noaa-ocs-modeling/EnsemblePerturbation
+          NOAA Technical Report: https://repository.library.noaa.gov/view/noaa/66123
+          Expected Outcomes
+          New data provider options in in StormEvent or searvey
+          Updated post processing code for EnsemblePerturbation that uses the implemented new data provider in the previous item.
+          QC module for ondemand-storm-workflow to clean up data from previous items
+          Reorganized post-processing module of the ondemand-storm-workflow
+          Skills Required
+          Technical:
+          Python; Libraries: Pandas, Xarray, Dask, Zarr, Cloud Storage Some
+          familiarity with web APIs
+          High-level understanding of model evaluation
+          Basic understanding of probability
+          Soft:
+          Curious (engage with the team, ask questions)
+          Responsive to communications
+          Additional Background/Issues
+          No response
+          Mentor(s)
+          Fariborz Daneshvar (@FariborzDaneshvar-NOAA), Soroosh Mani (@SorooshMani-NOAA)
+          Mentor Contact Email(s)
+          fariborz.daneshvar@noaa.gov
+          soroosh.mani@noaa.gov
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/80
+          TITLE: [GSoC Project Proposal]: Land Cover Integration for Parametric Hurricane Model (PaHM) · Issue #80 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: Land Cover Integration for Parametric Hurricane Model (PaHM) #80
+          New issue
+          Open
+          Description
+          AtiehAlipour-NOAA
+          opened on Feb 10on Feb 10, 2025 · edited by AtiehAlipour-NOAA
+          Edits
+          Project Description
+          This project aims to enhance the Generalized Asymmetric Holland Model (GAHM) within the Parametric Hurricane Modeling System (PaHM) framework by incorporating land cover effects on wind speeds during tropical cyclones. GAHM is a parametric model that provides realistic representations of wind and pressure fields using track file data from various sources (National Hurricane Center, Hurricane Databases, International Best Track Archive for Climate Stewardship). While GAHM effectively models wind fields, the current standalone versions don't account for varying land cover characteristics that significantly affect wind speeds over land.
+          The project will focus on:
+          Implementing efficient access and storage of land cover datasets (NLCD, NOAA C-CAP)
+          Developing algorithms to calculate roughness values based on upwind land cover characteristics
+          Modifying wind fields using boundary layer theory to account for land cover effects
+          Integration of these features into the PaHM framework
+          This enhancement will improve the accuracy of wind field predictions over land, which is crucial for storm surge and coastal flooding forecasts. The implementation will build upon existing successful approaches used in the Advanced Circulation (ADCIRC) model.
+          Software:
+          Parametric Hurricane Modeling System (PaHM): https://github.com/noaa-ocs-modeling/PaHM
+          Expected Outcomes
+          A new version of GAHM in PaHM that incorporates land cover effects on wind fields, including:
+          Efficient handling of land cover datasets
+          Implementation of roughness calculations
+          Modified wind field calculations accounting for land cover types
+          Documentation and validation of the new features
+          Skills Required
+          Fortran (required for PaHM/GAHM development)
+          Python for analysis and visualization; Libraries: Xarray, Cartopy, Matplotlib, NetCDF4 for handling and plotting gridded data
+          Some experience with numerical modeling.
+          Additional Background/Issues
+          No response
+          Mentor(s)
+          Rick Luettich (rick_luettich@unc.edu ), Mansur Jisan (mansur.jisan@noaa.gov )
+          Expected Project Size
+          350 hours
+          Project Difficulty
+          Intermediate
+          
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/81
+          TITLE: [GSoC Project Proposal]: Expand the Google Test suite for the Fisheries Integrated Modeling System · Issue #81 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: Expand the Google Test suite for the Fisheries Integrated Modeling System #81
+          New issue
+          Open
+          Description
+          kellijohnson-NOAA
+          opened on Feb 11on Feb 11, 2025 · edited by kellijohnson-NOAA
+          Edits
+          Project Description
+          The Fisheries Integrated Modeling System (FIMS) is a framework to create statistical models, written in C++ and R, to assess the status of marine resources. Google tests and the testthat package in R are both used to ensure that methods are mathematically accurate, statistically sound, and code development does not degrade the accuracy of the framework. The current code coverage of the package is at 68 percent and we wish for tests to allow for 80 percent coverage. This project will add tests for uncovered code and suggest places where the tests, especially the Google tests, can be enhanced. This project provides an opportunity to enhance the reliability, accessibility, and capability of FIMS and improve understanding of marine resources dynamics and management.
+          Expected Outcomes
+          The main outcome of this project will be a more robust test suite within the FIMS package which will be measurable through a code coverage statistic, where FIMS currently has 68% code coverage. Secondarily, the code plan may need to be updated to include any new testing enhancements. For managers to adopt the use of FIMS we must prove that we can match previous models and provide sound answers. Given that we do not know if previous models, written in other computer languages, are actually correct, we are emphasizing a suite of self and cross tests. Ramping up the tests available will give more validity to FIMS when it is formally reviewed to be used in a management context.
+          Skills Required
+          C++, R - suggested, GitHub - suggested
+          Additional Background/Issues
+          [Bug]: Error in Google test GHA when CXX compiler is GNU 11.2.0 NOAA-FIMS/FIMS#183
+          https://github.com/NOAA-FIMS/FIMS/tree/main/tests/test_plan
+          Mentor(s)
+          Kelli Johnson (@kellijohnson-NOAA), Bai Li (@Bai-Li-NOAA)
+          Mentor Contact Email(s)
+          kelli.johnson@noaa.gov, bai.li@noaa.gov
+          Expected Project Size
+          175 hours
+          Project Difficulty
+          Intermediate
+        
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/82
+          TITLE: [GSoC Project Proposal]: Fix clang-tidy for the Fisheries Integrated Modeling System · Issue #82 · ioos/gsoc
+          CONTENT:
+       
+          [GSoC Project Proposal]: Fix clang-tidy for the Fisheries Integrated Modeling System #82
+          New issue
+          Open
+          Description
+          kellijohnson-NOAA
+          opened on Feb 11on Feb 11, 2025 · edited by kellijohnson-NOAA
+          Edits
+          Project Description
+          The Fisheries Integrated Modeling System (FIMS) is a framework to create statistical models, written in C++ and R, to assess the status of marine resources. The project follows a modified Google style guide for its C++ standards and relies on GitHub action using clang-tidy to ensure that code pushed to the GitHub repository conforms to these standards. Issues exist with the clang-tidy linter and the Pull Requests are not being integrated into the main source code because they fail to compile after the formatting is completed. In addition, current inconsistencies with project standards exist within the code base. This project will work on standardizing the C++ code following the project’s outlined C++ style guide and will work on fixing the clang-tidy GitHub action so that continuous integration can be used to maintain C++ coding standards.
+          Expected Outcomes
+          The main outcome of this project will be a standardized C++ code base for FIMS and a working C++ linter that ensures code pushed to the GitHub repo follow the project’s C++ style guide. The software readability will be improved and the ability for future collaborators to contribute to the code increased. The latter will be facilitated because many new contributors are new to C++ and rely on pattern matching with existing code for new features. Pattern matching is currently difficult because formatting is not standardized.
+          Skills Required
+          C++, clang, GitHub - suggested
+          Additional Background/Issues
+          [FEATURE] use tool to style c++ code automatically NOAA-FIMS/FIMS#72
+          [Bug:] run-clang-format failed on dev NOAA-FIMS/FIMS#736
+          [Developer Issue]: warnings in run-clang-tidy github action NOAA-FIMS/FIMS#429
+          turn off clang format on dev NOAA-FIMS/FIMS#742
+          Mentor(s)
+          Kelli Johnson (@kellijohnson-NOAA), Andrea Havron (@Andrea-Havron-NOAA)
+          Mentor Contact Email(s)
+          kelli.johnson@noaa.gov, andrea.havron@noaa.gov
+          Expected Project Size
+          90 hours
+          Project Difficulty
+          Novice
+         
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/83
+          TITLE: [GSoC Project Proposal]: Complete the integration of the logging system in the Fisheries Integrated Modeling System · Issue #83 · ioos/gsoc
+          CONTENT:
+          
+          [GSoC Project Proposal]: Complete the integration of the logging system in the Fisheries Integrated Modeling System #83
+          New issue
+          Open
+          Description
+          kellijohnson-NOAA
+          opened on Feb 11on Feb 11, 2025 · edited by kellijohnson-NOAA
+          Edits
+          Project Description
+          The Fisheries Integrated Modeling System (FIMS) is a framework to create statistical models, written in C++ and R, to assess the status of marine resources. Currently, there is a logging system that is integrated throughout the C++ that logs information, warnings, and errors. The system is incomplete in that not all information is being stored that could be relevant to users. This project would take examples already in the source code and use pattern matching to insert new logging entries into the code where it seems that they are needed. Additionally, the vignette for how to use the logging system could be expanded upon.
+          Expected Outcomes
+          Three major outcomes are expected from this project, (1) more information is logged due to increased use of the logging system within the C++ code base, (2) the logging system is tested within both R and C++ test suites, and (3) users have clear instructions on how to use the logging system. Many users of FIMS do not know C++ code, and thus, the logging system is pertinent for users to know which part of the C++ code, i.e., line number, is relevant. The logging system will help get a large number of users up to speed with FIMS in the shortest amount of time because it can act as a virtual help desk.
+          Skills Required
+          C++, json, R - suggested, GitHub - suggested
+          Additional Background/Issues
+          Example in C++ where a log entry is created
+          vignette
+          Issue 750 enhance links in logging vignette to doxygen documentation
+          Mentor(s)
+          Kelli Johnson (@kellijohnson-NOAA), Matthew Supernaw (@msupernaw)
+          Mentor Contact Email(s)
+          kelli.johnson@noaa.gov, matthew.supernaw@noaa.gov
+          Expected Project Size
+          90 hours
+          Project Difficulty
+          Intermediate
+         
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/90
+          TITLE: [GSoC Project Proposal]: phytoclass for the masses · Issue #90 · ioos/gsoc
+          CONTENT:
+        
+          [GSoC Project Proposal]: phytoclass for the masses #90
+          New issue
+          Open
+          Description
+          7yl4r
+          opened 3 weeks agoon Feb 21, 2025 · edited by 7yl4r
+          Edits
+          Project Description
+          Researchers collect water-pigment data using High-Performance Liquid Chromatography (HPLC) throughout the globe. Among the uses of this data is the ability to estimate phytoplankton abundance. A powerful program for this analysis has been CHEMTAX, but recently a new R package, phytoclass, has emerged with improved functionality.
+          This project will improve usability and accuracy of phytoclass.
+          Expected Outcomes
+          Suggested improvements to the phytoclass ecosystem include:
+          better error checking & messaging in the phytoclass R package
+          continued development on the phytoclass R-Shiny GUI
+          enhancement of phytoclass functionality to include regional variations for phytoplankton estimation
+          Skills Required
+          R. R+Shiny.
+          Additional Background/Issues
+          phytoclass source code
+          phytoclass publication
+          phytoclass R-Shiny GUI
+          CHEMTAX
+          Mentor(s)
+          @7yl4r, @alexanderhayward1995
+          Mentor Contact Email(s)
+          murray.tylar@gmail.com
+          Expected Project Size
+          90 hours
+          Project Difficulty
+          Intermediate
+         
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/91
+          TITLE: [GSoC Project Proposal]: pyOBIS for stakeholders · Issue #91 · ioos/gsoc
+          CONTENT:
+        
+          [GSoC Project Proposal]: pyOBIS for stakeholders #91
+          New issue
+          Open
+          Description
+          7yl4r
+          opened 3 weeks agoon Feb 21, 2025 · edited by 7yl4r
+          Edits
+          Project Description
+          This project will make use of the pyOBIS python library (or rOBIS) to create a series of jupyter (or quarto) notebooks to address research questions of natural resource managers.
+          Targeted research areas include the following:
+          zooplankton, phytoplankton, seagrasses, urchins in the Florida Keys National Marine Sanctuary
+          mangrove and seagrass health in Rookery Bay National Estuarine Research Reserve
+          Coverage of Rice's Whale in the Gulf of Mexico
+          Bird occurrences in Tampa Bay for Tampa Bay Estuary Program
+          Ecosystem indicator using the MBON Pole2Pole indicator species for rocky shores & sandy beaches
+          Expected Outcomes
+          A set of jupyter notebooks demonstrating creative and impactful use of OBIS (and GBIF) data.
+          Skills Required
+          python coding, data visual and modeling creativity
+          Additional Background/Issues
+          OBIS usage
+          pyOBIS example notebooks
+          more OBIS data usage examples
+          Species Distribution Modeling
+          marine SDM from OceanHackWeek
+          MarineSDMs (in R) book
+          MarineSensitivity shiny app
+          app
+          code
+          FKNMS needs
+          presentation
+          reponses
+          MBON Pole2Pole
+          TBEP Bird Indicator WiP
+          https://obis.org/
+          https://www.gbif.org/
+          AquaMaps
+          Mentor(s)
+          @7yl4r
+          Mentor Contact Email(s)
+          murray.tylar@gmail.com
+          Expected Project Size
+          90 hours
+          Project Difficulty
+          Novice
+        
+          ~~~~~~~~~~
+
+
+          URL: https://github.com/ioos/gsoc/issues/93
+          TITLE: [GSoC Project Proposal]: Add MQTT support to ERDDAP™ · Issue #93 · ioos/gsoc
+          CONTENT:
+        
+          [GSoC Project Proposal]: Add MQTT support to ERDDAP™ #93
+          New issue
+          Open
+          Description
+          ChrisJohnNOAA
+          opened last weekon Mar 12, 2025
+          Project Description
+          Add support for MQTT to ERDDAP™.
+          MQTT is a message protocol which was in particular designed to be lightweight and used by remote/IoT devices.
+          The project can be done in stages, with the first stage to implement the ability for ERDDAP™ to be a MQTT client. This would include connecting to an existing broker and building datasets based on events from them.
+          The next stage would be integrating an MQTT broker into ERDDAP™.
+          For both MQTT client and MQTT broker there are a variety of libraries available, so this project is mostly about integrating the selected library(ies) into ERDDAP™ and properly handling the provided data.
+          Expected Outcomes
+          MQTT support in ERDDAP™ that allows datasets to be defined based on subscribing to MQTT events. This will enable new datasets to be included in ERDDAP™ as well as enable near real-time data to be made available. MQTT Broker support would simplify the process of a new project being able to collect data from MQTT enabled sensors.
+          Skills Required
+          Java
+          Additional Background/Issues
+          ERDDAP/erddap#37
+          Mentor(s)
+          Chris John (@ChrisJohnNOAA)
+          Mentor Contact Email(s)
+          chris.john@noaa.gov
+          Expected Project Size
+          350 hours
+          Project Difficulty
+          Intermediate
+         
+
+
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -14799,68 +15479,10 @@ organizations:
 
   - organization_id: 62
     organization_name: Inkscape
-    no_of_ideas:
+    no_of_ideas: 10
     ideas_content: |
-      master
-      inkscape
-      doc
-      gsoc
-      summerofcode.md
-      summerofcode.md
-      Find file
-      Blame
-      Permalink
-      Clean doc folder, add GSoC instructions
-      Jonathan Neuhauser authored 4 months ago
-      1d7e5d29
-      History
-      Code owners
-      Assign users and groups as approvers for specific file changes. Learn more.
-      summerofcode.md
-      18.99 KiB
-      Edit
-      Welcome to Inkscape!
-      For quite a few years Inkscape has been successfully participating in Google Summer of Code.
-      Google has opened up the program to students AND beginners to Open Source who are 18 years are older. Projects can be small (~90 hours), medium size (~175 hours) or large size (~350 hours). Finish times are flexible, 12 to 22 weeks (with agreement of mentor).
-      For more information, checkout Google's guide.
-      GSoC is a program where Google funds the development of specific features in open source software by university students and others new to open source. Projects to be developed are picked by Inkscape administrators from the pool of proposals submitted by applicants.
-      We've mentored about 4-6 students a year since GSoC started. Many students enjoyed their work and continue to be involved; perhaps your mentor will be a past GSoC student! A lot of exiting new features have been originally developed by GSoC students in the past several releases.
-      You're interested in joining us for the next round as a student? Great! Scroll through the ideas list below to get inspired and when the time comes, talk to us and select a project of your choosing.
-      You can select a proposal from the list below or come up with one of your own. In either either case, you must give us a detailed outline of what you plan to do. It is highly recommended that you discuss your idea as early as possible with Inkscape developers. They not only can give you guidance as you flesh out your proposal but ultimately you must convince them that you can do the work planned in the time allotted. If you have not discussed your proposal with Inkscape developers before you apply, your application will be rejected!
-      Candidate Applications {#candidate_applications}
-      Google program information:
-      Home page.
-      Summer of Code Application form. Applications open at 18:00 UTC on March 18th, 2024. https://developers.google.com/open-source/gsoc/timeline
-      Inkscape-specific information:
-      SOC Application Template.
-      Candidate Applications for GSoC 2024 must be submitted to the GSoC site by 18:00 UTC on April 2nd 2024.
-      The "two patches" rule
-      We require two relevant previous contributions from each potential GSoC student at the time of the application deadline before accepting the student for GSoC participation.
-      The reason for this requirement is that you can show us that you have
-      succeeded in building Inkscape or set up the development environment for the subproject you intend to work on on your PC
-      have understood a little piece of the code relevant for your project and are able to improve it.
-      Inkscape is a large project, and you really should not try to understand all the code. Many (all?) developers know only parts of the program code! You can join our or chat and ask developers for help.
-      Suggested "easy" bug fixes or improvements
-      To get you started on Inkscape development, you can find (probably) easy-to-fix bugs or small improvements that require very little knowledge of the whole program by searching our bug-tracker for bugs tagged with 'easy-fix'.
-      Note that for projects outside of the core repository (such as extensions, website, infrastructure or documentation / translation infrastructure) related projects, your two patches should be in the appropriate subprojects and programming language.
-      Performance Evaluation
-      See also the official guide.
-      GSoC has two formal evaluation points, at the mid-term and at the end. These evaluations determine if you receive the stipend from Google. In order to receive a pass for the evaluations you will need to show adequate progress toward your project's goals.
-      To help you meet your goals and so that your mentor can better evaluate your progress you should:
-      Have frequent, public discussions of your progress. (Don't rely on just your mentor for advice)
-      Have a public branch for your code to which you commit regularly. Ideally, an open merge request invites discussion from other experienced contributors.
-      Give regular (typically weekly) status reports to the entire project.
-      For the final pass, the code doesn't need to be merged yet, but as a general guideline, there should be a clear pathway to get it production-ready (in particular, remarks from core contributors should have been addressed).
-      Remember: we want you to succeed!
-      Suggested Project Ideas
-      The following is a list of formal project suggestions, but do not feel limited to only these - some of our best contributions have been unique ideas that students had in mind from other sources! That's how most developers start contributing - an "itch to scratch" is the best motivation to stay on track!
-      General inspiration may be taken from
-      highly requested features
-      UX bugtracker
-      Older, possibly outdated project lists (definitely ask on chat before spending any time on investigating them):
-      Development Project Ideas
-      Projects
-      Launchpad blueprints
+     
+      
       C++ projects
       UI-Free Inkscape
       Estimation of difficulty: Difficult - Long (350h)
@@ -14869,6 +15491,8 @@ organizations:
       Prerequisites: Minimal knowledge of build systems. Experience with GtkMM helpful.
       Detailed Description: Inkscape currently builds with X11 and gtk and a lot of graphical dependencies. But since it is allowed to run in commandline, and there are controlled environments (servers) that use it to convert svg to png and to perform actions, there should be no need to force it to build with those. The main goal of this project is to add a WITH_GUI compilation flag that when OFF, does not link Inkscape with any graphical dependency. While much work has been done towards this goal, much remains to be done. More work needs to be done to separate out hidden GUI dependencies that remain since the Verb to Action transition.
       Use cases: Server installs, scripts
+      
+      ~~~~~~~~~~
       Rework Live (Path) Effect system
       Estimation of difficulty: Hard - Long (350h)
       Potential mentors: mikekov
@@ -14876,6 +15500,8 @@ organizations:
       Prerequisites: experience with raster images
       Detailed Description: Live Path Effects (LPEs) are non-destructive effects applied to paths and shapes standalone or inside a group. This is done by keeping a reference to the original data to recompute when needed. Currently, they don't work on text and image elements, and the underlying code needs to be refactored to support this and make LPEs more robust.
       Use cases: Enable non-destructive editing for more object types, even groups with mixed element types.
+      
+      ~~~~~~~~~~
       Path Library Improvements
       Estimation of difficulty: Hard - Long (350h)
       Potential mentors: Tavmjong Bah, KK
@@ -14887,12 +15513,16 @@ organizations:
       Path simplify.
       Stroke to path function.
       Line scanning (used for flowing text into a shape).
+      
+      ~~~~~~~~~~
       Improvements to Paint Server Dialog
       Estimation of difficulty: Easy to Medium (175h)
       Potential mentors: Tavmjong
       Programming skills: C++
       Prerequisites: Some knowledge of GTK and CSS.
       Detailed Description: The Paint Server Dialog allows a user to visually select a pattern or hatch to use in painting the fill or stroke of an object. This project would be to expand the dialog to cover gradients, meshes, and solid colors as well as make other improvements to the dialog. Interaction with the Inkscape's UX team will be required.
+      
+      ~~~~~~~~~~
       Improving UI of Live path effects
       Estimation of difficulty: Medium-Hard, Medium or Long depending on scope (175h or 350h)
       Potential mentors: Mike
@@ -14900,6 +15530,8 @@ organizations:
       Prerequisites: Front end UI, familiarity with Live path effects
       Detailed Description: This project should implement the proposed UI clean up of controls. LPE controls should be more user friendly and predictive. Full Proposed designs
       Corners LPE Rotate copies LPE
+      
+      ~~~~~~~~~~
       Recolor Artwork
       Estimation of difficulty: Variable - Short to Medium (90h or 175h)
       Potential mentors: Adam Belis ?
@@ -14911,6 +15543,31 @@ organizations:
       fast editing of color in whole project without the need for swatches
       easier way to make colors harmonize in a project
       Faster iteration and visioning of designs
+
+      ~~~~~~~~~~
+
+
+      On-canvas spell checking
+
+      Estimation of difficulty: Variable - Short or Medium (90h or 175h)
+      Potential mentors: Tavmjong, ?
+      Programming skills: C++
+      Prerequisites: Some knowledge of GTK. Ability to work with UI designors.
+
+      Detailed Description: Currently one can spell-check text via either using
+      a dedicated Check Spelling dialog or using the Text tab of the Text and Font
+      dialog. Neither are ideal solutions. In particular, using the Text tab can
+      remove style information.
+      This project would be to flag misspelled words on the canvas. It requires:
+
+      Enabling/disabling.
+      Selecting language(s).
+      A visual indicator of suspected misspelled words.
+      A pop-up to display and select alternative spellings (or to set an ignore flag).
+
+      A successful proposal would include a UI plan worked out ahead of time with the UI team.
+      ~~~~~~~~~~
+            
       Python projects
       Import and Export extensions
       Estimation of difficulty: Flexible, usually easy to medium, Medium or Long depending on scope (175h or 350h)
@@ -14925,6 +15582,9 @@ organizations:
       Import of the proprietary fileformats of Vectornator (now Linearity Curve), Vectorstyler, Canva (users at some point will sit on a bunch of files that they can't open anymore because).
       Python based EMF / WMF importer - the current (core Inkscape) C extension is unmaintained and Python would probably be the right way to get more collaboration on it. A lot of public archives sit on mountains of EMF files. Note that the Document Foundation recently did a lot of work properly importing those files, so we can learn from them / maybe even join forces ...
       your favorite file format? - also have a look here: https://office.inkscape.org/nextcloud/index.php/s/Tq6cdDDGay6taCw
+      
+      
+      ~~~~~~~~~~
       Gcodetools refactoring and documentation
       Estimation of difficulty: Easy- Medium or Long depending on scope (175h or 350h)
       Potential mentors: Jonathan
@@ -14935,6 +15595,9 @@ organizations:
       implement those needs together with unit tests,
       improve the test coverage of Gcodetools,
       write proper documentation for it. (doesn't really exist at the moment).
+      
+      
+      ~~~~~~~~~~
       Packing / Nesting as an Inkscape extension
       Estimation of difficulty: Medium, Short or Long depending on scope (175h or 350h)
       Potential mentors: Jonathan
@@ -14943,95 +15606,7 @@ organizations:
       Detailed Description: In this project, a set of packing / nesting algorithms will be implemented:
       Linear nesting is not too useful in SVG, but might be a good place to get acquainted with the problem. 2D cutting stock problem would be very interesting to have and would work great with the new multipage functionality.
       For efficient packing of free form objects, we might just re-implement SVGNest in Python. There are probably some more recent research papers which would be interesting to implement as a comparison.
-      Other
-      Your project
-      Estimation of difficulty: Variable - Variable (90h to 350h)
-      Potential mentors: ask us!
-      Programming skills: C++ or Python
-      Prerequisites: good ideas
-      Detailed Description: The most successful GSoC we had in the past were students coming with their own past, use cases and ideas for Inkscape. Many basic tools like 3d cubes or connectors you can see in Inkscape now have been brought by brilliant people (like you) with ideas. If we think that your project fits with Inkscape (ie: has its place with a vector graphic editor), we can help you refining your ideas and help bring shiny new stuff to life!
-      Use cases
-      Amaze us!
-      Successful SOC Projects from Previous Years
-      2005
-      Connectors
-      Inkboard
-      Open Clip Art Library (OCAL) Interface
-      DXF Import / Export
-      2006
-      Support for SVG Filters
-      Filter Effects
-      PDF export
-      Inkboard Protocol Spec / Lib Conversion
-      2007
-      Text Style Improvements
-      PDF import
-      Live Path Effects
-      3D Box Tool
-      UI for SVG Filter Effects
-      Raster Functionality
-      Importing from, and Exporting to, a remote ccHost instance
-      2008
-      SVG Fonts support
-      2Geom refactoring project - port most geometry code to 2Geom
-      lib2geom: interactive applications showing off the power of lib2geom
-      Tech drawing abilities
-      A test suite
-      2009
-      Node tool rewrite
-      D-Bus scripting API
-      Connector tool improvements
-      ICC/CMYK workflow
-      2010
-      Cairo-based rendering
-      C++ification of SP Layer
-      2011
-      Rendering caching
-      Javascript support improvements
-      CSS support improvements
-      2012
-      Usibility Improvements for Guides
-      On-canvas support for Tessellations
-      Creating python bindings for lib2geom
-      2013
-      Recolor Tool
-      Improved Units Support
-      Electronics CAD Support
-      New From Templates Dialog
-      New Raster to Vector Algorithm
-      2014
-      Better Support for SVG Paints
-      Robust Boolean and Stroking Operations for 2Geom
-      2016
-      Better data structure for selections, see also wiki page
-      CSS Style Sheet Editor, see also wiki page
-      2017
-      SVG 2 Text Support
-      Better CSS Style Sheet Support
-      2019
-      Mesh gradient and hatches polyfills
-      2020
-      New dialog system
-      Command palette dialog
-      Path operations documentation
-      2021
-      On-canvas marker editing
-      Verbs to Gio::Actions conversion
-      On canvas alignment snapping
-      On-canvas interactive boolean operations - basis for the Shape builder Tool of Inkscape 1.2
-      Website update to Django 2.x
-      Rework of Export dialog, shipped in Inkscape 1.2
-      2022
-      Tab Structure
-      Font Selections Improvement
-      OCR Support
-      2023
-      GTK4 toolbar port preparation
-      Customizable Appearance of Canvas Controls - shipped in Inkscape 1.4
-      2024
-      Support for .afdesign files, shipped in Inkscape 1.4
-      Improving UX of Node and Bezier tools
-      Node-based filter editing
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15040,30 +15615,9 @@ organizations:
 
   - organization_id: 63
     organization_name: International Catrobat Association
-    no_of_ideas:
+    no_of_ideas: 8
     ideas_content: |
-      Ideas Page for Google Summer of Code 2025
-      We are thrilled to share our carefully curated project ideas for this year’s Google Summer of Code.
-      General Information
-      These ideas are just some topics we came up with, where currently nobody is working on. However, Catrobat is a project with a wide range of possibilities and we’re aware of our blindspots: So let’s live the spirit of Open Source and come up with improvements (e.g., new features, extensions, …) that are related to the project and in which you’re interested in. We do have many senior contributors who would be happy to mentor such a project. Don’t be shy and check out the last point on the list: Your idea!
-      General Knowledge Prerequisites for all Projects
-      Knowledge in the usage of Git and GitHub
-      Basic knowledge in the concepts of software testing (e.g., test doubles) and test-driven development
-      Basic knowledge in app development (for Android and iOS projects)
-      Java, JUnit, Mockito, Robotium and Espresso for Android development
-      Swift and Objective C for iOS development
-      Also please check that you have the proper hardware for the development (e.g., an Android/iOS smartphone for testing some of the projects, Mac for iOS development etc)
-      Idea Overview
-      Pocket Paint Flutter
-      AI Mentor for PocketCode Students
-      AI-Generated 3D Models from Marine Animals
-      AR-Based Interactive Marine Ecosystem Simulation
-      AI-Driven Adaptive Learning Module for Marine Biology
-      Mobile Application for Marine Biology AR Learning
-      Open-Source AR Toolkit for STEM Education
-      Awesome Demo Game Project on Marine Biology
-      Your own Project Ideas …
-      Project Descriptions
+      
       Pocket Paint Flutter
       350 HOURS
       Required Skills: Flutter, Dart, Android-Development, Agile Development
@@ -15071,6 +15625,9 @@ organizations:
       Expected Outcome: Features from Kotlin/Java version of Paintroid ported to new Flutter-based version
       Difficulty level: Medium to advanced
       The developer should have knowledge of Flutter. Develop and implement missing tools in Flutter that exist in our old Android app built with Android Native.
+      
+      
+      ~~~~~~~~~~
       AI Mentor for PocketCode Students
       350 HOURS
       Required Skills: Kotlin, Python, Android AI and ML Tools, Android-Development, Agile Development, Test Driven Development, Clean Code
@@ -15084,6 +15641,8 @@ organizations:
       Assist in code architecture, naming conventions, and writing Catrobat language tests
       Explain and translate downloaded projects from other users
       You won’t need to implement everything—just focus on a part that excites you most! The Catrobat team will provide the initial prompt and necessary API access or local LLMs for support.
+      
+      ~~~~~~~~~~
       AI-Generated 3D Models from Marine Animals
       350 HOURS
       Preferred Skills: Generative AI (Stable Diffusion, GANs, Autoencoders), 3D Modeling (Blender, Unreal Engine), Marine Biology Data Sources
@@ -15091,6 +15650,8 @@ organizations:
       Expected Outcome: Functionally coded 3D models
       Difficulty level: Medium
       This year’s focus of Catrobat includes topics around marine biology as an application area, and we have several projects around the general topic. This project will focus on developing AI-powered 3D models of marine species using generative AI techniques. By training machine learning models on marine biology datasets, realistic and interactive 3D assets of octopus, fish, corals, and other underwater species will be created for use in AR applications for teaching marine biology in high schools, where teachers and pupils will be able to “program” the simulated marine animals for learning purposes integrated into biology curricula. These models will adapt dynamically based on environmental conditions like depth, temperature, and biodiversity levels.
+      
+      ~~~~~~~~~~
       AR-Based Interactive Marine Ecosystem Simulation
       350 HOURS
       Preferred Skills: AR Development (Unity, ARKit, ARCore), Physics-Based Ecosystem Simulations, AI-Powered Content Adaptation
@@ -15098,6 +15659,8 @@ organizations:
       Expected Outcome: AR simulation code
       Difficulty level: Advanced
       This year’s focus of Catrobat includes topics around marine biology as an application area, and we have several projects around the general topic. This project will develop an immersive AR simulation that allows users to explore marine ecosystems and understand ecological interactions. Students will be able to visualize food chains, coral reef dynamics, and the effects of pollution through real-time AR simulations. This project aims to provide an engaging, hands-on learning experience for STEM education.
+      
+      ~~~~~~~~~~
       AI-Driven Adaptive Learning Module for Marine Biology
       350 HOURS
       Preferred Skills: AI for Adaptive Learning (Reinforcement Learning, NLP), Educational Gamification Techniques, Data Analytics for User Behavior Tracking
@@ -15105,6 +15668,9 @@ organizations:
       Expected Outcome: AI-based machine learning module
       Difficulty level: Advanced
       This year’s focus of Catrobat includes topics around marine biology as an application area, and we have several projects around the general topic. This project will implement an AI-driven adaptive learning system that customizes educational content based on student engagement and progress. The system will analyze user interactions, quizzes, and exploration patterns to personalize the learning path, ensuring a more effective and engaging experience. We will provide remote access to hardware on which the learning algorithms can be executed.
+      
+      
+      ~~~~~~~~~~
       Mobile Application for Marine Biology AR Learning
       350 HOURS
       Preferred Skills: Mobile AR Development (Flutter, React Native), UI/UX Design for Interactive Learning, Voice & Gesture Recognition
@@ -15112,6 +15678,8 @@ organizations:
       Expected Outcome: Mobile AR app
       Difficulty level: Advanced
       This year’s focus of Catrobat includes topics around marine biology as an application area, and we have several projects around the general topic. This project will focus on developing a mobile AR application that allows students to access interactive marine biology lessons anywhere. The app will support gesture-based interaction, voice commands, and real-time exploration of AI-generated underwater environments, making STEM education more accessible.
+      
+      ~~~~~~~~~~
       Open-Source AR Toolkit for STEM Education
       350 HOURS
       Required Skills: Open-Source Development (GitHub, API Integrations), Modular AR Content Framework, Cross-STEM Applications (Physics, Chemistry, Earth Science).
@@ -15119,6 +15687,8 @@ organizations:
       Expected Outcome: AR toolkit / STEM
       Difficulty level: Medium
       This year’s focus of Catrobat includes topics around marine biology as an application area, and we have several projects around the general topic. This project will create a modular, open-source AR framework that educators and developers can use to extend AR-based learning into other STEM domains. The toolkit will include pre-built 3D models, AI-based interactive features, and an easy-to-use interface for educators to integrate AR content into their curriculum.
+      
+      ~~~~~~~~~~
       Awesome Demo Game Project on Marine Biology
       350 HOURS
       Required Skills: Coding Basics
@@ -15126,13 +15696,8 @@ organizations:
       Expected Outcome: Catrobat Demo Game on Marine Biology
       Difficulty level: Beginner
       Spend the whole GSoC time developing and designing a demo game. This year’s focus of Catrobat includes topics around marine biology as an application area, and we have several projects around the general topic. The present project aims at inspiring young people to become aware of topics related to the protection of marine habits by creating related video games of their own. If you have your own original idea about a game around this topic, please feel free to suggest it. Please note that the demo game will be published under Catrobat’s free open source license, and that the game will thus become part of the Catrobat FLOSS project’s source code. Thus, all artwork, sounds, character names etc must be compatible with our licenses, i.e., freely publishable under our licenses, the AGPL version 3 and CC BY-SA 4.0, or under a compatible, possibly even freer license such as CC0.
-      Your own Project Ideas …
-      90, 175 OR 350 HOURS
-      Required Skills: Kotlin, Java, Android-Development, iOS-Development, Agile Development
-      Requirement: self-organized work
-      Difficulty level: advanced
-      In the last years we found that you have many great ideas and knowledge! We’re aware that there are many ways how to improve performance, reduce memory usage, make our services more stable and of course the code easier to maintain. We’re sure you do have ideas how to achieve this, although we may have never heard of this approach before -> that’s the great thing about Open Source! And well, that’s also the experience we made at last year’s GSoC - and we liked it!
-      Also new features or extensions for iOS and Android are welcome to be introduced to us. Help us to spread coding and Open Source!
+     
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15141,13 +15706,89 @@ organizations:
 
   - organization_id: 64
     organization_name: Internet Archive
-    no_of_ideas:
+    no_of_ideas: 7
     ideas_content: |
-      Internet Archive - Google Summer of Code 2025 - Call For Proposals (CFP)
-       Request edit access
-       Share
-      Sign in
-      FileEditViewToolsHelp
+      
+        Project 1: How well was a web page archived?
+        Size: 350 hours
+        Difficulty: Hard
+        Description: In this project we would like to develop a quality assurance system that renders an archived web page version from the Wayback Machine and assesses how well the page was archived. The system should look at many qualitative and quantitative features, such as:
+        Are there any significant page requisites that are missing?
+        Are there significant page requisites that were archived temporally too far away from the time when the page was archived?
+        Is the page an error page?
+        Is the content type of the page the same as it was intended to be at the archiving time (e.g., a PDF link may have returned an HTML page)?
+        Does the specific version stand out as a representative sample from a large number of archives in a small window of time?
+        Outcome: Make heavily-archived web pages in the Wayback Machine more approachable for humans.
+        Skills: HTTP, HTML/JS/CSS, Python, AI
+
+        ~~~~~~~~~~
+
+
+
+        Project 2: What are we not archiving?
+        Size: 350 hours
+        Difficulty: Hard
+        Description: The Wayback Machine archives an enormous number of web pages daily, but we fail to archive many important web pages in a timely manner. We observe many different sources of signals to decide what to archive, such as: Wikipedia, patron-submitted URLs to our Save Page Now (SPN) service, MediaCloud, GDELT project, IndexNow, etc. We would like to develop a streamlined pipeline of URL ingestion, quality assessment (e.g., excluding spam sites), and crawl prioritization to better utilize our limited resources in archiving important and quality pages while avoiding repeated captures of error or span pages.
+        Outcome: Strategic utilization of resources to improve the throughput and timely archiving of important at-risk web pages.
+        Skills: HTTP, Data Analysis, Classification, Python, AI
+
+        ~~~~~~~~~~
+
+        Project 3: Expand capabilities of Zeno web crawler
+        Size: 350 hours
+        Difficulty: Medium/Hard
+        Description: Zeno is the Wayback Machine Team's state-of-the-art web crawler. Help is needed developing file-type extractors, implementing testing, and bug-fixing.
+        Outcome: Increase and improve the quality of web archives made by the Zeno crawler
+        Skills: Golang, HTTP, HTML/JS/CSS
+
+        ~~~~~~~~~~
+
+        Project 4: Rewrite wayback-discover-diff in Golang
+        Size: 350 hours
+        Difficulty: Medium
+        Description: Wayback-discover-diff is a python3 application that calculates and returns simhash values for the Wayback Machine's web archives. This code drives the Wayback Machine's “Changes” feature, but the performance is limited by the python language. The project proposal is to rewrite this code in golang in order to greatly improve performance. 
+        Outcome: Increase performance when identifying changes between web archives in the Wayback Machine.
+        Skills: Golang, Python, HTML/JS/CSS, HTTP
+
+        ~~~~~~~~~~
+
+        Project 1: Real-time in-browser Book Translation #9594 w/ Read Aloud (TTS)
+        Size: 350 hours
+        Difficulty: Hard
+        Description: Many books are published in a limited set of languages, making them inaccessible to broad classes of international readers, similar to how many print books are inaccessible to the blind and dyslexic. The web page translation offered by many web browsers isn’t configured to work well with the Internet Archive book reader. This project proposes to integrate the Bergamot + Mozilla wasm neural translation models to add offline, on-the-fly translation capabilities to the Internet Archive book reader.
+        Outcome: Make millions of Internet Archive books useful and accessible to a global audience by integrating on-the-fly, offline translations that also works with our existing read aloud system.
+        Skills: Javascript, TypeScript, Lit, Figma
+
+        ~~~~~~~~~~
+
+        Project 2: Extract & Save millions of URLs in Books → Wayback Machine #73
+        Size: 350 hours
+        Difficulty: Medium
+        Description: BookReader - Enable Links in Archive.org Books
+        Outcome: Save hundreds of thousands of urls mentioned by Internet Archive books in the Wayback Machine for posterity and explore whether these links can be made clickable within Book Reader.
+        Skills: Python, Javascript, Wayback APIs, Bash
+
+        ~~~~~~~~~~
+
+        Project 3: Prototyping an Open Source Book Lending System for Libraries
+        Size: 350 hours
+        Difficulty: Medium-Hard
+        Description: All around the world, thousands of libraries are struggling to make the transition from print to digital, both for policy reasons, constraints imposed by publishers, and because these libraries often don’t have technology teams and infrastructure.
+        Expected Outcome: An open source (maybe decentralized) lending system, similar to the Internet Archive’s reference implementation, that may enable any library across the globe to participate in limited controlled digital lending of materials to their audiences.
+        Skills: Python, Flask, Postgres, API design
+        Tips & FAQs:
+        Authentication is not a major piece of this project. Each library will perform their own authentication of patrons. The important pieces are the Lending primitives
+        We can plan on LCP Readium DRM APIs being the technical mechanism for initiating a loan so we don't have to invent a way to secure loans
+        We also don't have to invent a reader, as Readium Web SDK provides us with a way to read books in LCP format (epub, pdf)
+        We don't need to design a front-end for borrowing books, the system only needs to work as a RESTful API. A front-end might use this service to fulfill a loan.
+        There does need to be some way for librarians to customize lending settings globally and possibly per book.
+
+
+
+
+
+
+       
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15156,16 +15797,9 @@ organizations:
 
   - organization_id: 65
     organization_name: Internet Health Report
-    no_of_ideas:
+    no_of_ideas: 5
     ideas_content: |
-      List of ideas for projects
-      Information for Students
-      Make sure you have read the IHR contributor handbook
-      The below ideas were contributed by current IHR contributors. They are sometimes vague or incomplete. Questions related to these ideas should be asked on the related GitHub discussion thread.
-      Becoming accepted as a Google Summer of Code student is quite competitive. Accepted students typically have thoroughly researched the topic of their proposed project and have been active in the discussions. Simply copying and pasting an idea here will not work. On the other hand, creating a completely new idea without first consulting potential mentors also rarely works.
-      Also keep in mind that these are just proposals, we are open to new ideas you might have! Do you have an awesome idea you want to work on for IHR, but that is not among the ideas below? That's cool. We love that! Please get in touch with a mentor early on and make sure your project is realistic and within the scope of IHR.
-      If there is no specific contact given you can ask questions on github, slack, or at admin@ihr.live.
-      List of ideas
+      
       IHR Status Page
       Brief explanation: Things breaks easily, so we need a status page that tells us which services are running as usual and which one are not. This page could also provide a machine-readable JSON object so that we can automate email alerts when something is not running as usual. It would also be nice to keep historical availability data.
       We provide datasets in different formats (e.g., RUST API, files on an FTP server), which need to be monitored. Thus, there can be different liveness checks, e.g., that an API responds (and also gives results), that a file exists, etc.
@@ -15189,6 +15823,8 @@ organizations:
       Project size: 90 hours
       Difficulty: Easy
       Contact: Dimitrios Giakatos (dimitrios@iij.ad.jp), Malte Tashiro (malte@iij.ad.jp), Romain Fontugne (romain@iij.ad.jp)
+      
+      ~~~~~~~~~~
       Migrate IHR API
       Brief explanation: All results displayed on the Internet Health Report website are accessible via the IHR REST API. The current codebase is developed on an outdated version of Django (2.2.27), which is no longer supported, and we are not utilizing all of Django's features. Therefore, instead of just upgrading the Django version, we plan to migrate the codebase from the complex Django framework to a simpler framework, such as FastAPI. Additionally, the current Django framework includes code for initializing/managing the database. This time, we want to implement Bash scripts for initializing/managing the database, which will result in better maintenance.
       Expected results:
@@ -15209,6 +15845,8 @@ organizations:
       Project size: 175 hours
       Difficulty: Medium
       Contact: Romain Fontugne (romain@iij.ad.jp), Dimitrios Giakatos (dimitrios@iij.ad.jp)
+      
+      ~~~~~~~~~~
       Improve the IHR Website Codebase
       Brief explanation: The IHR website provides outputs from IHR research projects through a simple and user-friendly web interface. Its current codebase is large and contains many features. This time, instead of adding new features, we will focus on improving the existing ones. The goal of this project is to refactor certain components to enhance reusability.
       Expected results:
@@ -15225,6 +15863,9 @@ organizations:
       Project size: 175 hours
       Difficulty: Medium
       Contact: Dimitrios Giakatos (dimitrios@iij.ad.jp)
+      
+      
+      ~~~~~~~~~~
       IYP Browser
       Brief explanation: The Internet Yellow Pages (IYP) is a knowledge database that aggregates information about various Internet resources, such as ASNs, IP prefixes, and domain names. Currently, we use the Neo4J browser to query the graph, which returns results in four formats: an interactive graph, a table, a raw table, and a JSON object. To enhance the user experience, especially for those unfamiliar with Cypher, we have developed an LLM model and will provide an API to simplify the querying process. Our goal is to develop a new browser that allows users to input either a Cypher query (using the Neo4J API) or an English description (using our LLM API) of the results they wish to obtain from the database. Additionally, we aim to continue providing the default four output formats along with explanations generated by our LLM API.
       Expected results:
@@ -15249,6 +15890,8 @@ organizations:
       Project size: 175 hours or 350 hours
       Difficulty: Medium
       Contact: Dimitrios Giakatos (dimitrios@iij.ad.jp), Malte Tashiro (malte@iij.ad.jp), Romain Fontugne (romain@iij.ad.jp)
+      
+      ~~~~~~~~~~
       Traceroute visualization (continuation of GSoC'24)
       Brief explanation: Operators would like to have a better way to visualize latency increases in upstream networks. We have a lot of traceroute data from RIPE Atlas but we miss a good visualization to show traceroute details. The goal of this project is to design and implement a page on IHR to visualize traceroute results from RIPE Atlas. There is some good tools to get inspired from (tracemon and thousand eyes path visualization, having our own would be great so we can integrate it with other tools (e.g. IYP, AS Hegemony).
       Expected results:
@@ -15270,19 +15913,7 @@ organizations:
       Project size: 350 hours
       Difficulty: Hard
       Contact: Romain Fontugne (romain@iij.ad.jp), Malte Tashiro (malte@iij.ad.jp), Dimitrios Giakatos (dimitrios@iij.ad.jp)
-      Proposal template
-      Project
-      If appropriate, screenshot or another image
-      Brief explanation:
-      Expected results:
-      Github discussion: https://github.com/orgs/InternetHealthReport/discussions/
-      Knowledge Prerequisite:
-      Resources:
-      https://github.com/InternetHealthReport/
-      Project size: 175 hours or 350 hours
-      Difficulty: Easy / Medium / Hard
-      Contact: (your name and email address for contact)
-      Content based on https://community.kde.org/GSoC and available under Creative Commons License SA 4.0
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15292,11 +15923,9 @@ organizations:
 
   - organization_id: 66
     organization_name: Invesalius
-    no_of_ideas:
+    no_of_ideas: 16
     ideas_content: |
-      GSoC 2025 Ideas for InVesalius
-      See also the instructions for applying here.
-      All the current ideas for GSoC 2025 are listed bellow:
+      
       Add unit tests to InVesalius to ease the process of adding new features
       Use tools like unittest or pytest to add tests to InVesalius code. That way, when adding new features or bug fixes, you can verify that no previous code has been affected. Also run this code when committing and sending pull requests on Github.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.
@@ -15308,6 +15937,8 @@ organizations:
       Difficulty level: Intermediate
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com
       References: invesalius/invesalius3#496 and https://realpython.com/python-testing/
+
+      ~~~~~~~~~~
       Add type information to functions, methods and classes in InVesalius
       Since python 3.5 it is possible to add type information to the parameters of functions, methods and classes. With this information it is possible to use tools like Mypy to catch calls made with the wrong type. This way you can avoid errors and make your code easier to maintain and grow
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.
@@ -15319,6 +15950,8 @@ organizations:
       Difficulty level: Intermediate
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com
       References: invesalius/invesalius3#497, https://docs.python.org/3/library/typing.html and https://mypy-lang.org/
+      
+      ~~~~~~~~~~
       Add logging and error catching tool
       Tool that allows the user to activate the capture of logs and errors. It should be possible to save the sequence of events in a text file. It will be necessary to add logging capture to all functions and functionalities and their respective levels (debug, info, warn, error or critical).
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.
@@ -15330,6 +15963,9 @@ organizations:
       Difficulty level: Hard
       Mentor: Paulo Henrique Junqueira Amorim - paulojamorim@gmail.com
       References: invesalius/invesalius3#498, https://docs.python.org/3/library/logging.html and https://realpython.com/python-logging/
+      
+      
+      ~~~~~~~~~~
       Implement UX principles to improve InVesalius usability
       The neuronavigation feature of InVesalius currently does not follow user experience (UX) principles in the user interface and workflow design. The software usability can be significantly improved by applying the basic UX design principles.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.
@@ -15341,6 +15977,8 @@ organizations:
       Difficulty level: Hard
       Mentor: Victor Hugo Souza - vhosouza@gmail.com
       References: invesalius/invesalius3#506
+      
+      ~~~~~~~~~~
       Performance optimization of real-time neuronavigation
       The real-time neuronavigation feature of InVesalius currently works based on multi-threading using Queues, Events, and Jobs (look at #242). Optimization (utilizing the least memory, minimizing its CPU time, and offering high speed) is needed to improve neuronavigation performance.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of computer graphics.
@@ -15354,6 +15992,8 @@ organizations:
       Difficulty level: Hard
       Mentor: Victor Hugo Souza - vhosouza@gmail.com
       References: invesalius/invesalius3#529 and invesalius/invesalius3#242
+      
+      ~~~~~~~~~~
       3D edition of masks
       User can edit a mask in InVesalius slice by slice. That is a very repetitive and error prone job. Since InVesalius has 3D visualizations, it's possible to draw over the rendering area and remove the voxels projected in the painted areas.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of computer graphics.
@@ -15364,6 +16004,9 @@ organizations:
       Difficulty level: Hard
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com
       References: invesalius/invesalius3#91 and https://en.wikipedia.org/wiki/3D_projection
+      
+      
+      ~~~~~~~~~~
       Harmonize and revamp the cross-platform user interface over MacOS, Linux, and Windows
       Currently, the InVesalius interface is not properly designed for different modes (Light and Dark) mode, especially on MacOS, for example.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of computer graphics.
@@ -15376,6 +16019,9 @@ organizations:
       Duration: 175h
       Difficulty level: Intermediate
       Mentor: Petrus Kirsten - petrus.kirsten@gmail.com / Victor Malheiro - victorhugomalheiro@gmail.com
+      
+      
+      ~~~~~~~~~~
       Surface texture
       Add texture to a surface based on the image tissue.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of computer graphics.
@@ -15386,6 +16032,9 @@ organizations:
       Difficulty level: Hard
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com
       References: https://en.wikipedia.org/wiki/Texture_mapping
+      
+      
+      ~~~~~~~~~~
       Extract surface using Dual contouring
       InVesalius uses Marching Cubes to extract surface from volumetric images. It's interesting to have other methods like Marching Tetrahedra and Dual Contouring.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of computer graphics.
@@ -15396,6 +16045,9 @@ organizations:
       Difficulty level: Hard
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com
       References: https://0fps.net/2012/07/12/smooth-voxel-terrain-part-2/ https://en.wikipedia.org/wiki/Marching_tetrahedra https://en.wikipedia.org/wiki/Isosurface
+      
+      
+      ~~~~~~~~~~
       Improvements in user response (loading and saving files)
       When saving or loading files (except DICOM), InVesalius does not provide any feedback to the user. The goal of this task is to implement a window that displays the progress when loading or saving the different types of files that InVesalius handles. This task also includes replacing the progress bar of the volume rendering functionality.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background in GUI.
@@ -15405,6 +16057,9 @@ organizations:
       Duration: 90h
       Difficulty level: Easy
       Mentor: Paulo Henrique Junqueira Amorim - paulojamorim@gmail.com
+      
+      
+      ~~~~~~~~~~
       Use Github Actions to create installers for macOS
       Github Actions is used for various softwares to run tests when a commit or pull request is submitted. Also, it can be used to compile software and create binaries ready to be used by the users. The idea in this task is to use Github Actions to create nightly and release InVesalius installers for macOS.
       Requirements: Computer with Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.
@@ -15415,6 +16070,9 @@ organizations:
       Difficulty level: Intermediate
       Mentor: Paulo Henrique Junqueira Amorim - paulojamorim@gmail.com and Thiago Franco de Moraes - totonixsame@gmail.com
       References: https://docs.github.com/en/actions https://pyinstaller.org/en/stable/
+      
+      
+      ~~~~~~~~~~
       Convert from Pytorch to ONNX or Tinygrad
       InVesalius uses Pytorch framework to create machine learning based segmentation. The problem is Pytorch is a very large library which makes InVesalius installer and packages very large too. Also, Pytorch has some features not used by InVesalius. ONNX is a format to export machine learning models and a library too. Tinygrad is simple library alternative to Pytorch. Both ONNX and Tinygrad are smaller and enough to InVesalius use.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of Machine Learning and AI.
@@ -15425,6 +16083,9 @@ organizations:
       Difficulty level: Intermediate
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com and Paulo Henrique Junqueira Amorim - paulojamorim@gmail.com
       References: https://github.com/tinygrad/tinygrad and https://onnx.ai/
+      
+      
+      ~~~~~~~~~~
       Convert from Pip and Conda to UV
       InVesalius uses Pip with requirements.txt. There is also a Conda environment. UV is a fast modern alternative that uses pyproject.toml and other modern Python standards and also can manage Python versions.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies.
@@ -15436,6 +16097,9 @@ organizations:
       Difficulty level: Easy
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com and Paulo Henrique Junqueira Amorim - paulojamorim@gmail.com
       References: https://github.com/astral-sh/uv
+      
+      
+      ~~~~~~~~~~
       Segment brain in its subparts
       Use Machine Learning (like https://deep-mi.org/research/fastsurfer/) or an atlas (like https://yalebrainatlas.github.io/YaleBrainAtlas/) or both to segment brain subparts in MRI images. Segmentation of brain subparts in MRIs is crucial for precise targeting in Transcranial Magnetic Stimulation (TMS). It enables accurate identification of specific brain regions, ensuring stimulation is applied to the correct areas for optimal effectiveness. Proper placement of the TMS coil is essential, and with segmented MRI data, the coil’s position can be precisely aligned with the target brain regions.
       Requirements: Computer with Windows, Linux or Mac OS installed. A source code editor, Python language and InVesalius libraries dependencies. Good background of Machine Learning and AI.
@@ -15447,6 +16111,9 @@ organizations:
       Difficulty level: hard
       Mentor: Thiago Franco de Moraes - totonixsame@gmail.com and Paulo Henrique Junqueira Amorim - paulojamorim@gmail.com and Renan Matsuda – renan_hiroshi@hotmail.com
       References: https://yalebrainatlas.github.io/YaleBrainAtlas/ and https://deep-mi.org/research/fastsurfer/
+      
+      
+      ~~~~~~~~~~
       Simultaneous visualization and control of Two Robots for Dual Transcranial Magnetic Stimulation
       Development and integration of the functionality for simultaneous control of two robots, aimed at applying dual-site Transcranial Magnetic Stimulation (TMS) in InVesalius (currently, support is provided for only one TMS coil attached to one robot). This feature is based on the existing implementation for the use of two or more coils, adapting it for multiple robots. The inclusion of this feature not only improves the speed, accuracy, and safety of the stimulatory process, but also enables the scientific exploration of interactive brain networks, by allowing concurrent, targeted TMS pulses to multiple brain areas.
       Requirements: Computer with Windows, Linux, or Mac OS installed. Python programming language and InVesalius library dependencies. A source code editor.
@@ -15461,6 +16128,8 @@ organizations:
       References:
       Neuronavigation: Track multiple coils simultaneously and show stylus/probe #827
       Robot control: https://github.com/biomaglab/tms-robot-control
+      
+      ~~~~~~~~~~
       Implement neuronavigation capability for transcranial focused ultrasound (tFUS)
       Development and integration of the functionality for neuronavigation of transcranial focused ultrasound transducers (tFUS). InVesalius currently supports only neuronavigation for Transcranial Magnetic Stimulation (TMS) coils. We aim at extending the support to tFUS, which is becoming an important neuromodulation tool to study and and interact with brain function non-invasively. This new feature will significantly extend the user based on InVesalius to support accurate and reproducible neuroscience.
       Requirements: Computer with Windows, Linux, or Mac OS installed. Python programming language and InVesalius library dependencies. A source code editor.
@@ -15484,14 +16153,87 @@ organizations:
 
   - organization_id: 67
     organization_name: JAX and Keras
-    no_of_ideas:
+    no_of_ideas: 4
     ideas_content: |
-      Summer of Code 2025: JAX & Keras Project Ideas
-       Request edit access
-      +2
-       Share
-      Sign in
-      FileEditViewToolsHelp
+      Create LLM examples with JAX and Flax
+      Project Description
+      JAX is a Python library for high-performance computing. It’s popular for machine learning research, and used at Google to develop Gemini models. There are libraries built on top of JAX to help developers create neural networks, including Flax. You can find a good example using flax.nnx in this tutorial, which shows you how to train “miniGPT” (a “hello world” large language model) from scratch on a TPU.
+      In this project, you’ll create additional notebooks that teach developers how to train and optimize LLMs using JAX and Flax. We are primarily interested in educational content (e.g., notebooks that teach developers new skills and help them on their journey). To be clear, you are not expected to develop advanced LLMs from scratch -- rather, you will work with a mentor to create additional educational examples like the above, and to expand and optimize the examples we already have.
+      This project is right for you if you’re interested in learning more about JAX, and training and optimizing large language models, and enjoy teaching developers. It’s a good way to build your portfolio of notebooks on GitHub, too.
+      Project Tasks
+      Create clear notebooks in JAX and Flax and publish your examples on GitHub.
+      Create examples that show how to implement components of large language models, and clearly explain how they work.
+      Create examples that show how to optimize performance when using GPUs and TPUs for training and inference.
+      Difficulty:
+      Hard
+      Time Commitment:
+      Flexible
+      Eligibility:
+      Prior experience working with a machine learning framework (JAX, Keras, TensorFlow, or PyTorch) and Jupyter Notebooks. You don’t need to have trained advanced models or anything like that, but you should know the basics of at least one library.
+      How to Apply:
+      To apply to this project, fill out this form. Please include a paragraph on your experience with machine learning, and large language models (if you happen to have some, it’s not required). 
+      
+      
+      ~~~~~~~~~~
+      Implement open LLM models with JAX and Flax
+      Project Description
+      JAX is a Python library for high-performance computing. It’s popular for machine learning research, and used at Google to develop Gemini and Gemma models. There are libraries built on top of JAX to help developers create neural networks, including Flax. You can find a good example using flax.nnx in this tutorial, which shows you how to train “miniGPT” (a “hello world” large language model) from scratch on a TPU.
+      In this project, you’ll create model implementations in JAX and Flax, that other developers can use as examples and starting points in their research and experimentation. We are primarily interested in educational and reference materials. You are not expected to develop advanced LLMs from scratch -- rather, you will work with a mentor to create model definitions of existing open models using the JAX and Flax libraries and test them with the published weights. 
+      This project is right for you if you’re interested in learning more about JAX, and building and optimizing large language models, and enjoy teaching developers. It’s a good way to build your portfolio of work on GitHub, too.
+      Project Tasks
+      Create implementations of open source LLMs in JAX and Flax, which could be used by researchers and model builders, specific models to implement TBD.  
+      Create clear notebooks showing how to use your implementation, and publish your examples on GitHub.
+      Difficulty:
+      Hard
+      Time Commitment:
+      Flexible
+      Eligibility:
+      Prior experience working with a machine learning framework (JAX, Keras, TensorFlow, or PyTorch) and Jupyter Notebooks. You don’t need to have trained advanced models, but you should know the basics of at least one library.
+      How to Apply:
+      To apply to this project, fill out this form. Please include a paragraph on your experience with machine learning, and large language models (if you happen to have some, it’s not required).
+
+      
+      ~~~~~~~~~~
+      Train a JAX code assistant 
+
+      Project Description:
+      In this project, you will use JAX to train an LLM to be good at 1) code generation with JAX, and 2) answering questions about JAX. This will enhance the developer experience of using JAX. The project would include both the LLM training and creating recipes for further training/updating. All the work will be open source, and we hope to have the full end-to-end process be reproducible.
+
+      Project Tasks:
+      Gather, curate, and preprocess datasets for Jax code generation and Jax question answering. 
+      Train LLM(s) for JAX code generation and question answering, using either openly available models (Gemma) or by fine-tuning Gemini via the API.
+      Create clear notebooks explaining the process and publish it on GitHub.
+      Optionally, write a blog post on your experience and the results.
+
+
+      Difficulty:
+      Hard
+
+      Time Commitment:
+      350 hours over 12 weeks
+
+      Eligibility:
+      Prior experience fine-tuning LLMs (using JAX, Keras, TensorFlow, or PyTorch) will be extremely useful here. Additionally, data engineering in Python, and familiarity with transformer architectures. 
+
+      How to Apply:
+      To apply to this project, fill out this form. Please include a paragraph on your experience with machine learning and large language models.
+
+      ~~~~~~~~~~
+      Contribute models, features, and/or guides to KerasHub
+      Project Description
+      Keras is one of the most popular deep learning libraries out there, used by newcomers to the field and large companies alike. In this project, you will contribute to KerasHub, Keras’ pretrained modeling solution. It houses implementations of popular model architectures, paired with a collection of pretrained checkpoints available on Kaggle Models. See the KerasHub page on keras.io to learn more about KerasHub and all the things you can accomplish with it.
+      In this project, you can expect to contribute features and models to KerasHub. This project is excellent for someone looking to build a broad footing in ML. KerasHub code hits multiple modalities (text, image, and audio) and all Keras backends (Jax, PyTorch, and Tensorflow). We expect contributions to be in three main areas:
+      Model architectures. We are constantly adding new open model implementations to KerasHub. This involves porting the numerics of a model to Keras’ cross-backend NumPy API, and converting weights. An example today would be DeepSeek’s R1, though we can’t predict the popular models come summer.
+      Large modeling features. Working with billions of parameters comes with many efficiency challenges. An example project might be adding recent parameter efficient fine-tuning (PEFT) methods like DoRA. Another idea could be to implement KVPress methods to reduce KV cache memory during inference.
+      Guides and examples. As part of your work, you will contribute guides and examples to keras.io to document any new features and models added.
+      A good fit for this project would be someone familiar with deep learning, Python, and GitHub development ready to hit the ground running on new library contributions. The project will be technically difficult, and the contributor will be able to shape their contributions based on their interests and the state of the field at the beginning of summer.
+
+      Difficulty:
+      Hard
+      Time Commitment:
+      175 hours
+      To apply to this project, fill out this form. Link your most important open-source contributions (if any). Also, feel free to propose new ideas.
+
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15500,61 +16242,205 @@ organizations:
 
   - organization_id: 68
     organization_name: JSON Schema
-    no_of_ideas:
+    no_of_ideas: 6
     ideas_content: |
-      Welcome to Google Summer of Code 2025 with JSON Schema!
-      We are thrilled to announce that JSON Schema will be applying as a mentoring organization for the 2025 Google Summer of Code (GSoC). If accepted, we look forward to collaborating with talented contributors from around the world to advance the field of JSON Schema and open-source technology.
-      Timeline and Project Ideas
-      The official GSoC 2025 timeline is now live, and our project ideas are on the way! Stay tuned for updates and get ready to explore exciting opportunities to contribute to meaningful, real-world projects.
-      Full timeline
-      Important dates Deadline
-      Organization Applications Open January 27, 2025
-      Organization Application Deadline February 11, 2025
-      Organizations Announced February 27, 2025
-      Potential GSoC contributors discuss application ideas with mentoring organizations February 27 - March 24, 2025
-      GSoC contributor application period March 24 - April 8, 2025
-      Accepted GSoC Contributor projects announced May 8, 2025
-      Contributors work on their Google Summer of Code projects June 2, 2025 - August 25, 2025
-      Mentors submit final GSoC contributor evaluations (standard coding period) September 1, 2025 - September 8, 2025
-      Initial results of Google Summer of Code 2024 announced September 3, 2025
-      Project Ideas
-      Here is the list of our 2025 project ideas:
+      
       #874: GSOC 2025 : Build a Java wrapper library for sourcemeta/blaze
+
+      Build a Java wrapper library for sourcemeta/blaze
+
+      Brief Description
+      sourcemeta/blaze is a high-performance json schema validation library. The goal of this project would be making it available on the JVM platform by building a wrapper library around it, and publishing it on maven central.
+
+      Expected Outcomes
+      A java library should be available on maven central that has a Java-friendly API, and use sourcemeta/blaze under the hood for performing json schema validation.
+
+      Skills Required
+
+      Interest both in java and native c/c++ libraries, DX and documentation.
+
+      Mentors
+      @erosb
+
+      Expected Difficulty
+      Medium
+
+      Expected Time Commitment
+      175 hours
+
+      ~~~~~~~~~~
+
+
       #870: GSoC 2025: Better JSON Schema Errors
+
+      Create a JavaScript library to convert standard JSON Schema output into clear, human-friendly error messages. The library should follow the examples set by existing tools like Atlassian's better-ajv-errors and Apideck's @apideck/better-ajv-errors, but use the standard JSON Schema output format introduced in draft-2019-09 instead of ajv's proprietary format.
+
+      Expected Outcomes
+      A library that transforms standard JSON Schema validation outputs into concise, easy-to-understand error messages.
+      A mechanism for loading and managing additional language packs to support presenting error messages in multiple languages.
+      Customization options for users to override default error messages or add custom ones.
+      Tested for compatibility with multiple implementations using the standard output format, including @hyperjump/json-schema.
+      Published on npm with proper versioning, a clear README, and example use cases.
+      Skills Required
+      JavaScript: Strong understanding of JavaScript and best practices for building libraries.
+      JSON Schema Specification: Familiarity with the JSON Schema standard, particularly the error output format introduced in draft-2019-09.
+      Error Message Design: Ability to translate structured error output into concise and meaningful human-friendly messages.
+      Library Development: Experience creating, testing, and documenting JavaScript libraries.
+      Open Source Practices: Understanding of Git, GitHub, and how to maintain a project for open source contributions.
+      Testing: Familiarity with Test-Driven Development (TDD) or Behavior-Driven Development (BDD) methodologies.
+      Collaboration: Comfortable using pair programming tools like VSCode LiveShare and participating in pair programming sessions for real-time collaboration.
+      Mentor(s)
+      @jdesrosiers
+      Expected Difficulty
+      Medium
+
+      Expected Time Commitment
+      175 hours
+
+      QUALIFICATION TASK
+      https://github.com/hyperjump-io/json-schema-lite?tab=readme-ov-file#qualification-task
+
+      ~~~~~~~~~~
       #857: GSoC 2025: Investigating Schema Normalization
+
+      Brief Description
+      JSON Schema is a rich language for expressing constraints on JSON data. If we strictly consider JSON Schema validation (rather than any other use of JSON Schema), in many cases there are multiple ways to express the same constraints. For example, the schema:
+
+      {
+        "oneOf": [
+          {"const": "foo"},
+          {"const": "bar"}
+        ]
+      }
+      will have the same validation outcome on all instances as the schema:
+
+      {"enum": ["foo", "bar"]}
+      One might say that this second schema is in some way "better" than the first one in some way that could be made precise.
+
+      The same is true for the schemas {"required": ["foo"]} and {"title": "My Schema", "required": ["foo"]}, and one might say the first one is "better" than the second for the purpose of validation.
+
+      We can define two schemas to be "equivalent" if they have this property that any instance is valid under one if and only if it is valid under the other, and if we have two equivalent schemas S and S' we might wish to define an algorithm for transforming these schemas into a form which is "canonical" or "normal" such as above.
+
+      There are existing attempts to do this for various use cases, but no central place where a self-contained set of normalization rules are written down and a self-contained tool exists to perform the procedure. Let's try and write a simple one!
+
+      Expected Outcomes
+
+      Investigate the existing implementations of normalization in the wild. There are at least two known ones, one being here.
+      Define a set of normalization rules, with configurability for cases where there are multple reasonable canonical forms
+      Define a set of test cases for schemas which are equivalent under these rules, and for the target canonical form for each set of schemas
+      Write a Python library which performs the normalization and emits the normalized schema
+      Empirically test our normalization procedure by running normalized schemas through Bowtie and comparing whether a given implementation returns the same results
+      Skills Required
+
+      An existing understanding of JSON Schema's keywords, which can be used to think about areas which might create possible "denormalization" (e.g. keywords which when used together overlap)
+      Familiarity writing Python, and ideally using JSON Schema from Python
+      Experience testing pieces of software by writing test cases, here likely in the form of writing JSON Schema + instance examples
+      Careful diligence in reading and understanding the existing procedures used (in the link above, as well as in a number of JSON Schema journal articles) and the ability to compare the previous work with each other
+      Mentors
+      @Julian
+
+      Expected Difficulty
+      medium
+
+      Expected Time Commitment
+      175
+
+      ~~~~~~~~~~
       #856: GSoC 2025: Comprehensive JSON Schema linting for encouraging best practices and catching anti-patterns early
+      Brief Description
+
+      Writing well-crafted schemas is extremely hard. Not only JSON Schema is a complex schema language and it is easy to shoot yourself in the foot, but as an organisation, we never properly encoded and shared what the best practices and anti-patterns are. As a consequence, our users (including users of API specifications like OpenAPI and AsyncAPI) don't know how to write great schemas, and don't even know what the quality of the schemas they already have is.
+
+      I kickstarted some of this work on my open-source tooling (https://github.com/sourcemeta/jsonschema/blob/main/docs/lint.markdown) and would like to take it to the next level.
+
+      Expected Outcomes
+
+      Reach agreement on what the anti-patterns and best practices are across dialects, documenting these in the official JSON Schema organisation as a style guide / advice document in the JSON Schema website. In there, we can publish each rule with a stable URL so any linter out there can link to them when reporting failures, etc saving all of us time from actually explaining them in each tool 😅
+      Extend popular open-source tooling made by TSC members and endorsed by the org (like the Sourcemeta JSON Schema CLI, but potentially others too) to encode the before-mentioned anti-patterns and best practices in a runnable form
+      Skills Required
+
+      Strong communication skills, as the first point might involve talking to lots of people in the community and driving discussions to reach agreement.
+      A good understanding of JSON Schema, enough to appreciate and understand what the discovered anti-patterns and best practices would be. Of course, we will mentor a lot in this area
+      A good understanding of the programming language(s) used in the endorsed open-source linting tooling we will extend. The Sourcemeta JSON Schema CLI is written in C++ (it also has a library form that could be then used by other projects)
+      Mentors
+
+      @jviotti
+      @Relequestual
+      Expected Difficulty
+
+      Medium.
+
+      Expected Time Commitment
+
+      350 hours. We expect most of the time being spent driving discussions to reach agreement. Doing so often takes a lot of time!
+
+      ~~~~~~~~~~
       #872: GSOC 2025 : Automated Badge Issuance System For Tour
+
+      Project Title
+      Simple Automated Badge Issuance System
+
+      Brief Description
+      This project aims to create a lightweight and easy-to-maintain system that automatically issues digital badges to users who complete the JSON Schema Tour. The system is using Google Sheets for data collection and the expected solution has been described on this issue: json-schema-org/tour#118
+
+      The focus is on simplicity, reliability, and minimal maintenance, ensuring the process scales without manual intervention.
+
+      Expected Outcomes
+      A working script that automates badge issuance for users who complete the JSON Schema Tour.
+      Integration with Google Sheets to read user data and mark badges as issued.
+      Integration with Badgr.
+      Usage of Cloudflare workers or exploring a better alternative.
+      Basic error handling and logging to ensure reliability.
+      Clear and concise documentation for setup and usage.
+      An open-source GitHub repository for the community to use and adapt.
+      Please see json-schema-org/tour#118 for more details.
+
+      Skills Required
+      Basic programming skills in Python or JavaScript (Node.js).
+      Familiarity with REST APIs (Google Sheets API and shield ).
+      Ability to write simple scripts for automation.
+      Basic understanding of error handling and logging.
+      Clear documentation writing skills.
+      Mentors
+      @mwadams
+
+      Expected Difficulty
+      Medium
+      The project involves integrating APIs and writing a script, making it accessible for contributors with some programming experience. It’s not overly complex but requires attention to detail and problem-solving.
+
+      Expected Time Commitment
+      90 hours
+      This project is scoped to fit within the 175-hour timeframe, making it achievable for a single GSoC contributor. The timeline includes learning, development, testing, and documentation.
+
+      ~~~~~~~~~~
       #859: GSoC 2025: Adaption of component library in JSON Schema website
-      Looking for mentors:
-      #868: GSOC 2025 : JSON Schema Visualization Tool - Interactive Graphical Viewer
-      Why Choose a JSON Schema Project?
-      JSON Schema is a widely adopted and powerful tool in the developer ecosystem. Some of the most active members today joined because of their participation in past GSoC editions, which is a clear evidence of how positive the experience has been for them. Our mentors have extensive mentoring experience, you will have the best support before, during and after the program.
-      Contributing to a JSON Schema project offers:
-      Real-World Impact: Your work will influence the global developer community.
-      Skill Development: Gain hands-on experience with cutting-edge technology and improve your software development skills.
-      Collaborative Learning: Work closely with experienced mentors and a welcoming community.
-      Professional Growth: Build your network, receive guidance, and showcase your contributions at community events.
-      Financial Support: Participants receive a stipend from Google for their contributions.
-      How to Apply
-      Details about our projects, qualification tasks, and application guidelines will be shared soon. In the meantime, prepare by:
-      Familiarizing yourself with JSON Schema.
-      Engaging with the community via GitHub and Slack.
-      Exploring past GSoC projects to understand the process.
-      Getting in Contact
-      GitHub: Please use Issues to comment on project ideas, ask questions and collaborate.
-      Slack: Please join us in our slack workspace. All GSoC discussions are are hapenning in the #gsoc channel.
-      Please see our Code of Conduct
-      Getting Help
-      Got a problem? Reach out to mentors or the community for assistance. Remember, mentors are listed, but other community members can also lend a hand. When talking to non-mentors:
-      Introduce yourself.
-      Discuss tasks based on personal interest, not just the contest.
-      Explain technical decisions independently.
-      Consult mentors for guidance on task evaluation.
-      🫶 How to get involved before GSoC?
-      If you join our organization before GSoC, we invite you to join us contributing to JSON Schema as a great way to start engaging with the Team, learn about the JSON Schema specification and get to know some of our projects.
-      Please check out our Contribution guidelines to know more about how to contribute in each area.
-      🏗 GSoC Contributor Guidance
-      Please, check-out the GSoC Contributior Guidance
+      Brief Description
+
+      The goal of this project is to adapt generalised UI components library for JSON Schema website.
+
+      JSON Schema website consists of several components, including.... different kinds of accordions, cards, buttons, banners, tables, etc.... All of these components are custom developed by this project we look forward to changing a modern UI component library. This will not only reduce the developers' hassle of creating new custom components from scratch or to debug/modify the existing components but will also give a new and modular look to our website.
+
+      (Nice to have just if we have time for it) JSON Schema docs section content is currently in markdown syntax which is rendered on the website pages. There are many instances where we need to have some custom markdown components to showcase particular kinda information. These custom markdown components currently lie in a single file StyledMarkdown.tsx. The components of these files can be segregated into different components files which makes it easy to debug/modify. Other than these common components such as tables, tab groups, etc... can be directly received from UI components library.
+
+      3. Completion of developing an enhanced test suite for the website. The task of creating a test suite was initialised last summer during GSoC'24 program. But later on, new components kept on adding as of which currently the website has partial test coverage of the components. By means of this project, we also aim to overall completion of the test suite. More information on the issue can be obtained here.
+
+      Expected Outcomes
+
+      By the completion of GSoC coding time period we expect all above tasks to be completed.
+
+      Skills Required
+      Familiarity with Nextjs, Typescript, test suite development using Cypress, a good overview and knowledge of JSON Schema website codebase.
+
+      Mentors
+      @benjagm
+
+      Expected Difficulty
+      Medium
+
+      Expected Time Commitment
+      90 hours
+    
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15564,26 +16450,10 @@ organizations:
 
   - organization_id: 69
     organization_name: JabRef e.V.
-    no_of_ideas:
+    no_of_ideas: 7
     ideas_content: |
-      JabRef in Google Summer of Code 2025
-      JabRef is a powerful, open-source, cross-platform citation and reference management tool designed to help researchers stay organized and efficient. With JabRef, you can effortlessly collect, organize, and manage your literature sources, giving you more time to focus on what truly matters: your research.
-      By contributing to JabRef, you contribute to advancing global research. Trusted by over 10,000 researchers worldwide, JabRef plays a vital role in shaping the future of academic and scientific discovery. Your skills and creativity can help push the boundaries of what JabRef can achieve.
-      Built in Java, JabRef is designed with a strong emphasis on high-quality, modern, and maintainable code. As a contributor, you’ll have the opportunity to enhance your technical skills, deepen your understanding of Java development, and learn best practices in open source collaboration. Whether you're a beginner or an experienced developer, working on JabRef will help you grow as a programmer while making a meaningful impact on a tool that supports researchers around the globe.
-      We are passionate about open source and pride ourselves on fostering collaboration within a diverse and inclusive community. JabRef is dedicated to providing a welcoming environment for newcomers to open source, making it an ideal starting point for anyone eager to contribute. With four successful years of Google Summer of Code (GSoC) participation, we’ve achieved significant milestones in enhancing JabRef as a user-friendly research tool. Each project has been a meaningful step toward empowering researchers worldwide. As a GSoC participant with JabRef, you'll have the opportunity to grow your technical skills, coding expertise, and open source experience. Beyond the invaluable learning, participants receive a stipend from Google and gain access to a global professional network that can open doors for their future.
-      Below, you’ll find some project ideas to inspire your contributions to JabRef through GSoC. We’ve also included links to provide more background information and context.
-      Links
-      What is Google Summer of Code?
-      GSoC timeline
-      latest proposal deadline: TBA
-      coding until: TBA 18:00 UTC (can be extended under conditions)
-      GSoC stipends: starting at 750 USD, depending on the country.
-      Google's guide on making first contact
-      Checklist for items contained in the proposal
-      Google's guide on wrting a good proposal
-      (All summarized information is tentative. The definitive information is on the linked pages.)
-      Projects
-      This page lists a number of ideas for potential projects to be carried out by the persons participating in Google Summer of Code 2025. This is by no means a closed list, so the possible contributors can feel free to propose alternative activities related to the project (the list of feature requests and the GitHub issue tracker might serve as an additional source of inspiration). Students are strongly encouraged to discuss their ideas with the developers and the community to improve their proposal until submission (e.g., using the Gitter Channel or the forum). It's also a good idea to start working on one of the smaller issues to make yourself familiar with the contribution process. Successful pull requests increase the chance of being accepted as a mentee.
+     
+    
       Improve handling of ancient documents by OCR and AI
       JabRef, a comprehensive literature management software, currently supports both handling metadata and text-based PDF documents. However, a significant limitation arises with scanned PDFs, particularly historical articles, which are not text-searchable due to their image-based format. This project aims to bridge this gap by integrating advanced OCR (Optical Character Recognition) technology, enabling full-text search in scanned PDFs.
       Useful links:
@@ -15613,6 +16483,10 @@ organizations:
       @Siedlerchr, @InAnYan, @calixtus
       Project size:
       175h (medium)
+
+      ~~~~~~~~~~
+
+
       Integrating JabRef's Integrity Check with VS Code via Language Server Protocol (LSP)
       Synopsis
       JabRef is a widely used open-source reference manager supporting BibTeX and BibLaTeX. One of its features is the Integrity Check, which helps users identify potential issues in their bibliographic entries. This project aims to leverage JabRef's Integrity Check to provide real-time feedback in Visual Studio Code (VS Code) by implementing a Language Server Protocol (LSP)-based extension.
@@ -15645,6 +16519,8 @@ organizations:
       @koppor, @calixtus
       Project size:
       175h (medium)
+
+      ~~~~~~~~~~
       Welcome Walkthrough
       This project aims to create an engaging and informative first start screen for JabRef, enhancing the initial user experience and showcasing the best features of the software. This screen will differ from the standard interface displayed when no database is open, providing a tailored introduction for new users.
       Moreover, this project aims for adding various walkthrouhgs through JabRef's features: Users should be guided to the interesting features of JabRef (instead of having to read the the documentation)
@@ -15682,6 +16558,9 @@ organizations:
       175h (medium) - if walkthroughs are made
       The GSoC proposal should include one initial idea of a walk through
       Issue: https://github.com/JabRef/jabref/issues/12664
+
+
+      ~~~~~~~~~~
       Using PostgreSQL as full backend for JabRef
       Currently, JabRef holds all entries in memory. It even converts LaTeX to Unicode and vice versa to support better search. While this is a great UX, this leads to a huge memory consumption. The more "proper" way is to use a database (such as PostgreSQL) to store the entries. Then, not all entries need to be loaded in memory. The first step is to introduce a data-access layer: The maintable should read from SQL database, not from all in-memory. Possible future work may be: https://www.zotero.org/support/dev/client_coding/direct_sqlite_database_access and https://github.com/zotero/zotero/blob/main/resource/schema/userdata.sql.
       There can be an initial phase to evluate whether PostgreSQL is the right DBMS as backend for JabRef. For instance, DuckDB and SQLite were also discussed. Currently, PostgeSQL turned out best (especially for handling regular expression search on the database itself), but things may have changed in 2025.
@@ -15692,6 +16571,9 @@ organizations:
       @koppor, @InAnYan, @calixtus
       Project size:
       175h (medium)
+
+
+      ~~~~~~~~~~
       Improved LibreOffice-JabRef integration
       Description:
       JabRef can connect to LibreOffice to offer premier reference management by allowing users to cite library entries directly into the document, and then generate bibliographies based on the cited entries. See JabRef LibreOffice Integration.
@@ -15715,6 +16597,8 @@ organizations:
       350h (large): If (Project 1 + Project 2 + Project 3 + Project 4)
       175h (medium): If (Project 1 + Project 2) OR (Project 2 + Project 3) OR (Project 1 + Project 3)
       90h (small): If Project 1 OR Project 2 OR Project 3
+
+      ~~~~~~~~~~
       Improved SLR Support
       Description:
       With the ever-growing number of publications in computer science and other fields of research, conducting secondary studies becomes necessary to summarize the current state of the art. For software engineering research, Kitchenham popularized the systematic literature review (SLR) method to address this issue. The main idea is to systematically identify and analyze the majority of relevant publications on a specific topic. This is usually an activity that takes extensive manual effort. Some tool support does exist, but the full potential of tools has not been exploited yet. JabRef also offers basic functionality for systematic literature reviews that is used by a number of researchers to systematically "harvest" related work based on the fetching capabilities of JabRef. While using the feature, various additional feature requests came up. For instance, created search queries are currently transformed internally by JabRef to the query format of the publisher. It should also be possible to directly input a query at the publisher site, e.g., for IEEE or ACM.
@@ -15729,6 +16613,7 @@ organizations:
       @koppor, @calixtus
       Project size:
       175h (medium)
+      ~~~~~~~~~~
       Improved Journal Abbreviations
       Currently, JabRef has a single list of journal abbreviations. This list is a combined list of the .csv files at https://github.com/JabRef/abbrv.jabref.org/tree/main/journals. Instead of the dropdown of JabRef should not show a single "JabRef built in list", but should show the various lists we offer: built-in lists, external lists, custom lists. Then, one can enable and disable with a click. This eases the users to find issues in abbreviation lists and allows users to customize the lists according to their field (e.g., physics, information science, ...).
       Fore more context, see: https://github.com/JabRef/jabref/issues/12364
@@ -15740,13 +16625,7 @@ organizations:
       90h (small)
       Expected Outcome:
       A UI view which allows selecting/including journal abbreviations by category.
-      {Your own project}
-      You can propose another projects. JabRef offers various places where it can be improved. Think as a user or talk to other users. The following places are a good start:
-      Switch to Apache Velocity: https://github.com/JabRef/jabref/issues/12418
-      Big projects: https://github.com/JabRef/jabref/issues?q=sort%3Aupdated-desc+state%3Aopen+label%3A%22size%3A+big%22
-      Feature requests prioritized: https://github.com/orgs/JabRef/projects/6
-      General list of feature requests: http://discourse.jabref.org/c/features
-      Candidates of university projects, the large ones: https://github.com/orgs/JabRef/projects/3/views/3?filterQuery=status%3A%22free+to+take%22+size-of-project%3Alarge&sortedBy%5Bdirection%5D=desc&sortedBy%5BcolumnId%5D=8246261
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -15756,35 +16635,9 @@ organizations:
 
   - organization_id: 70
     organization_name: JdeRobot
-    no_of_ideas:
+    no_of_ideas: 10
     ideas_content: |
-      GSoC 2025
-      TOC GSoC-2025
-      Ideas list
-      Project #1: Robotics-Academy: support for solutions directly using ROS2 topics
-      Project #2: Robotics-Academy: CI & Testing
-      Project #3: Robotics-Academy: improve Computer Vision exercises, including with real cameras
-      Project #4: Robotics-Academy: new exercise on End-to-End Visual Control of an Autonomous Vehicle using DeepLearning
-      Project #5: VisualCircuit: Improving Functionality & Expanding the Block Library
-      Project #6: Robotics Academy: using the Open3DEngine as robotics simulator
-      Project #7: Robotics Academy: improvement of Gazebo scenarios and robot models
-      Project #8: Robotics Academy: improvement of industrial robotics exercises with MoveIt2 and ROS2
-      Project #9: BT-Studio: a tool for programming robots with Behavior Trees
-      Project #10: Extend DetectionMetrics: GUI, CI Workflow, and Object Detection
-      Application instructions for GSoC-2025
-      Requirements
-      Programming tests
-      Send us your information
-      Previous GSoC students
-      How to increase your chances of being selected in GSoC-2025
-      RTFM
-      Robotics applications are typically distributed, made up of a collection of concurrent asynchronous components which communicate using some middleware (ROS messages, DDS…). Building robotics applications is a complex task. Integrating existing nodes or libraries that provide already solved functionality, and using several tools may increase the software robustness and shorten the development time. JdeRobot provides several tools, libraries and reusable nodes. They have been written in C++, Python or JavaScript. They are ROS-friendly and full compatible with ROS2-Humble (and Gazebo Harmonic).
-      Our community mainly works on three development areas:
-      Education in Robotics. RoboticsAcademy is our main project. It is a ROS-based framework to learn robotics and computer vision with drones, autonomous cars…. It is a collection of Python programmed exercises and challenges for engineering students.
-      Robot Programming Tools. For instance, BT-Studio, for robot programming with Behavior Trees; VisualCircuit for robot programming with connected blocks, as in electronic circuits, in a visual way.
-      Machine Learning in Robotics. For instance, the BehaviorMetrics tool for assessment of neural networks in end-to-end autonomous driving. Another example is DetectionMetrics tool for evaluation of visual detection neural networks and algorithms.
-      Ideas list
-      This open source organization welcomes contributors in these topics:
+      
       Project #1: Robotics-Academy: support for solutions directly using ROS2 topics
       Brief explanation: Robotics-Academy is a framework for learning robotics and computer vision. It consists of a collection of robot programming exercises. The students have to code in Python the behavior of a given (either simulated or real) robot to fit some task related to robotics or computer vision. It uses standard middleware and libraries such as ROS 2 or OpenCV.
       Nowadays, Robotics Academy offers the student up to 26 exercises, and another 11 prototype exercises. All of them come ready to use in the RoboticsAcademy docker image (RADI). The only requirement for the students its to download the docker image, all the dependencies are installed inside the RADI.
@@ -15794,6 +16647,8 @@ organizations:
       Expected results: New way of coding your solutions in RoboticsAcademy using ROS 2 topics
       Expected size: 90h
       Mentors: Pedro Arias (pedro.ariasp AT upm.es) and Apoorv Garg (apoorvgarg.ms AT gmail.com)
+
+      ~~~~~~~~~~
       Project #2: Robotics-Academy: CI & Testing
       Brief explanation: Robotics-Academy is a framework for learning robotics and computer vision. It consists of a collection of robot programming exercises. The students have to code in Python the behavior of a given (either simulated or real) robot to fit some task related to robotics or computer vision.
       Project #2 seeks to identify and address potential issues early on, fostering the maintainability and reliability of its software. This commitment to improving the quality of the software will be achieved through the implementation of automated testing and continuous integration (CI) processes. The project will also include the development of a testing strategy and the implementation of a CI pipeline.
@@ -15802,6 +16657,8 @@ organizations:
       Expected results: Tests on RAM, RI and RA
       Expected size: 350h
       Mentors: Pedro Arias (pedro.ariasp AT upm.es), Pawan Wadhwani (pawanw17 AT gmail.com) and Miguel Fernandez (miguel.fernandez.cortizas AT upm.es)
+      
+      ~~~~~~~~~~
       Project #3: Robotics-Academy: improve Computer Vision exercises, including with real cameras
       Brief explanation: As of now, Robotics-Academy includes two deprecated Computer Vision exercises: ColorFilter and OpticalFlow Teleoperator. These exercises allow users to learn de foundations of image processing using OpenCV library. A Work-In-Progress from the JdeRobot Computer Vision Working Group is the multiplatform support of real cameras in RoboticsAcademy exercises (it works on Linux, Windows and MacOS machines), using WebRTC.
       The main objective of this project is to prepare several exercises in RoboticsAcademy about Computer Vision (including the update of the previous two) which can be performed with real camera from the browser.
@@ -15810,6 +16667,8 @@ organizations:
       Expected results: new exercises on ComputerVision in Robotics-Academy, including with real cameras.
       Expected size: 90h
       Mentors: David Pascual (d.pascualhe AT gmail.com) and David Pérez (david.perez.saura AT upm.es)
+      
+      ~~~~~~~~~~
       Project #4: Robotics-Academy: new exercise on End-to-End Visual Control of an Autonomous Vehicle using DeepLearning
       Brief explanation: The goal of this project is to develop a new deep learning exercise focused on visual robotic control in the context of Robotics-Academy. We will create a web-based interface that allows users to upload a trained model, which will take camera input from a drone or car and output the linear speed and angular velocity of the vehicle. The controlled robot and its environment will be simulated using Gazebo. The objectives of this project include:
       Updating the web interface to accept models trained with PyTorch/TensorFlow.
@@ -15823,6 +16682,9 @@ organizations:
       Expected results: a web-based exercise for robotic visual control using deep learning
       Expected size: 350h
       Mentors: David Pascual ( d.pascualhe AT gmail.com ) and Pankhuri Vanjani (pankhurivanjani AT gmail.com)
+      
+      
+      ~~~~~~~~~~
       Project #5: VisualCircuit: Improving Functionality & Expanding the Block Library
       Brief explanation: VisualCircuit allows users to program robotic intelligence using a visual language similar to electronic circuits, simplifying the creation of code for robotics applications such as Deep Learning, ROS, and more.
       Over the past few years, we have focused on making VisualCircuit more robust by resolving Nested Blocks (multi-level blocks) with the Block Composition feature, developing a working prototype for dockerized execution of robotics applications directly from the browser, migrating the old POSIX IPC implementation to a cross-platform compatible Python Shared Memory implementation, and more.
@@ -15832,6 +16694,9 @@ organizations:
       Expected results: Expanding Block library for VisualCircuit, improving automated testing using GitHub Actions and creating real world robotics applications developed with latest functionalities of VC and resolving other major issues.
       Expected size: 175h
       Mentors: Toshan Luktuke (toshan1603 AT gmail.com), Pankaj Borade (borade.pankaj825 AT gmail.com) and Suhas Gopal.
+      
+      
+      ~~~~~~~~~~
       Project #6: Robotics Academy: using the Open3DEngine as robotics simulator
       Brief explanation: Open 3D Engine (O3DE) is an Apache 2.0-licensed multi-platform 3D engine that enables developers and content creators to build AAA games, cinema-quality 3D worlds, and high-fidelity simulations. It supports also simulation of most common robot sensors and actuators. The idea of this project is to integrate Open3DEngine into the RoboticsAcademy framework, with at least one exercise using it instead of Gazebo.
       Skills required/preferred: C++ programming, ROS
@@ -15840,6 +16705,9 @@ organizations:
       Expected size: 175h
       Repository Link - Open 3D Engine, RoboticsAcademy, RoboticsInfrastructure
       Mentors: José M. Cañas (josemaria.plaza AT gmail.com) and Jan Hanca ( jan.hanca AT googlemail.com )
+      
+      
+      ~~~~~~~~~~
       Project #7: Robotics Academy: improvement of Gazebo scenarios and robot models
       Brief Explanation: Currently Robotics Academy offers the student up to 26 exercises, and another 11 prototype exercises. The main goal of this project is to improve the current Gazebo scenarios and robot models for many the exercises making them more appealing and realistic without increasing too much the required computing power for rendering. For instance the world model of the FollowLine exercise will be enhanced in order to have a 3D race circuit and several models will be reviewed to be low poly (= faster to simulate).
       Skills required/preferred: experience with Gazebo, SDF, URDF, ROS2 and Python
@@ -15847,6 +16715,8 @@ organizations:
       Expected results: New Gazebo scenarios
       Expected size: small (~90h)
       Mentors: Pedro Arias (pedro.ariasp AT upm.es) and Shashwat Dalakoti (shash.dal623 AT gmail.com)
+      
+      ~~~~~~~~~~
       Project #8: Robotics Academy: improvement of industrial robotics exercises with MoveIt2 and ROS2
       Brief explanation: A few years ago we developed some exercises on industrial robots using MoveIt1 and ROS1-Noetic. A Work-In-Progress from the JdeRobot Industrial Robotics Working Group is the support in RoboticsAcademy to MoveIt2 and ROS2. A proof of concept has already been developed and it opens the door to new applications with manipulators (pick-and-place, palletizing…). Developing an easy API for the programming of industrial robots, similar to other solutions such as RAPID from ABB is an open topic. The main goal of this project is to integrate, refine this support and develop a new exercise regarding manipulation.
       Skills required/preferred: Gazebo, URDF, ROS2, MoveIt2
@@ -15854,6 +16724,8 @@ organizations:
       Expected results: updated and operating new exercise on industrial robot manipulation
       Expected size: medium (~175h)
       Mentors: Diego Martín (diego.martin.martin AT gmail.com) and Pankhuri Vanjani (pankhurivanjani AT gmail.com)
+      
+      ~~~~~~~~~~
       Project #9: BT-Studio: a tool for programming robots with Behavior Trees
       Brief explanation: Behavior Trees is a recent paradigm for organizing robot deliberation. There are brilliant open source projects such as BehaviorTrees.CPP and PyTrees. Our BT-Studio has been created to provide a web based graphical editor of Behavior Trees. It also includes a conversor to Python language, the dockerized execution of the generated robotics application from the browser and supports subtrees (a feature created along a previous GSoC-2024 project).
       The goal of this GSoC proposed project is to develop a Behavior Tree library, a collection of example robotics applications and further refine the tool.
@@ -15862,6 +16734,8 @@ organizations:
       Expected results: Behavior Trees library for BT-Studio and several example robotics applications developed with them.
       Expected size: 175h
       Mentors: José M. Cañas (josemaria.plaza AT gmail.com) and Oscar Martínez (oscar.robotics AT tutanota.com)
+      
+      ~~~~~~~~~~
       Project #10: Extend DetectionMetrics: GUI, CI Workflow, and Object Detection
       Brief explanation: DetectionMetrics is a toolkit for evaluating perception models across frameworks and datasets. Past GSoC projects (Vinay Sharma, Jeevan Kumar) contributed to its first stable release, published in Sensors (Paniego et al., 2022). Recently, we revamped the tool to improve usability and installation—check it out here! Currently, DetectionMetrics functions as both a Python library and CLI, focusing on the quantitative evaluation of image and LiDAR segmentation models, with plans to expand into object detection. It supports PyTorch and TensorFlow models, along with multiple public datasets. Its modular design allows easy integration of new models and datasets. While redesigning the core functionality, some useful features were lost. This project aims to bring them back and enhance DetectionMetrics by:
       Recovering object detection evaluation support, including metrics like mAP and IoU. This involves restoring compatibility with COCO-style and Pascal VOC-style datasets and implementing necessary pipeline adjustments.
@@ -15873,109 +16747,7 @@ organizations:
       Expected results: A brand-new GUI and CI workflow for DetectionMetrics
       Expected size: Long (~350h)
       Mentors: David Pascual Hernández (d.pascualhe AT gmail.com), Sergio Paniego (sergiopaniegoblanco AT gmail.com), Santiago Montiel Marín (santiago.montiel AT uah.es)
-      Application instructions for GSoC-2025
-      We welcome students to contact relevant mentors before submitting their application into GSoC official website. If in doubt for which project(s) to contact, send a message to jderobot AT gmail.com We recommend browsing previous GSoC student pages to look for ready-to-use projects, and to get an idea of the expected amount of work for a valid GSoC proposal.
-      Requirements
-      Git experience
-      C++ and Python programming experience (depending on the project)
-      Programming tests
-      Project #1 #2 #3 #4 #5 #6 #7 #8 #9 #10
-      Academy (A) X X X X X X X X X X
-      Python (B) X X X X X X X X X X
-      ROS2 (C) X X O X X X X X X X
-      React (D) X O X X O O * * O O
-      
-      Where:  
-      * Not applicable
-      X Mandatory
-      O Optative
-      Before accepting any proposal all candidates have to do these programming challenges:
-      Note: Python Programming test for GSoC 25 will be updated soon.
-      (A) RoboticsAcademy challenge
-      (B) Python challenge (To be updated soon)
-      (C) ROS2 challenge
-      (D) React challenge
-      Send us your information
-      AFTER doing the programming tests, fill this web form with your information and challenge results. Then you are invited to ask the project mentors about the project details. Maybe we will require more information from you like this:
-      Contact details
-      Name and surname:
-      Country:
-      Email:
-      Public repository/ies:
-      Personal blog (optional):
-      Twitter/Identica/LinkedIn/others:
-      Timeline
-      Now split your project idea in smaller tasks. Quantify the time you think each task needs. Finally, draw a tentative project plan (timeline) including the dates covering all period of GSoC. Don’t forget to include also the days in which you don’t plan to code, because of exams, holidays etc.
-      Do you understand this is a serious commitment, equivalent to a full-time paid summer internship or summer job?
-      Do you have any known time conflicts during the official coding period?
-      Studies
-      What is your School and degree?
-      Would your application contribute to your ongoing studies/degree? If so, how?
-      Programming background
-      Computing experience: operating systems you use on a daily basis, known programming languages, hardware, etc.
-      Robot or Computer Vision programming experience:
-      Other software programming:
-      GSoC participation
-      Have you participated to GSoC before?
-      How many times, which year, which project?
-      Have you applied but were not selected? When?
-      Have you submitted/will you submit another proposal for GSoC 2025 to a different org?
-      Previous GSoC students
-      Prajyot Jadhav (GSoC-2024) Robotics-Academy: migration to Gazebo Fortress
-      Mihir Gore (GSoC-2024) Robotics-Academy: improve Deep Learning based exercises
-      Pankaj Borade (GSoC-2024) VisualCircuit: block library
-      Óscar Martínez (GSoC-2024) BT-Studio: a tool for programming robots with Behavior Trees
-      Zebin Huang (GSoC-2024) End-to-end autonomous vehicle driving based on text-based instructions: research project regarding Autonomous Driving + LLMs
-      Pawan Wadhwani (GSoC-2023) Robotics Academy: migration to ROS2 Humble
-      Meiqi Zhao (GSoC 2023) Obstacle Avoidance for Autonomous Driving in CARLA Using Segmentation Deep Learning Models
-      Siddheshsingh Tanwar (GSoC 2023) Dockerization of Visual Circuit
-      Prakhar Bansal (GSoC 2023) RoboticsAcademy: Cross-Platform Desktop Application using ElectronJS
-      Apoorv Garg (GSoC-2022) Improvement of Web Templates of Robotics Academy exercises
-      Toshan Luktuke (GSoC-2022) Improvement of VisualCircuit web service
-      Nikhil Paliwal(GSoC-2022) Optimization of Deep Learning models for autonomous driving
-      Akshay Narisetti(GSoC-2022) Robotics Academy: improvement of autonomous driving exercises
-      Prakarsh Kaushik(GSoC-2022) Robotics Academy: consolidation of drone based exercises
-      Bhavesh Misra (GSoC-2022) Robotics Academy: improve Deep Learning based Human Detection exercise
-      Suhas Gopal (GSoC-2021) Shifting VisualCircuit to a web server
-      Utkarsh Mishra (GSoC-2021) Autonomous Driving drone with Gazebo using Deep Learning techniques
-      Siddharth Saha (GSoC-2021) Robotics Academy: multirobot version of the Amazon warehouse exercise in ROS2
-      Shashwat Dalakoti (GSoC-2021) Robotics-Academy: exercise using Deep Learning for Visual Detection
-      Arkajyoti Basak (GSoC-2021) Robotics Academy: new drone based exercises
-      Chandan Kumar (GSoC-2021) Robotics Academy: Migrating industrial robot manipulation exercises to web server
-      Muhammad Taha (GSoC-2020) VisualCircuit tool, digital electronics language for robot behaviors.
-      Sakshay Mahna (GSoC-2020) Robotics-Academy exercises on Evolutionary Robotics.
-      Shreyas Gokhale (GSoC-2020) Multi-Robot exercises for Robotics Academy In ROS2.
-      Yijia Wu (GSoC-2020) Vision-based Industrial Robot Manipulation with MoveIt.
-      Diego Charrez (GSoC-2020) Reinforcement Learning for Autonomous Driving with Gazebo and OpenAI gym.
-      Nikhil Khedekar (GSoC-2019) Migration to ROS of drones exercises on JdeRobot Academy
-      Shyngyskhan Abilkassov (GSoC-2019) Amazon warehouse exercise on JdeRobot Academy
-      Jeevan Kumar (GSoC-2019) Improving DetectionSuite DeepLearning tool
-      Baidyanath Kundu (GSoC-2019) A parameterized automata Library for VisualStates tool
-      Srinivasan Vijayraghavan (GSoC-2019) Running Python code on the web browser
-      Pankhuri Vanjani (GSoC-2019) Migration of JdeRobot tools to ROS 2
-      Pushkal Katara (GSoC-2018) VisualStates tool
-      Arsalan Akhter (GSoC-2018) Robotics-Academy
-      Hanqing Xie (GSoC-2018) Robotics-Academy
-      Sergio Paniego (GSoC-2018) PyOnArduino tool
-      Jianxiong Cai (GSoC-2018) Creating realistic 3D map from online SLAM result
-      Vinay Sharma (GSoC-2018) DeepLearning, DetectionSuite tool
-      Nigel Fernandez GSoC-2017
-      Okan Asik GSoC-2017, VisualStates tool
-      S.Mehdi Mohaimanian GSoC-2017
-      Raúl Pérula GSoC-2017, Scratch2JdeRobot tool
-      Lihang Li: GSoC-2015, Visual SLAM, RGBD, 3D Reconstruction
-      Andrei Militaru GSoC-2015, interoperation of ROS and JdeRobot
-      Satyaki Chakraborty GSoC-2015, Interconnection with Android Wear
-      How to increase your chances of being selected in GSoC-2025
-      If you put yourself in the shoes of the mentor that should select the student, you’ll immediately realize that there are some behaviors that are usually rewarded. Here’s some examples.
-      Be proactive: Mentors are more likely to select students that openly discuss the existing ideas and / or propose their own. It is a bad idea to just submit your idea only in the Google web site without discussing it, because it won’t be noticed.
-      Demonstrate your skills: Consider that mentors are being contacted by several students that apply for the same project. A way to show that you are the best candidate, is to demonstrate that you are familiar with the software and you can code. How? Browse the bug tracker (issues in github of JdeRobot project), fix some bugs and propose your patch submitting your PullRequest, and/or ask mentors to challenge you! Moreover, bug fixes are a great way to get familiar with the code.
-      Demonstrate your intention to stay: Students that are likely to disappear after GSoC are less likely to be selected. This is because there is no point in developing something that won’t be maintained. And moreover, one scope of GSoC is to bring new developers to the community.
-      RTFM
-      Read the relevant information about GSoC in the wiki / web pages before asking. Most FAQs have been answered already!
-      Full documentation about GSoC on official website.
-      FAQ from GSoC web site.
-      If you are new to JdeRobot, take the time to familiarize with the JdeRobot.
+     
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
