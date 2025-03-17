@@ -36,6 +36,7 @@ export async function enhanceQuery(userQuery: string): Promise<string> {
     2. Expanding abbreviations
     3. Including synonyms for technical terms
     4. Improving specificity while maintaining the original intent
+    5. Dont include gsoc word in the enchaced query like gsoc project ideas etc
     
     Return ONLY the enhanced query text with no explanations or additional text.
     `;
