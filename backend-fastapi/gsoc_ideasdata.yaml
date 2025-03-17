@@ -15985,41 +15985,106 @@ organizations:
 
   - organization_id: 71
     organization_name: Jenkins
-    no_of_ideas:
+    no_of_ideas: 11
     ideas_content: |
-      CDF
-      Blog
-      Success Stories
-      Contributor Spotlight
-      Documentation
-      User Guide
-      Solution Pages
-      Tutorials
-      Developer Guide
-      Contributor Guide
-      Books
-      Plugins
-      Community
-      Special Interest Groups
-      Subprojects
-      Security
-      About
-      Download
-      Search
-      K
-      GSoC 2025 Project Ideas
-      This page aggregates project ideas for Google Summer of Code 2025. Refer to the Jenkins Google Summer of Code page for more information about this project and applications..
-      Below you can find project ideas that have been proposed for this year. New ideas may be proposed by interested mentors or GSoC contributors, such as new features in the core or "write a plugin for MY_TOOL_OR_SERVICE". Project ideas without potential mentors will be considered, though applicants may need to work with the community and GSoC org admins to find mentors. To add a new project idea, see: proposing project ideas .
-      Accepted ideas
-      The following list contains the project ideas that fully match the Jenkins project idea standard. The scope of these ideas is understood and we don't normally expect deep changes. All ideas have quick-start guidelines and newbie-friendly issues referenced. We welcome contributors to join the mentor teams and invite GSoC contributors to submit project proposal applications related to these ideas.
-      Project Category Skills to study/improve
+      
       AI-Powered Chatbot for Quick Access to Jenkins Resources
       Develop an AI-based chatbot to provide users with quick and intuitive access to Jenkins documentation, plugins, and community resources..
       Potential Mentor(s):
       Vutukuri Sreenivas
       Kris Stern
       Ashutosh Singh
+      
       Plugins Natural Language Processing (NLP), Python, JavaScript/TypeScript, Jenkins Plugin Development, Machine Learning
+      AI-Powered Chatbot for Quick Access to Jenkins Resources 
+      Project goal: Develop an AI-based chatbot to provide users with quick and intuitive access to Jenkins documentation, plugins, and community resources.
+
+      Skills to study/improve: Natural Language Processing (NLP), Python, JavaScript/TypeScript, Jenkins Plugin Development, Machine Learning
+
+      Details 
+      As Jenkins continues to evolve, users often seek efficient ways to navigate its extensive documentation, plugins, and community discussions. This project proposes the development of an AI-powered chatbot integrated into the Jenkins interface, enabling users to retrieve information swiftly through natural language queries.
+
+      Project Description
+
+      The aim is to create a Jenkins plugin that embeds a chatbot capable of understanding and responding to user inquiries about Jenkins. Leveraging Natural Language Processing (NLP) and Machine Learning (ML) techniques, the chatbot will interpret user questions and provide relevant information from official documentation, plugin repositories, and community forums.
+
+      Benefits to the Community
+
+      Enhanced User Experience: Users can obtain information quickly without leaving the Jenkins environment.
+
+      Improved Accessibility: Simplifies the learning curve for newcomers by providing instant answers to common questions.
+
+      Increased Productivity: Reduces the time spent searching for resources, allowing users to focus on development and deployment tasks.
+
+      Comparable Solutions
+
+      While there are existing AI chatbots in various domains, an AI assistant tailored specifically for Jenkins is limited. A community discussion highlighted interest in developing a Jenkins Assistant plugin, indicating a demand for such a tool. This project aims to fill that gap by offering a specialized solution within the Jenkins ecosystem.
+
+      Project Scope
+
+      Chatbot Development: Implement NLP models to process and understand user queries related to Jenkins.
+
+      Integration: Develop a Jenkins plugin to host the chatbot, ensuring seamless interaction within the Jenkins user interface.
+
+      Data Sources: Configure the chatbot to access and retrieve information from Jenkins documentation, plugin directories, and community forums.
+
+      User Interface: Design an intuitive chat interface within Jenkins for user interactions.
+
+      Quickstart
+
+      To get started:
+
+      Familiarize Yourself with Jenkins Plugin Development: Review the Jenkins Plugin Tutorial.
+
+      Explore Relevant AI Libraries: Investigate NLP frameworks such as NLTK, spaCy, PyTorch, LlamaIndex, etc., that can be integrated into Python applications.
+
+      Understand Existing Chatbot Implementations: Study existing chatbot plugins or tools to gather insights into design and functionality.
+
+      Links
+
+      Jenkins Plugin Tutorial
+
+      NLTK
+
+      spaCy
+
+      PyTorch Chatbot Tutorial
+
+      Project Size
+
+      175 - 350 Hours
+
+      Project Difficulty Level
+
+      Beginner to Intermediate
+
+      Newbie-friendly Issues
+
+      Potential applicants can explore the following tasks to prepare:
+
+      Jenkins Plugin Development: Start by creating a simple plugin to understand the basics of Jenkins plugin architecture.
+
+      NLP Model Training: Experiment with training NLP models on sample datasets to grasp the fundamentals of natural language understanding.
+
+      Community Engagement: Participate in Jenkins forums and Gitter channels to understand common user queries and challenges.
+
+      By undertaking these preliminary tasks, contributors can build a solid foundation for developing an AI-powered chatbot that enhances the Jenkins user experience.
+
+      Potential Mentors 
+      Vutukuri Sreenivas
+      Kris Stern
+      Kris Stern
+      Ashutosh Singh
+      Ashutosh Singh
+      Project Links 
+      Gitter
+      Meetings
+      Forum
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      ~~~~~~~~~~
       Backend code refactoring for Infra Statistics
       To significantly refactor backend code for the Infra Statistics.
       Potential Mentor(s):
@@ -16027,6 +16092,41 @@ organizations:
       Bervianto Leo Pratama
       Phillipp Glanz
       Infra Groovy, Backend-frontend Integration, Code Refactoring, Infra / DevOps Processes
+
+      Project goal: To significantly refactor backend code for the Infra Statistics
+
+      Skills to study/improve: Groovy, Backend-frontend Integration, Code Refactoring, Infra / DevOps Processes
+
+      Details 
+      Background
+      The project aims to refactor the code at https://github.com/jenkins-infra/infra-statistics as well as to audit and improve the infra processes used for collecting the infra statistics data.
+
+      Project Size
+      175 hours
+
+      Project Difficulty
+      Beginner to Intermediate
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Kris Stern
+      Kris Stern
+      Bervianto Leo Pratama
+      Bervianto Leo Pratama
+      Phillipp Glanz
+      Phillipp Glanz
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
+      
+      ~~~~~~~~~~
       Complete build retooling of jenkins.io
       Using alternative tooling with Gatsby and Antora to build the Jenkins static site and provide versioned Jenkins documentation.
       Potential Mentor(s):
@@ -16035,6 +16135,147 @@ organizations:
       Kevin Martens
       Rajiv Ranjan Singh
       Tools Web development, AsciiDoc, Static website tooling, Documentation, Website retooling
+
+      Background
+      The jenkins.io website is generated as a static website using Awestruct from AsciiDoc sources, YAML data files, and HAML templates stored in GitHub. One of the drawbacks of the current build method is that the technical documentation is not product version bound. It is thus not possible to view the documentation for a given Jenkins version. Only the latest can be viewed. This can lead to unnecessary confusion and is a worse experience than many other documentation sites like the git site, FreeBSD, and others…​
+
+      The preferred tool to replace Awestruct is Antora.
+
+      The potential GSoC project would be to build a working site generator to demonstrate the existing site. Once the existing site is generated with Antora, the site should be extended to add version specific documentation.
+
+      The project has been discussed extensively at GitHub issue #5474, where some existing proof-of-concept code can be found referenced there.
+
+      We have already begun work on this project in GSoC 2023 as "Building Jenkins.io with alternative tools". However, we were only able to complete most of the groundwork for the Antora part of the versioned docs and some of the groundwork for the Gatsby part, mostly for the non-versioned part. An initial audit is required to find out what needs to be refactored and perhaps redesigned for a success transition from the old tooling to the new one. We expect the applicant to include the result of such an audit in their GSoC proposal.
+
+      So now the core work left will be to update the outdated contents of both the Antora versioned docs and the Gatsby backbone at the project at jenkins-infra/docs.jenkins.io repo.
+
+      The outcome of this project is expected to produce a visible impact they can showcase in their portfolio of the jenkins.io website, as the GSoC contributor is also expected to contribute via UI/UX improvements beyond the basic tooling required.
+
+      This selected GSoC contributor is expected to work very diligently to play catch up with the transition from the current jenkins.io repo and the new jenkins-infra/docs.jenkins.io repo. So we will only shortlist candidates who do not have competing commitments in order for this project to have a successful outcome.
+
+      Please note that for the UI/UX improvement portion we may need to deal with the jenkins-io-components repo, where the code for components shared by various Jenkins websites (jenkins.io, plugins.jenkins.io, etc.) is currently hosted.
+
+      Quick Start
+      Documentation quick start steps include:
+
+      Build the current documentation site locally
+
+      Become familiar with the current site, including:
+
+      Page types and how they are generated
+
+      Changelogs
+
+      Roadmap
+
+      User handbook
+
+      Developer handbook
+
+      Artwork
+
+      Security advisories
+
+      Version specific content in tutorials (like "Improve a plugin")
+
+      Page content sources
+
+      Asciidoc
+
+      HAML / Ruby
+
+      Web components
+
+      Build process
+
+      Makefile
+
+      Docker containers
+
+      Syntax and spelling checks
+
+      Fix several "good first issues"
+
+      Explore jenkins-io-components repo
+
+      Explore Antora
+
+      Review version specific documentation techniques (some of them are Antora sites)
+
+      CloudBees documentation site
+
+      Git reference pages
+
+      Python (sphinx is the generator)
+
+      PyTorch
+
+      TensorFlow
+
+      Skills to Study and Improve
+      Web development
+
+      AsciiDoc
+
+      Static website tooling
+
+      HAML templates
+
+      YAML data files
+
+      Documentation
+
+      Project Difficulty Level
+      Beginner to Intermediate
+
+      Project Size
+      175 to 350 hours
+
+      Expected Outcomes
+      The deliverables of the project would be:
+
+      Iterative and incremental improvements to the site throughout the project
+
+      Demonstration that all the existing pages are rendered in an equivalent way
+
+      Suggestions of improved page design(s)
+
+      A list of all automation that are difficult/impossible to port to the new tool
+
+      Suggestions and demos of alternative ways to solve this
+
+      Demonstration of the versioned documentation automated tooling
+
+      Description of the publication process (how does one contribute to document a new or modified feature)
+
+      Successful migration of revamped jenkins.io website to replace website using old tooling
+
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      New Features
+      Improved layout of the existing site and its pages. New jenkins.io website.
+
+      Newbie Friendly Issues
+      Basically any good-first-issue listed in the jenkins.io GitHub repo would do. These can be accessed at the GitHub repo issues tracker with the "good first issue" label.
+
+      Potential Mentors 
+      Kris Stern
+      Kris Stern
+      Bruno Verachten
+      Bruno Verachten
+      Kevin Martens
+      Kevin Martens
+      Rajiv Ranjan Singh
+      Rajiv Ranjan Singh
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
+      ~~~~~~~~~~
       Domain-specific LLM based on actual Jenkins usage using ci.jenkins.io data
       To develop a web app using an existing open-source LLM model with Jenkins usage data collected for domain-specific Jenkins knowledge to be fine-tuned.
       Potential Mentor(s):
@@ -16043,12 +16284,130 @@ organizations:
       Shivay Lamba
       Vutukuri Sreenivas
       Infra Python, JavaScript/TypeScript, React.js, LLM, AI/ML, Jenkins, Ollama, LangChain, UI, Infra statistics, Data Analytics
+      Background
+      This full-stack project focuses on a proof-of-concept (PoC) idea to fine-tune an existing open-source LLM model (such as Llama 2) with domain-specific Jenkins data to be compiled, wrangled, and processed by the contributor as a part of an AI-driven application, to develop a minimalistic UI for the user to interact with the LLM as a complete end-to-end product. The main source of raw data will be the publicly available ci.jenkins.io datasets. It is expected that there will be two parts of the project: the first part which is to analyze the ci.jenkins.io data using machine learning techniques, and the second part which is to "ingest" the knowledge gained via part one to fine-tune an existing LLM model to help with any infra-related troubleshooting tasks. The contributor will get to be involved in every step of the application development process, from data collection, wrangling, and processing to fine-tuning the model and developing the UI. Unlike the very similar GSoC 2024 LLM counterpart, this project is very research-focused and data-driven, and will be a lot more difficult to achieve a successful outcome. We will build on the completed work available via GitHub at https://github.com/jenkins-infra/Enhancing-LLM-with-Jenkins-Knowledge/. It is expected that some benchmarking will be conducted by the GSoC contributor selected towards the end of the project to gauge the effectiveness of the work completed, which will also serve as a basis for future similar projects.
+
+      Summary
+      Strategy: Test failure analysis based on the test data from ci.jenkins.io
+
+      Help the user with failure diagnosis
+
+      Is the failure due to infra?
+
+      Is the failure due to a code change?
+
+      Is the failure due to an unreliable test (“flaky test”)?
+
+      Sample repositories and use cases
+
+      Jenkins core
+
+      Jenkins acceptance test harness
+
+      Jenkins plugin BOM
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Project Size
+      175 - 350 hours
+
+      Project Difficulty
+      Intermediate to Advanced
+
+      Quick Start
+      Become familiarized with the flow of the GSoC 2024 LLM project. We will reference the source code from the GSoC 2024 LLM project at its official repo on GitHub.
+
+      Potential Mentors 
+      Kris Stern
+      Kris Stern
+      Harsh Pratap Singh
+      Harsh Pratap Singh
+      Shivay Lamba
+      Shivay Lamba
+      Vutukuri Sreenivas
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
+      ~~~~~~~~~~
       Improving Tekton Client Plugin for Jenkins
       Enhance the Jenkins Tekton Client Plugin to improve cloud-native CI/CD interoperability and user experience.
       Potential Mentor(s):
       Vibhav Bobade
       Kris Stern
       Plugins Java, Kubernetes, Tekton, Jenkins
+
+      Project goal: Enhance the Jenkins Tekton Client Plugin to improve cloud-native CI/CD interoperability and user experience
+
+      Skills to study/improve: Java, Kubernetes, Tekton, Jenkins
+
+      Details 
+      Background
+      The Tekton Client Plugin enables Jenkins to interact with Tekton, a powerful and flexible cloud-native CI/CD framework. This project aims to enhance the plugin’s capabilities, improve its integration with the Jenkins ecosystem, and provide a better user experience for cloud-native CI/CD workflows.
+
+      Key areas for improvement include:
+
+      Support any version of Tekton Pipeline by dynamically loading the appropriate Tekton client version
+
+      Support for other Tekton resources such as Tekton Chains, Triggers, and EventListener
+
+      Stretch goals:
+
+      Convert existing Jenkins Pipeline steps to use the Tekton Client Plugin (translating the DSL to the Tekton Pipeline YAML)
+
+      Skills to Study and Improve
+      Java development
+
+      Jenkins plugin development
+
+      Kubernetes and cloud-native technologies
+
+      Tekton Pipelines and Custom Resources
+
+      REST API integration
+
+      Testing frameworks (JUnit, MockK)
+
+      Technical documentation
+
+      Project Size
+      175 - 350 hours
+
+      Project Difficulty Level
+      Intermediate
+
+      Expected Outcomes
+      Enhanced Tekton Client Plugin with improved features and stability
+
+      Better integration with Jenkins Pipeline and Configuration as Code
+
+      Comprehensive documentation and examples
+
+      Improved test coverage
+
+      Regular releases with new features and bug fixes
+
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Vibhav Bobade
+      Kris Stern
+      Kris Stern
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
+      
+      ~~~~~~~~~~
       Improving Plugin Modernizer
       Improving the Jenkins Plugin Modernizer tool and provide integrations with Jenkins ecosystem.
       Potential Mentor(s):
@@ -16057,12 +16416,114 @@ organizations:
       Sridhar Sivakumar
       Phillipp Glanz
       Tools OpenRewrite, Data structure (Trees) and visitor pattern, Java, Plugin hygiene and migration
+      Project goal: Improving the Jenkins Plugin Modernizer tool and provide integrations with Jenkins ecosystem
+
+      Skills to study/improve: OpenRewrite, Data structure (Trees) and visitor pattern, Java, Plugin hygiene and migration
+
+      Details 
+      Background
+      This project idea is a continuation of the GSoC 2024 Using OpenRewrite Recipes for Plugin Modernization. The current Plugin Modernizer will need to be enhanced to support more modernization recipes and provide integrations with the Jenkins ecosystem.
+
+      Improvements and integration could include:
+
+      Store metadata about the modernization process on Jenkins reports site
+
+      Provide APIs to access the modernization metadata in addition to the existing CLI module (or even run the modernization recipes as a service)
+
+      Generate metadata regularly (using Jenkins infrastructure or GitHub Actions depending on the research done during the project)
+
+      Better integration with the Plugin Health Score to automatically run modernization recipes on plugins with low scores
+
+      Visualize the modernization metadata on Jenkins statistics site
+
+      Any recipe improvements or new recipes that could be added to the tool to improve plugins health
+
+      …​
+
+      Skills to Study and Improve
+      Java
+
+      OpenRewrite
+
+      Plugin refactoring and ecosystem
+
+      Jenkins modernization
+
+      Project Size
+      175 - 350 hours
+
+      Project Difficulty Level
+      Intermediate to Advanced
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Bruno Verachten
+      Bruno Verachten
+      Valentin Delaye
+      Valentin Delaye
+      Sridhar Sivakumar
+      Sridhar Sivakumar
+      Phillipp Glanz
+      Phillipp Glanz
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      ~~~~~~~~~~
       Revamping jenkins.io website Success Stories feature
       To revamp jenkins.io website's Success Stories feature to update both tooling and UI/UX experience with new design.
       Potential Mentor(s):
       Kris Stern
       Bervianto Leo Pratama
       UI/UX Website development, UI/UX design, Geospatial data visualization, Gatsby.js and React.js
+      Project goal: To revamp jenkins.io website's Success Stories feature to update both tooling and UI/UX experience with new design
+
+      Skills to study/improve: Website development, UI/UX design, Geospatial data visualization, Gatsby.js and React.js
+
+      Details 
+      Background
+      The current jenkins.io "Success Stories" feature at https://stories.jenkins.io/ is in need of a revamp to keep it looking sharp and relevant. The project at https://github.com/jenkins-infra/stories/ is in need of modernization tech-stack wise, as we will need to upgrade the React version used to the latest possible (ideally v19) as well as upgrade the versions of most of the dependencies used. Besides, we will need to redesign the layout of its UI/UX including but not limited to the landing page, the story page, the map, etc.
+
+      Moreover, the workflow for users to submit new stories may need to be redesigned and reimplemented, given the context of the Infra Helpdesk issue at https://github.com/jenkins-infra/helpdesk/issues/4392/.
+
+      Skills to Study and Improve
+      Website development
+
+      UI/UX design
+
+      Geospatial data visualization
+
+      Gatsby.js and React.js
+
+      Project Size
+      175 hours
+
+      Project Difficulty Level
+      Beginner to Intermediate
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Kris Stern
+      Kris Stern
+      Bervianto Leo Pratama
+      Bervianto Leo Pratama
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
+      
+      ~~~~~~~~~~
       Swagger / OpenAPI standardization for Jenkins REST API
       Standardizing Jenkins REST API documentation using Swagger or the OpenAPI specifications.
       Potential Mentor(s):
@@ -16072,21 +16533,231 @@ organizations:
       Bervianto Leo Pratama
       Phillipp Glanz
       Tools Swagger / OpenAPI standardization, REST API, Documentation, Automation, Java
-      Draft project ideas
-      In the following list, you can refer to draft project ideas, which are currently under review. The scope of such ideas may change during the discussions, but the idea is accepted in principle. You are welcome to comment on the draft and join the project as a mentor. If you are a GSoC contributor, it is also fine to explore and apply to the draft project ideas.
-      Project Category Skills to study/improve
+
+      Project goal: Standardizing Jenkins REST API documentation using Swagger or the OpenAPI specifications
+
+      Skills to study/improve: Swagger / OpenAPI standardization, REST API, Documentation, Automation, Java
+
+      Details 
+      Background
+      Developers need to know what to expect in terms of responses for each REST API endpoint, so external tools like jenkins-rest can be developed with confidence, and possibly with the help of some REST specification automation. For example, this could be done using the OpenAPI Specification (formerly known as Swagger Specification). Users of the REST API most often want:
+
+      HTTP responses and codes
+
+      Body of message and its format (e.g. JSON, html, etc.)
+
+      Jenkins does not have automated REST API documentation at all at this time. A lot of APIs are contributed from extensions, so there are multiple REST APIs (core and plugins) of varying versions. The goal of this project is to find and implement the extraction of the REST APIs from the sources and generate and publish the REST APIs' respective documentation.
+
+      Project Details
+      Generating the expected HTTP responses is a difficult task. The student is expected to study Jenkins core to identify ways to extract them. For example, they could be extracted from Javadocs and annotations.
+
+      As part of the community bonding and student project proposal phase, the student is expected to make a few proposals on how to specify and generate the REST API for the Jenkins core and for the plugins. In the case the student finds that it is not possible to generate the REST API from a specification, the student should identify why this is not possible. We also ask the student to explore and propose a way to have REST API of plugins generated from a REST API specification. For example, some auto-code could populate what the javadoc would look like in an empty-plugin used by the maven plugin generator.
+
+      The student is also expected to study and propose how the REST API documentation generation could be part of the REST API generator.
+
+      It might be helpful to automatically generate some code for the REST API when the plugin developer creates a plugin for the first time using the plugin skeleton generator. Any methodology created to handle the REST API should be built into the skeleton generator.
+
+      The jenkins core REST API and the plugins own REST API need to be versioned separately. It is suggested to focus first on generating the specification, then later look at the versioning of the REST API. Nested objects make versioning challenging.
+
+      Jenkins users should be easily able to see the REST APIs available for their installed Jenkins. For Jenkins core, this could be done with a URL like: http://localhost/rest/api/1.0. The plugins would have their own REST API path with a version number like: http://localhost/plugin/rest/api/1.0. Plugins and the core would thus have their own version number, and an additional REST API version number. Automated API documentation using the OpenAPI 3.0 specification is part of identifying the API specs.
+
+      More details are in the draft project idea.
+
+      Links
+      There are many examples of such documentation on the web:
+
+      Bitbucket REST API (link to Bitbucket documentation)
+
+      Artifactory REST API (link to Artifactory documentation)
+
+      OpenAPI3 description of the Jenkins REST API: swaggy jenkins (note: the swaggy-jenkins author now recommends OpenAPI (explanation).
+
+      This stackoverflow question talks briefly about generating a REST API spec in WADL format
+
+      A blog post that talks about swagger and WADL
+
+      Making Stapler more declarative discussion leading to a comment on swagger.
+
+      A google group discussion on seeking help on clarifying this proposal
+
+      Plugin skeleton generator
+
+      Jira ticket JENKINS-35808 on generating spec for Jenkins REST API from 2016
+
+      Quick-start
+      Watch the project discussion meeting recording. It summarizes the project and the first possible steps
+
+      Study the Open API specification, go through examples for other services
+
+      Explore ways to index the REST API endpoints in Jenkins and Stapler. It includes @Exported and @ExportedBean annotations, and other methods from the Stapler framework. See the video for the links.
+
+      Newbie-friendly issues
+      Jira Query
+
+      Create an Open API specification for a Jenkins plugin with REST API, add it to the respective plugin repository
+
+      Contribute to documentation of Jenkins REST API, e.g. see the _api.jelly files in the Jenkins Core and plugins
+
+      Javadoc Landing Page — While Javadoc isn’t Rest API, user experience concerns described in INFRA-1717 for Javadoc Landing Page could be re-considered when determining where to publish Rest API accordingly
+
+      Skills to improve/study
+      Java
+
+      REST API
+
+      OpenAPI specification details and automatic generators
+
+      Stapler (more info:https://github.com/jenkins-infra/jenkins.io/pull/2157#issuecomment-471230609)
+
+      Project Difficulty Level
+      Intermediate
+
+      Project Size
+      175 to 350 hours
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Kris Stern
+      Kris Stern
+      Bruno Verachten
+      Bruno Verachten
+      Rajiv Ranjan Singh
+      Rajiv Ranjan Singh
+      Bervianto Leo Pratama
+      Bervianto Leo Pratama
+      Phillipp Glanz
+      Phillipp Glanz
+      Project Links 
+      Gitter
+      Meetings
+      Project idea draft
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
+
+      ~~~~~~~~~~
       Android and/or iOS tutorials in official documentation
       Adding Android and/or iOS tutorials for Jenkins in the official documentation.
       Potential Mentor(s):
       Bruno Verachten
       Kris Stern
       Documentation Documentation, Java, YAML, Android / iOS development, Command line tools
+
+      Project goal: Adding Android and/or iOS tutorials for Jenkins in the official documentation
+
+      Skills to study/improve: Documentation, Java, YAML, Android / iOS development, Command line tools
+
+      NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+      Details 
+      Background
+      Topics such as how to proceed, what are the successful patterns, and what are the pitfalls are poorly documented. It very often requires potential users and Jenkins Administrators to "reinvent the wheel".
+
+      iOS
+      The project idea is to have a clear status of what can be done with Jenkins for iOS app builds now. There are only a few articles here and there about iOS.
+
+      Android
+      For Android development, some experiments are available and were presented publicly.
+
+      The proof of concept could be docker-compose based. It would work under Windows, Linux, Vagrant, macOS (x86 and ARM), and mostly on Gitpod. It should be easily transposable to a production environment. The demo/proof-of-concept would be composed of a Jenkins controller (configured with JCasc), an Android agent, a generic Docker agent, an Android emulator, and an Android device farm (STF).
+
+      The idea is to have a more precise status of what can be done now with Jenkins. We could then amend the existing Android documentation and describe architectures for:
+
+      Standalone Android projects
+
+      Android apps building farms
+
+      Android distro building (customized AOSP)
+
+      Skills to Study and Improve
+      Jenkins technical architecture
+
+      iOS application development
+
+      CI principle and practice
+
+      Android application development
+
+      Docker
+
+      Project Size
+      175 - 350 hours
+
+      Project Difficulty Level
+      Intermediate
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Bruno Verachten
+      Bruno Verachten
+      Kris Stern
+      Kris Stern
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+
+      ~~~~~~~~~~
       Pipeline documentation improvements - Phase 2 and Phase 3
       Improving the navigation and implementation of the Pipeline Steps Reference.
       Potential Mentor(s):
       Kris Stern
       Bervianto Leo Pratama
       Documentation Documentation, Web development, Jenkins plugins
+
+      Pipeline documentation improvements - Phase 2 and Phase 3 
+      Project goal: Improving the navigation and implementation of the Pipeline Steps Reference
+
+      Skills to study/improve: Documentation, Web development, Jenkins plugins
+
+      NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+      Details 
+      Background
+      Continuing from the GSoC 2022 Pipeline Step Documentation Generator project as Phase 2 of that project. More to do during this Phase 2 and the next Phase 3, as we will need to include both the refinement of the detailing and the navigation design. The project will involve the adopting of multiple plugins and improving their Pipeline Steps documentation. The selected contributor is expected to do lots of writing, exploring, testing, but not lots of coding.
+
+      Quick Start
+      Studying all materials relevant to the GSoC 2022 Pipeline Step Documentation Generator project and become familiar with them.
+
+      Skills to Study and Improve
+      Jenkins plugin development life cycle
+
+      Documentation
+
+      Web UI/UX design for documentation
+
+      Testing Jenkins plugins
+
+      Project Difficulty Level
+      Beginner to Intermediate
+
+      Project Size
+      175 to 350 hours (depending on the scope)
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Kris Stern
+      Kris Stern
+      Bervianto Leo Pratama
+      Bervianto Leo Pratama
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+
+      ~~~~~~~~~~
       Improving Jenkinsfile Runner abilities and GitHub Actions
       To investigate the current state of the Jenkinsfile Runner project and to improve its abilities as well as those of GitHub Actions when used in conjunction.
       Potential Mentor(s):
@@ -16094,40 +16765,51 @@ organizations:
       Kris Stern
       Bervianto Leo Pratama
       Tools Java, Jenkinsfile Runner, Docker, GitHub Actions
-      Ongoing discussion
-      These proposals are suggestions from the mailing list, which have not been published as project ideas yet. The feasibility is yet to be defined, and the idea may be dismissed depending on the feedback. Everyone is welcome to participate in the discussion and join as a potential mentor.
-      Project Category
-      Improve this page
-      Report page issue
-      The content driving this site is licensed under the Creative Commons Attribution-ShareAlike 4.0 license.
-      Resources
-      Downloads
-      Blog
-      Documentation
-      Plugins
-      Security
-      Contributing
-      Project
-      Structure and governance
-      Issue tracker
-      Roadmap
-      GitHub
-      Jenkins on Jenkins
-      Statistics
-      Community
-      Forum
-      Events
-      Mailing lists
-      Chats
-      Special Interest Groups
-      𝕏 (formerly Twitter)
-      Reddit
-      Other
-      Code of Conduct
-      Press information
-      Merchandise
-      Artwork
-      Awards
+
+      Project goal: To investigate the current state of the Jenkinsfile Runner project and to improve its abilities as well as those of GitHub Actions when used in conjunction
+
+      Skills to study/improve: Java, Jenkinsfile Runner, Docker, GitHub Actions
+
+      NOTE: This idea is published as a draft under active discussion, but it is confirmed in principle. It is FINE to apply to it. The scope and the suggested implementation may change significantly before the final version is published. Sections like quickstart guide and newbie-friendly issues may be also missing. As a contributor, you are welcome to request additional information and to join the discussions using channels linked on this page.
+      Details 
+      Background
+      This project idea is a continuation of the GSoC 2022 Jenkinsfile Runner Action for GitHub Actions project. The current Jenkninsfile Runner project will need to switch to Spring Security 6, Jetty 12, as well as Jakarta EE 9 as part of its modernization. We would like to encourage more adoption and compatibility with the latest Jenkins version. There are many open issues within this project. We will also need to work on reporting on GitHub checks.
+
+      Skills to Study and Improve
+      Java
+
+      To run Jenkinsfile Runner (an incubating project) to create an action inside Docker
+
+      Docker configuration
+
+      GitHub Actions configuration
+
+      Jenkins modernization
+
+      Project Size
+      175 - 350 hours
+
+      Project Difficulty Level
+      Intermediate to Advanced
+
+      Expected Outcomes
+      Details to be clarified interactively, together with the mentors, during the Contributor Application drafting phase.
+
+      Potential Mentors 
+      Valentin Delaye
+      Valentin Delaye
+      Kris Stern
+      Kris Stern
+      Bervianto Leo Pratama
+      Bervianto Leo Pratama
+      Project Links 
+      Gitter
+      Meetings
+      Organization Links 
+      Jenkins GSoC page - documentation, application guidelines
+      Participate and contribute to Jenkins - landing page for newcomer contributors
+      Newbie-friendly issues - list of organization-wide newbie-friendly issues (use them if there is no links in the project idea)
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -16136,29 +16818,298 @@ organizations:
 
   - organization_id: 72
     organization_name: Jitsi
-    no_of_ideas:
+    no_of_ideas: 11
     ideas_content: |
-      Projects for GSoC 2025
-      Jitsi has decided to apply for Google Summer of Code 2025!
-      Here's the list of project ideas for GSoC 2025! Click on the title for a more detailed description.
+
       Chat Moderation & Editing
+
+   
+      Overview
+      Enhance chat functionality with advanced moderation and editing features.
+
+      Description
+      Improve Jitsi's basic chat by adding moderation tools and editing capabilities. Currently, moderators have limited control, as the chat lacks features like message editing, deletion, and reporting. This project aims to improve usability and moderation.
+
+      Expected outcomes
+      Cover features such as the following:
+
+      Message Control for Moderators – Ability to delete and redact messages, mute and remove participants directly from the chat interface.
+      User Moderation Tools – Moderators can ban users from messaging, issue warnings, shadow ban, and remove participants from the chat.
+      User Reporting System – Allow users to report messages or participants for review.
+      User Message Editing – Users can edit their own messages with version history.
+      Message Search – Enable users to search chat history efficiently.
+      Extra points for a challenge:
+
+      Threaded Replies – Improve conversation structure with message threading.
+      Skills / Technologies
+      JavaScript, React, React Native, Prosody
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Mihaela Dumitru
+
+      Expected project size
+      Medium (175 hours) or Large (350 hours)
+
+      Difficulty
+      Medium
+
+      ~~~~~~~~~~
       Whiteboard Improvements
+
+      Overview
+      Further develop whiteboard capabilities
+
+      Description
+      The current Jitsi whiteboard integration is a fork of Excalidraw. Participants can only share smart objects during collaboration and there is a limit in place to limit memory overload.
+
+      Expected outcomes
+      File Upload Support – Enable users to upload and share files within the whiteboard.
+      Upgrade to Socket.IO 4 – Improve performance and compatibility by updating the underlying real-time communication library.
+      Migrate to a Newer Excalidraw – Upgrade to the latest version for better features and stability.
+      Improve WebSocket Connections – Optimize packet size during real-time collaboration.
+      Skills / Technologies
+      JavaScript, React, Node
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Mihaela Dumitru
+
+      Expected project size
+      Medium (175 hours)
+
+      Difficulty
+      Medium
+
+      ~~~~~~~~~~
       Advanced Audio Settings
+
+      Overview
+      Provide in-meeting settings for advanced audio controls such as Acoustic Echo Cancellation (AEC), Noise Suppression (NS), Gain Control (AGC) and Stereo.
+
+      Description
+      In Jitsi Meet there is a possibility to configure a given deployment to provide no audio filtering at all by disabling AEC, AGC and NS, and even enable stereo audio. It is not possible, however, to do this easily from the web UI.
+
+      This project aims at makint it easier for those who need there to tweak the settings from an advanced section in the user interface available to the user.
+
+      Expected outcomes
+      New advanced section in the audio settings dialog with all the aforementioned settings
+      Skills / Technologies
+      JavaScript, TypeScript, WebRTC (not strictly necessary)
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Jaya Allamsetty
+
+      Expected project size
+      Medium (175 hours)
+
+      Difficulty
+      Medium
+
+
+
+      ~~~~~~~~~~
       Picture-in-Picture for iOS
+      Overview
+      Jitsi Meet is available for mobile platforms on Android and iOS. Android already has a native Picture-in-Picture (PiP) implementation; this project aims to provide equivalent functionality on iOS.
+
+      Description
+      The Android and iOS Jitsi Meet apps have feature parity, but sometimes due to platform differences features are not available on one of the platforms. This is the case of PiP in iOS. Thanksfully support for it was added to react-native-webrtc, so this project is about integrating that support into the Jitsi Meet iOS app.
+
+      Expected outcomes
+      iOS app with support for PiP
+      Background camera support for iOS
+      Skills / Technologies
+      JavaScript, TypeScript, React, React Native, iOS
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Calin-Teodor Chitu
+
+      Expected project size
+      Medium (175 hours) or Large (350 hours)
+
+      Difficulty
+      Medium
+
+
+
+      ~~~~~~~~~~
       Jitsi Videobridge JavaScript client
+
+      Overview
+      JavaScript library for communicating with the Jitsi Videobridge.
+
+      Description
+      The JVB is the heart of Jitsi Meet. It's the entity responsible for video routing.
+
+      Jitsi Meet uses many more components than the JVB, connecting them via XMPP. This setup may not be desirable for everyone so a low level library that can connect to the JVB directly would give developers the ultimate flexibility to use our video router, without having to buy into the entire ecosystem.
+
+      Expected outcomes
+      TypeScript library which can communicate with the JVB and negotiate media sessions
+      Sample "meetings app" using the previously built library and socket.io for signalling
+      Skills / Technologies
+      JavaScript, TypeScript, socket.io (not strictly necessary)
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Boris Grozev
+
+      Expected project size
+      Medium (175 hours) or Large (350 hours)
+
+      Difficulty
+      Medium
+
+      ~~~~~~~~~~
       lib-jitsi-meet in TypeScript
+
+      Overview
+      lib-jitsi-meet is the low level JavaScript library that takes care of all signalling and media negotiation for Jitsi Meet. It's partially written in TypeScript and now is a good time to make that 100%!
+
+      Description
+      lib-jitsi-meet (LJM) is the low level library that was spun off the Jitsi Meet project so it can also be consumed standalone. Over time parts of it were migrated to TS but it's not 100% there.
+
+      We'd like to fully move to TS so we can better document its public API and typings, and get a better development experience by using the generated type information.
+
+      Expected outcomes
+      lib-jitsi-meet in TypeScript
+      Automated typings package generation and publication
+      Skills / Technologies
+      JavaScript, TypeScript
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Jaya Allamsetty, Hristo Terezov
+
+      Expected project size
+      Medium (175 hours) or Large (350 hours)
+
+      Difficulty
+      Medium
+
+      ~~~~~~~~~~
       Virtual Backgrounds, take 2
+
+      Overview
+      Improve the virtual backgrounds in Jitsi Meet so they perform as good as possible.
+
+      Description
+      The current implementation for virtual backgrounds relies on a WASM build of Tensor Flow Lite (tflite) which predates the release of MediaPipe.
+
+      This project consists of migrating away from this package to MediaPipe and making performance oriented changes to make sure the quality is a good as it can be. A non exhaustive list of potential improvements: use WebGL for rendering, use requestVideoFrameCallback for driving the render, use insertable streams.
+
+      Expected outcomes
+      A do-over of the feature, with higher quality than today
+      Skills / Technologies
+      JavaScript, TypeScript
+
+      Possible mentors
+      Saúl Ibarra Corretgé
+
+      Expected project size
+      Medium (175 hours)
+
+      Difficulty
+      Medium
+
+
+
+      ~~~~~~~~~~
       Integrated AI services with Skynet
+
+      Overview
+      Provide an integrated experience across Jitsi Meet, Jigasi and Skynet for an integrated AI services approach that includes meeting transcriptions and summaries.
+
+      Description
+      Jitsi Meet already has support for AI assisted transcriptions and summaries by combining Jigasi and Skynet. There is, however no out-of-the-box way to set it up. This project aims to provide that experience with some Docker configuration and a new small full-stack solution to glue all the services together.
+
+      Expected outcomes
+      New Docker configuration to run Skynet
+      New backend service to store and process transcriptions
+      New frontend service to browse past meetings history
+      Skills / Technologies
+      JavaScript, TypeScript, Python, Docker
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Razvan Purdel, Tudor Avram
+
+      Expected project size
+      Medium (175 hours)
+
+      Difficulty
+      Medium
+
+
+
+      ~~~~~~~~~~
       Meeting stats with rtcstats
+
+      Overview
+      Provide an integrated way for people self-hosting Jitsi Meet to have an insight into their meeting stats with rtcstats.
+
+      Description
+      With rtcstats one can get lots of information about meeting quality, logs, etc. It's what we've been using in production for quite a while. The project is fully open source, but there is no simple way for self-hosters to deploy in their own premises. This project aims to make that job easier by providing an integrated approach.
+
+      Expected outcomes
+      New MongoDB connector for rtcstats
+      Integration with the Docker setup
+      Skills / Technologies
+      JavaScript, TypeScript, MongoDB (not necessary), Docker
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Andrei Gavrilescu
+
+      Expected project size
+      Medium (175 hours)
+
+      Difficulty
+      Medium
+
+      ~~~~~~~~~~
       Audio Switchboard API
+      Overview
+      Design and implement a protocol and an API to allow participants in a Jitsi Meet conference to use different audio channels.
+
+      Description
+      Jitsi Meet clients use a very flexible constraints API to select which video streams in a conference they want to receive. However, audio is not configurable: endpoints always receive all audio streams (optionally filtered by loudness).
+
+      The goal of this project is to build the lower level functionality to allow endpoints more control over what they receive. This would allow various exciting features to be implemented on top of it: live translation layers, lightweight breakout rooms, whispering, etc.
+
+      Expected outcomes
+      A protocol between a client and Jitsi Videobridge to publish/subscribe audio channels
+      Audio filtering in Jitsi Videobridge based on channels
+      [Optional: A javascript API that allows clients to change the audio channels they receive/send]
+      Skills / Technologies
+      Kotlin, Java, JavaScript
+
+      Possible mentors
+      Boris Grozev, Saúl Ibarra Corretgé
+
+      Expected project size
+      Large (350 hours)
+
+      Difficulty
+      Hard
+
+      ~~~~~~~~~~
       Removing "ghost" participants on reconnections
-      Interested in applying for a project?
-      Make sure to read the GSoC advice pages to see how to get started, and check out the Jitsi handbook to get yourself more familiarized with Jitsi.
-      Think about preparing a draft proposal, but note that:
-      The participating organizations have not been announced yet, so we don't know whether Jitsi will participate this year.
-      Proposals or drafts shouldn't be shared publically to avoid being plagiarized. Stay tuned on details on how to share drafts with the Jitsi team privately.
-      Do you have a suggestion for a new project?
-      If you have a suggestion for a project that's not on our list, feel free to create an issue in this repository.
+
+      Overview
+      Detect reconnections due to failure and kick out the "ghost" participant from the previous connection.
+
+      Description
+      Jitsi Meet is subject to network connection problems, variance. A particularly annoying problem happens when a user reconnects after a connection failure. A new tile will appear, but the previous one, for the (now dead) connection will remain there for 1-3 minutes, until the connection is presumed fully dead and it gets kicked. We refer to these user tiles as "ghosts". This situation can be optimized if we detect a user is reconnecting and can automatically replace the ghost tile with the new real one.
+
+      Expected outcomes
+      TypeScript code handling this problem
+      Skills / Technologies
+      JavaScript, TypeScript
+
+      Possible mentors
+      Saúl Ibarra Corretgé, Damyan Minkov
+
+      Expected project size
+      Medium (175 hours)
+
+      Difficulty
+      Medium
+
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -16167,46 +17118,9 @@ organizations:
 
   - organization_id: 73
     organization_name: Joomla!
-    no_of_ideas:
+    no_of_ideas: 4
     ideas_content: |
-      GSoC 2025 Project Ideas
-      From Joomla! Documentation
-      Build your website for just $3.88/mth. More value and performance with Namecheap.
-      ADS VIA CARBON
-      Welcome to Joomla GSoC 2025 Projects Page
-      
-      Welcome to the Joomla Google Summer of Code (GSoC) 2025 projects page.
-      If you are interested in participating as a student please review the materials on applying that are available at Google. We strongly encourage you to ask questions about process and projects on our Mattermost chat tool.
-      Note: The GSoC 2025 projects are displayed in no particular order
-      Contents
-      1 Project I: API Improvements
-      1.1 Project Description
-      1.2 Knowledge Prerequisite
-      1.3 Expected Outcome
-      1.4 Difficulty
-      1.5 Project Hours
-      1.6 Mentors
-      2 Project II: Workflow enhancements
-      2.1 Project Description
-      2.2 Knowledge Prerequisite
-      2.3 Expected Outcome
-      2.4 Difficulty
-      2.5 Project Hours
-      2.6 Mentors
-      3 Project III: Weblinks enhancements
-      3.1 Project Description
-      3.2 Knowledge Prerequisite
-      3.3 Expected Outcome
-      3.4 Difficulty
-      3.5 Project Hours
-      3.6 Mentors
-      4 Project IV: Joomla! AI framework
-      4.1 Project Description
-      4.2 Knowledge Prerequisite
-      4.3 Expected Outcome
-      4.4 Difficulty
-      4.5 Project Hours
-      4.6 Mentors
+     
       Project I: API Improvements[edit]
       #SECURITY
       Project Description[edit]
@@ -16232,6 +17146,8 @@ organizations:
       Project Hours[edit]
       [350 Hrs]
       Mentors[edit]
+
+      ~~~~~~~~~~
       Project II: Workflow enhancements[edit]
       Project Description[edit]
       With Joomla! 4.0 a workflow extension was implemented. It supports a powerful workflow mechanism to manage articles in Joomla! This project should help to improve the user experience of the workflow by checking other solutions, what is “the state of the arts” today and implement a proper UI solution for Joomla!
@@ -16247,6 +17163,8 @@ organizations:
       Project Hours[edit]
       [350 Hrs]
       Mentors[edit]
+
+      ~~~~~~~~~~
       Project III: Weblinks enhancements[edit]
       Project Description[edit]
       A few years ago the weblink extension was extracted from the core and maintained in an extra repository. Over time the code was not kept up-to-date and does not cover all the standards.
@@ -16263,6 +17181,8 @@ organizations:
       Project Hours[edit]
       [175 Hrs]
       Mentors[edit]
+
+      ~~~~~~~~~~
       Project IV: Joomla! AI framework[edit]
       Project Description[edit]
       AI is here, so Joomla! should start offering a framework to get AI support into Joomla! The task of this project is to check out best practice examples on the internet and come up with a proposal for a basic AI framework.
@@ -16288,61 +17208,9 @@ organizations:
 
   - organization_id: 74
     organization_name: KDE Community
-    no_of_ideas:
+    no_of_ideas: 23
     ideas_content: |
-      GSoC/2025/Ideas
-      Page
-      Discussion
-      Read
-      View source
-      View history
-      Tools
-      Appearance hide
-      Text
-      Small
-      Standard
-      Large
-      Width
-      Standard
-      Wide
-      < GSoC | 2025
-      Konqi is giving a lesson!
-      See also: GSoC Instructions, Last year ideas
-      Guidelines
-      Information for Students
-      These ideas were contributed by our developers and users. They are sometimes vague or incomplete. If you wish to submit a proposal based on these ideas, you are urged to contact the developers and find out more about the particular suggestion you're looking at.
-      Becoming accepted as a Google Summer of Code student is quite competitive. Accepted students typically have thoroughly researched the technologies of their proposed project and have been in frequent contact with potential mentors. Simply copying and pasting an idea here will not work. Neither generating a proposal with ChatGPT or equivalent! On the other hand, creating a completely new idea without first consulting potential mentors rarely works.
-      When writing your proposal or asking for help from the general KDE community don't assume people are familiar with the ideas here. KDE is really big!
-      If there is no specific contact given you can ask questions on the general KDE development list kde-devel@kde.org. See the KDE mailing lists page for information on available mailing lists and how to subscribe.
-      Note
-      These are all proposals! We are open to new ideas you might have!! Do you have an awesome idea you want to work on with KDE but that is not among the ideas below? That's cool. We love that! But please do us a favor: Get in touch with a mentor early on and make sure your project is realistic and within the scope of KDE.
       
-      Adding a Proposal
-      When adding an idea to this section, please include the following data:
-      if the application is not widely known, a description of what it does and where its code lives
-      a brief explanation (2-5 sentences, do not just put a link to a bug)
-      the expected size of the project (small-90 hours, medium-175 hours or large-350 hours)
-      the expected results
-      pre-requisites for working on your project (skills required/preferred)
-      if applicable, links to more information or discussions
-      mailing list or IRC channel for your application/library/module
-      your name and email address for contact (if you're willing to be a mentor)
-      if possible, an easy, medium or hard rating of the project
-      If you are not a developer but have a good idea for a proposal, get in contact with relevant developers first.
-      Note
-      Follow this template!
-      
-      Project: Something that you're totally excited about
-      Brief explanation: Do you have an awesome idea you want to work on with KDE but that is not among the ideas below? That's cool. We love that! But please do us a favor: Get in touch with a mentor early on and make sure your project is realistic and within the scope of KDE. That will spare you and us a lot of frustration.
-      Expected results: Something you and KDE loves
-      Knowledge Prerequisite: Probably C++ and Qt but depends on your project
-      Duration: Mention one of ~90, ~175 or ~350 hours of effort necessary to finish the project. Use only one of these three project classes and don't come up with other numbers here.
-      Difficulty: Easy, medium or difficult project
-      Mentor: Try to see who in KDE is interested in what you want to work on and approach them. If you are unsure you can always ask in #kde-soc:kde.org on matrix.
-      
-      Ideas
-      Note
-      Only projects as part of KDE can be mentored.
       
       Cantor
       Project: Python virtual environments in Cantor
@@ -16352,6 +17220,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentors: Alexander Semke, Israel Galadima, https://matrix.to/#/#cantor:kde.org
+      ~~~~~~~~~~
+      
       Merkuro
       Project: Port account management to QML
       Brief explanation: Currently Merkuro makes use of QtWidgets dialog for managing the type of resources (accounts), the goal is to port all (or at least a some) of the dialogs to QML
@@ -16360,7 +17230,7 @@ organizations:
       Duration: ~350 hours, but we can discuss to reduce the scopes
       Difficulty: Difficult
       Mentors: Carl Schwan and Aakarsh MJ. Please contact us on #merkuro:kde.org (Matrix) and not via DM
-      
+      ~~~~~~~~~~
       KArchive
       Project: Rewrite Zip backend to use libzip
       Brief explanation: Currently karchive uses home grown code to handle zip files. The code is not very good since it gets confused when it finds token markers in what it is actual compressed data. See https://bugs.kde.org/show_bug.cgi?id=450597
@@ -16369,6 +17239,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Albert Astals Cid <aacid@kde.org>
+
+      ~~~~~~~~~~
       
       Internationalization
       Project: Move translation files to git
@@ -16378,6 +17250,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Medium
       Mentor: Albert Astals Cid/Luigi Toscano, talk to us at https://matrix.to/#/#kde-i18n:kde.org
+
+      ~~~~~~~~~~
       
       Plasma
       Project: Make KWin aware of game controllers
@@ -16387,6 +17261,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Xaver Hugl. Introduce yourself on #kde-input:kde.org (Matrix) and tag user @zamundaaa
+      
+      ~~~~~~~~~~
       Project: Make Plasma Virtual Keyboard production-ready
       Brief explanation: Evolve the current proof of concept into a solution that can be shipped with Plasma by default. Currently it's based on the Qt Virtual Keyboard API [1] [2]. It still needs lots of work and polish first though. That's where you come in!
       Expected results: A virtual keyboard that works well for different languages and can be shipped with Plasma. It should be usable on phones, tablets and the likes.
@@ -16394,6 +17270,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Aleix Pol. Introduce yourself on #kde-input:kde.org (Matrix) and tag user @apol:kde.org
+      
+      ~~~~~~~~~~
       Project: Select & use more than one input method
       Brief explanation: Different users require different ways to input text. Some will need an on-screen keyboard for their tablet, phone, or laptop touchscreen. Some use fcitx5 or IBus to enter complex characters with their keyboard. Some would like to dictate or generate text with the help of an AI model. Some would like all of the above depending on the situation. Plasma on Wayland currently lets you select one input method as "Virtual Keyboard" in System Settings, but ideally we want many input methods to co-exist peacefully.
       Expected results: On the less ambitious end, Plasma and KWin will let you switch between input methods / virtual keyboard on the fly. On the more ambitious end, multiple input methods can be active at the same time so you can e.g. use fcitx5 for physical keyboard input and Maliit or plasma-keyboard as on-screen keyboard.
@@ -16401,6 +17279,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Eike Hein. Introduce yourself on #kde-input:kde.org (Matrix) and tag user @hein:kde.org
+      
+      ~~~~~~~~~~
       Project: Improve input handling in ways that you're totally excited about
       Brief explanation: Input handling is one of the elected KDE Goals and we're looking for all the help we can get. If you have an itch that needs scratching, and none of the other ideas on this page look quite right to you, we're still interested in your contributions. Drop by on our Matrix channel (see below) and let's discuss what your project could look like.
       Expected results: An input-related GSoC application drafted with community input but including many of your own ideas, opinions and planned milestones. Once selected, actually delivering on those plans.
@@ -16408,6 +17288,9 @@ organizations:
       Duration: 90, 175 or 350 hours, depending on what you sign up for
       Difficulty: also depends on the project
       Mentor: Jakob Petsovits (@jpetso:kde.org) and/or other interested KDE people in the #kde-input:kde.org (Matrix) chatroom. Say hi and let's chat!
+      
+      
+      ~~~~~~~~~~
       Plasma Mobile
       Make network related KCMs feature complete with desktop equivalent
       Brief explanation: Currently, Plasma Mobile has its own Wi-Fi, cellular networking and hotspot settings modules. They are very basic, and lack some features compared to their desktop equivalents (ex. enterprise Wi-Fi security). The desktop has a very functional networking settings module, but it has a large codebase and complex UI that is not easy to adapt to mobile usage.
@@ -16417,6 +17300,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Carl Schwan and rest of Plasma mobile team. https://matrix.to/#/#plasmamobile:kde.org
+
+      ~~~~~~~~~~
       KDE Linux
       Kirigami ISO Image Writer
       Brief explanation: Create a GUI in Kirigami for ISO Image Writer: https://invent.kde.org/kde-linux/kde-linux/-/issues/132
@@ -16425,6 +17310,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       Backup Prototype
       Brief explanation: Backuping its data is important to not lose them. Whether it's duplicating locally, on the same network or on an external server to be able to retrieve them in case of bad manipulation or incident. The tool should also be robust and trustable (when it says it copied, it really copied). The projects aims to create a prototype which satisfies these conditions: https://invent.kde.org/kde-linux/kde-linux/-/issues/131
       Expected results: A prototype for a local backup solution that is robust
@@ -16432,6 +17319,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       CVE/Security Tracker
       Brief explanation: Security is one of the core values that matters to people. When we install software, we should know if the version has known vulnerabilities and if we can update it to a version that have it fixed. This project aims to create a solution that will allow to track them: https://invent.kde.org/kde-linux/kde-linux/-/issues/134
       Expected results: A system that can track security advisories. Ideally a web based solution.
@@ -16439,6 +17328,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       Recovery Infrastructure
       Brief explanation: When your computer crash or do not start, you'd like to recover as much as you can. The aim of the task is to create a tool that would allow to recover this data: https://invent.kde.org/kde-linux/kde-linux/-/issues/135
       Expected results: A prototype of a system/application to help users and OEMs recover a broken system, or at least its data.
@@ -16446,6 +17337,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       Replication Infrastructure
       Brief explanation: When you change computer, you may want to keep some data: installed applications, configuration files, personal data... The aim of the project is to create a tool that will allow to synchronise data between two machines: https://invent.kde.org/kde-linux/kde-linux/-/issues/136
       Expected results: A prototype of a system/application to help users replicate (or move) from one system to another.
@@ -16453,6 +17346,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       Karton
       Brief explanation: KDE has developed its own virtual machine application. The aim of the project is to create a Kirigami graphical interface to the tool: https://invent.kde.org/kde-linux/kde-linux/-/issues/133
       Expected results: A polished Kirigami-based virtual machine application that can replace virt-manager and virtualbox for most users.
@@ -16460,6 +17355,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Difficult
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       Automatic Testing
       Brief explanation: The goal of this project is to develop automated tests which will allow to detect regressions before pushing new features/tools to the user: https://invent.kde.org/kde-linux/kde-linux/-/issues/79.
       Expected results: Fully automated tests to detect regressions in KDE Linux
@@ -16467,6 +17364,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Medium
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       Website
       Brief explanation: KDE Linux needs to have a website. There are already some websites in KDE done with Hugo. The aim of the task is to create a website for KDE Linux, including multiple infos such as Downloads links, Community links... More details can be found at https://invent.kde.org/kde-linux/kde-linux/-/issues/92
       Expected results: A swanky website for KDE Linux using Hugo
@@ -16474,6 +17373,8 @@ organizations:
       Duration: ~90 hours
       Difficulty: Easy
       Mentor: Harald Sitter et al. https://matrix.to/#/#kde-linux:kde.org
+
+      ~~~~~~~~~~
       KDE Games
       Mankala: Bao La Kiswahili
       Brief explanation: Add Bao La Kiswahili and create a computerized opponent with various levels of difficulty for it. Explore the use of machine learning algorithms in creating a computerized opponent. Code can be found at https://invent.kde.org/joaotgouveia/mankala.
@@ -16482,6 +17383,8 @@ organizations:
       Duration: ~175 hours
       Difficulty: Medium
       Mentor: Benson Muite, João Gouveia contact through https://matrix.to/#/#mancala:kde.org
+
+      ~~~~~~~~~~
       Misc
       Project: Add more fuzzed libraries to oss-fuzz
       Brief explanation: oss-fuzz is a SAS for fuzzying code. We have a few libraries there (karchive, kimagefomats, kcodecs), but we should add more since we have quite some code that processes file formats.
@@ -16490,6 +17393,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Medium
       Mentor: Albert Astals Cid <aacid@kde.org>
+
+      ~~~~~~~~~~
       GCompris
       Project: Enhancing GCompris Server with GUI Sub-Programs for Dataset Creation
       Project Overview: This project aims to enhance the GCompris server by integrating a set of GUI-based sub-programs specifically designed for teachers. These tools will facilitate the creation of new datasets for various educational applications.The applications targeted for dataset expansion include:
@@ -16507,6 +17412,8 @@ organizations:
       Duration: ~175 hours
       Difficulty: Middle
       Mentor: Emmanuel Charruau, Johnny Jazeix (contact on Matrix KDE Webchat)
+
+      ~~~~~~~~~~
       Kdenlive
       Project: Improving Kdenlive timeline markers
       Brief explanation: Kdenlive already allows the user to add markers to the timeline and inside clips. The idea is to update the current code to add a duration attribute to the markers. With this change, markers will be able to represent a time range with a start and an end time, which will unlock some nice new features. See this issue for more technical details.
@@ -16516,6 +17423,8 @@ organizations:
       Difficulty: Medium
       Mentor: Jean-Baptiste Mardelle (https://matrix.to/#/@j-b-m:matrix.org)
       Marknote
+
+      ~~~~~~~~~~
       Project: Implement block editor
       Brief explanation: Implement a basic block editor where each elements from markdown is transformed into a block which can be drag-and-dropped.
       Inspiration can be taken from https://rubymamistvalove.com/block-editor
@@ -16524,6 +17433,8 @@ organizations:
       Duration: ~350 hours
       Difficulty: Medium
       Mentor: Carl Schwan (https://matrix.to/#/#marknote:kde.org)
+
+      ~~~~~~~~~~
       digiKam
       Project: Interface the database search engine to an AI based LLM
       Brief explanation: The digiKam photo management program already allows the user to search items over the collections using a database. Many powerful search tools can find items by many criteria such as metadata, aesthetic contents, face, place, date, hierarchical keywords, etc. The idea is to add a new top-level interface where users can enter a human phrase which describes the contents to search. With this change, the searches can be user-friendly to use without having to pass plenty of settings used to tune the engine. The LLM must be included in the application, without using an external web-service, as it's not permitted to share data over the Internet. All the new implementations must be written in C++, not Python.
@@ -16541,18 +17452,9 @@ organizations:
 
   - organization_id: 75
     organization_name: Keploy
-    no_of_ideas:
+    no_of_ideas: 6
     ideas_content: |
-      Google Summer of Code'25 Participant Guide
-      Communication
-      Welcome to the Keploy GSoC'25 projects page. We encourage candidates to come up with their own project idea. Join our Slack Channel and stay tuned for updates.
-      Use our Template for the proposal. We recommend the use of google docs for the proposal.
-      General suggestions and warnings
-      Project ideas describe the goals we want to achieve but may miss details that have to be defined during the project: we expect students to do their own research, propose solutions and be ready to deal with uncertainty and solve challenges that will come up during the project
-      Code and prototypes are preferred over detailed documents and unreliable estimates: rather than using your time to write a very long application document, we suggest to invest in writing a prototype (which means the code may be thrown out entirely) which will help you understand the challenges of the project you want to work on; your application should refer to the prototype or other Github contributions you made to Keploy that show you have the capability to succeed in the project idea you are applying for.
-      Students who have either shown to have or have shown to be fast learners for the required hard and soft skills by contributing to Keploy have a lot more chances of being accepted: in order to get started contributing refer to the :doc:Keploy Contributing Guidelines <keploy/keploy/contributing.md>
-      Get trained in the projects you want to apply for: once applicants have completed some basic training by :doc:contributing to Keploy <keploy/keploy/contributing.md> we highly suggest to start working on some aspects of the project they are interested in applying: all projects listed this year are improvements of existing modules so these modules already have a list of open issues which can be solved as part of your advanced training. It will also be possible to complete some of the tasks listed in the project idea right now before GSoC starts. We will list some easy tasks in the project idea for this purpose.
-      Projects List
+      
       1. AI-Powered Open-Source Code Review Agent (Using any CI/CD workflow)
       Mentors: Hermione, Gourav, Yash, Shubham
       Develop an AI-driven, open-source code review agent that integrates with version control platforms and CI/CD pipelines to provide automated feedback on coding style, security vulnerabilities, and best practices. Use any CI/CD runners and open-source static analysis tools to improve the developer experience in open-source projects.
@@ -16577,6 +17479,8 @@ organizations:
       GolangCI-Lint
       Time Estimate : 350 hours
       Difficulty : Hard
+
+      ~~~~~~~~~~
       2. OSS Code Indexer for Efficient Retrieval
       Mentors: Shivam, Charan, Sarthak, Shubham Jain
       Goals & Ideas Develop an efficient code indexing system that enables fast and scalable code search and retrieval. The system will integrate open source unit test geneartion with a Retrieval-Augmented Generation (RAG) indexer, utilizing vector and graph databases to improve query efficiency and relevance. The goal is to create a robust and scalable solution that can handle large open-source codebases and enable better code discovery, navigation, and reuse.
@@ -16606,6 +17510,8 @@ organizations:
       Use Gemini AI (Google’s LLM) to generate better test cases from indexed OSS codebases.
       Time Estimate : 350 hours
       Difficulty : Medium
+
+      ~~~~~~~~~~
       3. TestSuite Idempotency Checker
       Mentors: Animesh, Sarthak Shyngle, Neha Gupta
       Description: Ensuring idempotency in test suites is crucial for reliable and repeatable testing. This project focuses on analyzing test cases to identify operations that should be idempotent, it will help in detecting noisy parameters and inconsistencies which may lead to flaky tests.
@@ -16629,6 +17535,8 @@ organizations:
       Idempotent Message Validator
       Time Estimate : 350 hours
       Difficulty : Medium
+
+      ~~~~~~~~~~
       4. Improve Keploy Open-Source Playground console
       Mentors: Aditya Sharma, Shivam Jha, Tvisha Raji, Manas, Neha Gupta
       Description
@@ -16651,6 +17559,8 @@ organizations:
       Meshery Playground
       Time Estimate : 350 hours
       Difficulty : Medium
+
+      ~~~~~~~~~~
       5. API contract matching - Adding Features and Platform support
       Mentors: Gourav Kumar, Charan Kamarapu, Ahmed Lotfy, Shubham Jain
       Description: The goal of this project is to enhance the functionality of contract testing by adding new features and improving existing capabilities. This includes better schema storage, consolidation, and validation, along with exploring a provider-driven approach as a future enhancement.
@@ -16672,6 +17582,8 @@ organizations:
       Identify and Resolve Issues in Keploy Contract Testing Implementation
       Time Estimate : 350 hours
       Difficulty : medium
+
+      ~~~~~~~~~~
       6. App Dashboard with Metrics and Chart
       Mentors: Manas Manohar, Tvisha Raji, Hermione Dadheech, Neha Gupta
       Description
@@ -16694,20 +17606,7 @@ organizations:
       Golang Documentation – For best practices in building scalable Go services.
       Time Estimate : 350 Hours
       Difficulty : Medium
-      Task List : Good First Issue for GSoC aspirants
-      Projects Good First Issue
-      update website themes keploy/keploy#2536
-      keploy/keploy#2535
-      keploy/keploy#2534
-      Improve keploy console keploy/keploy#2551
-      keploy/keploy#2552
-      Integrate RAG Bot with a Vector Database keploy/keploy#2533
-      PR Analysis with Linting & Static Analysis in testGPT keploy/keploy#2532
-      Checking of HTML-Based Test Validation keploy/keploy#2528
-      a GitHub App to Trigger GitHub Actions keploy/keploy#2531
-      Denoise Unexpected Parameters in Keploy Testcases keploy/keploy#2527
-      Implement Idempotency Check for GET Requests keploy/keploy#2526
-      SON Diff viewer re-alignment to top keploy/keploy#2524
+     
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -16717,12 +17616,9 @@ organizations:
 
   - organization_id: 76
     organization_name: Kiwix
-    no_of_ideas:
+    no_of_ideas: 6
     ideas_content: |
-      Google Summer Of Code
-      For the full list of issues you can work on, see our GitHub repositories /openZIM, /offspot and /kiwix
-      GSoC has three sets of projects, lasting ~90, ~175 and ~350 hours approximately so that people who can not work full-time (because of exams or whatnot) can still participate.
-      WP1
+      
       What it is: WP1 is the bot and website that provides tables like this one on English Wikipedia. The tables help editors determine which articles they should focus on in their WikiProjects. The website also provides tools for creating a Wikipedia “selection”, ie a list of articles, so that they can create a ZIM file and have a subsetted offline version of Wikipedia.
       Project A, Combinator Builder: There are currently multiple ways to build a selection, from simple article lists to SPARQL queries. We wish to create a “combinator” builder, which allows a user to combine existing or future builders to create a final selection.
       Deliverables:
@@ -16735,6 +17631,8 @@ organizations:
       Understanding of Vue.js or willingness to learn
       Difficulty: Medium
       Scope: Small (about 90 hours of work)
+
+      ~~~~~~~~~~
       Project B, Scheduled selections/ZIMs: Currently, users create their selections and then manually request/create their ZIM files. However, for certain classes of selections, such as those based on WikiProjects or SPARQL queries, it is possible that the results are stale and there are more recent results available.
       We should provide a way for a user to schedule their selection being processed into a ZIM file (1 month, 3 months, 6 months, 1 year). As part of this process, the user should provide us with an email where we can notify them that their ZIM has been created. We should also remove ZIMs from the schedule if the user doesn’t “claim” them, ie come to the website and download them.
       Deliverables:
@@ -16749,6 +17647,8 @@ organizations:
       Difficulty: Medium-Easy
       Scope: medium (about 120-150 hours of work)
       Interested? Check out the repo.
+
+      ~~~~~~~~~~
       Kolibri UI Revamp
       Some of the content we offer is actually harvested by our friends at Learning Equality. Kolibri2zim is the tool that allows us to package it to the ZIM format. The UI rendition isn’t great and we’d like to fix that.
       Objective: Redo the menu UIs based on a new design. Foundations have already been laid in a Git branch, but some features have not yet been implemented or are missing.
@@ -16761,6 +17661,8 @@ organizations:
       Knowledge of web development and user interface design.
       Difficulty: Medium, but short (90 hours) project
       Interested? Check out the repo!
+
+      ~~~~~~~~~~
       Gutenberg Library UI Revamp
       We provide a ZIM copy of the Gutenberg library but saying that its layout and design is not optimal would be an understatement.
       Objective and deliverable:
@@ -16769,6 +17671,8 @@ organizations:
       Medium (mostly because good developers suck at design, and good designers suck at coding), probably 175 hours.
       Skills required: vue.js
       Look around the gutenberg repository here.
+
+      ~~~~~~~~~~
       TED Talks UI Revamp
       We also provide a ZIM copy of the TED talks, and although it’s not as bad as Gutenberg, it could do better.
       Objective and deliverable:
@@ -16777,21 +17681,15 @@ organizations:
       Medium, probably 175 hours.
       Skills required: vue.js
       Check out the TED repository here.
+
+      ~~~~~~~~~~
       Hotspot Companion
       The Kiwix-hotspot is a neat adaption of the Raspberry pi microserver into a local hotspot that entire classrooms can connect to without having to download anything onto their devices. The hotpost owner downloads content from our library onto a microSD card running the Raspbian OS, and off they go, the hotspot is fully autonomous with Kiwix-server working as a regular http daemon. The problem arises when users want to update the available content, or download usage metrics collected by the hotspot.
       Objective and deliverable: Develop a mobile application prototype serving as a bridge between internet connectivity and the offline mode of a Raspberry Pi-based hotspot. The primary goal is to facilitate efficient data synchronization, allowing users to leverage internet benefits when available while ensuring a seamless offline experience. The application will have a very simple interface enabling users to manage the transfer of data between the remote server and the Raspberry Pi.
       Difficulty: Hard (it touches on many different techs but the good news is we don’t expect more than a working prototype), 350 hours.
       Skills required: mobile, flutter
-      Look around the Offspot repository and meta issue here.
-      Want To Join?
-      Think hard about what you want to do, and go to the Google Summer of Code website between March 24 to April 8, 2025, to register and submit your project idea(s).
-      After reviewing all proposals, students projects will be announced on May 8, 2025. (full timeline)
-      Help & Tips
-      We want to be clear upfront that we will not select candidates who have never made at least one PR to our codebase: we make our choice based on how candidates handle themselves (is the code clear, are there comments, how do they explain their choices when asked, etc.). PRs do not need to be related to the project submitted – we just need to know that you can work in a team. If we don’t know you, we can’t choose you! And if your project has “UI” in it, then it probably is a good idea to submit a mockup of what you plan to implement.
-      (We also wrote a helpgul guide to Writing your Google Summer of Code application)
-      Last but not least: over the years about half the students who did GSoC with Kiwix came up with their own project rather than one from our list – be bold!
-      Do You Have Questions?
-      Then come and join us on our Slack channel!
+      
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -16801,19 +17699,9 @@ organizations:
 
   - organization_id: 77
     organization_name: Kornia
-    no_of_ideas:
+    no_of_ideas: 7
     ideas_content: |
-      ⚠️ ⚠️ [ READ APPLICATION PROTOCOL] ⚠️ ⚠️
-      Projects Index
-      Implement efficient SmolVLM
-      Apriltag and calibration detectors
-      Pointcloud registration algorithms
-      Camera Pose Estimation algorithms
-      Implement GPU image transforms
-      Depth Estimation on Android Using Rust
-      Implement modular VO Slam API
-      ** projects ideas are ordered by soft priority
-      Projects
+      
       Implement efficient Smol VLM
       Description: The aim of this project is to bring State of the Art methods for lightweight Visual Language models into Kornia in Rust. Recently, Hugging Face released a family of small visual language models (SmolVLM) which can be a game changer for the industry to build applications in embedded devices using such AI models.
       Expected Outcomes: The expectation is to implement an API in Rust to integrate the latest SmolVLM model. Evaluate which NN engine suits better for this task, either onnxruntime (via ORT-Pyke) or Candle. It’s expected also to evaluate a native Rust implementation of the model and its feasibility. Tests and benchmarks in both desktop and nvidia jetson are also mandatory as part of the final delivery.
@@ -16825,6 +17713,8 @@ organizations:
       Possible Mentors: Miquel Farre
       Difficulty: Medium
       Duration: 350 hours
+
+      ~~~~~~~~~~
       Apriltag and calibration detectors
       Description: This project aims to implement in Kornia Rust curated detection algorithms useful for localization and calibration purposes. It’s very common to use April tags for camera calibration applications; or corners detectors for more advanced machine vision applications. In the area of visual localization, common algorithms are FAST (because it is really fast), or ORB. With such methods kornia-rs could be used in many robotics applications together with existing foundational libraries such sophus-rs.
       Expected Outcomes: Implement efficient CPU versions of the above detectors with proper testing and benchmarking against common libraries such OpenCV or VPI. It’s expected also as part of the delivery to work together with the author of sophus-rs to show an integration of a calibration system using e.g the april tag detector and/or using FAST features for a Visual SLAM implementation.
@@ -16837,6 +17727,8 @@ organizations:
       Possible Mentors: Edgar Riba
       Difficulty: Hard
       Duration: 350 hours
+
+      ~~~~~~~~~~
       Pointcloud registration algorithms
       Description: This project aims to provide 3D registration capabilities to kornia-rs through pointcloud processing via implement local or global methods such as expanding the family of ICP algorithms with newer state of the art KISS family.
       Improve existing Iterative Closest Point (ICP) for point cloud alignment by adding Point to Normal loss, or evaluate again KISS-ICP.
@@ -16850,6 +17742,8 @@ organizations:
       Possible Mentors: Sergey
       Difficulty: Hard
       Duration: 350 hours
+
+      ~~~~~~~~~~
       Camera Pose Estimation algorithms
       Description: This project aims to enhance kornia-rs's capabilities in 3D registration and pose estimation by implementing and optimizing key algorithms, including:
       Perspective-n-Point (PnP) and Efficient PnP (EPnP) for camera pose estimation
@@ -16873,6 +17767,8 @@ organizations:
       Possible Mentors: Dmytro Mishkin, Daniel Barath
       Difficulty: Hard
       Duration: 350 hours
+
+      ~~~~~~~~~~
       Implement GPU image transforms
       Description: This project has the main objective to improve the existing image transformations in the kornia-imgproc crate which are currently implemented in native CPU to be upgraded to GPU. Ideally, propose a plan to upgrade the functionality in this crate into efficient GPU implementations via CubeCL or similar that can support WGP in native Rust. An example would be geometric sampling transformations like resize, or warp_affine/warp_perspective. Additionally, color transformations and Distance Transform would be very welcomed.
       Expected Outcomes: Finished implementations of the functions with proper documentation, testing and benchmarking against existing libraries such OpenCV or Nvidia VPI. Examples and tutorials are expected as part of the end of the project delivery as testing in Nvidia Jetsons.
@@ -16885,6 +17781,8 @@ organizations:
       Possible Mentors: Edgar Riba; Guillaume (tracel-ai)
       Difficulty: Hard
       Duration: 350 hours
+
+      ~~~~~~~~~~
       Depth Estimation on Android Using Rust
       Description: This project aims to develop an Android application using Rust to perform real-time depth estimation with ONNX Runtime via Rust bindings for ONNX Runtime. By leveraging Rust’s performance efficiency and memory safety, the application will enable on-device AI processing for applications in robotics, augmented reality (AR), SLAM, and 3D scene reconstruction.
       Expected Outcomes:
@@ -16901,6 +17799,8 @@ organizations:
       Possible Mentors: Christie Jacob
       Difficulty: Medium
       Duration: 350 hours
+
+      ~~~~~~~~~~
       Implementation of VO Slam API
       Description: This project aims to build a Visual Odometry (VO) SLAM API in Rust for the Kornia-rs ecosystem, focusing first on an RGB-D pipeline (e.g., iPhone LiDAR data + Prompt DepthAnything for high-resolution, accurate depth) and subsequently extending it to monocular-only VO. The implementation should be efficient, dependency-light, and well-suited for real-time or near–real-time robotics and AR/VR use cases.
       Expected Outcomes: A VO SLAM crate in Rust that is straightforward to integrate with Kornia-rs, starting first with the simpler RGB-D visual odometry pipeline and making progress towards robust monocular visual odometry pipeline in rust.
@@ -16922,76 +17822,10 @@ organizations:
 
   - organization_id: 78
     organization_name: Kotlin Foundation
-    no_of_ideas:
+    no_of_ideas: 11
     ideas_content: |
-      Home
-      Get started
-      Take Kotlin tour
-      Kotlin overview
-      What's new in Kotlin
-      Kotlin evolution and roadmap
-      Basics
-      Concepts
-      Multiplatform development
-      Data analysis
-      Platforms
-      Standard library
-      Official libraries
-      API reference
-      Language reference
-      Tools
-      Compiler and plugins
-      Learning materials
-      Early access preview (EAP)
-      Other resources
-      FAQ
-      Kotlin compatibility guides
-      Kotlin Foundation
-      Google Summer of Code
-      Overview
-      GSoC 2025
-      GSoC 2024
-      GSoC 2023
-      Security
-      Kotlin documentation as PDF
-      Community
-      Kotlin brand assets
-      Press kit
-      Other resources
-      Google Summer of Code
-      GSoC 2025
-      Google Summer of Code with Kotlin 2025
-      Edit pageLast modified: 27 February 2025
-      This article contains the list of project ideas for Google Summer of Code with Kotlin 2025, and contributor guidelines
-      Kotlin resources:
-      Kotlin GitHub repository
-      Kotlin Slack and the #gsoc Slack channel
-      If you got any questions, contact us via gsoc@kotlinfoundation.org
-      Kotlin contributor guidelines for Google Summer of Code (GSoC)
-      Getting started
-      Check out the GSoC FAQ and the program announcement.
-      Familiarize yourself with the Kotlin language:
-      The official Kotlin website is a great place to start.
-      Read the official documentation to get a better understanding of the language.
-      Take a look at the Kotlin courses on JetBrains Academy or the Android team's Training options.
-      Follow the Kotlin X or Kotlin Bluesky accounts to stay up to date on the latest news and developments.
-      Check out the Kotlin YouTube channel for tutorials, tips, and the latest updates.
-      Get to know the Kotlin open source community:
-      Explore the general Kotlin contribution guidelines.
-      Join the Kotlin Slack channel to connect with other developers and get help with any questions you may have.
-      Join the #gsoc channel to ask questions and get support from the GSoC team.
-      How to apply
-      Check out the project ideas and select the one you would like to work on.
-      If you are not familiar with Kotlin, read the introductory info on the Kotlin website.
-      Refer to the GSoC contributor guidelines.
-      Apply via the GSoC website.
-      We suggest that you write a working code sample relevant to the proposed project. You can also show us any code sample that you are particularly proud of.
-      Describe why you are interested in Kotlin and your experience with it.
-      If you participate in open source projects, please reference your contribution history.
-      If you have a GitHub, Twitter account, blog, or portfolio of technical or scientific publications, please reference them as well.
-      Disclose any conflicts with the GSoC timeline due to other commitments, such as exams and vacations.
-      Thank you! We look forward to reading your applications!
-      Project ideas
+     
+     
       Build Server Protocol: add Kotlin support [Hard, 350 hrs]
       The Kotlin team wants to expand official Kotlin support not only for Gradle and Maven build systems, but any other build system as well and support them natively in JetBrains IDE with minimal effort. On the other hand, we also want to provide basic Kotlin support in non-JetBrains IDE – one part of such support is to be able to get Kotlin specific information from any build system supporting Kotlin.
       The solution to these requirements could be a Build Server Protocol (BSP) that provides an abstraction layer between build system and IDE.
@@ -17005,6 +17839,8 @@ organizations:
       Tasks for applicants
       Task #1. Why are you interested in this project?
       Task #2. Practice assignment: create a Gradle plugin which exposes a specific task. This task should on the presence of Kotlin Gradle Plugin get all the Kotlin sources structure and output to the file. Having tests is a bonus
+      
+      ~~~~~~~~~~
       Support Android and iOS targets in Kotlin Multiplatform for an existing Google service [Medium, 175 hrs]
       This project aims to create an open-source Kotlin Multiplatform (KMP) library that supports an existing Google service on at least Android and iOS. This project will showcase best practices in creating KMP libraries for existing services, with a focus on appropriate production implementation (for example, proper API key management, allowing user-managed API keys, client throttling).
       Expected outcomes
@@ -17016,6 +17852,8 @@ organizations:
       Mobile development (Android and iOS)
       Possible mentor
       Matt Dyor, and the Google team
+
+      ~~~~~~~~~~
       Add Kotlin Multiplatform support in Bazel [Hard, 350 hrs]
       Bazel's support for Kotlin is evolving, but proper Kotlin Multiplatform (KMP) integration remains a challenge. This project aims to improve Bazel's KMP support by addressing dependency resolution issues, enhancing rules_kotlin and rules_jvm_external compatibility, and enabling cross-platform builds.
       Key improvements will focus on handling platform-specific dependencies (expect/actual mechanisms), improving Gradle metadata support, and ensuring a smoother developer experience for KMP in Bazel.
@@ -17029,6 +17867,8 @@ organizations:
       Dependency resolution strategies
       Possible mentor
       Shauvik Roy Choudhary, and the Uber team
+      
+      ~~~~~~~~~~
       Kotlin Language Server (LSP) [Hard, 350 hrs]
       The Language Server Protocol (LSP) is a widely adopted standard that enables code intelligence features such as autocompletion, go-to definition, and refactoring across different editors and IDEs. There is currently no official Kotlin LSP server. Uber has developed an internal Kotlin LSP, but a publicly maintained, community-driven implementation can support broader use cases, including code migration, AI-powered code assistance, and seamless integration into various development environments.
       This project aims to develop a Kotlin LSP implementation, ensuring compatibility with key LSP features and broadening Kotlin's accessibility across development environments.
@@ -17051,6 +17891,9 @@ organizations:
       Maven Repositories
       Possible mentor
       Oleg Nenashev, and the Gradle team
+      
+      
+      ~~~~~~~~~~
       Improving Configuration Cache and lock contention in key Gradle plugins [Easy to Hard, 90 hrs to 350 hrs]
       Gradle is working on Isolated Projects – a new feature that greatly extends the configuration cache to further improve performance, particularly the performance of Android Studio and IntelliJ IDEA sync. From the developer experience standpoint, it is one of the most expected features in Gradle.
       One of the problems for Isolated projects is the lock contention in the Gradle core and plugins sometimes getting in the way of parallel execution. We would like to reduce the lock contention, especially in the key Gradle Build Tool plugins for Java, Kotlin, Android, and Kotlin Multiplatform ecosystems. Contributors are welcome to choose the deliverables, based on their interest and the desired project size.
@@ -17070,6 +17913,8 @@ organizations:
       Profiling
       Possible mentor
       Oleg Nenashev, Laura Kassovic
+
+      ~~~~~~~~~~
       Gradle convention plugin for developing Jenkins plugins [Easy to Hard, 90 hrs to 350 hrs]
       There are more than 50 Jenkins plugins that are implemented with Gradle. There is a Gradle JPI plugin, but it is not fully compliant with Jenkins hosting requirements, and needs an update. In this project idea, the aim would be to recover the Gradle developer flow for Jenkins, reach feature parity with the Apache Maven flow (Parent POM, Plugin Compatibility Tester, Jenkins Bill of Materials, and others), and to improve the developer experience for those who develop Jenkins plugins with Gradle.
       Contributors are welcome to choose the deliverables, based on their interest and the desired project size.
@@ -17090,6 +17935,8 @@ organizations:
       Java
       Possible mentor
       Oleg Nenashev, Stefan Wolf
+
+      ~~~~~~~~~~
       Kotlin DSL and Declarative Gradle documentation samples test framework [Easy to Medium, 90 hrs to 175 hrs]
       Many projects, including Gradle, have a lot of Kotlin DSL samples and code snippets (see the Gradle Docs for examples). Testing them against multiple versions poses certain challenges because the snippets often represent incomplete code for the sake of brevity. We would like to build a test framework that simplifies the verification of those samples within a unit test framework (Kotest or JUnit 5) on GitHub Actions or Teamcity. Later we would be interested in doing the same for Declarative Gradle samples.
       Expected outcomes
@@ -17101,6 +17948,8 @@ organizations:
       Static analysis
       Possible mentor
       Oleg Nenashev, Laura Kassovic
+
+      ~~~~~~~~~~
       IntelliJ Platform Gradle Plugin – Gradle Reporting and Parallel Verifications [Medium, 175 hrs]
       The IntelliJ Platform Gradle Plugin, a plugin for the Gradle build system, simplifies configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs. The plugin manages the build, test, and verification steps while keeping up with the constant changes introduced in the IntelliJ Platform. The IntelliJ Platform Gradle Plugin is used by JetBrains, third-party developers, and external companies to integrate their workflows with JetBrains tools.
       Expected outcomes
@@ -17113,6 +17962,8 @@ organizations:
       IntelliJ Platform
       Possible mentor
       Jakub Chrzanowski, JetBrains
+
+      ~~~~~~~~~~
       Add More Kotlin OpenRewrite Recipes [Medium, 175 hrs]
       OpenRewrite is a powerful framework for automating code migrations and refactorings in a structured manner. While OpenRewrite has strong support for Java, the Kotlin ecosystem would benefit from a more comprehensive set of OpenRewrite recipes to help developers seamlessly migrate their codebases.
       Expected outcomes
@@ -17123,6 +17974,8 @@ organizations:
       Java-to-Kotlin migration strategies
       Possible mentor
       Shauvik Roy Choudhary, and the Uber team
+
+      ~~~~~~~~~~
       Add BOM Support to Bazel rules_jvm_external [Hard, 350 hrs]
       Bazel's rules_jvm_external provides a structured way to declare external Java dependencies, but it currently lacks proper support for Bill of Materials (BOM) files. BOM files are widely used in Maven and Gradle to manage dependencies in a consistent manner without requiring developers to specify individual versions. This project aims to enhance rules_jvm_external by adding BOM support, allowing developers to use BOM-based dependency resolution within Bazel. The project may involve contributing to an existing open-source effort or implementing BOM support directly in rules_jvm_external, ensuring compatibility with widely used dependency management approaches.
       Expected outcomes
@@ -17135,6 +17988,8 @@ organizations:
       Dependency resolution strategies
       Possible mentor
       Shauvik Roy Choudhary, and the Uber team
+
+      ~~~~~~~~~~
       Clean and actionable reporting for Gradle code quality plugins for Kotlin [Easy to Medium, 90 hrs to 175 hrs]
       Gradle recently introduced a new Problems API that allows Gradle and third-party plugins to propagate issues and warnings in a unified way. This API provides clean and actionable error reporting and more insights into the console output, dedicated HTML reports, and connected observability tools. IDEs, such as IntelliJ IDEA or Android Studio, also have access to the details via Gradle's tool integration API, and can show warnings right in the code editorI. Several core features and plugins have already adopted the Problems API: Java compilation, dependency resolution errors, deprecation warnings, etc. We want the code quality plugins for Kotlin to adopt this API, too; it would greatly improve the developer experience for 100,000+ Kotlin developers using Gradle.
       In this project, we invite contributors to choose a number of Kotlin code quality plugins, such as Ktlint, Detekt, Diktat, ArchUnit, or Checkstyle for Kotlin, and integrate them with Problems API. You can also work on integrating a similar analysis for Gradle builds defined with KotlinDSL.
@@ -17145,30 +18000,8 @@ organizations:
       Gradle
       Possible mentors
       Oleg Nenashev, Balint Hegyi, Reinhold Degenfellner
-      Was this page helpful?
-      YesNo
-      Google Summer of Code with Kotlin 2025
-      Kotlin contributor guidelines for Google Summer of Code (GSoC)
-      Getting started
-      How to apply
-      Project ideas
-      Build Server Protocol: add Kotlin support [Hard, 350 hrs]
-      Support Android and iOS targets in Kotlin Multiplatform for an existing Google service [Medium, 175 hrs]
-      Add Kotlin Multiplatform support in Bazel [Hard, 350 hrs]
-      Kotlin Language Server (LSP) [Hard, 350 hrs]
-      Maven Central publishing plugin for Gradle with new APIs [Medium, 175 hrs]
-      Improving Configuration Cache and lock contention in key Gradle plugins [Easy to Hard, 90 hrs to 350 hrs]
-      Gradle convention plugin for developing Jenkins plugins [Easy to Hard, 90 hrs to 350 hrs]
-      Kotlin DSL and Declarative Gradle documentation samples test framework [Easy to Medium, 90 hrs to 175 hrs]
-      IntelliJ Platform Gradle Plugin – Gradle Reporting and Parallel Verifications [Medium, 175 hrs]
-      Add More Kotlin OpenRewrite Recipes [Medium, 175 hrs]
-      Add BOM Support to Bazel rules_jvm_external [Hard, 350 hrs]
-      Clean and actionable reporting for Gradle code quality plugins for Kotlin [Easy to Medium, 90 hrs to 175 hrs]
-      Google Summer of Code with Kotlin
-      Google Summer of Code with Kotlin 2024
-      Contributing to KotlinReleasesPress KitSecurityBlogIssue TrackerCareersKotlin MerchOpt-Out
-      Kotlin™ is protected under the Kotlin Foundation and licensed under the Apache 2 license.
-      Supported and developed by JetBrains
+
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -17178,21 +18011,9 @@ organizations:
 
   - organization_id: 79
     organization_name: KubeVirt
-    no_of_ideas:
+    no_of_ideas: 4
     ideas_content: |
-      Google Summer of Code 2025
-      "Google Summer of Code (GSoC) is a global, online program that brings new contributors into open source software organizations." - Google Summer of Code Contributor Guide
-      The KubeVirt community is applying to be a Google Summer of Code organization, to provide mentorship opportunity to applicants interested in learning about open source software development in the cloud native ecosystem.
-      See the Google Summer of Code website for more information about the program.
-      Key Dates
-      Feb 27: List of accepted organizations announced
-      Feb 27 - Mar 24: Potential contributors discuss project application ideas with organizations
-      Apr 8: Contributor application deadline
-      May 8 - June 1: Community Bonding Period
-      June 2 - Sep 1: The Summer of Code!
-      See the Google Summer of Code timeline for more detailed timeline information.
-      Project Ideas
-      KubeVirt is proposing the following project ideas as starting points for GSoC contributors to develop their own project applications.
+
       1. Dynamic attachment and removal of filesystem volumes
       GitHub issue: https://github.com/kubevirt/community/issues/384
       Description
@@ -17207,6 +18028,9 @@ organizations:
       Required skills: Kubernetes knowledge and GoLang programming skills
       Mentors: Alice Frosi: afrosi@redhat.com, German Maglione: gmaglion@redhat.com, Javier Cano Cano jcanocan@redhat.com
       See the GitHub issue for more information on the project, how to get started, and to ask questions.
+      
+      ~~~~~~~~~~
+      
       2. Adding emulated BMC support to KubeVirt (KubeVirtBMC)
       GitHub issue: https://github.com/kubevirt/community/issues/386
       Description
@@ -17222,6 +18046,8 @@ organizations:
       Required skills: Kubernetes knowledge, GoLang programming skills, possibly experience with BMCs and the IPMI/Redfish protocols
       Mentors: Felix Matouschek fmatouschek@redhat.com, Zespre Chang starbops@zespre.com
       See the GitHub issue for more information on the project, how to get started, and to ask questions.
+      
+      ~~~~~~~~~~
       3. Self-sufficient virt-handler
       GitHub issue: https://github.com/kubevirt/community/issues/388
       Description
@@ -17237,6 +18063,9 @@ organizations:
       Desirable skills: Kubernetes, GRPC, Unix
       Mentor: Ľuboslav Pivarč lpivarc@redhat.com, Co-mentor: Victor Toso victortoso@redhat.com
       See the GitHub issue for more information on the project, how to get started, and to ask questions.
+      
+      
+      ~~~~~~~~~~
       4. Early enablement of CBOR
       GitHub issue: https://github.com/kubevirt/community/issues/389
       Description
@@ -17252,26 +18081,7 @@ organizations:
       Required skills: Golang
       Desirable skills: Kubernetes
       Mentor: Ľuboslav Pivarč lpivarc@redhat.com, Co-mentor: Pending
-      See the GitHub issue for more information on the project, how to get started, and to ask questions.
-      Custom project proposals
-      You can submit your own project idea by emailing the kubevirt-dev Google Group and CC'ing Andrew Burden aburden@redhat.com and Petr Horáček phoracek@redhat.com.
-      If a mentor from the KubeVirt community supports the proposed project idea, we can add it to the KubeVirt project ideas list.
-      How and where to find help
-      First, try to check KubeVirt documentation, we cover many topics and you might already find some of the answers. If there is something unclear, feel free to open an issue and a PR. This is already a great start to getting in touch with the process.
-      For questions related to KubeVirt and not strictly to the GSoc program, try to use the #kubevirt-dev Slack channel in the Kubernetes workspace and GitHub issues as much as possible. Your question can be useful for other people, and the mentors might have a limited amount of time. It is also important to interact with the community as much as possible.
-      You can also search the Slack channel archive to see if others have previously encountered the same issue.
-      If something doesn't work, try to document the steps and how to reproduce the issue as clearly as possible. The more information you provide, the easiest is for us to help you. If you open an issue in KubeVirt, this already guides you with a template with the kind of information we generally need.
-      Tips on how to begin
-      Install KubeVirt and deploy KubeVirt VMs following the getting started guide
-      Look for good-first issues and try to solve one to get familiar with the project (if there isn’t a PR linked to it, feel free to pick it)
-      Read through our General contributing guide and our Developer contributing guide for understanding of community expectations and further tips on how to get started with the project.
-      How to submit the proposal
-      The preferred way is to create a google doc and share it with the mentors (slack or email work). If for any reason, google doc doesn't work for you, please share your proposal by email. Early submissions have higher chances as they will be reviewed on multiple iterations and can be further improved.
-      What the proposal should contain
-      The design and your strategy for solving the challenge should be concisely explained in the proposal. Which components you anticipate touching and an example of an API are good starting points. The updates or APIs are merely a draft of what the candidate hopes to expand and change rather than being final. The details and possible issues can be discussed during the project with the mentors that can help to refine the proposal.
-      It is not necessary to provide an introduction to Kubernetes or KubeVirt; instead, candidates should demonstrate their familiarity with KubeVirt by describing in detail how they intend to approach the task.
-      Mentors may find it helpful to have a schematic drawing of the flows and examples to better grasp the solution. They will select a couple of good proposals at the end of the selection period and this will be followed by an interview with the candidate.
-      The proposal can have a free form or you can get inspired by the KubeVirt design proposals and template. However, it should contain a draft schedule of the project phases with some planned extra time to overcome eventual difficulties.
+      
     totalCharacters_of_ideas_content_parent: 
     totalwords_of_ideas_content_parent: 
     totalTokenCount_of_ideas_content_parent: 
@@ -17281,7 +18091,7 @@ organizations:
 
   - organization_id: 80
     organization_name: Kubeflow
-    no_of_ideas:
+    no_of_ideas: 12
     ideas_content: |
      
       Project 1: Kubeflow Platform Enhancements
@@ -17300,6 +18110,8 @@ organizations:
       GitHub and GitHub Actions
       containers and Kubernetes knowledge
       Experience with Python, Go and JavaScript frameworks
+
+      ~~~~~~~~~~
       Project 2: Kserve Models Web App
       Components: KServe
       Possible Mentors: @juliusvonkohout, @varodrig, @Griffin-Sullivan
@@ -17316,6 +18128,8 @@ organizations:
       GitHub Actions
       containers and Kubernetes knowledge
       JavaScript frameworks
+
+      ~~~~~~~~~~
       Project 3: Istio CNI and Ambient Mesh
       Components: Kubeflow Manifests
       Possible Mentors: @juliusvonkohout, @kimwnasptd
@@ -17332,6 +18146,8 @@ organizations:
       GitHub and GitHub Actions
       Kubernetes and networking
       Istio, Kustomize
+
+      ~~~~~~~~~~
       Project 4: Deploying Kubeflow with Helm
       Components: Kubeflow Manifests, Kubeflow Pipelines, Kubeflow Trainer, Kubeflow Katib, Kubeflow Spark Operator, Kubeflow Model Registry
       Possible Mentors: @chasecadet, @varodrig, @juliusvonkohout
@@ -17345,6 +18161,8 @@ organizations:
       Container and Kubernetes knowledge
       Helm (especially templating and chart creation)
       Kustomize (not strictly required, but a plus)
+
+      ~~~~~~~~~~
       Project 5: JupyterLab Plugin for Kubeflow
       Components: Kubeflow Notebooks, Kubeflow Pipelines
       Possible Mentors: @ederign, @StefanoFioravanzo
@@ -17365,6 +18183,8 @@ organizations:
       Modern UI frameworks (e.g., React, Jupyter widgets) is a plus
       Familiarity with Jupyter Notebook, JupyterLab
       Jupyter extension development experience is a plus
+
+      ~~~~~~~~~~
       Project 6: Batch Processing Gateway Integration
       Components: Kubeflow Spark Operator
       Possible Mentors: @Shekharrajak, @lresende, @yuchaoran2011, @andreyvelich
@@ -17394,6 +18214,8 @@ organizations:
       Understanding of Apache Spark and its deployment on Kubernetes clusters.
       Familiarity with RESTful API development and integration.
       Experience with monitoring tools and logging frameworks is a plus.
+
+      ~~~~~~~~~~
       Project 7: GPU Testing for LLM Blueprints
       Components: Kubeflow Trainer (Training Operator)
       Possible Mentors: @andreyvelich, @varodrig
@@ -17406,6 +18228,8 @@ organizations:
       Kubernetes
       PyTorch
       Python
+
+      ~~~~~~~~~~
       Project 8: Support JAX and TensorFlow Training Runtimes
       Components: Kubeflow Trainer (Training Operator)
       Possible Mentors: @Electronic-Waste, @XshubhamX, @andreyvelich
@@ -17419,6 +18243,8 @@ organizations:
       Kubernetes
       JAX
       TensorFlow
+
+      ~~~~~~~~~~
       Project 9: Export Kubeflow Trainer Models to Kubeflow Model Registry
       Components: Kubeflow Trainer (Training Operator), Kubeflow Model Registry
       Possible Mentors: @tarilabs, @franciscojavierarceo
@@ -17433,6 +18259,8 @@ organizations:
       Go
       YAML
       Python
+
+      ~~~~~~~~~~
       Project 10: Support Volcano Scheduler in Kubeflow Trainer
       Components: Kubeflow Trainer (Training Operator)
       Possible Mentors: @Electronic-Waste, @rudeigerc
@@ -17446,6 +18274,8 @@ organizations:
       Kubernetes
       Go
       Volcano
+
+      ~~~~~~~~~~
       Project 11: Support Postgres for Kubeflow Pipelines backend
       Components: Kubeflow Pipelines
       Possible Mentors: @rimolive, @shivaylamba
@@ -17460,6 +18290,8 @@ organizations:
       Python
       Go
       YAML
+
+      ~~~~~~~~~~
       Project 12: Empowering Kubeflow Documentation with LLMs
       Components: Kubeflow Website
       Possible Mentors: @franciscojavierarceo, @chasecadet, @shravan-achar, @Shekharrajak, @varodrig
@@ -17475,9 +18307,7 @@ organizations:
       HTML
       Netlify
       Hugo
-      Feedback
-      Was this page helpful?
-      Yes No
+     
       
       Last modified March 5, 2025: fix: SeaweedFS PoC link in GSoC project (#4031) (56f27bf)
     totalCharacters_of_ideas_content_parent: 
