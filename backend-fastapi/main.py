@@ -53,7 +53,7 @@ def load_ideas_to_chroma(yaml_path: str):
     with open(yaml_path, 'r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
     
-    collection = chroma_client.get_or_create_collection(name="gsoc_ideas", metadata={"hnsw:space": "cosine"})
+    collection = chroma_client.get_or_create_collection(name="gsoc_ideas_final_v1", metadata={"hnsw:space": "cosine"})
     
     # Check if collection is empty
     if collection.count() == 0:
@@ -133,7 +133,7 @@ async def startup_db_client():
 async def query_ideas(request: QueryRequest):
     try:
         query_embedding = get_embedding(request.query)
-        collection = chroma_client.get_collection("gsoc_ideas")
+        collection = chroma_client.get_collection("gsoc_ideas_final_v1")
         
         results = collection.query(
             query_embeddings=[query_embedding],
@@ -185,13 +185,13 @@ async def get_ideas():
 @app.get("/chromadb-stats")
 async def get_chromadb_stats():
     try:
-        collection = chroma_client.get_collection("gsoc_ideas")
+        collection = chroma_client.get_collection("gsoc_ideas_final_v1")
         
         # Get total count
         total_count = collection.count()
         
-        # Get all items (limited to first 1000 to avoid overwhelming responses)
-        results = collection.get(limit=1000)
+        # Get all metadatas (without document content to reduce payload size)
+        results = collection.get(include=['metadatas'])
         
         # Get unique organizations
         org_names = set()
@@ -204,15 +204,17 @@ async def get_chromadb_stats():
             "total_records": total_count,
             "unique_organizations": len(org_names),
             "organization_names": list(org_names),
-            "sample_records": min(len(results.get('ids', [])), 1000)
+            "sample_records": len(results.get('ids', []))
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
+
 @app.get("/chromadb-data")
 async def get_chromadb_data(limit: int = 100, offset: int = 0):
     try:
-        collection = chroma_client.get_collection("gsoc_ideas")
+        collection = chroma_client.get_collection("gsoc_ideas_final_v1")
         
         # Get all IDs to handle pagination
         all_ids = collection.get(include=[])['ids']
