@@ -267,7 +267,7 @@ export default function Home() {
         const assistantMessage: Message = {
             id: crypto.randomUUID(),
             role: 'assistant',
-            content: currentSummary || 'No results found. Please try a different search.',
+            content: currentSummary || 'sorry so many people using our gemini api key free credits are over I will change the api key soon dm me https://x.com/sreehariX',
             timestamp: new Date()
         };
 
