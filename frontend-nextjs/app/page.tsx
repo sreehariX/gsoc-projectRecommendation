@@ -523,7 +523,7 @@ export default function Home() {
                 ref={textareaRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Search for GSoC projects..."
+                placeholder="Enter your preferred technologies and interests..."
                 className="w-full py-4 px-5 text-white bg-transparent rounded-2xl resize-none"
                 style={{
                   minHeight: isMobile ? '80px' : '70px',

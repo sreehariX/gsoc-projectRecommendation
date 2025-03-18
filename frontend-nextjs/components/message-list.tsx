@@ -63,11 +63,14 @@ export function MessageList({ messages, isGenerating }: MessageListProps) {
   return (
     <div className="w-full px-2 sm:px-4 md:max-w-3xl md:mx-auto" onClick={handleLinkClick}>
       {messages.length === 0 ? (
-        <div className="h-full flex items-center justify-center">
-          <h1 className="text-2xl md:text-4xl font-bold text-center px-4" style={{ color: 'hsl(var(--color-silver))' }}>
-            Search for GSoC projects
-          </h1>
-        </div>
+        <div className="h-full flex flex-col items-center justify-center text-center">
+        <h1 className="text-xl md:text-2xl font-bold px-2" style={{ color: 'hsl(var(--color-silver))' }}>
+          Explore GSoC 2025 project recommendations from nearly all 
+        </h1>
+        <p className="text-sm md:text-base mt-1" style={{ color: 'hsl(var(--color-silver))' }}>
+          ideas 2426 across 185 organizations!
+        </p>
+      </div>
       ) : (
         <>
           {processedMessages.map((message) => (
