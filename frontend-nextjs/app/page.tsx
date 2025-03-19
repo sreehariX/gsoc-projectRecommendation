@@ -11,6 +11,7 @@ import { SearchResult } from '@/lib/api-service';
 import { useSearchStore } from '@/lib/store';
 
 import { chatStorageService } from '@/lib/chat-storage-service';
+import { SupportButton } from '@/components/support-button';
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -495,15 +496,20 @@ export default function Home() {
             </h2>
           )}
           
-          {/* Mobile new chat button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handleNewChat}
-            className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full md:hidden"
-          >
-            <MessageSquarePlus className="h-5 w-5" />
-          </Button>
+          <div className="flex items-center gap-2">
+            {/* Support button */}
+            <SupportButton />
+            
+            {/* Mobile new chat button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleNewChat}
+              className="text-white hover:bg-[var(--button-ghost-hover)] rounded-full md:hidden"
+            >
+              <MessageSquarePlus className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
 
         <div 
