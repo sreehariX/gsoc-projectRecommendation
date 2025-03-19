@@ -11,7 +11,7 @@ import { SearchResult } from '@/lib/api-service';
 import { useSearchStore } from '@/lib/store';
 
 import { chatStorageService } from '@/lib/chat-storage-service';
-import { SupportButton } from '@/components/support-button';
+import { SupportButton, SocialButtons } from '@/components/support-button';
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -497,6 +497,11 @@ export default function Home() {
           )}
           
           <div className="flex items-center gap-2">
+            {/* Social media buttons */}
+            <div className="hidden md:flex">
+              <SocialButtons />
+            </div>
+            
             {/* Support button */}
             <SupportButton />
             

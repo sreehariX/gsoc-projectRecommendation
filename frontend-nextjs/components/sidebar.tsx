@@ -98,7 +98,7 @@ export function Sidebar({
       </div>
       
       <div className="p-3 text-xs text-gray-400 border-t border-gray-700">
-        <p>GSoC Project Recommendation</p>
+        <p>Made with ❤️ by Sreehari</p>
       </div>
     </div>
   );
