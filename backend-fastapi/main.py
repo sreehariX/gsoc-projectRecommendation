@@ -10,13 +10,13 @@ from dotenv import load_dotenv
 from fastapi.responses import JSONResponse
 
 app = FastAPI(
-    title="GSoC Ideas RAG API",
-    description="API for querying GSoC ideas using ChromaDB and Gemini"
+    title="Hi Hacker",
+    description="If you come to this endpoint your a curious hacker , I intentionally exposed this API , happy hacking , go to /docs to see the API docs and how all api's work . This whole project is free and open source "
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://gsoc2025.doc0.tech"],  # Adjust as needed
+    allow_origins=["*"],  # Adjust as needed
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
