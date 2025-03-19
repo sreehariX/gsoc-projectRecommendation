@@ -6,7 +6,8 @@ import { Sidebar } from '@/components/sidebar';
 import { MessageList } from '@/components/message-list';
 import { SummaryResults } from '@/components/summary-results';
 import { PanelLeftOpen, PanelLeftClose, MessageSquarePlus, Search, Menu, X } from 'lucide-react';
-import { Chat, Message, generateSyntheticResponse, generateChatTitle, SearchResult } from '@/lib/chat-store';
+import { Chat, Message, generateSyntheticResponse, generateChatTitle } from '@/lib/chat-store';
+import { SearchResult } from '@/lib/api-service';
 import { useSearchStore } from '@/lib/store';
 
 import { chatStorageService } from '@/lib/chat-storage-service';
@@ -256,18 +257,15 @@ export default function Home() {
         setQuery(input);
         await search();
         
-        // Small delay to ensure results are processed
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        // Get the latest summary from the store
+        // Immediately update the UI with the latest results
+        const currentResults = useSearchStore.getState().results;
         const currentSummary = useSearchStore.getState().summary;
-        console.log('Current summary:', currentSummary ? currentSummary.substring(0, 50) + '...' : 'No summary');
 
         // Create assistant message
         const assistantMessage: Message = {
             id: crypto.randomUUID(),
             role: 'assistant',
-            content: currentSummary || generateFallbackFromResults(useSearchStore.getState().results),
+            content: currentSummary || (currentResults.length > 0 ? generateFallbackFromResults(currentResults) : 'No results found.'),
             timestamp: new Date()
         };
 
@@ -275,7 +273,6 @@ export default function Home() {
         const finalMessages = [...updatedMessages, assistantMessage];
         
         // Create final chat state with current search results
-        const currentResults = useSearchStore.getState().results;
         const finalChat = {
             ...updatedChat,
             messages: finalMessages,

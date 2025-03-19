@@ -62,9 +62,9 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     console.error("Error in enhance-query route:", error);
-    // Return the original query when anything fails
+    // Return empty query when anything fails
     return new Response(
-      JSON.stringify({ enhancedQuery: body?.query || "" }),
+      JSON.stringify({ enhancedQuery: "" }),
       { 
         status: 200,
         headers: { 'Content-Type': 'application/json' }
