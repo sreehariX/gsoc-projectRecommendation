@@ -212,6 +212,9 @@ export default function Home() {
     if (!input.trim()) return;
 
     try {
+        // Set loading state first
+        setIsGenerating(true);
+        
         // Create user message
         const userMessage: Message = {
             id: crypto.randomUUID(),
@@ -234,8 +237,15 @@ export default function Home() {
             console.log('Created new chat:', currentChat.id);
         }
 
+        // Clear previous results and summary
+        clearResults();
+
+        // Store the input and clear it immediately for better UX
+        const queryInput = input;
+        setInput('');
+
+        // Update chat with user message first
         const updatedMessages = [...currentChat.messages, userMessage];
-        
         const updatedChat = {
             ...currentChat,
             messages: updatedMessages
@@ -248,20 +258,16 @@ export default function Home() {
 
         setChats(updatedChats);
         setActiveChat(updatedChat.id);
-        setInput('');
 
-        // Set loading state
-        setIsGenerating(true);
-        
         // Trigger search and wait for results
-        setQuery(input);
+        setQuery(queryInput);
         await search();
         
-        // Immediately update the UI with the latest results
+        // Get the latest results after search is complete
         const currentResults = useSearchStore.getState().results;
         const currentSummary = useSearchStore.getState().summary;
 
-        // Create assistant message
+        // Create assistant message with the actual results
         const assistantMessage: Message = {
             id: crypto.randomUUID(),
             role: 'assistant',
@@ -269,16 +275,16 @@ export default function Home() {
             timestamp: new Date()
         };
 
-        // Add assistant message to chat
+        // Update messages with assistant response
         const finalMessages = [...updatedMessages, assistantMessage];
         
-        // Create final chat state with current search results
         const finalChat = {
             ...updatedChat,
             messages: finalMessages,
             results: currentResults
         };
 
+        // Update chats state with assistant message
         const finalChats = activeChat
             ? chats.map(chat => chat.id === activeChat ? finalChat : chat)
             : [finalChat, ...chats];
@@ -288,9 +294,6 @@ export default function Home() {
         // End loading state
         setIsGenerating(false);
 
-        // Wait a bit to ensure state is updated
-        await new Promise(resolve => setTimeout(resolve, 500));
-
         // Save chat with complete messages
         console.log('Saving chat with all messages:', {
             chatId: finalChat.id,
@@ -299,19 +302,6 @@ export default function Home() {
         });
 
         await chatStorageService.saveChat(finalChat);
-
-        // Verify saved chat
-        const savedChat = await chatStorageService.getChat(finalChat.id);
-        if (savedChat) {
-            console.log('Verification of saved chat:', {
-                chatId: savedChat.id,
-                messageCount: savedChat.messages.length,
-                messages: savedChat.messages.map(msg => ({
-                    role: msg.role,
-                    content: msg.content.substring(0, 50) + '...'
-                }))
-            });
-        }
 
         if (isFirstMessage) {
             setIsFirstMessage(false);
