@@ -11,12 +11,12 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI(
     title="Hi Hacker",
-    description="If you come to this endpoint your a curious hacker , I intentionally exposed this API , happy hacking , go to /docs to see the API docs and how all api's work . This whole project is free and open source "
+    description="Happy Hacking "
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust as needed
+    allow_origins=["https://gsoc2025.doc0.tech"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -166,7 +166,7 @@ async def test_embedding(request: EmbeddingRequest):
 
 @app.get("/")
 async def root():
-    return {"message": "GSoC Ideas RAG API is running"}
+    return {"message": "Hi Hacker , I intentionally exposed this API , happy hacking , go to /docs to see the API docs and how all api's work . This whole project is free and open source "}
 
 @app.get("/ideas")
 async def get_ideas():
