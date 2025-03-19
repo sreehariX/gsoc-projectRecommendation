@@ -44,22 +44,31 @@ export const useSearchStore = create<SearchState>((set, get) => ({
       let enhancedQueryText = '';
       
       if (queryType === 'enhanced') {
-        const enhanceResponse = await fetch('/api/enhance-query', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ query }),
-        });
-        
-        if (!enhanceResponse.ok) {
-          throw new Error('Failed to enhance query');
+        try {
+          const enhanceResponse = await fetch('/api/enhance-query', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query }),
+          });
+          
+          if (!enhanceResponse.ok) {
+            console.warn('Failed to enhance query, using original query instead');
+            enhancedQueryText = query;
+            searchQuery = query;
+          } else {
+            const enhanceData = await enhanceResponse.json();
+            enhancedQueryText = enhanceData.enhancedQuery || query; // Use original query as fallback
+            searchQuery = enhancedQueryText;
+          }
+          set({ enhancedQuery: enhancedQueryText });
+        } catch (enhanceError) {
+          console.warn('Error enhancing query, using original query instead:', enhanceError);
+          enhancedQueryText = query;
+          searchQuery = query;
+          set({ enhancedQuery: enhancedQueryText });
         }
-        
-        const enhanceData = await enhanceResponse.json();
-        enhancedQueryText = enhanceData.enhancedQuery;
-        searchQuery = enhancedQueryText;
-        set({ enhancedQuery: enhancedQueryText });
       } else {
         set({ enhancedQuery: '' });
       }
@@ -108,13 +117,36 @@ export const useSearchStore = create<SearchState>((set, get) => ({
           set({ isSummarizing: false });
         } catch (summaryError: any) {
           console.error("Summary generation error:", summaryError);
+          
+          // Create a simple fallback summary with the notification and results
+          let fallbackSummary = `# GSoC Project Ideas\n\n`;
+          
+          // Add notification about API key usage
+          fallbackSummary += `> **Note:** Our Gemini API keys usage limit is reached. We are using a fallback mechanism that shows exactly the same results but with simplified formatting. Thank you for your understanding.\n\n`;
+          
+          response.results.forEach((result, index) => {
+            const score = (result.similarity_score * 100).toFixed(1);
+            fallbackSummary += `## ${index + 1}. ${result.metadata.organization_name} (${score}% match)\n\n`;
+            
+            fallbackSummary += `- **Number of Ideas**: ${result.metadata.no_of_ideas}\n`;
+            fallbackSummary += `- **Organization**: [Visit Organization](${result.metadata.gsocorganization_dev_url})\n`;
+            fallbackSummary += `- **Ideas List**: [View All Ideas](${result.metadata.idea_list_url})\n\n`;
+            
+            // Add document content directly
+            fallbackSummary += `### Project Details\n\n`;
+            fallbackSummary += `${result.document}\n\n`;
+            
+            fallbackSummary += `---\n\n`;
+          });
+          
           set({ 
-            error: summaryError.message || "Failed to generate summary", 
-            isSummarizing: false 
+            isSummarizing: false,
+            summary: fallbackSummary
           });
         }
       }
     } catch (error: any) {
+      console.error("Search error:", error);
       set({ 
         error: error.message || 'Failed to search projects', 
         isLoading: false,

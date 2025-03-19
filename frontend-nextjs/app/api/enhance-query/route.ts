@@ -45,7 +45,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const enhancedQuery = await enhanceQuery(query);
+    let enhancedQuery;
+    try {
+      enhancedQuery = await enhanceQuery(query);
+    } catch (aiError) {
+      console.error("AI enhancement failed, using original query:", aiError);
+      enhancedQuery = query; // Use original query as fallback
+    }
     
     return new Response(
       JSON.stringify({ enhancedQuery }),
@@ -56,10 +62,11 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     console.error("Error in enhance-query route:", error);
+    // Return the original query when anything fails
     return new Response(
-      JSON.stringify({ error: "Failed to enhance query" }),
+      JSON.stringify({ enhancedQuery: body?.query || "" }),
       { 
-        status: 500,
+        status: 200,
         headers: { 'Content-Type': 'application/json' }
       }
     );

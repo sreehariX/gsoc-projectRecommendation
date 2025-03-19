@@ -49,7 +49,7 @@ export async function enhanceQuery(userQuery: string): Promise<string> {
     return result.text.trim();
   } catch (error) {
     console.error("Error enhancing query:", error);
-    // Return the original query if enhancement fails
+    // Return the original query as fallback
     return userQuery;
   }
 }
@@ -59,9 +59,10 @@ export async function summarizeResults(results: SearchResult[]): Promise<Respons
     return new Response("No results found.");
   }
 
-  // Format the results into a structured text
-  const formattedResults = results.map((result, index) => {
-    return `
+  try {
+    // Format the results into a structured text
+    const formattedResults = results.map((result, index) => {
+      return `
 Project ${index + 1}: ${result.metadata.organization_name}
 Document: ${result.document}
 Organization URL: ${result.metadata.gsocorganization_dev_url}
@@ -69,9 +70,9 @@ Ideas List: ${result.metadata.idea_list_url}
 Number of Ideas: ${result.metadata.no_of_ideas}
 Similarity Score: ${(result.similarity_score * 100).toFixed(1)}%
 `;
-  }).join("\n");
+    }).join("\n");
 
-  const prompt = `
+    const promptText = `
 As a GSoC project advisor, analyze and summarize these project 
 Focus on helping students understand:
 1.format each idea for easy user understanding
@@ -96,27 +97,14 @@ Here are the projects to analyze:
 ${formattedResults}
 `;
 
-  try {
-    const googleAI = createAIProvider();
-    const model = googleAI('gemini-2.0-flash', {
-      safetySettings: [
-        { 
-          category: 'HARM_CATEGORY_HATE_SPEECH',
-          threshold: 'BLOCK_MEDIUM_AND_ABOVE'
-        },
-        {
-          category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-          threshold: 'BLOCK_MEDIUM_AND_ABOVE'
-        }
-      ]
-    });
-
-    // Use streamText with error handling
     try {
+      const googleAI = createAIProvider();
+      const model = googleAI('gemini-2.0-flash');
+
       const result = await streamText({
         model,
-        prompt,
-        onError: ({ error }) => {
+        prompt: promptText,
+        onError: (error) => {
           console.error("Error in streamText:", error);
         }
       });
@@ -129,10 +117,115 @@ ${formattedResults}
       return result.toTextStreamResponse();
     } catch (streamError) {
       console.error("Error in streamText:", streamError);
-      return new Response("Failed to generate summary. Please try again later.", { status: 500 });
+      // When there's an error with the AI service, use the fallback
+      const fallbackSummary = generateFallbackSummary(results);
+      return new Response(fallbackSummary, { 
+        status: 200,
+        headers: { 'Content-Type': 'text/plain' }
+      });
     }
   } catch (error) {
     console.error("Error generating summary:", error);
-    return new Response("Failed to generate summary. Please try again later.", { status: 500 });
+    // Use fallback for any error in the summarization process
+    const fallbackSummary = generateFallbackSummary(results);
+    return new Response(fallbackSummary, { 
+      status: 200,
+      headers: { 'Content-Type': 'text/plain' }
+    });
   }
+}
+
+// Helper function to create a nice fallback summary
+function generateFallbackSummary(results: SearchResult[]): string {
+  let summary = `# GSoC Project Ideas\n\n`;
+  
+  // Add notification about API key usage
+  summary += `> **Note:** Our Gemini API keys usage limit is reached. We are using a fallback mechanism that shows exactly the same results but with simplified formatting. Thank you for your understanding.\n\n`;
+  
+  results.forEach((result, index) => {
+    const score = (result.similarity_score * 100).toFixed(1);
+    summary += `## ${index + 1}. ${result.metadata.organization_name} (${score}% match)\n\n`;
+    
+    // Add key information
+    summary += `- **Number of Ideas**: ${result.metadata.no_of_ideas}\n`;
+    summary += `- **Organization**: [Visit Organization](${result.metadata.gsocorganization_dev_url})\n`;
+    summary += `- **Ideas List**: [View All Ideas](${result.metadata.idea_list_url})\n\n`;
+    
+    // Add document content directly
+    summary += `### Project Details\n\n`;
+    summary += `${result.document}\n\n`;
+    
+    summary += `---\n\n`;
+  });
+  
+  return summary;
+}
+
+// Helper function to extract sections from a document
+interface DocumentSection {
+  title?: string;
+  content: string;
+}
+
+function extractSectionsFromDocument(document: string): DocumentSection[] {
+  const sections: DocumentSection[] = [];
+  
+  // Common section headers in GSoC idea documents
+  const sectionHeaderRegexes = [
+    /(?:^|\n)#+\s*(.*?)(?:\n|$)/,                     // Markdown headers
+    /(?:^|\n)(.*?)\[edit.*?\](?:\n|$)/,               // Wiki-style headers with [edit]
+    /(?:^|\n)(Description|Expected outcome|Required skills|Difficulty|Mentors|Project size):/i, // Common GSoC section labels
+    /(?:^|\n)(Brief Explanation|Expected Results|Duration|Knowledge Prerequisites)(?:\[.*?\])?:/i // More GSoC sections
+  ];
+  
+  // Split by empty lines first to get paragraphs
+  const paragraphs = document.split(/\n\s*\n/);
+  
+  let currentSection: DocumentSection | null = null;
+  
+  paragraphs.forEach(paragraph => {
+    paragraph = paragraph.trim();
+    if (!paragraph) return;
+    
+    // Check if this paragraph is a header
+    let isHeader = false;
+    let headerTitle = '';
+    
+    for (const regex of sectionHeaderRegexes) {
+      const match = paragraph.match(regex);
+      if (match && match[1]) {
+        isHeader = true;
+        headerTitle = match[1].trim();
+        break;
+      }
+    }
+    
+    if (isHeader) {
+      // Save previous section if exists
+      if (currentSection) {
+        sections.push(currentSection);
+      }
+      
+      // Start new section
+      currentSection = {
+        title: headerTitle,
+        content: ''
+      };
+    } else if (currentSection) {
+      // Add to current section content
+      currentSection.content += paragraph + '\n\n';
+    } else {
+      // No section yet, create one without a title
+      currentSection = {
+        content: paragraph + '\n\n'
+      };
+    }
+  });
+  
+  // Add the last section
+  if (currentSection) {
+    sections.push(currentSection);
+  }
+  
+  return sections;
 } 

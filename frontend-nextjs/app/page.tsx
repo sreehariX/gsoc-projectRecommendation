@@ -6,7 +6,7 @@ import { Sidebar } from '@/components/sidebar';
 import { MessageList } from '@/components/message-list';
 import { SummaryResults } from '@/components/summary-results';
 import { PanelLeftOpen, PanelLeftClose, MessageSquarePlus, Search, Menu, X } from 'lucide-react';
-import { Chat, Message, generateSyntheticResponse, generateChatTitle } from '@/lib/chat-store';
+import { Chat, Message, generateSyntheticResponse, generateChatTitle, SearchResult } from '@/lib/chat-store';
 import { useSearchStore } from '@/lib/store';
 
 import { chatStorageService } from '@/lib/chat-storage-service';
@@ -267,7 +267,7 @@ export default function Home() {
         const assistantMessage: Message = {
             id: crypto.randomUUID(),
             role: 'assistant',
-            content: currentSummary || 'sorry so many people using ,our gemini api key free credits are over I will change the api key soon dm me https://x.com/sreehariX',
+            content: currentSummary || generateFallbackFromResults(useSearchStore.getState().results),
             timestamp: new Date()
         };
 
@@ -325,6 +325,35 @@ export default function Home() {
         setIsGenerating(false);
     }
 };
+
+  // Helper function to generate a fallback response directly from results
+  function generateFallbackFromResults(results: SearchResult[]): string {
+    if (!results || results.length === 0) {
+      return 'Sorry, no project ideas match your query. Please try with different keywords.';
+    }
+    
+    let fallback = `# GSoC Project Ideas\n\n`;
+    
+    // Add notification about API key usage
+    fallback += `> **Note:** Our Gemini API keys usage limit is reached. We are using a fallback mechanism that shows exactly the same results but with simplified formatting. Thank you for your understanding.\n\n`;
+    
+    results.forEach((result, index) => {
+      const score = (result.similarity_score * 100).toFixed(1);
+      fallback += `## ${index + 1}. ${result.metadata.organization_name} (${score}% match)\n\n`;
+      
+      fallback += `- **Number of Ideas**: ${result.metadata.no_of_ideas}\n`;
+      fallback += `- **Organization**: [Visit Organization](${result.metadata.gsocorganization_dev_url})\n`;
+      fallback += `- **Ideas List**: [View All Ideas](${result.metadata.idea_list_url})\n\n`;
+      
+      // Add document content directly
+      fallback += `### Project Details\n\n`;
+      fallback += `${result.document}\n\n`;
+      
+      fallback += `---\n\n`;
+    });
+    
+    return fallback;
+  }
 
   const handleNewChat = () => {
     // Prevent creating new chat during an active request
