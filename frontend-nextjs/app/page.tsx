@@ -497,7 +497,7 @@ export default function Home() {
           )}
           
           <div className="flex items-center gap-2">
-            {/* Social media buttons */}
+            {/* Social media buttons - desktop only */}
             <div className="hidden md:flex">
               <SocialButtons />
             </div>

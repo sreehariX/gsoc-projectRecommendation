@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { MessageSquarePlus, Trash2, X } from 'lucide-react';
 import { Chat } from '@/lib/chat-store';
+import { SocialButtons } from '@/components/support-button';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -97,8 +98,11 @@ export function Sidebar({
         )}
       </div>
       
-      <div className="p-3 text-xs text-gray-400 border-t border-gray-700">
-        <p>Made with ❤️ by Sreehari</p>
+      <div className="p-3 border-t border-gray-700">
+        <div className="mb-2 flex justify-center md:hidden">
+          <SocialButtons isMobile={true} />
+        </div>
+        <p className="text-xs text-gray-400 text-center">Made with ❤️ by Sreehari</p>
       </div>
     </div>
   );

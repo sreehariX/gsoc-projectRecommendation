@@ -145,9 +145,9 @@ export function SupportButton() {
   );
 }
 
-export function SocialButtons() {
+export function SocialButtons({ isMobile = false }) {
   return (
-    <div className="flex items-center space-x-2">
+    <div className={`flex items-center ${isMobile ? 'justify-center space-x-4' : 'space-x-2'}`}>
       <a 
         href="https://x.com/sreehariX" 
         target="_blank" 
