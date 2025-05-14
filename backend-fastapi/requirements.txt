@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-chromadb
+chromadb==0.6.3
 google-generativeai
 pandas
 python-dotenv
